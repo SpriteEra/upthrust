@@ -1,4 +1,5 @@
-import {  instrumentSerif, inter } from "./fonts/fonts";
+import Navbar from "@/components/Navbar";
+import { instrumentSerif, inter } from "./fonts/fonts";
 import "./globals.css";
 
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
