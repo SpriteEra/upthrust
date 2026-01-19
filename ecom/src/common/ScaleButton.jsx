@@ -15,7 +15,7 @@ const colors = {
 const ScaleButton = ({ color = "red" }) => {
     const iconColor = colors[color] || colors.red;
     return (
-        <button className=" rounded-md p-4 py-4 bg-white/10 border-[1.5px] border-white hover:border-white hover:bg-(--red) text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group gap-1">
+        <button className=" rounded-md p-4 py-4 bg-white/10 border-[1.5px] border-white hover:border-white hover:bg-(--red) text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group gap-1 xs:w-fit">
             <span className="relative size-10 flex items-center justify-center">
                 <span
                     className="rounded absolute inset-0 bg-(--red) transition-transform duration-500 ease-in-out- group-hover:-rotate-180"
@@ -25,7 +25,7 @@ const ScaleButton = ({ color = "red" }) => {
                 </svg>
             </span>
             <div className='flex h-full justify-between flex-col items-start pr-2'>
-                <span className='text-sm 3xl:text-xl'>Scale My Store</span>
+                <span className='text-lg md:text-sm 3xl:text-xl'>Scale My Store</span>
                 <span className='text-[10px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
             </div>
 

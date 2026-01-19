@@ -20,23 +20,23 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="bg-white/50 text-black fixed top-0 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px]">
-            <div className="  px-4 sm:px-6 lg:px-8 w-full">
+        <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
+            <div className="px-2  sm:px-4 md:px-4 lg:px-8 w-full">
                 <div className="flex items-center justify-between ">
                     {/* Logo */}
                     <div className="shrink-0 ">
 
-                        <Image src='/logo.png' height={100} width={200} alt="logo" priority className="h-7 3xl:h-10 object-contain w-full" />
+                        <Image src='/logo.png' height={100} width={200} alt="logo" priority className="h-6 sm:h-7 3xl:h-10 object-contain w-full" />
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden sm:flex justify-between items-center rounded-full h-13 2xl:h-14 3xl:h-16 bg-[#08070A] text-white">
-                        <div className=" flex items-center justify-center space-x-1 px-5">
+                    <div className="hidden lg:flex justify-between items-center rounded-full p-2 bg-[#08070A] text-white">
+                        <div className=" flex items-center justify-center space-x-2">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="px-3 py-2 2xl:py-2 whitespace-nowrap rounded-full text-xs 2xl:text-[14px] 3xl:text-[16px]  bg-gray-800 hover:bg-(--red) transition-colors duration-200"
+                                    className="px-3 py-2 2xl:py-2 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-[16px]  bg-white/10 hover:bg-(--red) transition-colors duration-200"
                                 >
                                     {link.name}
                                 </Link>
@@ -45,14 +45,17 @@ export default function Navbar() {
                     </div>
 
                     {/* CTA Buttons */}
-                    <StylishButton color='red' />
+                    <div className='max-lg:hidden'>
+                        <StylishButton color='red' />
+                    </div>
 
 
                     {/* Mobile menu button */}
-                    <div className="lg:hidden">
+                    <div className="lg:hidden max-lg:flex gap-0 sm:gap-2">
+                        <StylishButton color='red' />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-800 focus:outline-none"
+                            className="inline-flex items-center justify-center px-1 sm:p-2 rounded-md hover:bg-gray-800 focus:outline-none"
                         >
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                         </button>

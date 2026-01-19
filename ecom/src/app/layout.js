@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { instrumentSerif, inter } from "./fonts/fonts";
 import "./globals.css";
+import "./app.css";
 
 
 

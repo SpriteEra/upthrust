@@ -1,0 +1,16 @@
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+
+.text-shadow-hard {
+  text-shadow:
+    0 4px 2px rgba(0, 0, 0, 0.15),
+    0 5px 20px rgba(0, 0, 0, 0.25);
+}
