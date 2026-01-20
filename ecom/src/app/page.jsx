@@ -194,7 +194,6 @@ const page = () => {
 
 
 
-
       <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 max-md:hidden'>
         <div className='flex flex-col pt-22 3xl:pt-25 text-white'>
           <div className='flex flex-col items-center mb-10'>
@@ -227,6 +226,8 @@ const page = () => {
         </div>
         <UGCVideoCategories />
       </div>
+
+      <SuccessStories />
 
 
 
