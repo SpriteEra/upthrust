@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, Play, X } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 import Image from 'next/image';
 
 export default function WhatWeDo() {
@@ -41,7 +41,7 @@ export default function WhatWeDo() {
 
                             {/* Center Section - Images */}
                             <div className="lg:col-span-3 flex justify-end items-end h-64 md:h-65 3xl:h-70 max-md:hidden">
-                                <Image width={700} height={300} src="/ecom/work1.png" alt="what we do" className='w-full h-60 object-contain' />
+                                <Image width={700} height={400} src="/ecom/work1.webp" alt="what we do" className='w-full h-50 3xl:h-65 object-contain' />
                             </div>
 
                             {/* Right Section - Play Button */}
@@ -71,7 +71,7 @@ export default function WhatWeDo() {
                             </div>
 
                             <div className="lg:col-span-3 flex justify-end items-end h-50 md:hidden">
-                                <Image width={700} height={300} src="/ecom/work1.png" alt="what we do" className='w-full h-35 object-cover' />
+                                <Image width={700} height={300} src="/ecom/work1.webp" alt="what we do" className='w-full h-35 object-cover' />
                             </div>
 
                         </div>

@@ -10,7 +10,7 @@ const InteractiveCaseStudy = () => {
         {
             id: 0,
             title: "₹45 Lakh Sales from ₹15 Lakh Spend in December",
-            description: "How we helped dashboard how we scaled to 3X revenue maintaining 2.7x ROAS through creative testing.",
+            description: "Watch the live dashboard: How we scaled an FMCG brand to ₹3 crore while maintaining 2.17x ROAS through creative testing.",
             videoUrl: "https://www.loom.com/embed/2dfe3bf3c957415fa6f9efa331d2045c?autoplay=1&hideEmbedTopBar=true"
         },
         {

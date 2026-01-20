@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, HelpCircle } from 'lucide-react';
+import Tooltip from '@/utils/Tooltip';
 
 
 const pricingPlans = [
@@ -14,37 +15,39 @@ const COMPARISON_DATA = [
     {
         category: "Setup & Strategy",
         items: [
-            { name: "Audience Research & ICP Building", values: ["check", "check", "check", "check"] },
-            { name: "Offer Creation & Scaling", values: ["-", "-", "check", "check"] },
-            { name: "UGC Strategy & Production", values: ["-", "-", "-", "2 UGCs"] },
-            { name: "PR & Influencer Collaborations", values: ["-", "-", "Up to 3/qtr", "check"] },
+            { name: "Audience Research & ICP Building", values: ["check", "check", "check", "check"], hover: "We identify your highest-value customers and build targeting profiles that actually convert.", },
+            { name: "Offer Creation & Scaling", values: ["-", "-", "check", "check"], hover: "We craft irresistible offers (bundles, discounts, AOV boosters) and test what sells best." },
+            { name: "UGC Strategy & Production", values: ["-", "-", "-", "2 UGCs"], hover: "We plan, shoot, and produce scroll-stopping user-generated content that drives sales." },
+            { name: "PR & Influencer Collaborations", values: ["-", "-", "Up to 3/qtr", "check"], hover: "We find, negotiate, and manage influencer partnerships that deliver measurable ROI." },
         ]
     },
     {
         category: "Execution",
         items: [
-            { name: "Meta Ads", values: ["check", "check", "check", "check"] },
-            { name: "Google Ads", values: ["-", "check", "check", "check"] },
-            { name: "Landing Pages & CRO", values: ["-", "-", "-", "check"] },
-            { name: "Email Marketing", values: ["-", "-", "check", "check"] },
-            { name: "Whatsapp Marketing", values: ["-", "-", "-", "check"] },
-            { name: "Amazon Account Management", values: ["-", "-", "-", "check"] },
-            { name: "Photography", values: ["-", "-", "-", "check"] },
-            { name: "Video Editing", values: ["-", "-", "check", "check"] },
+            { name: "Meta Ads", values: ["check", "check", "check", "check"], hover: "We run high-performing Facebook & Instagram campaigns optimized for ROAS, not vanity metrics." },
+            { name: "Google Ads", values: ["-", "check", "check", "check"], hover: "We manage Search, Shopping, Display, and YouTube ads to capture high-intent buyers." },
+            { name: "Landing Pages & CRO", values: ["-", "-", "-", "check"], hover: "We design, A/B test, and optimize landing pages to convert more visitors into customers." },
+            { name: "Email Marketing", values: ["-", "-", "check", "check"], hover: "We build automated flows (welcome, cart recovery, post-purchase) that print money on autopilot." },
+            { name: "Whatsapp Marketing", values: ["-", "-", "-", "check"], hover: "We run personalized broadcast campaigns and abandoned cart recovery via WhatsApp." },
+            { name: "Amazon Account Management", values: ["-", "-", "-", "check"], hover: "We handle your Amazon storefront, ads, listings, and optimization to maximize marketplace sales." },
+            { name: "Photography", values: ["-", "-", "-", "check"], hover: "We shoot professional product photos optimized for ads, Amazon, and your website." },
+            { name: "Video Editing", values: ["-", "-", "check", "check"], hover: "We edit UGC, product demos, and ads with fast cuts, captions, and hooks that stop the scroll." },
         ]
     },
     {
         category: "Analytics & Tracking",
         items: [
-            { name: "Analytics & Attribution Setup", values: ["Basic (Pixel + GA4)", "check", "check", "check"] },
+            { name: "Analytics & Attribution Setup", values: ["Basic (Pixel + GA4)", "check", "check", "check"], hover: "We implement proper tracking (GA4, Facebook Pixel, UTMs) so you know exactly what's working." },
         ]
     },
     {
         category: "Optimization & Reporting",
         items: [
-            { name: "Creative Iterations", values: ["1x / month", "2x / month", "Every 10 days", "Every 6 days"] },
-            { name: "Monthly Reporting", values: ["check", "-", "check", "check"] },
-            { name: "Weekly Reporting", values: ["-", "-", "check", "check"] },
+            { name: "Creative Iterations", values: ["1x / month", "2x / month", "Every 10 days", "Every 6 days"], hover: "We refresh ad creatives weekly based on performance data to beat creative fatigue." },
+            { name: "Monthly Reporting", values: ["check", "-", "check", "check"], hover: "You get a comprehensive monthly report with insights, wins, learnings, and next steps." },
+            { name: "Weekly Reporting", values: ["-", "-", "check", "check"], hover: "You get weekly performance snapshots with key metrics and quick action items." },
+            { name: "Daily Updates", values: ["-", "check", "check", "check"], hover: "You get weekly performance snapshots with key metrics and quick action items." },
+            { name: "Account Manager", values: ["-", "-", "check", "Dedicated"], hover: "You get a dedicated point of contact who knows your business and responds within 2 hours." },
         ]
     }
 ];
@@ -59,7 +62,7 @@ export const FullPricingSection = () => {
         <div className="w-full bg-white md:py-10 px-3 md:px-16 flex flex-col items-center">
             {/* Container for Cards and Table to share the same Grid */}
 
-            <div className='w-full grid md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch md:p-5 md:bg-[#F4F4F4] md:sticky top-0'>
+            <div className='w-full grid md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch md:p-5 md:bg-[#F4F4F4] md:sticky top-0 z-51'>
                 <div className="md:col-start-1"></div> {/* Spacer for Label Column */}
 
                 {pricingPlans.map((plan, index) => (
@@ -124,7 +127,11 @@ export const FullPricingSection = () => {
                         {section.items.map((item, iIndex) => (
                             <React.Fragment key={item.name}>
                                 <div className={`py-3.5 3xl:py-4 px-2.5 3xl:px-3 flex items-center gap-2 ${iIndex !== section.items.length - 1 ? "border-b" : ""} border-gray-200 font-medium text-sm 3xl:text-base`}>
-                                    {item.name} <span className="text-white bg-[#b7b7b7] rounded-full size-4 3xl:size-4.5 font-light text-xs 3xl:text-base flex items-center justify-center" >?</span>
+                                    {item.name}
+
+                                    <Tooltip content={item.hover} maxWidth='w-[200px]' multiline={true} delay={200} position='right'>
+                                        <span className="text-white bg-[#b7b7b7] rounded-full size-4 3xl:size-4.5 font-light text-xs 3xl:text-base flex items-center justify-center" >?</span>
+                                    </Tooltip>
                                 </div>
                                 {item.values.map((val, vIndex) => (
                                     <div

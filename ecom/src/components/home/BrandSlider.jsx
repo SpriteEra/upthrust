@@ -140,7 +140,7 @@ import Image from "next/image";
 
 import { useState, useRef, useEffect } from "react";
 
-function MarqueeRow({ brands, direction = "left", itemWidth = 200 }) {
+function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
   const [offset, setOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [velocity, setVelocity] = useState(0);
@@ -321,24 +321,30 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 200 }) {
       return (
         <div
           key={`${brand.id}-${startIndex + i}`}
-          className="absolute top-0 h-full flex items-center justify-center"
+          className="absolute top-0 h-full flex items-center justify-center "
           style={{
             left: `${position}px`,
             width: `${itemWidth - 20}px`,
             transform: isDragging ? "scale(0.98)" : "scale(1)",
           }}
         >
-          <div className="flex items-center justify-center opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300"
+          <div className="flex items-center justify-center"
             style={{ pointerEvents: "none" }}
           >
-            <Image
-              src={'/brand1.png'}
-              alt={brand.name}
-              width={120}
-              height={40}
-              draggable={false}
-              className="select-none w-16 xs:w-20 h-full object-contain"
-            />
+            <div className="flex items-center justify-center h-7 xs:h-8 w-16 xs:w-18">
+              <Image
+                src={brand.logo}
+                alt={brand.name}
+                width={120}
+                height={40}
+                draggable={false}
+                className="max-h-full max-w-full object-contain select-none "
+              />
+            </div>
+            {/* Divider */}
+            {/* Divider */}
+            <div className="absolute right-0 top-1/2 h-6 w-px bg-gray-300 -translate-y-1/2" />
+
           </div>
         </div>
       );
@@ -348,7 +354,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 200 }) {
   return (
     <div
       ref={containerRef}
-      className="relative h-32 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+      className="relative h-16 md:h-30 3xl:h-32 overflow-hidden cursor-grab active:cursor-grabbing select-none"
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -573,40 +579,21 @@ function MarqueeColumn({ brands, direction = "up", itemHeight = 200 }) {
 }
 
 export default function BrandSlider() {
-  const brandsRow1 = [
-    { id: 1, name: "Brand 1", logo: "🎨" },
-    { id: 2, name: "Brand 2", logo: "🚀" },
-    { id: 3, name: "Brand 3", logo: "💎" },
-    { id: 4, name: "Brand 4", logo: "⚡" },
-    { id: 5, name: "Brand 5", logo: "🎯" },
-    { id: 6, name: "Brand 6", logo: "🌟" },
-  ];
+  const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
+    id: i + 1,
+    name: `Brand ${i + 1}`,
+    logo: `/ecom/brand/first/f${i + 1}.webp`,
+  }));
 
-  const brandsRow2 = [
-    { id: 7, name: "Brand 7", logo: "🎭" },
-    { id: 8, name: "Brand 8", logo: "🎪" },
-    { id: 9, name: "Brand 9", logo: "🎬" },
-    { id: 10, name: "Brand 10", logo: "🎮" },
-    { id: 11, name: "Brand 11", logo: "🎲" },
-    { id: 12, name: "Brand 12", logo: "🎸" },
-  ];
 
-  const brandsCol1 = [
-    { id: 13, name: "Brand 13", logo: "🎹" },
-    { id: 14, name: "Brand 14", logo: "🎺" },
-    { id: 15, name: "Brand 15", logo: "🎻" },
-    { id: 16, name: "Brand 16", logo: "🥁" },
-  ];
-
-  const brandsCol2 = [
-    { id: 17, name: "Brand 17", logo: "🎤" },
-    { id: 18, name: "Brand 18", logo: "🎧" },
-    { id: 19, name: "Brand 19", logo: "📻" },
-    { id: 20, name: "Brand 20", logo: "🎼" },
-  ];
+  const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
+    id: i + 21,
+    name: `Brand ${i + 21}`,
+    logo: `/ecom/brand/second/s${i + 1}.webp`,
+  }));
 
   return (
-    <div className="py-14 xs:py-20 space-y-14 overflow-hidden">
+    <div className="py-14 xs:py-20 space-y-10 overflow-hidden">
 
       <div className="flex-1 flex flex-col justify-center gap-0">
         <MarqueeRow brands={brandsRow1} direction="left" />
