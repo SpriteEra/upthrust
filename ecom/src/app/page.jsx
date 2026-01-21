@@ -223,6 +223,12 @@ const page = () => {
 
       <WhatWeDo />
 
+<div className='h-20 flex items-center justify-center'>
+                <h1 className="font-hanzi text-4xl">
+  ABC abc 123
+</h1>
+
+</div>
 
       <div className='flex flex-col mt-25 xs:mt-70 mb-0 xs:mb-10 px-2'>
         <div className='flex flex-col items-center mb-10'>
@@ -306,6 +312,7 @@ const page = () => {
         </div>
         <UGCVideoCategories />
       </div>
+      
 
 
       <MobileTestimonialsSlider testimonials={testimonials} />

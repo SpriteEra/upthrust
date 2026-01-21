@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { instrumentSerif, inter } from "./fonts/fonts";
+import { hanzipen, instrumentSerif, inter } from "./fonts/fonts";
 import "./globals.css";
 import "./app.css";
 import Script from "next/script";
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
 
-      <body className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
         {isProd && (
           <noscript>
             <iframe
