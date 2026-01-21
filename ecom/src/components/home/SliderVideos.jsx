@@ -221,7 +221,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     return (
         <div
             ref={containerRef}
-            className="relative h-16 md:h-120 rounded-md 3xl:h-60 overflow-hidden select-none"
+            className="relative h-120 md:h-120 rounded-md 3xl:h-60 overflow-hidden select-none"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -234,12 +234,6 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
 }
 
 export default function SliderVideos() {
-    const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
-        id: i + 1,
-        name: `Brand ${i + 1}`,
-        logo: `/ecom/brand/first/f${i + 1}.webp`,
-    }));
-
 
     const reels = [
         { id: 1, image: "/ecom/banner/banner1.webp", video: "/reels/1.mp4" },
@@ -250,12 +244,6 @@ export default function SliderVideos() {
         { id: 6, image: "/ecom/banner/banner6.webp", video: "/reels/1.mp4" },
         { id: 7, image: "/ecom/banner/banner7.webp", video: "/reels/1.mp4" },
     ];
-
-    const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
-        id: i + 21,
-        name: `Brand ${i + 21}`,
-        logo: `/ecom/brand/second/s${i + 1}.webp`,
-    }));
 
     return (
         <div className="py-14 xs:py-20 space-y-10 overflow-hidden w-full">
