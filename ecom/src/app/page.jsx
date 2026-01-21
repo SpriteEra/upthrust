@@ -20,12 +20,9 @@ import WhatWeDo from '@/components/home/WhatWeDo';
 import WhoWorkWithUs from '@/components/home/WhoWorkWithUs';
 import Image from 'next/image';
 import React from 'react'
-import SliderVideos from '@/components/home/SliderVideos';
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
-const HeroVerticleSlider = dynamic(
-  () => import('@/components/home/HeroVerticleSlider'),
-  { loading: () => null }
-);
+import SliderVideos from '@/components/home/SliderVideos';
+import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 
 const BrandSlider = dynamic(
   () => import('@/components/home/BrandSlider'),
@@ -39,8 +36,6 @@ const brands2 = [
   { name: "brand4", src: "/ecom/brand/first/f6.webp" },
   { name: "brand5", src: "/ecom/brand/second/s2.webp" },
   { name: "brand6", src: "/ecom/brand/second/s7.webp" },
-
-
 ];
 const brands = [
   { name: "brand1", src: "/ecom/brand/brandwhite/brand1.webp" },
