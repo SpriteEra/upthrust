@@ -52,13 +52,17 @@ export default function Navbar() {
 
                     {/* Mobile menu button */}
                     <div className="lg:hidden max-lg:flex gap-0 sm:gap-2">
-                        <StylishButton color='red' />
                         <button
+                            className="px-5 rounded-full py-2.5 sm:py-3 md:py-3.5 bg-black border-2 border-(--red) hover:bg-(--black) hover:border- text-white text-xs transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 relative group font-medium"
+                        >
+                            Book A Demo Call
+                        </button>
+                        {/* <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="inline-flex items-center justify-center px-1 sm:p-2 rounded-md hover:bg-gray-800 focus:outline-none"
                         >
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

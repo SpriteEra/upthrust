@@ -9,7 +9,7 @@ const services = [
         id: 1,
         title: "Tech & Development",
         subtitle:
-            "Meta Ads • Google Ads • Multi-Channel Attribution\nAvg 3.8x ROAS | Scale to $500k+/Month | Lower CAC 30–50%",
+            "Meta Ads • Google Ads • Multi-Channel Attribution \nAvg 3.8x ROAS | Scale to $500K+/Month | Lower CAC 30-50%",
         details: [
             {
                 before: "Ecommerce ad campaigns averaging",
@@ -87,7 +87,7 @@ const services = [
         id: 4,
         title: "Marketplace Management",
         subtitle:
-            "Amazon • Flipkart • Marketplaces • Full-Funnel Optimization",
+            "Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First \n10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused",
         details: [
             {
                 before: "Ecommerce for",
@@ -126,10 +126,10 @@ export default function ServicesAccordion() {
                         onMouseEnter={() => setOpen(item.id)}
                         onMouseLeave={() => setOpen(null)}
                         onClick={() => {
-                            if(isOpen){
+                            if (isOpen) {
                                 setOpen(null)
                             }
-                            else{
+                            else {
                                 setOpen(item.id)
                             }
                         }}

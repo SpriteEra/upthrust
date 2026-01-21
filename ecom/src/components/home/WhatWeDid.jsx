@@ -19,7 +19,7 @@ const businesses = [
         accentColor: "bg-[#6FAB42]",
         accentColor2: "#6FAB42",
         textAccent: "text-[#6FAB42]",
-        rightImage: "/ecom/buss1.png",
+        rightImage: "/ecom/buss1.webp",
         growthMetric: {
             value: "8.97K",
             label: "Orders"
@@ -42,7 +42,7 @@ const businesses = [
         accentColor: "bg-orange-600",
         accentColor2: "#CF7F3C",
         textAccent: "text-orange-600",
-        rightImage: "/ecom/buss2.png",
+        rightImage: "/ecom/buss2.webp",
         growthMetric: {
             value: "₹3.52 Lakh",
             label: "in Daily Sales"
@@ -65,7 +65,7 @@ const businesses = [
         accentColor: "bg-red-600",
         accentColor2: "#B30100",
         textAccent: "text-red-600",
-        rightImage: "/ecom/buss3.png",
+        rightImage: "/ecom/buss3.webp",
         growthMetric: {
             value: "+50%",
             label: "ROAS"
@@ -88,7 +88,7 @@ const businesses = [
         accentColor: "bg-purple-600",
         accentColor2: "#9479E7",
         textAccent: "text-purple-600",
-        rightImage: "/ecom/buss4.png",
+        rightImage: "/ecom/buss4.webp",
         growthMetric: {
             value: "+111%",
             label: "Order Volume Growth"

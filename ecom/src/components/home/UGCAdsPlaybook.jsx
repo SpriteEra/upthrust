@@ -9,29 +9,20 @@ import gsap from "gsap"
 gsap.registerPlugin()
 
 const brands = [
-    { name: "Brand 3", src: "/banner3.png" },
-    { name: "Brand 4", src: "/banner4.png" },
-    { name: "Brand 6", src: "/banner6.png" },
-    { name: "Brand 1", src: "/banner1.png" },
-    { name: "Brand 2", src: "/banner2.png" },
-    { name: "Brand 5", src: "/banner5.png" },
+    { name: "Brand 1", src: "/ecom/banner/bottom-banner/b-banner1.webp" },
+    { name: "Brand 2", src: "/ecom/banner/bottom-banner/b-banner2.webp" },
+    { name: "Brand 3", src: "/ecom/banner/bottom-banner/b-banner3.webp" },
+    { name: "Brand 4", src: "/ecom/banner/bottom-banner/b-banner4.webp" },
+    { name: "Brand 5", src: "/ecom/banner/bottom-banner/b-banner5.webp" },
 ]
 const brands2 = [
-    { name: "Brand 2", src: "/banner2.png" },
-    { name: "Brand 1", src: "/banner1.png" },
-    { name: "Brand 3", src: "/banner3.png" },
-    { name: "Brand 5", src: "/banner5.png" },
-    { name: "Brand 4", src: "/banner4.png" },
-    { name: "Brand 6", src: "/banner6.png" },
+    { name: "Brand 6", src: "/ecom/banner/bottom-banner/b-banner6.webp" },
+    { name: "Brand 7", src: "/ecom/banner/bottom-banner/b-banner7.webp" },
+    { name: "Brand 8", src: "/ecom/banner/bottom-banner/b-banner8.webp" },
+    { name: "Brand 9", src: "/ecom/banner/bottom-banner/b-banner9.webp" },
+    { name: "Brand 10", src: "/ecom/banner/bottom-banner/b-banner10.webp" },
 ]
-const brands3 = [
-    { name: "Brand 2", src: "/banner2.png" },
-    { name: "Brand 3", src: "/banner3.png" },
-    { name: "Brand 4", src: "/banner4.png" },
-    { name: "Brand 5", src: "/banner5.png" },
-    { name: "Brand 1", src: "/banner1.png" },
-    { name: "Brand 6", src: "/banner6.png" },
-]
+
 
 function useSupersideSlider(direction = -1) {
     const trackRef = useRef(null)
@@ -132,7 +123,7 @@ const UGCAdsPlaybook = () => {
                     </div>
                 </div>
                 <div>
-                    <Column direction={1} data={brands} />
+                    <Column direction={1} data={brands2} />
                 </div>
             </div>
         </div>

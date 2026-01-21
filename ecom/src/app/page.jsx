@@ -1,4 +1,3 @@
-import BrandSlider from '@/common/BrandSlider'
 import StylishButton from '@/common/RocketButton';
 import ScaleButton from '@/common/ScaleButton'
 import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
@@ -6,7 +5,8 @@ import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
 import FAQ from '@/components/home/Faq';
 import { FullPricingSection } from '@/components/home/FullPricingSection';
-import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
+import dynamic from "next/dynamic";
+
 import HomeFooter from '@/components/home/HomeFooter';
 import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
 import OurApproach from '@/components/home/OurApproach';
@@ -20,29 +20,69 @@ import WhatWeDo from '@/components/home/WhatWeDo';
 import WhoWorkWithUs from '@/components/home/WhoWorkWithUs';
 import Image from 'next/image';
 import React from 'react'
-const brands = [
-  { name: "Harley", src: "/brands/harley.svg" },
-  { name: "Loreal", src: "/brands/loreal.svg" },
-  { name: "Zomato", src: "/brands/zomato.svg" },
-  { name: "Dell", src: "/brands/dell.svg" },
-  { name: "Neon Attack", src: "/brands/neon.svg" },
-  { name: "ZipNow", src: "/brands/zipnow.svg" },
-  { name: "Yummie", src: "/brands/yummie.svg" },
-  { name: "Shoppetite", src: "/brands/shoppetite.svg" },
-  { name: "OK Things", src: "/brands/ok.svg" },
+import SliderVideos from '@/components/home/SliderVideos';
+import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
+import Hand, { ScrollText } from '@/common/HandWritten';
+const HeroVerticleSlider = dynamic(
+  () => import('@/components/home/HeroVerticleSlider'),
+  { loading: () => null }
+);
+
+const BrandSlider = dynamic(
+  () => import('@/components/home/BrandSlider'),
+  { loading: () => null }
+);
+
+const brands2 = [
+  { name: "brand1", src: "/ecom/brand/first/f17.webp" },
+  { name: "brand2", src: "/ecom/brand/first/f12.webp" },
+  { name: "brand3", src: "/ecom/brand/first/f10.webp" },
+  { name: "brand4", src: "/ecom/brand/first/f6.webp" },
+  { name: "brand5", src: "/ecom/brand/second/s2.webp" },
+  { name: "brand6", src: "/ecom/brand/second/s7.webp" },
+
+
 ];
+const brands = [
+  { name: "brand1", src: "/ecom/brand/brandwhite/brand1.webp" },
+  { name: "brand2", src: "/ecom/brand/brandwhite/brand2.webp" },
+  { name: "brand3", src: "/ecom/brand/brandwhite/brand3.webp" },
+  { name: "brand4", src: "/ecom/brand/brandwhite/brand4.webp" },
+  { name: "brand5", src: "/ecom/brand/brandwhite/brand5.webp" },
+  { name: "brand6", src: "/ecom/brand/brandwhite/brand6.webp" },
+  { name: "brand7", src: "/ecom/brand/brandwhite/brand7.webp" },
+  { name: "brand8", src: "/ecom/brand/brandwhite/brand8.webp" },
+  { name: "brand9", src: "/ecom/brand/brandwhite/brand9.webp" },
+  { name: "brand10", src: "/ecom/brand/brandwhite/brand10.webp" },
+
+];
+
+const socials = [
+  { alt: "snapchat", url: '/social/snapchat.webp' },
+  { alt: "youtube", url: '/social/youtube.webp' },
+  { alt: "amazon", url: '/social/amazon.webp' },
+  { alt: "meta", url: '/social/meta.webp' },
+  { alt: "google", url: '/social/google.webp' },
+]
+const profiles = [
+  { alt: "profile1", url: '/ecom/profile/profile1.webp' },
+  { alt: "profile2", url: '/ecom/profile/profile2.webp' },
+  { alt: "profile3", url: '/ecom/profile/profile3.webp' },
+  { alt: "profile4", url: '/ecom/profile/profile4.webp' },
+  { alt: "profile5", url: '/ecom/profile/profile5.webp' },
+]
 
 
 const page = () => {
   return (
     <div className="min-h-screen">
-      <div className='grid md:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full md:max-h-[120vh]'>
+      <div className='grid md:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full md:max-h-[135vh]'>
         <div className='pt-30 sm:pt-35 md:pt-50 flex flex-col'>
 
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
-              [...Array(5)].map((_, index) => (
-                <img key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src="/profile.jpg" alt="" />
+              profiles.map((profile, index) => (
+                <Image width={56} height={56} key={index} preload={true} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
 
               ))
             }
@@ -76,27 +116,31 @@ const page = () => {
           <div className='mt-10 sm:mt-5 flex flex-col'>
             <p className='text-base 3xl:text-lg max-md:text-center'>Brands we've scaled</p>
 
-            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-10 gap-x-3 3xl:gap-x-8 items-center py-5 md:py-10 max-w-lg">
+            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-3 3xl:gap-x-8 items-center py-5 md:py-10 max-w-lg">
               {brands.map((brand) => (
                 <div
                   key={brand.name}
-                  className="flex items-center justify-center"
+                  className="flex items-center justify-center h-10"
                 >
                   <Image
-                    src={'/brand3.png'}
+                    src={brand.src}
                     alt={brand.name}
                     width={160}
                     height={60}
-                    className="h-3.5 w-auto object-contain"
+                    className="max-h-full w-auto object-contain"
                   />
                 </div>
               ))}
             </div>
           </div>
+
+          <div className='md:hidden overflow-hidden max-w-full'>
+            <HeroHorizontalSlider />
+          </div>
         </div>
 
         {/* right  */}
-        <div className=''>
+        <div className='max-md:hidden'>
           <HeroVerticleSlider />
         </div>
       </div>
@@ -106,22 +150,40 @@ const page = () => {
         <BrandSlider />
       </div>
 
-      <div className='my-20 flex flex-col'>
-      </div>
-
       <div className='flex flex-col items-center'>
 
         <div className='flex flex-col items-center px-3'>
           <span className='text-sm md:text-xs 3xl:text-sm'>CREATIVES THAT ACTUALLY SELL</span>
           <div className='flex flex-col'>
-            <div className='mt-5 flex flex-wrap gap-1 sm:gap-3 items-center justify-center'>
+            <div className='mt-5 flex flex-wrap gap-1 sm:gap-3 items-center justify-center relative'>
+
+            <div className='absolute max-width-[200px] left-0 top-[-40px]'>
+               <ScrollText 
+          parts={[
+            { type: 'text', text: 'From scroll to sold in  ' },
+            { type: 'highlight', text: '5 seconds', bgColor: '#FF4500' },
+            // { type: 'text', text: 'engine' }
+          ]}
+          curvePosition="start" 
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={10}
+        />
+            </div>
 
               <h3 className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
-              <div className="flex -space-x-4 rtl:space-x-reverse">
+              <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
                 {
-                  [...Array(5)].map((_, index) => (
-                    <img key={index} className="size-10 3xl:size-14 border-2 border-white border-buffer rounded-full" src="/profile.jpg" alt="" />
-
+                  socials.map((social, index) => (
+                    <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-14 rounded-full border-buffer overflow-hidden shrink-0">
+                      <Image
+                        src={social.url}
+                        alt={social.alt}
+                        fill
+                        sizes="(min-width: 1920px) 56px, 44px"
+                        className="object-cover"
+                      />
+                    </div>
                   ))
                 }
                 <h6 className='xs:hidden'>
@@ -139,6 +201,8 @@ const page = () => {
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
         </div>
         <StylishButton color='red' />
+
+        <SliderVideos />
 
       </div>
 
@@ -216,20 +280,16 @@ const page = () => {
             <span className='text-xs 3xl:text-sm uppercase'>our work</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
-                <h4 className='text-6xl 3xl:text-7xl font-semibold capitalize'>50+ Brands. 200+ UGC Videos. <br />
+                <h4 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
                 </h4>
               </div>
-              <span className=' capitalize text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
+              <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
             </div>
-            <span className='text-sm 3xl:text-lg mt-3 mb-10'>Average CTA: 8.2% </span>
+            <span className='text-[15px] sm:text-sm 3xl:text-lg mt-5'>Average CTA: 8.2% </span>
           </div>
         </div>
         <UGCVideoCategories />
       </div>
-
-      <SuccessStories />
-
-
 
       <div>
         <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
@@ -290,18 +350,18 @@ const page = () => {
             </div>
 
             <div className="w-full flex items-center justify-center max-w-6xl px-4">
-              <div className="flex items-center gap-12 md:gap-20 overflow-x-auto whitespace-nowrap hide-scrollbar">
-                {brands.slice(0, 6).map((logo) => (
+              <div className="flex items-center gap-5 md:gap-11 overflow-x-auto whitespace-nowrap hide-scrollbar">
+                {brands2.slice(0, 6).map((logo) => (
                   <div
                     key={logo.name}
                     className="flex-shrink-0 flex items-center justify-center"
                   >
                     <Image
-                      src="/brand2.png"
+                      src={logo.src}
                       alt={logo.name}
                       width={200}
                       height={100}
-                      className="h-8 w-auto object-contain"
+                      className="h- w-auto object-contain"
                     />
                   </div>
                 ))}
@@ -357,6 +417,8 @@ const page = () => {
 
       <AskQuestionAndDisclaimer />
       <HomeFooter />
+
+      <Hand/>
 
     </div>
   )
