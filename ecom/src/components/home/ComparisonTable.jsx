@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
+import { Curve1 } from '@/common/HandWritten';
 
 // Note: Ensure fonts are configured in your layout.tsx or tailwind.config.js
 // Inter: font-family: 'Inter', sans-serif;
@@ -17,10 +18,47 @@ export const ComparisonTable = () => {
     ];
 
     return (
-        <div className="sm:min-h-screen bg-white flex flex-col items-center justify-center text-[#1a1a1a] max-md:px-1">
+        <div className="sm:min-h-screen bg-white flex flex-col items-center justify-center text-[#1a1a1a] max-md:px-1 overflow-hidden">
             {/* Grid Container */}
-            <div className="w-full lg:max-w-[950px] 3xl:max-w-[1200px] grid grid-cols-4 grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-cols-[1.5fr_1fr_1fr_1fr] items-stretch">
+            <div className="w-full lg:max-w-[950px] 3xl:max-w-[1200px] grid grid-cols-4 grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-cols-[1.5fr_1fr_1fr_1fr] items-stretch relative">
+                <Curve1
+                    lines={[
+                        {
+                            parts: [
+                                { type: "text", text: "7 things." },
+                                { type: 'highlight', text: 'Only Us', bgColor: '#FF4500' },
+                            ]
+                        },
 
+                    ]}
+                    imageClassName='left-3 top-12 3xl:top-14 3xl:top-9 !h-16 3xl:!h-20 w-full'
+                    curvePosition="end"
+                    curveFlipHorizontal={true}
+                    curveFlipVertical={false}
+                    tiltAngle={-7}
+                    imageIndex={2}
+                    className="absolute left-25 xl:-left-28 3xl:-right-32 top-8 "
+
+                />
+                <Curve1
+                    lines={[
+                        {
+                            parts: [
+                                { type: "text", text: "47 brands. Some" },
+                                { type: 'highlight', text: 'results', bgColor: '#FF4500' },
+                            ]
+                        },
+
+                    ]}
+                    imageClassName='-left-15 xl:-left-25 3xl:-left-30 -top-14 3xl:-top-16 !h-12 3xl:!h-14 w-full'
+                    curvePosition="end"
+                    curveFlipHorizontal={true}
+                    curveFlipVertical={false}
+                    tiltAngle={7}
+                    imageIndex={3}
+                    className="absolute -right-50 xl:-right-60 bottom-1/3 3xl:-right-70"
+
+                />
                 {/* Row 1: Headers */}
                 <div className="self-end pb-12"></div>
 

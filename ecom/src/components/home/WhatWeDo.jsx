@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import Image from 'next/image';
+import { Curve1 } from '@/common/HandWritten';
 
 export default function WhatWeDo() {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -23,25 +24,53 @@ export default function WhatWeDo() {
 
     return (
         <>
-            <div className="flex items-center justify-center px-2 md:px-16 mt-20">
+            <div className="flex items-center justify-center px-2 md:px-16 mt-20 relative">
                 {/* Banner Container */}
+
+                <Curve1
+                    lines={[
+                        {
+                            parts: [
+                                { type: "highlight", text: "Shark Tank", bgColor: '#FF4500' },
+                                { type: "text", text: "winners." }
+                            ]
+                        },
+                        {
+                            parts: [
+                                { type: "text", text: "₹50Cr brands." }
+                            ]
+                        }
+                    ]}
+                    parts={[
+                        { type: 'text', text: 'From scroll to sold in ' },
+                        { type: 'highlight', text: '5 seconds', bgColor: '#FF4500' },
+                        // { type: 'text', text: 'engine' }
+                    ]}
+                    curvePosition="end"
+                    curveFlipHorizontal={true}
+                    curveFlipVertical={false}
+                    tiltAngle={-10}
+                    imageClassName='-right-5 top-5 3xl:top-6'
+                    className="absolute -bottom-20 xl:-bottom-18 left-80 xl:left-100 max-w-[200px]"
+
+                />
                 <div className="w-full  bg-[#F4F4F4] rounded-2xl md:rounded-4xl overflow-hidden">
                     <div className="relative md:px-20 3xl:px-30 pt-2">
 
                         {/* Content Grid */}
-                        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-12 items-center max-md:pt-10">
+                        <div className="grid grid-cols-1 max-lg:pt-10 lg:grid-cols-6 gap-8 lg:gap-12 items-center max-md:pt-10">
 
                             {/* Left Section - Text */}
                             <div className="lg:col-span-2 space-y-1">
-                                <h6 className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-bold leading-tight text-shadow-hard max-md:text-center" >
+                                <h6 className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-bold leading-tight text-shadow-hard max-lg:text-center" >
                                     What We <span className="italic font-medium">Do</span>
                                 </h6>
-                                <p className="text-sm 3xl:text-base flex gap-2 tracking-wide items-center text-shadow-hard font-extrabold max-md:hidden" >Watch Now <span className='text-lg font-light'>→</span></p>
+                                <p className="text-sm 3xl:text-base flex gap-2 tracking-wide items-center max-lg:justify-center text-shadow-hard font-extrabold max-md:hidden" >Watch Now <span className='text-lg font-light'>→</span></p>
                             </div>
 
                             {/* Center Section - Images */}
-                            <div className="lg:col-span-3 flex justify-end items-end h-64 md:h-65 3xl:h-70 max-md:hidden">
-                                <Image width={700} height={400} src="/ecom/work1.webp" alt="what we do" className='w-full h-50 3xl:h-65 object-contain' />
+                            <div className="lg:col-span-3 flex justify-end items-end h-64 md:h-65 3xl:h-70 max-lg:hidden md:pt-10 lg:pt-0">
+                                <Image width={700} height={400} src="/ecom/work1.webp" alt="what we do" className='w-full h-40 xl:h-50 3xl:h-65 object-contain' />
                             </div>
 
                             {/* Right Section - Play Button */}
@@ -70,8 +99,8 @@ export default function WhatWeDo() {
                                 </div>
                             </div>
 
-                            <div className="lg:col-span-3 flex justify-end items-end h-50 md:hidden">
-                                <Image width={700} height={300} src="/ecom/work1.webp" alt="what we do" className='w-full h-35 object-cover' />
+                            <div className="lg:col-span-3 flex justify-end items-end h-50 md:h-60 lg:hidden">
+                                <Image width={700} height={300} src="/ecom/work1.webp" alt="what we do" className='w-full h-35 md:h-40 max-lg:object-contain max-md:object-cover' />
                             </div>
 
                         </div>

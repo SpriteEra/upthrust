@@ -30,7 +30,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex justify-between items-center rounded-full p-2 bg-[#08070A] text-white">
+                    <div className="hidden xl:flex justify-between items-center rounded-full p-2 bg-[#08070A] text-white">
                         <div className=" flex items-center justify-center space-x-2">
                             {navLinks.map((link) => (
                                 <Link
