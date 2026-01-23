@@ -62,14 +62,19 @@ function Column({ direction = -1, data }) {
               top: i * ITEM_HEIGHT + offset,
             }}
           >
-            <Image
-              src={b.src}
-              alt={b.name}
-              width={300}
-              height={300}
-              className="h-full xl:h-[97%] w-full object-cover rounded xs:rounded-lg"
-              draggable={false}
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={b.src}
+                alt={b.name}
+                fill
+                className="object-cover rounded xs:rounded-lg py-1 3xl:py-1.5"
+                sizes="(min-width: 1280px) 300px, 33vw"
+                quality={60}
+                loading="lazy"
+                draggable={false}
+              />
+            </div>
+
           </div>
         ))}
       </div>

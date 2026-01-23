@@ -114,7 +114,7 @@ const testimonials = [
 
 const page = () => {
   return (
-    <div className="min-h-screen">
+    <main id="main-content">
       <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh]'>
         <div className='pt-30 sm:pt-35 md:pt-50 flex flex-col'>
 
@@ -491,7 +491,7 @@ const page = () => {
 
       <AskQuestionAndDisclaimer />
       <HomeFooter />
-    </div>
+    </main>
   )
 }
 

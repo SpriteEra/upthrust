@@ -24,10 +24,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      </head>
+
+      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
         {isProd && (
           <Script
-            id="gtm-head"
-            strategy="afterInteractive"
+            id="gtm"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];
@@ -42,9 +45,6 @@ export default function RootLayout({ children }) {
             }}
           />
         )}
-      </head>
-
-      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
         {isProd && (
           <noscript>
             <iframe
