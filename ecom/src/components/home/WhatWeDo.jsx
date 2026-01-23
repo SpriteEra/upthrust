@@ -110,7 +110,7 @@ export default function WhatWeDo() {
                 {/* Video Popup Modal */}
                 {isVideoOpen && (
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4 animate-fadeIn"
+                        className="fixed inset-0 bg-black bg-opacity-95 z-100 flex items-center justify-center p-4 animate-fadeIn"
                         onClick={closeVideo}
                     >
                         <div
@@ -156,12 +156,12 @@ export default function WhatWeDo() {
 
                                 {/* Video Info Overlay */}
                                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 md:p-8">
-                                    <h3 className="text-white text-2xl md:text-3xl font-bold mb-2">
+                                    <p className="text-white text-2xl md:text-3xl font-bold mb-2">
                                         What We Actually Do - Company Overview
-                                    </h3>
-                                    <p className="text-gray-300 text-sm md:text-base">
-                                        Discover our mission, values, and how we help businesses succeed
                                     </p>
+                                    <span className="text-gray-300 text-sm md:text-base">
+                                        Discover our mission, values, and how we help businesses succeed
+                                    </span>
                                 </div>
                             </div>
 

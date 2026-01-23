@@ -1,30 +1,42 @@
 import StylishButton from '@/common/RocketButton';
 import ScaleButton from '@/common/ScaleButton'
 import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
-import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
+// import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
-import FAQ from '@/components/home/Faq';
+// import FAQ from '@/components/home/Faq';
 import { FullPricingSection } from '@/components/home/FullPricingSection';
 import dynamic from "next/dynamic";
 
 import HomeFooter from '@/components/home/HomeFooter';
-import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
-import OurApproach from '@/components/home/OurApproach';
+// import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
+// import OurApproach from '@/components/home/OurApproach';
 import ScrollIndicator from '@/components/home/ScrollIndicator';
-import ServicesAccordion from '@/components/home/ServicesAccordion';
-import SuccessStories from '@/components/home/SuccessStories';
-import UGCAdsPlaybook from '@/components/home/UGCAdsPlaybook';
-import UGCVideoCategories from '@/components/home/UGCVideoCategories';
+// import ServicesAccordion from '@/components/home/ServicesAccordion';
+// import SuccessStories from '@/components/home/SuccessStories';
+// import UGCAdsPlaybook from '@/components/home/UGCAdsPlaybook';
+// import UGCVideoCategories from '@/components/home/UGCVideoCategories';
 import WhatWeDid from '@/components/home/WhatWeDid';
-import WhatWeDo from '@/components/home/WhatWeDo';
+// import WhatWeDo from '@/components/home/WhatWeDo';
 import Image from 'next/image';
 import React from 'react'
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
-import SliderVideos from '@/components/home/SliderVideos';
+// import SliderVideos from '@/components/home/SliderVideos';
 import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import { Curve1 } from '@/common/HandWritten';
 
+const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
+const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
+const ServicesAccordion = dynamic(() => import('@/components/home/ServicesAccordion'));
+const UGCAdsPlaybook = dynamic(() => import('@/components/home/UGCAdsPlaybook'));
+const OurApproach = dynamic(() => import('@/components/home/OurApproach'));
+const UGCVideoCategories = dynamic(() => import('@/components/home/UGCVideoCategories'));
+const SuccessStories = dynamic(() => import('@/components/home/SuccessStories'));
+const ClientVideoTestimonial = dynamic(() => import('@/components/home/ClientVideoTestimonial'));
+const FAQ = dynamic(() => import('@/components/home/Faq'));
+const SliderVideos = dynamic(
+  () => import('@/components/home/SliderVideos')
+);
 
 const BrandSlider = dynamic(
   () => import('@/components/home/BrandSlider'),
@@ -109,7 +121,7 @@ const page = () => {
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
               profiles.map((profile, index) => (
-                <Image width={56} height={56} key={index} preload={true} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
+                <Image width={56} height={56} key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
 
               ))
             }
@@ -225,15 +237,15 @@ const page = () => {
                   }
                 </div>
               </div>
-              <h6 className='xs:hidden text-center'>
+              <p className='xs:hidden text-center'>
                 <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
                 <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
-              </h6>
+              </p>
             </div>
-            <h6 className='max-xs:hidden'>
+            <p className='max-xs:hidden'>
               <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
               <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
-            </h6>
+            </p>
 
           </div>
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
@@ -300,7 +312,7 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h4 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h4>
+                <h5 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h5>
                 <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'> The Playbook</span>
               </div>
             </div>
@@ -318,8 +330,8 @@ const page = () => {
             <span className='text-xs 3xl:text-sm uppercase'>our process</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center justify-center'>
-                <h4 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize'>How we approach your:
-                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h4>
+                <h5 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize'>How we approach your:
+                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h5>
               </div>
             </div>
             <span className='text-sm 3xl:text-lg mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore </span>
@@ -334,8 +346,8 @@ const page = () => {
             <span className='text-xs 3xl:text-sm uppercase'>our work</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
-                <h4 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
-                </h4>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
+                </h5>
               </div>
               <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
             </div>

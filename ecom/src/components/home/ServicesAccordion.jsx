@@ -165,12 +165,12 @@ export default function ServicesAccordion() {
                         {/* HEADER */}
                         <div className="flex items-start  relative">
                             <div className="max-xs:min-w-full xs:w-1/2">
-                                <h2 className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
+                                <p className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
                                     {item.title}
-                                </h2>
-                                <p className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
-                                    {item.subtitle}
                                 </p>
+                                <apan className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
+                                    {item.subtitle}
+                                </apan>
                             </div>
                             <div
                                 className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"} relative`}

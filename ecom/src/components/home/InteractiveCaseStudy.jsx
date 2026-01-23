@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import React, { useState, useRef } from 'react';
 
 const InteractiveCaseStudy = () => {
@@ -72,9 +73,9 @@ const InteractiveCaseStudy = () => {
                                     onClick={(e) => handleSectionClick(e, index)}
                                 >
                                     <div className="flex items-start justify-between gap-4">
-                                        <h3 className={`text-base 3xl:text-xl font-semibold pr-4 flex-1 ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
+                                        <p className={`text-base 3xl:text-xl font-semibold pr-4 flex-1 ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
                                             {section.title}
-                                        </h3>
+                                        </p>
                                     </div>
 
                                     {/* Dropdown Content - Animated */}
@@ -99,14 +100,12 @@ const InteractiveCaseStudy = () => {
                             <div className="relative bg-white rounded-lg md:rounded-2xl shadow-2xl overflow-hidden transition-all duration-500">
                                 {/* Video Container */}
                                 <div className="relative aspect-video bg-gray-900">
-                                    <iframe
-                                        key={activeSection >= 0 ? activeSection : 0}
-                                        src={sections[activeSection >= 0 ? activeSection : 0]?.videoUrl}
-                                        className="w-full h-full"
-                                        frameBorder="0"
-                                        muted
-                                        allowFullScreen
-                                        allow="autoplay"
+                                    <Image
+                                        src={'/casestudy.png'}
+                                        width={500}
+                                        height={250}
+                                        className='h-full w-full object-contain'
+                                        alt='Case study'
                                     />
                                 </div>
                             </div>

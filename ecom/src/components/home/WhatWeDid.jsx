@@ -125,9 +125,9 @@ const BusinessCard = ({
                             {badge}
                         </p>
 
-                        <h4 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-[50px] 3xl:text-6xl font-bold text-black mb-2 max-md:mt-10">
+                        <h5 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-[50px] 3xl:text-6xl font-bold text-black mb-2 max-md:mt-10">
                             {title}
-                        </h4>
+                        </h5>
                         <p className="text-3xl md:text-4xl lg:text-5xl 2xl:text-[54px] 3xl:text-[64px] text-black italic mb-6 md:mb-8 font-instrument">
                             {subtitle}
                         </p>

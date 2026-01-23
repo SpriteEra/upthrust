@@ -70,13 +70,13 @@ export const FullPricingSection = () => {
                         key={index}
                         className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-md bg-white 3xl:rounded-2xl max-md:border border-gray-300 md:border-t-[3px] md:border-black max-w-80  md:max-w-48 3xl:max-w-55 w-full mx-auto`}
                     >
-                        <h3 className="text-base 3xl:text-xl font-medium mb-0 md:mb-4 max-md:text-[#1D2127]">{plan.name} <span className='md:hidden'>Plan</span></h3>
+                        <p className="text-base 3xl:text-xl font-medium mb-0 md:mb-4 max-md:text-[#1D2127]">{plan.name} <span className='md:hidden'>Plan</span></p>
                         <div className="text-2xl 3xl:text-3xl font-semibold tracking-tight ">{plan.price}
                             <span className='text-[#464646] font-light text-xs md:hidden ml-2'>
                                 {plan.details}
                             </span>
                         </div>
-                        <p className="max-md:hidden text-[10px] 3xl:text-xs mb-8 uppercase">{plan.details}</p>
+                        <span className="max-md:hidden text-[10px] 3xl:text-xs mb-8 uppercase">{plan.details}</span>
 
                         {/* Features */}
                         <ul className="space-y-1 md:hidden pt-4 pb-12">
