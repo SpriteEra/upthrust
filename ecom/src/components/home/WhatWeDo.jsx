@@ -23,7 +23,7 @@ export default function WhatWeDo() {
     };
 
     return (
-        <>
+        <div id='about' className='scroll-mt-25'>
             <div className="flex items-center justify-center px-2 md:px-16 mt-20 relative">
                 {/* Banner Container */}
 
@@ -209,6 +209,6 @@ export default function WhatWeDo() {
             </div>
 
 
-        </>
+        </div>
     );
 }

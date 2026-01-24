@@ -69,7 +69,6 @@ function Column({ direction = -1, data }) {
                 fill
                 className="object-cover rounded xs:rounded-lg py-1 3xl:py-1.5"
                 sizes="(min-width: 1280px) 300px, 33vw"
-                quality={60}
                 loading="lazy"
                 draggable={false}
               />

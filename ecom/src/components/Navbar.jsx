@@ -19,6 +19,14 @@ export default function Navbar() {
         { name: 'Make From Plans', href: '#plans' },
     ];
 
+
+    const handleTabClick = (id) => {
+        onChange(id);
+
+        const section = document.getElementById(id);
+        section?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
             <div className="px-2  sm:px-4 md:px-4 lg:px-8 w-full">

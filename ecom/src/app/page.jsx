@@ -24,6 +24,7 @@ import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
 import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import { Curve1 } from '@/common/HandWritten';
+import Navbar from '@/components/Navbar';
 
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
 const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
@@ -115,6 +116,7 @@ const testimonials = [
 const page = () => {
   return (
     <main id="main-content">
+      <Navbar />
       <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh]'>
         <div className='pt-30 sm:pt-35 md:pt-50 flex flex-col'>
 
