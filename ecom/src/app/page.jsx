@@ -454,7 +454,7 @@ const page = () => {
 
       <ScrollIndicator />
 
-      <div className='relative'>
+      <div className='relative  h-full pb-40'>
         <Curve1
           lines={[
             {
@@ -470,13 +470,37 @@ const page = () => {
             },
 
           ]}
-          imageClassName='-right-30 top-5 3xl:top-14 3xl:top-9 !h-16 3xl:!h-20 w-full'
+          imageClassName='-right-35 3xl:-right-40 top-8 3xl:top-10 w-full'
           curvePosition="end"
           curveFlipHorizontal={true}
           curveFlipVertical={false}
           tiltAngle={-7}
           imageIndex={6}
-          className="absolute left-25 xl:left-20 3xl:-right-32 top-1/4 "
+          className="absolute left-25 xl:left-30 3xl:left-40 top-1/4 "
+
+        />
+        <Curve1
+          lines={[
+            {
+              parts: [
+                { type: "text", text: "Your complete" },
+              ]
+            },
+            {
+              parts: [
+                { type: 'highlight', text: 'growth', bgColor: '#FF4500' },
+                { type: "text", text: "entire" },
+              ]
+            },
+
+          ]}
+          imageClassName='right-17 -top-12 3xl:-top-12 w-full -rotate-6 !h-12 3xl:!h-12'
+          curvePosition="end"
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={7}
+          imageIndex={3}
+          className="absolute right-70 3xl:right-80 bottom-4 3xl:bottom-0"
 
         />
         <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 relative'>
@@ -492,7 +516,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <LeadForm />
+        <LeadForm showCircle={true} />
       </div>
 
 

@@ -4,6 +4,9 @@ import { Calendar, Clock, ChevronRight } from 'lucide-react';
 import { ArrowLeft } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 
+
+import { useRouter } from "next/navigation";
+
 // Reusable Components
 const FormHeading = ({ children }) => (
     <h2 className="text-xl 3xl:text-2xl font-semibold">{children}</h2>
@@ -111,10 +114,10 @@ const ProgressBar = ({ isComplete }) => (
     </div>
 );
 
-const Button = ({ children, onClick, variant = 'primary', disabled = false, className = '' }) => {
+const Button = ({ children, onClick, variant = 'primary', disabled = false, className = '', showCircle }) => {
     const baseStyles = "px-6 py-2 rounded-lg transition-colors flex items-center gap-1";
     const variants = {
-        primary: "bg-black text-white hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed",
+        primary: "bg-black text-white hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed border-2 border-black",
         secondary: "border-2 border-black text-black"
     };
 
@@ -122,15 +125,34 @@ const Button = ({ children, onClick, variant = 'primary', disabled = false, clas
         <button
             onClick={onClick}
             disabled={disabled}
-            className={`${baseStyles} ${variants[variant]} ${className}`}
+            className={`${baseStyles} ${variants[variant]} ${className} relative`}
         >
             {children}
+
+            {showCircle && (
+                <svg
+                    className="absolute left-1/2 top-4 w-[190px] h-[140px] -translate-x-1/2 -translate-y-1/2 -rotate-5 pointer-events-none max-lg:hidden"
+                    viewBox="0 0 200 80"
+                    preserveAspectRatio="xMidYMid meet"
+                >
+                    <ellipse
+                        cx="100"
+                        cy="40"
+                        rx="95"
+                        ry="35"
+                        fill="none"
+                        stroke="#ff4500"
+                        strokeWidth="3"
+                    />
+                </svg>
+            )}
         </button>
+
     );
 };
 
 // Main Form Component
-const LeadForm = () => {
+const LeadForm = ({ showCircle = false, showBorder = true }) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [direction, setDirection] = useState('forward');
     const [formData, setFormData] = useState({
@@ -143,17 +165,18 @@ const LeadForm = () => {
     });
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const router = useRouter();
 
     const dates = [
         { day: 'Mon', date: 'Jan 6' },
-        { day: 'Tues', date: 'Feb 6' },
-        { day: 'Tues', date: 'Feb 6' },
-        { day: 'Mon', date: 'Jan 6' },
-        { day: 'Tues', date: 'Feb 6' },
-        { day: 'Tues', date: 'Feb 6' }
+        { day: 'Tues', date: 'Feb 7' },
+        { day: 'Wed', date: 'Feb 8' },
+        { day: 'Thur', date: 'Jan 9' },
+        { day: 'Fri', date: 'Feb 10' },
+        { day: 'Sat', date: 'Feb 11' }
     ];
 
-    const times = ['9:00 AM', '10:00 AM', '11:00 AM', '2:00 PM', '3:00 PM', '4:00 PM', '4:00 PM'];
+    const times = ['9:00 AM', '10:00 AM', '11:00 AM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'];
 
     const adSpendOptions = [
         { value: 'less-1l', label: '< ₹1L /month' },
@@ -221,7 +244,6 @@ const LeadForm = () => {
             try {
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 console.log('Form submitted:', formData);
-                alert('Booking confirmed! Check console for submitted data.');
 
                 setFormData({
                     fullName: '',
@@ -231,6 +253,8 @@ const LeadForm = () => {
                     selectedDate: '',
                     selectedTime: ''
                 });
+                router.push("/welcome");
+                // alert('Booking confirmed! Check console for submitted data.');
                 setCurrentStep(1);
             } catch (error) {
                 console.error('Submission error:', error);
@@ -249,8 +273,8 @@ const LeadForm = () => {
     };
 
     return (
-        <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl bg-white rounded-lg border shadow-lg overflow-hidden">
+        <div className="flex items-center justify-center w-full px-2">
+            <div className={`w-full max-w-xl bg-white ${showBorder ? " border shadow-lg" : ""} rounded-lg`}>
                 {/* Step Indicators */}
                 <div className="flex justify-between items-center p-6 relative">
                     <StepIndicator step={1} label="Info" isActive={currentStep === 1} isCompleted={currentStep > 1} />
@@ -261,7 +285,7 @@ const LeadForm = () => {
                 </div>
 
                 {/* Form Content */}
-                <div className="relative overflow-hidden min-h-130">
+                <div className="relative overflow-hidden min-h-140 sm:min-h-130">
                     {/* Step 1 */}
                     <div className={`absolute w-full px-8 py-6 transition-all duration-500 ease-in-out ${currentStep === 1
                         ? 'translate-x-0 opacity-100'
@@ -378,9 +402,9 @@ const LeadForm = () => {
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="flex justify-between p-8 pt-4">
+                <div className="flex justify-between  p-6 pt-0 3xl:pt-4">
                     {currentStep > 1 ? (
-                        <Button variant="secondary" onClick={handleBack}>
+                        <Button variant="secondary" onClick={handleBack} >
                             <ArrowLeft strokeWidth={1.5} size={20} /> Back
                         </Button>
                     ) : (
@@ -388,7 +412,7 @@ const LeadForm = () => {
                     )}
 
                     {currentStep < 3 ? (
-                        <Button onClick={handleNext} className="ml-auto">
+                        <Button onClick={handleNext} className="ml-auto" showCircle={currentStep === 1 && showCircle}>
                             Continue <ArrowRight strokeWidth={1.5} size={20} />
                         </Button>
                     ) : (

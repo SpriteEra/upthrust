@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HomeFooter = () => {
+const HomeFooter = ({ customeCss = "mt-20 md:mt-50" }) => {
     return (
-        <div className='relative mb-3 md:mb-5 mt-20 md:mt-50'>
-            <div className="w-full overflow-hidden -mb-4 md:-mb-2 3xl:-mb-11 z-1">
+        <div className={`relative mb-3 md:mb-5 ${customeCss}`}>
+            <div className="w-full overflow-hidden -mb-4 md:-mb-2 3xl:-mb-2 z-1">
                 <marquee
                     behavior="scroll"
                     direction="left"

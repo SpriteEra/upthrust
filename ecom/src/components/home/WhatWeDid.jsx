@@ -134,7 +134,7 @@ const BusinessCard = ({
 
                         {/* Pricing */}
                         <div className="space-y-3 mb-6 pr-3 flex items-center">
-                            <Image src={'/ecom/curves/curve5.webp'} width={100} height={100} alt='Curve Img' className='size-16 object-contain pt-1' />
+                            <Image src={'/ecom/curves/curve5.webp'} width={100} height={100} alt='Curve Img' className='size-12 md:size-16 object-contain pt-1' />
                             <div className="flex flex-col  gap-4">
                                 <div className="flex gap-2">
                                     <span className={` ${borderColor} text-xs md:text-base lg:text-xl 3xl:text-3xl capitalize px-4 py-1 rounded-full h-fit font-hanzi -rotate-12`}>
