@@ -1,5 +1,6 @@
 "use client";
 
+import { X } from "lucide-react";
 import { Play } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -77,6 +78,18 @@ function Column({ direction = -1, data }) {
 /* ---------------- PAGE ---------------- */
 
 const UGCAdsPlaybook = () => {
+
+    const [isVideoOpen, setIsVideoOpen] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const openVideo = () => {
+        setIsVideoOpen(true);
+    };
+
+    const closeVideo = () => {
+        setIsVideoOpen(false);
+        setIsPlaying(false);
+    };
     return (
         <div className="px-2 xs:px-10 mb-20">
             <div className="bg-[#4E8679] text-white grid grid-cols-7 rounded-md xs:rounded-xl max-h-60 xs:max-h-80 md:max-h-120 lg:max-h-[110vh] overflow-hidden">
@@ -93,9 +106,9 @@ const UGCAdsPlaybook = () => {
                     </div>
 
                     <div className="flex items-center justify-center">
-                        <div className="bg-white/40 rounded-md xs:rounded-[10px] px-5 xs:px-12 py-2.5 xs:py-6">
+                        <button onClick={openVideo} title="Play Video" className="bg-white/40 rounded-md xs:rounded-[10px] px-5 xs:px-12 py-2.5 xs:py-6 cursor-pointer">
                             <Play className="size-6 xs:size-11 3xl:size-12" fill="#ffffff" />
-                        </div>
+                        </button>
                     </div>
 
                     <div className="font-medium text-[32px] md:text-[100px] xl:text-[120px] italic 3xl:text-[160px] font-instrument self-end w-full max-w-[82%] xs:max-w-[70%] leading-tight">
@@ -108,6 +121,37 @@ const UGCAdsPlaybook = () => {
                 <div className="col-span-1">
                     <Column direction={1} data={brands2} />
                 </div>
+
+                {isVideoOpen && (
+                    <div
+                        className="fixed inset-0 bg-black/30 z-[100] flex items-center justify-center p-4"
+                        onClick={closeVideo}
+                    >
+                        <div
+                            className="relative w-full max-w-6xl 3xl:max-w-[80%]  aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={closeVideo}
+                                className="absolute top-4 right-4 z-20 bg-black/90 text-white rounded-full px-4  py-2 transition hover:scale-110"
+                                aria-label="Close video"
+                            >
+                                <X className="w-6 h-6" />
+                            </button>
+
+                            {/* Video */}
+                            <video
+                                src="https://cdn.upthrust.agency/Ecom%20page%20assets/upthrustbrandvideomp4.mp4"
+                                className="w-full h-full object-cover"
+                                autoPlay
+                                controls
+                                controlsList="nodownload"
+                                playsInline
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );

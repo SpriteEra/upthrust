@@ -25,6 +25,7 @@ import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import { Curve1 } from '@/common/HandWritten';
 import Navbar from '@/components/Navbar';
+import LeadForm from '@/components/LeadForm';
 
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
 const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
@@ -117,8 +118,8 @@ const page = () => {
   return (
     <main id="main-content">
       <Navbar />
-      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh]'>
-        <div className='pt-30 sm:pt-35 md:pt-50 flex flex-col'>
+      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh] 3xl:max-h-[150vh]'>
+        <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-60 flex flex-col'>
 
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
@@ -293,7 +294,7 @@ const page = () => {
         <InteractiveCaseStudy />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+      <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
         <div className='flex flex-col items-center mb-10'>
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
           <div className='flex flex-col items-center justify-center'>
@@ -342,7 +343,7 @@ const page = () => {
         <OurApproach />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2'>
+      <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
         <div className='flex flex-col pt-22 3xl:pt-25'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-xs 3xl:text-sm uppercase'>our work</span>
@@ -368,7 +369,7 @@ const page = () => {
         <SuccessStories />
       </div>
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>CASE STUDIES</span>
             <div className='flex flex-col'>
@@ -392,7 +393,7 @@ const page = () => {
 
       {/* comparision table  */}
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='why-upthrust'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>UPTHRUST vs Other Agencies</span>
             <div className='flex flex-col'>
@@ -412,7 +413,7 @@ const page = () => {
 
       {/* pricing table  */}
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='pricing'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>PRICING</span>
             <div className='flex flex-col'>
@@ -437,7 +438,7 @@ const page = () => {
                       alt={logo.name}
                       width={200}
                       height={100}
-                      className="h- w-auto object-contain"
+                      className="3xl:h-7 w-auto object-contain"
                     />
                   </div>
                 ))}
@@ -453,9 +454,50 @@ const page = () => {
 
       <ScrollIndicator />
 
+      <div className='relative'>
+        <Curve1
+          lines={[
+            {
+              parts: [
+                { type: "text", text: "One Partner for" },
+              ]
+            },
+            {
+              parts: [
+                { type: "text", text: "your entire" },
+                { type: 'highlight', text: 'funnel', bgColor: '#FF4500' },
+              ]
+            },
+
+          ]}
+          imageClassName='-right-30 top-5 3xl:top-14 3xl:top-9 !h-16 3xl:!h-20 w-full'
+          curvePosition="end"
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={-7}
+          imageIndex={6}
+          className="absolute left-25 xl:left-20 3xl:-right-32 top-1/4 "
+
+        />
+        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 relative'>
+
+          <div className='flex flex-col items-center mb-10'>
+            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
+            <div className='flex flex-col'>
+              <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
+                  <span className='text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Scale</span> ?
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <LeadForm />
+      </div>
+
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='here-from-them'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>what they say</span>
             <div className='flex flex-col'>

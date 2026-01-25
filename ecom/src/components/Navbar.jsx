@@ -1,31 +1,47 @@
 'use client';
 
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import StylishButton from '@/common/RocketButton';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [activeId, setActiveId] = useState('');
     const navLinks = [
         { name: 'About', href: '#about' },
         { name: 'Services', href: '#services' },
         { name: 'Contact Library', href: '#contact-library' },
         { name: 'Case Studies', href: '#case-studies' },
-        { name: 'Why Limitless?', href: '#why-limitless' },
+        { name: 'Why Upthrust?', href: '#why-upthrust' },
         { name: 'Pricing', href: '#pricing' },
-        { name: 'Make From Plans', href: '#plans' },
+        { name: 'Here From Them', href: '#here-from-them' },
     ];
 
 
-    const handleTabClick = (id) => {
-        onChange(id);
+    useEffect(() => {
+        const sections = navLinks
+            .map(link => document.querySelector(link.href))
+            .filter(Boolean);
 
-        const section = document.getElementById(id);
-        section?.scrollIntoView({ behavior: "smooth" });
-    };
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveId(`#${entry.target.id}`);
+                    }
+                });
+            },
+            {
+                rootMargin: '-40% 0px -50% 0px', // 👈 important
+                threshold: 0,
+            }
+        );
+
+        sections.forEach(section => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
@@ -40,15 +56,21 @@ export default function Navbar() {
                     {/* Desktop Navigation */}
                     <div className="hidden xl:flex justify-between items-center rounded-full p-2 bg-[#08070A] text-white">
                         <div className=" flex items-center justify-center space-x-2">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="px-3 py-2 2xl:py-2 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-[16px]  bg-white/10 hover:bg-(--red) transition-colors duration-200"
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) => {
+                                const isActive = activeId === link.href;
+                                return (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        className={`px-3 py-2 2xl:py-2 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-[16px]   hover:bg-(--red) transition-colors duration-200 
+                                            
+                                            `}
+                                    // ${isActive ? 'bg-(--red) text-white' : 'bg-white/10'}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
+                            })}
                         </div>
                     </div>
 

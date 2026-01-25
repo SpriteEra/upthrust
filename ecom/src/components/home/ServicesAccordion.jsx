@@ -219,7 +219,7 @@ export default function ServicesAccordion() {
                                     curveFlipVertical={false}
                                     tiltAngle={7}
                                     imageIndex={2}
-                                    className="absolute right-10 -bottom-12 3xl:-bottom-14 3xl:-top-35 "
+                                    className="absolute right-10 -bottom-12 3xl:-bottom-14 3xl:-bottom-14 "
 
                                 />
                             </div>

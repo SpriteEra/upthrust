@@ -8,6 +8,7 @@ const images = [
   { img: '/ecom/curves/curve4.webp', alt: 'Curve 4' },
   { img: '/ecom/curves/curve5.webp', alt: 'Curve 5' },
   { img: '/ecom/curves/curve6.webp', alt: 'Curve 6' },
+  { img: '/ecom/curves/curve7.webp', alt: 'Curve 7' },
 ]
 export const Curve1 = ({
   lines = [],

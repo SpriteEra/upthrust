@@ -186,7 +186,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
             return (
                 <div
                     key={`${brand.id}-${startIndex + i}`}
-                    className="absolute top-0 flex items-center justify-center min-w-[220px] h-[450px] rounded-md overflow-hidden bg-black"
+                    className="absolute top-0 flex items-center justify-center min-w-[220px] 3xl:min-w-60 h-[450px] 3xl:h-130 rounded-md overflow-hidden bg-black"
                     style={{
                         left: `${position}px`,
                         width: `${itemWidth - 20}px`,
@@ -221,7 +221,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     return (
         <div
             ref={containerRef}
-            className="relative h-120 md:h-120 rounded-md 3xl:h-60 overflow-hidden select-none"
+            className="relative h-120 md:h-120 rounded-md 3xl:h-130 overflow-hidden select-none"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}

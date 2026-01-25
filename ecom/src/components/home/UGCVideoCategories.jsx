@@ -44,7 +44,7 @@ const UGCVideoCategories = () => {
           {items.map((item, index) => (
             <div
               key={index}
-              className={`relative w-[220px] h-[380px] bg-white p-2 pb-4 
+              className={`relative w-[220px] h-[380px] 3xl:w-65 3xl:h-110 bg-white p-2 pb-4 
               ${rotations[index % rotations.length]}
  transition-transform duration-300`}
               style={{

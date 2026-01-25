@@ -23,7 +23,7 @@ const SuccessStories = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top top',
-                    end: '+=2000',
+                    end: '+=1200',
                     scrub: 1,
                     pin: true,
                 }
@@ -57,68 +57,32 @@ const SuccessStories = () => {
             }, 0);
 
             // Card 1 - starts stacked with rotation, spreads to left
-            tl.fromTo(card1Ref.current, {
-                x: 0,
-                y: 0,
-                rotation: -8,
-                opacity: 1,
-                scale: 0.95
-            }, {
-                x: -450,
-                y: 200,
-                rotation: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.5,
-            }, 0);
+            tl.fromTo(card1Ref.current,
+                { x: 0, y: 0, rotation: -8, scale: 0.95 },
+                { x: "-30vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
+                0
+            );
 
             // Card 2 - starts stacked with rotation
-            tl.fromTo(card2Ref.current, {
-                x: 0,
-                y: 0,
-                rotation: -3,
-                opacity: 1,
-                scale: 0.97
-            }, {
-                x: -150,
-                y: 200,
-                rotation: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.5,
-            }, 0);
-
+            tl.fromTo(card2Ref.current,
+                { x: 0, y: 0, rotation: -3, scale: 0.97 },
+                { x: "-10vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
+                0
+            );
             // Card 3 - starts stacked with rotation
-            tl.fromTo(card3Ref.current, {
-                x: 0,
-                y: 0,
-                rotation: 3,
-                opacity: 1,
-                scale: 0.98
-            }, {
-                x: 150,
-                y: 200,
-                rotation: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.5,
-            }, 0);
+            tl.fromTo(card3Ref.current,
+                { x: 0, y: 0, rotation: 3, scale: 0.98 },
+                { x: "10vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
+                0
+            );
 
             // Card 4 - starts stacked with rotation, spreads to right
-            tl.fromTo(card4Ref.current, {
-                x: 0,
-                y: 0,
-                rotation: 8,
-                opacity: 1,
-                scale: 0.99
-            }, {
-                x: 450,
-                y: 200,
-                rotation: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.5,
-            }, 0);
+            // Card 4
+            tl.fromTo(card4Ref.current,
+                { x: 0, y: 0, rotation: 8, scale: 0.99 },
+                { x: "30vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
+                0
+            );
 
 
         }, containerRef);
@@ -160,8 +124,8 @@ const SuccessStories = () => {
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
     return (
-        <div className="min-h-[110vh] bg-black mt-40 overflow-hidden py-20">
-            <div ref={containerRef} className="h-225 w-full relative overflow-hidden">
+        <div className="min-h-[110vh] 3xl:min-h-[150vh] bg-black mt-40 overflow-hidden py-20">
+            <div ref={containerRef} className="h-225 3xl:h-250 w-full relative">
 
                 {/* Title - starts from sides, ends at top-left */}
                 <div className="absolute top-3 3xl:top-6 left-0 right-0 pointer-events-none max-w-[90%] mx-auto">
@@ -180,14 +144,23 @@ const SuccessStories = () => {
                 </div>
 
                 {/* Testimonial cards - start stacked in center with different angles */}
-                <div ref={cardsContainerRef} className="absolute top-90 xl:top-100 3xl:top-110 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[90%] mx-auto mt-20 space-x-5 max-md:hidden">
+                <div
+                    ref={cardsContainerRef}
+                    className="
+                        absolute top-60 xl:top-70 3xl:top-90
+                        left-1/2 -translate-x-1/2
+                        w-full 3xl:max-w-[90%]
+                        max-md:hidden
+                    "
+                >
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
                             ref={cardRefs[index]}
-                            className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2"
+                            className="absolute top-0 left-1/2 -translate-x-1/2"
+
                         >
-                            <div className={`${testimonial.color} p-5 rounded-md w-70 3xl:w-75 h-82 flex flex-col justify-between`}>
+                            <div className={`${testimonial.color} p-5 rounded-md w-70 3xl:w-85 h-82 3xl:h-110 flex flex-col justify-between`}>
                                 <p className="text-black text-base md:text-lg 3xl:text-2xl font-medium">
                                     <span className='-pt-3'>
                                         <svg className='size-8 3xl:size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">

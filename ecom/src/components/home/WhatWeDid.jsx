@@ -56,7 +56,7 @@ const businesses = [
         subtitle: "Beverage",
         pricing: {
             original: "25L/Month",
-            current: "₹6.3Lm in 6 Months"
+            current: "₹6.31m in 6 Months"
         },
         metrics: {
             badge: "9.4",
@@ -115,7 +115,7 @@ const BusinessCard = ({
     growthMetric
 }) => {
     return (
-        <div className={`${bgColor} rounded-xl md:rounded-2xl md:p-4 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl mx-auto lg:sticky top-36`}>
+        <div className={`${bgColor} rounded-xl md:rounded-2xl md:p-4 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90%] mx-auto lg:sticky top-36 3xl:top-80`}>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-lg:p-2">
                 {/* Left Section */}
                 <div className="w-full lg:w-[60%] flex flex-col">

@@ -51,10 +51,10 @@ export default function OurApproach() {
     }, [controls]);
 
     return (
-        <div className="relative flex items-center justify-center h-screen bg-black  overflow-hidden">
+        <div className="relative flex items-center justify-center h-screen 3xl:h-[75vh] bg-black  overflow-hidden">
             {/* Static gradient circle */}
             <div
-                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] border border-white/10"
+                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[30%] border border-white/10"
                 style={{ width: SIZE, height: SIZE }}
             />
 
@@ -66,7 +66,7 @@ export default function OurApproach() {
             {/* Rotating orbit */}
             <motion.div
                 style={{ width: SIZE + 50, height: SIZE + 50 }}
-                className="absolute transform translate-y-[30%]"
+                className="absolute transform translate-y-[30%] 3xl:translate-y-[30%]"
                 animate={controls}
             >
                 {steps.map((step, index) => {
