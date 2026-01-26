@@ -1,9 +1,9 @@
 import React from 'react'
 
-const HomeFooter = () => {
+const HomeFooter = ({ customeCss = "mt-20 md:mt-50" }) => {
     return (
-        <div className='relative mb-3 md:mb-7 mt-20 md:mt-50'>
-            <div className="w-full overflow-hidden -mb-4 md:-mb-5 3xl:-mb-11 z-1">
+        <div className={`relative mb-3 md:mb-5 ${customeCss}`}>
+            <div className="w-full overflow-hidden -mb-4 md:-mb-2 3xl:-mb-2 z-1">
                 <marquee
                     behavior="scroll"
                     direction="left"
@@ -21,7 +21,7 @@ const HomeFooter = () => {
                 </marquee>
             </div>
 
-            <div className='px-3 md:px-20 z-10 relative'>
+            <div className='px-3 px-5 lg:px-20 z-10 relative'>
                 <div className='bg-(--red) px-4 md:px-6 py-4 md:py-10 text-white text-xl md:text-3xl uppercase 3xl:text-4xl font-semibold'>
                     <div className="flex items-center gap-2 flex-wrap">
                         <button className="inline-flex items-center gap-1 sm:gap-2 border border-white rounded-full px-2 md:px-3 py-1 md:py-1.5 uppercase text-[8px] md:text-xs 3xl:text-xs">

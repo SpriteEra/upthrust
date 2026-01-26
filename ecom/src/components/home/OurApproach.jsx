@@ -1,7 +1,8 @@
 "use client";
 
+import { Curve1 } from "@/common/HandWritten";
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const SIZE = 1200;
 const RADIUS = SIZE / 2;
@@ -16,15 +17,14 @@ const steps = [
 
 export default function OurApproach() {
     const controls = useAnimationControls();
-
+    const [activeIndex, setActiveIndex] = useState(0);
     useEffect(() => {
         let angle = 0;
         let mounted = true;
-
+        let currentIndex = 0;
         const rotate = async () => {
             while (mounted) {
                 angle += STEP_ANGLE;
-
                 await controls.start({
                     rotate: angle,
                     transition: {
@@ -35,8 +35,14 @@ export default function OurApproach() {
                     },
                 });
 
+                // NOW the step is at top → show tooltip
+                setActiveIndex(currentIndex);
+
                 // pause at top
                 await new Promise((r) => setTimeout(r, 1500));
+
+                currentIndex = (currentIndex + 1) % steps.length;
+
             }
         };
 
@@ -45,12 +51,14 @@ export default function OurApproach() {
     }, [controls]);
 
     return (
-        <div className="relative flex items-center justify-center h-screen bg-black  overflow-hidden">
+        <div className="relative flex items-center justify-center h-screen 3xl:h-[75vh] bg-black  overflow-hidden">
             {/* Static gradient circle */}
             <div
-                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] border border-white/10"
+                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[30%] border border-white/10"
                 style={{ width: SIZE, height: SIZE }}
             />
+
+            {/* Inner circular glow */}
 
 
 
@@ -58,7 +66,7 @@ export default function OurApproach() {
             {/* Rotating orbit */}
             <motion.div
                 style={{ width: SIZE + 50, height: SIZE + 50 }}
-                className="absolute transform translate-y-[30%]"
+                className="absolute transform translate-y-[30%] 3xl:translate-y-[30%]"
                 animate={controls}
             >
                 {steps.map((step, index) => {
@@ -78,6 +86,33 @@ export default function OurApproach() {
                         >
                             {/* Step */}
                             <div className="flex flex-col items-center text-white select-none relative">
+                                {angle % 90 === index &&
+                                    <Curve1
+                                        lines={[
+                                            {
+                                                parts: [
+                                                    { type: 'highlight', text: step.tooltip1, bgColor: '#FF4500' },
+                                                ]
+                                            },
+                                            {
+                                                parts: [
+                                                    { type: "text", text: step.tooltip2 },
+                                                ]
+                                            },
+
+
+                                        ]}
+                                        imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1]" : "-right-0 top-20"}  3xl:top-12 !h-10 3xl:!h-20 w-full`}
+                                        curvePosition="end"
+                                        curveFlipHorizontal={true}
+                                        curveFlipVertical={false}
+                                        tiltAngle={2}
+                                        imageIndex={5}
+                                        textClassName="!text-white"
+                                        className={`${index % 2 === 0 ? "-left-75 -top-14" : "-right-75 -top-14"}  absolute  -bottom-12 3xl:-bottom-14 3xl:-top-35 `}
+
+                                    />
+                                }
                                 <div
                                     className="w-11 h-11 rounded-full bg-white text-black
                                     flex items-center justify-center font-bold shadow-xl relative"

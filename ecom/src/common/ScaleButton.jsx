@@ -1,5 +1,7 @@
+"use client"
+import LeadFormModal from '@/components/LeadModal';
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const colors = {
     green: "#22c55e",
@@ -12,10 +14,13 @@ const colors = {
 };
 
 
-const ScaleButton = ({ color = "red" }) => {
-    const iconColor = colors[color] || colors.red;
+const ScaleButton = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const handleClose = () => {
+        setIsOpen(false);
+    };
     return (
-        <button className=" rounded-md p-4 py-4 bg-white/10 border-[1.5px] border-white hover:border-white hover:bg-(--red) text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group gap-1 xs:w-fit">
+        <div className=" rounded-md p-4 py-4 bg-white/10 border-[1.5px] border-white hover:border-white hover:bg-(--red) text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group gap-1 xs:w-fit" onClick={() => !isOpen && setIsOpen(true)}>
             <span className="relative size-10 flex items-center justify-center">
                 <span
                     className="rounded absolute inset-0 bg-(--red) transition-transform duration-500 ease-in-out- group-hover:-rotate-180"
@@ -28,8 +33,10 @@ const ScaleButton = ({ color = "red" }) => {
                 <span className='text-lg md:text-sm 3xl:text-xl'>Scale My Store</span>
                 <span className='text-[10px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
             </div>
-
-        </button>
+            {isOpen && (
+                <LeadFormModal handleClose={() => setIsOpen(false)} />
+            )}
+        </div>
     )
 }
 

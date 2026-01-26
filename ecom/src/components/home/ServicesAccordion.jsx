@@ -1,6 +1,8 @@
 "use client";
+import { Curve1 } from "@/common/HandWritten";
 import StylishButton from "@/common/RocketButton";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 
@@ -24,11 +26,11 @@ const services = [
             {
                 before: "Performance creative testing",
                 bold: "(20–30 new ads/month)",
-                after: "optimized",
+                after: "",
             },
         ],
-        tag: "Perfect for",
-        tagText: "Ecommerce brands scaling past $30k+/month",
+        tagText1: "Ecommerce brands speding",
+        tagText2: "$30K+/month",
     },
 
     {
@@ -53,8 +55,8 @@ const services = [
                 after: "",
             },
         ],
-        tag: "Perfect for",
-        tagText: "Ecommerce brands tired of creative fatigue",
+        tagText1: "Ecommerce brands tried of",
+        tagText2: "creative fatique",
     },
 
     {
@@ -79,8 +81,8 @@ const services = [
                 after: "design for online stores",
             },
         ],
-        tag: "Perfect for",
-        tagText: "New ecommerce brands or rebranding",
+        tagText1: "New ecommerce brands",
+        tagText2: "or rebranding",
     },
 
     {
@@ -105,8 +107,8 @@ const services = [
                 after: "account management",
             },
         ],
-        tag: "Perfect for",
-        tagText: "Ecommerce brands expanding to marketplaces",
+        tagText1: "Ecommerce brands expanding",
+        tagText2: "to market place",
     },
 ];
 
@@ -115,9 +117,35 @@ const services = [
 export default function ServicesAccordion() {
     const [open, setOpen] = useState(null);
 
+
     return (
-        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 md:px-16 xs:mt-20">
-            {services.map((item) => {
+        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 md:px-16 xs:mt-20  relative">
+
+            <Curve1
+                lines={[
+                    {
+                        parts: [
+                            { type: "text", text: "Here's how your" },
+                        ]
+                    },
+                    {
+                        parts: [
+                            { type: 'highlight', text: 'ROAS', bgColor: '#FF4500' },
+                            { type: "text", text: "doubles up !!" },
+                        ]
+                    },
+
+                ]}
+                imageClassName='left-14 top-18 3xl:top-20 !h-16 3xl:!h-20 w-full -rotate-10'
+                curvePosition="end"
+                curveFlipHorizontal={true}
+                curveFlipVertical={false}
+                tiltAngle={7}
+                imageIndex={2}
+                className="absolute right-25 -top-34 3xl:-top-35 "
+
+            />
+            {services.map((item, index) => {
                 const isOpen = open === item.id;
 
                 return (
@@ -136,16 +164,16 @@ export default function ServicesAccordion() {
                         className={`rounded-xl p-3 xs:p-8 border cursor-pointer transition-colors duration-300 ease-in-out ${isOpen ? 'border-black/10 bg-white' : 'border-[#F9F9F9] bg-[#F9F9F9]'}`}           >
                         {/* HEADER */}
                         <div className="flex items-start  relative">
-                            <div className="min-w-full xs:w-1/2">
-                                <h2 className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
+                            <div className="max-xs:min-w-full xs:w-1/2">
+                                <p className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
                                     {item.title}
-                                </h2>
-                                <p className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
-                                    {item.subtitle}
                                 </p>
+                                <span className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
+                                    {item.subtitle}
+                                </span>
                             </div>
                             <div
-                                className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}
+                                className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"} relative`}
                             >
                                 <div className=" ">
                                     <ul className="flex flex-col">
@@ -163,6 +191,39 @@ export default function ServicesAccordion() {
                                     </ul>
                                 </div>
                             </div>
+                            <div
+                                className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}
+                            >
+                                <Curve1
+                                    lines={[
+                                        {
+                                            parts: [
+                                                { type: 'highlight', text: 'perfect for', bgColor: '#FF4500' },
+                                            ]
+                                        },
+                                        {
+                                            parts: [
+                                                { type: "text", text: item.tagText1 },
+                                            ]
+                                        },
+                                        {
+                                            parts: [
+                                                { type: "text", text: item.tagText2 },
+                                            ]
+                                        },
+
+                                    ]}
+                                    imageClassName='-left-30 top-10 3xl:top-12 !h-16 3xl:!h-20 w-full rotate-75 scale-x-[-1]'
+                                    curvePosition="end"
+                                    curveFlipHorizontal={true}
+                                    curveFlipVertical={false}
+                                    tiltAngle={7}
+                                    imageIndex={2}
+                                    className="absolute right-10 -bottom-12 3xl:-bottom-14 3xl:-bottom-14 "
+
+                                />
+                            </div>
+
                             {/* <div
                                 className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}`}
                             >
@@ -179,6 +240,14 @@ export default function ServicesAccordion() {
 
 
                             {/* PLUS */}
+                            {
+                                index === 0 &&
+                                <div className="absolute -right-3 -top-1 3xl:-top-2 max-lg:hidden">
+
+                                    <Image className="size-12 3xl:size-14 shrink-0 " src={'/ecom/curves/circle.webp'} alt="circle image" width={100} height={100} />
+
+                                </div>
+                            }
                             <div
                                 className={`text-3xl font-bold absolute right-0 top-0 transition-transform duration-300 ${isOpen ? "-rotate-45" : "rotate-0"}`}
                             >

@@ -20,13 +20,12 @@ export default function Disclaimer() {
 
       {/* CONTENT */}
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          open ? "max-h-[2000px] opacity-100 mt-4" : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${open ? "max-h-[2000px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="rounded-xl bg-white p-6 text-sm text-gray-700 leading-relaxed space-y-6">
           <section>
-            <h4 className="font-semibold">Client Relationships & Brand Logos</h4>
+            <h5 className="font-semibold">Client Relationships & Brand Logos</h5>
             <p>
               The logos, trademarks, and brand names displayed on this website
               represent a combination of:
@@ -46,7 +45,7 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h4 className="font-semibold">Important Clarifications</h4>
+            <h5 className="font-semibold">Important Clarifications</h5>
             <p>
               The inclusion of any brand logo or case study on this website is
               for illustrative and educational purposes only. Unless explicitly
@@ -56,7 +55,7 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h4 className="font-semibold">Intellectual Property Rights</h4>
+            <h5 className="font-semibold">Intellectual Property Rights</h5>
             <p>
               All trademarks, logos, and brand names remain the property of their
               respective owners. If you are a copyright or trademark holder and
@@ -66,7 +65,7 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h4 className="font-semibold">Platform Disclaimers</h4>
+            <h5 className="font-semibold">Platform Disclaimers</h5>
             <ul className="list-disc pl-5">
               <li>Facebook® is a trademark of Meta Platforms, Inc.</li>
               <li>YouTube® and Google® are trademarks of Google LLC</li>
@@ -76,7 +75,7 @@ export default function Disclaimer() {
           </section>
 
           <section>
-            <h4 className="font-semibold">Questions or Concerns?</h4>
+            <h5 className="font-semibold">Questions or Concerns?</h5>
             <p>
               Email: <strong>sales@upthrust.io</strong>
               <br />

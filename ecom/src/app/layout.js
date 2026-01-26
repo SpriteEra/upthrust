@@ -6,14 +6,31 @@ import Script from "next/script";
 
 const isProd = process.env.NODE_ENV === "production";
 
+export const metadata = {
+  title: "Upthrust – Scale D2C Brands to 45 Lakhs+ Per Month",
+  description:
+    "Upthrust is a D2C marketing agency helping brands scale to ₹45 Lakhs+ per month using high-converting ads, CRO-driven landing pages, and compounding growth systems.",
+
+  keywords: [
+    "D2C marketing agency",
+    "ecommerce growth agency",
+    "performance marketing",
+    "UGC ads agency",
+    "Shopify growth",
+    "Meta ads agency",
+  ]
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+      </head>
+
+      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
         {isProd && (
           <Script
-            id="gtm-head"
-            strategy="afterInteractive"
+            id="gtm"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 (function(w,d,s,l,i){w[l]=w[l]||[];
@@ -28,9 +45,6 @@ export default function RootLayout({ children }) {
             }}
           />
         )}
-      </head>
-
-      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
         {isProd && (
           <noscript>
             <iframe
@@ -42,7 +56,6 @@ export default function RootLayout({ children }) {
           </noscript>
         )}
 
-        <Navbar />
         {children}
       </body>
     </html>

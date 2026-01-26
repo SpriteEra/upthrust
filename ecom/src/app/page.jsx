@@ -1,31 +1,44 @@
 import StylishButton from '@/common/RocketButton';
 import ScaleButton from '@/common/ScaleButton'
 import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
-import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
+// import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
-import FAQ from '@/components/home/Faq';
+// import FAQ from '@/components/home/Faq';
 import { FullPricingSection } from '@/components/home/FullPricingSection';
 import dynamic from "next/dynamic";
 
 import HomeFooter from '@/components/home/HomeFooter';
-import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
-import OurApproach from '@/components/home/OurApproach';
+// import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
+// import OurApproach from '@/components/home/OurApproach';
 import ScrollIndicator from '@/components/home/ScrollIndicator';
-import ServicesAccordion from '@/components/home/ServicesAccordion';
-import SuccessStories from '@/components/home/SuccessStories';
-import UGCAdsPlaybook from '@/components/home/UGCAdsPlaybook';
-import UGCVideoCategories from '@/components/home/UGCVideoCategories';
+// import ServicesAccordion from '@/components/home/ServicesAccordion';
+// import SuccessStories from '@/components/home/SuccessStories';
+// import UGCAdsPlaybook from '@/components/home/UGCAdsPlaybook';
+// import UGCVideoCategories from '@/components/home/UGCVideoCategories';
 import WhatWeDid from '@/components/home/WhatWeDid';
-import WhatWeDo from '@/components/home/WhatWeDo';
-import WhoWorkWithUs from '@/components/home/WhoWorkWithUs';
+// import WhatWeDo from '@/components/home/WhatWeDo';
 import Image from 'next/image';
 import React from 'react'
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
-import SliderVideos from '@/components/home/SliderVideos';
+// import SliderVideos from '@/components/home/SliderVideos';
 import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
-import { ScrollText } from '@/common/HandWritten';
-import { Curve1 } from '@/common/AllCurve';
+import { Curve1 } from '@/common/HandWritten';
+import Navbar from '@/components/Navbar';
+import LeadForm from '@/components/LeadForm';
+
+const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
+const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
+const ServicesAccordion = dynamic(() => import('@/components/home/ServicesAccordion'));
+const UGCAdsPlaybook = dynamic(() => import('@/components/home/UGCAdsPlaybook'));
+const OurApproach = dynamic(() => import('@/components/home/OurApproach'));
+const UGCVideoCategories = dynamic(() => import('@/components/home/UGCVideoCategories'));
+const SuccessStories = dynamic(() => import('@/components/home/SuccessStories'));
+const ClientVideoTestimonial = dynamic(() => import('@/components/home/ClientVideoTestimonial'));
+const FAQ = dynamic(() => import('@/components/home/Faq'));
+const SliderVideos = dynamic(
+  () => import('@/components/home/SliderVideos')
+);
 
 const BrandSlider = dynamic(
   () => import('@/components/home/BrandSlider'),
@@ -103,14 +116,15 @@ const testimonials = [
 
 const page = () => {
   return (
-    <div className="min-h-screen">
-      <div className='grid md:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full md:max-h-[135vh]'>
-        <div className='pt-30 sm:pt-35 md:pt-50 flex flex-col'>
+    <main id="main-content">
+      <Navbar />
+      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh] 3xl:max-h-[150vh]'>
+        <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-60 flex flex-col'>
 
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
               profiles.map((profile, index) => (
-                <Image width={56} height={56} key={index} preload={true} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
+                <Image width={56} height={56} key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
 
               ))
             }
@@ -144,31 +158,31 @@ const page = () => {
           <div className='mt-10 sm:mt-5 flex flex-col'>
             <p className='text-base 3xl:text-lg max-md:text-center'>Brands we've scaled</p>
 
-            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-3 3xl:gap-x-8 items-center py-5 md:py-10 max-w-lg">
+            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-8 items-center py-5 md:py-5 max-w-xl">
               {brands.map((brand) => (
                 <div
                   key={brand.name}
-                  className="flex items-center justify-center h-10 md:h-12 3xl:h-15"
+                  className="flex items-center justify-center h-7 xs:h-8 w-12 xs:w-13 3xl:w-15"
                 >
                   <Image
                     src={brand.src}
                     alt={brand.name}
                     width={160}
                     height={60}
-                    className="max-h-full w-auto object-contain"
+                    className="max-h-full max-w-full object-contain select-none"
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          <div className='md:hidden overflow-hidden max-w-full'>
+          <div className='lg:hidden overflow-hidden max-w-full'>
             <HeroHorizontalSlider />
           </div>
         </div>
 
         {/* right  */}
-        <div className='max-md:hidden'>
+        <div className='max-lg:hidden'>
           <HeroVerticleSlider />
         </div>
       </div>
@@ -185,22 +199,29 @@ const page = () => {
           <div className='flex flex-col'>
             <div className='mt-5 flex flex-wrap gap-1 sm:gap-3 items-center justify-center relative'>
 
-            <Curve1
-       parts={[
-            { type: 'text', text: 'From scroll to sold in ' },
-            { type: 'highlight', text: '5 seconds', bgColor: '#FF4500' },
-            // { type: 'text', text: 'engine' }
-          ]}
-          curvePosition="end" 
-          curveFlipHorizontal={true}
-          curveFlipVertical={false}
-          tiltAngle={-10}
-          className="absolute -bottom-20 -left-65 max-w-[200px]"
-      
-       />
+              <Curve1
+                lines={[
+                  {
+                    parts: [
+                      { type: "text", text: "From scroll to sold." }
+                    ]
+                  },
+                  {
+                    parts: [
+                      { type: 'text', text: 'in' },
+                      { type: 'highlight', text: '5 seconds', bgColor: '#FF4500' },
+                    ]
+                  },
+                ]}
+                imageClassName='right-0 top-14 3xl:top-16'
+                curvePosition="end"
+                curveFlipHorizontal={true}
+                curveFlipVertical={false}
+                tiltAngle={-10}
+                className="absolute -bottom-40 xl:-bottom-50 -left-50 xl:-left-70 max-w-[200px]"
 
-
-              <h3 className='text-4xl md:text-4xl lg:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
+              />
+              <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
               <div className='inline-block'>
 
                 <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
@@ -219,41 +240,50 @@ const page = () => {
                   }
                 </div>
               </div>
-              <h6 className='xs:hidden text-center'>
-                <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
-                <span className='text-4xl md:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
-              </h6>
+              <p className='xs:hidden text-center'>
+                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
+                <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
+              </p>
             </div>
-            <h6 className='max-xs:hidden'>
+            <p className='max-xs:hidden'>
               <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
-              <span className='text-4xl md:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
-            </h6>
+              <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
+            </p>
 
           </div>
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
         </div>
         <StylishButton color='red' />
-
         <SliderVideos />
-
       </div>
 
       <WhatWeDo />
 
-<div className='h-20 flex items-center justify-center'>
-                <h1 className="font-hanzi text-4xl">
-  ABC abc 123
-</h1>
-
-</div>
-
-      <div className='flex flex-col mt-25 xs:mt-70 mb-0 xs:mb-10 px-2'>
+      <div className='flex flex-col mt-25 xs:mt-70 mb-0 xs:mb-10 px-2 overflow-hidden'>
         <div className='flex flex-col items-center mb-10'>
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>problems we've solved</span>
           <div className='flex flex-col items-center justify-center'>
-            <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h4 className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center capitalize'>Last Month
-                <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic font-normal'> D2C brands </span>
+            <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center relative '>
+              <Curve1
+                lines={[
+                  {
+                    parts: [
+                      { type: "text", text: "The" },
+                      { type: 'highlight', text: 'proof', bgColor: '#FF4500' },
+                    ]
+                  },
+
+                ]}
+                imageClassName='left-3 top-8 3xl:top-9 scale-x-[-1]'
+                curvePosition="end"
+                curveFlipHorizontal={true}
+                curveFlipVertical={false}
+                tiltAngle={5}
+                className="absolute -right-28 3xl:-right-32 -top-4 max-w-[200px] "
+
+              />
+              <h4 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center capitalize'>Last Month
+                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> D2C brands </span>
                 Brand Scaled
               </h4>
             </div>
@@ -264,13 +294,13 @@ const page = () => {
         <InteractiveCaseStudy />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+      <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
         <div className='flex flex-col items-center mb-10'>
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
           <div className='flex flex-col items-center justify-center'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h4 className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>How To Scale</h4>
-              <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>D2C brands</span>
+              <h4 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>How To Scale</h4>
+              <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>D2C brands</span>
             </div>
           </div>
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>Scale to ₹2.5Cr+/month </span>
@@ -285,8 +315,8 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h4 className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>Scale with UGC ads:</h4>
-                <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'> The Playbook</span>
+                <h5 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h5>
+                <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'> The Playbook</span>
               </div>
             </div>
           </div>
@@ -301,9 +331,9 @@ const page = () => {
           <div className='flex flex-col items-center mb-10'>
             <span className='text-xs 3xl:text-sm uppercase'>our process</span>
             <div className='flex flex-col'>
-              <div className='mt-5 flex gap-3 items-center'>
-                <h4 className='text-6xl 3xl:text-7xl font-semibold capitalize'>How we approach your:
-                  <span className=' capitalize text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h4>
+              <div className='mt-5 flex gap-3 items-center justify-center'>
+                <h5 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize'>How we approach your:
+                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h5>
               </div>
             </div>
             <span className='text-sm 3xl:text-lg mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore </span>
@@ -312,23 +342,23 @@ const page = () => {
         <OurApproach />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2'>
+      <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
         <div className='flex flex-col pt-22 3xl:pt-25'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-xs 3xl:text-sm uppercase'>our work</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
-                <h4 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
-                </h4>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
+                </h5>
               </div>
-              <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
+              <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
             </div>
             <span className='text-[15px] sm:text-sm 3xl:text-lg mt-5'>Average CTA: 8.2% </span>
           </div>
         </div>
         <UGCVideoCategories />
       </div>
-      
+
 
 
       <MobileTestimonialsSlider testimonials={testimonials} />
@@ -338,16 +368,16 @@ const page = () => {
         <SuccessStories />
       </div>
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>CASE STUDIES</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center flex-col'>
-                <h5 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   The
-                  <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic font-normal'>{" "}dashboards. </span>
+                  <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'>{" "}dashboards. </span>
                 </h5>
-                <h5 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   The numbers. What we did.
                 </h5>
               </div>
@@ -362,14 +392,14 @@ const page = () => {
 
       {/* comparision table  */}
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='why-upthrust'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>UPTHRUST vs Other Agencies</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   What you get
-                  <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>{" "}Here</span>
+                  <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-normal font-instrument italic'>{" "}Here</span>
                 </h5>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>Why Should You Hire Us?</span>
@@ -382,14 +412,14 @@ const page = () => {
 
       {/* pricing table  */}
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='pricing'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>PRICING</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   What It
-                  <span className='capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>{" "}Costs</span>
+                  <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-normal font-instrument italic'>{" "}Costs</span>
                 </h5>
               </div>
               <span className='text-lg md:text-sm 3xl:text-lg mt-5 xs:mt-8 mb-8 text-center capitalize '>Brands we've scaled</span>
@@ -407,7 +437,7 @@ const page = () => {
                       alt={logo.name}
                       width={200}
                       height={100}
-                      className="h- w-auto object-contain"
+                      className="3xl:h-7 w-auto object-contain"
                     />
                   </div>
                 ))}
@@ -423,16 +453,81 @@ const page = () => {
 
       <ScrollIndicator />
 
+      <div className='relative  h-full pb-40'>
+        <Curve1
+          lines={[
+            {
+              parts: [
+                { type: "text", text: "One Partner for" },
+              ]
+            },
+            {
+              parts: [
+                { type: "text", text: "your entire" },
+                { type: 'highlight', text: 'funnel', bgColor: '#FF4500' },
+              ]
+            },
+
+          ]}
+          imageClassName='-right-35 3xl:-right-40 top-8 3xl:top-10 w-full'
+          curvePosition="end"
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={-7}
+          imageIndex={6}
+          className="absolute left-25 lg:left-15 2xl:left-30 3xl:left-40 top-1/4 "
+
+        />
+        <Curve1
+          lines={[
+            {
+              parts: [
+                { type: "text", text: "Your complete" },
+              ]
+            },
+            {
+              parts: [
+                { type: 'highlight', text: 'growth', bgColor: '#FF4500' },
+                { type: "text", text: "entire" },
+              ]
+            },
+
+          ]}
+          imageClassName='right-17 -top-12 3xl:-top-12 w-full -rotate-6 !h-12 3xl:!h-12'
+          curvePosition="end"
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={7}
+          imageIndex={3}
+          className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
+
+        />
+        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 relative'>
+
+          <div className='flex flex-col items-center mb-10'>
+            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
+            <div className='flex flex-col'>
+              <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
+                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
+                  <span className='text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Scale</span> ?
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <LeadForm showCircle={true} />
+      </div>
+
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='here-from-them'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>what they say</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
                 <h5 className='capitalize '>
-                  <span className='text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>2-4X {" "}</span>
-                  <span className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>In 6-12 Months</span>
+                  <span className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>2-4X {" "}</span>
+                  <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>In 6-12 Months</span>
                 </h5>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>In their words</span>
@@ -448,10 +543,10 @@ const page = () => {
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Got questions? FAQ's</span>
           <div className='flex flex-col'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h5 className='capitalize text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>
+              <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                 <span className=''>Everything You Need To Know</span>
                 <p className='text-center mt-2 md:mt-4'>Before
-                  <span className='text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>Working With Us</span>
+                  <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-normal font-instrument italic'>Working With Us</span>
                 </p>
               </h5>
             </div>
@@ -463,10 +558,7 @@ const page = () => {
 
       <AskQuestionAndDisclaimer />
       <HomeFooter />
-
-      {/* <Hand/> */}
-      
-    </div>
+    </main>
   )
 }
 

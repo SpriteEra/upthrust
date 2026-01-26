@@ -186,7 +186,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
             return (
                 <div
                     key={`${brand.id}-${startIndex + i}`}
-                    className="absolute top-0 flex items-center justify-center min-w-[220px] h-[450px] rounded-md overflow-hidden bg-black"
+                    className="absolute top-0 flex items-center justify-center min-w-[220px] 3xl:min-w-60 h-[450px] 3xl:h-130 rounded-md overflow-hidden bg-black"
                     style={{
                         left: `${position}px`,
                         width: `${itemWidth - 20}px`,
@@ -221,7 +221,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     return (
         <div
             ref={containerRef}
-            className="relative h-120 md:h-120 rounded-md 3xl:h-60 overflow-hidden select-none"
+            className="relative h-120 md:h-120 rounded-md 3xl:h-130 overflow-hidden select-none"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -236,13 +236,16 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
 export default function SliderVideos() {
 
     const reels = [
-        { id: 1, image: "/ecom/banner/banner1.webp", video: "/reels/1.mp4" },
-        { id: 2, image: "/ecom/banner/banner2.webp", video: "/reels/1.mp4" },
-        { id: 3, image: "/ecom/banner/banner3.webp", video: "/reels/1.mp4" },
-        { id: 4, image: "/ecom/banner/banner4.webp", video: "/reels/1.mp4" },
-        { id: 5, image: "/ecom/banner/banner5.webp", video: "/reels/1.mp4" },
-        { id: 6, image: "/ecom/banner/banner6.webp", video: "/reels/1.mp4" },
-        { id: 7, image: "/ecom/banner/banner7.webp", video: "/reels/1.mp4" },
+        { id: 1, image: "/ecom/banner/banner1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
+        { id: 2, image: "/ecom/banner/banner2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
+        { id: 3, image: "/ecom/banner/banner3.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/aviascasserolesenglishmp4.mp4" },
+        { id: 4, image: "/ecom/banner/banner4.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/GEMMACOOKWAREmp4.mp4" },
+        { id: 5, image: "/ecom/banner/banner5.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/NEONATTACKmp4.mp4" },
+        { id: 6, image: "/ecom/banner/banner6.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/peppy.mp4" },
+        { id: 7, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/Phonecover.mp4" },
+        { id: 8, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/PowerBankmp4.mp4" },
+        { id: 9, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4" },
+        { id: 10, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
     ];
 
     return (
