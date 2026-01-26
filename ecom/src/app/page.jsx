@@ -20,13 +20,12 @@ import WhatWeDo from '@/components/home/WhatWeDo';
 import WhoWorkWithUs from '@/components/home/WhoWorkWithUs';
 import Image from 'next/image';
 import React from 'react'
-import SliderVideos from '@/components/home/SliderVideos';
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
-import Hand, { ScrollText } from '@/common/HandWritten';
-const HeroVerticleSlider = dynamic(
-  () => import('@/components/home/HeroVerticleSlider'),
-  { loading: () => null }
-);
+import SliderVideos from '@/components/home/SliderVideos';
+import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
+import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
+import { ScrollText } from '@/common/HandWritten';
+import { Curve1 } from '@/common/AllCurve';
 
 const BrandSlider = dynamic(
   () => import('@/components/home/BrandSlider'),
@@ -40,8 +39,6 @@ const brands2 = [
   { name: "brand4", src: "/ecom/brand/first/f6.webp" },
   { name: "brand5", src: "/ecom/brand/second/s2.webp" },
   { name: "brand6", src: "/ecom/brand/second/s7.webp" },
-
-
 ];
 const brands = [
   { name: "brand1", src: "/ecom/brand/brandwhite/brand1.webp" },
@@ -71,6 +68,37 @@ const profiles = [
   { alt: "profile4", url: '/ecom/profile/profile4.webp' },
   { alt: "profile5", url: '/ecom/profile/profile5.webp' },
 ]
+
+const testimonials = [
+  {
+    text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
+    name: "Troy",
+    company: "MC Overalls",
+    image: "/ecom/profile/profile6.png",
+    color: "bg-[#FFF0F0]"
+  },
+  {
+    text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
+    name: "Rishab",
+    company: "Carobis",
+    image: "/ecom/profile/profile7.png",
+    color: "bg-[#FFEBDA]"
+  },
+  {
+    text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+    name: "Gunjan",
+    company: "Housr",
+    image: "/ecom/profile/profile8.png",
+    color: "bg-[#E1EFD7]"
+  },
+  {
+    text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
+    name: "Dan",
+    company: "Dan Studio",
+    image: "/ecom/profile/profile9.png",
+    color: "bg-[#E3DFF1]"
+  }
+];
 
 
 const page = () => {
@@ -120,7 +148,7 @@ const page = () => {
               {brands.map((brand) => (
                 <div
                   key={brand.name}
-                  className="flex items-center justify-center h-10"
+                  className="flex items-center justify-center h-10 md:h-12 3xl:h-15"
                 >
                   <Image
                     src={brand.src}
@@ -157,40 +185,44 @@ const page = () => {
           <div className='flex flex-col'>
             <div className='mt-5 flex flex-wrap gap-1 sm:gap-3 items-center justify-center relative'>
 
-            <div className='absolute max-width-[200px] left-0 top-[-40px]'>
-               <ScrollText 
-          parts={[
-            { type: 'text', text: 'From scroll to sold in  ' },
+            <Curve1
+       parts={[
+            { type: 'text', text: 'From scroll to sold in ' },
             { type: 'highlight', text: '5 seconds', bgColor: '#FF4500' },
             // { type: 'text', text: 'engine' }
           ]}
-          curvePosition="start" 
+          curvePosition="end" 
           curveFlipHorizontal={true}
           curveFlipVertical={false}
-          tiltAngle={10}
-        />
-            </div>
+          tiltAngle={-10}
+          className="absolute -bottom-20 -left-65 max-w-[200px]"
+      
+       />
 
-              <h3 className='text-4xl md:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
-              <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
-                {
-                  socials.map((social, index) => (
-                    <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-14 rounded-full border-buffer overflow-hidden shrink-0">
-                      <Image
-                        src={social.url}
-                        alt={social.alt}
-                        fill
-                        sizes="(min-width: 1920px) 56px, 44px"
-                        className="object-cover"
-                      />
-                    </div>
-                  ))
-                }
-                <h6 className='xs:hidden'>
-                  <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic pl-5'>brands </span>
-                  <span className='text-4xl md:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
-                </h6>
+
+              <h3 className='text-4xl md:text-4xl lg:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
+              <div className='inline-block'>
+
+                <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
+                  {
+                    socials.map((social, index) => (
+                      <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-14 rounded-full border-buffer overflow-hidden shrink-0">
+                        <Image
+                          src={social.url}
+                          alt={social.alt}
+                          fill
+                          sizes="(min-width: 1920px) 56px, 44px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
+              <h6 className='xs:hidden text-center'>
+                <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
+                <span className='text-4xl md:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
+              </h6>
             </div>
             <h6 className='max-xs:hidden'>
               <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
@@ -208,6 +240,12 @@ const page = () => {
 
       <WhatWeDo />
 
+<div className='h-20 flex items-center justify-center'>
+                <h1 className="font-hanzi text-4xl">
+  ABC abc 123
+</h1>
+
+</div>
 
       <div className='flex flex-col mt-25 xs:mt-70 mb-0 xs:mb-10 px-2'>
         <div className='flex flex-col items-center mb-10'>
@@ -290,7 +328,15 @@ const page = () => {
         </div>
         <UGCVideoCategories />
       </div>
+      
 
+
+      <MobileTestimonialsSlider testimonials={testimonials} />
+
+      {/* Desktop GSAP */}
+      <div className="max-lg:hidden">
+        <SuccessStories />
+      </div>
       <div>
         <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2'>
           <div className='flex flex-col items-center mb-10'>
@@ -418,8 +464,8 @@ const page = () => {
       <AskQuestionAndDisclaimer />
       <HomeFooter />
 
-      <Hand/>
-
+      {/* <Hand/> */}
+      
     </div>
   )
 }

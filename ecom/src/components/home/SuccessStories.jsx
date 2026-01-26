@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,8 +15,6 @@ const SuccessStories = () => {
     const card2Ref = useRef(null);
     const card3Ref = useRef(null);
     const card4Ref = useRef(null);
-    const paginationRef = useRef(null);
-    const restartRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -33,11 +32,11 @@ const SuccessStories = () => {
             // ALL ANIMATIONS WORK TOGETHER
             // Title slides in from left
             tl.fromTo(secretBehindRef.current, {
-                x: -400,
-                y: 100,
+                x: -900,
+                y: 200,
                 opacity: 0
             }, {
-                x: 300,
+                x: 10,
                 y: 100,
                 opacity: 1,
                 duration: 1.5,
@@ -50,8 +49,8 @@ const SuccessStories = () => {
                 y: 200,
                 opacity: 0
             }, {
-                x: 50,
-                y: 200,
+                x: 0,
+                y: 250,
                 opacity: 1,
                 duration: 1.5,
                 ease: 'power3.out'
@@ -71,7 +70,6 @@ const SuccessStories = () => {
                 opacity: 1,
                 scale: 1,
                 duration: 1.5,
-                ease: 'back.out(1.2)'
             }, 0);
 
             // Card 2 - starts stacked with rotation
@@ -88,7 +86,6 @@ const SuccessStories = () => {
                 opacity: 1,
                 scale: 1,
                 duration: 1.5,
-                ease: 'back.out(1.2)'
             }, 0);
 
             // Card 3 - starts stacked with rotation
@@ -105,7 +102,6 @@ const SuccessStories = () => {
                 opacity: 1,
                 scale: 1,
                 duration: 1.5,
-                ease: 'back.out(1.2)'
             }, 0);
 
             // Card 4 - starts stacked with rotation, spreads to right
@@ -122,101 +118,91 @@ const SuccessStories = () => {
                 opacity: 1,
                 scale: 1,
                 duration: 1.5,
-                ease: 'back.out(1.2)'
             }, 0);
 
-            // Show pagination and restart button
-            tl.fromTo([paginationRef.current, restartRef.current], {
-                opacity: 0,
-                y: 20
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: 'power2.out'
-            }, 1.8);
 
         }, containerRef);
 
         return () => ctx.revert();
     }, []);
 
-    const handleRestart = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
     const testimonials = [
         {
             text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
             name: "Troy",
             company: "MC Overalls",
-            image: "👨",
-            color: "bg-red-100"
+            image: "/ecom/profile/profile6.png",
+            color: "bg-[#FFF0F0]"
         },
         {
-            text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x.",
+            text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
             name: "Rishab",
             company: "Carobis",
-            image: "👨‍💼",
-            color: "bg-orange-100"
+            image: "/ecom/profile/profile7.png",
+            color: "bg-[#FFEBDA]"
         },
         {
-            text: "Most leads would disqualify we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversion improved significantly.",
+            text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
             name: "Gunjan",
             company: "Housr",
-            image: "👩",
-            color: "bg-green-100"
+            image: "/ecom/profile/profile8.png",
+            color: "bg-[#E1EFD7]"
         },
         {
-            text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi-channel campaigns. They don't track vanity metrics, they know what growth truly means.",
+            text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
             name: "Dan",
             company: "Dan Studio",
-            image: "👩‍💼",
-            color: "bg-purple-100"
+            image: "/ecom/profile/profile9.png",
+            color: "bg-[#E3DFF1]"
         }
     ];
 
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
     return (
-        <div className="min-h-[400vh] bg-black mt-20">
-            <div ref={containerRef} className="h-screen w-full relative overflow-hidden">
+        <div className="min-h-[110vh] bg-black mt-40 overflow-hidden py-20">
+            <div ref={containerRef} className="h-225 w-full relative overflow-hidden">
 
                 {/* Title - starts from sides, ends at top-left */}
-                <div className="absolute top-0 left-0 right-0 pointer-events-none">
-                    <div ref={secretBehindRef} className="absolute opacity-0">
-                        <h1 className="text-8xl font-bold text-white leading-tight whitespace-nowrap">
-                            The <span className="italic font-serif">Secret</span> Behind
-                        </h1>
+                <div className="absolute top-3 3xl:top-6 left-0 right-0 pointer-events-none max-w-[90%] mx-auto">
+                    <div ref={secretBehindRef} className="absolute opacity-0 left-0">
+                        <p className="text-5xl md:text-7xl lg:text-8xl xl:text-[110px] 3xl:text-[160px] font-medium text-white leading-tight whitespace-nowrap">
+                            The <span className="italic font-instrument 3xl:text-[180px]">Secret</span> Behind
+                        </p>
                     </div>
-                    <div ref={theirSuccessRef} className="absolute opacity-0">
-                        <h1 className="text-8xl font-bold text-white leading-tight whitespace-nowrap">
-                            Their <span className="italic font-serif">Success</span>
-                        </h1>
+                    <div ref={theirSuccessRef} className="absolute opacity-0 right-0">
+
+                        <p className="text-5xl md:text-7xl lg:text-8xl xl:text-[110px] 3xl:text-[160px] font-medium text-white leading-tight whitespace-nowrap">
+                            Their <span className="italic font-instrument 3xl:text-[180px]">Success</span>
+                        </p>
+
                     </div>
                 </div>
 
                 {/* Testimonial cards - start stacked in center with different angles */}
-                <div ref={cardsContainerRef} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div ref={cardsContainerRef} className="absolute top-90 xl:top-100 3xl:top-110 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[90%] mx-auto mt-20 space-x-5 max-md:hidden">
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
                             ref={cardRefs[index]}
                             className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2"
                         >
-                            <div className={`${testimonial.color} p-5 rounded-lg shadow-xl w-64 h-72 flex flex-col justify-between`}>
-                                <div>
-                                    <p className="text-black text-sm leading-relaxed">
-                                        <span className="text-2xl">&quot;</span> {testimonial.text}
-                                    </p>
-                                </div>
+                            <div className={`${testimonial.color} p-5 rounded-md w-70 3xl:w-75 h-82 flex flex-col justify-between`}>
+                                <p className="text-black text-base md:text-lg 3xl:text-2xl font-medium">
+                                    <span className='-pt-3'>
+                                        <svg className='size-8 3xl:size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.48702e-10 18.0701C3.96784e-10 8.44813 6.83439 2.72495 11.0981 0.0876696C11.6382 -0.246749 12.2214 0.449277 11.8056 0.935951C10.1274 2.89523 8.80072 5.13361 7.88479 7.55091C10.0746 6.92231 12.4052 7.00244 14.5473 7.77999C16.6894 8.55753 18.5347 9.99317 19.8224 11.884C21.1101 13.7749 21.7752 16.0254 21.7236 18.3175C21.672 20.6097 20.9064 22.8275 19.5349 24.6577C18.1634 26.4879 16.2554 27.8379 14.0805 28.5169C11.9056 29.196 9.57382 29.1697 7.41456 28.4418C5.2553 27.714 3.37778 26.3214 2.0473 24.4607C0.716823 22.6001 0.000656758 20.3629 8.48702e-10 18.0701ZM24.1809 18.0701C24.1809 8.44813 31.0153 2.72495 35.2791 0.0903884C35.8191 -0.24403 36.4024 0.449277 35.9892 0.933232C34.3089 2.89292 32.9803 5.13226 32.063 7.55091C34.2528 6.92231 36.5834 7.00244 38.7255 7.77999C40.8676 8.55753 42.7129 9.99317 44.0007 11.884C45.2884 13.7749 45.9534 16.0254 45.9018 18.3175C45.8502 20.6097 45.0846 22.8275 43.7131 24.6577C42.3416 26.4879 40.4337 27.8379 38.2588 28.5169C36.0839 29.196 33.7521 29.1697 31.5928 28.4418C29.4335 27.714 27.556 26.3214 26.2255 24.4607C24.8951 22.6001 24.1789 20.3656 24.1782 18.0729L24.1809 18.0701Z" fill="#010202" />
+                                        </svg>
+                                    </span>
+                                    {testimonial.text}
+                                </p>
                                 <div className="flex items-center gap-3 mt-3">
-                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-xl">
-                                        {testimonial.image}
+                                    <div className="w-11 h-11 3xl:w-13 3xl:h-13 bg-white flex items-center justify-center text-xl rounded-md">
+                                        <Image width={30} height={30} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain' />
                                     </div>
                                     <div>
-                                        <p className="font-semibold text-black text-sm">{testimonial.name}</p>
-                                        <p className="text-gray-700 text-xs">{testimonial.company}</p>
+                                        <p className="text-lg 3xl:text-[22px] text-[#010202]">{testimonial.name}</p>
+                                        <p className="text-base -mt-2 3xl:text-lg text-[#33535] font-light">{testimonial.company}</p>
                                     </div>
                                 </div>
                             </div>
@@ -224,24 +210,7 @@ const SuccessStories = () => {
                     ))}
                 </div>
 
-                {/* Pagination indicator */}
-                <div
-                    ref={paginationRef}
-                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-4 bg-gray-800 px-4 py-2 rounded-full opacity-0"
-                >
-                    <button className="text-gray-400 hover:text-white transition-colors">←</button>
-                    <span className="text-sm text-white">2 / 3</span>
-                    <button className="text-gray-400 hover:text-white transition-colors">→</button>
-                </div>
 
-                {/* Restart button */}
-                {/* <button
-                    ref={restartRef}
-                    className="absolute bottom-8 right-8 flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-full text-sm text-white transition-colors opacity-0"
-                    onClick={handleRestart}
-                >
-                    <span className="text-xl">↻</span> Restart
-                </button> */}
             </div>
         </div>
     );

@@ -30,7 +30,8 @@ export const ScrollText = ({
   tiltAngle = -5,
   fontSize = "18px",
   highlightPadding = "8px 20px",
-  highlightBorderRadius = "25px"
+  highlightBorderRadius = "25px",
+  className = ''
 }) => {
   const renderParts = () => {
     return parts.map((part, index) => {
@@ -70,7 +71,7 @@ export const ScrollText = ({
 
   return (
     <div 
-      className="inline-flex items-center gap-3"
+      className={`inline-flex items-center gap-3 font-hanzi ${className}`}
       style={{ 
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'

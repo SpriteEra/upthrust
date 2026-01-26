@@ -1,133 +1,255 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
 
-const reels = [
-    { id: 1, image: "/ecom/banner/banner1.webp", video: "/reels/1.mp4" },
-    { id: 2, image: "/ecom/banner/banner2.webp", video: "/reels/1.mp4" },
-    { id: 3, image: "/ecom/banner/banner3.webp", video: "/reels/1.mp4" },
-    { id: 4, image: "/ecom/banner/banner4.webp", video: "/reels/1.mp4" },
-    { id: 5, image: "/ecom/banner/banner5.webp", video: "/reels/1.mp4" },
-    { id: 6, image: "/ecom/banner/banner6.webp", video: "/reels/1.mp4" },
-    { id: 7, image: "/ecom/banner/banner7.webp", video: "/reels/1.mp4" },
-];
+import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
 
-export default function SliderVideos() {
+function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
+    const [offset, setOffset] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [velocity, setVelocity] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+    const [hoveredId, setHoveredId] = useState(null);
+
+    const dragStartX = useRef(0);
+    const dragStartOffset = useRef(0);
+    const lastPositions = useRef([]);
+    const animationRef = useRef(null);
     const containerRef = useRef(null);
-    const isPaused = useRef(false);
-    const [activeVideo, setActiveVideo] = useState(null);
 
-    const isDragging = useRef(false);
-    const startX = useRef(0);
-    const scrollLeft = useRef(0);
+    const totalWidth = itemWidth * brands.length;
+    const autoPlaySpeed = direction === "left" ? -1 : 1;
 
-    /* AUTO SCROLL WITH SEAMLESS INFINITE LOOP */
     useEffect(() => {
-        const el = containerRef.current;
-        if (!el) return;
+        if (!containerRef.current) return;
 
-        // Calculate the width of one complete set
-        const itemWidth = 220 + 16; // min-w-[220px] + gap-4
-        const singleSetWidth = itemWidth * reels.length;
-
-        // Set initial scroll position to middle set
-        el.scrollLeft = singleSetWidth;
-
-        let raf;
-        const scroll = () => {
-            if (!isPaused.current && !isDragging.current) {
-                el.scrollLeft += 0.5;
-
-                // When we reach the end of the second set, jump back to the middle set
-                if (el.scrollLeft >= singleSetWidth * 2) {
-                    el.scrollLeft = singleSetWidth;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+                if (!entry.isIntersecting && animationRef.current) {
+                    cancelAnimationFrame(animationRef.current);
                 }
+            },
+            { threshold: 0 }
+        );
 
-                // When we scroll back past the first set, jump to the middle set
-                if (el.scrollLeft <= 0) {
-                    el.scrollLeft = singleSetWidth;
-                }
-            }
-            raf = requestAnimationFrame(scroll);
-        };
-
-        raf = requestAnimationFrame(scroll);
-        return () => cancelAnimationFrame(raf);
+        observer.observe(containerRef.current);
+        return () => observer.disconnect();
     }, []);
 
-    /* DRAG HANDLERS WITH INFINITE SCROLLING */
-    const onMouseDown = (e) => {
-        isDragging.current = true;
-        startX.current = e.pageX;
-        scrollLeft.current = containerRef.current.scrollLeft;
+    useEffect(() => {
+        if (!isVisible || isDragging || Math.abs(velocity) > 0.1 || hoveredId) return;
+
+
+        const animate = () => {
+            setOffset((prev) => {
+                const newOffset = prev + autoPlaySpeed;
+                return ((newOffset % totalWidth) + totalWidth) % totalWidth;
+            });
+            animationRef.current = requestAnimationFrame(animate);
+        };
+
+        animationRef.current = requestAnimationFrame(animate);
+        return () => {
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        };
+    }, [isDragging, velocity, totalWidth, isVisible, autoPlaySpeed]);
+
+    useEffect(() => {
+        if (isDragging || Math.abs(velocity) < 0.1) {
+            if (!isDragging) setVelocity(0);
+            return;
+        }
+
+        const decelerate = () => {
+            setVelocity((prev) => {
+                const newVelocity = prev * 0.92;
+                return Math.abs(newVelocity) < 0.1 ? 0 : newVelocity;
+            });
+
+            setOffset((prev) => {
+                const newOffset = prev + velocity;
+                return ((newOffset % totalWidth) + totalWidth) % totalWidth;
+            });
+
+            animationRef.current = requestAnimationFrame(decelerate);
+        };
+
+        animationRef.current = requestAnimationFrame(decelerate);
+        return () => {
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        };
+    }, [velocity, isDragging, totalWidth]);
+
+    const calculateVelocity = () => {
+        if (lastPositions.current.length < 2) return 0;
+
+        const recentPositions = lastPositions.current.slice(-5);
+        const velocities = [];
+
+        for (let i = 1; i < recentPositions.length; i++) {
+            const timeDiff = recentPositions[i].time - recentPositions[i - 1].time;
+            const posDiff = recentPositions[i].x - recentPositions[i - 1].x;
+            if (timeDiff > 0) {
+                velocities.push((posDiff / timeDiff) * 16);
+            }
+        }
+
+        if (velocities.length === 0) return 0;
+        return velocities.reduce((a, b) => a + b, 0) / velocities.length;
     };
 
-    const onMouseMove = (e) => {
-        if (!isDragging.current) return;
-        const el = containerRef.current;
-        el.scrollLeft = scrollLeft.current - (e.pageX - startX.current);
+    const handleStart = (clientX) => {
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+        }
 
-        const itemWidth = 220 + 16;
-        const singleSetWidth = itemWidth * reels.length;
+        setIsDragging(true);
+        setVelocity(0);
+        dragStartX.current = clientX;
+        dragStartOffset.current = offset;
+        lastPositions.current = [{ x: clientX, time: Date.now() }];
+    };
 
-        // Reset position during drag for infinite effect
-        if (el.scrollLeft >= singleSetWidth * 2) {
-            el.scrollLeft = singleSetWidth;
-            scrollLeft.current = singleSetWidth;
-            startX.current = e.pageX;
-        } else if (el.scrollLeft <= 0) {
-            el.scrollLeft = singleSetWidth;
-            scrollLeft.current = singleSetWidth;
-            startX.current = e.pageX;
+    const handleMove = (clientX) => {
+        if (!isDragging) return;
+
+        const dragDistance = clientX - dragStartX.current;
+        const newOffset = dragStartOffset.current + dragDistance;
+
+        setOffset(((newOffset % totalWidth) + totalWidth) % totalWidth);
+
+        const now = Date.now();
+        lastPositions.current.push({ x: clientX, time: now });
+
+        if (lastPositions.current.length > 5) {
+            lastPositions.current.shift();
         }
     };
 
-    const onMouseUp = () => {
-        isDragging.current = false;
+    const handleEnd = () => {
+        setIsDragging(false);
+        const calculatedVelocity = calculateVelocity();
+        setVelocity(calculatedVelocity);
+        lastPositions.current = [];
     };
 
-    // Create three sets for truly seamless infinite scrolling
-    const triplicatedReels = [...reels, ...reels, ...reels];
+    const handleMouseDown = (e) => {
+        e.preventDefault();
+        handleStart(e.clientX);
+    };
 
-    return (
-        <div
-            ref={containerRef}
-            className="flex gap-4 md:gap-6 overflow-x-auto hide-scrollbar py-10 cursor-grab max-w-full mt-10"
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseUp}
-        >
-            {triplicatedReels.map((item, index) => (
+    const handleMouseMove = (e) => {
+        e.preventDefault();
+        handleMove(e.clientX);
+    };
+
+    const handleMouseUp = () => {
+        handleEnd();
+    };
+
+    const handleTouchStart = (e) => {
+        handleStart(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        handleMove(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        handleEnd();
+    };
+
+    useEffect(() => {
+        if (isDragging) {
+            const mouseMoveHandler = (e) => handleMouseMove(e);
+            const mouseUpHandler = () => handleMouseUp();
+
+            document.addEventListener("mousemove", mouseMoveHandler);
+            document.addEventListener("mouseup", mouseUpHandler);
+
+            return () => {
+                document.removeEventListener("mousemove", mouseMoveHandler);
+                document.removeEventListener("mouseup", mouseUpHandler);
+            };
+        }
+    }, [isDragging, offset]);
+
+    const renderItems = () => {
+        const startIndex = Math.floor(-offset / itemWidth) - 2;
+        const visibleCount = Math.ceil((typeof window !== "undefined" ? window.innerWidth : 1920) / itemWidth) + 5;
+
+        return Array.from({ length: visibleCount }, (_, i) => {
+            const index = (((startIndex + i) % brands.length) + brands.length) % brands.length;
+            const brand = brands[index];
+            const position = (startIndex + i) * itemWidth + offset;
+
+            return (
                 <div
-                    key={`${item.id}-${index}`}
-                    className="relative min-w-[220px] h-[400px] 3xl:min-w-[250px] 3xl:h-[400px] rounded-md overflow-hidden bg-black"
-                    onMouseEnter={() => {
-                        isPaused.current = true;
-                        setActiveVideo(`${item.id}-${index}`);
+                    key={`${brand.id}-${startIndex + i}`}
+                    className="absolute top-0 flex items-center justify-center min-w-[220px] h-[450px] rounded-md overflow-hidden bg-black"
+                    style={{
+                        left: `${position}px`,
+                        width: `${itemWidth - 20}px`,
                     }}
-                    onMouseLeave={() => {
-                        isPaused.current = false;
-                        setActiveVideo(null);
-                    }}
+                    onMouseEnter={() => setHoveredId(brand.id)}
+                    onMouseLeave={() => setHoveredId(null)}
                 >
-                    {activeVideo === `${item.id}-${index}` ? (
+                    {hoveredId === brand.id ? (
                         <video
-                            src={item.video}
+                            src={brand.video}
                             autoPlay
                             muted
                             loop
                             playsInline
-                            className="w-full h-full object-cover pointer-events-none"
+                            className="w-full h-full object-cover pointer-events-none bg-black"
                         />
                     ) : (
-                        <img
-                            src={item.image}
+                        <Image
+                            src={brand.image}
+                            width={250}
+                            height={400}
                             alt=""
-                            className="w-full h-full object-cover pointer-events-none"
+                            className="w-full h-full object-cover pointer-events-none bg-black"
                         />
                     )}
                 </div>
-            ))}
+
+            );
+        });
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            className="relative h-120 md:h-120 rounded-md 3xl:h-60 overflow-hidden select-none"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{ touchAction: "pan-y" }}
+        >
+            {renderItems()}
+        </div>
+    );
+}
+
+export default function SliderVideos() {
+
+    const reels = [
+        { id: 1, image: "/ecom/banner/banner1.webp", video: "/reels/1.mp4" },
+        { id: 2, image: "/ecom/banner/banner2.webp", video: "/reels/1.mp4" },
+        { id: 3, image: "/ecom/banner/banner3.webp", video: "/reels/1.mp4" },
+        { id: 4, image: "/ecom/banner/banner4.webp", video: "/reels/1.mp4" },
+        { id: 5, image: "/ecom/banner/banner5.webp", video: "/reels/1.mp4" },
+        { id: 6, image: "/ecom/banner/banner6.webp", video: "/reels/1.mp4" },
+        { id: 7, image: "/ecom/banner/banner7.webp", video: "/reels/1.mp4" },
+    ];
+
+    return (
+        <div className="py-14 xs:py-20 space-y-10 overflow-hidden w-full">
+            <div className="flex-1 flex flex-col justify-center gap-0">
+                <MarqueeRow brands={reels} direction="left" />
+            </div>
         </div>
     );
 }
