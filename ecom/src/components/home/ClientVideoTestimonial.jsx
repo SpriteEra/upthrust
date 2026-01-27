@@ -67,6 +67,7 @@ const ClientVideoTestimonial = () => {
                                     controls
                                     playsInline
                                     controlsList="nodownload"
+                                    aria-hidden="true"
                                     disablePictureInPicture
                                     className="absolute inset-0 w-full h-full object-contain bg-black z-30"
                                 />

@@ -171,6 +171,7 @@ const UGCVideoCategories = () => {
               className="w-full h-full object-contain transition-opacity duration-300 opacity-0"
               autoPlay
               controls
+              aria-hidden="true"
               playsInline
               onLoadedMetadata={(e) => {
                 e.currentTarget.classList.remove("opacity-0");

@@ -77,7 +77,6 @@ export default function WhatWeDo() {
                                         fill
                                         className="object-contain"
                                         sizes="(max-width: 1024px) 100vw, 700px"
-                                        quality={65}
                                         loading="lazy"
                                     />
                                 </div>
@@ -118,7 +117,6 @@ export default function WhatWeDo() {
                                         fill
                                         className="object-contain"
                                         sizes="(max-width: 768px) 100vw, 700px"
-                                        quality={60}
                                         loading="lazy"
                                     />
                                 </div>
@@ -156,6 +154,7 @@ export default function WhatWeDo() {
                                 controls
                                 controlsList="nodownload"
                                 playsInline
+                                aria-hidden="true"
                             />
                         </div>
                     </div>

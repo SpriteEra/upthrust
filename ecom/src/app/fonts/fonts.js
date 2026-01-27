@@ -19,5 +19,6 @@ export const hanzipen = localFont({
   src: "./fonts/hanzipen-en.woff2",
   variable: "--font-hanzipen",
   display: "swap",
+  preload: false,
 });
 

@@ -147,6 +147,7 @@ const UGCAdsPlaybook = () => {
                                 className="w-full h-full object-cover"
                                 autoPlay
                                 controls
+                                aria-hidden="true"
                                 controlsList="nodownload"
                                 playsInline
                             />

@@ -255,6 +255,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                             playsInline
                             muted={soundOnId !== brand.id}
                             preload="metadata"
+                            aria-hidden="true"
                             onLoadedData={() => loadedVideosRef.current.add(brand.id)}
                             className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200
       ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}

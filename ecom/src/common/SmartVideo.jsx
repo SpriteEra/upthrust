@@ -50,6 +50,7 @@ export default function SmartVideo({ imageUrl, alt, videoUrl }) {
                         controls
                         controlsList="nodownload"
                         playsInline
+                        aria-hidden="true"
                         className="w-full h-full object-cover"
                         onLoadedData={() => setVideoLoaded(true)}
                     />

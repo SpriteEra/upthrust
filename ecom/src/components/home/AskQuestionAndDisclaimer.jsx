@@ -32,7 +32,7 @@ export const Disclaimer = () => {
             >
                 <div className="rounded-xl bg-white text-xs 3xl:text-sm leading-relaxed space-y-4">
                     <section>
-                        <h5 className="font-semibold">Client Relationships & Brand Logos</h5>
+                        <h4 className="font-semibold">Client Relationships & Brand Logos</h4>
                         <p>
                             The logos, trademarks, and brand names displayed on this website
                             represent a combination of:
@@ -50,7 +50,7 @@ export const Disclaimer = () => {
                     </section>
 
                     <section>
-                        <h5 className="font-semibold">Important Clarifications</h5>
+                        <h4 className="font-semibold">Important Clarifications</h4>
                         <p>
                             The inclusion of any brand logo or case study on this website is
                             for illustrative and educational purposes only. Unless explicitly
@@ -60,7 +60,7 @@ export const Disclaimer = () => {
                     </section>
 
                     <section>
-                        <h5 className="font-semibold">Intellectual Property Rights</h5>
+                        <h4 className="font-semibold">Intellectual Property Rights</h4>
                         <p>
                             All trademarks, logos, and brand names remain the property of their
                             respective owners. If you are a copyright or trademark holder and
@@ -70,7 +70,7 @@ export const Disclaimer = () => {
                     </section>
 
                     <section>
-                        <h5 className="font-semibold">Platform Disclaimers</h5>
+                        <h4 className="font-semibold">Platform Disclaimers</h4>
                         <ul className="list-disc pl-5">
                             <li>Facebook® is a trademark of Meta Platforms, Inc.</li>
                             <li>YouTube® and Google® are trademarks of Google LLC</li>
@@ -80,7 +80,7 @@ export const Disclaimer = () => {
                     </section>
 
                     <section>
-                        <h5 className="font-semibold">Questions or Concerns?</h5>
+                        <h4 className="font-semibold">Questions or Concerns?</h4>
                         <p>
                             Email: <strong>sales@upthrust.io</strong>
                             <br />

@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { hanzipen, instrumentSerif, inter } from "./fonts/fonts";
 import "./globals.css";
 import "./app.css";
@@ -7,19 +6,53 @@ import Script from "next/script";
 const isProd = process.env.NODE_ENV === "production";
 
 export const metadata = {
-  title: "Upthrust – Scale D2C Brands to 45 Lakhs+ Per Month",
-  description:
-    "Upthrust is a D2C marketing agency helping brands scale to ₹45 Lakhs+ per month using high-converting ads, CRO-driven landing pages, and compounding growth systems.",
+  title: "D2C Ecommerce Marketing Agency | Scale Profitable Brands – Upthrust",
+
+  description: "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
 
   keywords: [
-    "D2C marketing agency",
-    "ecommerce growth agency",
-    "performance marketing",
-    "UGC ads agency",
-    "Shopify growth",
-    "Meta ads agency",
-  ]
+    "ecommerce marketing agency",
+  ],
+
+  // authors: [{ name: "Upthrust" }],
+  // creator: "Upthrust",
+  // publisher: "Upthrust",
+
+  metadataBase: new URL("https://www.upthrust.agency"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Scale Your D2C Brand Profitably with Upthrust",
+    description: "From Meta & Google Ads to CRO and retention, we help D2C brands scale revenue without killing ROAS.",
+    url: "https://www.upthrust.agency",
+    siteName: "Upthrust",
+    images: [
+      {
+        url: "/ecom/ecom-opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Upthrust – D2C Ecommerce Marketing Agency",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Scale Your D2C Brand Profitably with Upthrust",
+    description: "From Meta & Google Ads to CRO and retention, we help D2C brands scale revenue without killing ROAS.",
+    images: ["/ecom/ecom-opengraph-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

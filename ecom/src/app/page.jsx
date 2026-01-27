@@ -1,22 +1,22 @@
 import StylishButton from '@/common/RocketButton';
 import ScaleButton from '@/common/ScaleButton'
-import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
-import { ComparisonTable } from '@/components/home/ComparisonTable';
-import { FullPricingSection } from '@/components/home/FullPricingSection';
 import dynamic from "next/dynamic";
 
-import HomeFooter from '@/components/home/HomeFooter';
-import ScrollIndicator from '@/components/home/ScrollIndicator';
-import WhatWeDid from '@/components/home/WhatWeDid';
 import Image from 'next/image';
 import React from 'react'
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
 import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
-import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import { Curve1 } from '@/common/HandWritten';
 import Navbar from '@/components/Navbar';
-import LeadForm from '@/components/LeadForm';
 
+import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
+import { ComparisonTable } from '@/components/home/ComparisonTable';
+import { FullPricingSection } from '@/components/home/FullPricingSection';
+import HomeFooter from '@/components/home/HomeFooter';
+import ScrollIndicator from '@/components/home/ScrollIndicator';
+import WhatWeDid from '@/components/home/WhatWeDid';
+const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
+const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
 const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
 const ServicesAccordion = dynamic(() => import('@/components/home/ServicesAccordion'));
@@ -211,7 +211,7 @@ const page = () => {
                 className="absolute -bottom-40 xl:-bottom-50 -left-50 xl:-left-70 max-w-[200px]"
 
               />
-              <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h3>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h2>
               <div className='inline-block'>
 
                 <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
@@ -272,10 +272,10 @@ const page = () => {
                 className="absolute -right-28 3xl:-right-32 -top-4 max-w-[200px] "
 
               />
-              <h4 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center capitalize'>Last Month
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center capitalize'>Last Month
                 <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> D2C brands </span>
                 Brand Scaled
-              </h4>
+              </h2>
             </div>
           </div>
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-12 text-center'>One founder called us. 'We just hit ₹3 crore.' That's what happens with the right ads</span>
@@ -289,7 +289,7 @@ const page = () => {
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
           <div className='flex flex-col items-center justify-center'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h4 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>How To Scale</h4>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>How To Scale</h2>
               <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>D2C brands</span>
             </div>
           </div>
@@ -305,7 +305,7 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h5>
+                <h2 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h2>
                 <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'> The Playbook</span>
               </div>
             </div>
@@ -322,8 +322,8 @@ const page = () => {
             <span className='text-xs 3xl:text-sm uppercase'>our process</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center justify-center'>
-                <h5 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize text-center'>How we approach your:
-                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h5>
+                <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize text-center'>How we approach your:
+                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h3>
               </div>
             </div>
             <span className='text-sm 3xl:text-lg mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore </span>
@@ -338,8 +338,8 @@ const page = () => {
             <span className='text-xs 3xl:text-sm uppercase'>our work</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
-                </h5>
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
+                </h3>
               </div>
               <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
             </div>
@@ -363,13 +363,13 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>CASE STUDIES</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center flex-col'>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   The
                   <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'>{" "}dashboards. </span>
-                </h5>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                </h3>
+                <h4 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   The numbers. What we did.
-                </h5>
+                </h4>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-5 mb-10 text-center'>We Don't Just Talk—We Show</span>
             </div>
@@ -387,10 +387,10 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>UPTHRUST vs Other Agencies</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   What you get
                   <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-normal font-instrument italic'>{" "}Here</span>
-                </h5>
+                </h3>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>Why Should You Hire Us?</span>
             </div>
@@ -407,10 +407,10 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>PRICING</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                   What It
                   <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-normal font-instrument italic'>{" "}Costs</span>
-                </h5>
+                </h3>
               </div>
               <span className='text-lg md:text-sm 3xl:text-lg mt-5 xs:mt-8 mb-8 text-center capitalize '>Brands we've scaled</span>
             </div>
@@ -524,9 +524,9 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
                   <span className='text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Scale</span> ?
-                </h5>
+                </h3>
               </div>
             </div>
           </div>
@@ -541,10 +541,10 @@ const page = () => {
             <span className='text-sm md:text-xs 3xl:text-sm uppercase'>what they say</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h5 className='capitalize '>
-                  <span className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>2-4X {" "}</span>
-                  <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>In 6-12 Months</span>
-                </h5>
+                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                  <span className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'>2-4X {" "}</span>
+                  In 6-12 Months
+                </h3>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>In their words</span>
             </div>
@@ -559,12 +559,12 @@ const page = () => {
           <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Got questions? FAQ's</span>
           <div className='flex flex-col'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h5 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+              <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
                 <span className=''>Everything You Need To Know</span>
                 <p className='text-center mt-2 md:mt-4'>Before
                   <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-normal font-instrument italic'>Working With Us</span>
                 </p>
-              </h5>
+              </h3>
             </div>
           </div>
         </div>
