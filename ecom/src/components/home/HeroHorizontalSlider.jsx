@@ -1,9 +1,6 @@
 "use client"
-
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import gsap from "gsap"
-
 
 const brands = [
     { name: "Brand 1", src: "/ecom/banner/banner1.webp" },
@@ -22,72 +19,68 @@ const brands3 = [
     { name: "Brand 8", src: "/ecom/banner/banner8.webp" },
     { name: "Brand 9", src: "/ecom/banner/banner9.webp" },
 ]
-function useHorizontalSlider(direction = -1) {
-    const trackRef = useRef(null)
+
+/* ---------------- AUTO HORIZONTAL ROW ---------------- */
+
+function Row({ direction = -1, data }) {
+    const [offset, setOffset] = useState(0);
+    const rafRef = useRef(null);
+
+    const ITEM_WIDTH = 120;
+    const GAP = 16;
+    const TOTAL_WIDTH = data.length * (ITEM_WIDTH + GAP);
+    const SPEED = 1 * direction;
 
     useEffect(() => {
-        const el = trackRef.current
-        if (!el) return
+        const animate = () => {
+            setOffset((prev) => {
+                let next = prev + SPEED;
 
-        let width = 0
-        const speed = 0.5 * direction
+                if (next <= -TOTAL_WIDTH) next += TOTAL_WIDTH;
+                if (next >= 0) next -= TOTAL_WIDTH;
 
-        const measure = () => {
-            width = el.scrollWidth / 2
-        }
+                return next;
+            });
 
-        requestAnimationFrame(measure)
+            rafRef.current = requestAnimationFrame(animate);
+        };
 
-        const tick = () => {
-            if (!width) return
-
-            let x = gsap.getProperty(el, "x")
-            x += speed
-
-            if (x <= -width) x += width
-            if (x >= 0) x -= width
-
-            gsap.set(el, { x })
-        }
-
-        gsap.ticker.add(tick)
-        window.addEventListener("resize", measure)
-
-        return () => {
-            gsap.ticker.remove(tick)
-            window.removeEventListener("resize", measure)
-        }
-    }, [direction])
-
-    return trackRef
-}
-
-
-
-function Row({ direction, data }) {
-    const ref = useHorizontalSlider(direction)
+        rafRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(rafRef.current);
+    }, [SPEED, TOTAL_WIDTH]);
 
     return (
-        <div className="overflow-hidden w-full">
-            <div ref={ref} className="flex gap-2 w-max">
-                {[...data, ...data].map((b, i) => (
+        <div className="overflow-hidden w-full select-none pointer-events-none">
+            <div
+                className="flex gap-4"
+                style={{
+                    transform: `translateX(${offset}px)`,
+                    willChange: "transform",
+                }}
+            >
+                {[...data, ...data, ...data, ...data].map((b, i) => (
                     <div
                         key={i}
-                        className=" w-[120px] h-[160px] rounded overflow-hidden"
+                        className="w-[120px] h-[160px] rounded overflow-hidden flex-shrink-0"
                     >
                         <Image
                             src={b.src}
                             alt={b.name}
                             width={180}
                             height={140}
+                            priority={i === 0}
+                            loading={i === 0 ? "eager" : "lazy"}
                             className="w-full h-full object-cover"
+                            draggable={false}
                         />
                     </div>
                 ))}
             </div>
         </div>
-    )
+    );
 }
+
+/* ---------------- PAGE ---------------- */
 
 
 export default function HeroHorizontalSlider() {

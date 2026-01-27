@@ -26,16 +26,35 @@ const brands3 = [
 /* ---------------- AUTO VERTICAL COLUMN ---------------- */
 
 function Column({ direction = -1, data }) {
-  const [offset, setOffset] = useState(0);
+  const itemRef = useRef(null);
   const rafRef = useRef(null);
 
-  const ITEM_HEIGHT = 320;
-  const totalHeight = data.length * ITEM_HEIGHT;
-  const speed = 0.8 * direction;
+  const [offset, setOffset] = useState(0);
+  const [itemHeight, setItemHeight] = useState(0);
+
+  const GAP = 12; // space between items
+  const speed = 1 * direction;
+
+  // 📏 Measure item height dynamically
+  useEffect(() => {
+    if (!itemRef.current) return;
+
+    const measure = () => {
+      setItemHeight(itemRef.current.getBoundingClientRect().height);
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  const totalHeight = data.length * (itemHeight + GAP);
 
   useEffect(() => {
+    if (!itemHeight) return;
+
     const animate = () => {
-      setOffset((prev) => {
+      setOffset(prev => {
         let next = prev + speed;
 
         if (next <= -totalHeight) next += totalHeight;
@@ -49,7 +68,7 @@ function Column({ direction = -1, data }) {
 
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [speed, totalHeight]);
+  }, [itemHeight, totalHeight, speed]);
 
   return (
     <div className="overflow-hidden h-full select-none pointer-events-none">
@@ -57,34 +76,30 @@ function Column({ direction = -1, data }) {
         {[...data, ...data].map((b, i) => (
           <div
             key={i}
-            className="absolute left-0 w-full h-[310px] xl:h-[320px] 3xl:h-[330px] rounded-md xl:rounded-lg"
+            ref={i === 0 ? itemRef : null}
+            className="absolute left-0 w-full rounded-md xl:rounded-lg"
             style={{
-              top: i * ITEM_HEIGHT + offset,
+              top: i * (itemHeight + GAP) + offset,
             }}
           >
-            <div className="relative w-full h-full">
-              <Image
-                src={b.src}
-                alt={b.name}
-                width={300}
-                height={320}
-                sizes="300px"
-                quality={60}
-                priority={i === 0}
-                loading={i === 0 ? "eager" : "lazy"}
-                className="object-cover rounded xs:rounded-lg py-1 3xl:py-1.5"
-                draggable={false}
-              />
-
-
-            </div>
-
+            <Image
+              src={b.src}
+              alt={b.name}
+              width={300}
+              height={400}
+              sizes="300px"
+              priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
+              className="w-full h-auto aspect-[3/4] object-cover rounded"
+              draggable={false}
+            />
           </div>
         ))}
       </div>
     </div>
   );
 }
+
 
 /* ---------------- PAGE ---------------- */
 

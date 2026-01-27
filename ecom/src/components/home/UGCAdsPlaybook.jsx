@@ -24,49 +24,70 @@ const brands2 = [
 ];
 
 /* ---------------- AUTO COLUMN ---------------- */
-
 function Column({ direction = -1, data }) {
-    const [offset, setOffset] = useState(0);
+    const containerRef = useRef(null);
+    const itemRef = useRef(null);
     const rafRef = useRef(null);
 
-    const ITEM_HEIGHT = 320;
-    const speed = 0.8 * direction;
-    const totalHeight = data.length * ITEM_HEIGHT;
+    const [offset, setOffset] = useState(0);
+    const [itemHeight, setItemHeight] = useState(0);
+
+    const speed = 1 * direction;
+
+    // 📏 Measure height dynamically
+    useEffect(() => {
+        if (!itemRef.current) return;
+
+        const measure = () => {
+            setItemHeight(itemRef.current.getBoundingClientRect().height);
+        };
+
+        measure();
+        window.addEventListener("resize", measure);
+        return () => window.removeEventListener("resize", measure);
+    }, []);
+    const GAP = 12; // 12px gap between images
+
+    const totalHeight = data.length * (itemHeight + GAP);
+
 
     useEffect(() => {
-        const animate = () => {
-            setOffset((prev) => {
-                let next = prev + speed;
+        if (!itemHeight) return;
 
+        const animate = () => {
+            setOffset(prev => {
+                let next = prev + speed;
                 if (next <= -totalHeight) next += totalHeight;
                 if (next >= 0) next -= totalHeight;
-
                 return next;
             });
-
             rafRef.current = requestAnimationFrame(animate);
         };
 
         rafRef.current = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(rafRef.current);
-    }, [speed, totalHeight]);
+    }, [itemHeight, totalHeight, speed]);
 
     return (
-        <div className="overflow-hidden h-full select-none pointer-events-none">
+        <div ref={containerRef} className="h-full overflow-hidden">
             <div className="relative h-full">
                 {[...data, ...data].map((b, i) => (
                     <div
                         key={i}
-                        className="absolute left-0 w-full h-25 md:h-[320px] rounded-md md:rounded-lg"
-                        style={{ top: i * ITEM_HEIGHT + offset }}
+                        ref={i === 0 ? itemRef : null}
+                        className="absolute left-0 w-full rounded-lg 3xl:max-h-[98%]"
+                        style={{
+                            top: i * (itemHeight + GAP) + offset
+
+                        }}
                     >
                         <Image
                             src={b.src}
                             alt={b.name}
-                            width={200}
+                            width={300}
                             height={300}
-                            className="h-[96%] w-full object-cover rounded-lg"
-                            draggable={false}
+                            className="w-full aspect-[3/4] object-cover rounded-lg"
+                            priority={i < 2}
                         />
                     </div>
                 ))}
@@ -74,6 +95,9 @@ function Column({ direction = -1, data }) {
         </div>
     );
 }
+
+
+
 
 /* ---------------- PAGE ---------------- */
 
