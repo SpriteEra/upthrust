@@ -18,7 +18,7 @@ import WhatWeDid from '@/components/home/WhatWeDid';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
-const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
+// const InteractiveCaseStudy = dynamic(() => import('@/components/home/InteractiveCaseStudy'));
 const ServicesAccordion = dynamic(() => import('@/components/home/ServicesAccordion'));
 const UGCAdsPlaybook = dynamic(() => import('@/components/home/UGCAdsPlaybook'));
 const OurApproach = dynamic(() => import('@/components/home/OurApproach'));
@@ -34,6 +34,23 @@ const BrandSlider = dynamic(
   () => import('@/components/home/BrandSlider'),
   { loading: () => null }
 );
+
+// const SliderVideos = dynamic(
+//   () => import('@/components/home/SliderVideos'),
+//   { ssr: false }
+// );
+
+// const InteractiveCaseStudy = dynamic(
+//   () => import('@/components/home/client/InteractiveCaseStudy.client'),
+//   { ssr: false }
+// );
+import InteractiveCaseStudy from "@/components/home/client/InteractiveCaseStudy.client";
+
+
+// const SuccessStories = dynamic(
+//   () => import('@/components/home/SuccessStories'),
+//   { ssr: false }
+// );
 
 const brands2 = [
   { name: "brand1", src: "/ecom/brand/first/f17.webp" },

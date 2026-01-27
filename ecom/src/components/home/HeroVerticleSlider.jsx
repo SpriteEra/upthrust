@@ -66,12 +66,17 @@ function Column({ direction = -1, data }) {
               <Image
                 src={b.src}
                 alt={b.name}
-                fill
+                width={300}
+                height={320}
+                sizes="300px"
+                quality={60}
+                priority={i === 0}
+                loading={i === 0 ? "eager" : "lazy"}
                 className="object-cover rounded xs:rounded-lg py-1 3xl:py-1.5"
-                sizes="(min-width: 1280px) 300px, 33vw"
-                loading="lazy"
                 draggable={false}
               />
+
+
             </div>
 
           </div>
