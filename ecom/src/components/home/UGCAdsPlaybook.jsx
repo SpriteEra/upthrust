@@ -32,7 +32,7 @@ function Column({ direction = -1, data }) {
     const [offset, setOffset] = useState(0);
     const [itemHeight, setItemHeight] = useState(0);
 
-    const speed = 1 * direction;
+    const speed = 0.8 * direction;
 
     // 📏 Measure height dynamically
     useEffect(() => {
@@ -46,7 +46,7 @@ function Column({ direction = -1, data }) {
         window.addEventListener("resize", measure);
         return () => window.removeEventListener("resize", measure);
     }, []);
-    const GAP = 12; // 12px gap between images
+    const GAP = 10; // 12px gap between images
 
     const totalHeight = data.length * (itemHeight + GAP);
 
@@ -75,7 +75,7 @@ function Column({ direction = -1, data }) {
                     <div
                         key={i}
                         ref={i === 0 ? itemRef : null}
-                        className="absolute left-0 w-full rounded-lg 3xl:max-h-[98%]"
+                        className="absolute left-0 w-full rounded sm:rounded-lg 3xl:max-h-[98%]"
                         style={{
                             top: i * (itemHeight + GAP) + offset
 

@@ -30,10 +30,10 @@ function Column({ direction = -1, data }) {
   const rafRef = useRef(null);
 
   const [offset, setOffset] = useState(0);
-  const [itemHeight, setItemHeight] = useState(0);
+  const [itemHeight, setItemHeight] = useState(300);
 
   const GAP = 12; // space between items
-  const speed = 1 * direction;
+  const speed = 0.8 * direction;
 
   // 📏 Measure item height dynamically
   useEffect(() => {

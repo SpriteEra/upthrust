@@ -27,9 +27,9 @@ function Row({ direction = -1, data }) {
     const rafRef = useRef(null);
 
     const ITEM_WIDTH = 120;
-    const GAP = 16;
+    const GAP = 10;
     const TOTAL_WIDTH = data.length * (ITEM_WIDTH + GAP);
-    const SPEED = 1 * direction;
+    const SPEED = 0.8 * direction;
 
     useEffect(() => {
         const animate = () => {
