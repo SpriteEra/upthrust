@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, HelpCircle } from 'lucide-react';
+import { Check } from 'lucide-react';
 import Tooltip from '@/utils/Tooltip';
 
 
@@ -59,27 +59,27 @@ const COMPARISON_DATA = [
 
 export const FullPricingSection = () => {
     return (
-        <div className="w-full bg-white md:py-10 px-3 md:px-16 flex flex-col items-center">
+        <div className="w-full bg-white lg:py-10 px-3 lg:px-16 flex flex-col items-center">
             {/* Container for Cards and Table to share the same Grid */}
 
-            <div className='w-full grid md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch md:p-5 md:bg-[#F4F4F4] md:sticky top-0 z-51'>
-                <div className="md:col-start-1"></div> {/* Spacer for Label Column */}
+            <div className='w-full grid lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch lg:p-5 lg:bg-[#F4F4F4] lg:sticky top-0 z-51'>
+                <div className="lg:col-start-1"></div> {/* Spacer for Label Column */}
 
                 {pricingPlans.map((plan, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-md bg-white 3xl:rounded-2xl max-md:border border-gray-300 md:border-t-[3px] md:border-black max-w-80  md:max-w-48 3xl:max-w-55 w-full mx-auto`}
+                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-md bg-white 3xl:rounded-2xl max-lg:border border-gray-300 lg:border-t-[3px] lg:border-black max-w-80  lg:max-w-48 3xl:max-w-55 w-full mx-auto`}
                     >
-                        <p className="text-base 3xl:text-xl font-medium mb-0 md:mb-4 max-md:text-[#1D2127]">{plan.name} <span className='md:hidden'>Plan</span></p>
+                        <p className="text-base 3xl:text-xl font-medium mb-0 lg:mb-4 max-lg:text-[#1D2127]">{plan.name} <span className='lg:hidden'>Plan</span></p>
                         <div className="text-2xl 3xl:text-3xl font-semibold tracking-tight ">{plan.price}
-                            <span className='text-[#464646] font-light text-xs md:hidden ml-2'>
+                            <span className='text-[#464646] font-light text-xs lg:hidden ml-2'>
                                 {plan.details}
                             </span>
                         </div>
-                        <span className="max-md:hidden text-[10px] 3xl:text-xs mb-8 uppercase">{plan.details}</span>
+                        <span className="max-lg:hidden text-[10px] 3xl:text-xs mb-8 uppercase">{plan.details}</span>
 
                         {/* Features */}
-                        <ul className="space-y-1 md:hidden pt-4 pb-12">
+                        <ul className="space-y-1 lg:hidden pt-4 pb-12">
                             {COMPARISON_DATA.map((group) =>
                                 group.items.map((item, i) => {
                                     const value = item.values[index];
@@ -108,14 +108,14 @@ export const FullPricingSection = () => {
                         </ul>
 
                         <button className="w-full bg-black text-white py-2 3xl:py-3 rounded 3xl:rounded-md text-sm 3xl:text-lg font-semibold hover:bg-gray-800 transition-colors">
-                            <span className='max-md:hidden'>Start Here</span>
-                            <span className='md:hidden'>Get Started</span>
+                            <span className='max-lg:hidden'>Start Here</span>
+                            <span className='lg:hidden'>Get Started</span>
                         </button>
                     </div>
                 ))}
 
             </div>
-            <div className="max-md:hidden w-full grid grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch  mt-4">
+            <div className="max-lg:hidden w-full grid grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch  mt-4">
                 {/* Row 2: Table Body */}
                 {COMPARISON_DATA.map((section) => (
                     <React.Fragment key={section.category}>

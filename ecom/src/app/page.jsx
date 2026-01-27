@@ -1,26 +1,16 @@
 import StylishButton from '@/common/RocketButton';
 import ScaleButton from '@/common/ScaleButton'
 import AskQuestionAndDisclaimer from '@/components/home/AskQuestionAndDisclaimer';
-// import ClientVideoTestimonial from '@/components/home/ClientVideoTestimonial';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
-// import FAQ from '@/components/home/Faq';
 import { FullPricingSection } from '@/components/home/FullPricingSection';
 import dynamic from "next/dynamic";
 
 import HomeFooter from '@/components/home/HomeFooter';
-// import InteractiveCaseStudy from '@/components/home/InteractiveCaseStudy';
-// import OurApproach from '@/components/home/OurApproach';
 import ScrollIndicator from '@/components/home/ScrollIndicator';
-// import ServicesAccordion from '@/components/home/ServicesAccordion';
-// import SuccessStories from '@/components/home/SuccessStories';
-// import UGCAdsPlaybook from '@/components/home/UGCAdsPlaybook';
-// import UGCVideoCategories from '@/components/home/UGCVideoCategories';
 import WhatWeDid from '@/components/home/WhatWeDid';
-// import WhatWeDo from '@/components/home/WhatWeDo';
 import Image from 'next/image';
 import React from 'react'
 import HeroHorizontalSlider from '@/components/home/HeroHorizontalSlider';
-// import SliderVideos from '@/components/home/SliderVideos';
 import HeroVerticleSlider from '@/components/home/HeroVerticleSlider';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import { Curve1 } from '@/common/HandWritten';
@@ -166,7 +156,7 @@ const page = () => {
                 >
                   <Image
                     src={brand.src}
-                    alt={brand.name}
+                    alt={"Logos of ecommerce brands partnered with Upthrust"}
                     width={160}
                     height={60}
                     className="max-h-full max-w-full object-contain select-none"
@@ -326,13 +316,13 @@ const page = () => {
 
 
 
-      <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 max-md:hidden'>
+      <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 max-lg:hidden'>
         <div className='flex flex-col pt-22 3xl:pt-25 text-white'>
           <div className='flex flex-col items-center mb-10'>
             <span className='text-xs 3xl:text-sm uppercase'>our process</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center justify-center'>
-                <h5 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize'>How we approach your:
+                <h5 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize text-center'>How we approach your:
                   <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h5>
               </div>
             </div>
@@ -476,6 +466,32 @@ const page = () => {
           tiltAngle={-7}
           imageIndex={6}
           className="absolute left-25 lg:left-15 2xl:left-30 3xl:left-40 top-1/4 "
+
+        />
+        <Curve1
+          lines={[
+            {
+              parts: [
+                { type: "text", text: "Don't just" },
+                { type: 'highlight', text: 'read', bgColor: '#FF4500' },
+                { type: "text", text: "see" },
+              ]
+            },
+            {
+              parts: [
+                { type: "text", text: "how it actually works" },
+              ]
+            },
+
+          ]}
+          imageClassName='left-0 xs:left-18 scale-x-[-1] scale-y-[-1] -top-18 w-full -rotate-60'
+          curvePosition="end"
+          curveFlipHorizontal={true}
+          curveFlipVertical={false}
+          tiltAngle={7}
+          imageIndex={3}
+          hiddenInSmall={false}
+          className="absolute left-8 xs:left-18 bottom-0 xs:-bottom-10 lg:hidden"
 
         />
         <Curve1

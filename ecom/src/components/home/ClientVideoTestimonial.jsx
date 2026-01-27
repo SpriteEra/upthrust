@@ -9,6 +9,7 @@ const successStories = [
         text:
             "We were struggling with traffic and poor conversions. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. Worth it.",
         image: "/ecom/testimonials/1.webp",
+        alt: "Video testimonial from Carobis founder discussing ecommerce growth with Upthrust",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Carorbis%20testimonial.mp4",
         duration: "4:27",
         durationAt1_2x: "3:43",
@@ -19,6 +20,7 @@ const successStories = [
         text:
             "Skeptical at first. Now they’re my team. Upthrust didn’t just deliver exponential growth — they became true business partners who actually care.",
         image: "/ecom/testimonials/2.webp",
+        alt: "Client video testimonial sharing experience working with Upthrust team",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/jm.mp4_v1%20(720p).mp4",
         duration: "3:27",
         durationAt1_2x: "2:53",
@@ -29,6 +31,7 @@ const successStories = [
         text:
             "My business was in turmoil. One last chance to make it work. Made a $4,900 bet with Upthrust — got 2.7x back immediately. Now doing $51K+ monthly. Beyond my wildest dreams.",
         image: "/ecom/testimonials/3.webp",
+        alt: "Video testimonial describing business turnaround and revenue growth after working with Upthrust",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Ecom%20testimonial%20(1).mp4",
         duration: "5:54",
         durationAt1_2x: "4:55",
@@ -39,6 +42,7 @@ const successStories = [
         text:
             "I made a mess of my first website. Couldn’t figure out conversions on my own. Upthrust structured everything properly and made it sell. Everything finally fell into place.",
         image: "/ecom/testimonials/4.webp",
+        alt: "Client video testimonial about improving website conversions with Upthrust",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
         duration: "4:06",
         durationAt1_2x: "3:25",
@@ -101,7 +105,7 @@ const ClientVideoTestimonial = () => {
                                         src={item.image}
                                         width={500}
                                         height={250}
-                                        alt='Testimonial'
+                                        alt={item.alt}
                                     />
                                 </>
                             )}

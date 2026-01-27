@@ -21,6 +21,7 @@ export const Curve1 = ({
   highlightClassName = "",
   className = '',
   imageIndex = 0,
+  hiddenInSmall=true
 }) => {
   const renderParts = () => {
     return lines?.map((line, index) => (
@@ -56,7 +57,7 @@ export const Curve1 = ({
 
   return (
     <div
-      className={`inline-flex items-center gap-3 font-hanzi max-lg:hidden ${className}`}
+      className={`inline-flex items-center gap-3 font-hanzi ${hiddenInSmall ? "max-lg:hidden": ""} ${className}`}
       style={{
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'

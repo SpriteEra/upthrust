@@ -50,7 +50,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <div className="shrink-0 ">
 
-                        <Image src='/logo.png' height={100} width={200} alt="logo" priority className="h-6 sm:h-7 3xl:h-10 object-contain w-full" />
+                        <Image src='/logo.png' height={100} width={200} alt="Upthrust agency logo" priority className="h-6 sm:h-7 3xl:h-10 object-contain w-full" />
                     </div>
 
                     {/* Desktop Navigation */}

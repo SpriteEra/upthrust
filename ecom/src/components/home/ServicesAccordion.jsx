@@ -119,7 +119,7 @@ export default function ServicesAccordion() {
 
 
     return (
-        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 md:px-16 xs:mt-20  relative">
+        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 lg:px-16 xs:mt-20 relative">
 
             <Curve1
                 lines={[

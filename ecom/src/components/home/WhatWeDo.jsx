@@ -73,7 +73,7 @@ export default function WhatWeDo() {
                                 <div className="relative w-full h-40 lg:h-55 xl:h-50 3xl:h-65">
                                     <Image
                                         src="/ecom/work1.webp"
-                                        alt="what we do"
+                                        alt="User-generated content video promoting ecommerce skincare brand"
                                         fill
                                         className="object-contain"
                                         sizes="(max-width: 1024px) 100vw, 700px"
@@ -114,7 +114,7 @@ export default function WhatWeDo() {
                                 <div className="relative w-full h-35 sm:h-45 md:h-40">
                                     <Image
                                         src="/ecom/work1.webp"
-                                        alt="what we do"
+                                        alt="User-generated content video promoting ecommerce skincare brand"
                                         fill
                                         className="object-contain"
                                         sizes="(max-width: 768px) 100vw, 700px"

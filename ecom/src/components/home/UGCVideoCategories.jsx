@@ -102,13 +102,13 @@ const UGCVideoCategories = () => {
   return (
     <div >
       {/* CATEGORY BUTTONS */}
-      <div className="flex justify-between items-center rounded-full p-2 md:bg-linear-to-b from-[#2b2c2e] to-[#030303]  max-w-fit mx-auto">
+      <div className="flex justify-between items-center rounded-full p-2  lg:bg-linear-to-b from-[#2b2c2e] to-[#030303]  max-w-fit mx-auto">
         <div className="flex items-center justify-center space-x-2 flex-wrap gap-y-2">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => setActiveCategory(link)}
-              className={`px-3 py-2 rounded-full text-xs bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black
+              className={`px-3 3xl:px-5 py-2 rounded-full text-xs 3xl:text-sm max-lg:border border-black bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black
                 ${activeCategory.id === link.id ? "bg-white !text-black font-medium" : ""}`}
             >
               {link.name}
@@ -124,7 +124,7 @@ const UGCVideoCategories = () => {
             {activeCategory.items.map((item, index) => (
               <div
                 key={item.id}
-                className={`relative w-[220px] h-[380px] bg-white p-2 pb-4
+                className={`relative w-[220px] h-[380px] 3xl:w-65 3xl:h-100 bg-white p-2 pb-4
                 ${rotations[index % rotations.length]} transition-transform duration-300`}
                 style={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 20px" }}
               >
@@ -168,10 +168,14 @@ const UGCVideoCategories = () => {
 
             <video
               src={activeVideo}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain transition-opacity duration-300 opacity-0"
               autoPlay
               controls
               playsInline
+              onLoadedMetadata={(e) => {
+                e.currentTarget.classList.remove("opacity-0");
+                e.currentTarget.classList.add("opacity-100");
+              }}
               controlsList="nodownload"
             />
           </div>

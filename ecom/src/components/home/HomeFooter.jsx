@@ -15,7 +15,7 @@ const HomeFooter = ({ customeCss = "mt-20 md:mt-50" }) => {
                             key={index}
                             className="inline-block mr-20 text-8xl lg:text-[130px] 3xl:text-[180px] font-semibold"
                         >
-                            <span className="size-14 md:size-20 rounded-full bg-(--red) inline-block"></span>  Upthrust Leading since 20xx
+                            <span className="size-14 md:size-20 rounded-full bg-(--red) inline-block"></span>  Upthrust Leading since 2020
                         </p>
                     ))}
                 </marquee>

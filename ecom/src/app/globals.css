@@ -15,9 +15,9 @@ html {
 }
 
 @theme {
-  --breakpoint-3xl: 106.25rem;
-  --breakpoint-2xl: 1350px;
   --breakpoint-xs: 600px;
+  --breakpoint-2xl: 1350px;
+  --breakpoint-3xl: 106.25rem;
 }
 body {
   min-height: unset !important;

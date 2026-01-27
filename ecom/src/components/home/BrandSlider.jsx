@@ -334,7 +334,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
             <div className="flex items-center justify-center h-7 xs:h-8 w-16 xs:w-18">
               <Image
                 src={brand.logo}
-                alt={brand.name}
+                alt={"Logos of ecommerce brands partnered with Upthrust"}
                 width={120}
                 height={40}
                 draggable={false}

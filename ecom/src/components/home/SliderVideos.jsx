@@ -1,5 +1,8 @@
 "use client";
 
+import { Volume2 } from "lucide-react";
+import { VolumeOff } from "lucide-react";
+import { Volume1 } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
@@ -9,12 +12,17 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     const [velocity, setVelocity] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [hoveredId, setHoveredId] = useState(null);
+    const [isHovered, setIsHovered] = useState(false);
+    const [loadingVideoId, setLoadingVideoId] = useState(null);
+    const [soundOnId, setSoundOnId] = useState(null);
 
     const dragStartX = useRef(0);
     const dragStartOffset = useRef(0);
     const lastPositions = useRef([]);
     const animationRef = useRef(null);
     const containerRef = useRef(null);
+    const loadedVideos = useRef(new Set());
+    const loadedVideosRef = useRef(new Set());
 
     const totalWidth = itemWidth * brands.length;
     const autoPlaySpeed = direction === "left" ? -1 : 1;
@@ -37,22 +45,22 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     }, []);
 
     useEffect(() => {
-        if (!isVisible || isDragging || Math.abs(velocity) > 0.1 || hoveredId) return;
-
+        if (!isVisible || isDragging || isHovered || Math.abs(velocity) > 0.1) return;
 
         const animate = () => {
-            setOffset((prev) => {
-                const newOffset = prev + autoPlaySpeed;
-                return ((newOffset % totalWidth) + totalWidth) % totalWidth;
+            setOffset(prev => {
+                const next = prev + autoPlaySpeed;
+                return ((next % totalWidth) + totalWidth) % totalWidth;
             });
             animationRef.current = requestAnimationFrame(animate);
         };
 
         animationRef.current = requestAnimationFrame(animate);
+
         return () => {
             if (animationRef.current) cancelAnimationFrame(animationRef.current);
         };
-    }, [isDragging, velocity, totalWidth, isVisible, autoPlaySpeed]);
+    }, [isVisible, isDragging, isHovered, velocity, totalWidth, autoPlaySpeed]);
 
     useEffect(() => {
         if (isDragging || Math.abs(velocity) < 0.1) {
@@ -191,32 +199,82 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         left: `${position}px`,
                         width: `${itemWidth - 20}px`,
                     }}
-                    onMouseEnter={() => setHoveredId(brand.id)}
-                    onMouseLeave={() => setHoveredId(null)}
+                    onMouseEnter={() => {
+                        setHoveredId(brand.id);
+                        setIsHovered(true);
+
+                        if (!loadedVideosRef.current.has(brand.id)) {
+                            setLoadingVideoId(brand.id);
+                        }
+                    }}
+
+                    onMouseLeave={() => {
+                        setHoveredId(null);
+                        setIsHovered(false);
+                        setLoadingVideoId(null);
+                    }}
+
+
                 >
-                    {hoveredId === brand.id ? (
-                        <video
-                            src={brand.video}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="w-full h-full object-cover pointer-events-none bg-black"
-                        />
-                    ) : (
+                    <div className="relative w-full h-full bg-black">
+                        {/* IMAGE */}
                         <Image
                             src={brand.image}
                             width={250}
                             height={400}
                             alt=""
-                            className="w-full h-full object-cover pointer-events-none bg-black"
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200
+      ${hoveredId === brand.id ? "opacity-0" : "opacity-100"}`}
                         />
-                    )}
+
+                        {/* LOADER */}
+                        {hoveredId === brand.id && !loadedVideosRef.current.has(brand.id) && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
+                                <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                            </div>
+                        )}
+
+                        {/* SPEAKER BUTTON */}
+                        {hoveredId === brand.id && (
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSoundOnId((prev) => (prev === brand.id ? null : brand.id));
+                                }}
+                                className="absolute top-2 right-2 z-20 bg-black/60 text-white p-1.5 rounded-full hover:bg-black transition"
+                            >
+                                {soundOnId === brand.id ? <Volume2 size={16} /> : <VolumeOff size={16} />}
+                            </button>
+                        )}
+
+                        {/* VIDEO (always mounted) */}
+                        <video
+                            src={brand.video}
+                            autoPlay
+                            loop
+                            playsInline
+                            muted={soundOnId !== brand.id}
+                            preload="metadata"
+                            onLoadedData={() => loadedVideosRef.current.add(brand.id)}
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200
+      ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}
+                        />
+                    </div>
+
+
                 </div>
 
             );
         });
     };
+
+    useEffect(() => {
+        if (isHovered && animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+            animationRef.current = null;
+        }
+    }, [isHovered]);
+
 
     return (
         <div

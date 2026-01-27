@@ -96,6 +96,7 @@ const SuccessStories = () => {
             name: "Troy",
             company: "MC Overalls",
             image: "/ecom/profile/profile6.png",
+            alt: "Client testimonial photo of Troy from MC Overalls",
             color: "bg-[#FFF0F0]"
         },
         {
@@ -103,6 +104,7 @@ const SuccessStories = () => {
             name: "Rishab",
             company: "Carobis",
             image: "/ecom/profile/profile7.png",
+            alt: "Client testimonial photo of Rishab from Carobis",
             color: "bg-[#FFEBDA]"
         },
         {
@@ -110,6 +112,7 @@ const SuccessStories = () => {
             name: "Gunjan",
             company: "Housr",
             image: "/ecom/profile/profile8.png",
+            alt: "Client testimonial photo of Gunjan from Housr",
             color: "bg-[#E1EFD7]"
         },
         {
@@ -117,6 +120,7 @@ const SuccessStories = () => {
             name: "Dan",
             company: "Dan Studio",
             image: "/ecom/profile/profile9.png",
+            alt: "Client testimonial photo of Dan from Dan Studio",
             color: "bg-[#E3DFF1]"
         }
     ];
@@ -160,8 +164,8 @@ const SuccessStories = () => {
                             className="absolute top-0 left-1/2 -translate-x-1/2"
 
                         >
-                            <div className={`${testimonial.color} p-5 rounded-md  w-70 xl:w-62 2x:w-70 3xl:w-85 h-82 xl:h-75 2xl:h-82  3xl:h-110 flex flex-col justify-between`}>
-                                <p className="text-black text-base md:text-base 2xl:text-lg 3xl:text-2xl font-medium">
+                            <div className={`${testimonial.color} p-5 rounded-md  w-70 xl:w-62 2xl:w-70! 3xl:w-85! h-82 xl:h-75 2xl:h-82!  3xl:h-110! flex flex-col justify-between`}>
+                                <p className="text-black text-base md:text-base 2xl:text-lg! 3xl:text-2xl! font-medium">
                                     <span className='-pt-3'>
                                         <svg className='size-8 3xl:size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M8.48702e-10 18.0701C3.96784e-10 8.44813 6.83439 2.72495 11.0981 0.0876696C11.6382 -0.246749 12.2214 0.449277 11.8056 0.935951C10.1274 2.89523 8.80072 5.13361 7.88479 7.55091C10.0746 6.92231 12.4052 7.00244 14.5473 7.77999C16.6894 8.55753 18.5347 9.99317 19.8224 11.884C21.1101 13.7749 21.7752 16.0254 21.7236 18.3175C21.672 20.6097 20.9064 22.8275 19.5349 24.6577C18.1634 26.4879 16.2554 27.8379 14.0805 28.5169C11.9056 29.196 9.57382 29.1697 7.41456 28.4418C5.2553 27.714 3.37778 26.3214 2.0473 24.4607C0.716823 22.6001 0.000656758 20.3629 8.48702e-10 18.0701ZM24.1809 18.0701C24.1809 8.44813 31.0153 2.72495 35.2791 0.0903884C35.8191 -0.24403 36.4024 0.449277 35.9892 0.933232C34.3089 2.89292 32.9803 5.13226 32.063 7.55091C34.2528 6.92231 36.5834 7.00244 38.7255 7.77999C40.8676 8.55753 42.7129 9.99317 44.0007 11.884C45.2884 13.7749 45.9534 16.0254 45.9018 18.3175C45.8502 20.6097 45.0846 22.8275 43.7131 24.6577C42.3416 26.4879 40.4337 27.8379 38.2588 28.5169C36.0839 29.196 33.7521 29.1697 31.5928 28.4418C29.4335 27.714 27.556 26.3214 26.2255 24.4607C24.8951 22.6001 24.1789 20.3656 24.1782 18.0729L24.1809 18.0701Z" fill="#010202" />
@@ -171,7 +175,7 @@ const SuccessStories = () => {
                                 </p>
                                 <div className="flex items-center gap-3 mt-3">
                                     <div className="w-11 h-11 3xl:w-13 3xl:h-13 bg-white flex items-center justify-center text-xl rounded-md">
-                                        <Image width={30} height={30} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain' />
+                                        <Image width={30} height={30} src={testimonial.image} alt={testimonial.alt} className='w-full h-full object-contain' />
                                     </div>
                                     <div>
                                         <p className="text-lg 3xl:text-[22px] text-[#010202]">{testimonial.name}</p>

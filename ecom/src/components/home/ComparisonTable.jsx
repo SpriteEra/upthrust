@@ -18,7 +18,7 @@ export const ComparisonTable = () => {
     ];
 
     return (
-        <div className="sm:min-h-screen bg-white flex flex-col items-center justify-center text-[#1a1a1a] max-md:px-1 overflow-hidden">
+        <div className="sm:min-h-screen bg-white flex flex-col items-center justify-center text-[#1a1a1a] max-lg:px-1 overflow-hidden">
             {/* Grid Container */}
             <div className="w-full lg:max-w-[950px] 3xl:max-w-[1200px] grid grid-cols-4 grid-cols-[2.5fr_1fr_1fr_1fr] md:grid-cols-[1.5fr_1fr_1fr_1fr] items-stretch relative">
                 <Curve1

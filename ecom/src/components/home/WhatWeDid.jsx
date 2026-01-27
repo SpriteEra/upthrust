@@ -21,6 +21,7 @@ const businesses = [
         borderColor: 'border border-[#6FAB42] text-[#6FAB42]',
         textAccent: "text-[#6FAB42]",
         rightImage: "/ecom/buss1.webp",
+        imageAlt: "Atlanta Mocassin ecommerce revenue dashboard showing growth metrics",
         growthMetric: {
             value: "8.97K",
             label: "Orders"
@@ -45,6 +46,7 @@ const businesses = [
         borderColor: 'border border-[#cf7f3c] text-[#cf7f3c]',
         textAccent: "text-[#cf7f3c]",
         rightImage: "/ecom/buss2.webp",
+        imageAlt: "Urban Pitara sales dashboard with conversion and revenue data",
         growthMetric: {
             value: "₹3.52 Lakh",
             label: "in Daily Sales"
@@ -69,6 +71,7 @@ const businesses = [
         borderColor: 'border border-[#b30100] text-[#b30100]',
         textAccent: "text-[#b30100]",
         rightImage: "/ecom/buss3.webp",
+        imageAlt: "Smokey Cocktail ecommerce campaign performance results",
         growthMetric: {
             value: "+50%",
             label: "ROAS"
@@ -93,6 +96,7 @@ const businesses = [
         borderColor: 'border border-[#9473e7] text-[#9473e7]',
         textAccent: "text-[#9473e7]",
         rightImage: "/ecom/buss4.webp",
+        imageAlt: "Audioart growth chart showing increase in ecommerce revenue",
         growthMetric: {
             value: "+111%",
             label: "Order Volume Growth"
@@ -112,10 +116,11 @@ const BusinessCard = ({
     borderColor,
     textAccent = 'text-green-600',
     rightImage,
+    imageAlt,
     growthMetric
 }) => {
     return (
-        <div className={`${bgColor} rounded-xl md:rounded-2xl md:p-4 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90%] mx-auto lg:sticky top-36 xl:-top-5 2xl:top-36 3xl:top-80`}>
+        <div className={`${bgColor} rounded-xl md:rounded-2xl md:p-4 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90%] mx-auto lg:sticky top-0 xl:-top-5  2xl:!top-34  3xl:top-80`}>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 max-lg:p-2">
                 {/* Left Section */}
                 <div className="w-full lg:w-[60%] flex flex-col">
@@ -185,7 +190,7 @@ const BusinessCard = ({
                                 width={600}
                                 height={500}
                                 src={rightImage}
-                                alt="Dashboard"
+                                alt={imageAlt}
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -211,7 +216,7 @@ const BusinessCard = ({
 
 const WhatWeDid = () => {
     return (
-        <div className='max-md:px-2 max-lg:space-y-4.5'>
+        <div className='px-2 max-lg:space-y-4.5'>
             {businesses.map((business, index) => (
                 <BusinessCard key={index} {...business} />
             ))}

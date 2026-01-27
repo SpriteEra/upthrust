@@ -41,15 +41,6 @@ const InteractiveCaseStudy = () => {
         }
     ];
 
-    const toggleSection = (index) => {
-        if (activeSection === index) {
-            setActiveSection(null);
-        } else {
-            setActiveSection(index);
-        }
-        setBlinkIndex(null);
-    };
-
     const handleSectionClick = (e, index) => {
         e.stopPropagation();
 
@@ -63,7 +54,7 @@ const InteractiveCaseStudy = () => {
 
     return (
         <div className="w-full px-1 md:px-6">
-            <div className="  bg-black/6 p-1.5 xs:p-4 md:p-6 rounded-xl md:rounded-3xl xs:max-w-[88%] mx-auto">
+            <div className="  bg-black/6 p-1.5 xs:p-4 md:p-6 rounded-2xl md:rounded-3xl lg:max-w-[88%] mx-auto">
                 <div className="flex flex-col-reverse lg:flex-row gap-2 xs:gap-4 md:gap-6 lg:gap-5">
                     {/* Left Section*/}
                     <div className="w-full h-full lg:w-1/3 space-y-2 md:space-y-4">

@@ -2,7 +2,7 @@
 
 import { Curve1 } from "@/common/HandWritten";
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SIZE = 1200;
 const RADIUS = SIZE / 2;
@@ -18,15 +18,25 @@ const steps = [
 export default function OurApproach() {
     const controls = useAnimationControls();
     const [activeIndex, setActiveIndex] = useState(0);
+    const angleRef = useRef(0);
+
     useEffect(() => {
         let angle = 0;
         let mounted = true;
         let currentIndex = 0;
         const rotate = async () => {
             while (mounted) {
-                angle += STEP_ANGLE;
-                await controls.start({
-                    rotate: angle,
+                const nextAngle = angle + STEP_ANGLE;
+
+                // 🔥 set active step immediately
+                const nextIndex =
+                    (steps.length - (nextAngle / STEP_ANGLE) % steps.length) %
+                    steps.length;
+
+                setActiveIndex(nextIndex);
+
+                controls.start({
+                    rotate: nextAngle,
                     transition: {
                         type: "spring",
                         stiffness: 140,
@@ -35,14 +45,9 @@ export default function OurApproach() {
                     },
                 });
 
-                // NOW the step is at top → show tooltip
-                setActiveIndex(currentIndex);
+                angle = nextAngle;
 
-                // pause at top
-                await new Promise((r) => setTimeout(r, 1500));
-
-                currentIndex = (currentIndex + 1) % steps.length;
-
+                await new Promise((r) => setTimeout(r, 2500));
             }
         };
 
@@ -78,40 +83,48 @@ export default function OurApproach() {
                             className="absolute top-1/2 left-1/2"
                             style={{
                                 transform: `
-                  translate(-50%, -50%)
-                  rotate(${angle}deg)
-                  translateY(-${RADIUS}px)
-                `,
+                        translate(-50%, -50%)
+                        rotate(${angle}deg)
+                        translateY(-${RADIUS}px)
+                        `,
                             }}
                         >
                             {/* Step */}
                             <div className="flex flex-col items-center text-white select-none relative">
-                                {angle % 90 === index &&
-                                    <Curve1
-                                        lines={[
-                                            {
-                                                parts: [
-                                                    { type: 'highlight', text: step.tooltip1, bgColor: '#FF4500' },
-                                                ]
-                                            },
-                                            {
-                                                parts: [
-                                                    { type: "text", text: step.tooltip2 },
-                                                ]
-                                            },
+                                {index === activeIndex &&
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 1, ease: "easeOut" }}
+                                    >
+
+                                        <Curve1
+                                            lines={[
+                                                {
+                                                    parts: [
+                                                        { type: 'highlight', text: step.tooltip1, bgColor: '#FF4500' },
+                                                    ]
+                                                },
+                                                {
+                                                    parts: [
+                                                        { type: "text", text: step.tooltip2 },
+                                                    ]
+                                                },
 
 
-                                        ]}
-                                        imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1]" : "-right-0 top-20"}  3xl:top-12 !h-10 3xl:!h-20 w-full`}
-                                        curvePosition="end"
-                                        curveFlipHorizontal={true}
-                                        curveFlipVertical={false}
-                                        tiltAngle={2}
-                                        imageIndex={5}
-                                        textClassName="!text-white"
-                                        className={`${index % 2 === 0 ? "-left-75 -top-14" : "-right-75 -top-14"}  absolute  -bottom-12 3xl:-bottom-14 3xl:-top-35 `}
+                                            ]}
+                                            imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1]" : "-right-0 top-20"}  3xl:top-12 !h-10 3xl:!h-20 w-full`}
+                                            curvePosition="end"
+                                            curveFlipHorizontal={true}
+                                            curveFlipVertical={false}
+                                            tiltAngle={2}
+                                            imageIndex={5}
+                                            textClassName="!text-white"
+                                            className={`${index % 2 === 0 ? "-left-75 -top-14" : "-right-75 -top-14"}  absolute  -bottom-12 3xl:-bottom-14 3xl:-top-35 `}
 
-                                    />
+                                        />
+                                    </motion.div>
                                 }
                                 <div
                                     className="w-11 h-11 rounded-full bg-white text-black
