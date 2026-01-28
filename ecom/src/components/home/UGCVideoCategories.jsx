@@ -7,6 +7,7 @@ const navLinks = [
   {
     name: 'Clothing & Footwear',
     id: 'c&f',
+    alt: "Influencer-style product demo for D2C fashion brand",
     items: [
       { id: 1, image: "/ecom/ugcs/cloth/cloth1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MCOverallsmp4.mp4" },
       { id: 2, image: "/ecom/ugcs/cloth/cloth2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MILOOUTFITCHECK02FINALmp4.mp4" },
@@ -22,6 +23,7 @@ const navLinks = [
   {
     name: 'Lifestyle',
     id: 'lifestyle',
+    alt: "Lifestyle product showcase video for ecommerce brand",
     items: [
       { id: 1, image: "/ecom/ugcs/lifestyle/lifestyle1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
       { id: 2, image: "/ecom/ugcs/lifestyle/lifestyle2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
@@ -39,6 +41,7 @@ const navLinks = [
   {
     name: 'Beauty & Skincare',
     id: 'b&s',
+    alt: "User-generated content video reviewing ecommerce skincare product",
     items: [
       { id: 1, image: "/ecom/ugcs/beauty/beauty1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/aramorefinalmp4.mp4" },
       { id: 2, image: "/ecom/ugcs/beauty/beauty2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/Cottsberryfinalmp4.mp4" },
@@ -55,6 +58,7 @@ const navLinks = [
   {
     name: 'Healthcare & Supplements',
     id: 'h&s',
+    alt: "UGC-style testimonial promoting D2C fitness product",
     items: [
       { id: 1, image: "/ecom/ugcs/health/health1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/bibomp4.mp4" },
       { id: 2, image: "/ecom/ugcs/health/health2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/ezcurediabetesmp4.mp4" },
@@ -68,6 +72,7 @@ const navLinks = [
   {
     name: 'Food & Beverages',
     id: 'f&b',
+    alt: "Ecommerce product usage demonstration video",
     items: [
       { id: 1, image: "/ecom/ugcs/foods/food1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/BEINGBANIYAmp4.mp4" },
       { id: 2, image: "/ecom/ugcs/foods/food2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/gustohook1mp4.mp4" },
@@ -80,6 +85,7 @@ const navLinks = [
   {
     name: 'Petcare',
     id: 'petcare',
+    alt: "Product feature walkthrough video used in retargeting ad",
     items: [
       { id: 1, image: "/ecom/ugcs/pets/pets1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/hulk's%20diet%201.mp4" },
       { id: 2, image: "/ecom/ugcs/pets/pets2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/medfly%20%202.mp4" },
@@ -133,7 +139,7 @@ const UGCVideoCategories = () => {
                   width={250}
                   height={400}
                   src={item.image}
-                  alt="reel"
+                  alt={activeCategory.alt}
                   className="w-full h-full object-cover cursor-pointer"
                 />
 

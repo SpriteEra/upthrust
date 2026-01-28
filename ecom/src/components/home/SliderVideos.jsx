@@ -13,6 +13,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     const [hoveredId, setHoveredId] = useState(null);
     const [isHovered, setIsHovered] = useState(false);
     const [soundOnId, setSoundOnId] = useState(null);
+    const [readyVideoId, setReadyVideoId] = useState(null);
 
     const dragStartX = useRef(0);
     const dragStartOffset = useRef(0);
@@ -221,8 +222,8 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                             src={brand.image}
                             width={250}
                             height={400}
-                            alt=""
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${hoveredId === brand.id ? "opacity-0" : "opacity-100"}`}
+                            alt="UGC-style, Influencer collaboration Videos"
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${hoveredId === brand.id && readyVideoId === brand.id ? "opacity-0" : "opacity-100"}`}
                         />
 
                         {/* LOADER */}
@@ -231,6 +232,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                                 <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin" />
                             </div>
                         )}
+
 
                         {/* SPEAKER BUTTON */}
                         {hoveredId === brand.id && (
@@ -250,15 +252,20 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                             <video
                                 id={`video-${brand.id}`}
                                 src={brand.video}
-                                autoPlay
+                                autoPlay={hoveredId === brand.id}
                                 loop
                                 playsInline
                                 muted={soundOnId !== brand.id}
-                                preload="metadata"
-                                aria-hidden="true"
-                                onLoadedData={() => loadedVideosRef.current.add(brand.id)}
-                                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}
+                                preload="auto"
+                                onLoadedData={() => {
+                                    loadedVideosRef.current.add(brand.id);
+                                    setReadyVideoId(brand.id);
+                                }}
+                                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200
+    ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}
                             />
+
+
                         )}
                     </div>
 
