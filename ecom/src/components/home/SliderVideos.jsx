@@ -2,7 +2,6 @@
 
 import { Volume2 } from "lucide-react";
 import { VolumeOff } from "lucide-react";
-import { Volume1 } from "lucide-react";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
@@ -13,7 +12,6 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     const [isVisible, setIsVisible] = useState(true);
     const [hoveredId, setHoveredId] = useState(null);
     const [isHovered, setIsHovered] = useState(false);
-    const [loadingVideoId, setLoadingVideoId] = useState(null);
     const [soundOnId, setSoundOnId] = useState(null);
 
     const dragStartX = useRef(0);
@@ -21,7 +19,6 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     const lastPositions = useRef([]);
     const animationRef = useRef(null);
     const containerRef = useRef(null);
-    const loadedVideos = useRef(new Set());
     const loadedVideosRef = useRef(new Set());
 
     const totalWidth = itemWidth * brands.length;
@@ -203,16 +200,18 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         setHoveredId(brand.id);
                         setIsHovered(true);
 
-                        if (!loadedVideosRef.current.has(brand.id)) {
-                            setLoadingVideoId(brand.id);
-                        }
+                        const video = document.getElementById(`video-${brand.id}`);
+                        if (video) video.play();
                     }}
 
                     onMouseLeave={() => {
                         setHoveredId(null);
                         setIsHovered(false);
-                        setLoadingVideoId(null);
+
+                        const video = document.getElementById(`video-${brand.id}`);
+                        if (video) video.pause();
                     }}
+
 
 
                 >
@@ -223,8 +222,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                             width={250}
                             height={400}
                             alt=""
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200
-      ${hoveredId === brand.id ? "opacity-0" : "opacity-100"}`}
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ${hoveredId === brand.id ? "opacity-0" : "opacity-100"}`}
                         />
 
                         {/* LOADER */}
@@ -248,18 +246,20 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         )}
 
                         {/* VIDEO (always mounted) */}
-                        <video
-                            src={brand.video}
-                            autoPlay
-                            loop
-                            playsInline
-                            muted={soundOnId !== brand.id}
-                            preload="metadata"
-                            aria-hidden="true"
-                            onLoadedData={() => loadedVideosRef.current.add(brand.id)}
-                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200
-      ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}
-                        />
+                        {hoveredId === brand.id && (
+                            <video
+                                id={`video-${brand.id}`}
+                                src={brand.video}
+                                autoPlay
+                                loop
+                                playsInline
+                                muted={soundOnId !== brand.id}
+                                preload="metadata"
+                                aria-hidden="true"
+                                onLoadedData={() => loadedVideosRef.current.add(brand.id)}
+                                className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${hoveredId === brand.id ? "opacity-100" : "opacity-0"}`}
+                            />
+                        )}
                     </div>
 
 
@@ -295,16 +295,23 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
 export default function SliderVideos() {
 
     const reels = [
-        { id: 1, image: "/ecom/banner/banner1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
-        { id: 2, image: "/ecom/banner/banner2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
-        { id: 3, image: "/ecom/banner/banner3.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/aviascasserolesenglishmp4.mp4" },
-        { id: 4, image: "/ecom/banner/banner4.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/GEMMACOOKWAREmp4.mp4" },
-        { id: 5, image: "/ecom/banner/banner5.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/NEONATTACKmp4.mp4" },
-        { id: 6, image: "/ecom/banner/banner6.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/peppy.mp4" },
-        { id: 7, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/Phonecover.mp4" },
-        { id: 8, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/PowerBankmp4.mp4" },
-        { id: 9, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4" },
-        { id: 10, image: "/ecom/banner/banner7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
+        { id: 1, image: "/ecom/ugcs/cloth/cloth1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MCOverallsmp4.mp4" },
+        { id: 2, image: "/ecom/ugcs/cloth/cloth2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MILOOUTFITCHECK02FINALmp4.mp4" },
+        { id: 3, image: "/ecom/ugcs/lifestyle/lifestyle1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
+        { id: 4, image: "/ecom/ugcs/lifestyle/lifestyle2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
+        { id: 5, image: "/ecom/ugcs/beauty/beauty1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/aramorefinalmp4.mp4" },
+        { id: 6, image: "/ecom/ugcs/beauty/beauty2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/Cottsberryfinalmp4.mp4" },
+        { id: 7, image: "/ecom/ugcs/health/health1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/bibomp4.mp4" },
+        { id: 8, image: "/ecom/ugcs/health/health2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/ezcurediabetesmp4.mp4" },
+        { id: 9, image: "/ecom/ugcs/foods/food1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/BEINGBANIYAmp4.mp4" },
+        { id: 10, image: "/ecom/ugcs/foods/food2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/gustohook1mp4.mp4" },
+        { id: 11, image: "/ecom/ugcs/pets/pets1.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/hulk's%20diet%201.mp4" },
+        { id: 12, image: "/ecom/ugcs/pets/pets2.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/medfly%20%202.mp4" },
+        { id: 13, image: "/ecom/ugcs/cloth/cloth7.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/yummiecasestudiesmp4.mp4" },
+        { id: 14, image: "/ecom/ugcs/cloth/cloth8.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/zaydnslidesmp4.mp4" },
+        { id: 15, image: "/ecom/ugcs/lifestyle/lifestyle10.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
+        { id: 16, image: "/ecom/ugcs/beauty/beauty8.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/philosophy_reel.mp4" },
+        { id: 17, image: "/ecom/ugcs/beauty/beauty9.webp", video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/REAPSERUMmp4.mp4" },
     ];
 
     return (

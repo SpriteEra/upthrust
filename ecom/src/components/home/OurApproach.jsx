@@ -65,7 +65,14 @@ export default function OurApproach() {
 
             {/* Inner circular glow */}
 
-
+            <div
+                className="absolute rounded-full transform translate-y-[30%] 3xl:translate-y-[30%] pointer-events-none"
+                style={{
+                    width: SIZE,
+                    height: SIZE,
+                    background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.03) 60%, transparent 100%)',
+                }}
+            />
 
 
             {/* Rotating orbit */}

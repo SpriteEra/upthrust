@@ -8,14 +8,14 @@ const navLinks = [
     name: 'Clothing & Footwear',
     id: 'c&f',
     items: [
-      { id: 1, image: "/ecom/banner/cloth1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MCOverallsmp4.mp4" },
-      { id: 2, image: "/ecom/banner/cloth2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MILOOUTFITCHECK02FINALmp4.mp4" },
-      { id: 3, image: "/ecom/banner/cloth3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/mudbondmp4.mp4" },
-      { id: 4, image: "/ecom/banner/cloth4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/NEVA11mp4.mp4" },
-      { id: 5, image: "/ecom/banner/cloth5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/OliveclothingCSmp4.mp4" },
-      { id: 6, image: "/ecom/banner/cloth6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/urbanpitarareel5mp4.mp4" },
-      { id: 7, image: "/ecom/banner/cloth7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/yummiecasestudiesmp4.mp4" },
-      { id: 8, image: "/ecom/banner/cloth8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/zaydnslidesmp4.mp4" },
+      { id: 1, image: "/ecom/ugcs/cloth/cloth1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MCOverallsmp4.mp4" },
+      { id: 2, image: "/ecom/ugcs/cloth/cloth2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MILOOUTFITCHECK02FINALmp4.mp4" },
+      { id: 3, image: "/ecom/ugcs/cloth/cloth3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/mudbondmp4.mp4" },
+      { id: 4, image: "/ecom/ugcs/cloth/cloth4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/NEVA11mp4.mp4" },
+      { id: 5, image: "/ecom/ugcs/cloth/cloth5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/OliveclothingCSmp4.mp4" },
+      { id: 6, image: "/ecom/ugcs/cloth/cloth6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/urbanpitarareel5mp4.mp4" },
+      { id: 7, image: "/ecom/ugcs/cloth/cloth7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/yummiecasestudiesmp4.mp4" },
+      { id: 8, image: "/ecom/ugcs/cloth/cloth8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/zaydnslidesmp4.mp4" },
     ]
   },
 
@@ -23,16 +23,16 @@ const navLinks = [
     name: 'Lifestyle',
     id: 'lifestyle',
     items: [
-      { id: 1, image: "/ecom/banner/life1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
-      { id: 2, image: "/ecom/banner/life2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
-      { id: 3, image: "/ecom/banner/life3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/aviascasserolesenglishmp4.mp4" },
-      { id: 4, image: "/ecom/banner/life4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/GEMMACOOKWAREmp4.mp4" },
-      { id: 5, image: "/ecom/banner/life5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/NEONATTACKmp4.mp4" },
-      { id: 6, image: "/ecom/banner/life6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/peppy.mp4" },
-      { id: 7, image: "/ecom/banner/life7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/Phonecover.mp4" },
-      { id: 8, image: "/ecom/banner/life8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/PowerBankmp4.mp4" },
-      { id: 9, image: "/ecom/banner/life9.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4" },
-      { id: 10, image: "/ecom/banner/life10.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
+      { id: 1, image: "/ecom/ugcs/lifestyle/lifestyle1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/air_stream_pillow.mp4" },
+      { id: 2, image: "/ecom/ugcs/lifestyle/lifestyle2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/AIRPODSNEW70%25.mp4" },
+      { id: 3, image: "/ecom/ugcs/lifestyle/lifestyle3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/aviascasserolesenglishmp4.mp4" },
+      { id: 4, image: "/ecom/ugcs/lifestyle/lifestyle4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/GEMMACOOKWAREmp4.mp4" },
+      { id: 5, image: "/ecom/ugcs/lifestyle/lifestyle5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/NEONATTACKmp4.mp4" },
+      { id: 6, image: "/ecom/ugcs/lifestyle/lifestyle6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/peppy.mp4" },
+      { id: 7, image: "/ecom/ugcs/lifestyle/lifestyle7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/Phonecover.mp4" },
+      { id: 8, image: "/ecom/ugcs/lifestyle/lifestyle8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/PowerBankmp4.mp4" },
+      { id: 9, image: "/ecom/ugcs/lifestyle/lifestyle9.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4" },
+      { id: 10, image: "/ecom/ugcs/lifestyle/lifestyle10.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
     ]
   },
 
@@ -40,15 +40,15 @@ const navLinks = [
     name: 'Beauty & Skincare',
     id: 'b&s',
     items: [
-      { id: 1, image: "/ecom/banner/beauty1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/aramorefinalmp4.mp4" },
-      { id: 2, image: "/ecom/banner/beauty2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/Cottsberryfinalmp4.mp4" },
-      { id: 3, image: "/ecom/banner/beauty3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/KIWIBYMUSSKANmp4.mp4" },
-      { id: 4, image: "/ecom/banner/beauty4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/koparibeautycsmp4.mp4" },
-      { id: 5, image: "/ecom/banner/beauty5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lashsupplycs1mp4.mp4" },
-      { id: 6, image: "/ecom/banner/beauty6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lorealcsmp4.mp4" },
-      { id: 7, image: "/ecom/banner/beauty7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/MAISKNNmp4.mp4" },
-      { id: 8, image: "/ecom/banner/beauty8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/philosophy_reel.mp4" },
-      { id: 9, image: "/ecom/banner/beauty9.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/REAPSERUMmp4.mp4" },
+      { id: 1, image: "/ecom/ugcs/beauty/beauty1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/aramorefinalmp4.mp4" },
+      { id: 2, image: "/ecom/ugcs/beauty/beauty2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/Cottsberryfinalmp4.mp4" },
+      { id: 3, image: "/ecom/ugcs/beauty/beauty3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/KIWIBYMUSSKANmp4.mp4" },
+      { id: 4, image: "/ecom/ugcs/beauty/beauty4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/koparibeautycsmp4.mp4" },
+      { id: 5, image: "/ecom/ugcs/beauty/beauty5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lashsupplycs1mp4.mp4" },
+      { id: 6, image: "/ecom/ugcs/beauty/beauty6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lorealcsmp4.mp4" },
+      { id: 7, image: "/ecom/ugcs/beauty/beauty7.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/MAISKNNmp4.mp4" },
+      { id: 8, image: "/ecom/ugcs/beauty/beauty8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/philosophy_reel.mp4" },
+      { id: 9, image: "/ecom/ugcs/beauty/beauty9.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/REAPSERUMmp4.mp4" },
     ]
   },
 
@@ -56,12 +56,12 @@ const navLinks = [
     name: 'Healthcare & Supplements',
     id: 'h&s',
     items: [
-      { id: 1, image: "/ecom/banner/health1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/bibomp4.mp4" },
-      { id: 2, image: "/ecom/banner/health2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/ezcurediabetesmp4.mp4" },
-      { id: 3, image: "/ecom/banner/health3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/nutrideccmp4.mp4" },
-      { id: 4, image: "/ecom/banner/health4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/nutrilitiusmp4.mp4" },
-      { id: 5, image: "/ecom/banner/health5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/spartan%20nutrition.mp4" },
-      { id: 6, image: "/ecom/banner/health6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/velbiomqgazzreel%20formatmpmp4.mp4" },
+      { id: 1, image: "/ecom/ugcs/health/health1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/bibomp4.mp4" },
+      { id: 2, image: "/ecom/ugcs/health/health2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/ezcurediabetesmp4.mp4" },
+      { id: 3, image: "/ecom/ugcs/health/health3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/nutrideccmp4.mp4" },
+      { id: 4, image: "/ecom/ugcs/health/health4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/nutrilitiusmp4.mp4" },
+      { id: 5, image: "/ecom/ugcs/health/health5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/spartan%20nutrition.mp4" },
+      { id: 6, image: "/ecom/ugcs/health/health6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Healthcare%20%26%20Supplements/velbiomqgazzreel%20formatmpmp4.mp4" },
     ]
   },
 
@@ -69,11 +69,11 @@ const navLinks = [
     name: 'Food & Beverages',
     id: 'f&b',
     items: [
-      { id: 1, image: "/ecom/banner/food1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/BEINGBANIYAmp4.mp4" },
-      { id: 2, image: "/ecom/banner/food2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/gustohook1mp4.mp4" },
-      { id: 3, image: "/ecom/banner/food3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/jagwonder.mp4" },
-      { id: 4, image: "/ecom/banner/food4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/lemonji%20final.mp4" },
-      { id: 5, image: "/ecom/banner/food5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/PLANTWISE%202.mp4" },
+      { id: 1, image: "/ecom/ugcs/foods/food1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/BEINGBANIYAmp4.mp4" },
+      { id: 2, image: "/ecom/ugcs/foods/food2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/gustohook1mp4.mp4" },
+      { id: 3, image: "/ecom/ugcs/foods/food3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/jagwonder.mp4" },
+      { id: 4, image: "/ecom/ugcs/foods/food4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/lemonji%20final.mp4" },
+      { id: 5, image: "/ecom/ugcs/foods/food5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/F%26B/PLANTWISE%202.mp4" },
     ]
   },
 
@@ -81,8 +81,8 @@ const navLinks = [
     name: 'Petcare',
     id: 'petcare',
     items: [
-      { id: 1, image: "/ecom/banner/pet1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/hulk's%20diet%201.mp4" },
-      { id: 2, image: "/ecom/banner/pet2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/medfly%20%202.mp4" },
+      { id: 1, image: "/ecom/ugcs/pets/pets1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/hulk's%20diet%201.mp4" },
+      { id: 2, image: "/ecom/ugcs/pets/pets2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Petcare/medfly%20%202.mp4" },
     ]
   },
 ];
