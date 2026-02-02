@@ -253,7 +253,7 @@ const LeadForm = ({ showCircle = false, showBorder = true }) => {
                     selectedDate: '',
                     selectedTime: ''
                 });
-                router.push("/welcome");
+                router.push("/thank-you-booking-ecom");
                 // alert('Booking confirmed! Check console for submitted data.');
                 setCurrentStep(1);
             } catch (error) {
