@@ -125,25 +125,26 @@ const page = () => {
   return (
     <main id="main-content">
       <Navbar />
-      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh] 3xl:max-h-[150vh]'>
-        <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-60 flex flex-col'>
+      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh] 3xl:max-h-[180vh]'>
+        <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-62 flex flex-col'>
 
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
               profiles.map((profile, index) => (
-                <Image width={56} height={56} key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-14 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
+                <Image width={56} height={56} key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-15 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
 
               ))
             }
           </div>
 
-          <div className="relative inline-block px-5 3xl:px-6 py-2 3xl:py-3 rounded-full text-sm 3xl:text-base text-white mt-6 mb-16 md:mb-3 bg-black/80 border border-white/10 max-md:mx-auto w-fit">
+          <div className="relative inline-block px-5 3xl:px-6 py-2 3xl:py-3 rounded-full text-sm 3xl:text-base text-white mt-6 3xl:mt-10 mb-16 md:mb-3 3xl:mb-5 bg-black/80 border border-white/10 max-md:mx-auto w-fit">
             <span className="pointer-events-none absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full" />
             D2C Marketing Agency
           </div>
 
 
-          <h1 className="mb-2 text-white text-[42px] xs:text-5xl 2xl:text-[65px] 3xl:text-[96px] font-semibold max-sm:leading-tight max-md:pl-2">
+          <h1 className="mb-2 3xl:mb-5 text-white text-[42px] xs:text-5xl 2xl:text-[65px] 3xl:text-8xl leading-[120%] font-semibold max-sm:leading-tight max-md:pl-2 tracking-[-0.02em]
+">
             <span className="block sm:mb-2">
               <span className="italic font-instrument font-medium">Scale</span>
               <span className=""> To 45 Lakhs+</span>
@@ -154,22 +155,22 @@ const page = () => {
           </h1>
 
 
-          <div className="space-y-0 mb-16 text-lg xs:text-base 3xl:text-xl text-white leading-relaxed max-md:pl-2">
-            <p>Ads that stop the scroll</p>
-            <p>Pages that convert</p>
-            <p>Growth that compounds</p>
+          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white leading-relaxed max-md:pl-2">
+            Ads that stop the scroll <br />
+            Pages that convert <br />
+            Growth that compound
           </div>
 
           <ScaleButton color="red" />
 
-          <div className='mt-10 sm:mt-5 flex flex-col'>
+          <div className='mt-10 sm:mt-5 3xl:mt-7 flex flex-col'>
             <p className='text-base 3xl:text-lg max-md:text-center'>Brands we've scaled</p>
 
-            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-8 items-center py-5 md:py-5 max-w-xl">
+            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl lg:pb-12 3xl:pb-20">
               {brands.map((brand) => (
                 <div
                   key={brand.name}
-                  className="flex items-center justify-center h-7 xs:h-8 w-12 xs:w-13 3xl:w-15"
+                  className="flex items-center justify-center h-7 xs:h-8 w-12 xs:w-13 3xl:w-20"
                 >
                   <Image
                     src={brand.src}
@@ -194,8 +195,8 @@ const page = () => {
         </div>
       </div>
 
-      <div className='my-20 flex flex-col '>
-        <h2 className='text-center text-xl 3xl:text-2xl max-xs:max-w-[300px] mx-auto'><span className='font-semibold'>60+</span> D2C Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
+      <div className='my-20 3xl:mt-40 flex flex-col '>
+        <h2 className='text-center text-xl 3xl:text-2xl max-xs:max-w-[300px] mx-auto tracking-[-2%]'><span className='font-semibold'>60+</span> D2C Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
         <BrandSlider />
       </div>
 
@@ -228,18 +229,18 @@ const page = () => {
                 className="absolute -bottom-40 xl:-bottom-50 -left-50 xl:-left-70 max-w-[200px]"
 
               />
-              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>1 in 7 Shark Tank</h2>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-4%]'>1 in 7 Shark Tank</h2>
               <div className='inline-block'>
 
                 <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
                   {
                     socials.map((social, index) => (
-                      <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-14 rounded-full border-buffer overflow-hidden shrink-0">
+                      <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-12.5 rounded-full border-buffer overflow-hidden shrink-0">
                         <Image
                           src={social.url}
                           alt={social.alt}
                           fill
-                          sizes="(min-width: 1920px) 56px, 44px"
+                          sizes="(min-width: 1920px) 50px, 44px"
                           className="object-cover"
                         />
                       </div>
@@ -248,17 +249,17 @@ const page = () => {
                 </div>
               </div>
               <p className='xs:hidden text-center'>
-                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
+                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic'>brands </span>
                 <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
               </p>
             </div>
-            <p className='max-xs:hidden'>
-              <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic'>brands </span>
+            <p className='max-xs:hidden leading-[120%] tracking-[-4%]'>
+              <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic tracking-[0]'>brands </span>
               <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
             </p>
 
           </div>
-          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
+          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-2%]'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
         </div>
         <StylishButton color='red' />
         <SliderVideos />
@@ -289,9 +290,9 @@ const page = () => {
                 className="absolute -right-28 3xl:-right-32 -top-4 max-w-[200px] "
 
               />
-              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center capitalize'>Last Month
-                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> D2C brands </span>
-                Brand Scaled
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-4%] capitalize'>Last Month,
+                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal tracking-0'> 47 brands </span>
+                Brands Scaled
               </h2>
             </div>
           </div>

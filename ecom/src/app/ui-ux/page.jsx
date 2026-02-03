@@ -2,14 +2,15 @@ import { Curve1 } from "@/common/HandWritten";
 import Heading from "@/common/Heading";
 import StylishButton from "@/common/RocketButton";
 import Navbar from "@/components/Navbar";
+import AnimatedLogoCarousel from "@/components/uiux/AnimatedLogoCarousel";
 import FaqUiUx from "@/components/uiux/FaqUiUx";
 import FinalProducts from "@/components/uiux/FinalProducts";
 import GrowthStories from "@/components/uiux/GrowthStories";
 import OurDesigns from "@/components/uiux/OurDesigns";
 import ReadyToMoveUiUx from "@/components/uiux/ReadyToMoveUiUx";
-import ShapeWrapper from "@/components/uiux/ShapeWrapper";
 import ProcessFlow from "@/components/uiux/SustainableSteps";
 import TestimonialsWithVideo from "@/components/uiux/TestimonialsWithVideo";
+import UIUXHero from "@/components/uiux/UIUXHero";
 import WorkingWithUs from "@/components/uiux/WorkingWithUs";
 import { Check } from "lucide-react";
 import { PenLine } from "lucide-react";
@@ -57,7 +58,10 @@ const page = () => {
     return (
         <main>
             <Navbar items={navLinks} />
-            <div className="bg-black min-h-screen"></div>
+            <div className=" bg-black">
+                <UIUXHero />
+                <AnimatedLogoCarousel />
+            </div>
             <div className="flex flex-col mt-26 3xl:mt-30 relative">
                 <Curve1
                     lines={[
@@ -100,7 +104,7 @@ const page = () => {
                     subTitleCss="max-w-lg 3xl:max-w-xl"
                 />
                 <div className="flex items-center justify-center w-full my-8 3xl:my-10">
-                    <StylishButton />
+                    <StylishButton text1="Book A" text2="Strategy Call" />
                 </div>
                 <GrowthStories />
 
@@ -118,9 +122,9 @@ const page = () => {
                             text2: "Retention Time",
                         },
                     ].map((item, index) => (
-                        <ShapeWrapper
+                        <div
                             key={index}
-                            className="bg-[#f9f9f9] p-4 lg:p-8 3xl:p-9 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-4xl"
+                            className="bg-[#f9f9f9] shape-wrap p-4 lg:p-8 3xl:p-9 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-4xl"
                         >
                             <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b sm:border-b-2 border-black/30 pb-1 sm:pb-4 3xl:pb-5">
                                 {item.value}
@@ -131,7 +135,7 @@ const page = () => {
                             <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold">
                                 {item.text2}
                             </span>
-                        </ShapeWrapper>
+                        </div>
                     ))}
                     <Curve1
                         lines={[
@@ -242,14 +246,16 @@ const page = () => {
                     <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
                         <div className="flex gap-8 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
-                                <PenLine className="size-7 3xl:size-8" />
+                                <svg className="size-7 3xl:size-8" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z" fill="black" />
+                                </svg>
                             </div>
                             <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center leading-tight">
                                 Let's design an experience that converts.
                             </p>
                         </div>
                         <div className="flex items-center justify-center max-lg:w-full">
-                            <StylishButton />
+                            <StylishButton text1="Book A" text2="Strategy Call" />
                         </div>
                     </div>
                 </div>
@@ -359,7 +365,7 @@ const page = () => {
                     <ProcessFlow />
 
                     <div className="w-full pb-10 lg:py-20 bg-white">
-                        <div className="bg-black rounded-xl lg:rounded-[28px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 text-white relative overflow-hidden">
+                        <div className="bg-black rounded-xl lg:rounded-[28px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:px-16 text-white relative overflow-hidden">
                             {/* Top Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 {/* LEFT */}
@@ -388,7 +394,7 @@ const page = () => {
 
                                     {/* CTA */}
                                     <div>
-                                        <StylishButton />
+                                        <StylishButton text1="Book A" text2="Strategy Call" />
                                     </div>
                                 </div>
 
@@ -396,7 +402,7 @@ const page = () => {
                                 <div className="flex justify-center lg:justify-end">
                                     <div className="bg-[#111] rounded-2xl">
                                         <Image
-                                            src="/uiux/stories/story3/3.webp" // replace with your image path
+                                            src="/uiux/laptop.webp" // replace with your image path
                                             alt="Preview"
                                             width={420}
                                             height={260}
@@ -417,9 +423,9 @@ const page = () => {
                                     "UI/UX recommendations",
                                     "Polished, usable deliverables",
                                 ].map((item, index) => (
-                                    <div className="flex items-center gap-2" key={index}>
-                                        <span className="w-5 h-5 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
-                                            <Check className="size-4" strokeWidth={3} />
+                                    <div className="flex items-center gap-2 3xl:gap-4" key={index}>
+                                        <span className="size-5 3xl:size-8 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
+                                            <Check className="size-4 3xl:size-6" strokeWidth={3} />
                                         </span>
                                         <span className="text-white font-semibold text-xl lg:text-base 2xl:text-xl 3xl:text-2xl">
                                             {item}
@@ -474,7 +480,7 @@ const page = () => {
                     label="WHY UPTHRUST"
                     subtitle="Human, reassuring, trust-building - not salesy."
                 />
-                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 mt-10 3xl:mt-16">
+                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 mt-20 3xl:mt-30">
                     <WorkingWithUs />
                 </div>
             </div>
@@ -525,7 +531,9 @@ const page = () => {
                     <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
                         <div className="flex gap-5 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
-                                <PenLine className="size-7 3xl:size-8" />
+                                <svg className="size-7 3xl:size-8" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z" fill="black" />
+                                </svg>
                             </div>
                             <p className="font-semibold text-3xl 2xl:text-4xl 3xl:text-3xl text-white max-lg:text-center leading-tight">
                                 Let’s create a visual system your product deserves.
@@ -533,7 +541,7 @@ const page = () => {
                         </div>
 
                         <div className="flex items-center justify-center max-lg:w-full">
-                            <StylishButton />
+                            <StylishButton text1="Book A" text2="Strategy Call" />
                         </div>
                     </div>
                     <div className="grid lg:grid-cols-5 mt-25 3xl:mt-30 max-lg:px-2">

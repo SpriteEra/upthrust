@@ -10,7 +10,7 @@ const growthStories = [
         message: "From a company that had no experience in the entire marketing space to hitting benchmarks and getting engagement was a success for us. Regular discussions provided reassurance & showcased Upthrust's efforts to keep the ball rolling.",
         clientName: "Vaibhav Vashisht",
         position: "Co-Founder at Acadly",
-        profile: "",
+        profile: "/uiux/profile/vaibhav-vashisht.webp",
         bgColor1: "bg-[#F9F6FD]",
         bgColor2: "bg-[#F0E9FB]",
 
@@ -35,7 +35,7 @@ const growthStories = [
         message: "I'm impressed with how well Upthrust’s solution is working. I'm confident that we can continue to achieve great results as we grow.",
         clientName: "Pranath Sisodiya",
         position: "CEO,  Rescribe",
-        profile: "",
+        profile: "/uiux/profile/prasanth-sisodiya.webp",
         bgColor1: "bg-[#FDF6F6]",
         bgColor2: "bg-[#F7EDED]",
         images: [
@@ -59,7 +59,7 @@ const growthStories = [
         message: "We had Upthrust basically for all that part and I really appreciated everybody's input in terms of conversion. I loved it. Everything fell into place and  I definitely appreciated Upthrust and everything they did.",
         clientName: "Gabriela",
         position: "Founder- AudioArt",
-        profile: "",
+        profile: "/uiux/profile/gabriela.webp",
         bgColor1: "bg-[#FCF0FC]",
         bgColor2: "bg-[#FEFBFE]",
         images: [
@@ -80,12 +80,12 @@ const growthStories = [
 
     {
         name: 'SOCIAL MEDIA & UI/UX DESIGN',
-        title: 'Linkbycar earned 100+ loyal customers through a user-focused UI/UX design',
+        title: 'Beyond had to establish itself in a market & stand out from competition.',
         rating: 5.0,
-        message: 'Our collaboration with Halo Lab’s exceptional end-to-end service resulted in a stunning SaaS platform with seamless UI/UX design.',
-        clientName: "Saidou Soumare",
-        position: "CTO at Linkbycar",
-        profile: "",
+        message: "I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”",
+        clientName: "Iti Dubey",
+        position: "CMarketing Head at - Mukunda Foods",
+        profile: "/uiux/profile/iti-dubey.webp",
         bgColor1: "bg-[#F8EEE3]",
         bgColor2: "bg-[#FEFAF5]",
         images: [
@@ -122,7 +122,7 @@ const GrowthStories = () => {
 
                                 <div className="flex items-center gap-4 3xl:gap-5">
                                     <div>
-                                        <Image width={84} height={84} className="size-16 lg:size-14 2xl:size-16 3xl:size-21 rounded-full object-contain" alt="profile" src={'/ecom/profile/profile1.webp'} />
+                                        <Image width={84} height={84} className="size-16 lg:size-14 2xl:size-16 3xl:size-21 rounded-full object-contain" alt={item.clientName} src={item.profile} />
                                     </div>
                                     <div className="flex flex-col justify-center h-full gap-1 3xl:gap-2">
                                         <p className="font-semibold text-xl lg:text-lg 3xl:text-xl">{item.clientName}</p>

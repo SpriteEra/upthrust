@@ -69,7 +69,7 @@ export default function FaqUiUx() {
                     <div className="bg-[#F9F9F9] rounded-3xl p-6 md:p-8 3xl:px-8 3xl:p-10">
                         <div className="flex items-center gap-3 3xl:gap-4 mb-6 3xl:mb-8">
                             <Image
-                                src="/ecom/profile/profile1.webp"
+                                src="/uiux/profile/akshay-gera.webp"
                                 alt="Akshay Gera"
                                 width={100}
                                 height={100}

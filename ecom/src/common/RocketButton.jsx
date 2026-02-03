@@ -11,16 +11,16 @@ const colors = {
     white: "#ffffff",
 };
 
-const StylishButton = ({ color = "red" }) => {
+const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale" }) => {
     // if named color → use map, else use raw value (#000, etc.)
     const resolvedColor = colors[color] || color || colors.red;
 
     return (
         <button
             style={{ '--btn-color': resolvedColor }}
-            className="px-6 rounded-full py-3 md:py-3.5 bg-black border-2 border-(--btn-color) hover:bg-(--btn-color) hover:border- text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group"
+            className="px-6 rounded-full py-3 md:py-3.5 3xl:py-5.5 3xl:px-9 bg-black border-2 border-(--btn-color) hover:bg-(--btn-color) text-white text-sm 2xl:text-base 3xl:text-lg transition-colors duration-200 flex items-center space-x-2 relative group"
         >
-            <span>Show Us</span>
+            <span>{text1}</span>
 
             <span className="relative size-6 flex items-center justify-center">
                 <span
@@ -31,7 +31,7 @@ const StylishButton = ({ color = "red" }) => {
                 </svg>
             </span>
 
-            <span>How To Scale</span>
+            <span>{text2}</span>
         </button>
     )
 }

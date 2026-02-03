@@ -61,11 +61,11 @@ export default function WhatWeDo() {
                         <div className="grid grid-cols-1 max-lg:pt-10 lg:grid-cols-6 gap-8 lg:gap-12 items-center max-md:pt-10">
 
                             {/* Left Section - Text */}
-                            <div className="lg:col-span-2 space-y-1 3xl:py-4">
-                                <p className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-bold leading-tight text-shadow-hard max-lg:text-center" >
-                                    What We <span className="italic font-medium">Do</span>
+                            <div className="lg:col-span-2 3xl:py-4">
+                                <p className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-semibold tracking-[-1.56px] leading-[52.15px]  max-lg:text-center" >
+                                    What We <span className="italic font-normal">Do</span>
                                 </p>
-                                <p className="text-sm 3xl:text-base flex gap-2 tracking-wide items-center max-lg:justify-center text-shadow-hard font-extrabold max-md:hidden" >Watch Now <span className='text-lg font-light'>→</span></p>
+                                <p className="text-sm 3xl:text-base flex gap-2 items-center max-lg:justify-center max-md:hidden" >Watch Now <span className='text-lg font-light'>→</span></p>
                             </div>
 
                             {/* Center Section - Images */}
@@ -92,7 +92,7 @@ export default function WhatWeDo() {
                                         onClick={openVideo}
                                         aria-label="Play video"
                                         className="
-                                            relative z-10 rounded-full bg-transparent flex items-center justify-center size-20 md:size-25 3xl:size-30"
+                                            relative z-10 rounded-full bg-transparent flex items-center justify-center size-20 md:size-25 3xl:size-30 cursor-pointer"
                                         style={{ boxShadow: "inset 0 0 5px #878787" }}
                                     >
                                         <span className="inline-block w-0 h-0 border-t-20 md:border-t-25 border-t-transparent border-b-20 md:border-b-25 border-b-transparent border-l-35 md:border-l-40 border-l-black" />

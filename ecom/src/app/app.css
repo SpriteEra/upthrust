@@ -21,27 +21,6 @@
   }
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 18s linear infinite;
-}
-
-.marquee-paused {
-  animation-play-state: paused;
-}
-
-
 .animate-ripple::after {
   content: "";
   position: absolute;
@@ -100,57 +79,114 @@
   animation: scaleIn 0.3s ease-out;
 }
 
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+  }
 
-.shape-wrap {
-  position: relative;
-  display: inline-block;
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
-/* Main masked shape */
-.shape-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: green;
-  border-radius: 20px;
-  z-index: 0;
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
 
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideOut {
+  animation: slideOut 0.6s ease-in-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.6s ease-in-out forwards;
+}
+
+.inverted-radius {
   --r: 20px;
-  --s: 30px;
-  --x: 20px;
+  /* the radius */
+  --s: 20px;
+  /* size of inner curve */
+  --x: 720px;
   --y: 10px;
 
-  --_m: /calc(2 * var(--r)) calc(2 * var(--r)) radial-gradient(#000 70%, #0000 72%);
-  --_g: conic-gradient(at var(--r) var(--r), #000 75%, #0000 0);
+  border-radius: var(--r);
+  --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at calc(100% - var(--r)) var(--r), #0000 25%, #000 0);
   --_d: (var(--s) + var(--r));
-
   mask:
-    calc(var(--_d) + var(--x)) 0 var(--_m),
-    0 calc(var(--_d) + var(--y)) var(--_m),
-    radial-gradient(var(--s) at 0 0, #0000 99%, #000 calc(100% + 1px)) calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
-    var(--_g) calc(var(--_d) + var(--x)) 0,
+    calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+    100% calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px)) calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(-1*var(--_d) - var(--x)) 0,
     var(--_g) 0 calc(var(--_d) + var(--y));
   mask-repeat: no-repeat;
 }
 
-/* Diagonal filler */
-.shape-wrap::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 95px;
-  background: green;
-  transform: rotate(49.5deg);
-  top: 25.5px;
-  left: 24.5px;
-  border-radius: 5px;
-  z-index: 1;
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .inverted-radius {
+    --x: 280px;
+  }
 }
 
-/* Child content */
-.shape-wrap>* {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  color: white;
+/* Mobile */
+@media (max-width: 640px) {
+  .inverted-radius {
+    --x: 190px;
+    --y: 7px
+  }
+}
+
+/* Mobile */
+@media (max-width: 440px) {
+  .inverted-radius {
+    --x: 180px;
+    --y: 5px;
+  }
+}
+
+@layer utilities {
+  .text-outline {
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+}
+
+
+
+
+
+
+
+
+/* marquee  */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-paused {
+  animation-play-state: paused;
 }

@@ -61,7 +61,7 @@ const WorkingWithUs = () => {
             {features.map((item, index) => (
                 <div
                     key={index}
-                    className={`px-2 lg:px-10 py-6 border-black/80 lg:border-black/30 border-b lg:border-r lg:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 md:nth-[2n]:border-r-0 lg:nth-[2n]:border-r lg:nth-[3n]:border-r-0 `}
+                    className={`px-2 lg:px-12 3xl:px-16 py-6 border-black/80 lg:border-black/30 border-b lg:border-r lg:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 md:nth-[2n]:border-r-0 lg:nth-[2n]:border-r lg:nth-[3n]:border-r-0 `}
                     onClick={() => toggleFAQ(index)}
                 >
                     <div className="flex lg:flex-col max-lg:justify-between">
