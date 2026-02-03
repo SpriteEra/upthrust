@@ -1,4 +1,5 @@
 import GoogleAdsHeading from '@/components/google-ads/GoogleAdsHeading'
+import GoogleAdsRoiPrediction from '@/components/google-ads/GoogleAdsRoiPrediction'
 import Image from 'next/image'
 import React from 'react'
 
@@ -41,6 +42,7 @@ const page = () => {
                     }]}
                 />
                 <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
+                    <GoogleAdsRoiPrediction />
                 </div>
 
             </div>

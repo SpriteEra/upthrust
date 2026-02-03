@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const GrowthStoriesSliderContent = ({ images = [] }) => {
     return (
-        <div className="w-full flex-1 bg-white rounded-3xl overflow-hidden max-h-116 3xl:max-h-140">
+        <div className="w-full flex-1 bg-white rounded-xl sm:rounded-3xl overflow-hidden max-h-116 3xl:max-h-140">
             <SmartSwiper
                 slides={images}
                 effect="slide"

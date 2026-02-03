@@ -1,83 +1,6 @@
 import Image from "next/image";
 import { GrowthStoriesSliderContent } from "./GrowthStoriesSliderContent";
-
-const Star = ({ fill = 0 }) => {
-    return (
-        <div
-            style={{ position: 'relative', display: 'inline-block' }}
-            className="w-full h-full"
-        >
-            {/* Empty star */}
-            <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    fill="#E0E0E0"
-                />
-            </svg>
-
-            {/* Filled star with clip */}
-            <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    clipPath: `inset(0 ${100 - fill * 100}% 0 0)`
-                }}
-            >
-                <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    fill="#FFC107"
-                />
-            </svg>
-        </div>
-    );
-};
-
-const RatingStars = ({ rating = 0, max = 5, size = "size-6" }) => {
-    // Function to snap to specific values: 0, 0.33, 0.5, 0.67, 1
-    const snapToPartial = (decimal) => {
-        if (decimal <= 0.12) return 0;      // 0% - empty
-        if (decimal <= 0.37) return 0.33;   // ~33% - 1/3 filled (.25)
-        if (decimal <= 0.62) return 0.5;    // 50% - half filled (.5)
-        if (decimal <= 0.87) return 0.67;   // ~67% - 2/3 filled (.75)
-        return 1;                            // 100% - full
-    };
-
-    return (
-        <div className="flex gap-1">
-            {Array.from({ length: max }).map((_, index) => {
-                const starValue = index + 1;
-                let fill = 0;
-
-                if (rating >= starValue) {
-                    // Full star
-                    fill = 1;
-                } else if (rating > index) {
-                    // Partial star
-                    const decimal = rating - index;
-                    fill = snapToPartial(decimal);
-                }
-
-                return (
-                    <div key={index} className={size}>
-                        <Star fill={fill} />
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+import RatingStars from "@/common/Rating";
 
 const growthStories = [
     {
@@ -181,34 +104,33 @@ const growthStories = [
 ]
 const GrowthStories = () => {
     return (
-        <div className='max-w-[90%] mx-auto w-full flex flex-col gap-10 mt-10'>
+        <div className='max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 mt-10'>
             {
                 growthStories?.map((item, index) => (
-                    <div className={`${item.bgColor1} p-6 3xl:p-10 rounded-3xl 3xl:rounded-4xl w-full`} key={index}>
+                    <div className={`${item.bgColor1} p-4 sm:p-6 3xl:p-10 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`} key={index}>
                         <div
-                            className={`${item.bgColor2} flex w-full rounded-3xl 3xl:rounded-4xl items-stretch`}
+                            className={`${item.bgColor2} flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
                         >
 
-                            <div className='p-6 3xl:p-10 w-[40%] h-full flex flex-col'>
-                                <span className='text-sm 3xl:text-base uppercase'>{item.name}</span>
-                                <h5 className='font-semibold my-6 3xl:my-8 text-3xl 3xl:text-4xl'>{item.title}</h5>
+                            <div className='p-4 sm:p-6 max-2xl:pr-0 3xl:p-10 lg:w-[40%] h-full flex flex-col'>
+                                <span className='lg:text-sm 3xl:text-base uppercase'>{item.name}</span>
+                                <h5 className='font-semibold my-4 2xl:my-6 3xl:my-8 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl'>{item.title}</h5>
 
-                                <RatingStars rating={item.rating} size="size-5 3xl:size-5.5" />
+                                <RatingStars rating={item.rating} size="size-5.5 lg:size-5 3xl:size-5.5" />
 
-                                <p className="text-xl 3xl:text-2xl mt-5 mb-8">&ldquo;{item.message}&rdquo;</p>
+                                <p className="text-lg 2xl:text-xl 3xl:text-2xl mt-3 2xl:mt-5 mb-5 2xl:mb-8">&ldquo;{item.message}&rdquo;</p>
 
                                 <div className="flex items-center gap-4 3xl:gap-5">
                                     <div>
-                                        <Image width={84} height={84} className="size-16 3xl:size-21 rounded-full object-contain" alt="profile" src={'/ecom/profile/profile1.webp'} />
+                                        <Image width={84} height={84} className="size-16 lg:size-14 2xl:size-16 3xl:size-21 rounded-full object-contain" alt="profile" src={'/ecom/profile/profile1.webp'} />
                                     </div>
                                     <div className="flex flex-col justify-center h-full gap-1 3xl:gap-2">
-                                        <p className="font-semibold text-lg 3xl:text-xl">{item.clientName}</p>
-                                        <span className="text-sm 3xl:text-base">{item.position}</span>
+                                        <p className="font-semibold text-xl lg:text-lg 3xl:text-xl">{item.clientName}</p>
+                                        <span className="lg:text-sm 3xl:text-base">{item.position}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-[60%] pl-10 flex items-stretch">
-
+                            <div className="lg:w-[60%] max-md:aspect-5/4 max-lg:aspect-video lg:pl-10 flex items-stretch">
                                 <GrowthStoriesSliderContent images={item.images} />
                             </div>
                         </div>

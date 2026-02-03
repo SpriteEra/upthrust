@@ -2,6 +2,7 @@ import { hanzipen, instrumentSerif, inter } from "./fonts/fonts";
 import "./globals.css";
 import "./app.css";
 import Script from "next/script";
+import Analytics from "@/scripts/Analytics";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -60,24 +61,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
-        {isProd && (
-          <Script
-            id="gtm"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function(w,d,s,l,i){w[l]=w[l]||[];
-                w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-                var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-                j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-                f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-T7PRVWR2');
-              `,
-            }}
-          />
-        )}
+        <Analytics />
         {isProd && (
           <noscript>
             <iframe
