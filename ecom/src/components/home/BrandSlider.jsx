@@ -331,7 +331,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
           <div className="flex items-center justify-center"
             style={{ pointerEvents: "none" }}
           >
-            <div className="flex items-center justify-center h-7 xs:h-8 w-16 xs:w-18 3xl:w-24">
+            <div className="flex items-center justify-center h-8 xs:h-8 w-20 xs:w-18 3xl:w-24">
               <Image
                 src={brand.logo}
                 alt={"Logos of ecommerce brands partnered with Upthrust"}
@@ -383,7 +383,7 @@ export default function BrandSlider() {
   return (
     <div className="py-14 xs:py-20 space-y-10 overflow-hidden">
 
-      <div className="flex-1 flex flex-col justify-center gap-0">
+      <div className="flex-1 flex flex-col justify-center gap-0 max-lg:space-y-3">
         <MarqueeRow brands={brandsRow1} direction="left" />
         <MarqueeRow brands={brandsRow2} direction="right" />
       </div>

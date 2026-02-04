@@ -9,10 +9,45 @@ const RADIUS = SIZE / 2;
 const STEP_ANGLE = 90;
 
 const steps = [
-    { id: 4, title: "Step 4", name: "Build Systems (Months 3+) ", desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ", desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.", tooltip1: "Build Systems Stop [chasing]", tooltip2: "stop building sustainable growth." },
-    { id: 3, title: "Step 3", name: "Scale (Months 2-3)", desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.", desc2b: "What you get:", desc2n: " Higher revenue without killing ROAS. ", tooltip1: "We don't [guess]", tooltip2: "We scale what's proven profitable " },
-    { id: 2, title: "Step 2", name: "Fix & Launch (Weeks 2-4)", desc1: "We rebuild your campaigns using proven strategies. New ads, better targeting, optimized website.", desc2b: "What you get:", desc2n: " Positive ROI in 30 days or month 2 is free.", tooltip1: "No more [testing]", tooltip2: "we deploy what already works." },
-    { id: 1, title: "Step 1", name: "The Audit (Week 1)", desc1: "We review your ad accounts, website, and analytics to find what's working and what's wasting money.", desc2b: "What you get:", desc2n: " Full audit report with prioritized fixes.", tooltip1: "Stop [Gessing]", tooltip2: "See where your money's going" },
+    {
+        id: 4,
+        title: "Step 4",
+        name: "Build Systems (Months 3+) ",
+        desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+        desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+        tooltip1: "Build Systems Stop [chasing]",
+        tooltip2: "stop building sustainable growth."
+    },
+    {
+        id: 3,
+        title: "Step 3",
+        name: "Scale (Months 2-3)",
+        desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+        desc2b: "What you get:",
+        desc2n: " Higher revenue without killing ROAS. ",
+        tooltip1: "We don't [guess]",
+        tooltip2: "We scale what's proven profitable "
+    },
+    {
+        id: 2,
+        title: "Step 2",
+        name: "Fix & Launch (Weeks 2-4)",
+        desc1: "We rebuild your campaigns using proven strategies. New ads, better targeting, optimized website.",
+        desc2b: "What you get:",
+        desc2n: " Positive ROI in 30 days or month 2 is free.",
+        tooltip1: "No more [testing]",
+        tooltip2: "we deploy what already works."
+    },
+    {
+        id: 1,
+        title: "Step 1",
+        name: "The Audit (Week 1)",
+        desc1: "We review your ad accounts, website, and analytics to find what's working and what's wasting money.",
+        desc2b: "What you get:",
+        desc2n: "Full audit report with prioritized fixes.",
+        tooltip1: "Stop [Guessing]",
+        tooltip2: "See where your money's going"
+    },
 ];
 
 export default function OurApproach() {
@@ -121,14 +156,15 @@ export default function OurApproach() {
 
 
                                             ]}
-                                            imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1]" : "-right-0 top-20"}  3xl:top-12 !h-10 3xl:!h-20 w-full`}
+                                            imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1] 3xl:top-24 3xl:right-5" :
+                                                "-right-0 top-20 3xl:top-24 3xl:right-5"} !h-10 3xl:!h-12 w-full`}
                                             curvePosition="end"
                                             curveFlipHorizontal={true}
                                             curveFlipVertical={false}
-                                            tiltAngle={2}
+                                            tiltAngle={index % 2 === 0 ? -4 : 4}
                                             imageIndex={5}
                                             textClassName="!text-white"
-                                            className={`${index % 2 === 0 ? "-left-75 -top-14" : "-right-75 -top-14"}  absolute  -bottom-12 3xl:-bottom-14 3xl:-top-35 `}
+                                            className={`${index % 2 === 0 ? "-left-75 top-0 3xl:-top-3 3xl:-left-90" : "-right-75 top-0 3xl:-top-3 3xl:-right-90"}  absolute `}
 
                                         />
                                     </motion.div>
@@ -141,7 +177,7 @@ export default function OurApproach() {
                                     <span className="text-xs 3xl:text-sm px-3 bg-white/10 py-0.5 mb-2 absolute -top-8 font-light text-white">STEP</span>
                                     <div className="absolute top-12 flex flex-col items-center text-white max-w-sm w-md">
                                         <div className="h-14 3xl:h-16 w-px bg-white" />
-                                        <p className="font-semibold text-2xl 3xl:text-3xl whitespace-nowrap mt-1">{step.name}</p>
+                                        <p className="font-semibold text-2xl 3xl:text-3xl whitespace-nowrap mt-1 tracking-[-0.02em]">{step.name}</p>
                                         <span className="text-xs 3xl:text-base text-center font-light max-w-60 mt-1.5 3xl:mt-2">{step.desc1}</span>
                                         <p className="text-xs 3xl:text-base text-center font-light max-w-60 mt-5 3xl:mt-6"><span className="font-normal">What You Get:</span>{" "}{step.desc2n}</p>
                                     </div>

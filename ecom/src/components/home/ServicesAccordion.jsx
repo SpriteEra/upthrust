@@ -29,7 +29,7 @@ const services = [
                 after: "",
             },
         ],
-        tagText1: "Ecommerce brands speding",
+        tagText1: "Ecommerce brands spending",
         tagText2: "$30K+/month",
     },
 
@@ -55,8 +55,8 @@ const services = [
                 after: "",
             },
         ],
-        tagText1: "Ecommerce brands tried of",
-        tagText2: "creative fatique",
+        tagText1: "Ecommerce brands tired of",
+        tagText2: "creative fatigue",
     },
 
     {
@@ -119,7 +119,7 @@ export default function ServicesAccordion() {
 
 
     return (
-        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 lg:px-16 xs:mt-20 relative">
+        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-1 xs:px-8 lg:px-16 xs:mt-20 relative">
 
             <Curve1
                 lines={[
@@ -213,7 +213,7 @@ export default function ServicesAccordion() {
                                         },
 
                                     ]}
-                                    imageClassName='-left-30 top-10 3xl:top-12 !h-16 3xl:!h-20 w-full rotate-75 scale-x-[-1]'
+                                    imageClassName='-left-41 top-10 3xl:top-16 !h-16 3xl:!h-20 w-full rotate-75 3xl:rotate-67 scale-x-[-1]'
                                     curvePosition="end"
                                     curveFlipHorizontal={true}
                                     curveFlipVertical={false}

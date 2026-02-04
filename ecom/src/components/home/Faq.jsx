@@ -89,19 +89,15 @@ export default function FAQ() {
         } else {
             setOpenIndexes([...openIndexes, index]);
         }
-        setBlinkIndex(null);
+        // setBlinkIndex(null);
     };
 
     const handleFAQClick = (e, index) => {
-        // Check if click was on the button
-        const button = e.currentTarget.querySelector('button');
-        if (button && button.contains(e.target)) {
-            return; // Let button handle it
-        }
+
 
         // If FAQ is closed and click is on the div (not button), show blink
         if (!openIndexes.includes(index)) {
-            setBlinkIndex(index);
+            // setBlinkIndex(index);
             setTimeout(() => setBlinkIndex(null), 600);
         }
     };
@@ -110,7 +106,7 @@ export default function FAQ() {
         <div
             key={index}
             ref={(el) => (faqRefs.current[index] = el)}
-            onClick={(e) => handleFAQClick(e, index)}
+            onClick={(e) => toggleFAQ(index)}
             className="bg-white rounded-xl 3xl:rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer border border-[#e1e1e1] relative min-h-22.5"
         >
             <div className="p-4 md:p-6 md:px-8 max-w-[87%]">
@@ -119,7 +115,7 @@ export default function FAQ() {
                         <div className="mt-1 flex-shrink-0 max-md:hidden">
                             <Info className='size-4.5 3xl:size-5' />
                         </div>
-                        <p className="font-semibold text-base 3xl:text-xl leading-snug">
+                        <p className="font-semibold text-base 3xl:text-xl tracking-[-0.02em]">
                             {faq.question}
                         </p>
                     </div>
@@ -172,7 +168,7 @@ export default function FAQ() {
     );
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-2 md:px-20">
+        <div className="flex items-center justify-center px-2 md:px-20 3xl:mt-16">
             <div className="w-full">
                 <div className="flex flex-col lg:flex-row gap-x-14 3xl:gap-x-18 gap-y-5 md:gap-y-7 3xl:gap-y-6">
 

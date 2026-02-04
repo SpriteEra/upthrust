@@ -24,7 +24,7 @@ export default function WhatWeDo() {
 
     return (
         <div id='about' className='scroll-mt-30'>
-            <div className="flex items-center justify-center px-2 md:px-16 mt-20  relative">
+            <div className="flex items-center justify-center px-2 md:px-16 mt-0 lg:mt-20  relative">
                 {/* Banner Container */}
 
                 <Curve1
@@ -54,7 +54,7 @@ export default function WhatWeDo() {
                     className="absolute -bottom-20 xl:-bottom-18 left-80 xl:left-100 max-w-[200px]"
 
                 />
-                <div className="w-full  bg-[#F4F4F4] rounded-2xl md:rounded-4xl overflow-hidden">
+                <div className="w-full  bg-[#F4F4F4] max-lg:rounded-b-none rounded-2xl lg:rounded-4xl overflow-hidden">
                     <div className="relative md:px-20 3xl:px-30 pt-2">
 
                         {/* Content Grid */}
@@ -62,10 +62,10 @@ export default function WhatWeDo() {
 
                             {/* Left Section - Text */}
                             <div className="lg:col-span-2 3xl:py-4">
-                                <p className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-semibold tracking-[-1.56px] leading-[52.15px]  max-lg:text-center" >
+                                <p className="text-4xl lg:text-4xl 3xl:text-5xl font-semibold tracking-[-0.02em] lg:tracking-[-1.56px] leading-[44px] lg:leading-[52.15px]  max-lg:text-center" >
                                     What We <span className="italic font-normal">Do</span>
                                 </p>
-                                <p className="text-sm 3xl:text-base flex gap-2 items-center max-lg:justify-center max-md:hidden" >Watch Now <span className='text-lg font-light'>→</span></p>
+                                <p className="text-base max-lg:mt-2 lg:text-sm 3xl:text-base flex gap-2 items-center max-lg:justify-center" >Watch Now <span className='text-lg font-light'>→</span></p>
                             </div>
 
                             {/* Center Section - Images */}
@@ -84,7 +84,7 @@ export default function WhatWeDo() {
 
 
                             {/* Right Section - Play Button */}
-                            <div className="flex justify-center items-center ">
+                            <div className="flex justify-center items-center max-lg:pt-12 ">
                                 <div className="relative flex flex-col items-center">
 
                                     {/* WHITE PLAY CIRCLE */}
@@ -92,31 +92,59 @@ export default function WhatWeDo() {
                                         onClick={openVideo}
                                         aria-label="Play video"
                                         className="
-                                            relative z-10 rounded-full bg-transparent flex items-center justify-center size-20 md:size-25 3xl:size-30 cursor-pointer"
+                                            relative z-10 rounded-full bg-transparent flex items-center justify-center size-27.75 lg:size-25 3xl:size-30 cursor-pointer"
                                         style={{ boxShadow: "inset 0 0 5px #878787" }}
                                     >
-                                        <span className="inline-block w-0 h-0 border-t-20 md:border-t-25 border-t-transparent border-b-20 md:border-b-25 border-b-transparent border-l-35 md:border-l-40 border-l-black" />
+                                        <span className="inline-block w-0 h-0 border-t-25 md:border-t-25 border-t-transparent border-b-25 md:border-b-25 border-b-transparent border-l-40 md:border-l-40 border-l-black" />
                                     </button>
 
                                     {/* BLACK PILL */}
                                     <div
-                                        className=" absolute -bottom-4 md:-bottom-5 bg-black text-white px-3 py-2 md:py-3 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.35)] flex items-center gap-2 text-[8px] md:text-[10px] 3xl:text-xs tracking-wide whitespace-nowrap z-11"
+                                        className=" absolute -bottom-4 md:-bottom-5 bg-black text-white px-3.5 py-2.5 md:py-3 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.35)] flex items-center gap-2 text-xs lg:text-[10px] 3xl:text-xs tracking-wide whitespace-nowrap z-11"
                                     >
                                         <span className="opacity-80">TOTAL TIME</span>
                                         <span className="">1:15 MINS</span>
                                     </div>
 
+                                    <Curve1
+                                        lines={[
+                                            {
+                                                parts: [
+                                                    { type: "text", text: "From" },
+                                                    { type: "highlight", text: "Shark Tanks", bgColor: '#FF4500' },
+                                                    { type: "text", text: "brands" },
+                                                ]
+                                            },
+                                            {
+                                                parts: [
+                                                    { type: "text", text: "to scaling startups" }
+                                                ]
+                                            }
+                                        ]}
+
+                                        curvePosition="end"
+                                        curveFlipHorizontal={true}
+                                        curveFlipVertical={false}
+
+                                        tiltAngle={-7}
+                                        imageClassName='-right-5 -top-13 3xl:top-6 -rotate-98'
+                                        className="absolute -bottom-48 left-1/2 -translate-x-1/2 max-w-[200px] lg:hidden
+"
+                                        hiddenInSmall={false}
+                                    />
+
                                 </div>
                             </div>
 
-                            <div className="lg:col-span-3 flex justify-end items-end h-50 md:h-60 lg:hidden">
-                                <div className="relative w-full h-35 sm:h-45 md:h-40">
+                            <div className="lg:col-span-3 flex justify-end items-end h-50 md:h-60 lg:hidden max-lg:pt-110">
+                                <div className="relative w-full h-60 sm:h-45 md:h-40">
                                     <Image
                                         src="/ecom/work1.webp"
                                         alt="User-generated content video promoting ecommerce skincare brand"
-                                        fill
-                                        className="object-contain"
-                                        sizes="(max-width: 768px) 100vw, 700px"
+                                        width={500}
+                                        height={500}
+                                        quality={100}
+                                        className="object-cover lg:object-contain w-full h-full "
                                         loading="lazy"
                                     />
                                 </div>

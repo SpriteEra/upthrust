@@ -21,7 +21,7 @@ export const Curve1 = ({
   highlightClassName = "",
   className = '',
   imageIndex = 0,
-  hiddenInSmall=true
+  hiddenInSmall = true
 }) => {
   const renderParts = () => {
     return lines?.map((line, index) => (
@@ -31,7 +31,7 @@ export const Curve1 = ({
             if (part.type === 'highlight') {
               return (
                 <span
-                  className={`${highlightClassName} text-lg 3xl:text-[22px] p-0.5 3xl:p-1 px-3 3xl:px-4 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center`}
+                  className={`${highlightClassName} text-lg 3xl:text-2xl p-0.5 3xl:p-0.5 px-3 3xl:px-4 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-9 tracking-[-0.02em]`}
                   key={index}
 
                 >
@@ -42,7 +42,7 @@ export const Curve1 = ({
               return (
                 <span
                   key={index}
-                  className={`${textClassName} text-black text-lg 3xl:text-[22px] text-center`}
+                  className={`${textClassName} text-black text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]`}
 
                 >
                   {part.text}
@@ -57,7 +57,7 @@ export const Curve1 = ({
 
   return (
     <div
-      className={`inline-flex items-center gap-3 font-hanzi ${hiddenInSmall ? "max-lg:hidden": ""} ${className}`}
+      className={`inline-flex items-center gap-3 font-hanzi ${hiddenInSmall ? "max-lg:hidden" : ""} ${className}`}
       style={{
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'

@@ -15,6 +15,7 @@ import { FullPricingSection } from '@/components/home/FullPricingSection';
 import HomeFooter from '@/components/home/HomeFooter';
 import ScrollIndicator from '@/components/home/ScrollIndicator';
 import WhatWeDid from '@/components/home/WhatWeDid';
+import EcomHeading from '@/components/home/EcomHeading';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
@@ -40,11 +41,12 @@ const BrandSlider = dynamic(
 //   { ssr: false }
 // );
 
-// const InteractiveCaseStudy = dynamic(
-//   () => import('@/components/home/client/InteractiveCaseStudy.client'),
-//   { ssr: false }
-// );
-import InteractiveCaseStudy from "@/components/home/client/InteractiveCaseStudy.client";
+const InteractiveCaseStudy = dynamic(
+  () => import('@/components/home/InteractiveCaseStudy'),
+  { loading: () => null }
+);
+// import InteractiveCaseStudy from "@/components/home/client/InteractiveCaseStudy.client";
+// import InteractiveCaseStudy from "@/components/home/client/InteractiveCaseStudy.client";
 
 
 // const SuccessStories = dynamic(
@@ -137,7 +139,7 @@ const page = () => {
             }
           </div>
 
-          <div className="relative inline-block px-5 3xl:px-6 py-2 3xl:py-3 rounded-full text-sm 3xl:text-base text-white mt-6 3xl:mt-10 mb-16 md:mb-3 3xl:mb-5 bg-black/80 border border-white/10 max-md:mx-auto w-fit">
+          <div className="relative inline-block px-5 3xl:px-6 py-2 3xl:py-3 rounded-full lg:text-sm 3xl:text-base text-white mt-6 3xl:mt-10 mb-16 md:mb-3 3xl:mb-5 bg-black/80 border border-white/10 max-md:mx-auto w-fit">
             <span className="pointer-events-none absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full" />
             D2C Marketing Agency
           </div>
@@ -155,7 +157,7 @@ const page = () => {
           </h1>
 
 
-          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white leading-relaxed max-md:pl-2">
+          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white max-md:pl-2 tracking-[-0.02em]">
             Ads that stop the scroll <br />
             Pages that convert <br />
             Growth that compound
@@ -164,7 +166,7 @@ const page = () => {
           <ScaleButton color="red" />
 
           <div className='mt-10 sm:mt-5 3xl:mt-7 flex flex-col'>
-            <p className='text-base 3xl:text-lg max-md:text-center'>Brands we've scaled</p>
+            <p className='text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]'>Brands we've scaled</p>
 
             <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl lg:pb-12 3xl:pb-20">
               {brands.map((brand) => (
@@ -195,15 +197,14 @@ const page = () => {
         </div>
       </div>
 
-      <div className='my-20 3xl:mt-40 flex flex-col '>
-        <h2 className='text-center text-xl 3xl:text-2xl max-xs:max-w-[300px] mx-auto tracking-[-2%]'><span className='font-semibold'>60+</span> D2C Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
+      <div className='max-lg:my-12  lg:my-20 3xl:mt-40 flex flex-col '>
+        <h2 className='text-center text-2xl lg:text-xl 3xl:text-2xl max-xs:max-w-[320px] mx-auto tracking-[-0.02em]'><span className='font-semibold'>60+</span> D2C Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
         <BrandSlider />
       </div>
 
       <div className='flex flex-col items-center'>
-
         <div className='flex flex-col items-center px-3'>
-          <span className='text-sm md:text-xs 3xl:text-sm'>CREATIVES THAT ACTUALLY SELL</span>
+          <span className='text-sm xl:text-xs 3xl:text-sm'>CREATIVES THAT ACTUALLY SELL</span>
           <div className='flex flex-col'>
             <div className='mt-5 flex flex-wrap gap-1 sm:gap-3 items-center justify-center relative'>
 
@@ -221,7 +222,7 @@ const page = () => {
                     ]
                   },
                 ]}
-                imageClassName='right-0 top-14 3xl:top-16'
+                imageClassName='right-0 3xl:-right-6 top-14 3xl:top-16'
                 curvePosition="end"
                 curveFlipHorizontal={true}
                 curveFlipVertical={false}
@@ -229,19 +230,19 @@ const page = () => {
                 className="absolute -bottom-40 xl:-bottom-50 -left-50 xl:-left-70 max-w-[200px]"
 
               />
-              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-4%]'>1 in 7 Shark Tank</h2>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>1 in 7 Shark Tank</h2>
               <div className='inline-block'>
 
                 <div className="flex -space-x-2 xs:-space-x-4 rtl:space-x-reverse">
                   {
                     socials.map((social, index) => (
-                      <div key={index} className="relative size-9 xs:size-10 md:size-11 3xl:size-12.5 rounded-full border-buffer overflow-hidden shrink-0">
+                      <div key={index} className="relative size-8.75 xs:size-10 md:size-11 3xl:size-12.5 rounded-full border-buffer overflow-hidden shrink-0">
                         <Image
                           src={social.url}
                           alt={social.alt}
-                          fill
-                          sizes="(min-width: 1920px) 50px, 44px"
-                          className="object-cover"
+                          width={50}
+                          height={50}
+                          className="object-cover w-full h-full"
                         />
                       </div>
                     ))
@@ -249,17 +250,17 @@ const page = () => {
                 </div>
               </div>
               <p className='xs:hidden text-center'>
-                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic'>brands </span>
-                <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
+                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>brands </span>
+                <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1 leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>{" "}Work with us</span>
               </p>
             </div>
-            <p className='max-xs:hidden leading-[120%] tracking-[-4%]'>
-              <span className=' capitalize text-4xl md:text-7xl 3xl:text-8xl font-instrument italic tracking-[0]'>brands </span>
-              <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1'>{" "}Work with us</span>
+            <p className='max-xs:hidden leading-[120%] tracking-[-0.04em]'>
+              <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0 leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>brands </span>
+              <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1 leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>{" "}Work with us</span>
             </p>
 
           </div>
-          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-2%]'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
+          <span className='text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em]'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
         </div>
         <StylishButton color='red' />
         <SliderVideos />
@@ -290,43 +291,70 @@ const page = () => {
                 className="absolute -right-28 3xl:-right-32 -top-4 max-w-[200px] "
 
               />
-              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-4%] capitalize'>Last Month,
-                <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal tracking-0'> 47 brands </span>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>Last Month,
+                <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] font-normal'> 47 brands </span>
                 Brands Scaled
               </h2>
             </div>
           </div>
-          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-12 text-center'>One founder called us. 'We just hit ₹3 crore.' That's what happens with the right ads</span>
+          <span className='text-lg lg:text-sm 3xl:text-lg mt-2 mb-3 lg:mb-12 text-center tracking-[-0.02em]'>One founder called us. 'We just hit ₹3 crore.' That's what happens with the right ads</span>
 
         </div>
         <InteractiveCaseStudy />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
+      <div className='flex flex-col mt-25 xs:mt-60 3xl:mt-80 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
         <div className='flex flex-col items-center mb-10'>
-          <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
+          {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
           <div className='flex flex-col items-center justify-center'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>How To Scale</h2>
-              <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'>D2C brands</span>
+              <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em] capitalize'>How To Scale
+                <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> D2C brands</span> </h2>
             </div>
           </div>
-          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>Scale to ₹2.5Cr+/month </span>
+          <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-12 text-center tracking-[-0.02em]'>Scale to ₹2.5Cr+/month </span> */}
 
+          <EcomHeading
+            tag="h2"
+            heading={[
+              {
+                line: [
+                  { type: "normal", text: "How To Scale" },
+                  { type: "italic", text: "D2C brands" },
+                ],
+              },
+            ]}
+            label="Our services"
+            subtitle="Scale to ₹2.5Cr+/month"
+          />
         </div>
         <ServicesAccordion />
       </div>
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-70 mb-2 xs:mb-10 px-2'>
           <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
+            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h2 className='text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-semibold text-center'>Scale with UGC ads:</h2>
-                <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic'> The Playbook</span>
+                <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em] capitalize'>Scale with UGC ads:</h2>
+                <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> The Playbook</span>
               </div>
-            </div>
+            </div> */}
+
+            <EcomHeading
+              tag="h2"
+              heading={[
+                {
+                  line: [
+                    { type: "normal", text: "Scale with UGC ads:" },
+                    { type: "italic", text: "The Playbook" },
+                  ],
+                },
+              ]}
+              label="A VIDEO GUIDE"
+              subtitle=""
+            />
           </div>
         </div>
         <UGCAdsPlaybook />
@@ -337,31 +365,65 @@ const page = () => {
       <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 max-lg:hidden'>
         <div className='flex flex-col pt-22 3xl:pt-25 text-white'>
           <div className='flex flex-col items-center mb-10'>
-            <span className='text-xs 3xl:text-sm uppercase'>our process</span>
+            {/* <span className='text-xs 3xl:text-sm uppercase'>our process</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center justify-center'>
-                <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize text-center'>How we approach your:
-                  <span className=' capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Ecom store growth</span> ?</h3>
+                <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>How we approach your
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> Ecom store growth</span> ?</h3>
               </div>
             </div>
-            <span className='text-sm 3xl:text-lg mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore </span>
+            <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore</span> */}
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [
+                    { type: "normal", text: "How we approach your" },
+                    { type: "italic", text: "Ecom store growth" },
+                    { type: "normal", text: "?" },
+                  ],
+                },
+              ]}
+              label="our process"
+              subtitle="Join the top 0.1% of e-com brands using the proprietary process other agencies ignore"
+            />
           </div>
+
         </div>
         <OurApproach />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-50 mb-8 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
-        <div className='flex flex-col pt-22 3xl:pt-25'>
-          <div className='flex flex-col items-center mb-10'>
-            <span className='text-xs 3xl:text-sm uppercase'>our work</span>
+      <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-0 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
+        <div className='flex flex-col'>
+          <div className='flex flex-col items-center mb-6'>
+            {/* <span className='text-xs 3xl:text-sm uppercase'>our work</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
-                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>50+ Brands. 200+ UGC Videos. <br />
+                <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>50+ Brands. 200+ UGC Videos. <br />
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> Watch Them</span>
                 </h3>
               </div>
-              <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal text-center'> Watch Them</span>
             </div>
-            <span className='text-[15px] sm:text-sm 3xl:text-lg mt-5'>Average CTA: 8.2% </span>
+            <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mt-3 mb-5'>Average CTA: 8.2% </span> */}
+
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [
+                    { type: "normal", text: "50+ Brands. 200+ UGC Videos." },
+                  ],
+                },
+                {
+                  line: [
+
+                    { type: "italic", text: "Watch Them" },
+                  ]
+                }
+              ]}
+              label="our work"
+              subtitle="Average CTA: 8.2% "
+            />
           </div>
         </div>
         <UGCVideoCategories />
@@ -377,20 +439,39 @@ const page = () => {
       </div>
       <div>
         <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>
-          <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>CASE STUDIES</span>
+          <div className='flex flex-col items-center mb-10 3xl:mb-16'>
+            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>CASE STUDIES</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center flex-col'>
-                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>
                   The
-                  <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'>{" "}dashboards. </span>
-                </h3>
-                <h4 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'>{" "}dashboards. </span>
+                  <br />
                   The numbers. What we did.
-                </h4>
+                </h3>
               </div>
-              <span className='text-[15px] sm:text-sm 3xl:text-lg mt-5 mb-10 text-center'>We Don't Just Talk—We Show</span>
-            </div>
+              <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mb-10'>We Don't Just Talk—We Show</span>
+            </div> */}
+
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [
+                    { type: "normal", text: " The" },
+                    { type: "italic", text: "dashboards." },
+                  ],
+                },
+                {
+                  line: [
+
+                    { type: "normal", text: " The numbers. What we did." },
+                  ]
+                }
+              ]}
+              label="CASE STUDIES"
+              subtitle="We Don't Just Talk—We Show "
+            />
           </div>
         </div>
 
@@ -402,16 +483,19 @@ const page = () => {
       <div>
         <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='why-upthrust'>
           <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>UPTHRUST vs Other Agencies</span>
-            <div className='flex flex-col'>
-              <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
-                  What you get
-                  <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-normal font-instrument italic'>{" "}Here</span>
-                </h3>
-              </div>
-              <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>Why Should You Hire Us?</span>
-            </div>
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [{ type: "normal", text: "What you get" },
+                  { type: "italic", text: "Here" },
+
+                  ],
+                },
+              ]}
+              label="UPTHRUST vs Other Agencies"
+              subtitle="Why Should You Hire Us?"
+            />
           </div>
         </div>
 
@@ -422,7 +506,7 @@ const page = () => {
       <div>
         <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='pricing'>
           <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>PRICING</span>
+            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>PRICING</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
                 <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
@@ -431,21 +515,34 @@ const page = () => {
                 </h3>
               </div>
               <span className='text-lg md:text-sm 3xl:text-lg mt-5 xs:mt-8 mb-8 text-center capitalize '>Brands we've scaled</span>
-            </div>
+            </div> */}
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [{ type: "normal", text: "What It" },
+                  { type: "italic", text: "Costs" },
 
+                  ],
+                },
+              ]}
+              label="PRICING"
+              subtitle=""
+            />
+            <span className='text-lg mt-5 xs:mt-8 3xl:mt-16 mb-8 3xl:mb-12 text-center sm:text-sm 3xl:text-lg tracking-[-0.02em]'>Brands we've scaled</span>
             <div className="w-full flex items-center justify-center max-w-6xl px-4">
-              <div className="flex items-center gap-5 md:gap-11 overflow-x-auto whitespace-nowrap hide-scrollbar">
+              <div className="flex justify-center lg:items-center gap-5 md:gap-11 overflow-x-auto whitespace-nowrap hide-scrollbar w-full">
                 {brands2.slice(0, 6).map((logo) => (
                   <div
                     key={logo.name}
-                    className="flex-shrink-0 flex items-center justify-center"
+                    className="flex items-center justify-center h-12 w-30"
                   >
                     <Image
                       src={logo.src}
                       alt={logo.name}
-                      width={200}
-                      height={100}
-                      className="3xl:h-7 w-auto object-contain"
+                      width={300}
+                      height={200}
+                      className="h-full w-full object-contain select-none"
                     />
                   </div>
                 ))}
@@ -522,12 +619,12 @@ const page = () => {
             {
               parts: [
                 { type: 'highlight', text: 'growth', bgColor: '#FF4500' },
-                { type: "text", text: "entire" },
+                { type: "text", text: "engine" },
               ]
             },
 
           ]}
-          imageClassName='right-17 -top-12 3xl:-top-12 w-full -rotate-6 !h-12 3xl:!h-12'
+          imageClassName='right-17 -top-12 3xl:-top-12 w-full -rotate-6 !h-10 lg:!h-12 3xl:!h-12'
           curvePosition="end"
           curveFlipHorizontal={true}
           curveFlipVertical={false}
@@ -539,24 +636,40 @@ const page = () => {
         <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 relative'>
 
           <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
+            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
                 <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
                   <span className='text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Scale</span> ?
                 </h3>
               </div>
-            </div>
+            </div> */}
+
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [
+                    { type: "normal", text: "Ready to" },
+                    { type: "italic", text: "Scale" },
+                    { type: "normal", text: " ?" },
+
+                  ],
+                },
+              ]}
+              label="Ready to book your demo"
+              subtitle=""
+            />
           </div>
         </div>
-        <LeadForm showCircle={true} />
+        <LeadForm showOnlyIframe={true} />
       </div>
 
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='here-from-them'>
-          <div className='flex flex-col items-center mb-10'>
-            <span className='text-sm md:text-xs 3xl:text-sm uppercase'>what they say</span>
+        <div className='flex flex-col mt-40 lg:mt-40 3xl:mt-70 mb-0 xs:mb-10 px-2 scroll-mt-30 3xl:scroll-mt-35' id='hear-from-them'>
+          <div className='flex flex-col items-center mb-5'>
+            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>what they say</span>
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
                 <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
@@ -565,7 +678,21 @@ const page = () => {
                 </h3>
               </div>
               <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-10 text-center'>In their words</span>
-            </div>
+            </div> */}
+
+            <EcomHeading
+              tag="h3"
+              heading={[
+                {
+                  line: [{ type: "italic", text: "2-4X" },
+                  { type: "normal", text: "In 6-12 Months" },
+
+                  ],
+                },
+              ]}
+              label="what they say"
+              subtitle="In their words"
+            />
           </div>
         </div>
 
@@ -573,8 +700,8 @@ const page = () => {
       </div>
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 mb-10 px-2 items-center'>
-          <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Got questions? FAQ's</span>
+        <div className='flex flex-col mt-25 xs:mt-50 mb-20 lg:mb-10 px-2 items-center'>
+          {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Got questions? FAQ's</span>
           <div className='flex flex-col'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
               <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'>
@@ -584,7 +711,24 @@ const page = () => {
                 </p>
               </h3>
             </div>
-          </div>
+          </div> */}
+
+          <EcomHeading
+            tag="h3"
+            heading={[
+              {
+                line: [{ type: "normal", text: "Everything You Need To Know" }],
+              },
+              {
+                line: [
+                  { type: "normal", text: "Before" },
+                  { type: "italic", text: "Working With Us" },
+                ],
+              },
+            ]}
+            label="Got questions? FAQ's"
+            subtitle=""
+          />
         </div>
 
         <FAQ />

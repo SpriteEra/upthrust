@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import StylishButton from '@/common/RocketButton';
+import NavbarCTAButton from './NavbarCTAButton';
 const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
@@ -8,7 +9,7 @@ const navLinks = [
     { name: 'Case Studies', href: '#case-studies' },
     { name: 'Why Upthrust?', href: '#why-upthrust' },
     { name: 'Pricing', href: '#pricing' },
-    { name: 'Here From Them', href: '#here-from-them' },
+    { name: 'Hear From Them', href: '#hear-from-them' },
 ];
 
 export default function Navbar({ items = navLinks }) {
@@ -49,13 +50,7 @@ export default function Navbar({ items = navLinks }) {
 
 
                     {/* Mobile menu button */}
-                    <div className="lg:hidden max-lg:flex gap-0 sm:gap-2">
-                        <button
-                            className="px-5 rounded-full py-2.5 sm:py-3 md:py-3.5 bg-black border-2 border-(--red) hover:bg-(--black) hover:border- text-white text-xs transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 relative group font-medium"
-                        >
-                            Book A Demo Call
-                        </button>
-                    </div>
+                    <NavbarCTAButton />
                 </div>
             </div>
 

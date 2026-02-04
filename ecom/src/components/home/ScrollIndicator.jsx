@@ -1,6 +1,6 @@
 export default function ScrollIndicator() {
     return (
-        <div className="flex flex-col justify-center items-center w-full mt-20 md:mt-30">
+        <div className="flex flex-col justify-center items-center w-full mt-20 md:mt-30 max-lg:hidden">
             <div className="group relative size-32 md:size-40 3xl:size-50 flex items-center justify-center">
 
                 {/* Circular Text */}
@@ -18,7 +18,7 @@ export default function ScrollIndicator() {
                     </defs>
                     <text fontSize="12" letterSpacing="2">
                         <textPath href="#circlePath" startOffset="0%">
-                            LEARN WHY WE’RE DIFFERENT&nbsp;&nbsp;LEARN WHY WE’RE DIFFERENT
+                            READY TO SCALE&nbsp;&nbsp;&nbsp;READY TO SCALE&nbsp;&nbsp;&nbsp;READY TO SCALE&nbsp;&nbsp;&nbsp;
                         </textPath>
                     </text>
                 </svg>

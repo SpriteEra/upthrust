@@ -1,10 +1,9 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Calendar, Clock, ChevronRight, X } from 'lucide-react';
 import LeadForm from './LeadForm';
 import Image from 'next/image';
-
-
 
 // Testimonial Component
 
@@ -39,7 +38,7 @@ const TestimonialSection = () => (
             {/* Content */}
             <div className="relative z-20 h-full flex flex-col justify-end p-6">
                 {/* BOTTOM ORANGE SECTION */}
-                <p className="text-white text-[22px] xs:text-lg 3xl:text-2xl font-semibold">
+                <div className="text-white text-[22px] xs:text-lg 3xl:text-2xl font-semibold">
                     <span className='-pt-3'>
                         <svg className='size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.48702e-10 18.0701C3.96784e-10 8.44813 6.83439 2.72495 11.0981 0.0876696C11.6382 -0.246749 12.2214 0.449277 11.8056 0.935951C10.1274 2.89523 8.80072 5.13361 7.88479 7.55091C10.0746 6.92231 12.4052 7.00244 14.5473 7.77999C16.6894 8.55753 18.5347 9.99317 19.8224 11.884C21.1101 13.7749 21.7752 16.0254 21.7236 18.3175C21.672 20.6097 20.9064 22.8275 19.5349 24.6577C18.1634 26.4879 16.2554 27.8379 14.0805 28.5169C11.9056 29.196 9.57382 29.1697 7.41456 28.4418C5.2553 27.714 3.37778 26.3214 2.0473 24.4607C0.716823 22.6001 0.000656758 20.3629 8.48702e-10 18.0701ZM24.1809 18.0701C24.1809 8.44813 31.0153 2.72495 35.2791 0.0903884C35.8191 -0.24403 36.4024 0.449277 35.9892 0.933232C34.3089 2.89292 32.9803 5.13226 32.063 7.55091C34.2528 6.92231 36.5834 7.00244 38.7255 7.77999C40.8676 8.55753 42.7129 9.99317 44.0007 11.884C45.2884 13.7749 45.9534 16.0254 45.9018 18.3175C45.8502 20.6097 45.0846 22.8275 43.7131 24.6577C42.3416 26.4879 40.4337 27.8379 38.2588 28.5169C36.0839 29.196 33.7521 29.1697 31.5928 28.4418C29.4335 27.714 27.556 26.3214 26.2255 24.4607C24.8951 22.6001 24.1789 20.3656 24.1782 18.0729L24.1809 18.0701Z" fill="#ffffff" />
@@ -47,7 +46,7 @@ const TestimonialSection = () => (
                     </span>
                     <blockquote> We're satisfied and glad we picked Upthrust. They 4X'd our revenue while
                         keeping ads profitable.</blockquote>
-                </p>
+                </div>
 
 
 
@@ -89,44 +88,116 @@ const TestimonialSection = () => (
 // Main Form Component
 const LeadFormModal = ({ handleClose }) => {
 
-    const handleBackdropClick = (e) => {
-        console.log('clik')
-        // Only close if clicking directly on the backdrop, not its children
-        if (e.target === e.currentTarget) {
-            console.log("inside")
-            handleClose();
-        }
-    };
+    const [mounted, setMounted] = useState(false);
 
-    return (
+    useEffect(() => {
+        setMounted(true);
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
 
-        <div className="fixed inset-0 z-101 flex items-center justify-center">
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
+
+    const modalContent = (
+        <div
+            className="fixed top-0 left-0 w-screen h-screen z-[99999] flex items-center justify-center p-4"
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100vw',
+                height: '100vh',
+                zIndex: 99999,
+                margin: 0,
+                padding: '16px'
+            }}
+        >
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/60 backdrop-blur-sm"
                 onClick={handleClose}
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0
+                }}
             />
 
-            <button onClick={handleClose} className="absolute top-8 right-2 z-20 p-2 bg-white text-[#FF3B00] rounded-full shadow hover:bg-gray-100 sm:hidden" > <X className="w-5 h-5" /> </button>
+            {/* Close button */}
+            <button
+                onClick={handleClose}
+                className="absolute top-8 right-8 z-[100000] p-2 bg-white text-[#FF3B00] rounded-full shadow hover:bg-gray-100"
+                style={{
+                    position: 'absolute',
+                    top: '32px',
+                    right: '32px',
+                    zIndex: 100000
+                }}
+            >
+                <X className="w-5 h-5" />
+            </button>
+
             {/* Modal Box */}
             <div
-                className="relative z-10 w-full max-lg:max-w-md max-w-6xl max-lg:mx-auto 3xl:max-w-7xl h-[90vh] 3xl:h-[85vh] lg:rounded-4xl shadow-2xl overflow-hidden"
+                className="relative z-[99999] w-full max-w-6xl 3xl:max-w-7xl h-[90vh] 3xl:h-[85vh] lg:rounded-4xl shadow-2xl overflow-hidden mx-auto"
                 onClick={(e) => e.stopPropagation()}
+                style={{
+                    position: 'relative',
+                    zIndex: 99999,
+                    maxWidth: '1152px',
+                    width: '100%',
+                    height: '90vh',
+                    margin: '0 auto'
+                }}
             >
-
-                <div className="flex h-full w-full max-sm:px-2">
+                <div className="flex h-full w-full">
                     <div className="hidden lg:block lg:w-5/12">
                         <TestimonialSection />
                     </div>
-                    <div className='w-full max-lg:max-w-md max-lg:rounded-md mx-auto lg:w-7/12 flex text-black bg-white max-2xl:overflow-auto max-2xl:pt-30'>
+                    <div className='w-full lg:w-7/12 flex text-black bg-white overflow-auto'>
                         <LeadForm showBorder={false} />
-
                     </div>
                 </div>
             </div>
         </div>
-
     );
+
+    if (!mounted) return null;
+
+    return createPortal(modalContent, document.body);
+    // return (
+
+    //     <div className="fixed inset-0 z-101 flex items-center justify-center">
+    //         {/* Backdrop */}
+    //         <div
+    //             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+    //             onClick={handleClose}
+    //         />
+
+    //         <button onClick={handleClose} className="absolute top-8 right-2 z-20 p-2 bg-white text-[#FF3B00] rounded-full shadow hover:bg-gray-100 sm:hidden" > <X className="w-5 h-5" /> </button>
+    //         {/* Modal Box */}
+    //         <div
+    //             className="relative z-10 w-full max-lg:max-w-md max-w-6xl max-lg:mx-auto 3xl:max-w-7xl h-[90vh] 3xl:h-[85vh] lg:rounded-4xl shadow-2xl overflow-hidden"
+    //             onClick={(e) => e.stopPropagation()}
+    //         >
+
+    //             <div className="flex h-full w-full max-sm:px-2">
+    //                 <div className="hidden lg:block lg:w-5/12">
+    //                     <TestimonialSection />
+    //                 </div>
+    //                 <div className='w-full max-lg:max-w-md max-lg:rounded-md mx-auto lg:w-7/12 flex text-black bg-white max-2xl:overflow-auto max-2xl:pt-30'>
+    //                     <LeadForm showBorder={false} />
+
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+
+    // );
 };
 
 export default LeadFormModal;

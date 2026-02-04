@@ -30,8 +30,8 @@ const ScaleButton = () => {
                 </svg>
             </span>
             <div className='flex h-full justify-between flex-col items-start pr-2'>
-                <span className='text-lg md:text-sm 3xl:text-lg font-medium'>Scale My Store</span>
-                <span className='text-[10px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
+                <span className='text-lg xl:text-sm 3xl:text-lg font-medium tracking-[-0.02em]'>Scale My Store</span>
+                <span className='size-xs xl:text-[10px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
             </div>
             {isOpen && (
                 <LeadFormModal handleClose={() => setIsOpen(false)} />
