@@ -83,12 +83,12 @@ const ClientVideoTestimonial = () => {
                                                 SUCCESS STORY
                                             </p>
 
-                                            <p className='mt-2 md:mt-5 text-sm md:text-lg 3xl:text-2xl tracking-[-0.02em] text-[#f7f9f2]'>
+                                            <p className='mt-2 md:mt-5 text-base lg:text-lg 3xl:text-2xl max-lg:leading-[20px] tracking-[-0.02em] text-[#f7f9f2]'>
                                                 {item.text}
                                             </p>
                                         </div>
 
-                                        <button onClick={() => setPlayingId(item.id)} className='text-xs 3xl:text-sm flex items-center gap-1 mt-3'>
+                                        <button onClick={() => setPlayingId(item.id)} className='text-base lg:text-xs 3xl:text-sm flex items-center gap-1 mt-3'>
                                             Play Video <ArrowUpRight size={15} />
                                         </button>
                                     </div>

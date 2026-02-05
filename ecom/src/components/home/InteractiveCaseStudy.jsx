@@ -63,7 +63,7 @@ const InteractiveCaseStudy = () => {
                             <div
                                 key={section.id}
                                 ref={(el) => (sectionRefs.current[index] = el)}
-                                className={`rounded-2xl  3xl:rounded-2xl overflow-hidden transition-all duration-300 border relative ${activeSection === index ? 'bg-black text-white shadow-2xl border-black'
+                                className={`rounded-2xl 3xl:rounded-2xl overflow-hidden transition-all duration-300 border relative ${activeSection === index ? 'bg-black text-white shadow-2xl border-black'
                                     : 'bg-white text-gray-900 hover:shadow-lg border-gray-200'}`}
                             >
                                 {/* Header */}
@@ -72,7 +72,7 @@ const InteractiveCaseStudy = () => {
                                     onClick={(e) => handleSectionClick(e, index)}
                                 >
                                     <div className="flex items-start justify-between gap-4">
-                                        <p className={`text-base 3xl:text-xl font-semibold pr-4 flex-1 tracking-[-0.02em] ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
+                                        <p className={`text-xl lg:text-base 3xl:text-xl font-semibold pr-4 flex-1 max-lg:leading-[30px] 3xl:leading-[30px] tracking-[-0.02em] ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
                                             {section.title}
                                         </p>
                                     </div>
@@ -82,7 +82,7 @@ const InteractiveCaseStudy = () => {
                                         className={`grid transition-all duration-500 ease-in-out ${activeSection === index ? 'grid-rows-[1fr] opacity-100 mt-1.5' : 'grid-rows-[0fr] opacity-0'}`}
                                     >
                                         <div className="overflow-hidden pr-10">
-                                            <p className="text-sm 3xl:text-base font-light">
+                                            <p className="text-base  lg:text-sm 3xl:text-base font-light">
                                                 {section.description}
                                             </p>
                                         </div>

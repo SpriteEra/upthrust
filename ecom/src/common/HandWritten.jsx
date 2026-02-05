@@ -25,13 +25,13 @@ export const Curve1 = ({
 }) => {
   const renderParts = () => {
     return lines?.map((line, index) => (
-      <p key={index} className='flex gap-x-1 3xl:gap-x-1.5 text-center justify-center'>
+      <div key={index} className='flex gap-x-1.5 items-center justify-center'>
         {
           line?.parts?.map((part, index) => {
             if (part.type === 'highlight') {
               return (
                 <span
-                  className={`${highlightClassName} text-lg 3xl:text-2xl p-0.5 3xl:p-0.5 px-3 3xl:px-4 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-9 tracking-[-0.02em]`}
+                  className={`${highlightClassName} text-[22px] pb-2.5 pt-1.5 px-3.5 lg:text-[17px] 3xl:text-[22px] lg:p-0.5 3xl:pb-2.5 3xl:pt-1.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]`}
                   key={index}
 
                 >
@@ -42,7 +42,7 @@ export const Curve1 = ({
               return (
                 <span
                   key={index}
-                  className={`${textClassName} text-black text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]`}
+                  className={`${textClassName} inline-block flex text-black text-2xl lg:text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]`}
 
                 >
                   {part.text}
@@ -51,7 +51,7 @@ export const Curve1 = ({
             }
           })
         }
-      </p>
+      </div>
     ))
   };
 

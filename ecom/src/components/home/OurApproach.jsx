@@ -171,7 +171,7 @@ export default function OurApproach() {
                                 }
                                 <div
                                     className="w-11 h-11 rounded-full bg-white text-black
-                                    flex items-center justify-center font-bold shadow-xl relative"
+                                    flex items-center justify-center font-semibold relative"
                                 >
                                     {step.id}
                                     <span className="text-xs 3xl:text-sm px-3 bg-white/10 py-0.5 mb-2 absolute -top-8 font-light text-white">STEP</span>

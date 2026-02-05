@@ -165,10 +165,10 @@ export default function ServicesAccordion() {
                         {/* HEADER */}
                         <div className="flex items-start  relative">
                             <div className="max-xs:min-w-full xs:w-1/2">
-                                <p className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
+                                <p className="text-4xl leading-[36px] 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10 tracking-[0.05em] 3xl:leading-[60px]">
                                     {item.title}
                                 </p>
-                                <span className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
+                                <span className="whitespace-pre-line max-w-xl text-base lg:text-sm 3xl:text-base">
                                     {item.subtitle}
                                 </span>
                             </div>

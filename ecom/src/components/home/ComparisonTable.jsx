@@ -85,13 +85,13 @@ export const ComparisonTable = () => {
                         <div className="py-3 xs:py-5 md:py-10 3xl:py-7 max-lg:px-3 lg:pr-12 text-right flex items-center lg:min-w-sm">
                             <p className="align-middle max-w-sm md:text-start text-center tracking-[-0.02em] max-xs:leading-[14px]">
                                 <span
-                                    className="font-semibold text-sm lg:text-base 3xl:text-xl text-center tracking-[-0.02em]  lg:leading-7.5"
+                                    className="font-semibold text-sm lg:text-base 3xl:text-xl text-center max-xs:leading-[14px] tracking-[-0.02em]  lg:leading-7.5"
                                 >
                                     {feature.title}
                                 </span>
 
                                 <span
-                                    className="ml-1 font-instrument italic text-sm lg:text-base 3xl:text-xl  lg:leading-7.5"
+                                    className="ml-1 font-instrument italic text-sm lg:text-base 3xl:text-xl max-xs:leading-[14px]  lg:leading-7.5"
                                 >
                                     {feature.sub}
                                 </span>
@@ -99,7 +99,7 @@ export const ComparisonTable = () => {
                         </div>
                         {/* // ${index === features.length - 1 ? 'rounded-bl-4xl 3xl:rounded-bl-[35px]' : '' */}
                         {/* Brand Check Column */}
-                        <div className={`flex justify-center items-center py-2 xs:py-5 md:py-10 3xl:py-7 bg-[#F4F4F4] border-b-2 border-white`}>
+                        <div className={`flex justify-center items-center py-2 xs:py-5 md:py-10 3xl:py-7 bg-[#F4F4F4] border-b-2 border-white min-h-12`}>
                             <div className="p-1.5 xs:p-2 md:p-3 3xl:size-16 rounded-full bg-white flex items-center justify-center">
                                 <div className="p-0.5 xs:p-1 3xl:size-8 rounded-full bg-(--red) flex items-center justify-center ">
                                     <Check className="text-white size-2 md:size-4 3xl:size-5" strokeWidth={4} />
@@ -108,13 +108,13 @@ export const ComparisonTable = () => {
                         </div>
 
                         {/* Traditional Agency Column */}
-                        <div className="flex justify-center items-center py-2 xs:py-5 md:py-10 3xl:py-7 bg-[#F9F9F9] border-b-2 border-white">
+                        <div className="flex justify-center items-center py-2 xs:py-5 md:py-10 3xl:py-7 bg-[#F9F9F9] border-b-2 border-white min-h-12">
                             <X className="text-[#9FA4B3] size-5 xs:size-9 md:size-10 3xl:size-8 font-thin" strokeWidth={2} />
                         </div>
 
                         {/* In-House Column */}
                         <div className={`flex justify-center items-center py-2 xs:py-5 md:py-10 3xl:py-7 bg-[#F9F9F9] border-b-2 border-white ${index === features.length - 1 ? 'lg:rounded-br-4xl 3xl:rounded-br-[35px]' : ''
-                            } ${index === 0 ? 'lg:rounded-tr-4xl 3xl:rounded-tr-[35px]' : ''}`}>
+                            } ${index === 0 ? 'lg:rounded-tr-4xl 3xl:rounded-tr-[35px]' : ''} min-h-12`}>
                             <X className="text-[#9FA4B3] size-5 xs:size-9 md:size-10 3xl:size-8 font-thin" strokeWidth={2} />
                         </div>
                     </React.Fragment>

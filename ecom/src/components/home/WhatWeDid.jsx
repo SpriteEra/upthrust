@@ -125,8 +125,8 @@ const BusinessCard = ({
                 {/* Left Section */}
                 <div className="w-full lg:w-[60%] flex flex-col max-lg:p-2">
                     {/* Header */}
-                    <div className='p-2 md:p-10 py-4 md:py-16'>
-                        <p className="text-base lg:text-sm 2xl:text-[15px] 3xl:text-base text-[#0A211F] mb-2 lg:mb-4 uppercase tracking-wide border-b pb-2">
+                    <div className='p-2 md:p-10 py-4 md:py-16 max-lg:pb-15'>
+                        <p className="text-base lg:text-sm 2xl:text-[15px] 3xl:text-base text-[#0A211F] mb-2 lg:mb-4 uppercase border-b pb-2">
                             {badge}
                         </p>
 
@@ -140,9 +140,9 @@ const BusinessCard = ({
                         {/* Pricing */}
                         <div className="space-y-3 mb-6 max-2xl:pr-3 lg:-ml-14 3xl:-ml-15.5 flex items-center">
                             <Image src={'/ecom/curves/curve5.webp'} width={100} height={100} alt='Curve Img' className='size-12 md:size-16 object-contain pt-1 max-lg:hidden' />
-                            <div className="flex flex-col gap-4 max-lg:-ml-4">
-                                <div className="flex gap-1 lg:gap-2">
-                                    <span className={` ${borderColor} text-[25px] lg:text-xl 3xl:text-3xl capitalize px-2 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi -rotate-12 tracking-[-0.02em] leading-6 lg:leading-8`}>
+                            <div className="flex flex-col gap-4 ">
+                                <div className="flex gap-2">
+                                    <span className={` ${borderColor} text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] -rotate-12 `}>
                                         from
                                     </span>
                                     <div className="text-(--grayd) text-2xl 3xl:text-3xl tracking-[-0.02em] lg:leading-7.5">
@@ -150,14 +150,18 @@ const BusinessCard = ({
                                     </div>
                                 </div>
                                 <div className="flex gap-2">
-                                    <span className={`${accentColor}  text-white text-[25px] lg:text-xl 3xl:text-3xl capitalize px-4 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi rotate-12 tracking-[-0.02em] leading-6 lg:leading-8`}>
+                                    <span className={`${accentColor}  text-white text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] rotate-12`}>
                                         to
                                     </span>
-                                    <div className="text-2xl 3xl:text-3xl text-(--grayd) 3xl:pl-8 tracking-[-0.02em] lg:leading-7.5 -pl-3">
+                                    <div className="text-2xl 3xl:text-3xl text-(--grayd) 3xl:pl-8 tracking-[-0.02em] lg:leading-7.5 pl-6 lg:pl-3">
                                         {pricing.current.includes("↑") ? (
                                             <>
                                                 {pricing.current.split("↑")[0]}
-                                                <span className={`text-3xl font-extralight ${borderColor} border-none!`}> ↑ </span>
+                                                {/* <span className={`text-3xl font-extralight ${borderColor} border-none!`}> ↑ </span> */}
+                                                <svg width="12" height="26" className='inline-block' viewBox="0 0 12 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.77344 0L-6.53267e-05 10H11.5469L5.77344 0ZM5.77344 25.5H6.77344V9H5.77344H4.77344V25.5H5.77344Z" fill={accentColor2} />
+                                                </svg>
+
                                                 {pricing.current.split("↑")[1]}
                                             </>
                                         ) : (
@@ -177,7 +181,7 @@ const BusinessCard = ({
                             <div className='relative'>
                                 <div className='absolute right-28 2xl:right-31 3xl:right-64 lg:right-20 -top-10 3xl:-top-5 -rotate-10 flex gap-6 max-lg:hidden'>
                                     <Image src={'/ecom/curves/curve3.webp'} alt='curve' width={150} height={80} className=' object-contain scale-x-[-1] h-20 w-full rotate-50 3xl:rotate-61' />
-                                    <p className='text-center font-hanzi text-xl 3xl:text-2xl whitespace-nowrap'>
+                                    <p className='text-center font-hanzi text-xl 3xl:text-2xl whitespace-nowrap tracking-[-0.02em] 3xl:leading-[28px]'>
                                         Just in case if <br />you want us
                                     </p>
                                 </div>
@@ -206,7 +210,7 @@ const BusinessCard = ({
                         {/* Growth Metric takes only its own height */}
                         {growthMetric && (
                             <div className={`${accentColor} text-white px-6 py-6`}>
-                                <p className="text-2xl md:text-3xl 3xl:text-[2.25rem] font-semibold tracking-[-0.02em] leading-11">
+                                <p className="text-[2rem] lg:text-3xl 3xl:text-[2.25rem] font-semibold tracking-[-0.02em] leading-11 max-lg:text-center">
                                     {growthMetric.value} <span className='font-instrument italic font-normal leading-10 tracking-[0]'>{growthMetric.label}</span>
                                 </p>
 

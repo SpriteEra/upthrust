@@ -15,7 +15,7 @@ const MobileTestimonialsSlider = ({ testimonials }) => {
 
     if (!mounted) return null;
     return (
-        <div className="lg:hidden px-2 py-20 pb-10 min-h-50 bg-black mt-20 lg:mt-24">
+        <div className="lg:hidden px-4 py-20 pb-10 min-h-50 bg-black mt-20 lg:mt-24">
             <div className="flex flex-col items-center justify-center mb-10">
 
                 <p className="text-[2.25rem] font-semibold tracking-[-0.02em] leading-11 text-white text-center">
@@ -55,7 +55,7 @@ const MobileTestimonialsSlider = ({ testimonials }) => {
 
                 {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index} className="">
-                        <div className={`${testimonial.color} p-4 max-xs:py-8 rounded-md w-full max-w-100 h-110 flex flex-col justify-between mx-auto`}>
+                        <div className={`${testimonial.color} p-4 max-xs:py-8 rounded-md w-full max-w-100 h-100 xs:h-110 flex flex-col justify-between mx-auto`}>
                             <p className="text-black text-2xl lg:text-lg 3xl:text-2xl font-medium tracking-[-0.02em]">
                                 <span className='-pt-3'>
                                     <svg className='size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">

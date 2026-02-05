@@ -115,7 +115,7 @@ export default function FAQ() {
                         <div className="mt-1 flex-shrink-0 max-md:hidden">
                             <Info className='size-4.5 3xl:size-5' />
                         </div>
-                        <p className="font-semibold text-base 3xl:text-xl tracking-[-0.02em]">
+                        <p className="font-semibold text-lg lg:text-base 3xl:text-xl tracking-[-0.02em]">
                             {faq.question}
                         </p>
                     </div>
@@ -128,11 +128,11 @@ export default function FAQ() {
                     <button
                         title='Show/Hide'
                         onClick={() => toggleFAQ(index)}
-                        className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 size-7 3xl:size-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-[#ff4d00] text-white`
+                        className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 size-8 3xl:size-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-[#ff4d00] text-white`
                         }
                     >
                         {openIndexes.includes(index) ? (
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <svg className='size-6 3xl:size-10' viewBox="0 0 16 16" fill="none">
                                 <path
                                     d="M4 8H12"
                                     stroke="currentColor"
@@ -141,7 +141,7 @@ export default function FAQ() {
                                 />
                             </svg>
                         ) : (
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <svg className='size-6 3xl:size-7' viewBox="0 0 16 16" fill="none">
                                 <path
                                     d="M8 4V12M4 8H12"
                                     stroke="currentColor"
@@ -160,7 +160,7 @@ export default function FAQ() {
                         }`}
                 >
                     <div className="md:pl-8 md:pr-10">
-                        <p className="text-sm 3xl:text-base leading-relaxed" dangerouslySetInnerHTML={{
+                        <p className="text-base lg:text-sm 3xl:text-base leading-relaxed" dangerouslySetInnerHTML={{
                             __html: faq.answer || "Content coming soon..."
                         }}>
                         </p>

@@ -124,7 +124,7 @@ const UGCAdsPlaybook = () => {
 
                 {/* CENTER CONTENT */}
                 <div className="col-span-5 p-1 xs:p-6 flex flex-col justify-evenly gap-2 xs:gap-2 max-h-60 xs:max-h-80 md:max-h-120 lg:max-h-[110vh]">
-                    <div className="font-medium text-[28px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[100px]! italic 3xl:text-[140px]! capitalize leading-[120%] tracking-[-0.07em]">
+                    <div className="font-medium text-[28.78px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[100px]! italic 3xl:text-[140px]! capitalize leading-[120%] tracking-[-0.07em]">
                         <p>A Step-by-step</p>
                         <p>Guide to</p>
                     </div>
@@ -135,7 +135,7 @@ const UGCAdsPlaybook = () => {
                         </button>
                     </div>
 
-                    <div className="font-medium text-[32px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
+                    <div className="font-medium text-[32.89px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
                       font-instrument self-end w-full max-w-[82%] xs:max-w-[65%] leading-[120%] tracking-[0.01em]">
                         <p>Scale</p>
                         <p>Your Brand</p>

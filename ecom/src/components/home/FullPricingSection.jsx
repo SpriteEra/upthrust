@@ -70,15 +70,15 @@ export const FullPricingSection = () => {
                 {pricingPlans.map((plan, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-xl bg-white 3xl:rounded-2xl max-lg:border border-gray-300 lg:border-t-[3px] lg:border-black max-w-80  lg:max-w-48 3xl:max-w-60 w-full mx-auto`}
+                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-xl bg-white 3xl:rounded-lg max-lg:border border-gray-300 lg:border-t-[3px] lg:border-black max-w-100  lg:max-w-48 3xl:max-w-60 w-full mx-auto`}
                     >
-                        <p className="text-xl lg:text-base 3xl:text-xl font-medium mb-0 lg:mb-4 max-lg:text-[#1D2127] tracking-[-0.02em]  leading-7.5">{plan.name} <span className='lg:hidden'>Plan</span></p>
+                        <p className="text-lg lg:text-base 3xl:text-xl font-semibold lg:font-medium mb-0 lg:mb-4 max-lg:text-[#1D2127] tracking-[-0.02em]  leading-7.5">{plan.name} <span className='lg:hidden'>Plan</span></p>
                         <div className="text-[32px] xl:text-2xl 3xl:text-[32px] font-semibold 3xl:tracking-[-0.02em] leading-9.5 text-[#1d2127]">{plan.price}
                             <span className='text-[#464646] font-light text-xs lg:hidden ml-2  leading-4.5 '>
                                 {plan.details}
                             </span>
                         </div>
-                        <span className="max-lg:hidden text-[#464646] font-light text-xs mb-8 uppercase leading-4.5 ">{plan.details}</span>
+                        <span className="max-lg:hidden text-[#464646] text-xs mb-8 uppercase leading-4.5 ">{plan.details}</span>
 
                         {/* Features */}
                         <ul className="space-y-1 lg:hidden pt-4 pb-12">
@@ -109,7 +109,7 @@ export const FullPricingSection = () => {
                             )}
                         </ul>
 
-                        <button className="w-full bg-black text-white py-2 3xl:py-3 rounded 3xl:rounded-md text-sm 3xl:text-base font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+                        <button className="w-full bg-black text-white py-3 3xl:py-3 rounded-lg 3xl:rounded-md text-base xl:text-sm 3xl:text-base font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
                             onClick={() => setIsModalOpen(true)}
                         >
                             <span className='max-lg:hidden'>Start Here</span>

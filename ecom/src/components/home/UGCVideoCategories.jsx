@@ -167,8 +167,8 @@ const UGCVideoCategories = () => {
             <button
               key={link.id}
               onClick={() => setActiveCategory(link)}
-              className={`px-4 3xl:px-5.75 py-2 3xl:py-2.75 rounded-full text-sm xl:text-xs 3xl:text-sm border border-[#17118]/12 lg:border-black/12 bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black
-                ${activeCategory.id === link.id ? "bg-white !text-black font-medium" : ""}`}
+              className={`px-4 3xl:px-5.75 py-2 3xl:py-2.75 rounded-full text-sm xl:text-xs 3xl:text-sm border border-[#17118]/12 lg:border-black/12 bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black font-semibold
+                ${activeCategory.id === link.id ? "bg-white !text-black" : ""}`}
             >
               {link.name}
             </button>

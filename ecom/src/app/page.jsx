@@ -133,7 +133,7 @@ const page = () => {
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
             {
               profiles.map((profile, index) => (
-                <Image width={56} height={56} key={index} className="size-13 xs:size-13 sm:size-13 3xl:size-15 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
+                <Image width={56} height={56} key={index} className="size-15 lg:size-13 3xl:size-15 border-2 border-white border-buffer rounded-full" src={profile.url} alt={profile.alt} />
 
               ))
             }
@@ -147,20 +147,24 @@ const page = () => {
 
           <h1 className="mb-2 3xl:mb-5 text-white text-[42px] xs:text-5xl 2xl:text-[65px] 3xl:text-8xl leading-[120%] font-semibold max-sm:leading-tight max-md:pl-2 tracking-[-0.02em]
 ">
-            <span className="block sm:mb-2">
-              <span className="italic font-instrument font-medium">Scale</span>
+            <span className="block sm:mb-2 max-lg:hidden">
+              <span className="italic font-instrument font-light">Scale</span>
               <span className=""> To 45 Lakhs+</span>
             </span>
-            <span className="block">
+            <span className="block max-lg:hidden">
               Per Month
             </span>
+            <p className='lg:hidden max-w-xs'><span className="italic font-instrument font-light">Scale</span> To 45 Lakhs+  Per Month</p>
           </h1>
 
 
-          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white max-md:pl-2 tracking-[-0.02em]">
+          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white max-md:pl-2 tracking-[-0.02em] lg:hidden">
             Ads that stop the scroll <br />
             Pages that convert <br />
             Growth that compound
+          </div>
+          <div className="space-y-0 mb-16 3xl:mb-20 text-lg xs:text-base 3xl:text-xl text-white max-md:pl-2 tracking-[-0.02em] max-lg:hidden">
+            <span className='font-semibold'>Ads</span> that stop the scroll, <span className='font-semibold'>pages</span> that convert, and <span className='font-semibold'>growth</span> that compounds
           </div>
 
           <ScaleButton color="red" />
@@ -168,7 +172,7 @@ const page = () => {
           <div className='mt-10 sm:mt-5 3xl:mt-7 flex flex-col'>
             <p className='text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]'>Brands we've scaled</p>
 
-            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl lg:pb-12 3xl:pb-20">
+            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl pb-12 3xl:pb-20">
               {brands.map((brand) => (
                 <div
                   key={brand.name}
@@ -319,7 +323,7 @@ const page = () => {
             heading={[
               {
                 line: [
-                  { type: "normal", text: "How To Scale" },
+                  { type: "normal", text: "How We Scale" },
                   { type: "italic", text: "D2C brands" },
                 ],
               },
