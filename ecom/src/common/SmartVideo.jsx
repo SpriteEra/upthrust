@@ -34,7 +34,7 @@ export default function SmartVideo({ imageUrl, alt = "", videoUrl }) {
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-full lg:h-105 3xl:h-129 bg-[#0b1220] rounded-2xl overflow-hidden"
+            className="relative w-full h-full lg:h-105 3xl:h-135 bg-[#0b1220] rounded-2xl overflow-hidden"
         >
             {/* Image */}
             {imageUrl && (

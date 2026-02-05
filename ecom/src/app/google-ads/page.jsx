@@ -46,6 +46,9 @@ const page = () => {
                 </div>
 
             </div>
+            <div className='min-h-screen bg-black'>
+
+            </div>
         </main>
     )
 }

@@ -119,14 +119,17 @@ export default function FAQ() {
                             {faq.question}
                         </p>
                     </div>
+                    {/* ${openIndexes.includes(index)
+                            ? "bg-[#ff4d00] text-white"
+                            : "bg-black/5 text-black/30"
+                            }  */}
+                    {/* ${blinkIndex === index ? "animate-ripple" : ""} */}
 
                     <button
                         title='Show/Hide'
                         onClick={() => toggleFAQ(index)}
-                        className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 size-7 3xl:size-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 ${openIndexes.includes(index)
-                            ? "bg-[#ff4d00] text-white"
-                            : "bg-black/5 text-black/30"
-                            } ${blinkIndex === index ? "animate-ripple" : ""}`}
+                        className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 size-7 3xl:size-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-[#ff4d00] text-white`
+                        }
                     >
                         {openIndexes.includes(index) ? (
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

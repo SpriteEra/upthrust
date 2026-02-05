@@ -127,7 +127,7 @@ const page = () => {
   return (
     <main id="main-content">
       <Navbar />
-      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen bg-black text-white overflow-hidden max-h-full lg:max-h-[125vh] 3xl:max-h-[180vh]'>
+      <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen h-full bg-black text-white overflow-hidden max-h-full 3xl:max-h-[180vh]'>
         <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-62 flex flex-col'>
 
           <div className="flex -space-x-4 rtl:space-x-reverse max-md:justify-center">
@@ -255,7 +255,7 @@ const page = () => {
               </p>
             </div>
             <p className='max-xs:hidden leading-[120%] tracking-[-0.04em]'>
-              <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0 leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>brands </span>
+              <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em] leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>brands </span>
               <span className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold capitalize ml-1 leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>{" "}Work with us</span>
             </p>
 
@@ -309,7 +309,7 @@ const page = () => {
           <div className='flex flex-col items-center justify-center'>
             <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
               <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em] capitalize'>How To Scale
-                <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> D2C brands</span> </h2>
+                <span className=' font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em]'> D2C brands</span> </h2>
             </div>
           </div>
           <span className='text-[15px] sm:text-sm 3xl:text-lg mt-2 mb-12 text-center tracking-[-0.02em]'>Scale to ₹2.5Cr+/month </span> */}
@@ -338,7 +338,7 @@ const page = () => {
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
                 <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em] capitalize'>Scale with UGC ads:</h2>
-                <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> The Playbook</span>
+                <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em]'> The Playbook</span>
               </div>
             </div> */}
 
@@ -369,7 +369,7 @@ const page = () => {
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center justify-center'>
                 <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>How we approach your
-                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> Ecom store growth</span> ?</h3>
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em]'> Ecom store growth</span> ?</h3>
               </div>
             </div>
             <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mt-3 mb-10'>Join the top 0.1% of e-com brands using the proprietary process other agencies ignore</span> */}
@@ -400,7 +400,7 @@ const page = () => {
             <div className='flex flex-col'>
               <div className='mt-5 flex gap-3 items-center'>
                 <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>50+ Brands. 200+ UGC Videos. <br />
-                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'> Watch Them</span>
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em]'> Watch Them</span>
                 </h3>
               </div>
             </div>
@@ -445,7 +445,7 @@ const page = () => {
               <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center flex-col'>
                 <h3 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-[120%] tracking-[-0.04em]'>
                   The
-                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-0'>{" "}dashboards. </span>
+                  <span className='font-normal capitalize text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-[120%] tracking-[0em]'>{" "}dashboards. </span>
                   <br />
                   The numbers. What we did.
                 </h3>
@@ -530,12 +530,12 @@ const page = () => {
               subtitle=""
             />
             <span className='text-lg mt-5 xs:mt-8 3xl:mt-16 mb-8 3xl:mb-12 text-center sm:text-sm 3xl:text-lg tracking-[-0.02em]'>Brands we've scaled</span>
-            <div className="w-full flex items-center justify-center max-w-6xl px-4">
-              <div className="flex justify-center lg:items-center gap-5 md:gap-11 overflow-x-auto whitespace-nowrap hide-scrollbar w-full">
+            <div className="w-full flex justify-center items-center px-4">
+              <div className="flex  gap-5 md:gap-11 overflow-x-auto max-w-fit whitespace-nowrap hide-scrollbar w-full">
                 {brands2.slice(0, 6).map((logo) => (
                   <div
                     key={logo.name}
-                    className="flex items-center justify-center h-12 w-30"
+                    className="flex-shrink-0 flex items-center justify-center h-12 w-30"
                   >
                     <Image
                       src={logo.src}

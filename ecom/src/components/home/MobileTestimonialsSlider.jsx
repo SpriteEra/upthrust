@@ -19,10 +19,10 @@ const MobileTestimonialsSlider = ({ testimonials }) => {
             <div className="flex flex-col items-center justify-center mb-10">
 
                 <p className="text-[2.25rem] font-semibold tracking-[-0.02em] leading-11 text-white text-center">
-                    The <span className="italic font-instrument tracking-0 leading-11 font-normal">Secret</span> Behind
+                    The <span className="italic font-instrument tracking-[0em] leading-11 font-normal">Secret</span> Behind
                 </p>
                 <p className="text-[2.25rem] font-semibold tracking-[-0.02em] leading-11 text-white text-center">
-                    Their <span className="italic font-instrument tracking-0 leading-11 font-normal">Success</span>
+                    Their <span className="italic font-instrument tracking-[0em] leading-11 font-normal">Success</span>
                 </p>
             </div>
             <Swiper
@@ -55,7 +55,7 @@ const MobileTestimonialsSlider = ({ testimonials }) => {
 
                 {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index} className="">
-                        <div className={`${testimonial.color} p-4 max-xs:py-8 rounded-md w-full max-w-100 xs:w-70 h-110 xs:h-82 flex flex-col justify-between mx-auto`}>
+                        <div className={`${testimonial.color} p-4 max-xs:py-8 rounded-md w-full max-w-100 h-110 flex flex-col justify-between mx-auto`}>
                             <p className="text-black text-2xl lg:text-lg 3xl:text-2xl font-medium tracking-[-0.02em]">
                                 <span className='-pt-3'>
                                     <svg className='size-9 inline-block -mt-2.5 mr-2' viewBox="0 0 46 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ const MobileTestimonialsSlider = ({ testimonials }) => {
                                     <Image width={70} height={70} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain' />
                                 </div>
                                 <div>
-                                    <p className="text-[22px] lg:text-xl 3xl:text-[22px] text-[#010202] tracking-[0.55px] leading-[27px]">{testimonial.name}</p>
+                                    <p className="text-[22px] text-[#010202] tracking-[0.55px] leading-[27px]">{testimonial.name}</p>
                                     <p className="text-lg -mt-0 3xl:text-lg text-[#33535] font-light">{testimonial.company}</p>
                                 </div>
                             </div>

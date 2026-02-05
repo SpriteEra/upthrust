@@ -94,17 +94,14 @@ const InteractiveCaseStudy = () => {
                     </div>
 
                     {/* Right Section - Video */}
-                    <div className="w-full lg:w-2/3 flex items-stretch">
-                        <div className="w-full">
+                    <div className="w-full lg:w-2/3 flex items-center">
 
-                            <SmartVideo
-                                key={activeSection}
-                                imageUrl={sections[activeSection].imageUrl}
-                                videoUrl={sections[activeSection].videoUrl}
-                                alt={sections[activeSection].alt}
-                            />
-
-                        </div>
+                        <SmartVideo
+                            key={activeSection}
+                            imageUrl={sections[activeSection].imageUrl}
+                            videoUrl={sections[activeSection].videoUrl}
+                            alt={sections[activeSection].alt}
+                        />
                     </div>
                 </div>
             </div>
