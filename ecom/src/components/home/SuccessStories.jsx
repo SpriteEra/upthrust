@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({
+    ignoreMobileResize: true,
+});
 
 const SuccessStories = () => {
     const containerRef = useRef(null);
@@ -18,6 +21,8 @@ const SuccessStories = () => {
 
     const wrapperRef = useRef(null)
     useGSAP(() => {
+
+        if (!containerRef.current) return;
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: containerRef.current,
