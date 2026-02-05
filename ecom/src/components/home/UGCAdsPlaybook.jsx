@@ -135,8 +135,8 @@ const UGCAdsPlaybook = () => {
                         </button>
                     </div>
 
-                    <div className="font-medium text-[32.89px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
-                      font-instrument self-end w-full max-w-[82%] xs:max-w-[65%] leading-[120%] tracking-[0.01em]">
+                    <div className="text-[32.89px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
+                      font-instrument self-end w-full max-w-[60%] xs:max-w-[65%] leading-[120%] tracking-[0.01em]">
                         <p>Scale</p>
                         <p>Your Brand</p>
                     </div>
