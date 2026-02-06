@@ -110,49 +110,52 @@ const growthStories = [
 ];
 const GrowthStories = () => {
     return (
-        <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 mt-10">
+        <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 3xl:gap-12 mt-10">
             {growthStories?.map((item, index) => (
                 <div
-                    className={`${item.bgColor1} p-4 sm:p-6 3xl:p-10 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`}
+                    className={`${item.bgColor1} p-4 sm:p-6 3xl:p-12.5 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`}
                     key={index}
                 >
                     <div
                         className={`${item.bgColor2} flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
                     >
-                        <div className="p-4 sm:p-6 max-2xl:pr-0 3xl:p-10 lg:w-[40%] h-full flex flex-col">
-                            <span className="lg:text-sm 3xl:text-base uppercase">
-                                {item.name}
-                            </span>
-                            <h5 className="font-semibold my-4 2xl:my-6 3xl:my-8 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl">
-                                {item.title}
-                            </h5>
+                        <div className="p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[40%] h-full flex flex-col">
+                            <div className="max-w-[510px]">
 
-                            <RatingStars
-                                rating={item.rating}
-                                size="size-5.5 lg:size-5 3xl:size-5.5"
-                            />
+                                <span className="lg:text-sm 3xl:text-base uppercase">
+                                    {item.name}
+                                </span>
+                                <h5 className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
+                                    {item.title}
+                                </h5>
 
-                            <p className="text-lg 2xl:text-xl 3xl:text-2xl mt-3 2xl:mt-5 mb-5 2xl:mb-8">
-                                &ldquo;{item.message}&rdquo;
-                            </p>
+                                <RatingStars
+                                    rating={item.rating}
+                                    size="size-5.5 lg:size-5 3xl:size-6"
+                                />
 
-                            <div className="flex items-center gap-4 3xl:gap-5">
-                                <div>
-                                    <Image
-                                        width={84}
-                                        height={84}
-                                        className="size-16 lg:size-14 2xl:size-16 3xl:size-21 rounded-full object-contain"
-                                        alt={item.clientName}
-                                        src={item.profile}
-                                    />
-                                </div>
-                                <div className="flex flex-col justify-center h-full gap-1 3xl:gap-2">
-                                    <p className="font-semibold text-xl lg:text-lg 3xl:text-xl">
-                                        {item.clientName}
-                                    </p>
-                                    <span className="lg:text-sm 3xl:text-base">
-                                        {item.position}
-                                    </span>
+                                <p className="text-lg 2xl:text-xl 3xl:text-2xl mt-3 2xl:mt-5 3xl:mt-7 mb-5 2xl:mb-8 3xl:mb-10 tracking-[-0.02em]">
+                                    &ldquo;{item.message}&rdquo;
+                                </p>
+
+                                <div className="flex items-center gap-4 3xl:gap-5">
+                                    <div>
+                                        <Image
+                                            width={84}
+                                            height={84}
+                                            className="size-16 lg:size-14 2xl:size-16 3xl:size-19 rounded-full object-cover"
+                                            alt={item.clientName}
+                                            src={item.profile}
+                                        />
+                                    </div>
+                                    <div className="flex flex-col justify-center h-full gap-1 3xl:gap-2">
+                                        <p className="font-semibold text-xl lg:text-lg 3xl:text-xl leading-[-0.02em]">
+                                            {item.clientName}
+                                        </p>
+                                        <span className="lg:text-sm 3xl:text-base">
+                                            {item.position}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

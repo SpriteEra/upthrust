@@ -1,67 +1,67 @@
 import React from "react";
 
-// const headingData = [
-//   {
-//     line: [
-//       { type: "normal", text: "How To Scale" },
-//       { type: "italic", text: "D2C brands" },
-//     ],
-//   },
-//   {
-//     line: [
-//       { type: "normal", text: "Scale to" },
-//       { type: "italic", text: "₹2.5Cr+/month" },
-//     ],
-//   },
-// ];
-
-const Heading = ({
-    tag: Tag = "h2", // h1 | h2 | h5
+const UIUXHeading = ({
+    tag: Tag = "h2",
     heading = [],
-    label = "Our services",
+    label = "",
     subtitle = "",
-    subTitleCss = ""
+    subTitleCss = "",
+    align = "center", // left | center | right
 }) => {
+
+    const containerAlign =
+        align === "left"
+            ? "items-center lg:items-start"
+            : align === "right"
+                ? "items-center lg:items-end"
+                : "items-center";
+
+    const textAlign =
+        align === "left"
+            ? "text-center lg:text-left"
+            : align === "right"
+                ? "text-center lg:text-right"
+                : "text-center";
+
     return (
-        <div className="flex flex-col items-center">
+        <div className={`flex flex-col max-sm:px-2 ${containerAlign}`}>
+
             {label && (
                 <span className="text-sm md:text-xs 3xl:text-sm uppercase">
                     {label}
                 </span>
             )}
 
-            <div className="flex flex-col items-center justify-center mt-5 gap-3">
-                {heading.map((row, rowIndex) => (
-                    <div
-                        key={rowIndex}
-                        className="flex gap-1 sm:gap-3 flex-wrap items-center justify-center"
-                    >
-                        <Tag className="text-center ">
-                            {row.line.map((item, index) => {
-                                const baseClass =
-                                    "text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-[6.5rem] font-medium";
+            <div className="mt-5 w-full">
+                <Tag className={`${textAlign} tracking-[-0.02em] xl:tracking-[-0.04em]`}>
+                    {heading.map((row, rowIndex) => {
+                        const baseClass =
+                            "text-4xl md:text-4xl lg:text-7xl xl:text-[5.5rem] 3xl:text-[6.5rem] font-medium text-center leading-11 md:leading-[100%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize";
 
-                                const italicClass =
-                                    "italic font-instrument text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-9xl font-normal";
+                        const italicClass =
+                            "text-4xl md:text-4xl lg:text-7xl xl:text-[5.5rem] 3xl:text-9xl font-normal text-center leading-11 xl:leading-[100%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic";
 
-                                return (
+                        return (
+                            <React.Fragment key={rowIndex}>
+                                {row.line.map((item, index) => (
                                     <span
                                         key={index}
-                                        className={
-                                            item.type === "italic" ? italicClass : baseClass
-                                        }
+                                        className={`${item.type === "italic" ? italicClass : baseClass}`}
                                     >
-                                        {item.text}
+                                        {item.text}&nbsp;
                                     </span>
-                                );
-                            })}
-                        </Tag>
-                    </div>
-                ))}
+                                ))}
+                                <br />
+                            </React.Fragment>
+                        );
+                    })}
+                </Tag>
             </div>
 
             {subtitle && (
-                <span className={`text-[15px] sm:text-sm xl:text-base 3xl:text-lg mt-2 text-center ${subTitleCss}`}>
+                <span
+                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
+                >
                     {subtitle}
                 </span>
             )}
@@ -69,4 +69,4 @@ const Heading = ({
     );
 };
 
-export default Heading;
+export default UIUXHeading;

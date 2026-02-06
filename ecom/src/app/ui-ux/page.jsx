@@ -96,7 +96,7 @@ const page = () => {
                         },
                         {
                             line: [
-                                { type: "normal", text: "Powered " },
+                                { type: "normal", text: "Powered" },
                                 { type: "italic", text: "By Design" },
                             ],
                         },
@@ -105,12 +105,12 @@ const page = () => {
                     subtitle="Explore how our work helped companies improve conversions, retention, and revenue."
                     subTitleCss="max-w-lg 3xl:max-w-xl"
                 />
-                <div className="flex items-center justify-center w-full my-8 3xl:my-10">
+                <div className="flex items-center justify-center w-full my-8 3xl:mb-20 3xl:mt-6">
                     <StylishButton text1="Book A" text2="Strategy Call" />
                 </div>
                 <GrowthStories />
 
-                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 mt-20 lg:mt-10 relative">
+                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 3xl:gap-10 mt-20 lg:mt-10 3xl:mt-26 relative">
                     {[
                         { value: "200%", text1: "Boost in", text2: "Organic Traffic" },
                         {
@@ -127,17 +127,15 @@ const page = () => {
                         <CutCornerBackground bgColor="#F9F9F9">
                             <div
                                 key={index}
-                                className="shape-wrap p-4 lg:p-8 3xl:p-9 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-4xl"
+                                className="shape-wrap p-4 lg:p-8 3xl:p-12.5 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-[30px]"
                             >
-                                <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b sm:border-b-2 border-black/30 pb-1 sm:pb-4 3xl:pb-5">
+                                <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b border-black/30 pb-1 sm:pb-4 3xl:pb-5 tracking-[-0.02em] 3xl:leading-[90px]">
                                     {item.value}
                                 </p>
-                                <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold mt-3 sm:mt-5">
-                                    {item.text1}
+                                <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold mt-3 sm:mt-5 3xl:mt-7 tracking-[-0.02em]">
+                                    {item.text1} <br /> {item.text2}
                                 </span>
-                                <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold">
-                                    {item.text2}
-                                </span>
+
                             </div>
                         </CutCornerBackground>
                     ))}
@@ -169,7 +167,7 @@ const page = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col mt-26 3xl:mt-30 relative">
+            <div className="flex flex-col mt-26 3xl:mt-70 relative">
                 <Curve1
                     lines={[
                         {
@@ -212,25 +210,25 @@ const page = () => {
                     subtitle="Most products don't fail because of traffic; thay fail because users get confused, stuck, or unconvinced. We fix that."
                 />
                 <div className="max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full ">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-16 3xl:mt-18">
                         {traficToRevenue?.map((item, index) => (
                             <CutCornerBackground bgColor="#F9F9F9">
                                 <div
                                     key={index}
-                                    className="p-6 md:p-6 lg:p-8 3xl:p-9 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-4xl justify-between"
+                                    className="p-6 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
                                 >
-                                    <div className="pb-4 3xl:pb-5">
-                                        <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-2 3xl:px-3 py-1 3xl:py-1.5 rounded-full uppercase text-sm 3xl:text-base w-fit">
+                                    <div className="pb-4 3xl:pb-10">
+                                        <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-2 3xl:px-4 py-1 3xl:py-3 pb-0 rounded-full uppercase text-sm 3xl:text-base w-fit">
                                             {item.buttonText}
                                         </span>
-                                        <h6 className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-6 3xl:my-8">
+                                        <h6 className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-6 3xl:my-10 tracking-[-0.02em]">
                                             {item.title}
                                         </h6>
-                                        <p className="text-xl lg:text-lg 3xl:text-xl ">
+                                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] leading-[30px] ">
                                             {item.description}
                                         </p>
                                     </div>
-                                    <div className=" border-t lg:border-t-2 border-black/30 pt-4 3xl:pt-5 grid grid-cols-3">
+                                    <div className=" border-t border-black/30 pt-4 3xl:pt-8 flex gap-2 lg:gap-3 3xl:gap-6">
                                         <div className="flex items-center ">
                                             <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00]">
                                                 {item.value}

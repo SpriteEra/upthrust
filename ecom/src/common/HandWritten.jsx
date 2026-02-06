@@ -31,7 +31,7 @@ export const Curve1 = ({
             if (part.type === 'highlight') {
               return (
                 <span
-                  className={`${highlightClassName} text-[22px] pb-2.5 pt-1.5 px-3.5 lg:text-[17px] 3xl:text-[22px] lg:p-0.5 3xl:pb-2.5 3xl:pt-1.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]`}
+                  className={`${highlightClassName} text-[22px] pb-2.5 pt-1.5 px-3.5 lg:text-[17px] 3xl:text-[22px] lg:px-3 lg:pt-1 lg:pb-1 3xl:pb-2.5 3xl:pt-1.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]`}
                   key={index}
 
                 >
