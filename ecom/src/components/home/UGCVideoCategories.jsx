@@ -1,7 +1,8 @@
 "use client";
-import { X } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   {
@@ -93,7 +94,6 @@ const navLinks = [
   },
 ];
 
-
 const rotations = [
   "rotate-[-1deg]",
   "rotate-[2deg] -translate-y-4",
@@ -101,21 +101,74 @@ const rotations = [
   "rotate-[-2deg] -translate-y-5",
   "rotate-[1deg]",
 ]
+
 const UGCVideoCategories = () => {
   const [activeCategory, setActiveCategory] = useState(navLinks[0]);
-  const [activeVideo, setActiveVideo] = useState(null);
+  const [playingVideo, setPlayingVideo] = useState(null);
+  const [videoStates, setVideoStates] = useState({});
+  const videoRefs = useRef({});
+
+  const handleCardClick = (itemId, videoUrl) => {
+    const currentState = videoStates[itemId];
+
+    // If this video is already playing, pause it
+    if (playingVideo === itemId && currentState?.isReady) {
+      const video = videoRefs.current[itemId];
+      if (video) {
+        if (currentState.isPlaying) {
+          video.pause();
+          setVideoStates(prev => ({ ...prev, [itemId]: { ...prev[itemId], isPlaying: false } }));
+        } else {
+          video.play();
+          setVideoStates(prev => ({ ...prev, [itemId]: { ...prev[itemId], isPlaying: true } }));
+        }
+      }
+      return;
+    }
+
+    // Stop any other playing video
+    if (playingVideo && playingVideo !== itemId) {
+      const prevVideo = videoRefs.current[playingVideo];
+      if (prevVideo) {
+        prevVideo.pause();
+        prevVideo.currentTime = 0;
+      }
+      setVideoStates(prev => ({ ...prev, [playingVideo]: { isPlaying: false, isReady: false } }));
+    }
+
+    // Start loading new video
+    setPlayingVideo(itemId);
+    setVideoStates(prev => ({ ...prev, [itemId]: { isPlaying: false, isReady: false, isLoading: true } }));
+  };
+
+  const handleVideoLoaded = (itemId) => {
+    setVideoStates(prev => ({ ...prev, [itemId]: { isPlaying: true, isReady: true, isLoading: false } }));
+  };
+
+  // Reset when category changes
+  useEffect(() => {
+    if (playingVideo) {
+      const video = videoRefs.current[playingVideo];
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+    setPlayingVideo(null);
+    setVideoStates({});
+  }, [activeCategory]);
 
   return (
-    <div >
+    <div>
       {/* CATEGORY BUTTONS */}
-      <div className="flex justify-between items-center rounded-full p-2  lg:bg-linear-to-b from-[#2b2c2e] to-[#030303]  max-w-fit mx-auto">
+      <div className="flex justify-between items-center rounded-full lg:p-2 3xl:py-2.25 3xl:px-2.5 lg:bg-linear-to-b from-[#2b2c2e] to-[#030303] max-w-fit mx-auto">
         <div className="flex items-center justify-center space-x-2 flex-wrap gap-y-2">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => setActiveCategory(link)}
-              className={`px-3 3xl:px-5 py-2 rounded-full text-xs 3xl:text-sm max-lg:border border-black bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black
-                ${activeCategory.id === link.id ? "bg-white !text-black font-medium" : ""}`}
+              className={`px-4 3xl:px-5.75 py-2 3xl:py-2.75 rounded-full text-sm xl:text-xs 3xl:text-sm border border-[#17118]/12 lg:border-black/12 bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black font-semibold
+                ${activeCategory.id === link.id ? "bg-white !text-black" : ""}`}
             >
               {link.name}
             </button>
@@ -125,69 +178,141 @@ const UGCVideoCategories = () => {
 
       {/* VIDEOS LIST */}
       <div className="flex justify-center items-center">
-        <div className={`max-w-fit overflow-x-auto hide-scrollbar flex md:items-center  mt-12 md:mt-16`}>
-          <div className="flex px-1 md:px-6 py-12 min-w-max -space-x-6">
-            {activeCategory.items.map((item, index) => (
-              <div
-                key={item.id}
-                className={`relative w-[220px] h-[380px] 3xl:w-65 3xl:h-100 bg-white p-2 pb-4
-                ${rotations[index % rotations.length]} transition-transform duration-300`}
-                style={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 20px" }}
-              >
-                <Image
-                  onClick={() => setActiveVideo(item.videoUrl)}
-                  width={250}
-                  height={400}
-                  src={item.image}
-                  alt={activeCategory.alt}
-                  className="w-full h-full object-cover cursor-pointer"
-                />
+        <div className={`max-w-fit overflow-x-auto hide-scrollbar flex md:items-center mt-6 lg:mt-16`}>
+          <motion.div
+            key={activeCategory.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="flex px-1 md:px-6 py-12 min-w-max -space-x-6"
+          >
+            {activeCategory.items.map((item, index) => {
+              const isActive = playingVideo === item.id;
+              const videoState = videoStates[item.id] || {};
+              const { isLoading, isReady, isPlaying } = videoState;
 
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="size-14 border-8 border-white text-white rounded-full flex items-center justify-center text-lg">
-                    ▶
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  onClick={() => handleCardClick(item.id, item.videoUrl)}
+                  className={`relative w-[220px] h-[380px] 3xl:w-85 3xl:h-150 bg-white p-2 3xl:p-4 pb-4 3xl:pb-7 cursor-pointer
+                  ${rotations[index % rotations.length]} transition-all duration-300
+                  ${isActive ? 'z-50 rotate-0! scale-105' : 'z-0'}`}
+                  style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
+                >
+                  {/* Image */}
+                  <Image
+                    width={250}
+                    height={400}
+                    src={item.image}
+                    alt={activeCategory.alt}
+                    className={`w-full h-full object-cover transition-opacity duration-500 ${isReady ? 'opacity-0' : 'opacity-100'
+                      }`}
+                  />
+
+                  {/* Video */}
+                  {isActive && (
+                    <video
+                      ref={(el) => {
+                        if (el) videoRefs.current[item.id] = el;
+                      }}
+                      src={item.videoUrl}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 p-2 3xl:p-4 pb-4 3xl:pb-7 ${isReady ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      autoPlay
+                      loop
+                      playsInline
+                      onLoadedData={() => handleVideoLoaded(item.id)}
+                    />
+                  )}
+
+                  {/* Control Buttons - Simple Fade In/Out */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <AnimatePresence mode="wait">
+                      {/* Initial Play Button - Shows when not active */}
+                      {!isActive && (
+                        <motion.div
+                          key="initial-play"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 flex items-center justify-center"
+                        >
+                          <div className="size-14 3xl:size-20 border-8 3xl:border-10 border-white text-white rounded-full flex items-center justify-center text-lg 3xl:text-4xl">
+                            ▶
+                          </div>
+                        </motion.div>
+                      )}
+
+                      {/* Loader - Shows when loading */}
+                      {isLoading && !isReady && (
+                        <motion.div
+                          key="loader"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 flex items-center justify-center"
+                        >
+                          <Loader2 className="size-14 3xl:size-20 text-white animate-spin" />
+                        </motion.div>
+                      )}
+
+                      {/* Play Button (center) - Shows when paused */}
+                      {isReady && !isPlaying && (
+                        <motion.div
+                          key="play-center"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 flex items-center justify-center pointer-events-auto"
+                        >
+                          <div className="size-16 3xl:size-24 bg-white/90 backdrop-blur-sm text-black rounded-full flex items-center justify-center hover:bg-white shadow-lg">
+                            <svg
+                              className="w-7 h-7 3xl:w-12 3xl:h-12 ml-1"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Pause Button (bottom-left) - Shows when playing */}
+                    {isReady && isPlaying && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute bottom-2 left-2 pointer-events-auto"
+                      >
+                        <div className="bg-white/90 backdrop-blur-sm text-black rounded-full p-2.5 3xl:p-3.5 hover:bg-white shadow-lg">
+                          <svg
+                            className="w-4 h-4 3xl:w-6 3xl:h-6"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <rect x="6" y="4" width="4" height="16" rx="1" />
+                            <rect x="14" y="4" width="4" height="16" rx="1" />
+                          </svg>
+                        </div>
+                      </motion.div>
+                    )}
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </div>
-
-      {/* VIDEO MODAL */}
-      {activeVideo && (
-        <div
-          className="fixed inset-0 bg-black/40 justify-center z-[100] flex items-center  p-4"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div
-            className="relative max-h-[90vh]  max-w-6xl aspect-[9/16]  bg-black rounded overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setActiveVideo(null)}
-              className="absolute top-1 right-1 z-20 bg-black/90 text-white rounded-full px-2 py-2 hover:scale-110 cursor-pointer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            <video
-              src={activeVideo}
-              className="w-full h-full object-contain transition-opacity duration-300 opacity-0"
-              autoPlay
-              controls
-              aria-hidden="true"
-              playsInline
-              onLoadedMetadata={(e) => {
-                e.currentTarget.classList.remove("opacity-0");
-                e.currentTarget.classList.add("opacity-100");
-              }}
-              controlsList="nodownload"
-            />
-          </div>
-        </div>
-      )}
     </div>
   )
 }

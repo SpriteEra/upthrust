@@ -15,9 +15,8 @@ const GoogleAdsRoiPrediction = () => {
   const conversionTabRef = useRef(null);
   const indicatorRef = useRef(null);
 
-
-  const leftContainer = useRef(null)
-  const rightContainer = useRef(null)
+  const leftContainer = useRef(null);
+  const rightContainer = useRef(null);
   const imgARef = useRef(null);
   const imgBRef = useRef(null);
   const textARef = useRef(null);
@@ -33,22 +32,6 @@ const GoogleAdsRoiPrediction = () => {
   const buttonARef = useRef(null);
   const buttonBRef = useRef(null);
 
-
-  const fadeToggle = (showA, refA, refB) => {
-    if (!refA?.current) return;
-
-    if (showA) {
-      gsap.to(refA.current, { opacity: 1, duration: 0.6 });
-      refB?.current && gsap.to(refB.current, { opacity: 0, duration: 0.6 });
-    } else {
-      if (!refB?.current) return;
-      gsap.to(refA.current, { opacity: 0, duration: 0.6 });
-      gsap.to(refB.current, { opacity: 1, duration: 0.6 });
-    }
-  };
-
-  const crossed = useRef(false);
-
   useGSAP(() => {
     gsap.set(conversionRef.current, { opacity: 0, x: 100 });
 
@@ -63,13 +46,17 @@ const GoogleAdsRoiPrediction = () => {
     // distance needed to swap
     const swapX = rightRect.left - leftRect.left;
 
-
     const trafficX = 0;
     const conversionX = conversionRect.left - containerRect.left;
 
     gsap.set(indicatorRef.current, {
       x: trafficX,
       width: 200,
+    });
+
+    // Set initial background color
+    gsap.set(".gsap-bg", {
+      backgroundColor: "#FEF7E0",
     });
 
     gsap.timeline({
@@ -81,153 +68,144 @@ const GoogleAdsRoiPrediction = () => {
         pin: true,
         markers: true,
         onUpdate: (self) => {
+          const progress = self.progress;
+
+          // Tab indicator animation (continuous)
           gsap.to(indicatorRef.current, {
-            x: gsap.utils.interpolate(trafficX, conversionX, self.progress),
-            width: gsap.utils.interpolate(
-              200,
-              conversionRect.width,
-              self.progress
-            ),
-            backgroundColor: self.progress > 0.5 ? "#3B82F6" : "#FACC15",
+            x: gsap.utils.interpolate(trafficX, conversionX, progress),
+            width: gsap.utils.interpolate(200, conversionRect.width, progress),
+            backgroundColor: progress > 0.5 ? "#3B82F6" : "#FACC15",
             overwrite: true,
             duration: 0.1,
           });
+
+          // Tab text colors (continuous)
           gsap.to(trafficTabRef.current, {
-            color: self.progress > 0.5 ? "#9CA3AF" : "#000000",
+            color: progress > 0.5 ? "#9CA3AF" : "#000000",
             overwrite: true,
             duration: 0.1,
           });
 
           gsap.to(conversionTabRef.current, {
-            color: self.progress > 0.5 ? "#000000" : "#9CA3AF",
+            color: progress > 0.5 ? "#000000" : "#9CA3AF",
             overwrite: true,
             duration: 0.1,
           });
-          if (self.progress > 0.5 && !crossed.current) {
-            crossed.current = true;
-            fadeToggle(false, leftTitleARef, leftTitleBRef);
-            fadeToggle(false, listARef, listBRef);
-            fadeToggle(false, buttonARef, buttonBRef);
-            gsap.to(".gsap-bg", {
-              backgroundColor: "#E8F0FE",
-              duration: 0.6,
-              ease: "power2.out",
-            });
 
-            // IMAGE CROSS FADE
-            gsap.to(imgARef.current, { opacity: 0, duration: 0.6 });
-            gsap.to(imgBRef.current, { opacity: 1, duration: 0.6 });
+          // Background color transition (continuous)
+          // Interpolate between yellow (#FEF7E0) and blue (#E8F0FE)
+          const r = Math.round(gsap.utils.interpolate(254, 232, progress));
+          const g = Math.round(gsap.utils.interpolate(247, 240, progress));
+          const b = Math.round(gsap.utils.interpolate(224, 254, progress));
 
-            // FULL POSITION SWAP
-            gsap.to(leftContainer.current, {
-              x: rightRect.right - leftRect.right,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
+          gsap.to(".gsap-bg", {
+            backgroundColor: `rgb(${r}, ${g}, ${b})`,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(rightContainer.current, {
-              x: -swapX,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
-            gsap.to(leftTextARef.current, {
-              y: "-100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          // Image cross-fade (continuous)
+          gsap.to(imgARef.current, {
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
+          gsap.to(imgBRef.current, {
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(leftTextBRef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          // Position swap (continuous)
+          const swapProgress = gsap.utils.clamp(0, 1, progress);
+          gsap.to(leftContainer.current, {
+            x: gsap.utils.interpolate(0, rightRect.right - leftRect.right, swapProgress),
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            // TEXT SWAP (UP / DOWN)
-            gsap.to(textARef.current, {
-              y: "-100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          gsap.to(rightContainer.current, {
+            x: gsap.utils.interpolate(0, -swapX, swapProgress),
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(textBRef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          // Left text A/B (continuous)
+          gsap.to(leftTextARef.current, {
+            y: `${-progress * 100}%`,
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-          }
-          if (self.progress <= 0.5 && crossed.current) {
-            crossed.current = false;
-            fadeToggle(true, leftTitleARef, leftTitleBRef);
-            fadeToggle(true, listARef, listBRef);
-            fadeToggle(true, buttonARef, buttonBRef);
-            gsap.to(".gsap-bg", {
-              backgroundColor: "#FEF7E0",
-              duration: 0.6,
-              ease: "power2.out",
-            });
+          gsap.to(leftTextBRef.current, {
+            y: `${100 - progress * 100}%`,
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(imgARef.current, { opacity: 1, duration: 0.6 });
-            gsap.to(imgBRef.current, { opacity: 0, duration: 0.6 });
+          // Main text A/B (continuous)
+          gsap.to(textARef.current, {
+            y: `${-progress * 100}%`,
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(leftContainer.current, {
-              x: 0,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
+          gsap.to(textBRef.current, {
+            y: `${100 - progress * 100}%`,
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(rightContainer.current, {
-              x: 0,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
+          // Title A/B (continuous fade)
+          gsap.to(leftTitleARef.current, {
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(leftTextARef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          gsap.to(leftTitleBRef.current, {
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(leftTextBRef.current, {
-              y: "100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          // List A/B (continuous fade)
+          gsap.to(listARef.current, {
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(textARef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          gsap.to(listBRef.current, {
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-            gsap.to(textBRef.current, {
-              y: "100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
+          // Button A/B (continuous fade)
+          gsap.to(buttonARef.current, {
+            opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
 
-          }
-
+          gsap.to(buttonBRef.current, {
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
         },
       },
-    })
-    // .to(trafficRef.current, { opacity: 0, x: -100, duration: 1 })
-    // .to(conversionRef.current, { opacity: 1, x: 0, duration: 1 }, "<");
+    });
   }, { scope: wrapperRef });
 
   return (
     <div ref={wrapperRef} className="relative min-h-[100vh] overflow-hidden bg-white">
       <div className="container mx-auto px-4 mt-5">
-        {/* Heading */}
-
         {/* Tabs */}
         <div className="relative max-w-fit mx-auto mb-12">
           <div className="flex justify-center gap-12 relative pb-3">
@@ -253,14 +231,13 @@ const GoogleAdsRoiPrediction = () => {
 
         {/* Content */}
         <div className="relative h-150 3xl:h-[750px]">
-          {/* TRAFFIC SECTION */}
           <div
             ref={trafficRef}
             className="absolute inset-0 grid grid-cols-1 md:grid-cols-12 gap-6 3xl:gap-8 px-4 h-full"
           >
             {/* Left - Icon & Description */}
             <div className="col-span-5 gap-6 3xl:gap-8 flex flex-col h-full" ref={leftContainer}>
-              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full ">
+              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full">
                 <Image
                   src={'/icons/cloud-network.png'}
                   width={100}
@@ -268,7 +245,6 @@ const GoogleAdsRoiPrediction = () => {
                   className="size-25 3xl:size-30 object-contain"
                   alt="Could Internet Icon"
                 />
-                {/* text1  */}
                 <div className="relative overflow-hidden min-h-[10rem] 3xl:min-h-[7rem] mt-10 leading-tight">
                   <p
                     ref={leftTextARef}
@@ -287,11 +263,9 @@ const GoogleAdsRoiPrediction = () => {
                     Getting traffic is half the job. The other half: making sure visitors understand what you do and why it matters in eight seconds.
                   </p>
                 </div>
-
-
               </div>
-              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full ">
-                {/* text1 */}
+
+              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full">
                 <div className="relative">
                   <p
                     ref={leftTitleARef}
@@ -309,7 +283,6 @@ const GoogleAdsRoiPrediction = () => {
                     Conversion-focused landing page optimization
                   </p>
                 </div>
-
 
                 <div className="relative overflow-hidden min-h-[6rem] mt-4">
                   <ul
@@ -333,12 +306,6 @@ const GoogleAdsRoiPrediction = () => {
                   </ul>
                 </div>
 
-
-                {/* text2 */}
-                {/* One client went from two percent conversions to six percent. Same traffic, different page. Triple the revenue. */}
-
-                {/* button1-> text = high quality traffic and color bg-[#FBBC04]
-                button2-> text = I want a 25% converting page and color bg-[#1A73E8] */}
                 <div className="relative overflow-hidden h-[3.5rem] mt-7">
                   <button
                     ref={buttonARef}
@@ -356,11 +323,10 @@ const GoogleAdsRoiPrediction = () => {
                     I want a 25% converting page
                   </button>
                 </div>
-
               </div>
-
             </div>
-            <div className="col-span-7 overflow-hidden bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 pb-0 pr-0 flex h-full flex-col" ref={rightContainer}>
+
+            <div className="col-span-7 overflow-hidden gsap-bg rounded-3xl p-5 3xl:p-7 pb-0 pr-0 flex h-full flex-col" ref={rightContainer}>
               <div className="relative overflow-hidden h-28 3xl:h-32">
                 <p
                   ref={textARef}
@@ -379,8 +345,8 @@ const GoogleAdsRoiPrediction = () => {
                 </p>
               </div>
 
-              <div className="relative ">
-                <div className=" absolute top-0 left-0 bottom-0 right-0 3xl:-right-10 ">
+              <div className="relative">
+                <div className="absolute top-0 left-0 bottom-0 right-0 3xl:-right-10">
                   <div className="relative w-full h-133 3xl:h-150">
                     <img
                       ref={imgARef}
@@ -396,9 +362,6 @@ const GoogleAdsRoiPrediction = () => {
                       style={{ opacity: 0 }}
                     />
                   </div>
-
-
-
                 </div>
               </div>
             </div>

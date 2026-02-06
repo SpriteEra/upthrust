@@ -1,7 +1,8 @@
-
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import Tooltip from '@/utils/Tooltip';
+import LeadFormModal from '@/components/LeadModal';
 
 
 const pricingPlans = [
@@ -58,25 +59,26 @@ const COMPARISON_DATA = [
 
 
 export const FullPricingSection = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <div className="w-full bg-white lg:py-10 px-3 lg:px-16 flex flex-col items-center">
             {/* Container for Cards and Table to share the same Grid */}
 
-            <div className='w-full grid lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch lg:p-5 lg:bg-[#F4F4F4] lg:sticky top-0 z-51'>
+            <div className='w-full grid lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] items-stretch lg:p-5 lg:bg-[#F4F4F4] lg:sticky top-18 3xl:top-33.5 z-51'>
                 <div className="lg:col-start-1"></div> {/* Spacer for Label Column */}
 
                 {pricingPlans.map((plan, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-md bg-white 3xl:rounded-2xl max-lg:border border-gray-300 lg:border-t-[3px] lg:border-black max-w-80  lg:max-w-48 3xl:max-w-55 w-full mx-auto`}
+                        className={`flex flex-col p-5 pb-3 3xl:p-6 m-2 rounded-xl bg-white 3xl:rounded-lg max-lg:border border-gray-300 lg:border-t-[3px] lg:border-black max-w-100  lg:max-w-48 3xl:max-w-60 w-full mx-auto`}
                     >
-                        <p className="text-base 3xl:text-xl font-medium mb-0 lg:mb-4 max-lg:text-[#1D2127]">{plan.name} <span className='lg:hidden'>Plan</span></p>
-                        <div className="text-2xl 3xl:text-3xl font-semibold tracking-tight ">{plan.price}
-                            <span className='text-[#464646] font-light text-xs lg:hidden ml-2'>
+                        <p className="text-lg lg:text-base 3xl:text-xl font-semibold lg:font-medium mb-0 lg:mb-4 max-lg:text-[#1D2127] tracking-[-0.02em]  leading-7.5">{plan.name} <span className='lg:hidden'>Plan</span></p>
+                        <div className="text-[32px] xl:text-2xl 3xl:text-[32px] font-semibold 3xl:tracking-[-0.02em] leading-9.5 text-[#1d2127]">{plan.price}
+                            <span className='text-[#464646] font-light text-xs lg:hidden ml-2  leading-4.5 '>
                                 {plan.details}
                             </span>
                         </div>
-                        <span className="max-lg:hidden text-[10px] 3xl:text-xs mb-8 uppercase">{plan.details}</span>
+                        <span className="max-lg:hidden text-[#464646] text-xs mb-8 uppercase leading-4.5 ">{plan.details}</span>
 
                         {/* Features */}
                         <ul className="space-y-1 lg:hidden pt-4 pb-12">
@@ -89,10 +91,10 @@ export const FullPricingSection = () => {
                                     return (
                                         <li
                                             key={group.category + i}
-                                            className="flex gap-2 text-sm text-[#1D2127]"
+                                            className="flex gap-2 text-base text-[#1D2127]"
                                         >
 
-                                            <span className="mt-0.5 flex p-[3px] h-fit items-center justify-center rounded-full bg-[#64AE4B] text-white shrink-0">
+                                            <span className="mt-1 flex p-[3px] h-fit items-center justify-center rounded-full bg-[#64AE4B] text-white shrink-0">
                                                 <Check className='size-2' strokeWidth={4} />
                                             </span>
 
@@ -107,7 +109,9 @@ export const FullPricingSection = () => {
                             )}
                         </ul>
 
-                        <button className="w-full bg-black text-white py-2 3xl:py-3 rounded 3xl:rounded-md text-sm 3xl:text-lg font-semibold hover:bg-gray-800 transition-colors">
+                        <button className="w-full bg-black text-white py-3 3xl:py-3 rounded-lg 3xl:rounded-md text-base xl:text-sm 3xl:text-base font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+                            onClick={() => setIsModalOpen(true)}
+                        >
                             <span className='max-lg:hidden'>Start Here</span>
                             <span className='lg:hidden'>Get Started</span>
                         </button>
@@ -120,7 +124,7 @@ export const FullPricingSection = () => {
                 {COMPARISON_DATA.map((section) => (
                     <React.Fragment key={section.category}>
                         {/* Category Subheader */}
-                        <div className="col-span-5 bg-[#F4F4F4] py-2.5 3xl:py-3 px-2.5 3xl:px-3 rounded-md text-base 3xl:text-xl font-semibold capitalize tracking-tight">
+                        <div className="col-span-5 bg-[#F4F4F4] py-2.5 3xl:py-3 px-2.5 3xl:px-3 rounded-md text-base 3xl:text-xl font-semibold capitalize 3xl:tracking-[-0.02em] 3xl:leading-7.5">
                             {section.category}
                         </div>
 
@@ -150,6 +154,9 @@ export const FullPricingSection = () => {
                     </React.Fragment>
                 ))}
             </div>
+            {isModalOpen && (
+                <LeadFormModal handleClose={() => setIsModalOpen(false)} />
+            )}
         </div>
     );
 };

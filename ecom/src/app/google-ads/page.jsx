@@ -51,6 +51,9 @@ const page = () => {
                 <h1>Test this is heading </h1>
                 <PredictGrowth />
             </div>
+            <div className='min-h-screen bg-black'>
+
+            </div>
         </main>
     )
 }

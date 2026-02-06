@@ -29,7 +29,7 @@ const services = [
                 after: "",
             },
         ],
-        tagText1: "Ecommerce brands speding",
+        tagText1: "Ecommerce brands spending",
         tagText2: "$30K+/month",
     },
 
@@ -55,8 +55,8 @@ const services = [
                 after: "",
             },
         ],
-        tagText1: "Ecommerce brands tried of",
-        tagText2: "creative fatique",
+        tagText1: "Ecommerce brands tired of",
+        tagText2: "creative fatigue",
     },
 
     {
@@ -119,7 +119,7 @@ export default function ServicesAccordion() {
 
 
     return (
-        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-3 xs:px-8 lg:px-16 xs:mt-20 relative">
+        <div className="space-y-4 xs:space-y-8 3xl:space-y-10 px-1 xs:px-8 lg:px-16 xs:mt-20 relative">
 
             <Curve1
                 lines={[
@@ -165,10 +165,10 @@ export default function ServicesAccordion() {
                         {/* HEADER */}
                         <div className="flex items-start  relative">
                             <div className="max-xs:min-w-full xs:w-1/2">
-                                <p className="text-4xl 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10">
+                                <p className="text-4xl leading-[44px] 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10 tracking-[-0.02em] 3xl:leading-[60px]">
                                     {item.title}
                                 </p>
-                                <span className="whitespace-pre-line max-w-xl text-sm 3xl:text-base">
+                                <span className="whitespace-pre-line max-w-xl text-base lg:text-sm 3xl:text-base">
                                     {item.subtitle}
                                 </span>
                             </div>
@@ -213,7 +213,7 @@ export default function ServicesAccordion() {
                                         },
 
                                     ]}
-                                    imageClassName='-left-30 top-10 3xl:top-12 !h-16 3xl:!h-20 w-full rotate-75 scale-x-[-1]'
+                                    imageClassName='-left-41 top-10 3xl:top-16 !h-16 3xl:!h-20 w-full rotate-75 3xl:rotate-67 scale-x-[-1]'
                                     curvePosition="end"
                                     curveFlipHorizontal={true}
                                     curveFlipVertical={false}

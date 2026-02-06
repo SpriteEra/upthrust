@@ -3,9 +3,11 @@ import Heading from "@/common/Heading";
 import StylishButton from "@/common/RocketButton";
 import Navbar from "@/components/Navbar";
 import AnimatedLogoCarousel from "@/components/uiux/AnimatedLogoCarousel";
+import { CutCornerBackground } from "@/components/uiux/CutBox";
 import FaqUiUx from "@/components/uiux/FaqUiUx";
 import FinalProducts from "@/components/uiux/FinalProducts";
 import GrowthStories from "@/components/uiux/GrowthStories";
+// import { InvertedRadiusBox } from "@/components/uiux/InvertedRadiusBox";
 import OurDesigns from "@/components/uiux/OurDesigns";
 import ReadyToMoveUiUx from "@/components/uiux/ReadyToMoveUiUx";
 import ProcessFlow from "@/components/uiux/SustainableSteps";
@@ -94,7 +96,7 @@ const page = () => {
                         },
                         {
                             line: [
-                                { type: "normal", text: "Powered " },
+                                { type: "normal", text: "Powered" },
                                 { type: "italic", text: "By Design" },
                             ],
                         },
@@ -103,12 +105,12 @@ const page = () => {
                     subtitle="Explore how our work helped companies improve conversions, retention, and revenue."
                     subTitleCss="max-w-lg 3xl:max-w-xl"
                 />
-                <div className="flex items-center justify-center w-full my-8 3xl:my-10">
+                <div className="flex items-center justify-center w-full my-8 3xl:mb-20 3xl:mt-6">
                     <StylishButton text1="Book A" text2="Strategy Call" />
                 </div>
                 <GrowthStories />
 
-                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 mt-20 lg:mt-10 relative">
+                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 3xl:gap-10 mt-20 lg:mt-10 3xl:mt-26 relative">
                     {[
                         { value: "200%", text1: "Boost in", text2: "Organic Traffic" },
                         {
@@ -122,20 +124,20 @@ const page = () => {
                             text2: "Retention Time",
                         },
                     ].map((item, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#f9f9f9] shape-wrap p-4 lg:p-8 3xl:p-9 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-4xl"
-                        >
-                            <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b sm:border-b-2 border-black/30 pb-1 sm:pb-4 3xl:pb-5">
-                                {item.value}
-                            </p>
-                            <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold mt-3 sm:mt-5">
-                                {item.text1}
-                            </span>
-                            <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold">
-                                {item.text2}
-                            </span>
-                        </div>
+                        <CutCornerBackground bgColor="#F9F9F9">
+                            <div
+                                key={index}
+                                className="shape-wrap p-4 lg:p-8 3xl:p-12.5 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-[30px]"
+                            >
+                                <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b border-black/30 pb-1 sm:pb-4 3xl:pb-5 tracking-[-0.02em] 3xl:leading-[90px]">
+                                    {item.value}
+                                </p>
+                                <span className="text-2xl lg:text-lg 3xl:text-2xl font-semibold mt-3 sm:mt-5 3xl:mt-7 tracking-[-0.02em]">
+                                    {item.text1} <br /> {item.text2}
+                                </span>
+
+                            </div>
+                        </CutCornerBackground>
                     ))}
                     <Curve1
                         lines={[
@@ -165,7 +167,7 @@ const page = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col mt-26 3xl:mt-30 relative">
+            <div className="flex flex-col mt-26 3xl:mt-70 relative">
                 <Curve1
                     lines={[
                         {
@@ -208,46 +210,56 @@ const page = () => {
                     subtitle="Most products don't fail because of traffic; thay fail because users get confused, stuck, or unconvinced. We fix that."
                 />
                 <div className="max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full ">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-20">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-16 3xl:mt-18">
                         {traficToRevenue?.map((item, index) => (
-                            <div
-                                key={index}
-                                className="bg-[#f9f9f9] p-6 md:p-6 lg:p-8 3xl:p-9 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-4xl justify-between"
-                            >
-                                <div className="pb-4 3xl:pb-5">
-                                    <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-2 3xl:px-3 py-1 3xl:py-1.5 rounded-full uppercase text-sm 3xl:text-base w-fit">
-                                        {item.buttonText}
-                                    </span>
-                                    <h6 className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-6 3xl:my-8">
-                                        {item.title}
-                                    </h6>
-                                    <p className="text-xl lg:text-lg 3xl:text-xl ">
-                                        {item.description}
-                                    </p>
-                                </div>
-                                <div className=" border-t lg:border-t-2 border-black/30 pt-4 3xl:pt-5 grid grid-cols-3">
-                                    <div className="flex items-center ">
-                                        <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00]">
-                                            {item.value}
+                            <CutCornerBackground bgColor="#F9F9F9">
+                                <div
+                                    key={index}
+                                    className="p-6 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
+                                >
+                                    <div className="pb-4 3xl:pb-10">
+                                        <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-2 3xl:px-4 py-1 3xl:py-3 pb-0 rounded-full uppercase text-sm 3xl:text-base w-fit">
+                                            {item.buttonText}
+                                        </span>
+                                        <h6 className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-6 3xl:my-10 tracking-[-0.02em]">
+                                            {item.title}
+                                        </h6>
+                                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] leading-[30px] ">
+                                            {item.description}
                                         </p>
                                     </div>
-                                    <div className="col-span-2">
-                                        <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
-                                            {item.valueText1}
-                                        </p>
-                                        <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
-                                            {item.valueText2}
-                                        </p>
+                                    <div className=" border-t border-black/30 pt-4 3xl:pt-8 flex gap-2 lg:gap-3 3xl:gap-6">
+                                        <div className="flex items-center ">
+                                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00]">
+                                                {item.value}
+                                            </p>
+                                        </div>
+                                        <div className="col-span-2">
+                                            <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
+                                                {item.valueText1}
+                                            </p>
+                                            <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
+                                                {item.valueText2}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </CutCornerBackground>
                         ))}
                     </div>
                     <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
                         <div className="flex gap-8 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
-                                <svg className="size-7 3xl:size-8" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z" fill="black" />
+                                <svg
+                                    className="size-7 3xl:size-8"
+                                    viewBox="0 0 34 37"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z"
+                                        fill="black"
+                                    />
                                 </svg>
                             </div>
                             <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center leading-tight">
@@ -423,7 +435,10 @@ const page = () => {
                                     "UI/UX recommendations",
                                     "Polished, usable deliverables",
                                 ].map((item, index) => (
-                                    <div className="flex items-center gap-2 3xl:gap-4" key={index}>
+                                    <div
+                                        className="flex items-center gap-2 3xl:gap-4"
+                                        key={index}
+                                    >
                                         <span className="size-5 3xl:size-8 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
                                             <Check className="size-4 3xl:size-6" strokeWidth={3} />
                                         </span>
@@ -531,8 +546,16 @@ const page = () => {
                     <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
                         <div className="flex gap-5 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
-                                <svg className="size-7 3xl:size-8" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z" fill="black" />
+                                <svg
+                                    className="size-7 3xl:size-8"
+                                    viewBox="0 0 34 37"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0 36.6667V30H33.3333V36.6667H0ZM6.66667 23.3333H9L22 10.375L19.625 8L6.66667 21V23.3333ZM3.33333 26.6667V19.5833L22 0.958333C22.3056 0.652778 22.6597 0.416667 23.0625 0.25C23.4653 0.0833333 23.8889 0 24.3333 0C24.7778 0 25.2083 0.0833333 25.625 0.25C26.0417 0.416667 26.4167 0.666667 26.75 1L29.0417 3.33333C29.375 3.63889 29.6181 4 29.7708 4.41667C29.9236 4.83333 30 5.26389 30 5.70833C30 6.125 29.9236 6.53472 29.7708 6.9375C29.6181 7.34028 29.375 7.70833 29.0417 8.04167L10.4167 26.6667H3.33333Z"
+                                        fill="black"
+                                    />
                                 </svg>
                             </div>
                             <p className="font-semibold text-3xl 2xl:text-4xl 3xl:text-3xl text-white max-lg:text-center leading-tight">

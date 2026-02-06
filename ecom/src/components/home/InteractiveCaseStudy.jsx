@@ -4,7 +4,6 @@ import React, { useState, useRef } from 'react';
 
 const InteractiveCaseStudy = () => {
     const [activeSection, setActiveSection] = useState(0);
-    const [blinkIndex, setBlinkIndex] = useState(null);
     const sectionRefs = useRef([]);
 
     const sections = [
@@ -21,6 +20,7 @@ const InteractiveCaseStudy = () => {
             title: "10-15% of Monthly Revenue from Email & WhatsApp Alone",
             description: "See how we built retention flows generating ₹5+ lakh monthly through abandoned carts, welcome sequences, and customer journeys.",
             videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/How%20we%20did%20looms/MaximizingCustomerRetentionThroughEffectiveMarketingStrategiesmp4.mp4",
+            imageUrl: "/ecom/casestudy/casestudy2.webp",
             alt: "Case Study",
         },
         {
@@ -53,17 +53,18 @@ const InteractiveCaseStudy = () => {
 
 
     return (
-        <div className="w-full px-1 md:px-6">
-            <div className="  bg-black/6 p-1.5 xs:p-4 md:p-6 rounded-2xl md:rounded-3xl lg:max-w-[88%] mx-auto">
-                <div className="flex flex-col-reverse lg:flex-row gap-2 xs:gap-4 md:gap-6 lg:gap-5">
+        <div className="w-full px-1 md:px-6 h-full">
+            <div className="  bg-black/6 p-1.5 xs:p-4 md:p-6 rounded-3xl md:rounded-2xl lg:rounded-3xl lg:max-w-[88%] mx-auto">
+                <div className="flex flex-col-reverse lg:flex-row items-stretch gap-2 xs:gap-4 md:gap-6 lg:gap-5">
+
                     {/* Left Section*/}
-                    <div className="w-full h-full lg:w-1/3 space-y-2 md:space-y-4">
+                    <div className="w-full h-full lg:w-1/3 space-y-2 md:space-y-4 my-auto">
                         {sections.map((section, index) => (
                             <div
                                 key={section.id}
                                 ref={(el) => (sectionRefs.current[index] = el)}
-                                className={` rounded-lg md:rounded-2xl  3xl:rounded-2xl overflow-hidden transition-all duration-300 border relative ${activeSection === index ? 'bg-black text-white shadow-2xl border-black'
-                                    : 'bg-white text-gray-900 hover:shadow-lg border-gray-200'} ${blinkIndex === index ? 'animate-pulse' : ''}`}
+                                className={`rounded-2xl 3xl:rounded-2xl overflow-hidden transition-all duration-300 border relative ${activeSection === index ? 'bg-black text-white shadow-2xl border-black'
+                                    : 'bg-white text-gray-900 hover:shadow-lg border-gray-200'}`}
                             >
                                 {/* Header */}
                                 <div
@@ -71,7 +72,7 @@ const InteractiveCaseStudy = () => {
                                     onClick={(e) => handleSectionClick(e, index)}
                                 >
                                     <div className="flex items-start justify-between gap-4">
-                                        <p className={`text-base 3xl:text-xl font-semibold pr-4 flex-1 ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
+                                        <p className={`text-xl lg:text-base 3xl:text-xl font-semibold pr-4 flex-1 max-lg:leading-[30px] 3xl:leading-[30px] tracking-[-0.02em] ${activeSection === index ? 'text-white' : 'text-black/60'}`}>
                                             {section.title}
                                         </p>
                                     </div>
@@ -81,7 +82,7 @@ const InteractiveCaseStudy = () => {
                                         className={`grid transition-all duration-500 ease-in-out ${activeSection === index ? 'grid-rows-[1fr] opacity-100 mt-1.5' : 'grid-rows-[0fr] opacity-0'}`}
                                     >
                                         <div className="overflow-hidden pr-10">
-                                            <p className="text-sm 3xl:text-base font-light">
+                                            <p className="text-base  lg:text-sm 3xl:text-base font-light">
                                                 {section.description}
                                             </p>
                                         </div>
@@ -93,19 +94,14 @@ const InteractiveCaseStudy = () => {
                     </div>
 
                     {/* Right Section - Video */}
-                    <div className="w-full h-full lg:w-2/3">
-                        <div className="sticky top-6">
-                            <div className="relative bg-white rounded-lg md:rounded-2xl shadow-2xl overflow-hidden transition-all duration-500">
-                                {/* Video Container */}
-                                <div className="relative aspect-video bg-gray-900">
-                                    <SmartVideo
-                                        imageUrl={sections[activeSection].imageUrl}
-                                        videoUrl={sections[activeSection].videoUrl}
-                                        alt={sections[activeSection].alt}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                    <div className="w-full lg:w-2/3 flex items-center">
+
+                        <SmartVideo
+                            key={activeSection}
+                            imageUrl={sections[activeSection].imageUrl}
+                            videoUrl={sections[activeSection].videoUrl}
+                            alt={sections[activeSection].alt}
+                        />
                     </div>
                 </div>
             </div>

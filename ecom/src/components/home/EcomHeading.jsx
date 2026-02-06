@@ -1,6 +1,6 @@
 import React from "react";
 
-const UIUXHeading = ({
+const EcomHeading = ({
     tag: Tag = "h2",
     heading = [],
     label = "",
@@ -33,20 +33,20 @@ const UIUXHeading = ({
             )}
 
             <div className="mt-5 w-full">
-                <Tag className={`${textAlign} tracking-[-0.02em] xl:tracking-[-0.04em]`}>
+                <Tag className={`${textAlign}`}>
                     {heading.map((row, rowIndex) => {
                         const baseClass =
-                            "text-4xl md:text-4xl lg:text-7xl xl:text-[5.5rem] 3xl:text-[6.5rem] font-medium text-center leading-11 md:leading-[100%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize";
+                            "text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize";
 
                         const italicClass =
-                            "text-4xl md:text-4xl lg:text-7xl xl:text-[5.5rem] 3xl:text-9xl font-normal text-center leading-11 xl:leading-[100%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic";
+                            "capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] font-normal capitalize";
 
                         return (
                             <React.Fragment key={rowIndex}>
                                 {row.line.map((item, index) => (
                                     <span
                                         key={index}
-                                        className={`${item.type === "italic" ? italicClass : baseClass}`}
+                                        className={item.type === "italic" ? italicClass : baseClass}
                                     >
                                         {item.text}&nbsp;
                                     </span>
@@ -55,12 +55,18 @@ const UIUXHeading = ({
                             </React.Fragment>
                         );
                     })}
+
+
+
                 </Tag>
+
+
+
             </div>
 
             {subtitle && (
                 <span
-                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
+                    className={`text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
                 >
                     {subtitle}
                 </span>
@@ -69,4 +75,4 @@ const UIUXHeading = ({
     );
 };
 
-export default UIUXHeading;
+export default EcomHeading;

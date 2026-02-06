@@ -75,7 +75,7 @@ function Column({ direction = -1, data }) {
                     <div
                         key={i}
                         ref={i === 0 ? itemRef : null}
-                        className="absolute left-0 w-full rounded sm:rounded-lg 3xl:max-h-[98%]"
+                        className="absolute left-0 w-full rounded-xs lg:rounded-lg 3xl:max-h-[98%]"
                         style={{
                             top: i * (itemHeight + GAP) + offset
 
@@ -86,7 +86,7 @@ function Column({ direction = -1, data }) {
                             alt={b.name}
                             width={300}
                             height={300}
-                            className="w-full aspect-[3/4] object-cover rounded-lg"
+                            className="w-full aspect-3/4 object-cover rounded-xs lg:rounded-lg"
                             priority={i < 2}
                         />
                     </div>
@@ -124,7 +124,7 @@ const UGCAdsPlaybook = () => {
 
                 {/* CENTER CONTENT */}
                 <div className="col-span-5 p-1 xs:p-6 flex flex-col justify-evenly gap-2 xs:gap-2 max-h-60 xs:max-h-80 md:max-h-120 lg:max-h-[110vh]">
-                    <div className="font-medium text-[28px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[100px]! italic 3xl:text-[140px]! leading-tight capitalize">
+                    <div className="font-medium text-[28.78px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[100px]! italic 3xl:text-[140px]! capitalize leading-[120%] tracking-[-0.07em]">
                         <p>A Step-by-step</p>
                         <p>Guide to</p>
                     </div>
@@ -135,8 +135,8 @@ const UGCAdsPlaybook = () => {
                         </button>
                     </div>
 
-                    <div className="font-medium text-[32px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
-                      font-instrument self-end w-full max-w-[82%] xs:max-w-[65%] leading-tight">
+                    <div className="text-[32.89px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px]! 3xl:text-[160px]! italic
+                      font-instrument self-end w-full max-w-[60%] xs:max-w-[65%] leading-[120%] tracking-[0.01em]">
                         <p>Scale</p>
                         <p>Your Brand</p>
                     </div>
@@ -167,7 +167,7 @@ const UGCAdsPlaybook = () => {
 
                             {/* Video */}
                             <video
-                                src="https://cdn.upthrust.agency/Ecom%20page%20assets/upthrustbrandvideomp4.mp4"
+                                src="https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/howtoscaleyourecobrandmp4.mp4"
                                 className="w-full h-full object-cover"
                                 autoPlay
                                 controls

@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { GrowthStoriesSliderContent } from "./GrowthStoriesSliderContent";
 import RatingStars from "@/common/Rating";
+import { CutCornerBackground2 } from "./CutBox2";
 
 const growthStories = [
     {
-        name: 'PRODUCT DESIGN',
-        title: 'From ZERO brand awareness to 260% boost in lead gen. ',
+        name: "PRODUCT DESIGN",
+        title: "From ZERO brand awareness to 260% boost in lead gen. ",
         rating: 4.5,
-        message: "From a company that had no experience in the entire marketing space to hitting benchmarks and getting engagement was a success for us. Regular discussions provided reassurance & showcased Upthrust's efforts to keep the ball rolling.",
+        message:
+            "From a company that had no experience in the entire marketing space to hitting benchmarks and getting engagement was a success for us. Regular discussions provided reassurance & showcased Upthrust's efforts to keep the ball rolling.",
         clientName: "Vaibhav Vashisht",
         position: "Co-Founder at Acadly",
         profile: "/uiux/profile/vaibhav-vashisht.webp",
@@ -29,10 +31,12 @@ const growthStories = [
         ],
     },
     {
-        name: 'AD CAMPAIGNS & LANDING PAGES',
-        title: '200% Increase in Organic Traffic with Targeted Outreach & Domain Specific Campaigns.',
+        name: "AD CAMPAIGNS & LANDING PAGES",
+        title:
+            "200% Increase in Organic Traffic with Targeted Outreach & Domain Specific Campaigns.",
         rating: 4.25,
-        message: "I'm impressed with how well Upthrust’s solution is working. I'm confident that we can continue to achieve great results as we grow.",
+        message:
+            "I'm impressed with how well Upthrust’s solution is working. I'm confident that we can continue to achieve great results as we grow.",
         clientName: "Pranath Sisodiya",
         position: "CEO,  Rescribe",
         profile: "/uiux/profile/prasanth-sisodiya.webp",
@@ -53,10 +57,11 @@ const growthStories = [
         ],
     },
     {
-        name: 'BRAND IDENTITY',
-        title: 'The redesign gave the brand the right brand identity & emotion.',
+        name: "BRAND IDENTITY",
+        title: "The redesign gave the brand the right brand identity & emotion.",
         rating: 4.75,
-        message: "We had Upthrust basically for all that part and I really appreciated everybody's input in terms of conversion. I loved it. Everything fell into place and  I definitely appreciated Upthrust and everything they did.",
+        message:
+            "We had Upthrust basically for all that part and I really appreciated everybody's input in terms of conversion. I loved it. Everything fell into place and  I definitely appreciated Upthrust and everything they did.",
         clientName: "Gabriela",
         position: "Founder- AudioArt",
         profile: "/uiux/profile/gabriela.webp",
@@ -79,10 +84,12 @@ const growthStories = [
     },
 
     {
-        name: 'SOCIAL MEDIA & UI/UX DESIGN',
-        title: 'Beyond had to establish itself in a market & stand out from competition.',
+        name: "SOCIAL MEDIA & UI/UX DESIGN",
+        title:
+            "Beyond had to establish itself in a market & stand out from competition.",
         rating: 5.0,
-        message: "I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”",
+        message:
+            "I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”",
         clientName: "Iti Dubey",
         position: "CMarketing Head at - Mukunda Foods",
         profile: "/uiux/profile/iti-dubey.webp",
@@ -100,45 +107,68 @@ const growthStories = [
             "/uiux/stories/story4/9.webp",
         ],
     },
-
-]
+];
 const GrowthStories = () => {
     return (
-        <div className='max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 mt-10'>
-            {
-                growthStories?.map((item, index) => (
-                    <div className={`${item.bgColor1} p-4 sm:p-6 3xl:p-10 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`} key={index}>
-                        <div
-                            className={`${item.bgColor2} flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
-                        >
+        <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 3xl:gap-12 mt-10">
+            {growthStories?.map((item, index) => (
+                <div
+                    className={`${item.bgColor1} p-4 sm:p-6 3xl:p-12.5 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`}
+                    key={index}
+                >
+                    <div
+                        className={`${item.bgColor2} flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
+                    >
+                        <div className="p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[40%] h-full flex flex-col">
+                            <div className="max-w-[510px]">
 
-                            <div className='p-4 sm:p-6 max-2xl:pr-0 3xl:p-10 lg:w-[40%] h-full flex flex-col'>
-                                <span className='lg:text-sm 3xl:text-base uppercase'>{item.name}</span>
-                                <h5 className='font-semibold my-4 2xl:my-6 3xl:my-8 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl'>{item.title}</h5>
+                                <span className="lg:text-sm 3xl:text-base uppercase">
+                                    {item.name}
+                                </span>
+                                <h5 className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
+                                    {item.title}
+                                </h5>
 
-                                <RatingStars rating={item.rating} size="size-5.5 lg:size-5 3xl:size-5.5" />
+                                <RatingStars
+                                    rating={item.rating}
+                                    size="size-5.5 lg:size-5 3xl:size-6"
+                                />
 
-                                <p className="text-lg 2xl:text-xl 3xl:text-2xl mt-3 2xl:mt-5 mb-5 2xl:mb-8">&ldquo;{item.message}&rdquo;</p>
+                                <p className="text-lg 2xl:text-xl 3xl:text-2xl mt-3 2xl:mt-5 3xl:mt-7 mb-5 2xl:mb-8 3xl:mb-10 tracking-[-0.02em]">
+                                    &ldquo;{item.message}&rdquo;
+                                </p>
 
                                 <div className="flex items-center gap-4 3xl:gap-5">
                                     <div>
-                                        <Image width={84} height={84} className="size-16 lg:size-14 2xl:size-16 3xl:size-21 rounded-full object-contain" alt={item.clientName} src={item.profile} />
+                                        <Image
+                                            width={84}
+                                            height={84}
+                                            className="size-16 lg:size-14 2xl:size-16 3xl:size-19 rounded-full object-cover"
+                                            alt={item.clientName}
+                                            src={item.profile}
+                                        />
                                     </div>
                                     <div className="flex flex-col justify-center h-full gap-1 3xl:gap-2">
-                                        <p className="font-semibold text-xl lg:text-lg 3xl:text-xl">{item.clientName}</p>
-                                        <span className="lg:text-sm 3xl:text-base">{item.position}</span>
+                                        <p className="font-semibold text-xl lg:text-lg 3xl:text-xl leading-[-0.02em]">
+                                            {item.clientName}
+                                        </p>
+                                        <span className="lg:text-sm 3xl:text-base">
+                                            {item.position}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="lg:w-[60%] max-md:aspect-5/4 max-lg:aspect-video lg:pl-10 flex items-stretch">
+                        </div>
+                        <div className="lg:w-[60%] max-md:aspect-5/4 max-lg:aspect-video lg:pl-10 flex items-stretch">
+                            <CutCornerBackground2 bgColor="none" mirror={true}>
                                 <GrowthStoriesSliderContent images={item.images} />
-                            </div>
+                            </CutCornerBackground2>
                         </div>
                     </div>
-                ))
-            }
+                </div>
+            ))}
         </div>
-    )
-}
+    );
+};
 
-export default GrowthStories
+export default GrowthStories;

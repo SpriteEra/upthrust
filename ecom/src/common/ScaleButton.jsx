@@ -16,9 +16,6 @@ const colors = {
 
 const ScaleButton = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const handleClose = () => {
-        setIsOpen(false);
-    };
     return (
         <div className=" rounded-md 3xl:rounded-lg p-4 py-4 3xl:py-6 3xl:px-7.5 bg-white/10 border-[1.5px] border-white hover:border-white hover:bg-(--red) text-white text-sm transition-colors duration-200 flex items-center space-x-2 relative group gap-1 xs:w-fit " onClick={() => !isOpen && setIsOpen(true)}>
             <span className="relative size-10 3xl:size-12.5 flex items-center justify-center transition-transform duration-500 ease-in-out group-hover:-rotate-180 ">
@@ -30,8 +27,8 @@ const ScaleButton = () => {
                 </svg>
             </span>
             <div className='flex h-full justify-between flex-col items-start pr-2'>
-                <span className='text-lg md:text-sm 3xl:text-lg font-medium'>Scale My Store</span>
-                <span className='text-[10px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
+                <span className='text-lg xl:text-sm 3xl:text-lg font-medium tracking-[-0.02em]'>Scale My Store</span>
+                <span className='text-xs xl:text-[10px] leading-[18px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
             </div>
             {isOpen && (
                 <LeadFormModal handleClose={() => setIsOpen(false)} />

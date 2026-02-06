@@ -2,59 +2,66 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-export default function SmartVideo({ imageUrl, alt, videoUrl }) {
-    const ref = useRef(null);
-    const [visible, setVisible] = useState(false);
-    const [videoLoaded, setVideoLoaded] = useState(false);
+export default function SmartVideo({ imageUrl, alt = "", videoUrl }) {
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [isVideoReady, setIsVideoReady] = useState(false);
 
+    // Reset on video change
     useEffect(() => {
+        setIsVisible(false);
+        setIsVideoReady(false);
+    }, [videoUrl]);
+
+    // Observe visibility
+    useEffect(() => {
+        if (!containerRef.current) return;
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setVisible(true);
+                    setIsVisible(true);
                     observer.disconnect();
                 }
             },
-            { threshold: 0.4 }
+            { threshold: 0.3 }
         );
 
-        if (ref.current) observer.observe(ref.current);
+        observer.observe(containerRef.current);
         return () => observer.disconnect();
     }, []);
 
     return (
-        <div ref={ref} className="relative aspect-video bg-gray-900 rounded-xl overflow-hidden">
-            {/* Image layer with fade out animation */}
-            <div
-                className={`absolute inset-0 transition-opacity duration-700 ${videoLoaded ? 'opacity-0' : 'opacity-100'
-                    }`}
-            >
+        <div
+            ref={containerRef}
+            className="relative w-full h-full lg:h-105 3xl:h-135 bg-[#0b1220] rounded-2xl overflow-hidden"
+        >
+            {/* Image */}
+            {imageUrl && (
                 <Image
                     src={imageUrl}
-                    fill
-                    className="object-cover"
                     alt={alt}
-                />
-            </div>
-
-            {/* Video layer with fade in animation */}
-            {visible && (
-                <div
-                    className={`absolute inset-0 transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'
+                    width={1920}
+                    height={1080}
+                    className={`w-full h-full object-contain transition-opacity duration-500 ${isVideoReady ? "opacity-0" : "opacity-100"
                         }`}
-                >
-                    <video
-                        src={videoUrl}
-                        autoPlay
-                        muted
-                        controls
-                        controlsList="nodownload"
-                        playsInline
-                        aria-hidden="true"
-                        className="w-full h-full object-cover"
-                        onLoadedData={() => setVideoLoaded(true)}
-                    />
-                </div>
+                />
+            )}
+
+            {/* Video */}
+            {isVisible && (
+                <video
+                    src={videoUrl}
+                    autoPlay
+                    muted
+                    controls
+                    playsInline
+                    preload="metadata"
+                    controlsList="nodownload"
+                    onLoadedData={() => setIsVideoReady(true)}
+                    className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"
+                        }`}
+                />
             )}
         </div>
     );
