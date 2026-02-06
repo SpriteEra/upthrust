@@ -81,7 +81,6 @@ const SuccessStories = () => {
         );
 
         // Card 4 - starts stacked with rotation, spreads to right
-        // Card 4
         tl.fromTo(card4Ref.current,
             { x: 0, y: 0, rotation: 8, scale: 0.99 },
             { x: "30vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
@@ -205,7 +204,7 @@ const SuccessStories = () => {
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
     return (
-        <div className="min-h-[100vh] 3xl:min-h-[100vh] bg-black mt-40 overflow-hidden py-20" ref={wrapperRef} >
+        <div className="min-h-screen 3xl:min-h-screen bg-black mt-40 overflow-hidden py-20" ref={wrapperRef} >
             <div ref={containerRef} className="h-225 3xl:h-250 w-full relative">
 
                 {/* Title - starts from sides, ends at top-left */}

@@ -75,7 +75,7 @@ const WorkingWithUs = () => {
                                     className='size-7 2xl:size-8 3xl:size-9'
                                 />
                             </div>
-                            <p className="text-[1.375rem] sm:text-2xl 2xl:text-3xl 3xl:text-4xl font-semibold lg:mb-4 whitespace-pre-line">
+                            <p className="text-[1.375rem] sm:text-2xl 2xl:text-3xl 3xl:text-4xl font-semibold leading-11 lg:mb-4 whitespace-pre-line">
                                 {item.heading}
                             </p>
 

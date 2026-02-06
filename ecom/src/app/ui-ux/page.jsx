@@ -124,9 +124,9 @@ const page = () => {
                             text2: "Retention Time",
                         },
                     ].map((item, index) => (
-                        <CutCornerBackground bgColor="#F9F9F9">
+                        <CutCornerBackground bgColor="#F9F9F9" key={index}>
                             <div
-                                key={index}
+
                                 className="shape-wrap p-4 lg:p-8 3xl:p-12.5 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-[30px]"
                             >
                                 <p className="text-[2.625rem] lg:text-5xl 2xl:text-6xl 3xl:text-7xl font-semibold text-[#ff3b00] w-full border-b border-black/30 pb-1 sm:pb-4 3xl:pb-5 tracking-[-0.02em] 3xl:leading-[90px]">
@@ -212,9 +212,8 @@ const page = () => {
                 <div className="max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full ">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-16 3xl:mt-18">
                         {traficToRevenue?.map((item, index) => (
-                            <CutCornerBackground bgColor="#F9F9F9">
+                            <CutCornerBackground bgColor="#F9F9F9" key={index}>
                                 <div
-                                    key={index}
                                     className="p-6 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
                                 >
                                     <div className="pb-4 3xl:pb-10">
@@ -366,10 +365,8 @@ const page = () => {
                             </span>
                         </div>
                         <div className="col-span-2">
-                            <p className="text-3xl 3xl:text-4xl font-semibold">
-                                Growth don't come from random imporovements. It comes from
-                                understanding whta's broken, what matter most, and fixing it in
-                                the right order, across product, brand, and performance.
+                            <p className="text-3xl 3xl:text-4xl tracking-[-0.02em] 3xl:leading-[44px] font-semibold">
+                                Growth doesn’t come from random improvements. It comes from understanding what’s broken, what matters most, and fixing it in the right order, across product, brand, and performance.
                             </p>
                         </div>
                     </div>
@@ -377,13 +374,13 @@ const page = () => {
                     <ProcessFlow />
 
                     <div className="w-full pb-10 lg:py-20 bg-white">
-                        <div className="bg-black rounded-xl lg:rounded-[28px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:px-16 text-white relative overflow-hidden">
+                        <div className="bg-black rounded-xl lg:rounded-[28px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:px-16 3xl:py-16 text-white relative overflow-hidden">
                             {/* Top Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 {/* LEFT */}
                                 <div>
                                     {/* Badge */}
-                                    <span className="inline-flex items-center gap-2 text-base 3xl:text-lg tracking-wide px-3 py-1 rounded-full border border-[#FF03034D] text-(--red) mb-8 3xl:mb-10">
+                                    <span className="inline-flex items-center gap-2 text-base 3xl:text-lg tracking-[-0.02em] px-3 py-1 rounded-full border border-[#FF03034D] text-(--red) mb-8 3xl:mb-10">
                                         <svg
                                             className="fill-[#FF3B00] size-3"
                                             viewBox="0 0 15 15"
@@ -399,7 +396,7 @@ const page = () => {
                                     </span>
 
                                     {/* Heading */}
-                                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-tight mb-8 3xl:mb-10">
+                                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-15 3xl:leading-18 mb-8 3xl:mb-10">
                                         See What Working With Us Looks Like; <br />
                                         Before Committing
                                     </h2>
@@ -539,7 +536,7 @@ const page = () => {
                         curveFlipVertical={false}
                         tiltAngle={5}
                         imageIndex={2}
-                        className="absolute top-50 3xl:top-35 right-10 xl:right-10 3xl:right-25 max-w-[300px] 3xl:max-w-[350px]"
+                        className="absolute top-50 3xl:top-55 right-10 xl:right-10 3xl:-right-15  max-w-[300px] 3xl:max-w-[350px]"
                     />
                     <FinalProducts />
 
@@ -582,7 +579,7 @@ const page = () => {
                             </div>
                         </div>
                         <div className="lg:col-span-3 flex justify-end">
-                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold leading-snug text-justify max-w-3xl 3xl:max-w-5xl max-lg:hidden">
+                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold leading-10 3xl:leading-15 text-justify max-w-3xl 3xl:max-w-5xl tracking-[-0.02em] max-lg:hidden">
                                 <span className="block text-right ">Founders and leaders</span>
                                 <span className="">
                                     share how our design process, clarity, and execution helped

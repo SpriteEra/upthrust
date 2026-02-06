@@ -118,7 +118,7 @@ export default function FaqUiUx() {
                                     className="w-full items-center justify-between py-4 md:py-8 3xl:py-10 flex flex-col cursor-pointer overflow-hidden transition-all duration-300"
                                 >
                                     <div className="flex justify-between gap-2 w-full items-center">
-                                        <p className="lg:text-2xl md:text-3xl pr-4 md:font-semibold">
+                                        <p className="lg:text-2xl 3xl:text-3xl pr-4 md:font-semibold 3xl:leading-[38px]">
                                             {faq.question}
                                         </p>
                                         <Plus

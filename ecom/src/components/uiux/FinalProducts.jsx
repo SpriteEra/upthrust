@@ -22,10 +22,10 @@ const FinalProducts = () => {
 
     return (
         <div className="bg-[#F9F9F9] rounded-3xl p-1 sm:p-6 3xl:p-10 flex flex-col mt-20 max-lg:mb-20">
-            <h5 className="text-xl font-semibold text-center">
+            <h5 className="text-xl 3xl:text-2xl 3xl:leading-8 tracking-[-0.02em] font-semibold text-center">
                 Where Strategy Takes Visual Form
             </h5>
-            <h5 className="text-base mt-2 text-center">
+            <h5 className="text-base mt-2 text-center 3xl:text-lg 3xl:leading-7">
                 Final design expressions from projects across different industries and formats.
             </h5>
 
@@ -45,7 +45,7 @@ const FinalProducts = () => {
                                 alt="Slide image"
                                 width={800}
                                 height={600}
-                                className="object-cover w-full h-full object-cover"
+                                className=" w-full h-full object-cover"
                             />
                         </div>
                     )}

@@ -60,7 +60,7 @@ const UIUXHeading = ({
 
             {subtitle && (
                 <span
-                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
+                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 mt-5 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
                 >
                     {subtitle}
                 </span>

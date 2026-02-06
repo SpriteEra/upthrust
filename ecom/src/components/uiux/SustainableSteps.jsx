@@ -4,7 +4,7 @@ import { Plus } from "lucide-react";
 
 export default function ProcessTimelineExact() {
     const steps = [
-        { badge: "Free STEP #1", title: "Growth Discovery &\nExperience Audit", offset: "mt-6", hoverText: "**We understand your business**, users, and goals, then identify what’s blocking growth across product, brand, or funnel." },
+        { badge: "Free STEP #1", title: "Growth Discovery &\nExperience Audit", offset: "mt-6", hoverText: "We understand your business, users, and goals, then identify what’s blocking growth across product, brand, or funnel." },
         { step: "STEP #2", title: "Strategy &\nOpportunity Mapping", offset: "mt-6", hoverText: "We decide what matters most, what to fix first, and where design will have the biggest impact." },
         { step: "STEP #3", title: "Ideation &\nConcept Development", offset: "mt-6 mt-14", hoverText: "Ideas are created around real problems; whether for product flows, branding, landing pages, or campaigns." },
         { step: "STEP #4", title: "Design & Validation\n ", offset: "mt-6 mt-14", hoverText: "We design, test, and refine quickly so only strong solutions move forward." },
@@ -23,7 +23,6 @@ export default function ProcessTimelineExact() {
                     >
                         {/* Vertical divider (in gap) */}
 
-
                         <span className={`mb-6 text-xs 3xl:text-sm tracking-wide text-gray-400 rounded-full px-3 py-1 ${index === 0 ? "bg-[#FF3B00]  text-white" : ""}`}>
                             {index === 0 ? 'Free' : ''} {`STEP #${index + 1} `}
                         </span>
@@ -37,7 +36,7 @@ export default function ProcessTimelineExact() {
                                 {/* Step label */}
 
                                 {/* Title */}
-                                <p className="text-center text-base 3xl:text-lg mb-4 leading-[18px] text-gray-800 whitespace-pre-line h-[36px]">
+                                <p className="text-center text-base 3xl:text-lg mb-4 leading-[18px] 3xl:leading-6 text-gray-800 whitespace-pre-line h-9">
                                     {item.title}
                                 </p>
 

@@ -47,6 +47,8 @@ export default function SmartSwiper({
 
     // responsive
     breakpoints = {},
+    onSwiperReady,
+
 
     // effects: "slide" | "fade" | "cube" | "coverflow"
     effect = "slide",
@@ -81,7 +83,12 @@ export default function SmartSwiper({
                 ]}
                 slidesPerView={1}
                 autoHeight={false}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                // onSwiper={(swiper) => (swiperRef.current = swiper)}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                    onSwiperReady?.(swiper);
+                }}
+
                 loop={loop}
                 speed={speed}
                 direction={direction}
