@@ -1,5 +1,6 @@
 import GoogleAdsHeading from '@/components/google-ads/GoogleAdsHeading'
 import GoogleAdsRoiPrediction from '@/components/google-ads/GoogleAdsRoiPrediction'
+import PredictGrowth from '@/components/google-ads/PredictGrowth'
 import Image from 'next/image'
 import React from 'react'
 
@@ -27,7 +28,7 @@ const page = () => {
 
             </div>
 
-            <div className='flex flex-col mt-26 3xl:mt-30'>
+            {/* <div className='flex flex-col mt-26 3xl:mt-30'>
                 <GoogleAdsHeading
                     tag="h2"
                     heading={[{
@@ -45,6 +46,10 @@ const page = () => {
                     <GoogleAdsRoiPrediction />
                 </div>
 
+            </div> */}
+            <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full mt-20 3xl:mt-24 mb-10 3xl:mb-16'>
+                <h1>Test this is heading </h1>
+                <PredictGrowth />
             </div>
         </main>
     )
