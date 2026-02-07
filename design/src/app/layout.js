@@ -7,9 +7,9 @@ import Analytics from "@/scripts/Analytics";
 const isProd = process.env.NODE_ENV === "production";
 
 export const metadata = {
-  title: "D2C Ecommerce Marketing Agency | Scale Profitable Brands – Upthrust",
+  title: "UX & Product Design Agency for B2B Products | Upthrust",
 
-  description: "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+  description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
 
   keywords: [
     "ecommerce marketing agency",
