@@ -27,7 +27,7 @@ const InteractiveCaseStudy = () => {
             id: 2,
             title: "From ₹42K to ₹6.37 Lakh Monthly in 5 Months",
             description: "Watch how we took a stuck edible oils brand from 0.85x ROAS to 3.5x while scaling spend 4x (some campaigns hit 5.25x).",
-            videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/How%20we%20did%20looms/ImprovingCheckoutFlowandReducingFakeOrdersmp4.mp4",
+            videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/How%20we%20did%20looms/TransformingBrandPerformanceintheOilIndustry.mp4",
             imageUrl: "/ecom/casestudy/casestudy3.webp",
             alt: "Case Study",
         },
