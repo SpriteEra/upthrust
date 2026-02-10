@@ -21,6 +21,8 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
     const animationRef = useRef(null);
     const containerRef = useRef(null);
     const loadedVideosRef = useRef(new Set());
+    const videoRefs = useRef({});
+
 
     const totalWidth = itemWidth * brands.length;
     const autoPlaySpeed = direction === "left" ? -1 : 1;
@@ -41,6 +43,39 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
         observer.observe(containerRef.current);
         return () => observer.disconnect();
     }, []);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const video = Object.values(videoRefs.current).find(
+                        (v) => v === entry.target
+                    );
+
+                    if (!video) return;
+
+                    if (entry.isIntersecting) {
+                        video.muted = true;
+                        video.play().catch(() => { });
+                    } else {
+                        video.pause();
+                    }
+                });
+            },
+            {
+                threshold: 0.4,
+            }
+        );
+
+        Object.values(videoRefs.current).forEach((video) => {
+            observer.observe(video);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
 
     useEffect(() => {
         if (!isVisible || isDragging || isHovered || Math.abs(velocity) > 0.1) return;
@@ -213,8 +248,6 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         if (video) video.pause();
                     }}
 
-
-
                 >
                     <div className="relative w-full h-full bg-black">
                         {/* IMAGE */}
@@ -248,7 +281,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         )}
 
                         {/* VIDEO (always mounted) */}
-                        {hoveredId === brand.id && (
+                        {/* {hoveredId === brand.id && (
                             <video
                                 id={`video-${brand.id}`}
                                 src={brand.video}
@@ -266,7 +299,25 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                             />
 
 
-                        )}
+                        )} */}
+                        <video
+                            id={`video-${brand.id}`}
+                            ref={(el) => {
+                                if (el) videoRefs.current[brand.id] = el;
+                            }}
+                            src={brand.video}
+                            autoPlay
+                            loop
+                            playsInline
+                            muted={soundOnId !== brand.id}
+                            preload="auto"
+                            onLoadedData={() => {
+                                loadedVideosRef.current.add(brand.id);
+                                setReadyVideoId(brand.id);
+                            }}
+                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 `}
+                        />
+
                     </div>
 
 

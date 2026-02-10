@@ -89,7 +89,7 @@ const services = [
         id: 4,
         title: "Marketplace Management",
         subtitle:
-            "Shopify Stores • CRO & Landing Pages • A/B Testing • Mobile-First \n10-15% Revenue Lifts | Sub-2 Second Speed | Conversion-Focused",
+            "Amazon PPC • Flipkart Ads • Multi-Platform • SEO & Optimization Lower ACoS 40%+ | Dominate Rankings | Profitable Multi-Channel",
         details: [
             {
                 before: "Ecommerce for",
