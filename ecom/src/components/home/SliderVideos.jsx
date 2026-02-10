@@ -244,8 +244,8 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                         setHoveredId(null);
                         setIsHovered(false);
 
-                        const video = document.getElementById(`video-${brand.id}`);
-                        if (video) video.pause();
+                        // const video = document.getElementById(`video-${brand.id}`);
+                        // if (video) video.pause();
                     }}
 
                 >
