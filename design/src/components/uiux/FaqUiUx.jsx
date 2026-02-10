@@ -65,15 +65,15 @@ export default function FaqUiUx() {
     return (
         <>
             <div className="grid lg:grid-cols-3 gap-12">
-                <div className="lg:col-span-1 max-w-[22rem] 3xl:max-w-sm max-lg:mx-auto">
-                    <div className="bg-[#F9F9F9] rounded-3xl p-6 md:p-8 3xl:px-8 3xl:p-10">
+                <div className="lg:col-span-1 max-w-[22rem] 3xl:max-w-[28rem] max-lg:mx-auto">
+                    <div className="bg-[#F9F9F9] rounded-[30px] lg:rounded-3xl 3xl:rounded-[30px] py-5 px-4.5 md:p-8 3xl:px-8 3xl:p-12.5">
                         <div className="flex items-center gap-3 3xl:gap-4 mb-6 3xl:mb-8">
                             <Image
                                 src="/uiux/profile/akshay-gera.webp"
                                 alt="Akshay Gera"
                                 width={100}
                                 height={100}
-                                className="size-22 lg:size-18 3xl:size-22 rounded-full object-cover"
+                                className="size-25 lg:size-18 3xl:size-25 rounded-full object-cover"
                             />
                             <div>
                                 <h2 className="text-2xl lg:text-xl 3xl:text-2xl font-semibold">
@@ -82,18 +82,18 @@ export default function FaqUiUx() {
                                 <p className="text-xl lg:text-lg 2xl:text-xl text-black/70">CEO</p>
                             </div>
                         </div>
-                        <p className="text-xl lg:text-lg md:text-xl font-medium mb-8 leading-snug lg:leading-relaxed">
+                        <p className="text-2xl lg:text-lg md:text-xl 3xl:text-2xl font-semibold tracking-[-0.02em] mb-8">
                             "Got more questions or curious about what's ahead? Let's connect
                             on LinkedIn!"
                         </p>
                         <div className="relative inline-block">
-                            <StylishButton />
+                            <StylishButton text1="Book A" text2="Strategy Call" />
                         </div>
                     </div>
                 </div>
                 <div className="lg:col-span-2">
                     <Heading
-                        tag="h4"
+                        tag="h3"
                         heading={[{
                             line: [
                                 { type: "normal", text: " Frequently" },
@@ -110,15 +110,15 @@ export default function FaqUiUx() {
                         subtitle=""
                     />
 
-                    <div className="space-y-1 mt-10 max-lg:px-2">
+                    <div className="space-y-1 mt-16 lg:mt-10 max-lg:px-2">
                         {faqs.map((faq, index) => (
-                            <div key={index} className={`border-b border-black/80 ${index === 0 ? "border-t" : ""}`}>
+                            <div key={index} className={`border-b border-black/80 ${index === 0 ? "border-t border-black/80" : ""}`}>
                                 <div
                                     onClick={() => toggleFAQ(index)}
                                     className="w-full items-center justify-between py-4 md:py-8 3xl:py-10 flex flex-col cursor-pointer overflow-hidden transition-all duration-300"
                                 >
                                     <div className="flex justify-between gap-2 w-full items-center">
-                                        <p className="lg:text-2xl 3xl:text-3xl pr-4 md:font-semibold 3xl:leading-[38px]">
+                                        <p className="lg:text-2xl 3xl:text-3xl pr-4 md:font-semibold 3xl:leading-[38px] tracking-[-0.02em]">
                                             {faq.question}
                                         </p>
                                         <Plus
@@ -128,10 +128,10 @@ export default function FaqUiUx() {
 
                                     </div>
                                     <div className={`overflow-hidden transition-all duration-400 ease-in-out ${openIndexes.includes(index)
-                                        ? "max-h-96 opacity-100 mt-2"
+                                        ? "max-h-96 opacity-100 mt-2 3xl:mt-6"
                                         : "max-h-0 opacity-0"
                                         }`}>
-                                        <p className="text-base 3xl:text-lg">{faq.answer}</p>
+                                        <p className="text-base 3xl:text-lg tracking-[-0.02em]">{faq.answer}</p>
                                     </div>
                                 </div>
 

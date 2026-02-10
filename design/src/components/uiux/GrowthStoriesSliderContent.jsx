@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const GrowthStoriesSliderContent = ({ images = [] }) => {
     return (
-        <div className="w-full h-full flex-1 bg-white rounded-xl sm:rounded-3xl overflow-hidden max-h-116 3xl:max-h-160">
+        <div className="w-full h-full flex-1 bg-white rounded-xl sm:rounded-3xl overflow-hidden max-h-120 3xl:max-h-165">
             <SmartSwiper
                 slides={images}
                 effect="slide"
@@ -19,10 +19,10 @@ export const GrowthStoriesSliderContent = ({ images = [] }) => {
                         <Image
                             src={item}
                             alt="Client success story"
-                            fill
+                            width={1000}
+                            height={800}
                             quality={100}
-                            sizes="(max-width: 768px) 100vw, 60vw"
-                            className="object-cover"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                 )}

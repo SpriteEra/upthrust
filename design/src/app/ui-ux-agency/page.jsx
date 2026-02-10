@@ -4,20 +4,28 @@ import StylishButton from "@/common/RocketButton";
 import Navbar from "@/components/Navbar";
 import AnimatedLogoCarousel from "@/components/uiux/AnimatedLogoCarousel";
 import { CutCornerBackground } from "@/components/uiux/CutBox";
-import FaqUiUx from "@/components/uiux/FaqUiUx";
-import FinalProducts from "@/components/uiux/FinalProducts";
-import GrowthStories from "@/components/uiux/GrowthStories";
+// import FaqUiUx from "@/components/uiux/FaqUiUx";
+// import GrowthStories from "@/components/uiux/GrowthStories";
 // import { InvertedRadiusBox } from "@/components/uiux/InvertedRadiusBox";
-import OurDesigns from "@/components/uiux/OurDesigns";
-import ReadyToMoveUiUx from "@/components/uiux/ReadyToMoveUiUx";
-import ProcessFlow from "@/components/uiux/SustainableSteps";
-import TestimonialsWithVideo from "@/components/uiux/TestimonialsWithVideo";
+// import OurDesigns from "@/components/uiux/OurDesigns";
+// import ReadyToMoveUiUx from "@/components/uiux/ReadyToMoveUiUx";
+// import ProcessFlow from "@/components/uiux/SustainableSteps";
+// import TestimonialsWithVideo from "@/components/uiux/TestimonialsWithVideo";
 import UIUXHero from "@/components/uiux/UIUXHero";
-import WorkingWithUs from "@/components/uiux/WorkingWithUs";
+// import WorkingWithUs from "@/components/uiux/WorkingWithUs";
 import { Check } from "lucide-react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import React from "react";
-
+const FaqUiUx = dynamic(() => import('@/components/uiux/FaqUiUx'));
+const FinalProducts = dynamic(() => import('@/components/uiux/FinalProducts'));
+const GrowthStories = dynamic(() => import('@/components/uiux/GrowthStories'));
+const OurDesigns = dynamic(() => import('@/components/uiux/OurDesigns'));
+const ReadyToMoveUiUx = dynamic(() => import('@/components/uiux/ReadyToMoveUiUx'));
+const ProcessFlow = dynamic(() => import('@/components/uiux/SustainableSteps'));
+const TestimonialsWithVideo = dynamic(() => import('@/components/uiux/TestimonialsWithVideo'));
+const WorkingWithUs = dynamic(() => import('@/components/uiux/WorkingWithUs'));
+// import FinalProducts from "@/components/uiux/FinalProducts";
 export const metadata = {
     title: "UX & Product Design Agency for B2B Products | Upthrust",
     description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
@@ -112,7 +120,7 @@ const page = () => {
                 <UIUXHero />
                 <AnimatedLogoCarousel />
             </div>
-            <div className="flex flex-col mt-26 3xl:mt-30 relative scroll-mt-30 3xl:scroll-mt-35" id='case-studies'>
+            <div className="flex flex-col mt-60 lg:mt-26 3xl:mt-30 relative scroll-mt-30 3xl:scroll-mt-35" id='case-studies'>
                 <Curve1
                     lines={[
                         {
@@ -129,15 +137,16 @@ const page = () => {
                             parts: [{ type: "text", text: "looks like." }],
                         },
                     ]}
-                    imageClassName="right-8 top-14 3xl:top-16"
+                    imageClassName="right-56 max-lg:rotate-65 lg:right-8 top-14 3xl:top-16"
                     curvePosition="end"
                     curveFlipHorizontal={true}
                     curveFlipVertical={false}
                     tiltAngle={-10}
-                    className="absolute top-20 3xl:top-35 left-10 xl:left-35 3xl:left-25 max-w-[300px] 3xl:max-w-[350px]"
+                    hiddenInSmall={false}
+                    className="absolute -top-28 lg:top-10 3xl:top-35 left-10 xl:left-35 3xl:left-25 lg:max-w-[300px] 3xl:max-w-[350px]"
                 />
-                <Heading
 
+                <Heading
                     tag="h2"
                     heading={[
                         {
@@ -154,12 +163,12 @@ const page = () => {
                     subtitle="Explore how our work helped companies improve conversions, retention, and revenue."
                     subTitleCss="max-w-lg 3xl:max-w-xl"
                 />
-                <div className="flex items-center justify-center w-full my-8 3xl:mb-20 3xl:mt-6">
+                <div className="flex items-center justify-center w-full mb-3 lg:my-8 3xl:mb-20 3xl:mt-6">
                     <StylishButton text1="Book A" text2="Strategy Call" />
                 </div>
                 <GrowthStories />
 
-                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 3xl:gap-10 mt-20 lg:mt-10 3xl:mt-26 relative">
+                <div className="max-w-[90%] mx-auto w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-4 md:gap-5 3xl:gap-10 mt-20 lg:mt-10 3xl:mt-26 relative max-lg:mb-60">
                     {[
                         { value: "200%", text1: "Boost in", text2: "Organic Traffic" },
                         {
@@ -205,13 +214,14 @@ const page = () => {
                                 parts: [{ type: "text", text: "proud of." }],
                             },
                         ]}
-                        imageClassName="left-8 -top-15"
+                        imageClassName="left-8 -top-20 size-20!"
                         curvePosition="end"
                         imageIndex={3}
                         curveFlipHorizontal={true}
                         curveFlipVertical={false}
                         tiltAngle={5}
-                        className="absolute -bottom-15 xl:-bottom-20 -right-5 xl:right-30 3xl:right-25 max-w-[300px] 3xl:max-w-[350px]"
+                        hiddenInSmall={false}
+                        className="absolute -bottom-46 lg:-bottom-15 xl:-bottom-20 3xl:-bottom-26 right-9 lg:-right-5 xl:right-30 3xl:right-25 max-w-[300px] 3xl:max-w-[350px]"
                     />
                 </div>
             </div>
@@ -263,30 +273,30 @@ const page = () => {
                         {traficToRevenue?.map((item, index) => (
                             <CutCornerBackground bgColor="#F9F9F9" key={index} cutWidth={20} cutHeight={20} cutRadius={1}>
                                 <div
-                                    className="p-6 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
+                                    className="p-6 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
                                 >
-                                    <div className="pb-4 3xl:pb-10">
-                                        <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-2 3xl:px-4 py-1 3xl:py-3 pb-0 rounded-full uppercase text-sm 3xl:text-base w-fit">
+                                    <div className="pb-10 lg:pb-4 3xl:pb-10">
+                                        <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-4 lg:px-2 3xl:px-4 py-3 lg:py-1 3xl:py-3 rounded-full uppercase lg:text-sm 3xl:text-base w-fit">
                                             {item.buttonText}
                                         </span>
-                                        <h6 className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-6 3xl:my-10 tracking-[-0.02em]">
+                                        <p className="max-w-xs font-semibold text-3xl lg:text-2xl 3xl:text-3xl my-10 lg:my-6 3xl:my-10 tracking-[-0.02em]">
                                             {item.title}
-                                        </h6>
+                                        </p>
                                         <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] leading-[30px] ">
                                             {item.description}
                                         </p>
                                     </div>
-                                    <div className=" border-t border-black/30 pt-4 3xl:pt-8 flex gap-2 lg:gap-3 3xl:gap-6">
+                                    <div className=" border-t border-black/30 pt-8 lg:pt-4 3xl:pt-8 flex gap-3 3xl:gap-6">
                                         <div className="flex items-center ">
-                                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00]">
+                                            <p className="text-4xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00]">
                                                 {item.value}
                                             </p>
                                         </div>
                                         <div className="col-span-2">
-                                            <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
+                                            <p className="text-lg lg:text-sm 2xl:text-base 3xl:text-lg uppercase">
                                                 {item.valueText1}
                                             </p>
-                                            <p className="text-sm 2xl:text-base 3xl:text-lg uppercase">
+                                            <p className="text-lg lg:text-sm 2xl:text-base 3xl:text-lg uppercase">
                                                 {item.valueText2}
                                             </p>
                                         </div>
@@ -295,7 +305,7 @@ const page = () => {
                             </CutCornerBackground>
                         ))}
                     </div>
-                    <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
+                    <div className="mt-16 lg:mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-8 lg:gap-5">
                         <div className="flex gap-8 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
                                 <svg
@@ -310,7 +320,7 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center leading-tight">
+                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center tracking-[-0.02em] leading-10">
                                 Let's design an experience that converts.
                             </p>
                         </div>
@@ -382,13 +392,13 @@ const page = () => {
                             ],
                         },
                     ]}
-                    imageClassName="right-8 top-18 3xl:top-16 scale-y-[-1] scale-x-[-1] rotate-[30deg]"
+                    imageClassName="right-8 top-18 3xl:top-26 3xl:size-20! scale-y-[-1] scale-x-[-1] rotate-[30deg]"
                     curvePosition="end"
                     curveFlipHorizontal={false}
                     curveFlipVertical={false}
                     tiltAngle={-10}
                     imageIndex={3}
-                    className="absolute top-40 3xl:top-55 left-10 lg:left-30 xl:left-55 3xl:left-25 max-w-[300px] 3xl:max-w-[350px]"
+                    className="absolute top-40 3xl:top-55 left-10 lg:left-30 xl:left-55 3xl:top-47 3xl:left-47 max-w-[300px] 3xl:max-w-[350px]"
                 />
                 <Heading
                     tag="h3"
@@ -406,10 +416,10 @@ const page = () => {
                     label="Our approach"
                     subtitle="Clear steps. No confusion. Focused on results."
                 />
-                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 mt-10 3xl:mt-16">
+                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 lg:mt-10 3xl:mt-16">
                     <div className="grid grid-cols-3 max-lg:hidden">
                         <div>
-                            <span className="border border-black/30 px-2 3xl:px-3 py-1 3xl:py-1.5 rounded-full uppercase text-sm 3xl:text-base w-fit">
+                            <span className="border border-black/30 px-2 3xl:px-6.5 py-1 3xl:py-4.5 rounded-full uppercase text-sm 3xl:text-lg w-fit leading-[-0.02em]">
                                 Our process
                             </span>
                         </div>
@@ -423,15 +433,15 @@ const page = () => {
                     <ProcessFlow />
 
                     <div className="w-full pb-10 lg:py-20 bg-white">
-                        <div className="bg-black rounded-xl lg:rounded-[28px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:px-16 3xl:py-16 text-white relative overflow-hidden">
+                        <div className="bg-black rounded-xl lg:rounded-[28px] 3xl:rounded-[50px] px-4 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:p-20 text-white relative overflow-hidden">
                             {/* Top Content */}
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 {/* LEFT */}
                                 <div>
                                     {/* Badge */}
-                                    <span className="inline-flex items-center gap-2 text-base 3xl:text-lg tracking-[-0.02em] px-3 py-1 rounded-full border border-[#FF03034D] text-(--red) mb-8 3xl:mb-10">
+                                    <span className="inline-flex items-center gap-2 text-lg lg:text-base 3xl:text-lg tracking-[-0.02em] py-2.5 px-4 lg:px-3 lg:py-1 3xl:py-2.5 3xl:px-4 rounded-full border border-[#FF03034D] text-(--red) mb-8 3xl:mb-10">
                                         <svg
-                                            className="fill-[#FF3B00] size-3"
+                                            className="fill-[#FF3B00] size-4 lg:size-3 3xl:size-4"
                                             viewBox="0 0 15 15"
                                             fill="none"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -445,10 +455,14 @@ const page = () => {
                                     </span>
 
                                     {/* Heading */}
-                                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-15 3xl:leading-18 mb-8 3xl:mb-10">
+                                    <h3 className="max-lg:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
                                         See What Working With Us Looks Like; <br />
                                         Before Committing
-                                    </h2>
+                                    </h3>
+                                    <h3 className="g:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
+                                        See What Working With Us Looks Like;
+                                        Before Committing
+                                    </h3>
 
                                     {/* CTA */}
                                     <div>
@@ -464,7 +478,7 @@ const page = () => {
                                             alt="Preview"
                                             width={420}
                                             height={260}
-                                            className="rounded-xl 3xl:rounded-3xl h-full w-full 3xl:w-150 object-cover"
+                                            className="rounded-xl 3xl:rounded-[30px] h-full w-full 3xl:w-150 object-cover"
                                         />
                                     </div>
                                 </div>
@@ -474,7 +488,7 @@ const page = () => {
                             <div className="my-10 h-px w-full bg-white/30 max-md:hidden" />
 
                             {/* Bottom checklist */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-2 text-sm max-md:mt-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-1.5 text-sm max-md:mt-10">
                                 {[
                                     "Strategy alignment session",
                                     "High-impact design output",
@@ -485,10 +499,10 @@ const page = () => {
                                         className="flex items-center gap-2 3xl:gap-4"
                                         key={index}
                                     >
-                                        <span className="size-5 3xl:size-8 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
-                                            <Check className="size-4 3xl:size-6" strokeWidth={3} />
+                                        <span className="size-7.5 lg:size-5 3xl:size-7.5 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
+                                            <Check className="size-6 lg:size-4 3xl:size-6" strokeWidth={3} />
                                         </span>
-                                        <span className="text-white font-semibold text-xl lg:text-base 2xl:text-xl 3xl:text-2xl">
+                                        <span className="text-white font-semibold text-2xl lg:text-base 2xl:text-xl 3xl:text-2xl leading-[-0.02em]">
                                             {item}
                                         </span>
                                     </div>
@@ -499,7 +513,7 @@ const page = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='why-upthrust'>
+            <div className="flex flex-col mt-80 lg:mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='why-upthrust'>
                 <Curve1
                     lines={[
                         {
@@ -510,20 +524,20 @@ const page = () => {
                                     text: "clients",
                                     bgColor: "#FF4500",
                                 },
-                                { type: "text", text: "or" },
                             ],
                         },
                         {
                             parts: [{ type: "text", text: "usually notice first." }],
                         },
                     ]}
-                    imageClassName="left-20 top-20 3xl:top-16 scale-x-[-1] rotate-[20deg]"
+                    imageClassName="left-20 top-20 3xl:top-16 scale-x-[-1] rotate-[20deg] size-20!"
                     curvePosition="end"
                     curveFlipHorizontal={true}
                     curveFlipVertical={false}
                     tiltAngle={5}
                     imageIndex={2}
-                    className="absolute top-25 3xl:top-35 right-10 xl:right-40 3xl:right-25 max-w-[300px] 3xl:max-w-[350px]"
+                    hiddenInSmall={false}
+                    className="absolute -top-40 lg:top-25 3xl:top-35 right-1/2 max-lg:translate-x-1/2 lg:right-10 xl:right-40 3xl:right-25 lg:max-w-[300px] 3xl:max-w-[350px] max-lg:-rotate-20"
                 />
                 <Heading
                     tag="h3"
@@ -541,7 +555,7 @@ const page = () => {
                     label="WHY UPTHRUST"
                     subtitle="Human, reassuring, trust-building - not salesy."
                 />
-                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 mt-20 3xl:mt-30">
+                <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto max-sm:px-2 mt-10 lg:mt-20 3xl:mt-30">
                     <WorkingWithUs />
                 </div>
             </div>
@@ -562,34 +576,11 @@ const page = () => {
                     label="Designed. Delivered. Visualized."
                     subtitle="A visual overview of the brands and products we’ve designed."
                 />
-                <div className="sm:max-w-[90%] max-sm:px-2 sm:mx-auto w-full mt-10 3xl:mt-16 relative">
-                    <Curve1
-                        lines={[
-                            {
-                                parts: [{ type: "text", text: "What you see is" }],
-                            },
-                            {
-                                parts: [
-                                    { type: "text", text: "what" },
-                                    {
-                                        type: "highlight",
-                                        text: "clients received",
-                                        bgColor: "#FF4500",
-                                    },
-                                ],
-                            },
-                        ]}
-                        imageClassName="left-15 top-20 3xl:top-16 scale-x-[-1]"
-                        curvePosition="end"
-                        curveFlipHorizontal={true}
-                        curveFlipVertical={false}
-                        tiltAngle={5}
-                        imageIndex={2}
-                        className="absolute top-50 3xl:top-55 right-10 xl:right-10 3xl:-right-15  max-w-[300px] 3xl:max-w-[350px]"
-                    />
+                <div className="sm:max-w-[90%] max-sm:px-2 sm:mx-auto w-full mt-10 3xl:mt-16">
+
                     <FinalProducts />
 
-                    <div className="mt-10 rounded-3xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-5">
+                    <div className="mt-10 rounded-2xl 3xl:rounded-4xl bg-black p-8 flex justify-between flex-wrap gap-6">
                         <div className="flex gap-5 2xl:gap-10 items-center">
                             <div className="p-4 3xl:p-5 bg-white rounded-full w-fit max-lg:hidden">
                                 <svg
@@ -604,8 +595,8 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-3xl 2xl:text-4xl 3xl:text-3xl text-white max-lg:text-center leading-tight">
-                                Let’s create a visual system your product deserves.
+                            <p className="font-semibold text-[32px] max-lg:leading-10 lg:text-3xl 2xl:text-4xl 3xl:text-3xl max-lg:capitalize text-white max-lg:text-center tracking-[-0.02em]">
+                                Let’s create an experience your product deserves.
                             </p>
                         </div>
 
@@ -613,7 +604,7 @@ const page = () => {
                             <StylishButton text1="Book A" text2="Strategy Call" />
                         </div>
                     </div>
-                    <div className="grid lg:grid-cols-5 mt-25 3xl:mt-30 max-lg:px-2">
+                    <div className="grid lg:grid-cols-5 mt-25 3xl:mt-40 max-lg:px-2">
                         <div className="lg:col-span-2">
                             <Image
                                 src={"/icons/clutch.webp"}
@@ -622,7 +613,7 @@ const page = () => {
                                 className="w-50 lg:w-35 3xl:w-50 h-auto object-contain"
                                 alt="Clutch Logo"
                             />
-                            <div className="max-w-[150px] text-sm text-center mt-4">
+                            <div className="max-w-[200px] lg:max-w-[150px] 3xl:max-w-[200px] text-sm text-center mt-4">
                                 <p className="uppercase">4.6 Avg Score</p>
                                 <span className="">Based on 80+ reviews</span>
                             </div>
@@ -636,7 +627,7 @@ const page = () => {
                                 </span>
                                 <span className="block text-left">confidence.</span>
                             </p>
-                            <p className="lg:hidden text-4xl font-semibold leading-tight mt-5">
+                            <p className="lg:hidden text-4xl font-semibold leading-11 tracking-[-0.02em] mt-5">
                                 Founders and leaders share how our design process, clarity, and
                                 execution helped them move forward with confidence.
                             </p>
@@ -663,7 +654,7 @@ const page = () => {
                                 ],
                             },
                         ]}
-                        imageClassName="right-8 top-14 3xl:top-16 scale-y-[-1] scale-x-[-1]"
+                        imageClassName="right-8 3xl:right-12 top-14 3xl:top-26 scale-y-[-1] scale-x-[-1] 3xl:size-20!"
                         curvePosition="end"
                         curveFlipHorizontal={true}
                         curveFlipVertical={false}

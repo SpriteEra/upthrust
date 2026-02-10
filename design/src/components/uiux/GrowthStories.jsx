@@ -113,21 +113,21 @@ const GrowthStories = () => {
         <div className="max-sm:w-full sm:max-w-[90%] sm:mx-auto w-full flex flex-col gap-6 lg:gap-10 3xl:gap-12 mt-10">
             {growthStories?.map((item, index) => (
                 <div
-                    className={`${item.bgColor1} p-4 sm:p-6 3xl:p-12.5 rounded-xl sm:rounded-3xl 3xl:rounded-4xl w-full`}
+                    className={`${item.bgColor1} p-4 sm:p-6 3xl:p-12.5 rounded-xl lg:rounded-3xl 3xl:rounded-4xl w-full`}
                     key={index}
                 >
                     <div
-                        className={`${item.bgColor2} flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
+                        className={`${item.bgColor2} max-lg:bg-transparent! flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
                     >
-                        <div className="p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[40%] h-full flex flex-col">
+                        <div className={`${item.bgColor2} lg:bg-none! p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[40%] h-full flex flex-col lg:rounded-l-3xl 3xl:rounded-l-4xl`}>
                             <div className="max-w-[510px]">
 
                                 <span className="lg:text-sm 3xl:text-base uppercase">
                                     {item.name}
                                 </span>
-                                <h5 className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
+                                <p className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
                                     {item.title}
-                                </h5>
+                                </p>
 
                                 <RatingStars
                                     rating={item.rating}
@@ -143,7 +143,7 @@ const GrowthStories = () => {
                                         <Image
                                             width={84}
                                             height={84}
-                                            className="size-16 lg:size-14 2xl:size-16 3xl:size-19 rounded-full object-cover"
+                                            className="size-16 lg:size-14 2xl:size-16 3xl:size-19 rounded-full object-cover bg-white"
                                             alt={item.clientName}
                                             src={item.profile}
                                         />

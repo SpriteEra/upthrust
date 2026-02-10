@@ -88,9 +88,9 @@ const OurDesigns = () => {
     };
 
     return (
-        <div className='flex flex-col mt-20'>
+        <div className='flex flex-col mt-5 lg:mt-20'>
             <div className='sm:max-w-[90%] sm:mx-auto w-full px-8 sm:px-10 3xl:px-20 mb-5'>
-                <div className='grid grid-cols-2 gap-4 text-xs 3xl:text-sm'>
+                <div className='grid grid-cols-2 gap-4 text-xs 3xl:text-sm 3xl:leading-[20px]'>
                     <p>Our services (04)</p>
                     <p>Selected Work</p>
                 </div>
@@ -110,7 +110,7 @@ const OurDesigns = () => {
 
                             </div>
 
-                            <div className={`grid gap-1 ${index === 0 || index === 3 ? "grid-cols-3" : "grid-cols-2"} ${openIndex === index ? "lg:opacity-0" : ""} transition-all duration-400 ease-in-out `}>
+                            <div className={`grid gap-1 3xl:gap-2 ${index === 0 || index === 3 ? "grid-cols-3" : "grid-cols-2"} ${openIndex === index ? "lg:opacity-0" : ""} transition-all duration-400 ease-in-out `}>
                                 {
                                     item.upperSlider.map((image, i) => (
                                         <Image src={image} key={i} width={300} height={100} alt='demo' className='w-full sm:h-full h-14 sm:max-h-20 3xl:max-h-27.5 object-cover rounded-sm sm:rounded-md' />

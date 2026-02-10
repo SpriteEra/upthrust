@@ -89,7 +89,7 @@ export default function TestimonialsWithVideo() {
                 <CutCornerBackground bgColor="#F9F9F9" key={i} cutWidth={20} cutHeight={20} cutRadius={1}>
                     <div
                         key={i}
-                        className=" rounded-2xl max-lg:px-4 p-6 lg:p-8 3xl:p-6 flex flex-col"
+                        className=" rounded-2xl 3xl:rounded-[30px] max-lg:px-4 p-6 lg:p-8 3xl:p-12.5 flex flex-col h-full"
                     >
                         <div className="flex gap-3 items-center">
                             <span className="text-2xl 3xl:text-3xl font-semibold ">
@@ -102,7 +102,7 @@ export default function TestimonialsWithVideo() {
                             />
                         </div>
 
-                        <hr className="my-1 lg:my-4 text-black/30" />
+                        <hr className="my-1 lg:my-4 3xl:mt-8 text-black/30" />
                         <div className="h-full justify-between flex flex-col">
                             {/* Quote */}
                             <p className="text-2xl lg:text-xl 3xl:text-2xl font-medium mt-6 lg:mt-10 3xl:mt-14">
@@ -110,20 +110,20 @@ export default function TestimonialsWithVideo() {
                             </p>
 
                             {/* Footer */}
-                            <div className="flex items-center justify-between mt-6">
+                            <div className="flex items-center justify-between mt-6 3xl:mt-16">
                                 <div className="flex items-center gap-3">
                                     <Image
                                         src={item.avatar}
                                         alt={item.avatarAlt}
                                         width={60}
                                         height={60}
-                                        className="rounded-full size-12 3xl:size-15 object-cover border border-black"
+                                        className="rounded-full size-15 lg:size-12 3xl:size-15 object-cover border border-black"
                                     />
                                     <div>
-                                        <p className="text-sm 3xl:text-base font-semibold">
+                                        <p className="text-base lg:text-sm 3xl:text-base font-semibold">
                                             {item.name}
                                         </p>
-                                        <p className="text-sm 3xl:text-base">{item.role}</p>
+                                        <p className="text-base lg:text-sm 3xl:text-base">{item.role}</p>
                                     </div>
                                 </div>
 
@@ -132,9 +132,9 @@ export default function TestimonialsWithVideo() {
                                     onClick={() => openVideo(i)}
                                     title="Play Video"
                                     target="_blank"
-                                    className="size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white"
+                                    className="size-15 lg:size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white"
                                 >
-                                    <Play size={16} fill="white" />
+                                    <Play className="size-4 3xl:size-5" fill="white" />
                                 </button>
                             </div>
                         </div>

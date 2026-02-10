@@ -111,16 +111,6 @@
 
 /* marquee  */
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .marquee {
   display: flex;
   width: max-content;
@@ -129,6 +119,16 @@
 
 .marquee-paused {
   animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee2 {
