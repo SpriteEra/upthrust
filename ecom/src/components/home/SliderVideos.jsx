@@ -315,7 +315,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 250 }) {
                                 loadedVideosRef.current.add(brand.id);
                                 setReadyVideoId(brand.id);
                             }}
-                            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 `}
+                            className={`absolute inset-0 w-full h-full object-cover  transition-opacity duration-200 `}
                         />
 
                     </div>
