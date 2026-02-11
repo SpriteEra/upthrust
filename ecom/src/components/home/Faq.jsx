@@ -3,7 +3,8 @@ import { Info } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 export default function FAQ() {
-    const [openIndexes, setOpenIndexes] = useState([0]);
+    const [openIndexes, setOpenIndexes] = useState(null);
+    // const [openIndex, setOpenIndex] = useState(null);
     const [blinkIndex, setBlinkIndex] = useState(null);
     const faqRefs = useRef([]);
 
@@ -83,20 +84,26 @@ export default function FAQ() {
         }
     ];
 
+    // const toggleFAQ = (index) => {
+    //     if (openIndexes.includes(index)) {
+    //         setOpenIndexes(openIndexes.filter(i => i !== index));
+    //     } else {
+    //         setOpenIndexes([...openIndexes, index]);
+    //     }
+    //     // setBlinkIndex(null);
+    // };
+
     const toggleFAQ = (index) => {
-        if (openIndexes.includes(index)) {
-            setOpenIndexes(openIndexes.filter(i => i !== index));
-        } else {
-            setOpenIndexes([...openIndexes, index]);
-        }
-        // setBlinkIndex(null);
+        setOpenIndexes(openIndexes === index ? null : index);
     };
+
+
 
     const handleFAQClick = (e, index) => {
 
 
         // If FAQ is closed and click is on the div (not button), show blink
-        if (!openIndexes.includes(index)) {
+        if (!(openIndexes === index)) {
             // setBlinkIndex(index);
             setTimeout(() => setBlinkIndex(null), 600);
         }
@@ -106,7 +113,10 @@ export default function FAQ() {
         <div
             key={index}
             ref={(el) => (faqRefs.current[index] = el)}
-            onClick={(e) => toggleFAQ(index)}
+            onClick={() => {
+                toggleFAQ(index);
+            }}
+
             className="bg-white rounded-xl 3xl:rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer border border-[#e1e1e1] relative min-h-22.5"
         >
             <div className="p-4 md:p-6 md:px-8 max-w-[87%]">
@@ -127,11 +137,15 @@ export default function FAQ() {
 
                     <button
                         title='Show/Hide'
-                        onClick={() => toggleFAQ(index)}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFAQ(index);
+                        }}
+
                         className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 size-8 3xl:size-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 bg-[#ff4d00] text-white`
                         }
                     >
-                        {openIndexes.includes(index) ? (
+                        {openIndexes === index ? (
                             <svg className='size-6 3xl:size-10' viewBox="0 0 16 16" fill="none">
                                 <path
                                     d="M4 8H12"
@@ -154,10 +168,11 @@ export default function FAQ() {
                 </div>
 
                 <div
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndexes.includes(index)
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndexes === index
                         ? "max-h-96 opacity-100 mt-2"
                         : "max-h-0 opacity-0"
                         }`}
+
                 >
                     <div className="md:pl-8 md:pr-10">
                         <p className="text-base lg:text-sm 3xl:text-base leading-relaxed" dangerouslySetInnerHTML={{
