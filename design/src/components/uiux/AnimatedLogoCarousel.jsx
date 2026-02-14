@@ -60,8 +60,8 @@ export default function AnimatedLogoCarousel() {
 
 
     return (
-        <div className=" bg-black flex items-center justify-center p-4 md:p-8 3xl:pb-12 ">
-            <div className="w-full sm:max-w-[90%] 3xl:max-w-[85%]  pt-2 lg:pt-10 ">
+        <div className=" bg-black flex items-center justify-center px-2  md:py-8 3xl:pb-12 ">
+            <div className="w-full sm:max-w-[90%] 3xl:max-w-[90%]  pt-2 lg:pt-10 ">
                 {/* Logo Carousel Container */}
                 <div className="relative  sm:border sm:border-white/20  sm:rounded-2xl 3xl:rounded-3xl ">
                     <div className="hidden sm:block absolute -top-2 2xl:-top-3  left-1/2 -translate-x-1/2 z-10">
