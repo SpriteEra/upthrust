@@ -58,7 +58,7 @@ const CommunicationScroll = () => {
     }, []);
 
     return (
-        <div ref={containerRef} className="min-h-[300vh] py-20">
+        <div ref={containerRef} className="min-h-[300vh] max-w-[90%] mx-auto py-20">
             <div className="sticky top-0 h-screen flex items-center">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

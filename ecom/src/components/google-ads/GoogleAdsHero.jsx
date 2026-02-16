@@ -1,13 +1,29 @@
 'use client'
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+
+const brands = [
+    { name: "brand1", src: "/google-ads/brandwhite/brand1.png" },
+    { name: "brand2", src: "/google-ads/brandwhite/brand2.png" },
+    { name: "brand3", src: "/google-ads/brandwhite/brand3.png" },
+    { name: "brand4", src: "/google-ads/brandwhite/brand4.png" },
+    { name: "brand5", src: "/google-ads/brandwhite/brand5.png" },
+    { name: "brand6", src: "/google-ads/brandwhite/brand6.png" },
+    { name: "brand7", src: "/google-ads/brandwhite/brand7.png" },
+    { name: "brand8", src: "/google-ads/brandwhite/brand8.png" },
+    { name: "brand9", src: "/google-ads/brandwhite/brand9.png" },
+    { name: "brand10", src: "/google-ads/brandwhite/brand10.png" },
+
+];
 
 const GoogleAdsHero = () => {
     const [currentWord, setCurrentWord] = useState(0);
     const words = [
-        { text: 'PPC', color: '#10B981' }, // Green
-        { text: 'Google Ads', color: '#3B82F6' }, // Blue
-        { text: 'Bing Ads', color: '#F59E0B' } // Orange
+        { text: 'PPC', color: '#10B981' },
+        { text: 'Google Ads', color: '#3B82F6' },
+        { text: 'Bing Ads', color: '#F59E0B' }
     ];
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,67 +34,59 @@ const GoogleAdsHero = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white">
-            <style jsx>{`
-                @keyframes slideOut {
-                    0% {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: translateY(-100%);
-                        opacity: 0;
-                    }
-                }
+        <div className="min-h-screen bg-white max-w-[90%] mx-auto mt-15">
 
-                @keyframes slideIn {
-                    0% {
-                        transform: translateY(100%);
-                        opacity: 0;
-                    }
-                    100% {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                }
-
-                .animate-slideOut {
-                    animation: slideOut 0.5s ease-in-out forwards;
-                }
-
-                .animate-slideIn {
-                    animation: slideIn 0.5s ease-in-out forwards;
-                }
-            `}</style>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div className=" py-12 lg:py-20">
                 {/* Desktop Layout */}
-                <div className="hidden lg:flex items-start justify-between gap-12">
+                <div className=" lg:flex items-start justify-between w-full">
                     {/* Left Content */}
-                    <div className="flex-1 max-w-2xl">
+                    <div className="flex-1">
                         {/* Rating */}
                         <div className="flex items-center gap-2 mb-4">
-                            <div className="flex items-center gap-1">
-                                <span className="text-2xl font-bold">CG</span>
+
+                            <div className="relative flex items-center">
+                                {/* First Circle */}
+                                <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center ">
+                                    <Image
+                                        src="/google-ads/Cric.png"
+                                        alt="crc"
+                                        width={32}
+                                        height={32}
+                                        className="object-contain"
+                                    />
+                                </div>
+
+                                {/* Second Circle (Overlapping) */}
+                                <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center -ml-4 z-10">
+                                    <Image
+                                        src="/google-ads/Google.png"
+                                        alt="google"
+                                        width={32}
+                                        height={32}
+                                        className="object-contain"
+                                    />
+                                </div>
+
                             </div>
+
                         </div>
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="text-sm font-semibold">4.9</span>
+                            <span className="text-sm 2xl:text-[16px] 3xl:text-[17px] ">4.9</span>
                             <div className="flex gap-1">
                                 {[...Array(5)].map((_, i) => (
-                                    <svg key={i} className="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20">
-                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                                    <svg width="19" height="18" key={i} viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.29034 0L11.4835 6.74982H18.5807L12.839 10.9215L15.0321 17.6712L9.29034 13.4996L3.5486 17.6712L5.74175 10.9215L0 6.74982H7.09719L9.29034 0Z" fill="#FFB900" />
                                     </svg>
                                 ))}
                             </div>
                         </div>
-                        <p className="text-sm text-gray-600 mb-8">PPC Agency that kills competitors</p>
+                        <p className="text-lg 3xl:text-xl text-black mb-8 font-normal leading-[150%] tracking-[-0.02em]">PPC Agency that kills competitors</p>
 
                         {/* Main Heading */}
-                        <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8">
+                        <h1 className="text-4xl lg:text-5xl 2xl:text-6xl 3xl:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8">
                             Turn Wasted Ad Spend<br />
                             Into Real Revenue with<br />
-                            <span className="inline-block relative overflow-hidden align-bottom h-20 w-64">
+                            <span className="inline-block relative overflow-hidden align-bottom h-14 w-100 3xl:h-23 3xl:w-150">
                                 <span
                                     key={`current-${currentWord}`}
                                     className="absolute whitespace-nowrap left-0 bottom-0 w-full animate-slideOut font-bold"
@@ -97,32 +105,34 @@ const GoogleAdsHero = () => {
                         </h1>
 
                         {/* CTA Button */}
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-colors">
+                        <button className="bg-[#0076F0] text-white font-normal text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] px-7 3xl:px-9  py-5 3xl:py-6 rounded-full  transition-colors">
                             Get a Free Google Ads Audit
                         </button>
 
                         {/* Trusted Brands */}
-                        <div className="mt-12">
-                            <p className="text-sm text-gray-600 mb-6">Trusted By Popular Brands</p>
-                            <div className="grid grid-cols-5 gap-6 items-center">
-                                <div className="text-gray-400 font-bold text-xl">HARLEY</div>
-                                <div className="text-gray-400 font-bold text-xl">L'OREAL</div>
-                                <div className="text-gray-400 font-bold text-xl">zomato</div>
-                                <div className="text-gray-400 font-bold text-xl">DELL</div>
-                                <div className="text-gray-400 font-bold text-xl">VWO</div>
-                            </div>
-                            <div className="grid grid-cols-5 gap-6 items-center mt-4">
-                                <div className="text-gray-400 text-2xl">⚡</div>
-                                <div className="text-gray-400 font-bold text-xl">BOSCH</div>
-                                <div className="text-gray-400 font-bold text-xl">CYBLE</div>
-                                <div className="text-gray-400 font-bold text-xl">Welspun</div>
-                                <div className="text-gray-400 font-bold text-xl">OK</div>
+                        <div className="mt-10 sm:mt-10 3xl:mt-20 flex flex-col">
+                            <p className="text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]">Trusted By Popular Brands</p>
+                            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl 3xl:max-w-3xl pb-12 3xl:pb-20">
+                                {brands.map((brand) => (
+                                    <div
+                                        key={brand.name}
+                                        className="flex items-center justify-center h-7 xs:h-8 lg:h-10 w-12 3xl:h-15 xs:w-13 3xl:w-20"
+                                    >
+                                        <Image
+                                            src={brand.src}
+                                            alt={"Logos of google brands partnered with Upthrust"}
+                                            width={160}
+                                            height={60}
+                                            className="max-h-full max-w-full object-contain select-none"
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
 
                     {/* Right Form */}
-                    <div className="flex-shrink-0 w-full max-w-md">
+                    <div className=" w-full max-w-lg">
                         <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-8">
                             <div className="bg-white rounded-xl p-6 mb-6">
                                 <h3 className="font-bold text-lg mb-2">See Where Your Budget Leaks</h3>
@@ -131,7 +141,7 @@ const GoogleAdsHero = () => {
                                 </p>
                             </div>
 
-                            {/* Form Fields Placeholder */}
+                            {/* Form */}
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium mb-2">Your Name*</label>
@@ -177,99 +187,6 @@ const GoogleAdsHero = () => {
                     </div>
                 </div>
 
-                {/* Mobile Layout */}
-                <div className="lg:hidden">
-                    {/* Top Section */}
-                    <div>
-                        {/* Rating */}
-                        <div className="flex items-center gap-2 mb-3">
-                            <div className="flex items-center gap-1">
-                                <span className="text-xl font-bold">CG</span>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 mb-3">
-                            <span className="text-sm font-semibold">4.9</span>
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <svg key={i} className="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20">
-                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                    </svg>
-                                ))}
-                            </div>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-6">PPC Agency that kills competitors</p>
-
-                        {/* Main Heading */}
-                        <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-6">
-                            Turn Wasted<br />
-                            Ad Spend<br />
-                            Into Real<br />
-                            Revenue with<br />
-                            <span className="inline-block relative overflow-hidden align-bottom h-12 w-48">
-                                <span
-                                    key={`current-mobile-${currentWord}`}
-                                    className="absolute left-0 bottom-0 w-full animate-slideOut font-bold"
-                                    style={{ color: words[currentWord].color }}
-                                >
-                                    {words[currentWord].text}
-                                </span>
-                                <span
-                                    key={`next-mobile-${currentWord}`}
-                                    className="absolute left-0 bottom-0 w-full animate-slideIn font-bold"
-                                    style={{ color: words[(currentWord + 1) % words.length].color }}
-                                >
-                                    {words[(currentWord + 1) % words.length].text}
-                                </span>
-                            </span>
-                        </h1>
-
-                        {/* CTA Button */}
-                        <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full text-base transition-colors mb-8 w-full sm:w-auto">
-                            Get a Free Google Ads Audit
-                        </button>
-
-                        {/* Trusted Brands */}
-                        <div className="mb-8">
-                            <p className="text-xs text-gray-600 mb-4">Trusted By Popular Brands</p>
-                            <div className="grid grid-cols-5 gap-3 items-center text-xs">
-                                <div className="text-gray-400 font-bold">HARLEY</div>
-                                <div className="text-gray-400 font-bold">L'OREAL</div>
-                                <div className="text-gray-400 font-bold">zomato</div>
-                                <div className="text-gray-400 font-bold">DELL</div>
-                                <div className="text-gray-400 font-bold">VWO</div>
-                            </div>
-                            <div className="grid grid-cols-5 gap-3 items-center mt-2 text-xs">
-                                <div className="text-gray-400">⚡</div>
-                                <div className="text-gray-400 font-bold">BOSCH</div>
-                                <div className="text-gray-400 font-bold">CYBLE</div>
-                                <div className="text-gray-400 font-bold">Welspun</div>
-                                <div className="text-gray-400 font-bold">OK</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Form Section */}
-                    <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-6">
-                        <div className="bg-white rounded-xl p-5 mb-5">
-                            <h3 className="font-bold text-base mb-2">Find Your Wasted Ad Spend</h3>
-                            <p className="text-sm text-gray-600">
-                                Average business loses 2L-10L on fixable mistakes. Book your free audit below.
-                            </p>
-                        </div>
-
-                        {/* Form Fields Placeholder */}
-                        <div className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium mb-2">Your Name*</label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter your name"
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     );

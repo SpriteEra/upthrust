@@ -18,6 +18,8 @@ const PredictGrowth = () => {
         {
             id: 1,
             type: 'blue',
+            bg: 'bg-[#0076F0]',
+            text: 'text-white',
             category: 'Stop Guessing. Start With Data.',
             title: 'Discover, Research, and campaign build',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do.',
@@ -27,7 +29,9 @@ const PredictGrowth = () => {
         // Right column - White card (top, short)
         {
             id: 2,
-            type: 'white',
+            // type: '[#828282]',
+            bg: 'bg-[#E7F0FF]',
+            text: 'text-black',
             category: 'SAFETY CHECK',
             title: 'Pre-Launch Review And Launch',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
@@ -39,6 +43,8 @@ const PredictGrowth = () => {
         {
             id: 3,
             type: 'blue',
+            bg: 'bg-[#004FAC]',
+            text: 'text-white',
             category: 'THE JOURNEY CONTINUES',
             title: 'Scale and Ascension',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do.',
@@ -49,18 +55,20 @@ const PredictGrowth = () => {
         {
             id: 4,
             type: 'white',
+            bg: 'bg-[#FFFFFF]',
+            text: 'text-black',
             category: 'ITERATE',
             title: 'Learning And Optimization',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
             image: '/google-ads/predict1.png',
-            height: 'tall'
+            height: 'short'
         },
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 p-8">
+        <div className="min-h-screen p-8">
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:auto-rows-[300px]">
                     {cardsData.map((card) => {
                         const isExpanded = expandedCards[card.id] || card.alwaysExpanded;
                         const isBlue = card.type === 'blue';
@@ -69,14 +77,13 @@ const PredictGrowth = () => {
                             <div
                                 key={card.id}
                                 className={`
-                  relative rounded-2xl overflow-hidden shadow-lg cursor-pointer
-                  transition-all duration-500 ease-in-out
-                  ${isBlue ? 'bg-blue-600 text-white' : 'bg-white text-gray-900'}
-                  ${card.height === 'tall' ? 'row-span-2' : ''}
-                  ${card.height === 'medium' ? 'row-span-1' : ''}
-                  ${card.height === 'short' ? 'row-span-1' : ''}
-                `}
-                                onClick={() => !card.alwaysExpanded && toggleCard(card.id)}
+         relative rounded-2xl overflow-hidden shadow-lg cursor-pointer
+         transition-all duration-500 ease-in-out
+        ${card.bg} ${card.text}
+          ${card.id === 1 ? 'md:row-span-2' : ''}
+          ${card.id === 3 ? 'md:row-span-2' : ''}
+        `}
+                                onClick={() => toggleCard(card.id)}
                             >
                                 <div className="relative h-full p-8 flex flex-col">
                                     {/* Category Label */}

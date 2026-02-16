@@ -186,7 +186,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 initial={{ opacity: 0, y: 60 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500"
+                className="rounded-2xl lg:rounded-3xl overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
                 <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20  p-2 sm:p-4  lg:p-6 min-h-[480px] 3xl:min-h-[500px]">
@@ -320,7 +320,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 // Main Component
 const CompaignCards = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16 lg:py-24">
+        <div className="min-h-screen  py-16 lg:py-24">
             {/* Case Studies Stack */}
             <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
                 <div className="relative">

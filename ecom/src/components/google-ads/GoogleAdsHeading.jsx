@@ -1,63 +1,102 @@
-const GoogleAdsHeading = ({
-    tag: Tag = "h2",
-    heading = [],
-    label = "",
-    subtitle = "",
-    subTitleCss = "",
-    align = "center", // left | center | right
-}) => {
+// "use client";
 
-    const containerAlign =
-        align === "left"
-            ? "items-center lg:items-start"
-            : align === "right"
-                ? "items-center lg:items-end"
-                : "items-center";
+// import Image from "next/image";
 
-    const textAlign =
-        align === "left"
-            ? "text-center lg:text-left"
-            : align === "right"
-                ? "text-center lg:text-right"
-                : "text-center";
+// const CommonHeading = ({
+//     tag: Tag = "h2",
+//     heading = [], // structured content
+//     subtitle = "",
+//     align = "center",
+//     className = "", // optional extra typography override
+// }) => {
+//     const textAlign =
+//         align === "left"
+//             ? "text-left"
+//             : align === "right"
+//                 ? "text-right"
+//                 : "text-center";
 
-    return (
-        <div className={`flex flex-col max-sm:px-2 ${containerAlign}`}>
+//     return (
+//         <div className={`w-full px-4 ${textAlign}`}>
+//             <Tag
+//                 className={`
+//           font-semibold
+//           tracking-[-0.04em]
+//           leading-[130%]
+//           text-[28px]
+//           sm:text-[36px]
+//           lg:text-[48px]
+//           xl:text-[60px]
+//           3xl:text-[72px]
+//           ${className}
+//         `}
+//             >
+//                 {heading.map((line, lineIndex) => (
+//                     <div key={lineIndex} className="block">
+//                         {line.map((item, index) => {
+//                             // 🔹 Normal Text
+//                             if (item.type === "text") {
+//                                 return (
+//                                     <span key={index} className={item.className || ""}>
+//                                         {item.value}
+//                                     </span>
+//                                 );
+//                             }
 
-            {label && (
-                <span className="text-sm md:text-xs 3xl:text-sm uppercase">
-                    {label}
-                </span>
-            )}
+//                             // 🔹 Highlight With Background
+//                             if (item.type === "highlight") {
+//                                 return (
+//                                     <span
+//                                         key={index}
+//                                         className={`
+//                       inline-flex items-center gap-2
+//                       px-4 py-2
+//                       rounded-full
+//                       ${item.bgColor || ""}
+//                       ${item.textColor || ""}
+//                       ${item.className || ""}
+//                     `}
+//                                     >
+//                                         {item.icon && (
+//                                             <Image
+//                                                 src={item.icon}
+//                                                 alt="icon"
+//                                                 width={item.iconSize || 20}
+//                                                 height={item.iconSize || 20}
+//                                             />
+//                                         )}
+//                                         {item.value}
+//                                     </span>
+//                                 );
+//                             }
 
-            <div className="mt-5 w-full">
-                <Tag className={`${textAlign} text-[2.625rem] xl:text-[3.5rem] 3xl:text-7xl font-semibold leading-tight`}>
-                    {heading.map((row, rowIndex) => (
+//                             // 🔹 Inline Image (not pill)
+//                             if (item.type === "image") {
+//                                 return (
+//                                     <Image
+//                                         key={index}
+//                                         src={item.src}
+//                                         alt="image"
+//                                         width={item.width || 40}
+//                                         height={item.height || 40}
+//                                         className={`inline-block ${item.className || ""}`}
+//                                     />
+//                                 );
+//                             }
 
-                        row.line.map((item, index) => (
-                            <span
-                                key={index}
-                                className=""
-                            >
-                                {item.text} <br />
-                            </span>
-                        ))
-                    ))}
-                </Tag>
+//                             return null;
+//                         })}
+//                     </div>
+//                 ))}
+//             </Tag>
 
+//             {subtitle && (
+//                 <p className="mt-4 text-base sm:text-lg opacity-80">
+//                     {subtitle}
+//                 </p>
+//             )}
+//         </div>
+//     );
+// };
 
-
-            </div>
-
-            {subtitle && (
-                <span
-                    className={`text-lg xl:text-base 3xl:text-lg mt-2 ${textAlign} ${subTitleCss}`}
-                >
-                    {subtitle}
-                </span>
-            )}
-        </div>
-    );
-};
-
-export default GoogleAdsHeading;
+// export default CommonHeading;

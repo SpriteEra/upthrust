@@ -128,17 +128,8 @@ export default function ClientTestimonials() {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 py-16 px-4">
+        <div className="min-h-screen  py-16 px-4">
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-6xl font-bold text-black mb-3">
-                        What Our Clients Say
-                    </h1>
-                    <p className="text-black text-xl">
-                        We asked clients what changed after working with us. Below are their words.
-                    </p>
-                </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[0, 1, 2].map((colIndex) => (
                         <div key={colIndex} className="flex flex-col gap-6">
