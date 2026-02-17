@@ -86,7 +86,7 @@ const GoogleAdsHero = () => {
                         <h1 className="text-4xl lg:text-5xl 2xl:text-6xl 3xl:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8">
                             Turn Wasted Ad Spend<br />
                             Into Real Revenue with<br />
-                            <span className="inline-block relative overflow-hidden align-bottom h-14 w-100 3xl:h-23 3xl:w-150">
+                            <span className="inline-block relative overflow-hidden align-bottom h-10 sm:h-14 w-70 sm:w-100 3xl:h-23 3xl:w-150">
                                 <span
                                     key={`current-${currentWord}`}
                                     className="absolute whitespace-nowrap left-0 bottom-0 w-full animate-slideOut font-bold"

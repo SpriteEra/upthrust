@@ -1,6 +1,3 @@
-// import VideoTestimonialCard from "./VideoTestimonialCard";
-// import QuoteTestimonialCard from "./QuoteTestimonialCard";
-// import ShortTestimonialCard from "./ShortTestimonialCard";
 import imgval from "./AmyGrucela.png"
 import QuoteTestimonialCard from "./Atul3";
 import ShortTestimonialCard from "./Atul4";
@@ -23,20 +20,7 @@ export default function ClientTestimonials() {
         {
             id: 2,
             rating: 5,
-            title: "How Upthrust Strengthened Univa's Digital Marketing",
-            quote: "From a company that had no experience in the entire marketing space to hitting benchmarks we'd never thought of. Univa's journey from here on is legendary. Regular discussions provided reassurance & sharpened our brain to keep the ball rolling.",
-            author: "Chet Jan, CEO",
-            position: "Excutive VP, Univa",
-            company: "univa",
-            avatar: imgval,
-            hasVideo: true,
-            bgColor: "bg-blue-500",
-            textColor: "text-white"
-        },
-        {
-            id: 3,
-            rating: 5,
-            title: "Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.",
+            title: " “Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.” ",
             author: "Gunjan",
             position: "Marketing Head, Hozor",
             hasAvatar: true,
@@ -49,6 +33,20 @@ export default function ClientTestimonials() {
             bgColor: "bg-yellow-400",
             textColor: "text-black"
         },
+        {
+            id: 3,
+            rating: 5,
+            title: "How Upthrust Strengthened Univa's Digital Marketing",
+            quote: "From a company that had no experience in the entire marketing space to hitting benchmarks we'd never thought of. Univa's journey from here on is legendary. Regular discussions provided reassurance & sharpened our brain to keep the ball rolling.",
+            author: "Chet Jan, CEO",
+            position: "Excutive VP, Univa",
+            company: "univa",
+            avatar: imgval,
+            hasVideo: true,
+            bgColor: "bg-blue-500",
+            textColor: "text-white"
+        },
+
         {
             id: 4,
             rating: 5,

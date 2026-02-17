@@ -29,6 +29,7 @@ const CommonHeading = ({
           lg:text-[48px] 
           xl:text-[60px] 
           3xl:text-[72px]
+          capitalize
           ${className}
         `}
             >
@@ -64,7 +65,7 @@ const CommonHeading = ({
                                                 alt="icon"
                                                 width={item.iconSize || 60}
                                                 height={item.iconSize || 60}
-                                                className="size-15"
+                                                className="xl:size-12 3xl:size-15"
                                             />
                                         )}
                                         {item.value}

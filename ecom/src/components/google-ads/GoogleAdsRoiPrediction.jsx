@@ -237,15 +237,15 @@ const GoogleAdsRoiPrediction = () => {
           >
             {/* Left - Icon & Description */}
             <div className="col-span-5 gap-6 3xl:gap-8 flex flex-col h-full" ref={leftContainer}>
-              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full">
+              <div className="bg-[#FFE187] gsap-bg rounded-3xl p-5 3xl:p-7 w-full">
                 <Image
                   src={'/icons/cloud-network.png'}
                   width={100}
                   height={100}
-                  className="size-25 3xl:size-30 object-contain"
+                  className="size-25 lg:size-28 3xl:size-37 object-contain"
                   alt="Could Internet Icon"
                 />
-                <div className="relative overflow-hidden min-h-[10rem] 3xl:min-h-[7rem] mt-10 leading-tight">
+                <div className="relative overflow-hidden min-h-[10rem] 3xl:min-h-[8rem] mt-10 leading-[150%] tracking-[-0.02em] ">
                   <p
                     ref={leftTextARef}
                     className="absolute inset-0 text-xl 3xl:text-2xl leading-8"
@@ -265,14 +265,14 @@ const GoogleAdsRoiPrediction = () => {
                 </div>
               </div>
 
-              <div className="bg-[#FEF7E0] gsap-bg rounded-3xl p-5 3xl:p-7 w-full">
+              <div className="bg-[#FFE187] gsap-bg rounded-3xl p-5 3xl:p-7  w-full 3xl:min-h-100">
                 <div className="relative">
                   <p
                     ref={leftTitleARef}
                     className="absolute inset-0 text-2xl 3xl:text-[1.75rem] font-semibold"
                     style={{ opacity: 1 }}
                   >
-                    Retargeting ladder for who hasn't converted
+                    Retargeting ladder for who hasn&apos;t converted
                   </p>
 
                   <p
@@ -284,10 +284,10 @@ const GoogleAdsRoiPrediction = () => {
                   </p>
                 </div>
 
-                <div className="relative overflow-hidden min-h-[6rem] mt-4">
+                <div className="relative overflow-hidden min-h-[6rem] 3xl:min-h-[8rem] mt-4">
                   <ul
                     ref={listARef}
-                    className="absolute inset-0 text-base 3xl:text-2xl space-y-1 pl-2"
+                    className="absolute inset-0  text-base 3xl:text-2xl 3xl:top-10 space-y-1 pl-2"
                     style={{ opacity: 1 }}
                   >
                     <li>• Display ads with social proof (7 days)</li>
@@ -333,7 +333,7 @@ const GoogleAdsRoiPrediction = () => {
                   className="absolute left-0 top-0 text-8xl 3xl:text-[9.375rem] whitespace-nowrap bg-linear-to-b from-[#301805] to-transparent bg-clip-text text-transparent"
                   style={{ opacity: 1, transform: "translateY(0%)" }}
                 >
-                  User's who buy
+                  User&apos;s who buy
                 </p>
 
                 <p
