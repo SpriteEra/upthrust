@@ -620,12 +620,14 @@ const CircularHelp = () => {
           <br />
           At Buying
           <br />
-          Temperature.
+          <span className="text-[#9ADCB2]">
+            Temperature.
+          </span>
         </>
       ),
       subtitle: "Keyword-based campaigns that reach buyers",
       image: "/google-ads/circ1.png",
-      bgColor: "bg-gradient-to-br from-green-700 to-green-900",
+      bgColor: "bg-[#00822E]",
     },
     {
       id: 1,
@@ -642,23 +644,23 @@ const CircularHelp = () => {
       subtitle:
         "Server-side tracking + GA4 goals + first-party data reveal what's actually working",
       image: "/google-ads/circ2.png",
-      bgColor: "bg-gradient-to-br from-blue-700 to-blue-900",
+      bgColor: "bg-[#004FAC]",
     },
     {
       id: 2,
       badge: "ONGOING",
       title: (
-        <>
+        <span className="text-black">
           Campaigns That
           <br />
-          Compound <span className="text-orange-400">Daily,</span>
+          Compound <span className="text-[#E46800]">Daily,</span>
           <br />
-          <span className="text-orange-400">Not Monthly</span>
-        </>
+          <span className="text-[#E46800]">Not Monthly</span>
+        </span>
       ),
       subtitle: "Daily optimization, AI signal tracking & budget reallocation.",
       image: "/google-ads/circ3.png",
-      bgColor: "bg-gradient-to-br from-yellow-600 to-yellow-800",
+      bgColor: "bg-[#FFE187]",
     },
   ];
 

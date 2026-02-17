@@ -330,7 +330,7 @@ const page = () => {
                 </div>
             </div> */}
 
-            <div className="w-full py-20">
+            <div className="w-full py-20 max-w-[90%] mx-auto">
                 <div className="max-w-7xl mx-auto space-y-32">
 
                     {/* Section 1 */}
@@ -352,8 +352,8 @@ const page = () => {
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover"
-                                    src="/videos/case-study.mp4"
-                                    autoPlay
+                                    src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
+                                    // autoPlay
                                     muted
                                     loop
                                     playsInline
@@ -364,15 +364,15 @@ const page = () => {
                     </div>
 
                     {/* Section 2 */}
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    <div className="  grid lg:grid-cols-2 gap-20 items-center">
 
                         {/* Left Video */}
                         <div className="w-full order-2 lg:order-1">
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover"
-                                    src="/videos/case-study.mp4"
-                                    autoPlay
+                                    src="https://cdn.upthrust.agency/Google%20ads/Quietly%20Successful%20Google%20Ads%20Result%20Dashboard.mp4"
+                                    // autoPlay
                                     muted
                                     loop
                                     playsInline

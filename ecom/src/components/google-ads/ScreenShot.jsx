@@ -9,6 +9,8 @@ const ScreenShot = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0);
+
 
     const imageData = [
         {
@@ -16,59 +18,70 @@ const ScreenShot = () => {
             src: '/google-ads/screenshot/1.png',
             alt: 'Google Ads Analytics Dashboard',
             title: '$20K monthly spend | $185/demo',
-            description: 'WLNC needed qualified demos, not just clicks. Their cost per demo hit $250. Traffic was high, but conversions lagged.'
+            description: 'WLNC needed qualified demos, not just clicks. Their cost per demo hit $250. Traffic was high, but conversions were low. The funnel leaked at every stage.<br/><br/> We rebuilt their entire acquisition system. SKAGs for Google. Segmented audiences on LinkedIn. Multi-step forms that converted. Three months later: $189 per demo. 91+ qualified bookings monthly.'
         },
         {
             id: 2,
             src: '/google-ads/screenshot/2.png',
             alt: 'Campaign Performance Metrics',
-            title: 'Results That Drive Growth',
-            description: 'We rebuilt their entire acquisition system. SKADS for Google. Segmented audiences on LinkedIn. Multi-step forms that converted. Three months later: $189 per demo. 9+ qualified bookings monthly.'
+            title: 'Scaling Qualified Demand',
+            description: `High-volume traffic across regions with varying conversion efficiency. 
+      By analyzing cost per conversion and intent quality across regions, underperforming campaigns were trimmed while high-intent search campaigns were scaled resulting in more efficient spend and stronger
+      demo conversion rates.`
         },
         {
             id: 3,
             src: '/google-ads/screenshot/3.png',
             alt: 'Marketing Analytics',
-            title: 'Data-Driven Optimization',
-            description: 'Advanced tracking and analytics setup to monitor every touchpoint in the customer journey.'
+            title: 'High-Volume Traffic',
+            description: 'With 257K clicks and 7.5K conversions, the account maintained a healthy cost per conversion at $21.18 while managing a total spend of $159K.<br/><br/> Trend analysis across the timeline helped identify performance spikes and drops, enabling campaign-level optimization to control costs, scale winning campaigns, and maintain efficiency across different audience segments.'
         },
         {
             id: 4,
             src: '/google-ads/screenshot/4.png',
-            alt: 'Conversion Tracking',
-            title: 'Conversion Rate Excellence',
-            description: 'Implemented conversion tracking and optimization strategies that doubled qualified lead generation.'
+            alt: 'Lead Generation Growth',
+            title: 'Zero leads. Then 70+ monthly.',
+            description: 'VEGA India had zero digital presence. No website traffic. No lead generation system. Nothing. They relied entirely on trade shows and expos. Expensive. Inconsistent. Unsustainable.<br/><br/>We built their entire digital infrastructure from scratch. Targeted cold outreach. LinkedIn campaigns. High-converting landing pages. Six weeks later: 70+ qualified leads monthly. 15x ROI versus traditional methods. Zero to pipeline velocity.'
         },
         {
             id: 5,
             src: '/google-ads/screenshot/5.png',
-            alt: 'Conversion Tracking',
-            title: 'Conversion Rate Excellence',
-            description: 'Implemented conversion tracking and optimization strategies that doubled qualified lead generation.'
+            alt: 'Performance Optimization',
+            title: 'Complex tech. Simple results.',
+            description: 'Dell needed demos for PowerProtect Data Manager. The product was technical. The market was crowded. Nobody understood backup infrastructure. The message got lost. Traffic stayed flat.<br/><br/>We stripped the jargon. Built campaigns around pain points. Long-tail keywords. Responsive search ads. Smart bidding. Six weeks later: 32 qualified demos monthly. 28% booking increase. 57K clicks. $277 per conversion.'
         },
         {
             id: 6,
             src: '/google-ads/screenshot/6.png',
-            alt: 'Conversion Tracking',
-            title: 'Conversion Rate Excellence',
-            description: 'Implemented conversion tracking and optimization strategies that doubled qualified lead generation.'
+            alt: 'Cost Per Demo Reduction',
+            title: '$354 per demo. Then $45.',
+            description: `Acadly had zero leads. No brand awareness. No clear target audience. They needed qualified demos but every lead cost $354. The math didn't work. Growth was impossible.<br/><br/>We built their ABM engine from scratch. Personalized outreach to deans and faculty. Multi-channel engagement. LinkedIn precision targeting. Two months later: $45 per lead. 260% growth. 25 leads monthly. Pipeline filled.`
         }
     ];
 
-    const scroll = (direction) => {
-        if (scrollContainerRef.current) {
-            const scrollAmount = 400;
-            const newScrollPosition =
-                direction === 'left'
-                    ? scrollContainerRef.current.scrollLeft - scrollAmount
-                    : scrollContainerRef.current.scrollLeft + scrollAmount;
 
-            scrollContainerRef.current.scrollTo({
-                left: newScrollPosition,
-                behavior: 'smooth'
-            });
-        }
+    const scroll = (direction) => {
+        if (!scrollContainerRef.current) return;
+
+        const scrollAmount = 800;
+
+        const newScrollPosition =
+            direction === 'left'
+                ? scrollContainerRef.current.scrollLeft - scrollAmount
+                : scrollContainerRef.current.scrollLeft + scrollAmount;
+
+        scrollContainerRef.current.scrollTo({
+            left: newScrollPosition,
+            behavior: 'smooth'
+        });
+
+        setActiveIndex(prev =>
+            direction === 'left'
+                ? Math.max(prev - 1, 0)
+                : Math.min(prev + 1, imageData.length - 1)
+        );
     };
+
 
     const handleMouseDown = (e) => {
         if (!scrollContainerRef.current) return;
@@ -132,9 +145,11 @@ const ScreenShot = () => {
                                     <h3 className="text-base sm:text-lg font-bold min-w-[30%]  mb-2">
                                         {image.title}
                                     </h3>
-                                    <p className="text-xs sm:text-sm  leading-relaxed">
-                                        {image.description}
-                                    </p>
+                                    <p
+                                        className="text-xs sm:text-sm leading-relaxed"
+                                        dangerouslySetInnerHTML={{ __html: image.description }}
+                                    />
+
 
                                 </div>
                             )}
@@ -157,11 +172,15 @@ const ScreenShot = () => {
                 <div className="flex gap-3 justify-start mt-6">
                     <button
                         onClick={() => scroll('left')}
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all duration-200 z-10 group border border-gray-200"
-                        aria-label="Scroll left"
+                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 z-10 
+        ${activeIndex > 0
+                                ? 'bg-[#E7F0FF] '
+                                : 'bg-gray-200 border-gray-200'}
+    `}
                     >
                         <svg
-                            className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900"
+                            className={`w-5 h-5 sm:w-6 sm:h-6 ${activeIndex > 0 ? 'text-[#0076F0]' : 'text-gray-600'
+                                }`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -170,13 +189,18 @@ const ScreenShot = () => {
                         </svg>
                     </button>
 
+
                     <button
                         onClick={() => scroll('right')}
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all duration-200 z-10 group border border-gray-200"
-                        aria-label="Scroll right"
+                        className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 z-10 
+        ${activeIndex < imageData.length - 1
+                                ? 'bg-[#E7F0FF] '
+                                : 'bg-gray-200 border-gray-200'}
+    `}
                     >
                         <svg
-                            className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 group-hover:text-gray-900"
+                            className={`w-5 h-5 sm:w-6 sm:h-6 ${activeIndex < imageData.length - 1 ? 'text-[#0076F0]' : 'text-gray-600'
+                                }`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -184,6 +208,7 @@ const ScreenShot = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
+
                 </div>
             </div>
 
