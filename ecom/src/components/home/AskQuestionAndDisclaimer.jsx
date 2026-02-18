@@ -2,6 +2,7 @@
 import StylishButton from '@/common/RocketButton'
 import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 export const Disclaimer = () => {
@@ -97,8 +98,8 @@ export const Disclaimer = () => {
                             <strong>Address: </strong> 5th Floor, DLF Two Horizon Centre, Harizan Colony, DLF Phase 5, Sector 43, Gurugram, Haryana 122009
 
                         </p>
-                        <p>
-                            <strong>Last updated: </strong> December 2024
+                        <p className='underline font-bold mt-1'>
+                            <Link href={'/privacy-policy'}>Privacy Policy </Link>
 
                         </p>
                     </section>
