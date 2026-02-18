@@ -12,6 +12,7 @@ export const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   display: "swap",
   weight: "400",
+  style: "italic",
 });
 
 export const caveat = Caveat({

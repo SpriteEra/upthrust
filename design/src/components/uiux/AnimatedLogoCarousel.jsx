@@ -94,7 +94,7 @@ export default function AnimatedLogoCarousel() {
                                             {logos.map((logo, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex items-center justify-center w-20 3xl:w-26 "
+                                                    className="flex items-center justify-center w-20 3xl:w-26 mx-auto"
                                                 >
                                                     <Image width={64} height={64} src={logo.image} alt={logo.alt} className="w-full h-full object-contain" />
 
@@ -108,22 +108,7 @@ export default function AnimatedLogoCarousel() {
 
                     </div>
                     {/* for mobile  */}
-                    {/* <div className="md:hidden overflow-hidden py-4">
-                        <p className="text-white/50 text-lg text-center font-light p-3">Trusted by startups, scaleups, and global brands across the India & US</p>
-                        <div className="flex whitespace-nowrap">
-
-                            <marquee className="marquee gap-6">
-                                {[...logoSets.flat(), ...logoSets.flat()].map((logo, index) => (
-                                    <span
-                                        key={index}
-                                        className="text-white "
-                                    >
-                                        <Image width={64} height={64} src={logo.image} alt={logo.alt} className="w-16 h-16 object-contain inline-block mx-4" />
-                                    </span>
-                                ))}
-                            </marquee>
-                        </div>
-                    </div> */}
+                    
 
                     <div className="md:hidden overflow-hidden py-4 bg-black">
                         <p className="text-white/50 text-lg text-center font-light p-3">
