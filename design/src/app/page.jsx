@@ -24,7 +24,7 @@ const Page = () => {
               Work in Progress
             </h1>
             <p className="text-slate-600 text-lg md:text-xl max-w-md mx-auto">
-              We're building something amazing. This page will be ready soon!
+              We&apos;re building something amazing. This page will be ready soon!
             </p>
           </div>
 

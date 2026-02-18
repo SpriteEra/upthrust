@@ -90,7 +90,7 @@ export default function AnimatedLogoCarousel() {
                                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${position}`}
                                 >
                                     <div className="h-full">
-                                        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 items-center h-full px-4 md:px-12">
+                                        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 items-center justify-center h-full px-4 md:px-12">
                                             {logos.map((logo, index) => (
                                                 <div
                                                     key={index}

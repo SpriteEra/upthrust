@@ -1,4 +1,4 @@
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Caveat } from "next/font/google";
 import localFont from "next/font/local";
 
 export const inter = Inter({
@@ -12,6 +12,13 @@ export const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   display: "swap",
   weight: "400",
+});
+
+export const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 

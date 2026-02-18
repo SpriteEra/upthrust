@@ -33,14 +33,14 @@ export default function UIUXHero() {
     }, []);
 
     return (
-        <div className="  bg-black pt-45  lg:pt-50 2xl:pt-60 3xl:pt-70 flex  items-center justify-center px-2 pb-2 lg:pb-6 ">
+        <div className="  bg-black pt-45  lg:pt-50 2xl:pt-60 3xl:pt-70 flex  items-center justify-center px-4 pb-2 lg:pb-6 ">
             <div className="relative w-full inverted-radius sm:max-w-[90%] 3xl:max-w-[90%] ">
                 {/* Card with Folder Tab */}
                 <div className="relative bg-white max-sm:rounded-tl-[20px] rounded-bl-[20px] sm:rounded-tr-[20px] rounded-br-[20px]">
                     <svg width="131" height="35" viewBox="0 0 131 35" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute sm:hidden -top-8 -right-[0.5px]">
                         <path d="M29.0564 0.492754C30.3874 0.165448 31.7531 0 33.1237 0H110.863C112.424 0 113.995 0.229471 115.492 0.671286C117.287 1.20109 118.997 2.04673 120.504 3.15801C121.652 4.00541 122.683 5.00211 123.568 6.12179L124.234 6.96349C125.234 8.22847 126.06 9.62213 126.689 11.1071L127.59 13.2352C128.026 14.2646 128.365 15.3323 128.603 16.4246L129.749 21.6812L130.25 27.5942L130.5 33.5082L0 34.5L3.31017 33.5186C4.43514 33.1851 5.49345 32.6582 6.43769 31.9616C6.82164 31.6784 7.18506 31.3683 7.52521 31.0337L7.62142 30.9391C8.54647 30.0292 9.31798 28.9754 9.90595 27.8187L10.0201 27.5942L13.0258 21.6812L16.5325 14.7826L19.5382 8.86957L20.3635 7.65194C21.8096 5.51837 23.5563 3.60495 25.5497 1.97101C26.5444 1.31876 27.6427 0.840388 28.7978 0.556355L29.0564 0.492754Z" fill="white" />
                     </svg>
-                    <svg width="303" height="40" viewBox="0 0 303 40" fill="none" xmlns="http://www.w3.org/2000/svg" className=" hidden sm:block absolute -top-10 left-0">
+                    <svg width="303" height="40" viewBox="0 0 303 40" fill="none" xmlns="http://www.w3.org/2000/svg" className=" hidden sm:block absolute -top-[39px] left-0">
                         <path d="M237.574 0C245.53 0.000121235 253.161 3.16112 258.786 8.78711L281.214 31.2129C286.839 36.8388 294.47 39.9999 302.426 40H0V30C0 13.4315 13.4315 0 30 0H237.574Z" fill="white" />
                     </svg>
                     {/* Main Card */}
@@ -81,7 +81,7 @@ export default function UIUXHero() {
                             </div>
 
                             {/* Right Content - Phone Mockup */}
-                            <div className="flex-shrink-0 self-center lg:self-start aspect-square size-80 2xl:size-80 3xl:size-93">
+                            <div className="flex-shrink-0 self-center lg:self-start aspect-square size-75 xl:size-60 2xl:size-80 3xl:size-93">
                                 <SmartSwiper
                                     slides={images}
                                     effect="slide"

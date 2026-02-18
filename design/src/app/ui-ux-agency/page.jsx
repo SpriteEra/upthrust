@@ -143,7 +143,7 @@ const page = () => {
                     curveFlipVertical={false}
                     tiltAngle={-10}
                     hiddenInSmall={false}
-                    className="absolute -top-28 lg:top-10 3xl:top-35 left-10 xl:left-35 3xl:left-25 lg:max-w-[300px] 3xl:max-w-[350px]"
+                    className="absolute -top-28 lg:top-10 3xl:top-35 left-10 xl:left-35 3xl:left-25 lg:max-w-[300px] 3xl:max-w-[350px] "
                 />
 
                 <Heading

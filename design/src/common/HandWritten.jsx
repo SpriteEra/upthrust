@@ -58,7 +58,7 @@ export const Curve1 = ({
 
   return (
     <div
-      className={`inline-flex items-center gap-3 font-hanzi ${hiddenInSmall ? "max-lg:hidden" : ""} ${className}`}
+      className={`inline-flex items-center gap-3 font-caveat ${hiddenInSmall ? "max-lg:hidden" : ""} ${className}`}
       style={{
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'
@@ -68,7 +68,7 @@ export const Curve1 = ({
         <Image src={images[imageIndex].img} width={100} height={100} className="ml-2 w-full h-full" alt={images[imageIndex].alt} />
       )}
 
-      <div className="flex items-center gap-0.5 flex-wrap font-hanzi justify-center relative flex-col">
+      <div className="flex items-center gap-0.5 flex-wrap font-caveat justify-center relative flex-col">
         {renderParts()}
         {curvePosition === 'end' && (
           <Image src={images[imageIndex].img} width={70} height={70} className={`object-contain absolute w-7 h-full  ${imageClassName}`} alt={images[imageIndex].alt} />
