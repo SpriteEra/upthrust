@@ -4,7 +4,6 @@ export default function PrivacyPolicy() {
     <main className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
 
-        {/* Header */}
         <p className="text-sm text-gray-500 mb-1">Last Updated: 1 Feb, 2026</p>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
         <p className="text-gray-700 mb-6">
