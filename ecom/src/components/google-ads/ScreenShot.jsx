@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 const ScreenShot = () => {
@@ -10,6 +10,18 @@ const ScreenShot = () => {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
 
     const imageData = [
@@ -60,17 +72,42 @@ const ScreenShot = () => {
     ];
 
 
+    // const scroll = (direction) => {
+    //     if (!scrollContainerRef.current) return;
+
+    //     const scrollAmount = 830;
+
+    //     const newScrollPosition =
+    //         direction === 'left'
+    //             ? scrollContainerRef.current.scrollLeft - scrollAmount
+    //             : scrollContainerRef.current.scrollLeft + scrollAmount;
+
+    //     scrollContainerRef.current.scrollTo({
+    //         left: newScrollPosition,
+    //         behavior: 'smooth'
+    //     });
+
+    //     setActiveIndex(prev =>
+    //         direction === 'left'
+    //             ? Math.max(prev - 1, 0)
+    //             : Math.min(prev + 1, imageData.length - 1)
+    //     );
+    // };
+
     const scroll = (direction) => {
         if (!scrollContainerRef.current) return;
 
-        const scrollAmount = 800;
+        const container = scrollContainerRef.current;
+        const cardWidth = container.clientWidth; // full width on mobile
+
+        const scrollAmount = isMobile ? cardWidth : 800;
 
         const newScrollPosition =
             direction === 'left'
-                ? scrollContainerRef.current.scrollLeft - scrollAmount
-                : scrollContainerRef.current.scrollLeft + scrollAmount;
+                ? container.scrollLeft - scrollAmount
+                : container.scrollLeft + scrollAmount;
 
-        scrollContainerRef.current.scrollTo({
+        container.scrollTo({
             left: newScrollPosition,
             behavior: 'smooth'
         });
@@ -140,7 +177,7 @@ const ScreenShot = () => {
                         >
                             {hoveredIndex === index && (
                                 <div
-                                    className=" mb-4 w-[280px] sm:w-[400px] md:w-[450px] lg:w-[800px]  bg-white rounded-lg  p-4 sm:p-6 z-50 pointer-events-none text-black flex justify-between items-center gap-10 "
+                                    className="hidden lg:flex mb-4 w-[330px] sm:w-[400px] md:w-[650px] lg:w-[800px] 3xl:w-[1200px]  bg-white rounded-lg  p-4 sm:p-6 z-50 pointer-events-none text-black  justify-between items-center gap-10 "
                                 >
                                     <h3 className="text-base sm:text-lg font-bold min-w-[30%]  mb-2">
                                         {image.title}
@@ -154,7 +191,7 @@ const ScreenShot = () => {
                                 </div>
                             )}
 
-                            <div className="relative w-[280px] sm:w-[400px] md:w-[450px] lg:w-[800px] h-[168px] sm:h-[240px] md:h-[270px] lg:h-[600px] rounded-lg overflow-hidden border-2 border-gray-200 transition-transform duration-700 ease-out group-hover:lg:translate-y-6"
+                            <div className="relative w-[330px] sm:w-[400px] md:w-[650px] lg:w-[800px] 3xl:w-[1200px] h-[168px] sm:h-[240px] md:h-[270px] lg:h-[600px] rounded-lg overflow-hidden border-2 border-gray-200 transition-transform duration-700 ease-out group-hover:lg:translate-y-6"
                             >
                                 <Image
                                     src={image.src}
@@ -164,6 +201,17 @@ const ScreenShot = () => {
                                     draggable={false}
                                 />
                             </div>
+                            {/* ✅ Mobile Text (Only visible below lg) */}
+                            <div className="block lg:hidden mt-6 w-[280px] sm:w-[400px]">
+                                <h3 className="text-xl font-bold mb-3">
+                                    {image.title}
+                                </h3>
+                                <p
+                                    className="text-sm text-gray-600 leading-relaxed"
+                                    dangerouslySetInnerHTML={{ __html: image.description }}
+                                />
+                            </div>
+
                         </div>
                     ))}
                 </div>

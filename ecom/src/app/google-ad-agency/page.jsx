@@ -19,6 +19,7 @@ import GoogleFaq from "@/components/google-ads/GoogleFaq";
 import GoogleDisclaimer from "@/components/google-ads/Disclaimer";
 import GoogleFooter from "@/components/google-ads/GoogleFooter";
 import BrandSlider from "@/components/home/BrandSlider";
+import AnimatedWord from "@/components/google-ads/AnimatedWord";
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -30,6 +31,12 @@ const badges = [
         image: "/badges/highest-user-adoption.webp",
         alt: "Highest User Adoption Badge",
     },
+];
+
+const words = [
+    { text: 'PPC', color: '#10B981' },
+    { text: 'Google Ads', color: '#3B82F6' },
+    { text: 'Bing Ads', color: '#F59E0B' }
 ];
 
 const page = () => {
@@ -75,16 +82,15 @@ const page = () => {
                 />
 
 
-                <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
+                {/* <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
                     <GoogleAdsRoiPrediction />
-                </div>
+                </div> */}
 
             </div>
-            <div className="my-10 sm:my-20 lg:my-30 3xl:my-50 text-center">
-                <h3>We&apos;re the highest-rated Google Ads agency</h3>
-
+            <div className="my-25 sm:my-30 3xl:my-50 text-center">
+                <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold ">We&apos;re the highest-rated <span className="font-semibold">Google Ads</span> agency</h3>
                 {/* BADGES ROW */}
-                <div className="flex mt-10 flex-wrap gap-5 sm:gap-6 md:gap-10 w-full items-center justify-center">
+                <div className="flex mt-10 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
                     {badges.map((item, index) => (
                         <Image
                             key={index}
@@ -92,7 +98,7 @@ const page = () => {
                             height={120}
                             alt={item.alt}
                             src={item.image}
-                            className="w-16 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
+                            className="w-12 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
                         />
                     ))}
                 </div>
@@ -110,11 +116,11 @@ const page = () => {
                             textColor: "text-[#0076F0]",
                             icon: "/google-ads/icons/paid.png",
                         },
-                        { type: "text", value: " In" }
+                        { type: "text", value: " In " }
                     ],
 
                     [
-                        { type: "text", value: "Your Google Ads " },
+                        { type: "text", value: "Monthly Ad Spend" },
 
                     ],
                 ]}
@@ -136,7 +142,7 @@ const page = () => {
                         ],
 
                         [
-                            { type: "text", value: "Last Year" },
+                            { type: "text", value: " Last Year" },
 
                         ],
 
@@ -164,7 +170,6 @@ const page = () => {
 
                         [
                             { type: "text", value: "Behind Predictable Ad Revenue" },
-
                         ],
 
                     ]}
@@ -173,11 +178,10 @@ const page = () => {
                 <PredictGrowth />
             </div>
 
-            <div className="my-10 sm:my-20 lg:my-30 3xl:my-50 text-center">
-                <h3>Industry Leading Google Ads Expertise</h3>
-
+            <div className="my-25 sm:my-30 3xl:my-50 text-center">
+                <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold ">Industry Leading <span className="font-semibold">Google Ads</span> Expertise</h3>
                 {/* BADGES ROW */}
-                <div className="flex mt-10 flex-wrap gap-5 sm:gap-6 md:gap-10 w-full items-center justify-center">
+                <div className="flex mt-10 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
                     {badges.map((item, index) => (
                         <Image
                             key={index}
@@ -185,7 +189,7 @@ const page = () => {
                             height={120}
                             alt={item.alt}
                             src={item.image}
-                            className="w-16 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
+                            className="w-12 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
                         />
                     ))}
                 </div>
@@ -202,9 +206,9 @@ const page = () => {
                             {
                                 type: "highlight",
                                 value: "Clients",
-                                bgColor: "bg-[#FFE7E5]",
-                                textColor: "text-[#FE2B27]",
-                                icon: "/google-ads/icons/paid3.png",
+                                bgColor: "bg-[#FFE187]",
+                                textColor: "text-[#E46800]",
+                                icon: "/google-ads/icons/new.png",
                             },
                             { type: "text", value: " Say" },
                         ],
@@ -268,90 +272,28 @@ const page = () => {
                 <CircularHelp />
             </div>
 
-            {/* <div className="w-full py-20">
-                <div className="max-w-7xl mx-auto space-y-32">
-
-
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-
-                        <div className="max-w-150 overflow-hidden">
-                            <h2 className="text-4xl md:text-5xl  3xl:text-[60px]   font-semibold leading-[130%] tracking-[-0.02em] mb-6 text-black">
-                                From Launch To 4.2X ROAS In Just 90 Days
-                            </h2>
-                            <p className="text-gray-600 text-lg max-w-lg">
-                                Our Google Ads dashboard shows exactly how performance is tracked,
-                                diagnosed, and improved.
-                            </p>
-                        </div>
-
-
-                        <div className="w-full 3xl:h-[550px]">
-                            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-                                <iframe
-                                    src="https://www.loom.com/embed/1d8cf98d017644d1bac4787c6ebabb3b"
-                                    frameBorder="0"
-                                    allowFullScreen
-                                    className="absolute top-0 left-0 w-full h-full "
-                                ></iframe>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-
-                        <div className="w-full order-2 lg:order-1">
-                            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-                                <iframe
-                                    src="https://www.loom.com/embed/1d8cf98d017644d1bac4787c6ebabb3b"
-                                    frameBorder="0"
-                                    allowFullScreen
-                                    className="absolute top-0 left-0 w-full h-full"
-                                ></iframe>
-                            </div>
-                        </div>
-
-
-                        <div className="order-1 lg:order-2">
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                                Best <span className="text-green-600">PPC</span> Ad Agency
-                            </h2>
-                            <p className="text-gray-600 text-lg max-w-lg">
-                                Hiring the wrong agency puts you 45% behind your competitors.
-                                Watch what Upthrust clients say about the results they got.
-                                Real people, real numbers, no BS.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div> */}
-
-            <div className="w-full py-20 max-w-[90%] mx-auto">
-                <div className="max-w-7xl mx-auto space-y-32">
+            <div className="w-full py-10 3xl:py-20 max-w-[90%] 3xl:max-w-[85%] mx-auto">
+                <div className="space-y-20 3xl:space-y-32">
 
                     {/* Section 1 */}
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    <div className="grid lg:grid-cols-2 gap-6 md:gap-20 items-center">
 
                         {/* Left Content */}
                         <div className="max-w-150 overflow-hidden">
                             <h2 className="text-4xl md:text-5xl 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-6 text-black">
                                 From Launch To 4.2X ROAS In Just 90 Days
                             </h2>
-                            <p className="text-gray-600 text-lg max-w-lg">
+                            <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
                                 Our Google Ads dashboard shows exactly how performance is tracked,
                                 diagnosed, and improved.
                             </p>
                         </div>
 
                         {/* Right Video */}
-                        <div className="w-full">
+                        <div className="w-full h-full">
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden ">
                                 <video
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover "
                                     src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
                                     // autoPlay
                                     muted
@@ -364,7 +306,7 @@ const page = () => {
                     </div>
 
                     {/* Section 2 */}
-                    <div className="  grid lg:grid-cols-2 gap-20 items-center">
+                    <div className="  grid lg:grid-cols-2 gap-6 md:gap-20 items-center">
 
                         {/* Left Video */}
                         <div className="w-full order-2 lg:order-1">
@@ -384,12 +326,19 @@ const page = () => {
                         {/* Right Content */}
                         <div className="order-1 lg:order-2">
                             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                                Best <span className="text-green-600">PPC</span> Ad Agency
+                                Best{'  '}
+                                <AnimatedWord
+                                    words={words}
+                                    className="h-10 md:h-12 w-55 md:w-60 lg:w-70 3xl:w-70 mx-auto"
+                                />{' '}
+                                <br />
+                                Ad Agency
                             </h2>
-                            <p className="text-gray-600 text-lg max-w-lg">
+
+                            <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
                                 Hiring the wrong agency puts you 45% behind your competitors.
                                 Watch what Upthrust clients say about the results they got.
-                                Real people, real numbers, no BS.
+                                <span className="font-medium"> Real people, real numbers, no BS.</span>
                             </p>
                         </div>
 
@@ -406,14 +355,12 @@ const page = () => {
                             { type: "text", value: "No screenshots from " },
                             {
                                 type: "highlight",
-                                value: "Win",
+                                value: "2019",
                                 bgColor: "bg-[#C8EBD6]",
                                 textColor: "text-[#00822E]",
                                 icon: "/google-ads/icons/calendar.png",
                             },
-                            {
-                                type: "text", value: " At The Game Of"
-                            }
+
 
                         ],
 
@@ -441,9 +388,6 @@ const page = () => {
                             },
 
                         ],
-
-
-
                     ]}
                 />
                 <GoogleFaq />

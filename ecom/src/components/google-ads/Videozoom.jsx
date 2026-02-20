@@ -3,26 +3,28 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const VideoZoom = () => {
     const sectionRef = useRef(null);
-    const videoContainerRef = useRef(null);
     const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             if (!sectionRef.current) return;
 
-            const section = sectionRef.current;
-            const rect = section.getBoundingClientRect();
+            const rect = sectionRef.current.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            // Calculate progress based on section position in viewport
-            const sectionTop = rect.top;
-            const sectionHeight = rect.height;
+            // Section center
+            const sectionCenter = rect.top + rect.height / 2;
 
-            // Start progress when section enters viewport from bottom
-            // Complete when section is fully visible
-            const progress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight * 0.5)));
+            // Viewport center
+            const viewportCenter = windowHeight / 2;
 
-            setScrollProgress(progress);
+            // Distance from center
+            const distance = viewportCenter - sectionCenter;
+
+            // Normalize progress
+            const progress = 1 - Math.abs(distance) / windowHeight;
+
+            setScrollProgress(Math.max(0, Math.min(1, progress)));
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -31,26 +33,21 @@ const VideoZoom = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    console.log("scroll value:", scrollProgress);
-
-    // Start at 0.6 scale (small), zoom to 1.0 (full size)
-    const scale = 0.6 + (scrollProgress * 0.4);
-    const opacity = Math.min(1, scrollProgress * 1.5);
+    // Start at 0.5 scale → End at 1
+    const scale = 0.5 + scrollProgress * 0.5;
+    const opacity = 0.5 + scrollProgress * 0.5;
 
     return (
-        <div className="bg-white max-w-[85%] mx-auto">
+        <div className="bg-white w-full my-20 md:my-0">
 
-            {/* Main Section */}
             <section
                 ref={sectionRef}
-                className=" flex items-center justify-center py-7 md:py-10  bg-white"
+                className=" min-h-100vh 3xl:min-h-[110vh] flex items-center justify-center bg-white"
             >
-                <div className=" w-full sticky top-0 h-full flex flex-col justify-center">
+                <div className="sticky top-0 flex items-center justify-center w-full ">
 
-                    {/* Video Container with Zoom Effect */}
                     <div
-                        ref={videoContainerRef}
-                        className="relative w-full  px-4"
+                        className="w-full  lg:max-w-[80%] px-4 transition-transform duration-200 ease-out"
                         style={{
                             transform: `scale(${scale})`,
                             opacity: opacity,
@@ -58,30 +55,33 @@ const VideoZoom = () => {
                             willChange: 'transform, opacity'
                         }}
                     >
-                        {/* Video with Controls */}
-                        <video
-                            className="w-full h-full rounded-xl md:rounded-2xl"
-                            controls
-                            playsInline
-                        >
-                            <source
-                                src="https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/How%20we%20did%20looms/TransformingBrandPerformanceintheOilIndustry.mp4"
-                                type="video/mp4"
-                            />
-                            Your browser does not support the video tag.
-                        </video>
+                        {/* Aspect Ratio Container */}
+                        <div className="relative w-full  aspect-video">
 
-                        {/* Subtle Glow Effect */}
-                        <div
-                            className="absolute inset-0 bg-blue-500 rounded-xl md:rounded-2xl blur-3xl -z-10 pointer-events-none"
-                            style={{
-                                opacity: scrollProgress * 0.15
-                            }}
-                        ></div>
+                            <video
+                                className="absolute inset-0 w-full h-full object-cover  md:rounded-2xl"
+                                controls
+                                playsInline
+                            >
+                                <source
+                                    src="https://cdn.upthrust.agency/Google%20ads/LawyerNYC.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+
+                            {/* Glow Effect */}
+                            <div
+                                className="absolute inset-0 bg-blue-500  md:rounded-2xl blur-3xl -z-10 pointer-events-none"
+                                style={{
+                                    opacity: scrollProgress * 0.2
+                                }}
+                            />
+                        </div>
+
                     </div>
+
                 </div>
             </section>
-
 
         </div>
     );

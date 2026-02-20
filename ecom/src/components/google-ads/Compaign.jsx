@@ -176,16 +176,12 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 y,
                 rotateX,
                 position: 'sticky',
-                // top: `${4 + index * 2}rem`,
-                top: `5rem`,
+                // top: `5rem`,
                 zIndex: totalCards + index,
             }}
-            className="mb-8 lg:mb-12 "
+            className="mb-8 lg:mb-12  top-[5rem] 3xl:top-[8rem]"
         >
             <motion.div
-                initial={{ opacity: 0, y: 60 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                 className="rounded-2xl lg:rounded-3xl overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
@@ -194,9 +190,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                     <div className="w-full lg:w-[50%]  flex flex-col justify-between">
                         <div>
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                transition={{ duration: 0.5, delay: 0.3 }}
+                            // initial={{ opacity: 0, x: -20 }}
+                            // animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            // transition={{ duration: 0.5, delay: 0.3 }}
                             >
                                 <span
                                     className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-[24px] font-semibold leading-9 tracking-[-0.02em] "
@@ -209,9 +205,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                             </motion.div>
 
                             <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: 0.4 }}
+                                // initial={{ opacity: 0, y: 20 }}
+                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                // transition={{ duration: 0.6, delay: 0.4 }}
                                 className=" text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black"
 
                             >
@@ -219,9 +215,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                             </motion.h2>
 
                             <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: 0.5 }}
+                                // initial={{ opacity: 0, y: 20 }}
+                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                // transition={{ duration: 0.6, delay: 0.5 }}
                                 className="  mb-3 lg:mb-4 3xl:mb-6  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
                             >
                                 {data.description}
@@ -230,9 +226,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                         <div>
                             <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.6, delay: 0.6 }}
+                                // initial={{ opacity: 0, y: 30 }}
+                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                // transition={{ duration: 0.6, delay: 0.6 }}
                                 className="grid grid-cols-2 gap-6 mb-8"
                             >
                                 <div>
@@ -256,9 +252,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                             </motion.div>
 
                             <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                transition={{ duration: 0.6, delay: 0.7 }}
+                                // initial={{ opacity: 0, x: -20 }}
+                                // animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                // transition={{ duration: 0.6, delay: 0.7 }}
                                 className="flex items-center gap-4 p-5 rounded-xl"
                                 style={{ backgroundColor: data.accentColor }}
                             >
@@ -286,9 +282,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                     {/* Right Image Section */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ duration: 0.7, delay: 0.5 }}
+                        // initial={{ opacity: 0, scale: 0.9 }}
+                        // animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                        // transition={{ duration: 0.7, delay: 0.5 }}
                         className="w-full lg:w-[50%] relative"
                     >
                         {/* Top subtle gradient */}

@@ -16,8 +16,8 @@ export default function ShortTestimonialCard({ testimonial }) {
     const heightClass = avatarConfig.height || "h-12";
 
     return (
-        <div className={`${testimonial.bgColor} rounded-2xl p-6 shadow-lg flex flex-col`}>
-            <h3 className={`text-[22px] font-bold mb-6 ${testimonial.textColor}`}>
+        <div className={`${testimonial.bgColor} rounded-2xl p-6 3xl:p-8 shadow-lg flex flex-col`}>
+            <h3 className={`text-[25px]  3xl:text-[30px] leading-[150%] font-semibold tracking-[-0.02em] mb-6 ${testimonial.textColor}`}>
                 {testimonial.title}
             </h3>
 
@@ -25,26 +25,22 @@ export default function ShortTestimonialCard({ testimonial }) {
                 <div
                     className={`${widthClass} ${heightClass} ${roundedClass} overflow-hidden bg-gray-300 flex items-center justify-center text-lg`}
                 >
-                    {testimonial.avatar && typeof testimonial.avatar === "object" ? (
-                        <Image
-                            width={100}
-                            height={50}
-                            src={testimonial.avatar.src}
-                            alt={testimonial.author}
-                            className="w-full h-full object-cover"
-                        />
-                    ) : testimonial.avatar ? (
-                        testimonial.avatar
-                    ) : (
-                        "👤"
-                    )}
+
+                    <Image
+                        width={100}
+                        height={50}
+                        src={`${testimonial.avatar}`}
+                        alt={testimonial.author}
+                        className="w-full h-full object-cover"
+                    />
+
                 </div>
                 <div>
-                    <p className={`font-semibold text-sm ${testimonial.textColor}`}>
+                    <p className={`text-[22px]  3xl:text-[24px] leading-[150%]  tracking-[-0.02em] font-semibold ${testimonial.textColor}`}>
                         {testimonial.author}
                     </p>
                     <p
-                        className={`text-xs ${testimonial.textColor === "text-white"
+                        className={`text-[16px] 3xl:text-[18px] leading-[150%]  tracking-[-0.02em] ${testimonial.textColor === "text-white"
                             ? "text-white/80"
                             : "text-gray-600"
                             }`}
