@@ -128,10 +128,10 @@ export default function FaqUiUx() {
 
                                     </div>
                                     <div className={`overflow-hidden transition-all duration-400 ease-in-out ${openIndexes.includes(index)
-                                        ? "max-h-96 opacity-100 mt-2 3xl:mt-6"
+                                        ? "max-h-96 opacity-100 mt-4 3xl:mt-6"
                                         : "max-h-0 opacity-0"
                                         }`}>
-                                        <p className="text-base 3xl:text-lg tracking-[-0.02em]">{faq.answer}</p>
+                                        <p className="text-sm lg:text-base max-3xl:leading-4.5 3xl:text-lg tracking-[-0.02em] ">{faq.answer}</p>
                                     </div>
                                 </div>
 

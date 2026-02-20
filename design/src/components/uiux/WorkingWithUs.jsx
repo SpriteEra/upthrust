@@ -61,7 +61,7 @@ const WorkingWithUs = () => {
             {features.map((item, index) => (
                 <div
                     key={index}
-                    className={`px-2 lg:px-12 3xl:px-16 py-6 border-black/80 lg:border-black/30 border-b lg:border-r lg:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 lg:[&:nth-last-child(-n+3)]:pt-10 md:nth-[2n]:border-r-0 lg:nth-[2n]:border-r lg:nth-[3n]:border-r-0 `}
+                    className={`px-2 lg:px-12 3xl:px-14 py-6 border-black/80 lg:border-black/30 border-b lg:border-r lg:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 lg:[&:nth-last-child(-n+3)]:pt-10 md:nth-[2n]:border-r-0 lg:nth-[2n]:border-r lg:nth-[3n]:border-r-0  `}
                     onClick={() => toggleFAQ(index)}
                 >
                     <div className="flex lg:flex-col max-lg:justify-between">
@@ -75,7 +75,7 @@ const WorkingWithUs = () => {
                                     className='size-7 2xl:size-8 3xl:size-9'
                                 />
                             </div>
-                            <p className="text-2xl 2xl:text-3xl 3xl:text-4xl font-semibold 3xl:leading-11 lg:mb-4 whitespace-pre-line">
+                            <p className="text-2xl 2xl:text-3xl 3xl:text-4xl font-semibold 3xl:leading-11 lg:mb-4 whitespace-pre-line tracking-[-0.02em]">
                                 {item.heading}
                             </p>
 
@@ -88,8 +88,8 @@ const WorkingWithUs = () => {
                         : "max-lg:max-h-0 max-lg:opacity-0"
                         }`}>
 
-                        <p className="text-xl lg:text-lg 3xl:text-xl">{item.description}</p>
-                        <p className="text-xl lg:text-lg 3xl:text-xl">
+                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] 3xl:leading-[30px]">{item.description}</p>
+                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] 3xl:leading-[30px]">
                             <span className="font-semibold">Why its Matters: </span>
                             {item.whymatters}
                         </p>

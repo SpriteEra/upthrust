@@ -114,7 +114,7 @@
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 18s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .marquee-paused {

@@ -32,7 +32,7 @@ export default function Navbar({ items = navLinks }) {
                                     <Link
                                         key={link.name}
                                         href={link.href}
-                                        className={`p-3  whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-base bg-[#19181D]  hover:bg-(--red) transition-colors duration-200 
+                                        className={`p-3 py-2 3xl:py-2.5 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-base bg-[#19181D]  hover:bg-(--red) transition-colors duration-200 
                                             `}
                                     // ${isActive ? 'bg-(--red) text-white' : 'bg-white/10'}
                                     >
@@ -45,7 +45,7 @@ export default function Navbar({ items = navLinks }) {
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <StylishButton color='red' />
+                        <StylishButton color='red' text1="Book A" text2="Strategy Call" />
                     </div>
 
 

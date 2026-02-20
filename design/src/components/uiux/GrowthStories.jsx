@@ -119,13 +119,13 @@ const GrowthStories = () => {
                     <div
                         className={`${item.bgColor2} max-lg:bg-transparent! flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
                     >
-                        <div className={`${item.bgColor2} lg:bg-none! p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[40%] h-full flex flex-col lg:rounded-l-3xl 3xl:rounded-l-4xl`}>
-                            <div className="max-w-[510px]">
+                        <div className={`${item.bgColor2} lg:bg-none! p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[55%] 3xl:w-[40%] h-full flex flex-col lg:rounded-l-3xl 3xl:rounded-l-4xl`}>
+                            <div className="max-w-[430px] 3xl:max-w-[520px]">
 
-                                <span className="lg:text-sm 3xl:text-base uppercase">
+                                <span className="lg:text-sm 3xl:text-base uppercase ">
                                     {item.name}
                                 </span>
-                                <p className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-4xl lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
+                                <p className="font-semibold my-4 2xl:my-6 3xl:my-8 3xl:mb-10 text-[32px] max-lg:leading-[40px] lg:text-2xl 2xl:text-3xl 3xl:text-4xl 3xl:leading-11 tracking-[-0.02em]">
                                     {item.title}
                                 </p>
 
@@ -159,7 +159,7 @@ const GrowthStories = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:w-[60%] max-md:aspect-5/4 max-lg:aspect-video lg:pl-10 flex items-stretch">
+                        <div className="lg:w-[55%] 3xl:w-[60%] aspect-431/320 lg:pl-10 flex items-stretch">
                             <CutCornerBackground2 bgColor="none" mirror={true} cutWidth={15} cutHeight={20} cutRadius={2}>
                                 <GrowthStoriesSliderContent images={item.images} />
                             </CutCornerBackground2>

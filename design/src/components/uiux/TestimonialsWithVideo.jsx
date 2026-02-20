@@ -105,7 +105,7 @@ export default function TestimonialsWithVideo() {
                         <hr className="my-1 lg:my-4 3xl:mt-8 text-black/30" />
                         <div className="h-full justify-between flex flex-col">
                             {/* Quote */}
-                            <p className="text-2xl lg:text-xl 3xl:text-2xl font-medium mt-6 lg:mt-10 3xl:mt-14">
+                            <p className="text-2xl lg:text-xl 3xl:text-2xl font-medium mt-6 lg:mt-10 3xl:mt-14 tracking-[-0.02em] max-3xl:max-w-[364px]">
                                 “{item.text}”
                             </p>
 
@@ -132,7 +132,7 @@ export default function TestimonialsWithVideo() {
                                     onClick={() => openVideo(i)}
                                     title="Play Video"
                                     target="_blank"
-                                    className="size-15 lg:size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white"
+                                    className="size-15 lg:size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white shrink-0"
                                 >
                                     <Play className="size-4 3xl:size-5" fill="white" />
                                 </button>

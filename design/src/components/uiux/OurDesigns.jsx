@@ -88,11 +88,11 @@ const OurDesigns = () => {
     };
 
     return (
-        <div className='flex flex-col mt-5 lg:mt-20'>
+        <div className='flex flex-col mt-5 lg:mt-10'>
             <div className='sm:max-w-[90%] sm:mx-auto w-full px-8 sm:px-10 3xl:px-20 mb-5'>
                 <div className='grid grid-cols-2 gap-4 text-xs 3xl:text-sm 3xl:leading-[20px]'>
                     <p>Our services (04)</p>
-                    <p>Selected Work</p>
+                    <p className='3xl:ml-22'>Selected Work</p>
                 </div>
 
             </div>
@@ -102,7 +102,7 @@ const OurDesigns = () => {
                     onClick={() => toggleFAQ(index)}
                 >
                     <div className=''>
-                        <div className='grid grid-cols-2 gap-2 sm:gap-4 sm:max-w-[90%] sm:mx-auto w-full px-1 sm:px-10 3xl:px-20'>
+                        <div className='grid grid-cols-2 gap-2 sm:gap-4 sm:max-w-[90%] sm:mx-auto w-full px-1 sm:px-10 3xl:px-20 '>
                             <div className='flex items-center gap-1 sm:gap-3'>
                                 <Plus className={`size-6 md:size-7 lg:size-9 3xl:size-11 ${index === openIndex ? "rotate-45" : ""} transition-all duration-400 ease-in-out`} />
                                 <p className='text-[1.375rem] sm:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-medium max-lg:font-instrument max-lg:hidden 2xl:leading-[72.5px] 3xl:leading-[81.6px]'><span className='font-instrument font-normal italic'>{item.title}</span> Design</p>
@@ -110,7 +110,7 @@ const OurDesigns = () => {
 
                             </div>
 
-                            <div className={`grid gap-1 3xl:gap-2 ${index === 0 || index === 3 ? "grid-cols-3" : "grid-cols-2"} ${openIndex === index ? "lg:opacity-0" : ""} transition-all duration-400 ease-in-out `}>
+                            <div className={`grid gap-1 3xl:gap-2 ${index === 0 || index === 3 ? "grid-cols-3" : "grid-cols-2"} ${openIndex === index ? "lg:opacity-0" : ""} transition-all duration-400 ease-in-out 3xl:ml-22 `}>
                                 {
                                     item.upperSlider.map((image, i) => (
                                         <Image src={image} key={i} width={300} height={100} alt='demo' className='w-full sm:h-full h-14 sm:max-h-20 3xl:max-h-27.5 object-cover rounded-sm sm:rounded-md' />
@@ -123,10 +123,10 @@ const OurDesigns = () => {
                             : "max-h-0 opacity-0"
                             }`}>
                             <div className='sm:max-w-[90%] pt-3 2xl:pt-5 sm:mx-auto w-full px-3 sm:px-5 3xl:px-10'>
-                                <p className='text-base lg:text-sm 3xl:text-base max-w-xs 3xl:max-w-sm'>{item.description}</p>
+                                <p className='text-base lg:text-sm 3xl:text-base max-w-xs 3xl:max-w-[370px]'>{item.description}</p>
                                 <div className='grid grid-cols-2 gap-4 mt-10 max-lg:hidden'>
-                                    <p className='text-2xl 3xl:text-[2rem] font-medium whitespace-pre-line'> {item.title2}</p>
-                                    <div className={`text-xs 3xl:text-sm`}>{item.description2}</div>
+                                    <p className='text-2xl 3xl:text-[2rem] font-medium whitespace-pre-line 3xl:leading-[36px]'> {item.title2}</p>
+                                    <div className={`text-xs 3xl:text-sm max-w-[661px]`}>{item.description2}</div>
                                 </div>
 
                             </div>

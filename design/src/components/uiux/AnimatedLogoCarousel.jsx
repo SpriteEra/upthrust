@@ -60,8 +60,8 @@ export default function AnimatedLogoCarousel() {
 
 
     return (
-        <div className=" bg-black flex items-center justify-center px-2  md:py-8 3xl:pb-12 ">
-            <div className="w-full sm:max-w-[90%] 3xl:max-w-[90%]  pt-2 lg:pt-10 ">
+        <div className=" bg-black flex items-center justify-center px-2 pb-4 md:py-8 lg:pb-12 3xl:pb-14 ">
+            <div className="w-full sm:max-w-[90%] 3xl:max-w-[90%]  pt-2 lg:pt-14 3xl:pt-20">
                 {/* Logo Carousel Container */}
                 <div className="relative  sm:border sm:border-white/20  sm:rounded-2xl 3xl:rounded-3xl ">
                     <div className="hidden sm:block absolute -top-2 2xl:-top-3  left-1/2 -translate-x-1/2 z-10">
@@ -69,7 +69,7 @@ export default function AnimatedLogoCarousel() {
                             Trusted by startups, scaleups, and global brands across the India & US
                         </p>
                     </div>
-                    <div className="hidden md:block relative h-24 md:h-32 overflow-hidden p-5 rounded-2xl">
+                    <div className="hidden md:block relative h-24 md:h-32 3xl:h-40 overflow-hidden p-5 3xl:py-10 rounded-2xl">
 
                         {logoSets.map((logos, setIndex) => {
                             const activeIndex = currentIndex % logoSets.length;
@@ -90,11 +90,11 @@ export default function AnimatedLogoCarousel() {
                                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${position}`}
                                 >
                                     <div className="h-full">
-                                        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 items-center justify-center h-full px-4 md:px-12">
+                                        <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 items-center justify-center h-full">
                                             {logos.map((logo, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex items-center justify-center w-20 3xl:w-26 mx-auto"
+                                                    className="flex items-center justify-center w-20 3xl:w-28 mx-auto"
                                                 >
                                                     <Image width={64} height={64} src={logo.image} alt={logo.alt} className="w-full h-full object-contain" />
 
@@ -108,7 +108,7 @@ export default function AnimatedLogoCarousel() {
 
                     </div>
                     {/* for mobile  */}
-                    
+
 
                     <div className="md:hidden overflow-hidden py-4 bg-black">
                         <p className="text-white/50 text-lg text-center font-light p-3">

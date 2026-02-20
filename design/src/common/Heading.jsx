@@ -36,10 +36,10 @@ const UIUXHeading = ({
                 <Tag className={`${textAlign} tracking-[-0.02em] xl:tracking-[-0.04em]`}>
                     {heading.map((row, rowIndex) => {
                         const baseClass =
-                            "text-[36px] md:text-[40px] lg:text-[50px] xl:text-[60px] 3xl:text-[72px] font-medium text-center leading-[130%] md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize ";
+                            "text-[36px] md:text-[40px] lg:text-[50px] xl:text-[60px] 3xl:text-[72px] font-semibold text-center leading-[130%] md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize";
 
                         const italicClass =
-                            "text-[44px] md:text-[50px] lg:text-[60px] xl:text-[70px] 3xl:text-[80px] font-normal text-center leading-[130%] xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic ";
+                            "text-[44px] md:text-[50px] lg:text-[60px] xl:text-[70px] 3xl:text-[80px] font-normal text-center leading-[110%] xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic ";
 
                         return (
                             <React.Fragment key={rowIndex}>
@@ -60,7 +60,7 @@ const UIUXHeading = ({
 
             {subtitle && (
                 <span
-                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 mt-5 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
+                    className={`text-lg lg:text-sm 3xl:text-lg mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
                 >
                     {subtitle}
                 </span>
