@@ -114,6 +114,7 @@ const CommonHeading = ({
     subtitle = "",
     align = "center",
     className = "",
+    subtitleCss = ""
 }) => {
     const textAlign =
         align === "left"
@@ -204,7 +205,7 @@ const CommonHeading = ({
             </Tag>
 
             {subtitle && (
-                <p className="mt-4 text-[22px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal ">
+                <p className={`text-[22px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal ${subtitleCss}`}>
                     {subtitle}
                 </p>
             )}

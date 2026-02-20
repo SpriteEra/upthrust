@@ -219,7 +219,7 @@ export default function GoogleFaq() {
 
                 <div
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndexes === index
-                        ? "max-h-96 opacity-100 mt-2"
+                        ? "max-h-96 opacity-100 mt-2 3xl:mt-3"
                         : "max-h-0 opacity-0"
                         }`}
 
@@ -238,7 +238,7 @@ export default function GoogleFaq() {
     return (
         <div className="flex items-center justify-center px-2 md:px-20 mt-6 md:mt-10 3xl:mt-16">
             <div className="w-full">
-                <div className="flex flex-col lg:flex-row gap-x-14 3xl:gap-x-18 gap-y-5 md:gap-y-7 3xl:gap-y-6">
+                <div className="flex flex-col lg:flex-row gap-x-14 3xl:gap-x-10 gap-y-5 md:gap-y-7 3xl:gap-y-6">
 
                     {/* LEFT COLUMN */}
                     <div className="flex-1 space-y-5 md:space-y-7 3xl:space-y-6">

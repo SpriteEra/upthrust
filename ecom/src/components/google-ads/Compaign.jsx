@@ -179,104 +179,107 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 // top: `5rem`,
                 zIndex: totalCards + index,
             }}
-            className="mb-8 lg:mb-12  top-[5rem] 3xl:top-[8rem]"
+            className="mb-8 lg:mb-12 top-[5rem] 3xl:top-[8rem]"
         >
             <motion.div
-                className="rounded-2xl lg:rounded-3xl overflow-hidden "
+                className="rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20  p-2 sm:p-4  lg:p-6 min-h-[480px] 3xl:min-h-[500px]">
+                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20  p-2 sm:p-4 lg:p-6 3xl:p-7 min-h-[480px] 3xl:min-h-[500px]">
                     {/* Left Content Section */}
-                    <div className="w-full lg:w-[50%]  flex flex-col justify-between">
-                        <div>
-                            <motion.div
-                            // initial={{ opacity: 0, x: -20 }}
-                            // animate={isInView ? { opacity: 1, x: 0 } : {}}
-                            // transition={{ duration: 0.5, delay: 0.3 }}
-                            >
-                                <span
-                                    className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-[24px] font-semibold leading-9 tracking-[-0.02em] "
-                                    style={{
-                                        color: 'black'
-                                    }}
-                                >
-                                    {data.badge}
-                                </span>
-                            </motion.div>
-
-                            <motion.h2
-                                // initial={{ opacity: 0, y: 20 }}
-                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                // transition={{ duration: 0.6, delay: 0.4 }}
-                                className=" text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black"
-
-                            >
-                                {data.title}
-                            </motion.h2>
-
-                            <motion.p
-                                // initial={{ opacity: 0, y: 20 }}
-                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                // transition={{ duration: 0.6, delay: 0.5 }}
-                                className="  mb-3 lg:mb-4 3xl:mb-6  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
-                            >
-                                {data.description}
-                            </motion.p>
-                        </div>
-
-                        <div>
-                            <motion.div
-                                // initial={{ opacity: 0, y: 30 }}
-                                // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                // transition={{ duration: 0.6, delay: 0.6 }}
-                                className="grid grid-cols-2 gap-6 mb-8"
-                            >
-                                <div>
-                                    <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
-                                        {data.metrics.metric1.label}
-                                    </p>
-                                    <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black">
-                                        {data.metrics.metric1.value}
-                                        <span className="text-2xl ml-1 text-red-500">↓</span>
-                                    </p>
-                                </div>
-                                <div>
-                                    <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
-                                        {data.metrics.metric2.label}
-                                    </p>
-                                    <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black" >
-                                        {data.metrics.metric2.value}
-                                        <span className="text-2xl ml-1 text-green-500">↑</span>
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
+                    <div className="w-full lg:w-[50%]  flex flex-col justify-between pl-2 3xl:pl-3">
+                        <div className='3xl:max-w-150 flex flex-col justify-between h-full'>
+                            <div>
+                                <motion.div
                                 // initial={{ opacity: 0, x: -20 }}
                                 // animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                // transition={{ duration: 0.6, delay: 0.7 }}
-                                className="flex items-center gap-4 p-5 rounded-xl"
-                                style={{ backgroundColor: data.accentColor }}
-                            >
-                                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
-                                    {/* {data.testimonial.name.charAt(0)} */}
-                                    <Image
-                                        height={60}
-                                        width={60}
-                                        src={data.testimonial.avatar}
-                                        alt="Right Section Image"
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div>
-                                    <p className="text-white font-semibold text-lg">
-                                        {data.testimonial.name}
-                                    </p>
-                                    <p className="text-white/80 text-sm">
-                                        {data.testimonial.role}
-                                    </p>
-                                </div>
-                            </motion.div>
+                                // transition={{ duration: 0.5, delay: 0.3 }}
+                                >
+                                    <span
+                                        className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-[24px] font-semibold leading-[150%] tracking-[-0.02em] "
+                                        style={{
+                                            color: 'black'
+                                        }}
+                                    >
+                                        {data.badge}
+                                    </span>
+                                </motion.div>
+
+                                <motion.h2
+                                    // initial={{ opacity: 0, y: 20 }}
+                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                    // transition={{ duration: 0.6, delay: 0.4 }}
+                                    className=" text-[30px] 3xl:text-[36px] font-semibold leading-[150%] tracking-[-0.02em] text-black"
+
+                                >
+                                    {data.title}
+                                </motion.h2>
+
+                                <motion.p
+                                    // initial={{ opacity: 0, y: 20 }}
+                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                    // transition={{ duration: 0.6, delay: 0.5 }}
+                                    className="  mb-3 lg:mb-4 3xl:mb-26  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
+                                >
+                                    {data.description}
+                                </motion.p>
+                            </div>
+
+                            <div>
+                                <motion.div
+                                    // initial={{ opacity: 0, y: 30 }}
+                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                                    // transition={{ duration: 0.6, delay: 0.6 }}
+                                    className="grid grid-cols-2 gap-6 mb-8"
+                                >
+                                    <div className=''>
+                                        <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
+                                            {data.metrics.metric1.label}
+                                        </p>
+                                        <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black flex items-center 3xl:mt-1">
+                                            {data.metrics.metric1.value}
+                                            <span className="text-2xl ml-1 text-red-500">↓</span>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
+                                            {data.metrics.metric2.label}
+                                        </p>
+                                        <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black flex items-center 3xl:mt-1" >
+                                            {data.metrics.metric2.value}
+                                            <span className="text-2xl ml-1 text-green-500">↑</span>
+                                        </p>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    // initial={{ opacity: 0, x: -20 }}
+                                    // animate={isInView ? { opacity: 1, x: 0 } : {}}
+                                    // transition={{ duration: 0.6, delay: 0.7 }}
+                                    className="flex items-center gap-4 p-5 rounded-xl"
+                                    style={{ backgroundColor: data.accentColor }}
+                                >
+                                    <div className="w-12 h-12 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
+                                        {/* {data.testimonial.name.charAt(0)} */}
+                                        <Image
+                                            height={60}
+                                            width={60}
+                                            src={data.testimonial.avatar}
+                                            alt="Right Section Image"
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-white font-semibold text-lg">
+                                            {data.testimonial.name}
+                                        </p>
+                                        <p className="text-white/80 text-sm">
+                                            {data.testimonial.role}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -316,9 +319,9 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 // Main Component
 const CompaignCards = () => {
     return (
-        <div className="min-h-screen  py-16 lg:py-24">
+        <div className="min-h-screen py-16 lg:py-24">
             {/* Case Studies Stack */}
-            <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
+            <div className="max-w-400 3xl:max-w-430 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
                 <div className="relative">
                     {caseStudies.map((study, index) => (
                         <CaseStudyCard

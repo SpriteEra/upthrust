@@ -11,12 +11,14 @@ const HEIGHTS = {
         md: '55vh',    // tablet  (~768px+)
         xl: '60vh',    // desktop (~1280px+)
         '2xl': '65vh',   // large   (~1536px+)
+        '3xl': '82vh'
     },
     white: {
         base: '420px',
         md: '45vh',
         xl: '48vh',
         '2xl': '52vh',
+        '3xl': '68vh'
     },
 };
 
@@ -49,6 +51,7 @@ const PredictGrowth = () => {
             type: 'blue',
             bg: 'bg-[#0076F0]',
             text: 'text-white',
+            border: 'border border-[#0076F0]',
             category: 'Stop Guessing. Start With Data.',
             title: 'Discover, Research, and campaign build',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do.',
@@ -61,6 +64,7 @@ const PredictGrowth = () => {
             id: 2,
             bg: 'bg-[#E7F0FF]',
             text: 'text-black',
+            border: 'border border-black/30',
             category: 'SAFETY CHECK',
             title: 'Pre-Launch Review And Launch',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
@@ -74,6 +78,7 @@ const PredictGrowth = () => {
             type: 'blue',
             bg: 'bg-[#004FAC]',
             text: 'text-white',
+            border: 'border border-[#004FAC]',
             category: 'THE JOURNEY CONTINUES',
             title: 'Scale and Ascension',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex dolor sit amet, consectetur adipiscing elit, sed do.',
@@ -87,6 +92,7 @@ const PredictGrowth = () => {
             type: 'white',
             bg: 'bg-[#FFFFFF]',
             text: 'text-black',
+            border: 'border border-black/30',
             category: 'ITERATE',
             title: 'Learning And Optimization',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
@@ -106,41 +112,42 @@ const PredictGrowth = () => {
         return (
             <div
                 key={card.id}
-                className={`relative rounded-2xl overflow-hidden shadow-lg cursor-pointer transition-all duration-500 ease-in-out ${card.bg} ${card.text}`}
+                className={`relative rounded-2xl 3xl:rounded-[30px] overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${card.bg} ${card.text} ${card.border}`}
                 style={{
                     height: h.base,
                     // These are overridden by the <style> tag below via CSS breakpoints
                     '--card-h-md': h.md,
                     '--card-h-xl': h.xl,
                     '--card-h-2xl': h['2xl'],
+                    '--card-h-3xl': h['3xl'],
                 }}
                 data-card-responsive
                 onClick={() => toggleCard(card.id)}
             >
-                <div className="relative h-full p-8 flex flex-col">
+                <div className="relative h-full p-8 3xl:p-20 flex flex-col">
 
                     {/* Category Label */}
                     {card.category && (
-                        <div className={`text-xs lg:text-sm 2xl:text-lg tracking-[0.02em] mb-3 transition-opacity duration-300 leading-7 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
+                        <div className={`text-xs lg:text-sm 2xl:text-lg tracking-[0.02em] mb-3 transition-opacity duration-300 leading-[150%] ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
                             {card.category}
                         </div>
                     )}
 
                     {/* Title - Hidden when expanded */}
                     {card.title && (
-                        <h2 className={`text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl mb-6 leading-10 3xl:leading-15 transition-all duration-500 tracking-[0.02em] ${isExpanded ? 'opacity-0 h-0 mb-0 overflow-hidden' : 'opacity-100'}`}>
+                        <h2 className={`text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold mb-6 leading-10 3xl:leading-[130%] transition-all duration-500 tracking-[0.02em] ${isExpanded ? 'opacity-0 h-0 mb-0 overflow-hidden' : 'opacity-100'}`}>
                             {card.title}
                         </h2>
                     )}
 
 
-                    <div className={`relative rounded-lg overflow-hidden h-[300px] w-[400px] shadow-md transition-all duration-500 ease-in-out
+                    <div className={`relative rounded-lg overflow-hidden max-h-[360px] aspect-7/5 transition-all duration-500 ease-in-out mt-12 3xl:mt-16 3xl:mb-15
                         ${isBlue
                             ? 'flex-grow min-h-0'
                             : (isExpanded ? 'flex-grow min-h-0' : 'h-0 opacity-0 mb-0')
                         }`}
                     >
-                        {/* <SmartSwiper
+                        <SmartSwiper
                             slides={card.images}
                             effect="slide"
                             speed={800}
@@ -150,10 +157,8 @@ const PredictGrowth = () => {
                             renderSlide={(item) => (
                                 <div className="w-full h-full rounded-lg 3xl:rounded-2xl">
                                     <Image
-                                        src={item.src}
-                                        alt={item.alt}
-                                        width={600}
-                                        height={400}
+                                        src={item}
+                                        alt={item}
                                         fill
                                         quality={100}
                                         sizes="(max-width: 768px) 100vw, 60vw"
@@ -161,7 +166,8 @@ const PredictGrowth = () => {
                                     />
                                 </div>
                             )}
-                        /> */}
+                        />
+
                     </div>
 
                     {/* Description - Shows when expanded */}
@@ -173,11 +179,11 @@ const PredictGrowth = () => {
 
                     {/* Toggle Button */}
                     <button
-                        className={`absolute bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 ${isBlue ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'}`}
+                        className={`absolute bottom-6 3xl:bottom-7 right-6 3xl:right-7 size-10 3xl:size-20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${isBlue ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'}`}
                         onClick={(e) => { e.stopPropagation(); toggleCard(card.id); }}
                     >
-                        <svg className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        <svg className={`size-5 3xl:size-10 transition-transform duration-300 ${isExpanded ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
                         </svg>
                     </button>
                 </div>
@@ -199,24 +205,27 @@ const PredictGrowth = () => {
                 @media (min-width: 1536px) {
                     [data-card-responsive] { height: var(--card-h-2xl) !important; }
                 }
+                @media (min-width: 1820px) {
+                    [data-card-responsive] { height: var(--card-h-3xl) !important; }
+                }
             `}</style>
 
             {/* Desktop: 2-column flex */}
-            <div className="hidden md:flex gap-6">
+            <div className="hidden md:flex gap-6 3xl:gap-10">
                 {/* Column 1: Blue top, White bottom */}
-                <div className="flex flex-col gap-6 flex-1">
+                <div className="flex flex-col gap-6 3xl:gap-10 flex-1">
                     {renderCard(cardsData[0])}
                     {renderCard(cardsData[3])}
                 </div>
                 {/* Column 2: White top, Blue bottom */}
-                <div className="flex flex-col gap-6 flex-1">
+                <div className="flex flex-col gap-6 3xl:gap-10 flex-1">
                     {renderCard(cardsData[1])}
                     {renderCard(cardsData[2])}
                 </div>
             </div>
 
             {/* Mobile: single column */}
-            <div className="flex flex-col md:hidden gap-6">
+            <div className="flex flex-col md:hidden gap-6 3xl:gap-10">
                 {cardsData.map((card) => renderCard(card))}
             </div>
 

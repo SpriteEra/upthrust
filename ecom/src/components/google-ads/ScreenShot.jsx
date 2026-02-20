@@ -155,7 +155,7 @@ const ScreenShot = () => {
     };
 
     return (
-        <div className="w-full max-w-[90%] lg:max-w-[85%] mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="w-full max-w-[90%] lg:max-w-[85%] mx-auto px-4 py-12 md:py-16 lg:py-20 3xl:py-40">
             <div className="relative">
                 {/* Scrollable container */}
                 <div

@@ -1,4 +1,5 @@
 'use client'
+import RatingStars from '@/common/Rating';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
@@ -34,7 +35,7 @@ const GoogleAdsHero = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white max-w-[90%] mx-auto mt-15">
+        <div className="min-h-screen bg-white max-w-[90%] mx-auto mt-15 3xl:mt-24">
 
             <div className=" py-12 lg:py-20">
                 {/* Desktop Layout */}
@@ -42,7 +43,7 @@ const GoogleAdsHero = () => {
                     {/* Left Content */}
                     <div className="flex-1">
                         {/* Rating */}
-                        <div className="flex items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-4 ">
 
                             <div className="relative flex items-center">
                                 {/* First Circle */}
@@ -50,8 +51,8 @@ const GoogleAdsHero = () => {
                                     <Image
                                         src="/google-ads/Cric.png"
                                         alt="crc"
-                                        width={32}
-                                        height={32}
+                                        width={37.5}
+                                        height={37.5}
                                         className="object-contain"
                                     />
                                 </div>
@@ -61,23 +62,17 @@ const GoogleAdsHero = () => {
                                     <Image
                                         src="/google-ads/Google.png"
                                         alt="google"
-                                        width={32}
-                                        height={32}
+                                        width={37.5}
+                                        height={37.5}
                                         className="object-contain"
                                     />
                                 </div>
-
                             </div>
-
                         </div>
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-sm 2xl:text-[16px] 3xl:text-[17px] ">4.9</span>
                             <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <svg width="19" height="18" key={i} viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.29034 0L11.4835 6.74982H18.5807L12.839 10.9215L15.0321 17.6712L9.29034 13.4996L3.5486 17.6712L5.74175 10.9215L0 6.74982H7.09719L9.29034 0Z" fill="#FFB900" />
-                                    </svg>
-                                ))}
+                                <RatingStars rating={5} fillColor='#FFB900' size='size-4.75' />
                             </div>
                         </div>
                         <p className="text-lg 3xl:text-xl text-black mb-8 font-normal leading-[150%] tracking-[-0.02em]">PPC Agency that kills competitors</p>
@@ -105,14 +100,14 @@ const GoogleAdsHero = () => {
                         </h1>
 
                         {/* CTA Button */}
-                        <button className="bg-[#0076F0] text-white font-normal text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] px-7 3xl:px-9  py-5 3xl:py-6 rounded-full  transition-colors">
+                        <button className="bg-[#0076F0] text-white font-normal text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] px-7 3xl:px-9  py-5 3xl:py-6 rounded-full hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer">
                             Get a Free Google Ads Audit
                         </button>
 
                         {/* Trusted Brands */}
-                        <div className="mt-10 sm:mt-10 3xl:mt-20 flex flex-col">
+                        <div className="mt-10 sm:mt-10 3xl:mt-22 flex flex-col">
                             <p className="text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]">Trusted By Popular Brands</p>
-                            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl 3xl:max-w-3xl pb-12 3xl:pb-20">
+                            <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-10 max-w-xl 3xl:max-w-3xl pb-12 3xl:pb-20">
                                 {brands.map((brand) => (
                                     <div
                                         key={brand.name}

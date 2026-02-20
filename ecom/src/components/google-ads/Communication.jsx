@@ -224,12 +224,12 @@ const CommunicationScroll = () => {
                 ref={containerRef}
                 className="hidden lg:block min-h-[300vh] max-w-[90%] mx-auto py-20"
             >
-                <div className="sticky top-0 h-screen flex items-center">
+                <div className="sticky top-10 h-screen flex items-center">
                     <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 3xl:gap-20 items-center">
 
                             {/* Left Side - Image */}
-                            <div className="relative h-[500px] lg:h-[600px] 3xl:h-180">
+                            <div className="relative h-[500px] lg:h-[600px] 3xl:h-200 border border-[#bebebe] rounded-lg">
                                 {sections.map((section, index) => (
                                     <div
                                         key={index}
@@ -238,7 +238,7 @@ const CommunicationScroll = () => {
                                             : 'opacity-0'
                                             }`}
                                     >
-                                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+                                        <div className="relative w-full h-full rounded-2xl overflow-hidden">
                                             <Image
                                                 src={section.image}
                                                 alt={section.title}
@@ -252,26 +252,26 @@ const CommunicationScroll = () => {
                             </div>
 
                             {/* Right Side - Text Sections */}
-                            <div className="space-y-8">
+                            <div className="space-y-8 3xl:pl-16">
                                 {sections.map((section, index) => (
                                     <div key={index} className="relative">
                                         <div
-                                            className={`relative pl-6 transition-all duration-500 ${activeSection === index
-                                                ? 'border-l-4 border-blue-600'
-                                                : 'border-l-4 border-gray-300'
+                                            className={`relative pl-6 transition-all duration-500 max-w-[620px] ${activeSection === index
+                                                ? 'border-l-4 3xl:border-l-[6px] border-blue-600'
+                                                : 'border-l-4 3xl:border-l-[6px] border-gray-300'
                                                 }`}
                                         >
                                             <div
-                                                className={`text-[32px] lg:text-[40px] 3xl:text-[48px] leading-[130%] tracking-[-0.02em] font-semibold mb-4 transition-colors duration-500 ${activeSection === index
+                                                className={`text-[32px] lg:text-[40px] 3xl:text-[48px] leading-[130%] tracking-[-0.02em] font-semibold mb-4 3xl:mb-2 transition-colors duration-500 3xl:pl-4 ${activeSection === index
                                                     ? 'text-black'
-                                                    : 'text-gray-400'
+                                                    : 'text-black '
                                                     }`}
                                             >
                                                 {section.title}
                                             </div>
 
                                             <div
-                                                className={`overflow-hidden transition-all duration-700 ease-in-out ${activeSection === index
+                                                className={`overflow-hidden transition-all duration-700 ease-in-out 3xl:pl-4 ${activeSection === index
                                                     ? 'max-h-96 opacity-100'
                                                     : 'max-h-0 opacity-0'
                                                     }`}

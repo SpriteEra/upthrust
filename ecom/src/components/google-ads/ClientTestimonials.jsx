@@ -1,7 +1,6 @@
-import imgval from "./AmyGrucela.png"
-import QuoteTestimonialCard from "./Atul3";
-import ShortTestimonialCard from "./Atul4";
-import VideoTestimonialCard from "./Atul5";
+import QuoteTestimonialCard from "./QuoteTestimonialCard";
+import ShortTestimonialCard from "./ShortTestimonialCard";
+import VideoTestimonialCard from "./VideoTestimonialCard";
 
 export default function ClientTestimonials() {
 
@@ -9,8 +8,8 @@ export default function ClientTestimonials() {
         {
             id: 1,
             rating: 5,
-            title: "Stellar Growth Backed by Exceptional Support",
-            quote: "I'm happy to say that in the last six months we've been able to grow our organic traffic by 463%. Our ad expenses are King & Dollar. Right now, We have to offer a lot of thanks to the folks at Upthrust. They've been pretty incredible when it comes to their rates by almost three times, all thanks to the incredible team at Upthrust.",
+            title: "Data-Driven Growth Backed by Exceptional Support",
+            quote: "I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.",
             author: "Rishabh Jain",
             position: "President - Corondo",
             avatar: "/google-ads/review/img1.png",
@@ -27,11 +26,11 @@ export default function ClientTestimonials() {
             avatar: "/google-ads/review/img2.png",
             avatarShape: {
                 rounded: "xl",
-                width: "w-16",
-                height: "h-16"
+                width: "w-16 3xl:w-25",
+                height: "h-16 3xl:h-25"
             },
             bgColor: "bg-yellow-400",
-            textColor: "text-black"
+            textColor: "text-black",
         },
         {
             id: 3,
@@ -77,12 +76,12 @@ export default function ClientTestimonials() {
         {
             id: 6,
             rating: 5,
-            title: "“ I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow. ”",
+            title: `"I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”`,
             author: "Pranath Sisodiya",
             position: "CEO,  Rescribe",
             avatar: "👤",
             avatar: "/google-ads/review/img6.png",
-            bgColor: "bg-green-500",
+            bgColor: "bg-[#00822E]",
             textColor: "text-white"
         },
         {
@@ -129,7 +128,7 @@ export default function ClientTestimonials() {
     ];
 
     return (
-        <div className="min-h-screen max-w-[90%] 3xl:max-w-[85%] mx-auto py-16">
+        <div className="min-h-screen max-w-[90%] 3xl:max-w-[85%] mx-auto py-16 3xl:py-20">
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[0, 1, 2].map((colIndex) => (
