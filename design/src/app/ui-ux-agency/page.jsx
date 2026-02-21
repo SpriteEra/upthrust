@@ -321,7 +321,7 @@ const page = () => {
                                 </svg>
                             </div>
                             <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center tracking-[-0.02em] leading-10 max-lg:capitalize">
-                                Let's design an experience that converts.
+                                Let&apos;s design an experience that converts.
                             </p>
                         </div>
                         <div className="flex items-center justify-center max-lg:w-full">
