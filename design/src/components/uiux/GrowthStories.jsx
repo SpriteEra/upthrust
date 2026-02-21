@@ -120,7 +120,7 @@ const GrowthStories = () => {
                         className={`${item.bgColor2} max-lg:bg-transparent! flex w-full max-lg:flex-col-reverse lg:rounded-3xl 3xl:rounded-4xl items-stretch`}
                     >
                         <div className={`${item.bgColor2} lg:bg-none! p-4 sm:p-6 max-2xl:pr-0 3xl:p-12.5 lg:w-[55%] 3xl:w-[40%] h-full flex flex-col lg:rounded-l-3xl 3xl:rounded-l-4xl`}>
-                            <div className="max-w-[430px] 3xl:max-w-[520px]">
+                            <div className="max-w-[430px] sm:max-lg:max-w-[620px]  3xl:max-w-[520px]">
 
                                 <span className="lg:text-sm 3xl:text-base uppercase ">
                                     {item.name}
