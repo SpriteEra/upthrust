@@ -16,12 +16,12 @@ export default function ShortTestimonialCard({ testimonial }) {
     const heightClass = avatarConfig.height || "h-12";
 
     return (
-        <div className={`${testimonial.bgColor} rounded-2xl p-6 3xl:p-8 shadow-lg flex flex-col`}>
-            <h3 className={`text-[25px]  3xl:text-[30px] leading-[150%] font-semibold tracking-[-0.02em] mb-6 ${testimonial.textColor}`}>
+        <div className={`${testimonial.bgColor} rounded-2xl p-6 3xl:p-8 3xl:py-10 flex flex-col`}>
+            <h3 className={`text-[25px] 3xl:text-[30px] leading-[150%] font-semibold tracking-[-0.02em] mb-6 3xl:mb-14 3xl:max-w-[425px] ${testimonial.textColor}`}>
                 {testimonial.title}
             </h3>
 
-            <div className="flex items-center gap-3 mt-auto">
+            <div className="flex items-center gap-3 3xl:gap-5 mt-auto">
                 <div
                     className={`${widthClass} ${heightClass} ${roundedClass} overflow-hidden bg-gray-300 flex items-center justify-center text-lg`}
                 >

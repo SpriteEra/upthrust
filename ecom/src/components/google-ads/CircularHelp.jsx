@@ -251,9 +251,9 @@ const CircularHelp = () => {
       bgColor: "bg-[#00822E]",
       textColor: "text-white",
       mutedText: "text-white/90",
-      borderColor: "border-white/20",
-      activeTab: " text-white",
-      inactiveTab: "text-white/60"
+      borderColor: "border-white",
+      activeTab: "text-[#9ADCB2]",
+      inactiveTab: "text-white"
     },
     {
       id: 1,
@@ -268,14 +268,14 @@ const CircularHelp = () => {
         </>
       ),
       subtitle:
-        "Server-side tracking + GA4 goals + first-party data reveal what's actually working",
+        "30-40% of conversions go unreported through browser pixels. Server-side tracking + GA4 goals + first-party data reveal what's actually working",
       image: "/google-ads/circ2.png",
       bgColor: "bg-[#004FAC]",
       textColor: "text-white",
       mutedText: "text-white/90",
       borderColor: "border-white/20",
       activeTab: " text-[#0076F0]",
-      inactiveTab: "text-white/60"
+      inactiveTab: "text-white"
     },
     {
       id: 2,
@@ -348,7 +348,7 @@ const CircularHelp = () => {
       ref={containerRef}
       className="min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
     >
-      <div className="sticky top-0  flex items-center overflow-hidden rounded">
+      <div className="sticky top-0 3xl:top-40  flex items-center overflow-hidden rounded">
         <div
           className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700`}
         >
@@ -356,24 +356,24 @@ const CircularHelp = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
               {/* ---------------- LEFT CONTENT ---------------- */}
-              <div className={`${sections[activeSection].textColor} space-y-2 md:space-y-6`}>
+              <div className={`${sections[activeSection].textColor} space-y-2 md:space-y-6 3xl:py-8 3xl:pl-8`}>
 
                 <span
-                  className={`inline-block border rounded-full px-4 py-1 text-xs font-medium ${sections[activeSection].borderColor}`}
+                  className={`inline-block border rounded-full px-4 py-1 3xl:py-3 3xl:px-8 text-sm tracking-[-0.02em] leading-[150%] ${sections[activeSection].borderColor}`}
                 >
-                  {sections[activeSection].badge.toUpperCase()}
+                  PROCESS
                 </span>
 
                 <h2 className="text-3xl md:text-5xl 3xl:text-[72px] font-semibold leading-[130%] tracking-[-0.02em] 2xl:tracking-[-0.04em] ">
                   {sections[activeSection].title}
                 </h2>
 
-                <p className={`${sections[activeSection].mutedText} text-[22px] md:text-[30px] leading-[150%] tracking-[-0.02em]  max-w-xl`}>
+                <p className={`${sections[activeSection].mutedText} text-[22px] md:text-[30px] leading-[150%] tracking-[-0.02em]  max-w-xl 3xl:max-w-2xl`}>
                   {sections[activeSection].subtitle}
                 </p>
 
                 {/* ---------------- MOBILE VERTICAL TABS ---------------- */}
-                <div className="lg:hidden space-y-3 pt-4 border-b">
+                <div className="lg:hidden space-y-3 pt-4 border-b w-full">
                   {sections.map((section, index) => (
                     <button
                       key={section.id}
@@ -390,7 +390,7 @@ const CircularHelp = () => {
 
                 {/* ---------------- DESKTOP TABS (UNCHANGED) ---------------- */}
                 <div
-                  className={`hidden lg:flex gap-8 pt-8 border-t ${sections[activeSection].borderColor}`}
+                  className={`hidden lg:flex gap-8 pt-8 3xl:pt-20 border-b-2 w-full justify-between max-w-[650px] ${sections[activeSection].borderColor}`}
                 >
                   {sections.map((section, index) => (
                     <button
@@ -400,9 +400,12 @@ const CircularHelp = () => {
                         previousSectionRef.current = index;
                         setActiveSection(index);
                       }}
-                      className={`text-sm font-medium pb-2 border-b-2 transition-all duration-300 ${activeSection === index
+                      className={`text-sm 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 ${activeSection === index
                         ? "border-current"
-                        : "border-transparent opacity-60 hover:opacity-100"
+                        : "border-transparent"
+                        }  ${activeSection === index
+                          ? sections[activeSection].activeTab
+                          : sections[activeSection].inactiveTab
                         }`}
                     >
                       {section.badge}
@@ -412,7 +415,7 @@ const CircularHelp = () => {
               </div>
 
               {/* ---------------- IMAGE ---------------- */}
-              <div className="relative w-full h-[260px] sm:h-[320px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-full flex justify-end overflow-hidden">
                 <AnimatePresence custom={direction}>
                   <motion.div
                     key={activeSection}
@@ -421,16 +424,17 @@ const CircularHelp = () => {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="absolute w-full h-full flex items-center justify-center"
+                    className="absolute w-full h-full flex items-end justify-end "
                   >
-                    <div className="relative w-full h-full">
+                    <div className="h-[260px] sm:h-[320px] lg:h-[500px] 3xl:aspect-641/728 3xl:h-full max-h-180 justify-end relative">
                       <Image
                         src={sections[activeSection].image}
                         alt="circular"
-                        fill
-                        className="object-contain"
-                        priority
+                        width={500}
+                        height={600}
+                        className="w-full h-full object-cover"
                       />
+
                     </div>
                   </motion.div>
                 </AnimatePresence>

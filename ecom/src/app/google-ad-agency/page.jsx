@@ -9,7 +9,6 @@ import Image from 'next/image'
 import React from 'react'
 import VideoZoom from "@/components/google-ads/Videozoom";
 import ScrollTextImage from "@/components/google-ads/ScrollTextImg";
-import ClientTestimonials from "@/components/google-ads/Atul2";
 import CompaignCards from "@/components/google-ads/Compaign";
 import CommonHeading from "@/common/GoogleHeading";
 import CommunicationScroll from "@/components/google-ads/Communication";
@@ -20,6 +19,7 @@ import GoogleDisclaimer from "@/components/google-ads/Disclaimer";
 import GoogleFooter from "@/components/google-ads/GoogleFooter";
 import BrandSlider from "@/components/home/BrandSlider";
 import AnimatedWord from "@/components/google-ads/AnimatedWord";
+import ClientTestimonials from "@/components/google-ads/ClientTestimonials";
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -51,7 +51,7 @@ const page = () => {
                         </div>
                         <div className='flex items-center gap-5 3xl:gap-6'>
                             <span className='text-lg 3xl:text-xl max-lg:hidden'>Get light years ahead with google ads</span>
-                            <button className='text-lg 3xl:text-xl py-4 3xl:py-5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white'>Scale Your PPC</button>
+                            <button className='text-lg 3xl:text-xl py-4 3xl:py-5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer'>Scale Your PPC</button>
                         </div>
                     </div>
                 </div>
@@ -82,23 +82,23 @@ const page = () => {
                 />
 
 
-                {/* <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
+                <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
                     <GoogleAdsRoiPrediction />
-                </div> */}
+                </div>
 
             </div>
-            <div className="my-25 sm:my-30 3xl:my-50 text-center">
+            <div className="my-25 sm:my-30 3xl:my-70 text-center">
                 <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold ">We&apos;re the highest-rated <span className="font-semibold">Google Ads</span> agency</h3>
                 {/* BADGES ROW */}
-                <div className="flex mt-10 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
+                <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
                     {badges.map((item, index) => (
                         <Image
                             key={index}
-                            width={120}
-                            height={120}
+                            width={164}
+                            height={164}
                             alt={item.alt}
                             src={item.image}
-                            className="w-12 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
+                            className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
                         />
                     ))}
                 </div>
@@ -147,13 +147,13 @@ const page = () => {
                         ],
 
                     ]}
-                    subtitle="From fifty thousand per month to two million"
+                    subtitle="From fifty thousand per month to Two Million"
                 />
 
                 <BrandSlider />
 
             </div>
-            <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full mt-20 3xl:mt-24 mb-10 3xl:mb-16'>
+            <div className='w-full mt-20 3xl:mt-24 mb-10 3xl:mb-16'>
                 <CommonHeading
                     heading={[
                         [
@@ -178,10 +178,10 @@ const page = () => {
                 <PredictGrowth />
             </div>
 
-            <div className="my-25 sm:my-30 3xl:my-50 text-center">
+            <div className="my-25 sm:my-30 3xl:mt-50 3xl:mb-16 text-center">
                 <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold ">Industry Leading <span className="font-semibold">Google Ads</span> Expertise</h3>
                 {/* BADGES ROW */}
-                <div className="flex mt-10 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
+                <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
                     {badges.map((item, index) => (
                         <Image
                             key={index}
@@ -198,7 +198,7 @@ const page = () => {
             <CommunicationScroll />
 
 
-            <div>
+            <div className="3xl:mt-16">
                 <CommonHeading
                     heading={[
                         [
@@ -214,12 +214,14 @@ const page = () => {
                         ],
 
                     ]}
+                    subtitleCss="mt-2"
                     subtitle="We Asked One Question: “What Changed?” - Here’s what they said, in their own words."
                 />
                 <ClientTestimonials />
             </div>
-            <div className="3xl:my-30 my-20">
+            <div className="3xl:my-36 my-20">
                 <CommonHeading
+
                     heading={[
                         [
                             { type: "text", value: "What Happened When We Ran" },
@@ -272,15 +274,15 @@ const page = () => {
                 <CircularHelp />
             </div>
 
-            <div className="w-full py-10 3xl:py-20 max-w-[90%] 3xl:max-w-[85%] mx-auto">
-                <div className="space-y-20 3xl:space-y-32">
+            <div className="w-full py-10 3xl:py-35 max-w-[90%] 3xl:max-w-[85%] mx-auto">
+                <div className="space-y-20 3xl:space-y-40">
 
                     {/* Section 1 */}
-                    <div className="grid lg:grid-cols-2 gap-6 md:gap-20 items-center">
+                    <div className="flex gap-6 md:gap-20 items-center">
 
                         {/* Left Content */}
-                        <div className="max-w-150 overflow-hidden">
-                            <h2 className="text-4xl md:text-5xl 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-6 text-black">
+                        <div className="w-[45%] max-w-150 overflow-hidden">
+                            <h2 className="text-4xl md:text-5xl 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
                                 From Launch To 4.2X ROAS In Just 90 Days
                             </h2>
                             <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
@@ -290,8 +292,8 @@ const page = () => {
                         </div>
 
                         {/* Right Video */}
-                        <div className="w-full h-full">
-                            <div className="relative w-full aspect-video rounded-xl overflow-hidden ">
+                        <div className="w-[55%] h-full">
+                            <div className="relative w-full aspect-16/10 overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover "
                                     src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
@@ -306,11 +308,11 @@ const page = () => {
                     </div>
 
                     {/* Section 2 */}
-                    <div className="  grid lg:grid-cols-2 gap-6 md:gap-20 items-center">
+                    <div className="flex gap-6 md:gap-20 items-center">
 
                         {/* Left Video */}
-                        <div className="w-full order-2 lg:order-1">
-                            <div className="relative w-full aspect-video rounded-xl overflow-hidden ">
+                        <div className="w-[52%] order-2 lg:order-1">
+                            <div className="relative w-full aspect-16/10 overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover"
                                     src="https://cdn.upthrust.agency/Google%20ads/Quietly%20Successful%20Google%20Ads%20Result%20Dashboard.mp4"
@@ -324,22 +326,24 @@ const page = () => {
                         </div>
 
                         {/* Right Content */}
-                        <div className="order-1 lg:order-2">
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                                Best{'  '}
-                                <AnimatedWord
-                                    words={words}
-                                    className="h-10 md:h-12 w-55 md:w-60 lg:w-70 3xl:w-70 mx-auto"
-                                />{' '}
-                                <br />
-                                Ad Agency
-                            </h2>
+                        <div className="order-1 w-[48%] lg:order-2 pl-20">
+                            <div className="flex justify-end 3xl:max-w-[520px] flex-col">
+                                <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-2">
+                                    Best{'  '}
+                                    <AnimatedWord
+                                        words={words}
+                                        className="h-10 md:h-12 w-55 md:w-60 lg:w-70 3xl:w-70 mx-auto"
+                                    />{' '}
+                                    <br />
+                                    Ad Agency
+                                </h2>
 
-                            <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
-                                Hiring the wrong agency puts you 45% behind your competitors.
-                                Watch what Upthrust clients say about the results they got.
-                                <span className="font-medium"> Real people, real numbers, no BS.</span>
-                            </p>
+                                <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
+                                    Hiring the wrong agency puts you 45% behind your competitors.
+                                    Watch what Upthrust clients say about the results they got.
+                                    <span className="font-medium"> <br /> Real people, real numbers, no BS.</span>
+                                </p>
+                            </div>
                         </div>
 
                     </div>

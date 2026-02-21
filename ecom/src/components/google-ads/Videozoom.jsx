@@ -42,7 +42,7 @@ const VideoZoom = () => {
 
             <section
                 ref={sectionRef}
-                className=" min-h-100vh 3xl:min-h-[110vh] flex items-center justify-center bg-white"
+                className="min-h-100vh flex items-center justify-center bg-white"
             >
                 <div className="sticky top-0 flex items-center justify-center w-full ">
 
