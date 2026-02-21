@@ -12,6 +12,7 @@ const page = () => {
   return (
     <main id="meta-ad-agency" >
         <MetaNavbar items={navLinks} />
+        <div className="bg-black min-h-screen w-full mt-[134px]"></div>
         
     </main>
   )

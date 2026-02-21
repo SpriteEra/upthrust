@@ -280,7 +280,7 @@ const page = () => {
                                     </div>
                                     <div className=" border-t border-black/30 pt-8 lg:pt-6 3xl:pt-8 flex gap-1.5 lg:gap-3 3xl:gap-6">
                                         <div className="flex items-center ">
-                                            <p className="text-4xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00] tracking-[-0.02em] max-lg:leading-10 3xl:leading-10">
+                                            <p className="text-4xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00] tracking-[-0.02em] max-lg:leading-10 3xl:leading-15">
                                                 {item.value}
                                             </p>
                                         </div>
@@ -312,7 +312,7 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center tracking-[-0.02em] leading-10 max-lg:capitalize">
+                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[36px] text-white max-lg:text-center tracking-[-0.02em] leading-11 max-lg:capitalize">
                                 Let&apos;s design an experience that converts.
                             </p>
                         </div>
@@ -602,8 +602,8 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-[32px] max-lg:leading-10 lg:text-3xl 2xl:text-4xl 3xl:text-3xl max-lg:capitalize text-white max-lg:text-center tracking-[-0.02em]">
-                                Let's create an experience your product deserves.
+                            <p className="font-semibold text-[32px] max-lg:leading-11 lg:text-3xl 2xl:text-3xl 3xl:text-[36px] max-lg:capitalize text-white max-lg:text-center tracking-[-0.02em]">
+                                Let&apos;s create an experience your product deserves.
                             </p>
                         </div>
 
