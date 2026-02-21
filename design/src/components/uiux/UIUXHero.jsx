@@ -6,18 +6,18 @@ import SmartSwiper from '../SmartSwiper';
 
 const images = [
     { id: 1, src: '/uiux/hero/hero1.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero2.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero3.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero4.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero5.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero6.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero7.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero8.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero9.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero10.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero11.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero12.webp', alt: 'Hero Image 1' },
-    { id: 1, src: '/uiux/hero/hero13.webp', alt: 'Hero Image 1' },
+    { id: 2, src: '/uiux/hero/hero2.webp', alt: 'Hero Image 2' },
+    { id: 3, src: '/uiux/hero/hero3.webp', alt: 'Hero Image 3' },
+    { id: 4, src: '/uiux/hero/hero4.webp', alt: 'Hero Image 4' },
+    { id: 5, src: '/uiux/hero/hero5.webp', alt: 'Hero Image 5' },
+    { id: 6, src: '/uiux/hero/hero6.webp', alt: 'Hero Image 6' },
+    { id: 7, src: '/uiux/hero/hero7.webp', alt: 'Hero Image 7' },
+    { id: 8, src: '/uiux/hero/hero8.webp', alt: 'Hero Image 8' },
+    { id: 9, src: '/uiux/hero/hero9.webp', alt: 'Hero Image 9' },
+    { id: 10, src: '/uiux/hero/hero10.webp', alt: 'Hero Image 10' },
+    { id: 11, src: '/uiux/hero/hero11.webp', alt: 'Hero Image 11' },
+    { id: 12, src: '/uiux/hero/hero12.webp', alt: 'Hero Image 12' },
+    { id: 13, src: '/uiux/hero/hero13.webp', alt: 'Hero Image 13' },
 
 ]
 
@@ -89,16 +89,19 @@ export default function UIUXHero() {
                                     swiperClass="h-full rounded-lg 3xl:rounded-2xl"
                                     slideClass="h-full "
 
-                                    renderSlide={(item) => (
+                                    renderSlide={(item, index) => (
                                         <div className="w-full h-full rounded-lg 3xl:rounded-2xl">
                                             <Image
                                                 src={item.src}
                                                 alt={item.alt}
                                                 width={372}
                                                 height={372}
-                                                priority
-                                                quality={100}
-                                                sizes="(max-width:1024px) 300px, 372px"
+                                                priority={index === 0}
+                                                quality={80}
+                                                sizes="(max-width:640px) 280px,
+                                                        (max-width:1024px) 320px,
+                                                        (max-width:1536px) 350px,
+                                                        372px"
                                                 className="object-cover rounded-lg 3xl:rounded-2xl"
                                             />
                                         </div>
