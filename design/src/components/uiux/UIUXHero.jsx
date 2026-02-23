@@ -111,8 +111,9 @@ export default function UIUXHero() {
 
                             </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-10 mb-4 lg:mb-8 3xl:mb-5 lg:border-t border-gray-400 lg:pt-8 3xl:pt-10">
+                        <div className="flex flex-col sm:flex-wrap sm: lg:flex-row items-center sm:max-w-[330px] lg:max-w-none  sm:mx-auto sm:items-start lg:items-center sm:justify-start lg:justify-between gap-3 sm:gap-5 lg:gap-10 mb-4 lg:mb-8 3xl:mb-5 lg:border-t border-gray-400 lg:pt-8 3xl:pt-10">
                             {/* Feature 1 */}
+                            
                             <div className="flex items-center gap-3 3xl:gap-6 flex-1 w-full sm:w-auto">
                                 <div className="size-12 lg:size-13 3xl:size-17.5 bg-[#FF5722] rounded-full flex items-center justify-center flex-shrink-0">
                                     <svg className='size-5 3xl:size-7.5' viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">

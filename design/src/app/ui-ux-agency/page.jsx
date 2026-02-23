@@ -4,15 +4,7 @@ import StylishButton from "@/common/RocketButton";
 import Navbar from "@/components/Navbar";
 import AnimatedLogoCarousel from "@/components/uiux/AnimatedLogoCarousel";
 import { CutCornerBackground } from "@/components/uiux/CutBox";
-// import FaqUiUx from "@/components/uiux/FaqUiUx";
-// import GrowthStories from "@/components/uiux/GrowthStories";
-// import { InvertedRadiusBox } from "@/components/uiux/InvertedRadiusBox";
-// import OurDesigns from "@/components/uiux/OurDesigns";
-// import ReadyToMoveUiUx from "@/components/uiux/ReadyToMoveUiUx";
-// import ProcessFlow from "@/components/uiux/SustainableSteps";
-// import TestimonialsWithVideo from "@/components/uiux/TestimonialsWithVideo";
 import UIUXHero from "@/components/uiux/UIUXHero";
-// import WorkingWithUs from "@/components/uiux/WorkingWithUs";
 import { Check } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -120,7 +112,7 @@ const page = () => {
                 <UIUXHero />
                 <AnimatedLogoCarousel />
             </div>
-            <div className="flex flex-col mt-60 lg:mt-26 3xl:mt-40 relative scroll-mt-30 3xl:scroll-mt-35" id='case-studies'>
+            <div className="flex flex-col  mt-60 lg:mt-26 3xl:mt-40 relative scroll-mt-30 3xl:scroll-mt-35" id='case-studies'>
                 <Curve1
                     lines={[
                         {
@@ -137,13 +129,13 @@ const page = () => {
                             parts: [{ type: "text", text: "looks like." }],
                         },
                     ]}
-                    imageClassName="right-56 max-lg:rotate-65 lg:right-8 top-14 3xl:top-16"
+                    imageClassName="right-1/2 sm:translate-x-1/2 lg:translate-x-0  max-lg:rotate-65 lg:right-8 top-14 3xl:top-16"
                     curvePosition="end"
                     curveFlipHorizontal={true}
                     curveFlipVertical={false}
                     tiltAngle={-10}
                     hiddenInSmall={false}
-                    className="absolute -top-28 lg:top-30 3xl:top-35 left-10 xl:left-38 3xl:left-44 lg:max-w-[300px] 3xl:max-w-[350px] "
+                    className="absolute -top-28 sm:left-1/2 sm:-translate-x-1/2 lg:left-10 lg:translate-x-0  lg:top-30 3xl:top-35 left-10 xl:left-38 3xl:left-44 lg:max-w-[300px] 3xl:max-w-[350px] "
                 />
 
                 <Heading
@@ -282,13 +274,13 @@ const page = () => {
                                         <p className=" font-semibold text-2xl lg:text-2xl 3xl:text-3xl my-10 lg:my-6 3xl:my-8 3xl:mt-10 tracking-[-0.02em] max-w-[300px] 3xl:max-w-[400px] 3xl:leading-[38px]">
                                             {item.title}
                                         </p>
-                                        <p className="text-xl lg:text-base 3xl:text-xl tracking-[-0.02em] max-lg:leading-7.5 3xl:leading-[30px] max-w-[300px] lg:max-w-[330px] 3xl:max-w-[420px] text-[#000000]/70">
+                                        <p className="text-xl lg:text-base 3xl:text-xl tracking-[-0.02em] max-lg:leading-7.5 3xl:leading-[30px] max-w-[300px] sm:max-lg:max-w-[550px] lg:max-w-[330px] 3xl:max-w-[420px] text-[#000000]/70">
                                             {item.description}
                                         </p>
                                     </div>
                                     <div className=" border-t border-black/30 pt-8 lg:pt-6 3xl:pt-8 flex gap-1.5 lg:gap-3 3xl:gap-6">
                                         <div className="flex items-center ">
-                                            <p className="text-4xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00] tracking-[-0.02em] max-lg:leading-10 3xl:leading-10">
+                                            <p className="text-4xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold text-[#ff3b00] tracking-[-0.02em] max-lg:leading-10 3xl:leading-15">
                                                 {item.value}
                                             </p>
                                         </div>
@@ -320,8 +312,8 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[2rem] text-white max-lg:text-center tracking-[-0.02em] leading-10 max-lg:capitalize">
-                                Let's design an experience that converts.
+                            <p className="font-semibold text-[2rem] 2xl:text-4xl 3xl:text-[36px] text-white max-lg:text-center tracking-[-0.02em] leading-11 max-lg:capitalize">
+                                Let&apos;s design an experience that converts.
                             </p>
                         </div>
                         <div className="flex items-center justify-center max-lg:w-full">
@@ -610,8 +602,8 @@ const page = () => {
                                     />
                                 </svg>
                             </div>
-                            <p className="font-semibold text-[32px] max-lg:leading-10 lg:text-3xl 2xl:text-4xl 3xl:text-3xl max-lg:capitalize text-white max-lg:text-center tracking-[-0.02em]">
-                                Let's create an experience your product deserves.
+                            <p className="font-semibold text-[32px] max-lg:leading-11 lg:text-3xl 2xl:text-3xl 3xl:text-[36px] max-lg:capitalize text-white max-lg:text-center tracking-[-0.02em]">
+                                Let&apos;s create an experience your product deserves.
                             </p>
                         </div>
 

@@ -22,7 +22,7 @@ export const GrowthStoriesSliderContent = ({ images = [] }) => {
                             width={862}
                             height={640}
                             quality={100}
-                            className="object-contain w-full h-full"
+                            className="object-fill w-full h-full"
                         />
                     </div>
                 )}

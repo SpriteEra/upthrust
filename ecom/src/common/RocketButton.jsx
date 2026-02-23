@@ -5,7 +5,7 @@ import LeadFormModal from '@/components/LeadModal'
 
 const colors = {
     green: "#22c55e",
-    blue: "#0ea5e9",
+    blue: "#0457CB",
     red: "#FF3B00",
     yellow: "#f59e0b",
     purple: "#a855f7",

@@ -65,7 +65,7 @@ export default function AnimatedLogoCarousel() {
                 {/* Logo Carousel Container */}
                 <div className="relative  sm:border sm:border-white/20  sm:rounded-2xl 3xl:rounded-3xl ">
                     <div className="hidden sm:block absolute -top-2 2xl:-top-3  left-1/2 -translate-x-1/2 z-10">
-                        <p className="text-white/50 text-lg sm:text-xs md:text-sm 3xl:text-lg font-light tracking-wide bg-black px-2 ">
+                        <p className="text-white/50 text-lg sm:text-xs md:text-sm 3xl:text-lg font-normal tracking-[-0.02em] bg-black px-2 ">
                             Trusted by startups, scaleups, and global brands across the India & US
                         </p>
                     </div>
