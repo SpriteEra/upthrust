@@ -1,14 +1,11 @@
 import dynamic from "next/dynamic";
 
-import GoogleAdsHeading from '@/components/google-ads/GoogleAdsHeading'
 import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero'
 import GoogleAdsRoiPrediction from '@/components/google-ads/GoogleAdsRoiPrediction'
 import PredictGrowth from '@/components/google-ads/PredictGrowth'
-const ReadyToMoveUiUx = dynamic(() => import('@/components/google-ads/ReadyToMoveUiUx'));
 import Image from 'next/image'
 import React from 'react'
 import VideoZoom from "@/components/google-ads/Videozoom";
-import ScrollTextImage from "@/components/google-ads/ScrollTextImg";
 import CompaignCards from "@/components/google-ads/Compaign";
 import CommonHeading from "@/common/GoogleHeading";
 import CommunicationScroll from "@/components/google-ads/Communication";
@@ -20,6 +17,7 @@ import GoogleFooter from "@/components/google-ads/GoogleFooter";
 import BrandSlider from "@/components/home/BrandSlider";
 import AnimatedWord from "@/components/google-ads/AnimatedWord";
 import ClientTestimonials from "@/components/google-ads/ClientTestimonials";
+import GoogleAdsRoiPredictionSlider from "@/components/google-ads/GoogleAdsRoiPredictionSlider";
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -42,7 +40,7 @@ const words = [
 const page = () => {
     return (
         <main>
-            <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
+            <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
                 <div className="px-2  sm:px-4 md:px-4 lg:px-8 w-full">
                     <div className="flex items-center justify-between ">
                         <div className="shrink-0 ">
@@ -82,8 +80,11 @@ const page = () => {
                 />
 
 
-                <div className='max-sm:px-2 sm:max-w-[90%] sm:mx-auto w-full '>
+                <div className='max-lg:hidden sm:max-w-[90%] sm:mx-auto w-full '>
                     <GoogleAdsRoiPrediction />
+                </div>
+                <div className='max-sm:px-2 lg:hidden sm:max-w-[98%] sm:mx-auto w-full '>
+                    <GoogleAdsRoiPredictionSlider />
                 </div>
 
             </div>

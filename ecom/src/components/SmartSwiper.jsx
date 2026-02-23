@@ -48,7 +48,7 @@ export default function SmartSwiper({
     // responsive
     breakpoints = {},
     onSwiperReady,
-
+    onSlideChange,
 
     // effects: "slide" | "fade" | "cube" | "coverflow"
     effect = "slide",
@@ -88,7 +88,9 @@ export default function SmartSwiper({
                     swiperRef.current = swiper;
                     onSwiperReady?.(swiper);
                 }}
-
+                onSlideChange={(swiper) => {
+                    onSlideChange?.(swiper.realIndex);
+                }}
                 loop={loop}
                 speed={speed}
                 direction={direction}

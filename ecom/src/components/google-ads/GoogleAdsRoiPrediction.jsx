@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const GoogleAdsRoiPrediction = () => {
+  const [activeTab, setActiveTab] = useState("traffic");
   const wrapperRef = useRef(null);
   const trafficRef = useRef(null);
   const conversionRef = useRef(null);
@@ -106,6 +107,7 @@ const GoogleAdsRoiPrediction = () => {
           // });
           if (self.progress > 0.5 && !crossed.current) {
             crossed.current = true;
+            setActiveTab("conversion");
             fadeToggle(false, leftTitleARef, leftTitleBRef);
             fadeToggle(false, listARef, listBRef);
             fadeToggle(false, buttonARef, buttonBRef);
@@ -180,6 +182,7 @@ const GoogleAdsRoiPrediction = () => {
           }
           if (self.progress <= 0.5 && crossed.current) {
             crossed.current = false;
+            setActiveTab("traffic");
             fadeToggle(true, leftTitleARef, leftTitleBRef);
             fadeToggle(true, listARef, listBRef);
             fadeToggle(true, buttonARef, buttonBRef);
@@ -259,7 +262,7 @@ const GoogleAdsRoiPrediction = () => {
 
   return (
     <div ref={wrapperRef} className="relative  overflow-hidden bg-white ">
-      <div className="container mx-auto px-4 mt-2 3xl:mt-5">
+      <div className="container mx-auto px-4 mt-24 3xl:mt-30">
         {/* Heading */}
 
         <div className="relative max-w-fit mx-auto mb-6 3xl:mb-12">
@@ -287,27 +290,27 @@ const GoogleAdsRoiPrediction = () => {
         </div>
 
         {/* Content */}
-        <div className="relative h-500 lg:h-155 3xl:h-208">
+        <div className="relative h-500 lg:h-140 2xl:h-135 3xl:h-187">
           {/* TRAFFIC SECTION */}
           <div
             ref={trafficRef}
-            className="absolute inset-0 grid grid-cols-1 md:grid-cols-12 gap-6 3xl:gap-8 px-4 h-full"
+            className="absolute inset-0 flex flex-col md:flex-row gap-4 3xl:gap-6 px-4 h-full"
           >
             {/* Left - Icon & Description */}
-            <div className="md:col-span-5 gap-6 3xl:gap-8 flex flex-col h-full" ref={leftContainer}>
+            <div className="w-full md:w-[48%] flex flex-col gap-4 3xl:gap-6 h-full" ref={leftContainer}>
               <div className="bg-[#FFE187] gsap-bg rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-10 w-full">
-                <div className="relative overflow-hidden min-h-30 3xl:min-h-38">
+                <div className="relative overflow-hidden min-h-26 3xl:min-h-38">
                   <img
                     ref={iconARef}
                     src={'/icons/cloud-network.png'}
-                    className="absolute inset-0 size-25 3xl:size-30 object-contain"
+                    className="absolute inset-0 size-22 3xl:size-30 object-contain"
                     alt="Cloud Internet Icon"
                     style={{ opacity: 1 }}
                   />
 
                   <img
                     ref={iconBRef}
-                    src={'/icons/cloud-network.png'}
+                    src={'/icons/filter.png'}
                     className="absolute inset-0 size-28 3xl:size-30 object-contain"
                     alt="Cloud Internet Icon"
                     style={{ opacity: 0 }}
@@ -316,10 +319,16 @@ const GoogleAdsRoiPrediction = () => {
                 </div>
 
                 {/* text1  */}
-                <div className="relative overflow-hidden min-h-45 3xl:min-h-46">
+                <div
+                  className={`relative overflow-hidden transition-all duration-500
+  ${activeTab === "traffic"
+                      ? "min-h-30 3xl:min-h-35"
+                      : "min-h-44 3xl:min-h-53"
+                    }`}
+                >
                   <p
                     ref={leftTextARef}
-                    className="absolute inset-0 text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] mt-11 3xl:mt-11"
+                    className="absolute inset-0 text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] mt-2 3xl:mt-6"
                     style={{ opacity: 1, transform: "translateY(0%)", }}
                   >
                     You need traffic at buying temperature. That means targeting keyword themes built on the Hagakure framework single-theme ad groups that match searcher intent at 95%.
@@ -339,7 +348,7 @@ const GoogleAdsRoiPrediction = () => {
               </div>
               <div className="bg-[#FFE187] gsap-bg rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-10 w-full h-full">
                 {/* text1 */}
-                <div className="relative min-h-4 3xl:min-h-8">
+                <div className="relative min-h-10 2xl:min-h-3 3xl:min-h-6">
                   <p
                     ref={leftTitleARef}
                     className="absolute inset-0 text-2xl 3xl:text-3xl font-semibold leading-[150%] tracking-[-0.02em]"
@@ -350,7 +359,7 @@ const GoogleAdsRoiPrediction = () => {
 
                   <p
                     ref={leftTitleBRef}
-                    className="absolute inset-0 text-2xl font-semibold leading-[150%] tracking-[-0.02em] p-2"
+                    className="absolute inset-0 text-2xl font-semibold 3xl:leading-[150%] tracking-[-0.02em]"
                     style={{ opacity: 0 }}
                   >
                     One client went from two percent conversions to six percent. <span className="font-normal 3xl:leading-[32px]">Same traffic, different page. Triple the revenue.</span>
@@ -358,7 +367,10 @@ const GoogleAdsRoiPrediction = () => {
                 </div>
 
 
-                <div className="relative overflow-hidden h-20 3xl:h-30 mt-7">
+                <div className={`relative overflow-hidden  mt-7 ${activeTab === "traffic"
+                  ? "h-20 3xl:h-28"
+                  : "h-11 3xl:h-10"
+                  }`}>
                   <ul
                     ref={listARef}
                     className="absolute inset-0 text-base 3xl:text-2xl space-y-1 pl-2 leading-[150%] tracking-[-0.02em]"
@@ -402,7 +414,7 @@ const GoogleAdsRoiPrediction = () => {
               </div>
 
             </div>
-            <div className="md:col-span-7 overflow-hidden bg-[#FFE187] gsap-bg rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-12 3xl:pt-8 pb-0 pr-0 flex h-full flex-col" ref={rightContainer}>
+            <div className="w-full md:w-[52%] overflow-hidden bg-[#FFE187] gsap-bg rounded-2xl p-5 pb-0 pr-0 flex flex-col h-full" ref={rightContainer}>
               <div className="relative overflow-hidden h-28 3xl:h-35">
                 <p
                   ref={textARef}
@@ -423,7 +435,7 @@ const GoogleAdsRoiPrediction = () => {
 
               <div className="relative ">
                 <div className=" absolute top-0 left-0 bottom-0 right-0 3xl:-right-12 3xl:top-2 ">
-                  <div className="relative w-full h-133 3xl:h-175">
+                  <div className="relative w-full h-105 2xl:h-116 3xl:h-157">
                     <img
                       ref={imgARef}
                       src="/google-ads/analytics-dashboard.png"
