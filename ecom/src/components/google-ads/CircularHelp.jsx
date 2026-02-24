@@ -24,7 +24,7 @@
 //         </>
 //       ),
 //       subtitle: "Keyword-based campaigns that reach buyers",
-//       image: "/google-ads/circ1.png",
+//       image: "/google-ads/circ1.webp",
 //       bgColor: "bg-[#00822E]",
 //       textColor: "text-white",
 //       mutedText: "text-white/90",
@@ -46,7 +46,7 @@
 //       ),
 //       subtitle:
 //         "Server-side tracking + GA4 goals + first-party data reveal what's actually working",
-//       image: "/google-ads/circ2.png",
+//       image: "/google-ads/circ2.webp",
 //       bgColor: "bg-[#004FAC]",
 //       textColor: "text-white",
 //       mutedText: "text-white/90",
@@ -68,7 +68,7 @@
 //       ),
 //       subtitle:
 //         "Daily optimization, AI signal tracking & budget reallocation.",
-//       image: "/google-ads/circ3.png",
+//       image: "/google-ads/circ3.webp",
 //       bgColor: "bg-[#FFE187]",
 //       textColor: "text-black",
 //       mutedText: "text-black/70",
@@ -247,7 +247,7 @@
 //         </>
 //       ),
 //       subtitle: "Keyword-controlled campaigns that reach buyers",
-//       image: "/google-ads/circ1.png",
+//       image: "/google-ads/circ1.webp",
 //       bgColor: "bg-[#00822E]",
 //       textColor: "text-white",
 //       mutedText: "text-white/90",
@@ -269,7 +269,7 @@
 //       ),
 //       subtitle:
 //         "30-40% of conversions go unreported through browser pixels. Server-side tracking + GA4 goals + first-party data reveal what's actually working",
-//       image: "/google-ads/circ2.png",
+//       image: "/google-ads/circ2.webp",
 //       bgColor: "bg-[#004FAC]",
 //       textColor: "text-white",
 //       mutedText: "text-white/90",
@@ -291,7 +291,7 @@
 //       ),
 //       subtitle:
 //         "Daily optimization, AI signal tracking & budget reallocation.",
-//       image: "/google-ads/circ3.png",
+//       image: "/google-ads/circ3.webp",
 //       bgColor: "bg-[#FFE187]",
 //       textColor: "text-black",
 //       mutedText: "text-black/70",
@@ -483,7 +483,7 @@ const CircularHelp = () => {
         </>
       ),
       subtitle: "Keyword-controlled campaigns that reach buyers",
-      image: "/google-ads/circ1.png",
+      image: "/google-ads/circ1.webp",
       bgColor: "bg-[#00822E]",
       textColor: "text-white",
       mutedText: "text-white/90",
@@ -505,7 +505,7 @@ const CircularHelp = () => {
       ),
       subtitle:
         "30-40% of conversions go unreported through browser pixels. Server-side tracking + GA4 goals + first-party data reveal what's actually working",
-      image: "/google-ads/circ2.png",
+      image: "/google-ads/circ2.webp",
       bgColor: "bg-[#004FAC]",
       textColor: "text-white",
       mutedText: "text-white/90",
@@ -527,7 +527,7 @@ const CircularHelp = () => {
       ),
       subtitle:
         "Daily optimization, AI signal tracking & budget reallocation.",
-      image: "/google-ads/circ3.png",
+      image: "/google-ads/circ3.webp",
       bgColor: "bg-[#FFE187]",
       textColor: "text-black",
       mutedText: "text-black/70",
@@ -737,7 +737,7 @@ const CircularHelp = () => {
         ref={containerRef}
         className="hidden lg:block min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
       >
-        <div className="sticky top-0 md:max-2xl:top-15 3xl:top-30 flex items-center overflow-hidden rounded">
+        <div className="sticky top-0 md:max-2xl:top-15 2xl:top-30 3xl:top-30 flex items-center overflow-hidden rounded">
           <div
             className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700`}
           >
@@ -773,7 +773,7 @@ const CircularHelp = () => {
                           previousSectionRef.current = index;
                           setActiveSection(index);
                         }}
-                        className={`text-sm 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 ${activeSection === index ? "border-current" : "border-transparent"
+                        className={`text-sm 2xl:text-xl 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 ${activeSection === index ? "border-current" : "border-transparent"
                           } ${activeSection === index
                             ? sections[activeSection].activeTab
                             : sections[activeSection].inactiveTab

@@ -3,26 +3,26 @@ import React from 'react'
 import SmartSwiper from '../SmartSwiper';
 const slides = [
     {
-        icon: "/icons/cloud-network.png",
+        icon: "/icons/cloud-network.webp",
         title: "Revenue Automation",
         image: "/icons/cloud-network",
         text1: "You need traffic at buying temperature. That means targeting keyword themes built on the Hagakure framework single-theme ad groups that match searcher intent at 95%.",
         headingBold: "Retargeting ladder for who hasn't converted",
         lists: ["Display ads with social proof (7 days post-visit)", "YouTube case studies (14 days, engaged visitors only)", "Demand Gen with offer (21 days, high-intent actions)"],
         heading2: "User's who buy",
-        image2: "/google-ads/analytics-dashboard.png",
+        image2: "/google-ads/analytics-dashboard.webp",
         bg: 'bg-[#FFE187]'
     },
     {
-        icon: "/icons/filter.png",
+        icon: "/icons/filter.webp",
         title: "Revenue Automation",
-        image: "/google-ads/revenue-dashboard.png",
+        image: "/google-ads/revenue-dashboard.webp",
         text1: "Most agencies stop at the click. Then ninety-six percent leave. \nGetting traffic is half the job. The other half: making sure visitors understand what you do and why it matters in eight seconds.",
         headingBold: "One client went from two percent conversions to six percent.",
         headingLight: "Same traffic, different page. Triple the revenue.",
         heading2: "Revenue Automation",
         lists: [],
-        image2: "/google-ads/revenue-dashboard.png",
+        image2: "/google-ads/revenue-dashboard.webp",
         bg: 'bg-[#E7F0FF]'
     },
 
@@ -164,7 +164,7 @@ export default GoogleAdsRoiPredictionSlider
 //         <div className="bg-[#FFE187] rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-10 w-full">
 //             <div className="relative overflow-hidden">
 //                 <img
-//                     src={'/icons/cloud-network.png'}
+//                     src={'/icons/cloud-network.webp'}
 //                     className="size-25 3xl:size-30 object-contain"
 //                     alt="Cloud Internet Icon"
 //                     style={{ opacity: 1 }}
@@ -237,13 +237,13 @@ export default GoogleAdsRoiPredictionSlider
 //         </div>
 //         <div className="relative w-full -mt-2">
 //             <img
-//                 src="/google-ads/analytics-dashboard.png"
+//                 src="/google-ads/analytics-dashboard.webp"
 //                 className=" w-full h-full object-contain"
 //                 style={{ opacity: 1 }}
 //             />
 
 //             <img
-//                 src="/google-ads/revenue-dashboard.png"
+//                 src="/google-ads/revenue-dashboard.webp"
 //                 className="absolute inset-0 w-full h-full object-cover"
 //                 style={{ opacity: 0 }}
 //             />

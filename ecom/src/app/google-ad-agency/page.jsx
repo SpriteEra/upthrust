@@ -115,7 +115,7 @@ const page = () => {
                             value: "1.2M",
                             bgColor: "bg-[#E7F0FF]",
                             textColor: "text-[#0076F0]",
-                            icon: "/google-ads/icons/paid.png",
+                            icon: "/google-ads/icons/paid.webp",
                         },
                         { type: "text", value: " In " }
                     ],
@@ -138,7 +138,7 @@ const page = () => {
                                 value: "47M",
                                 bgColor: "bg-[#FFE7E5]",
                                 textColor: "text-[#FE2B27]",
-                                icon: "/google-ads/icons/paid3.png",
+                                icon: "/google-ads/icons/paid3.webp",
                             },
                         ],
 
@@ -164,7 +164,7 @@ const page = () => {
                                 value: "4-Phase",
                                 bgColor: "bg-[#C8EBD6]",
                                 textColor: "text-[#00822E]",
-                                icon: "/google-ads/icons/paid2.png",
+                                icon: "/google-ads/icons/paid2.webp",
                             },
                             { type: "text", value: " System" },
                         ],
@@ -208,7 +208,7 @@ const page = () => {
                                 value: "Clients",
                                 bgColor: "bg-[#FFE187]",
                                 textColor: "text-[#E46800]",
-                                icon: "/google-ads/icons/new.png",
+                                icon: "/google-ads/icons/new.webp",
                             },
                             { type: "text", value: " Say" },
                         ],
@@ -235,7 +235,7 @@ const page = () => {
                                 value: "Campaigns",
                                 bgColor: "bg-[#E7F0FF]",
                                 textColor: "text-[#004FAC]",
-                                icon: "/google-ads/icons/campaign.png",
+                                icon: "/google-ads/icons/campaign.webp",
                             },
 
                         ],
@@ -254,7 +254,7 @@ const page = () => {
                                 value: "Win",
                                 bgColor: "bg-[#FFE7E5]",
                                 textColor: "text-[#FE2B27]",
-                                icon: "/google-ads/icons/ads_click.png",
+                                icon: "/google-ads/icons/ads_click.webp",
                             },
                             {
                                 type: "text", value: " At The Game Of"
@@ -361,7 +361,7 @@ const page = () => {
                                 value: "2019",
                                 bgColor: "bg-[#C8EBD6]",
                                 textColor: "text-[#00822E]",
-                                icon: "/google-ads/icons/calendar.png",
+                                icon: "/google-ads/icons/calendar.webp",
                             },
 
 
@@ -388,7 +388,7 @@ const page = () => {
                                 value: "Questions",
                                 bgColor: "bg-[#FFE187]",
                                 textColor: "text-[#E46800]",
-                                icon: "/google-ads/icons/contact_support.png",
+                                icon: "/google-ads/icons/contact_support.webp",
                             },
 
                         ],

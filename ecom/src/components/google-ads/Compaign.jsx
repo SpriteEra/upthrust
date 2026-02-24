@@ -16,11 +16,11 @@ const caseStudies = [
         testimonial: {
             name: "Ellie Wilson",
             role: "Founder, No-Code Hub",
-            avatar: "/google-ads/compaigns/1.png"
+            avatar: "/google-ads/compaigns/1.webp"
         },
         accentColor: "#2563EB",
         bgColor: "#DBEAFE",
-        rightImage: "/google-ads/compaigns/card1.png",
+        rightImage: "/google-ads/compaigns/card1.webp",
         imageAlt: "No-code platform dashboard interface"
     },
     {
@@ -34,11 +34,11 @@ const caseStudies = [
         testimonial: {
             name: "Iti Dubey",
             role: "Marketing Head, Mukunda Foods",
-            avatar: "/google-ads/compaigns/2.png"
+            avatar: "/google-ads/compaigns/2.webp"
         },
         accentColor: "#DC2626",
         bgColor: "#FEE2E2",
-        rightImage: "/google-ads/compaigns/card2.png",
+        rightImage: "/google-ads/compaigns/card2.webp",
         imageAlt: "Zomato business analytics dashboard"
     },
     {
@@ -52,11 +52,11 @@ const caseStudies = [
         testimonial: {
             name: "Sohel Ahmad",
             role: "Marketing Director, L'Oréal India",
-            avatar: "/google-ads/compaigns/3.png"
+            avatar: "/google-ads/compaigns/3.webp"
         },
         accentColor: "#CA8A04",
         bgColor: "#FEF3C7",
-        rightImage: "/google-ads/compaigns/card3.png",
+        rightImage: "/google-ads/compaigns/card3.webp",
         imageAlt: "L'Oréal ecommerce platform"
     },
     {
@@ -70,11 +70,11 @@ const caseStudies = [
         testimonial: {
             name: "Nidhi Jain",
             role: "Co-Founder, Cycle",
-            avatar: "/google-ads/compaigns/4.png"
+            avatar: "/google-ads/compaigns/4.webp"
         },
         accentColor: "#059669",
         bgColor: "#D1FAE5",
-        rightImage: "/google-ads/compaigns/card4.png",
+        rightImage: "/google-ads/compaigns/card4.webp",
         imageAlt: "Cycle product management dashboard"
     },
     {
@@ -88,11 +88,11 @@ const caseStudies = [
         testimonial: {
             name: "Sarah Mitchell",
             role: "Digital Head, Vega Industries",
-            avatar: "/google-ads/compaigns/5.png"
+            avatar: "/google-ads/compaigns/5.webp"
         },
         accentColor: "#2563EB",
         bgColor: "#DBEAFE",
-        rightImage: "/google-ads/compaigns/card5.png",
+        rightImage: "/google-ads/compaigns/card5.webp",
         imageAlt: "Vega ecommerce platform"
     },
     {
@@ -106,11 +106,11 @@ const caseStudies = [
         testimonial: {
             name: "Marcus Thompson",
             role: "Lead Architect, UrbanPlans Inc",
-            avatar: "/google-ads/compaigns/6.png"
+            avatar: "/google-ads/compaigns/6.webp"
         },
         accentColor: "#DC2626",
         bgColor: "#FEE2E2",
-        rightImage: "/google-ads/compaigns/card6.png",
+        rightImage: "/google-ads/compaigns/card6.webp",
         imageAlt: "Urban planning software interface"
     }
 ];
@@ -179,7 +179,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 // top: `5rem`,
                 zIndex: totalCards + index,
             }}
-            className="mb-8 lg:mb-12 top-[5rem] 3xl:top-[8rem]"
+            className="mb-8 lg:mb-12 top-[5rem] 2xl:top-35 3xl:top-[8rem]"
         >
             <motion.div
                 className="rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "

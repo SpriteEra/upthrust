@@ -13,19 +13,19 @@
 //             title: 'Communication & Data',
 //             description:
 //                 'One dashboard shows every metric that matters: CPA trends, Quality Score, conversion rates, budget pacing. Weekly calls with your account manager. Email anytime 24-hour response guaranteed, not "we\'ll get back to you."',
-//             image: '/google-ads/comm1.png',
+//             image: '/google-ads/comm1.webp',
 //         },
 //         {
 //             title: 'Custom Reporting',
 //             description:
 //                 "You'll stay up-to-date on campaign progress with weekly updates, bi-weekly calls, and monthly in-depth reports.",
-//             image: '/google-ads/comm2.png',
+//             image: '/google-ads/comm2.webp',
 //         },
 //         {
 //             title: 'Creatives & More',
 //             description:
 //                 'Ad creatives designed for Performance Max, YouTube, Display, and Demand Gen. We A/B test headlines, visuals, and CTAs to find what converts then scale the winners.',
-//             image: '/google-ads/comm3.png',
+//             image: '/google-ads/comm3.webp',
 //         },
 //     ];
 
@@ -147,19 +147,19 @@ const CommunicationScroll = () => {
             title: 'Communication & Data',
             description:
                 'One dashboard shows every metric that matters: CPA trends, Quality Score, conversion rates, budget pacing. Weekly calls with your account manager. Email anytime 24-hour response guaranteed, not "we\'ll get back to you."',
-            image: '/google-ads/comm1.png',
+            image: '/google-ads/comm1.webp',
         },
         {
             title: 'Custom Reporting',
             description:
                 "You'll stay up-to-date on campaign progress with weekly updates, bi-weekly calls, and monthly in-depth reports.",
-            image: '/google-ads/comm2.png',
+            image: '/google-ads/comm2.webp',
         },
         {
             title: 'Creatives & More',
             description:
                 'Ad creatives designed for Performance Max, YouTube, Display, and Demand Gen. We A/B test headlines, visuals, and CTAs to find what converts then scale the winners.',
-            image: '/google-ads/comm3.png',
+            image: '/google-ads/comm3.webp',
         },
     ];
 
@@ -229,11 +229,11 @@ const CommunicationScroll = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 3xl:gap-20 items-center">
 
                             {/* Left Side - Image */}
-                            <div className="relative h-[500px] lg:h-[600px] 3xl:h-200 border border-[#bebebe] rounded-lg">
+                            <div className="relative h-[500px] lg:h-[600px] 3xl:h-200  rounded-lg">
                                 {sections.map((section, index) => (
                                     <div
                                         key={index}
-                                        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeSection === index
+                                        className={`absolute inset-0 transition-opacity not-last:border border-[#bebebe] rounded-lg duration-700 ease-in-out ${activeSection === index
                                             ? 'opacity-100'
                                             : 'opacity-0'
                                             }`}

@@ -27,14 +27,14 @@ const ScreenShot = () => {
     const imageData = [
         {
             id: 1,
-            src: '/google-ads/screenshot/1.png',
+            src: '/google-ads/screenshot/1.webp',
             alt: 'Google Ads Analytics Dashboard',
             title: '$20K monthly spend | $185/demo',
             description: 'WLNC needed qualified demos, not just clicks. Their cost per demo hit $250. Traffic was high, but conversions were low. The funnel leaked at every stage.<br/><br/> We rebuilt their entire acquisition system. SKAGs for Google. Segmented audiences on LinkedIn. Multi-step forms that converted. Three months later: $189 per demo. 91+ qualified bookings monthly.'
         },
         {
             id: 2,
-            src: '/google-ads/screenshot/2.png',
+            src: '/google-ads/screenshot/2.webp',
             alt: 'Campaign Performance Metrics',
             title: 'Scaling Qualified Demand',
             description: `High-volume traffic across regions with varying conversion efficiency. 
@@ -43,28 +43,28 @@ const ScreenShot = () => {
         },
         {
             id: 3,
-            src: '/google-ads/screenshot/3.png',
+            src: '/google-ads/screenshot/3.webp',
             alt: 'Marketing Analytics',
             title: 'High-Volume Traffic',
             description: 'With 257K clicks and 7.5K conversions, the account maintained a healthy cost per conversion at $21.18 while managing a total spend of $159K.<br/><br/> Trend analysis across the timeline helped identify performance spikes and drops, enabling campaign-level optimization to control costs, scale winning campaigns, and maintain efficiency across different audience segments.'
         },
         {
             id: 4,
-            src: '/google-ads/screenshot/4.png',
+            src: '/google-ads/screenshot/4.webp',
             alt: 'Lead Generation Growth',
             title: 'Zero leads. Then 70+ monthly.',
             description: 'VEGA India had zero digital presence. No website traffic. No lead generation system. Nothing. They relied entirely on trade shows and expos. Expensive. Inconsistent. Unsustainable.<br/><br/>We built their entire digital infrastructure from scratch. Targeted cold outreach. LinkedIn campaigns. High-converting landing pages. Six weeks later: 70+ qualified leads monthly. 15x ROI versus traditional methods. Zero to pipeline velocity.'
         },
         {
             id: 5,
-            src: '/google-ads/screenshot/5.png',
+            src: '/google-ads/screenshot/5.webp',
             alt: 'Performance Optimization',
             title: 'Complex tech. Simple results.',
             description: 'Dell needed demos for PowerProtect Data Manager. The product was technical. The market was crowded. Nobody understood backup infrastructure. The message got lost. Traffic stayed flat.<br/><br/>We stripped the jargon. Built campaigns around pain points. Long-tail keywords. Responsive search ads. Smart bidding. Six weeks later: 32 qualified demos monthly. 28% booking increase. 57K clicks. $277 per conversion.'
         },
         {
             id: 6,
-            src: '/google-ads/screenshot/6.png',
+            src: '/google-ads/screenshot/6.webp',
             alt: 'Cost Per Demo Reduction',
             title: '$354 per demo. Then $45.',
             description: `Acadly had zero leads. No brand awareness. No clear target audience. They needed qualified demos but every lead cost $354. The math didn't work. Growth was impossible.<br/><br/>We built their ABM engine from scratch. Personalized outreach to deans and faculty. Multi-channel engagement. LinkedIn precision targeting. Two months later: $45 per lead. 260% growth. 25 leads monthly. Pipeline filled.`

@@ -4,16 +4,16 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 const brands = [
-    { name: "brand1", src: "/google-ads/brandwhite/brand1.png" },
-    { name: "brand2", src: "/google-ads/brandwhite/brand2.png" },
-    { name: "brand3", src: "/google-ads/brandwhite/brand3.png" },
-    { name: "brand4", src: "/google-ads/brandwhite/brand4.png" },
-    { name: "brand5", src: "/google-ads/brandwhite/brand5.png" },
-    { name: "brand6", src: "/google-ads/brandwhite/brand6.png" },
-    { name: "brand7", src: "/google-ads/brandwhite/brand7.png" },
-    { name: "brand8", src: "/google-ads/brandwhite/brand8.png" },
-    { name: "brand9", src: "/google-ads/brandwhite/brand9.png" },
-    { name: "brand10", src: "/google-ads/brandwhite/brand10.png" },
+    { name: "brand1", src: "/google-ads/brandwhite/brand1.webp" },
+    { name: "brand2", src: "/google-ads/brandwhite/brand2.webp" },
+    { name: "brand3", src: "/google-ads/brandwhite/brand3.webp" },
+    { name: "brand4", src: "/google-ads/brandwhite/brand4.webp" },
+    { name: "brand5", src: "/google-ads/brandwhite/brand5.webp" },
+    { name: "brand6", src: "/google-ads/brandwhite/brand6.webp" },
+    { name: "brand7", src: "/google-ads/brandwhite/brand7.webp" },
+    { name: "brand8", src: "/google-ads/brandwhite/brand8.webp" },
+    { name: "brand9", src: "/google-ads/brandwhite/brand9.webp" },
+    { name: "brand10", src: "/google-ads/brandwhite/brand10.webp" },
 
 ];
 
@@ -49,7 +49,7 @@ const GoogleAdsHero = () => {
                                 {/* First Circle */}
                                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center ">
                                     <Image
-                                        src="/google-ads/Cric.png"
+                                        src="/google-ads/Cric.webp"
                                         alt="crc"
                                         width={100}
                                         height={100}
@@ -60,7 +60,7 @@ const GoogleAdsHero = () => {
                                 {/* Second Circle (Overlapping) */}
                                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center -ml-4 z-10">
                                     <Image
-                                        src="/google-ads/Google.png"
+                                        src="/google-ads/Google.webp"
                                         alt="google"
                                         width={100}
                                         height={100}

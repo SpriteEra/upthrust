@@ -1,9 +1,11 @@
 import MetaHeading from '@/common/MetaHeading';
 import StylishButton from '@/common/RocketButton';
+import { ComparisonTable } from '@/components/home/ComparisonTable';
 import BrandSlider from '@/components/meta-ads/BrandSlider';
 import ClientStories from '@/components/meta-ads/ClientStories';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
 import MetaAdsHero from '@/components/meta-ads/HeroSection';
+import MetaUgcs from '@/components/meta-ads/MetaUgcs';
 import MobileVideos from '@/components/meta-ads/MobileVideos';
 import ScaleCards from '@/components/meta-ads/ScaleCard';
 import StatsGrid from '@/components/meta-ads/StatCard';
@@ -153,6 +155,44 @@ const page = () => {
         />
         <FeatureCards />
 
+      </div>
+
+      <div className='space-y-16 3xl:space-y-30 mb-40 3xl:mb-50'>
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: "Why Brands Choose " }],
+            },
+            {
+              line: [
+                { type: "italic", text: "Upthrust" },
+                { type: "normal", text: "Over Traditional Agencies" },
+              ],
+            },
+          ]}
+          label="UPTHRUST vs Other Agencies"
+          subtitle="Why Should You Hire Us?"
+        />
+
+        <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
+      </div>
+
+      <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: "Look but don't replay these" },
+              { type: "italic", text: "UGCs" },
+
+              ],
+            }
+          ]}
+          label="WHY WE ARE DIFFERENT"
+          subtitle="Creatives that gets conversion"
+        />
+        <MetaUgcs />
       </div>
     </main>
   )

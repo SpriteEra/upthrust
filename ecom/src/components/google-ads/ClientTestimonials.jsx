@@ -12,7 +12,7 @@ export default function ClientTestimonials() {
             quote: "I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.",
             author: "Rishabh Jain",
             position: "President - Corondo",
-            avatar: "/google-ads/review/img1.png",
+            avatar: "/google-ads/review/img1.webp",
             bgColor: "bg-white",
             borderColor: "border-red-500"
         },
@@ -23,7 +23,7 @@ export default function ClientTestimonials() {
             author: "Gunjan",
             position: "Marketing Head, Hozor",
             hasAvatar: true,
-            avatar: "/google-ads/review/img2.png",
+            avatar: "/google-ads/review/img2.webp",
             avatarShape: {
                 rounded: "xl",
                 width: "w-16 3xl:w-25",
@@ -39,8 +39,8 @@ export default function ClientTestimonials() {
             quote: "From a company that had no experience in the entire marketing space to hitting benchmarks we'd never thought of. Univa's journey from here on is legendary. Regular discussions provided reassurance & sharpened our brain to keep the ball rolling.",
             author: "Gabriela, Founder",
             position: "A seamless, collaborative approach that brought everything together",
-            company: "/google-ads/review/clogo1.png",
-            avatar: "/google-ads/review/img3.png",
+            company: "/google-ads/review/clogo1.webp",
+            avatar: "/google-ads/review/img3.webp",
             hasVideo: true,
             bgColor: "bg-blue-500",
             textColor: "text-white",
@@ -54,10 +54,10 @@ export default function ClientTestimonials() {
             title: "How Upthrust Strengthened Univa’s Digital Marketing",
             author: "Chait Jain, CEO",
             position: "Built on strong strategic fundamentals",
-            company: "/google-ads/review/clogo2.png",
+            company: "/google-ads/review/clogo2.webp",
             hasVideo: true,
             hasAvatar: true,
-            avatar: "/google-ads/review/img4.png",
+            avatar: "/google-ads/review/img4.webp",
             bgColor: "bg-blue-500",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
@@ -72,7 +72,7 @@ export default function ClientTestimonials() {
             position: "Co-Founder at Acadly",
             avatar: "👤",
             bgColor: "bg-white",
-            avatar: "/google-ads/review/img5.png",
+            avatar: "/google-ads/review/img5.webp",
             borderColor: "border-red-500"
         },
         {
@@ -82,7 +82,7 @@ export default function ClientTestimonials() {
             author: "Pranath Sisodiya",
             position: "CEO,  Rescribe",
             avatar: "👤",
-            avatar: "/google-ads/review/img6.png",
+            avatar: "/google-ads/review/img6.webp",
             bgColor: "bg-[#00822E]",
             textColor: "text-white"
         },
@@ -91,7 +91,7 @@ export default function ClientTestimonials() {
             rating: 5,
             title: `"I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”`,
             author: "Iti Dubey",
-            avatar: "/google-ads/review/img7.png",
+            avatar: "/google-ads/review/img7.webp",
             avatarShape: {
                 rounded: "xl",
                 width: "w-16",
@@ -108,10 +108,10 @@ export default function ClientTestimonials() {
             title: "How Upthrust Delivered High-Quality Leads for Rescribe",
             author: "Pranath Sisodiya, CEO",
             position: "Exceeding expectations with scalable results",
-            company: "/google-ads/review/clogo3.png",
+            company: "/google-ads/review/clogo3.webp",
             hasVideo: true,
             hasAvatar: true,
-            avatar: "/google-ads/review/img8.png",
+            avatar: "/google-ads/review/img8.webp",
             bgColor: "bg-blue-500",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
@@ -126,7 +126,7 @@ export default function ClientTestimonials() {
             author: "Gaurav",
             position: "Marketing Manager, Vega",
             bgColor: "bg-white",
-            avatar: "/google-ads/review/img9.png",
+            avatar: "/google-ads/review/img9.webp",
             borderColor: "border-red-500"
         }
     ];

@@ -302,7 +302,7 @@ const GoogleAdsRoiPrediction = () => {
                 <div className="relative overflow-hidden min-h-26 3xl:min-h-38">
                   <img
                     ref={iconARef}
-                    src={'/icons/cloud-network.png'}
+                    src={'/icons/cloud-network.webp'}
                     className="absolute inset-0 size-22 3xl:size-30 object-contain"
                     alt="Cloud Internet Icon"
                     style={{ opacity: 1 }}
@@ -310,7 +310,7 @@ const GoogleAdsRoiPrediction = () => {
 
                   <img
                     ref={iconBRef}
-                    src={'/icons/filter.png'}
+                    src={'/icons/filter.webp'}
                     className="absolute inset-0 size-28 3xl:size-30 object-contain"
                     alt="Cloud Internet Icon"
                     style={{ opacity: 0 }}
@@ -438,14 +438,14 @@ const GoogleAdsRoiPrediction = () => {
                   <div className="relative w-full h-105 2xl:h-116 3xl:h-157">
                     <img
                       ref={imgARef}
-                      src="/google-ads/analytics-dashboard.png"
+                      src="/google-ads/analytics-dashboard.webp"
                       className="absolute inset-0 w-full h-full object-cover"
                       style={{ opacity: 1 }}
                     />
 
                     <img
                       ref={imgBRef}
-                      src="/google-ads/revenue-dashboard.png"
+                      src="/google-ads/revenue-dashboard.webp"
                       className="absolute inset-0 w-full h-full object-cover"
                       style={{ opacity: 0 }}
                     />

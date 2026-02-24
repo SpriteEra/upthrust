@@ -56,24 +56,49 @@ export default function SmartSwiper({
     // advanced
     loop = true,
     direction = "horizontal",
+    hoverPlayDesktop = false,
 
     ...rest // pass ANY Swiper prop
 }) {
     const swiperRef = useRef(null);
     const { ref, inView } = useInView();
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsDesktop(window.innerWidth >= 1024);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
 
     useEffect(() => {
         if (!swiperRef.current || !autoplay) return;
+
+        // if hover mode active on desktop → ignore inView autoplay
+        if (hoverPlayDesktop && isDesktop) return;
 
         if (inView) {
             swiperRef.current.autoplay.start();
         } else {
             swiperRef.current.autoplay.stop();
         }
-    }, [inView, autoplay]);
+    }, [inView, autoplay, hoverPlayDesktop, isDesktop]);
 
     return (
-        <div ref={ref} className="h-full w-full">
+        <div
+            ref={ref}
+            className="h-full w-full"
+            onMouseEnter={() => {
+                if (hoverPlayDesktop && isDesktop && swiperRef.current) {
+                    swiperRef.current.autoplay.start();
+                }
+            }}
+            onMouseLeave={() => {
+                if (hoverPlayDesktop && isDesktop && swiperRef.current) {
+                    swiperRef.current.autoplay.stop();
+                }
+            }}
+        >
             <Swiper
                 modules={[
                     Autoplay,
