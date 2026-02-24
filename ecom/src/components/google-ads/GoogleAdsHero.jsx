@@ -47,24 +47,24 @@ const GoogleAdsHero = () => {
 
                             <div className="relative flex items-center">
                                 {/* First Circle */}
-                                <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center ">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center ">
                                     <Image
                                         src="/google-ads/Cric.png"
                                         alt="crc"
-                                        width={37.5}
-                                        height={37.5}
-                                        className="object-contain"
+                                        width={100}
+                                        height={100}
+                                        className="object-contain w-[30px] h-[30px] sm:w-[37.5px] sm:h-[37.5px]"
                                     />
                                 </div>
 
                                 {/* Second Circle (Overlapping) */}
-                                <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center -ml-4 z-10">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center -ml-4 z-10">
                                     <Image
                                         src="/google-ads/Google.png"
                                         alt="google"
-                                        width={37.5}
-                                        height={37.5}
-                                        className="object-contain"
+                                        width={100}
+                                        height={100}
+                                        className="object-contain w-[30px] h-[30px] sm:w-[37.5px] sm:h-[37.5px]"
                                     />
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ const GoogleAdsHero = () => {
                                 <RatingStars rating={5} fillColor='#FFB900' size='size-4.75' />
                             </div>
                         </div>
-                        <p className="text-lg 3xl:text-xl text-black mb-8 font-normal leading-[150%] tracking-[-0.02em]">PPC Agency that kills competitors</p>
+                        <p className="text-lg 3xl:text-xl text-black mb-5 sm:mb-8 font-normal leading-[150%] tracking-[-0.02em]">PPC Agency that kills competitors</p>
 
                         {/* Main Heading */}
                         <h1 className="text-4xl lg:text-5xl 2xl:text-6xl 3xl:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8">

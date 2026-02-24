@@ -737,7 +737,7 @@ const CircularHelp = () => {
         ref={containerRef}
         className="hidden lg:block min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
       >
-        <div className="sticky top-0 3xl:top-40 flex items-center overflow-hidden rounded">
+        <div className="sticky top-0 md:max-2xl:top-15 3xl:top-30 flex items-center overflow-hidden rounded">
           <div
             className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700`}
           >

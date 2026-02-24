@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function QuoteTestimonialCard({ testimonial }) {
     return (
-        <div className={`${testimonial.bgColor} border-2 ${testimonial.borderColor} rounded-2xl p-6 3xl:p-7 3xl:py-10 3xl:pb-14 flex flex-col`}>
+        <div className={`${testimonial.bgColor} border-2 ${testimonial.borderColor} rounded-2xl p-4 sm:p-6 3xl:p-7 3xl:py-10 3xl:pb-14 flex flex-col`}>
             <RatingStars rating={testimonial.rating} fillColor="#FE2B27" />
 
             <h3 className="text-[24px] leading-[150%] tracking-[-0.02em] font-semibold mb-4 3xl:max-w-[400px] 3xl:mt-3">{testimonial.title}</h3>

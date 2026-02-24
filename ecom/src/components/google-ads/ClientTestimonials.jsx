@@ -45,7 +45,7 @@ export default function ClientTestimonials() {
             bgColor: "bg-blue-500",
             textColor: "text-white",
             video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
-            arrowcss: ""
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 top-15  2xl:top-12 size-20 2xl:size-26 3xl:size-32 "
         },
 
         {
@@ -61,7 +61,7 @@ export default function ClientTestimonials() {
             bgColor: "bg-blue-500",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
-            arrowcss: ""
+            arrowcss: "absolute -right-4 sm:-right-6 2xl:-right-17 top-8 2xl:top-6 size-20 2xl:size-26 3xl:size-32"
         },
         {
             id: 5,
@@ -115,7 +115,7 @@ export default function ClientTestimonials() {
             bgColor: "bg-blue-500",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
-            arrowcss: ""
+            arrowcss: "absolute right-4 lg:-right-7 top-16 lg:top-14 2xl:top-12 3xl:top-8 size-20 2xl:size-26 3xl:size-32 -rotate-10"
 
         },
         {
