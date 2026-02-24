@@ -124,7 +124,7 @@ const CommonHeading = ({
                 : "text-center";
 
     return (
-        <div className={`w-full  ${textAlign}`}>
+        <div className={`w-full max-sm:px-2  ${textAlign}`}>
             <Tag
                 className={`
                     font-semibold 

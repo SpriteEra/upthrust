@@ -1,0 +1,256 @@
+"use client";
+
+import Image from "next/image";
+
+import { useState, useRef, useEffect } from "react";
+
+function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
+    const [offset, setOffset] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [velocity, setVelocity] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+
+    const dragStartX = useRef(0);
+    const dragStartOffset = useRef(0);
+    const lastPositions = useRef([]);
+    const animationRef = useRef(null);
+    const containerRef = useRef(null);
+
+    const totalWidth = itemWidth * brands.length;
+    const autoPlaySpeed = direction === "left" ? -1 : 1;
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+                if (!entry.isIntersecting && animationRef.current) {
+                    cancelAnimationFrame(animationRef.current);
+                }
+            },
+            { threshold: 0 }
+        );
+
+        observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible || isDragging || Math.abs(velocity) > 0.1) return;
+
+        const animate = () => {
+            setOffset((prev) => {
+                const newOffset = prev + autoPlaySpeed;
+                return ((newOffset % totalWidth) + totalWidth) % totalWidth;
+            });
+            animationRef.current = requestAnimationFrame(animate);
+        };
+
+        animationRef.current = requestAnimationFrame(animate);
+        return () => {
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        };
+    }, [isDragging, velocity, totalWidth, isVisible, autoPlaySpeed]);
+
+    useEffect(() => {
+        if (isDragging || Math.abs(velocity) < 0.1) {
+            if (!isDragging) setVelocity(0);
+            return;
+        }
+
+        const decelerate = () => {
+            setVelocity((prev) => {
+                const newVelocity = prev * 0.92;
+                return Math.abs(newVelocity) < 0.1 ? 0 : newVelocity;
+            });
+
+            setOffset((prev) => {
+                const newOffset = prev + velocity;
+                return ((newOffset % totalWidth) + totalWidth) % totalWidth;
+            });
+
+            animationRef.current = requestAnimationFrame(decelerate);
+        };
+
+        animationRef.current = requestAnimationFrame(decelerate);
+        return () => {
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
+        };
+    }, [velocity, isDragging, totalWidth]);
+
+    const calculateVelocity = () => {
+        if (lastPositions.current.length < 2) return 0;
+
+        const recentPositions = lastPositions.current.slice(-5);
+        const velocities = [];
+
+        for (let i = 1; i < recentPositions.length; i++) {
+            const timeDiff = recentPositions[i].time - recentPositions[i - 1].time;
+            const posDiff = recentPositions[i].x - recentPositions[i - 1].x;
+            if (timeDiff > 0) {
+                velocities.push((posDiff / timeDiff) * 16);
+            }
+        }
+
+        if (velocities.length === 0) return 0;
+        return velocities.reduce((a, b) => a + b, 0) / velocities.length;
+    };
+
+    const handleStart = (clientX) => {
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+        }
+
+        setIsDragging(true);
+        setVelocity(0);
+        dragStartX.current = clientX;
+        dragStartOffset.current = offset;
+        lastPositions.current = [{ x: clientX, time: Date.now() }];
+    };
+
+    const handleMove = (clientX) => {
+        if (!isDragging) return;
+
+        const dragDistance = clientX - dragStartX.current;
+        const newOffset = dragStartOffset.current + dragDistance;
+
+        setOffset(((newOffset % totalWidth) + totalWidth) % totalWidth);
+
+        const now = Date.now();
+        lastPositions.current.push({ x: clientX, time: now });
+
+        if (lastPositions.current.length > 5) {
+            lastPositions.current.shift();
+        }
+    };
+
+    const handleEnd = () => {
+        setIsDragging(false);
+        const calculatedVelocity = calculateVelocity();
+        setVelocity(calculatedVelocity);
+        lastPositions.current = [];
+    };
+
+    const handleMouseDown = (e) => {
+        e.preventDefault();
+        handleStart(e.clientX);
+    };
+
+    const handleMouseMove = (e) => {
+        e.preventDefault();
+        handleMove(e.clientX);
+    };
+
+    const handleMouseUp = () => {
+        handleEnd();
+    };
+
+    const handleTouchStart = (e) => {
+        handleStart(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        handleMove(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        handleEnd();
+    };
+
+    useEffect(() => {
+        if (isDragging) {
+            const mouseMoveHandler = (e) => handleMouseMove(e);
+            const mouseUpHandler = () => handleMouseUp();
+
+            document.addEventListener("mousemove", mouseMoveHandler);
+            document.addEventListener("mouseup", mouseUpHandler);
+
+            return () => {
+                document.removeEventListener("mousemove", mouseMoveHandler);
+                document.removeEventListener("mouseup", mouseUpHandler);
+            };
+        }
+    }, [isDragging, offset]);
+
+    const renderItems = () => {
+        const startIndex = Math.floor(-offset / itemWidth) - 2;
+        const visibleCount = Math.ceil((typeof window !== "undefined" ? window.innerWidth : 1920) / itemWidth) + 5;
+
+        return Array.from({ length: visibleCount }, (_, i) => {
+            const index = (((startIndex + i) % brands.length) + brands.length) % brands.length;
+            const brand = brands[index];
+            const position = (startIndex + i) * itemWidth + offset;
+
+            return (
+                <div
+                    key={`${brand.id}-${startIndex + i}`}
+                    className="absolute top-0 h-full flex items-center justify-center "
+                    style={{
+                        left: `${position}px`,
+                        width: `${itemWidth - 20}px`,
+                        transform: isDragging ? "scale(0.98)" : "scale(1)",
+                    }}
+                >
+                    <div className="flex items-center justify-center"
+                        style={{ pointerEvents: "none" }}
+                    >
+                        <div className="flex items-center justify-center h-8 xs:h-8 w-20 xs:w-18 3xl:w-24">
+                            <Image
+                                src={brand.logo}
+                                alt={"Logos of ecommerce brands partnered with Upthrust"}
+                                width={120}
+                                height={40}
+                                draggable={false}
+                                className="max-h-full max-w-full object-contain select-none "
+                            />
+                        </div>
+                        {/* Divider */}
+                        {/* Divider */}
+                        <div className="absolute right-0 top-1/2 h-6 3xl:h-10 w-px bg-gray-300 -translate-y-1/2" />
+
+                    </div>
+                </div>
+            );
+        });
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            className="relative h-16 md:h-30 3xl:h-32 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{ touchAction: "pan-y" }}
+        >
+            {renderItems()}
+        </div>
+    );
+}
+
+export default function BrandSlider() {
+    const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
+        id: i + 1,
+        name: `Brand ${i + 1}`,
+        logo: `/ecom/brand/first/f${i + 1}.webp`,
+    }));
+
+
+    const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
+        id: i + 21,
+        name: `Brand ${i + 21}`,
+        logo: `/ecom/brand/second/s${i + 1}.webp`,
+    }));
+
+    return (
+        <div className="py-8 xs:py-10 space-y-10 overflow-hidden">
+
+            <div className="flex-1 flex flex-col justify-center gap-0 max-lg:space-y-3">
+                <MarqueeRow brands={brandsRow1} direction="left" />
+                <MarqueeRow brands={brandsRow2} direction="right" />
+            </div>
+        </div>
+    );
+}

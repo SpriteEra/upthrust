@@ -72,33 +72,13 @@ const ScreenShot = () => {
     ];
 
 
-    // const scroll = (direction) => {
-    //     if (!scrollContainerRef.current) return;
 
-    //     const scrollAmount = 830;
-
-    //     const newScrollPosition =
-    //         direction === 'left'
-    //             ? scrollContainerRef.current.scrollLeft - scrollAmount
-    //             : scrollContainerRef.current.scrollLeft + scrollAmount;
-
-    //     scrollContainerRef.current.scrollTo({
-    //         left: newScrollPosition,
-    //         behavior: 'smooth'
-    //     });
-
-    //     setActiveIndex(prev =>
-    //         direction === 'left'
-    //             ? Math.max(prev - 1, 0)
-    //             : Math.min(prev + 1, imageData.length - 1)
-    //     );
-    // };
 
     const scroll = (direction) => {
         if (!scrollContainerRef.current) return;
 
         const container = scrollContainerRef.current;
-        const cardWidth = container.clientWidth; // full width on mobile
+        const cardWidth = container.clientWidth;
 
         const scrollAmount = isMobile ? cardWidth : 800;
 
@@ -155,7 +135,7 @@ const ScreenShot = () => {
     };
 
     return (
-        <div className="w-full max-w-[90%] lg:max-w-[85%] mx-auto px-4 py-12 md:py-16 lg:py-20 3xl:py-40">
+        <div className="w-full max-w-[90%] lg:max-w-[85%] mx-auto  py-12 md:py-16 lg:py-20 3xl:py-40">
             <div className="relative">
                 {/* Scrollable container */}
                 <div
@@ -191,7 +171,7 @@ const ScreenShot = () => {
                                 </div>
                             )}
 
-                            <div className="relative w-[330px] sm:w-[400px] md:w-[650px] lg:w-[800px] 3xl:w-[1200px] h-[168px] sm:h-[240px] md:h-[270px] lg:h-[600px] rounded-lg overflow-hidden border-2 border-gray-200 transition-transform duration-700 ease-out group-hover:lg:translate-y-6"
+                            <div className="relative w-[310px] sm:w-[400px] md:w-[650px] lg:w-[800px] 3xl:w-[1200px] h-[168px] sm:h-[240px] md:h-[270px] lg:h-[600px] rounded-lg overflow-hidden border-2 border-gray-200 transition-transform duration-700 ease-out group-hover:lg:translate-y-6"
                             >
                                 <Image
                                     src={image.src}
@@ -202,7 +182,7 @@ const ScreenShot = () => {
                                 />
                             </div>
                             {/* ✅ Mobile Text (Only visible below lg) */}
-                            <div className="block lg:hidden mt-6 w-[280px] sm:w-[400px]">
+                            <div className="block lg:hidden mt-6 w-[300px] sm:w-[400px]">
                                 <h3 className="text-xl font-bold mb-3">
                                     {image.title}
                                 </h3>

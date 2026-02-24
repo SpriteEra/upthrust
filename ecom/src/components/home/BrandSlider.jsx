@@ -1,6 +1,4 @@
-"use client";
 
-import Image from "next/image";
 // import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 // import Image from "next/image";
 // import { useRef, useLayoutEffect, useState } from "react";
@@ -136,7 +134,9 @@ import Image from "next/image";
 //   );
 // }
 
+"use client";
 
+import Image from "next/image";
 
 import { useState, useRef, useEffect } from "react";
 

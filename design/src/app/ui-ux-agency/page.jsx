@@ -18,6 +18,7 @@ const ProcessFlow = dynamic(() => import('@/components/uiux/SustainableSteps'));
 const TestimonialsWithVideo = dynamic(() => import('@/components/uiux/TestimonialsWithVideo'));
 const WorkingWithUs = dynamic(() => import('@/components/uiux/WorkingWithUs'));
 // import FinalProducts from "@/components/uiux/FinalProducts";
+
 export const metadata = {
     title: "UX & Product Design Agency for B2B Products | Upthrust",
     description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",

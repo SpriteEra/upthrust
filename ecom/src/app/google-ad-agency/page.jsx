@@ -186,18 +186,17 @@ const page = () => {
                     {badges.map((item, index) => (
                         <Image
                             key={index}
-                            width={120}
-                            height={120}
+                            width={164}
+                            height={164}
                             alt={item.alt}
                             src={item.image}
-                            className="w-12 sm:w-18 md:w-24 3xl:w-30 h-full object-contain"
+                            className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
                         />
                     ))}
                 </div>
             </div>
 
             <CommunicationScroll />
-
 
             <div className="3xl:mt-16">
                 <CommonHeading
@@ -279,10 +278,10 @@ const page = () => {
                 <div className="space-y-20 3xl:space-y-40">
 
                     {/* Section 1 */}
-                    <div className="flex gap-6 md:gap-20 items-center">
+                    <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
 
                         {/* Left Content */}
-                        <div className="w-[45%] max-w-150 overflow-hidden">
+                        <div className="w-full sm:w-[45%] max-w-150 overflow-hidden">
                             <h2 className="text-4xl md:text-5xl 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
                                 From Launch To 4.2X ROAS In Just 90 Days
                             </h2>
@@ -293,7 +292,7 @@ const page = () => {
                         </div>
 
                         {/* Right Video */}
-                        <div className="w-[55%] h-full">
+                        <div className="w-full sm:w-[55%] h-full">
                             <div className="relative w-full aspect-16/10 overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover "
@@ -309,10 +308,10 @@ const page = () => {
                     </div>
 
                     {/* Section 2 */}
-                    <div className="flex gap-6 md:gap-20 items-center">
+                    <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
 
                         {/* Left Video */}
-                        <div className="w-[52%] order-2 lg:order-1">
+                        <div className="w-full sm:w-[52%] order-2 lg:order-1">
                             <div className="relative w-full aspect-16/10 overflow-hidden ">
                                 <video
                                     className="w-full h-full object-cover"
@@ -327,7 +326,7 @@ const page = () => {
                         </div>
 
                         {/* Right Content */}
-                        <div className="order-1 w-[48%] lg:order-2 pl-20">
+                        <div className="order-1 w-full sm:w-[48%] lg:order-2 sm:pl-20">
                             <div className="flex justify-end 3xl:max-w-[520px] flex-col">
                                 <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-2">
                                     Best{'  '}
@@ -351,7 +350,6 @@ const page = () => {
 
                 </div>
             </div>
-
 
             <div className="3xl:my-30 my-20">
                 <CommonHeading
@@ -379,6 +377,7 @@ const page = () => {
                 />
                 <ScreenShot />
             </div>
+
             <div className="my-10">
                 <CommonHeading
                     heading={[
@@ -407,4 +406,3 @@ const page = () => {
 }
 
 export default page
-

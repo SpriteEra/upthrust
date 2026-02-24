@@ -191,9 +191,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                         <div className='3xl:max-w-150 flex flex-col justify-between h-full'>
                             <div>
                                 <motion.div
-                                // initial={{ opacity: 0, x: -20 }}
-                                // animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                // transition={{ duration: 0.5, delay: 0.3 }}
+
                                 >
                                     <span
                                         className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-[24px] font-semibold leading-[150%] tracking-[-0.02em] "
@@ -206,9 +204,6 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                 </motion.div>
 
                                 <motion.h2
-                                    // initial={{ opacity: 0, y: 20 }}
-                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                    // transition={{ duration: 0.6, delay: 0.4 }}
                                     className=" text-[30px] 3xl:text-[36px] font-semibold leading-[150%] tracking-[-0.02em] text-black"
 
                                 >
@@ -216,9 +211,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                 </motion.h2>
 
                                 <motion.p
-                                    // initial={{ opacity: 0, y: 20 }}
-                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                    // transition={{ duration: 0.6, delay: 0.5 }}
+
                                     className="  mb-3 lg:mb-4 3xl:mb-26  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
                                 >
                                     {data.description}
@@ -227,10 +220,8 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                             <div>
                                 <motion.div
-                                    // initial={{ opacity: 0, y: 30 }}
-                                    // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                    // transition={{ duration: 0.6, delay: 0.6 }}
-                                    className="grid grid-cols-2 gap-6 mb-8"
+
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8"
                                 >
                                     <div className=''>
                                         <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
@@ -253,9 +244,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                 </motion.div>
 
                                 <motion.div
-                                    // initial={{ opacity: 0, x: -20 }}
-                                    // animate={isInView ? { opacity: 1, x: 0 } : {}}
-                                    // transition={{ duration: 0.6, delay: 0.7 }}
+
                                     className="flex items-center gap-4 p-5 rounded-xl"
                                     style={{ backgroundColor: data.accentColor }}
                                 >
@@ -284,29 +273,12 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                     </div>
 
                     {/* Right Image Section */}
-                    <motion.div
-                        // initial={{ opacity: 0, scale: 0.9 }}
-                        // animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        // transition={{ duration: 0.7, delay: 0.5 }}
-                        className="w-full lg:w-[50%] relative"
-                    >
-                        {/* Top subtle gradient */}
-                        {/* <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent z-10" /> */}
-
+                    <motion.div className="w-full lg:w-[50%] relative h-[230px] sm:h-[350px] md:h-[400px] lg:h-auto">
                         <Image
                             src={data.rightImage}
                             alt="Right Section Image"
                             fill
                             className="object-cover rounded-[10px]"
-                            priority={false}
-                        />
-
-                        {/* Accent overlay */}
-                        <div
-                            className="absolute inset-0 opacity-20 z-10"
-                            style={{
-                                background: `linear-gradient(135deg, ${data.accentColor}20 0%, transparent 100%)`
-                            }}
                         />
                     </motion.div>
 
