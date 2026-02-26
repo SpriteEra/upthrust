@@ -396,6 +396,7 @@ const page = () => {
                 />
                 <GoogleFaq />
             </div>
+
             <div>
                 <GoogleDisclaimer />
                 <GoogleFooter />

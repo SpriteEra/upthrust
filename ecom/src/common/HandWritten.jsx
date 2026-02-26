@@ -31,9 +31,11 @@ export const Curve1 = ({
             if (part.type === 'highlight') {
               return (
                 <span
-                  className={`${highlightClassName} text-[22px] pb-2.5 pt-1.5 px-3.5 lg:text-[17px] 3xl:text-[22px] lg:px-3 lg:pt-1 lg:pb-1 3xl:pb-2.5 3xl:pt-1.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]`}
+                  className={`${highlightClassName} text-[22px] max-lg:-pt-0.5 max-lg:leading-5.5 max-lg:pb-1 px-3 lg:text-base 3xl:text-[22px] lg:px-2.5 lg:pt-0 lg:pb-px 3xl:pb-1.5 3xl:pt-0.5 3xl:px-3.5 rounded-full inline-block text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em] `}
                   key={index}
-
+                  style={{
+                    backgroundColor: part.bgColor ? part.bgColor : "#FF4500"
+                  }}
                 >
                   {part.text}
                 </span>
@@ -42,8 +44,7 @@ export const Curve1 = ({
               return (
                 <span
                   key={index}
-                  className={`${textClassName} inline-block flex text-black text-2xl lg:text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]`}
-
+                  className={`${textClassName} inline-block text-black text-2xl lg:text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]`}
                 >
                   {part.text}
                 </span>
@@ -57,7 +58,7 @@ export const Curve1 = ({
 
   return (
     <div
-      className={`inline-flex items-center gap-3 font-hanzi ${hiddenInSmall ? "max-lg:hidden" : ""} ${className}`}
+      className={`inline-flex items-center gap-3 font-caveat ${hiddenInSmall ? "max-lg:hidden" : ""} ${className}`}
       style={{
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'
@@ -67,7 +68,7 @@ export const Curve1 = ({
         <Image src={images[imageIndex].img} width={100} height={100} className="ml-2 w-full h-full" alt={images[imageIndex].alt} />
       )}
 
-      <div className="flex items-center gap-0.5 flex-wrap font-hanzi justify-center relative flex-col">
+      <div className="flex items-center gap-0.5 flex-wrap font-caveat justify-center relative flex-col">
         {renderParts()}
         {curvePosition === 'end' && (
           <Image src={images[imageIndex].img} width={70} height={70} className={`object-contain absolute w-7 h-full  ${imageClassName}`} alt={images[imageIndex].alt} />

@@ -1,4 +1,4 @@
-import { hanzipen, instrumentSerif, inter } from "./fonts/fonts";
+import { hanzipen, instrumentSerif, inter, caveat } from "./fonts/fonts";
 import "./globals.css";
 import "./app.css";
 import Script from "next/script";
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
       <head>
       </head>
 
-      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} antialiased`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} ${hanzipen.variable} ${caveat.variable} antialiased`}>
         <Analytics />
         {isProd && (
           <noscript>

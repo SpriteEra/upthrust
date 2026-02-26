@@ -3,8 +3,7 @@ import { Loader2, Play, Pause, Menu, X, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-// ─── DATA ─────────────────────────────────────────────────────────────────────
+import MetaRocketButton from './MetaRocketButton';
 
 const navLinks = [
     {
@@ -91,115 +90,10 @@ const navLinks = [
     },
 ];
 
-// All items flattened for "View All"
 const allItems = navLinks.flatMap((cat) =>
     cat.items.map((item) => ({ ...item, uid: `${cat.id}-${item.id}`, alt: cat.alt }))
 );
 
-// ─── NAVBAR ───────────────────────────────────────────────────────────────────
-
-const Navbar = () => {
-    const [mobileOpen, setMobileOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-
-    useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
-
-    const links = ['Services', 'Portfolio', 'Case Studies', 'Pricing', 'Blog'];
-
-    return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-xl shadow-black/30' : 'bg-transparent'
-                }`}
-        >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 lg:h-20">
-                    {/* Logo */}
-                    <a href="/" className="flex items-center gap-2.5 group">
-                        <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center">
-                            <span className="text-black font-black text-sm tracking-tighter">UP</span>
-                        </div>
-                        <span className="text-white font-bold text-lg tracking-tight">upthrust</span>
-                    </a>
-
-                    {/* Desktop Nav */}
-                    <nav className="hidden lg:flex items-center gap-8">
-                        {links.map((link) => (
-                            <a
-                                key={link}
-                                href="#"
-                                className="text-sm text-white/70 hover:text-white transition-colors duration-200 font-medium"
-                            >
-                                {link}
-                            </a>
-                        ))}
-                    </nav>
-
-                    {/* CTA */}
-                    <div className="hidden lg:flex items-center gap-3">
-                        <a
-                            href="#"
-                            className="text-sm text-white/70 hover:text-white transition-colors font-medium px-4 py-2"
-                        >
-                            Login
-                        </a>
-                        <a
-                            href="#"
-                            className="text-sm font-semibold bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 transition-all duration-200"
-                        >
-                            Get Started
-                        </a>
-                    </div>
-
-                    {/* Mobile Toggle */}
-                    <button
-                        onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden text-white p-2"
-                        aria-label="Toggle menu"
-                    >
-                        {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {mobileOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden bg-black/95 backdrop-blur-md border-t border-white/10 overflow-hidden"
-                    >
-                        <nav className="flex flex-col px-6 py-4 gap-4">
-                            {links.map((link) => (
-                                <a
-                                    key={link}
-                                    href="#"
-                                    className="text-white/70 hover:text-white text-sm font-medium py-2 border-b border-white/5 transition-colors"
-                                >
-                                    {link}
-                                </a>
-                            ))}
-                            <div className="flex items-center gap-3 pt-2">
-                                <a href="#" className="text-sm text-white/70 hover:text-white font-medium">Login</a>
-                                <a
-                                    href="#"
-                                    className="text-sm font-semibold bg-white text-black px-5 py-2.5 rounded-full hover:bg-white/90 transition-all"
-                                >
-                                    Get Started
-                                </a>
-                            </div>
-                        </nav>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </header>
-    );
-};
 const VideoIcon = () => (
     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
         <rect x="2" y="5" width="13" height="14" rx="2" />
@@ -225,25 +119,18 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
     return (
         <div className="w-full">
             {/* Tab buttons — sit right above the bordered box */}
-            <div className="flex items-end gap-0 relative z-10">
+            <div className="flex items-end gap-3 lg:gap-5 relative z-10">
                 {tabs.map(({ label, Icon }, i) => {
                     const isActive = activeType === label;
                     return (
                         <button
                             key={label}
                             onClick={() => onToggle(label)}
-                            style={{
-                                marginLeft: i === 0 ? 0 : '-1px',
-                                /* Active tab: its bottom border colour matches the box bg so it blends */
-                                borderBottom: isActive ? '1px solid #ffffff' : '1px solid #D1D5DB',
-                                marginBottom: '-1px', /* overlap so active tab merges with box border */
-                            }}
                             className={`
-                                flex items-center gap-2 px-5 py-2.5 text-sm font-semibold
-                                border border-b rounded-t-xl transition-all duration-200 select-none
+                                flex items-center gap-2 px-4 3xl:px-5 py-2 3xl:py-2.5 text-xs md:text-base lg:text-lg 3xl:text-2xl leading-[150%] tracking-[-0.02em] font-semibold border rounded-t-sm md:rounded-t-lg lg:rounded-t-xl transition-all duration-200 select-none border-b-0
                                 ${isActive
-                                    ? 'bg-[#2563EB] text-white border-[#2563EB]'
-                                    : 'bg-white text-black border-[#D1D5DB] hover:bg-gray-50'
+                                    ? 'bg-[#2563EB] text-white border-black border-b-0 '
+                                    : 'bg-white text-black border-black border-b-0'
                                 }
                             `}
                         >
@@ -255,15 +142,15 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
             </div>
 
             {/* Category pill container */}
-            <div className="border border-[#D1D5DB] rounded-b-2xl rounded-tr-2xl px-4 py-4 bg-white relative z-0">
-                <div className="flex items-center gap-3 flex-wrap">
+            <div className="border border-black rounded-b-sm md:rounded-b-lg lg:rounded-b-2xl rounded-tr-sm md:rounded-tr-lg lg:rounded-tr-2xl p-2 lg:p-4 bg-white relative z-0 w-fit">
+                <div className="flex items-center gap-2 lg:gap-3 flex-wrap w-fit">
                     <button
                         onClick={() => setActiveCategory(null)}
                         className={`
-                            px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200
+                            px-4 lg:px-5 py-1.5 lg:py-2 rounded-full text-xs lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em] border-[1.25px] transition-all duration-200 cursor-pointer
                             ${activeCategory === null
-                                ? 'bg-[#2563EB] text-white border-[#2563EB]'
-                                : 'bg-white text-black border-[#D1D5DB] hover:border-black/50'
+                                ? 'bg-[#2563EB] text-white border-black'
+                                : 'bg-white text-black border-black hover:border-black/50'
                             }
                         `}
                     >
@@ -275,10 +162,10 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
                             key={link.id}
                             onClick={() => setActiveCategory(link.id)}
                             className={`
-                                px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200
+                                px-4 lg:px-5 py-1.5 lg:py-2 rounded-full text-xs lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em] border-[1.25px] transition-all duration-200 cursor-pointer
                                 ${activeCategory === link.id
-                                    ? 'bg-[#2563EB] text-white border-[#2563EB]'
-                                    : 'bg-white text-black border-[#D1D5DB] hover:border-black/50'
+                                    ? 'bg-[#2563EB] text-white border-black'
+                                    : 'bg-white text-black border-black hover:border-black/50'
                                 }
                             `}
                         >
@@ -291,7 +178,6 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
     );
 };
 
-// ─── VIDEO CARD ───────────────────────────────────────────────────────────────
 
 const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
     const { isLoading, isReady, isPlaying } = videoState || {};
@@ -304,7 +190,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
             onClick={() => onCardClick(item.uid || item.id, item.videoUrl)}
-            className="relative rounded-2xl overflow-hidden cursor-pointer group bg-[#111] aspect-[118/183]"
+            className="relative rounded-xl lg:rounded-2xl overflow-hidden cursor-pointer group bg-[#111] aspect-[118/183]"
             style={{ boxShadow: isActive ? '' : '' }}
         >
             {/* Thumbnail */}
@@ -397,7 +283,6 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
     );
 };
 
-// ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 const UGCVideoCategories = () => {
     const [adType, setAdType] = useState('Video Ads');
@@ -461,10 +346,10 @@ const UGCVideoCategories = () => {
 
     return (
 
-        <div className="max-w-[83%] 3xl:max-w-[85%] mx-auto px-4">
+        <div className="lg:max-w-[83%] 3xl:max-w-[85%] mx-auto px-4">
 
             {/* Top controls row — matching screenshot */}
-            <div className="mb-8">
+            <div className="mb-8 lg:mb-12 3xl:mb-16">
                 <FilterBar
                     activeType={adType}
                     onToggle={setAdType}
@@ -479,7 +364,7 @@ const UGCVideoCategories = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 lg:gap-7"
+                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-7 mb-10 3xl:mb-16"
             >
                 {displayItems.map((item) => {
                     const uid = item.uid || `${activeCategory}-${item.id}`;
@@ -506,6 +391,10 @@ const UGCVideoCategories = () => {
                     No items found in this category.
                 </div>
             )}
+            <div className='flex items-center justify-center'>
+
+                <MetaRocketButton color='blue' />
+            </div>
         </div>
     );
 };

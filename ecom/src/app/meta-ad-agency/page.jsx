@@ -1,10 +1,18 @@
+import { Curve1 } from '@/common/HandWritten';
 import MetaHeading from '@/common/MetaHeading';
-import StylishButton from '@/common/RocketButton';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
+import FAQ from '@/components/home/Faq';
+import HomeFooter from '@/components/home/HomeFooter';
+import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
+import SuccessStories from '@/components/home/SuccessStories';
 import BrandSlider from '@/components/meta-ads/BrandSlider';
 import ClientStories from '@/components/meta-ads/ClientStories';
+import DashboardStacks from '@/components/meta-ads/DashboardStack';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
 import MetaAdsHero from '@/components/meta-ads/HeroSection';
+import MetaDisclaimer from '@/components/meta-ads/MetaDisclaimer';
+import MetaLeadForm from '@/components/meta-ads/MetaLeadForm';
+import MetaRocketButton from '@/components/meta-ads/MetaRocketButton';
 import MetaUgcs from '@/components/meta-ads/MetaUgcs';
 import MobileVideos from '@/components/meta-ads/MobileVideos';
 import ScaleCards from '@/components/meta-ads/ScaleCard';
@@ -94,7 +102,7 @@ const page = () => {
             <p className="my-4  text-gray-500 text-[13px] sm:text-[14px]">
               Creative capabilities to drive conversion at a cost you would love.
             </p>
-            <StylishButton color='blue' />
+            <MetaRocketButton color='blue' />
           </div>
 
           {/* Right Video */}
@@ -136,7 +144,7 @@ const page = () => {
         <MobileVideos />
       </div>
 
-      <div className="py-16 3xl:py-20 mt-10 3xl:mt-16 overflow-hidden">
+      <div className="py-16 space-y-10 3xl:space-y-16 3xl:py-20 mt-10 3xl:mt-16 overflow-hidden">
         <MetaHeading
           tag="h2"
           heading={[
@@ -157,7 +165,7 @@ const page = () => {
 
       </div>
 
-      <div className='space-y-16 3xl:space-y-30 mb-40 3xl:mb-50'>
+      <div className='space-y-16 3xl:space-y-30 mt-10 3xl:mt-20 mb-40 3xl:mb-50'>
         <MetaHeading
           tag="h2"
           heading={[
@@ -178,7 +186,7 @@ const page = () => {
         <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
       </div>
 
-      <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+      <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
         <MetaHeading
           tag="h2"
           heading={[
@@ -194,6 +202,230 @@ const page = () => {
         />
         <MetaUgcs />
       </div>
+
+      <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: " Live dashboards, real revenue numbers, and the" },
+
+              ],
+            },
+            {
+              line: [
+                { type: "italic", text: " exact strategies" },
+                { type: "normal", text: " we used to get there." },
+
+              ],
+            }
+          ]}
+          label="CASE STUDIES"
+          subtitle="We Don't Just Talk—We Show"
+        />
+        <DashboardStacks />
+      </div>
+      <MobileTestimonialsSlider
+        cardColors={
+          [
+            {
+              bg: 'bg-[#0457CB]',
+              text: "text-white",
+              quote: '#010202',
+              companyNameColor: 'text-white',
+              clientNameColor: 'text-white'
+            },
+            {
+              bg: 'bg-[#E8F3FF]',
+              text: "text-black",
+              quote: '#010202'
+            },
+            {
+              bg: 'bg-[#F6F6F6]',
+              text: "text-black",
+              quote: '#010202'
+            },
+            {
+              bg: 'bg-[#0457CB]',
+              text: "text-white",
+              quote: '#010202',
+              companyNameColor: 'text-white',
+              clientNameColor: 'text-white'
+            },
+          ]
+        }
+      />
+      <div className="max-lg:hidden">
+
+        <SuccessStories cardColors={
+          [
+            {
+              bg: 'bg-[#0457CB]',
+              text: "text-white",
+              quote: '#010202',
+              companyNameColor: 'text-white',
+              clientNameColor: 'text-white'
+            },
+            {
+              bg: 'bg-[#E8F3FF]',
+              text: "text-black",
+              quote: '#010202'
+            },
+            {
+              bg: 'bg-[#F6F6F6]',
+              text: "text-black",
+              quote: '#010202'
+            },
+            {
+              bg: 'bg-[#0457CB]',
+              text: "text-white",
+              quote: '#010202',
+              companyNameColor: 'text-white',
+              clientNameColor: 'text-white'
+            },
+          ]
+        } />
+      </div>
+
+      <div className='space-y-16 3xl:space-y-30 mb-20 mt-40 3xl:mb-30 3xl:mt-50'>
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: " Everything You Need To Acquire," },
+
+              ],
+            },
+            {
+              line: [
+                { type: "normal", text: "Convert, And " },
+                { type: "italic", text: "Retain Customers" },
+
+              ],
+            }
+          ]}
+          label="READY TO BOOK YOUR DEMO"
+        />
+
+        <div className='relative  h-full pb-40'>
+          <Curve1
+            lines={[
+              {
+                parts: [
+                  { type: "text", text: "One Partner for" },
+                ]
+              },
+              {
+                parts: [
+                  { type: "text", text: "your entire" },
+                  { type: 'highlight', text: 'funnel', bgColor: '#0457CB' },
+                ]
+              },
+
+            ]}
+            imageClassName='-right-35 3xl:-right-40 top-8 3xl:top-10 w-full'
+            curvePosition="end"
+            curveFlipHorizontal={true}
+            curveFlipVertical={false}
+            tiltAngle={-7}
+            imageIndex={6}
+            className="absolute left-25 lg:left-15 2xl:left-30 3xl:left-40 top-1/4 "
+
+          />
+          <Curve1
+            lines={[
+              {
+                parts: [
+                  { type: "text", text: "Don't just" },
+                  { type: 'highlight', text: 'read', bgColor: '#0457CB' },
+                  { type: "text", text: "see" },
+                ]
+              },
+              {
+                parts: [
+                  { type: "text", text: "how it actually works" },
+                ]
+              },
+
+            ]}
+            imageClassName='left-0 xs:left-18 scale-x-[-1] scale-y-[-1] -top-18 w-full -rotate-60'
+            curvePosition="end"
+            curveFlipHorizontal={true}
+            curveFlipVertical={false}
+            tiltAngle={7}
+            imageIndex={3}
+            hiddenInSmall={false}
+            className="absolute left-8 xs:left-18 bottom-0 xs:-bottom-10 lg:hidden"
+
+          />
+          <Curve1
+            lines={[
+              {
+                parts: [
+                  { type: "text", text: "Your complete" },
+                ]
+              },
+              {
+                parts: [
+                  { type: 'highlight', text: 'growth', bgColor: '#0457CB' },
+                  { type: "text", text: "engine" },
+                ]
+              },
+
+            ]}
+            imageClassName='right-17 -top-12 3xl:-top-12 w-full -rotate-6 !h-10 lg:!h-12 3xl:!h-12'
+            curvePosition="end"
+            curveFlipHorizontal={true}
+            curveFlipVertical={false}
+            tiltAngle={7}
+            imageIndex={3}
+            className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
+
+          />
+          <MetaLeadForm showOnlyIframe={true} />
+        </div>
+      </div>
+
+      <div className='space-y-16 3xl:space-y-30'>
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: " Everything You Need To Know" },
+
+              ],
+            },
+            {
+              line: [
+                { type: "normal", text: "Before" },
+                { type: "italic", text: "Working With Us" },
+
+              ],
+            }
+          ]}
+          label="GOT QUESTIONS?/ FAQ'S"
+          subtitle=""
+        />
+        <FAQ
+          shadow={true}
+          actionCss={{
+            active: "bg-[#0457CB] text-white",
+            default: "bg-[#E8F3FF] text-black/70",
+          }}
+        />
+      </div>
+
+      <MetaDisclaimer />
+      <HomeFooter text1="Request a free consultation." bgColor="#0457CB" text2={{
+        desktop: {
+          text1: "WE'LL FIND YOUR WASTED",
+          text2: "AD SPEND. YOU'LL WONDER WHY\n YOU WAITED. LET'S GO.",
+        },
+        mobile: {
+          text1: "AD SPEND. YOU'LL WONDER WHY YOU WAITED. Let’s go.",
+          text2: "",
+        },
+      }} />
     </main>
   )
 }
