@@ -2,13 +2,13 @@ import Image from 'next/image';
 import React from 'react';
 
 const images = [
-  { img: '/ecom/curves/curve1.webp', alt: 'Curve 1' },
-  { img: '/ecom/curves/curve2.webp', alt: 'Curve 2' },
-  { img: '/ecom/curves/curve3.webp', alt: 'Curve 3' },
-  { img: '/ecom/curves/curve4.webp', alt: 'Curve 4' },
-  { img: '/ecom/curves/curve5.webp', alt: 'Curve 5' },
-  { img: '/ecom/curves/curve6.webp', alt: 'Curve 6' },
-  { img: '/ecom/curves/curve7.webp', alt: 'Curve 7' },
+  { img: '/curve/curve1.webp', alt: 'Curve 1' },
+  { img: '/curve/curve2.webp', alt: 'Curve 2' },
+  { img: '/curve/curve3.webp', alt: 'Curve 3' },
+  { img: '/curve/curve4.webp', alt: 'Curve 4' },
+  { img: '/curve/curve5.webp', alt: 'Curve 5' },
+  { img: '/curve/curve6.webp', alt: 'Curve 6' },
+  { img: '/curve/curve7.webp', alt: 'Curve 7' },
   { img: '/curves/curve5.webp', alt: 'Curve 8' },
 ]
 const ArrowNote = ({
