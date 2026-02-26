@@ -6,7 +6,7 @@ import UiUxRocketButton from "./UiUxRocketButton";
 import UiUxHeading from "@/common/UiUxHeading";
 
 export default function FaqUiUx() {
-    const [openIndexes, setOpenIndexes] = useState(null);
+    const [openIndexes, setOpenIndexes] = useState([]);
 
     const faqs = [
         { question: "What kind of companies do you usually work with?", answer: "We primarily work with startups, scaleups, and growing businesses that are serious about improving their product, brand, or digital presence. Most of our clients are B2B, SaaS, D2C, or tech-enabled companies looking to grow with clarity, not guesswork." },
@@ -23,7 +23,7 @@ export default function FaqUiUx() {
 
 
     const toggleFAQ = (index) => {
-        if (openIndexes?.includes(index)) {
+        if (openIndexes.includes(index)) {
             setOpenIndexes(openIndexes.filter(i => i !== index));
         } else {
             setOpenIndexes([...openIndexes, index]);
