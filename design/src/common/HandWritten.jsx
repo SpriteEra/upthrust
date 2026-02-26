@@ -32,7 +32,7 @@ export const Curve1 = ({
             if (part.type === 'highlight') {
               return (
                 <span
-                  className={`${highlightClassName} text-[22px] max-lg:-pt-0.5 max-lg:leading-[22px] max-lg:pb-1 px-3 lg:text-base 3xl:text-[22px] lg:px-2.5 lg:pt-0 lg:pb-px 3xl:pb-1.5 3xl:pt-0.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]  whitespace-nowrap`}
+                  className={`${highlightClassName} text-[22px] max-lg:-pt-0.5 max-lg:leading-5.5 max-lg:pb-1 px-3 lg:text-base 3xl:text-[22px] lg:px-2.5 lg:pt-0 lg:pb-px 3xl:pb-1.5 3xl:pt-0.5 3xl:px-3.5 rounded-full inline-block bg-[#FF4500] text-white whitespace-nowrap text-center 3xl:leading-[26.58px] tracking-[-0.02em]`}
                   key={index}
 
                 >
@@ -43,7 +43,7 @@ export const Curve1 = ({
               return (
                 <span
                   key={index}
-                  className={`${textClassName} inline-block flex text-black text-2xl lg:text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]  whitespace-nowrap`}
+                  className={`${textClassName} inline-block text-black text-2xl lg:text-lg 3xl:text-2xl 3xl:leading-9 text-center tracking-[-0.02em]  whitespace-nowrap`}
 
                 >
                   {part.text}
