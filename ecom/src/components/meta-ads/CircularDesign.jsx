@@ -41,6 +41,7 @@ function ArrowBtn({
     );
 }
 
+
 export default function CircularDesign() {
     return (
         <div
@@ -48,7 +49,6 @@ export default function CircularDesign() {
                 minHeight: "100vh",
                 background: "#000",
                 color: "#fff",
-                fontFamily: "'DM Sans',sans-serif",
                 paddingLeft: "30px",
                 paddingRight: "30px",
             }}
@@ -90,7 +90,7 @@ export default function CircularDesign() {
                             alignItems: "center",
                         }}
                     >
-                        <Image width={100} height={100} src="/meta/writing.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/writing.png" />
                     </div>
                     <ArrowBtn dir="right" />
                     <div
@@ -100,7 +100,7 @@ export default function CircularDesign() {
                             alignItems: "center",
                         }}
                     >
-                        <Image width={100} height={100} src="/meta/running.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/running.png" />
                     </div>
 
                     {/* Run tests — absolute right outside */}
@@ -135,7 +135,7 @@ export default function CircularDesign() {
                         }}
                     >
                         {/* <EvolvingIcon /> */}
-                        <Image width={100} height={100} src="/meta/evolving.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/evolving.png" />
                     </div>
                     <div
                         style={{
@@ -147,7 +147,7 @@ export default function CircularDesign() {
                         }}
                     >
                         {/* <PerformanceIcon /> */}
-                        <Image width={100} height={100} src="/meta/performance.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/performance.png" />
                     </div>
                 </div>
 
@@ -174,7 +174,7 @@ export default function CircularDesign() {
                             alignItems: "center",
                         }}
                     >
-                        <Image width={100} height={100} src="/meta/rca.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/rca.png" />
                     </div>
                     <ArrowBtn dir="left" />
 
@@ -187,7 +187,7 @@ export default function CircularDesign() {
                         }}
                     >
                         {/* <OptimizationIcon /> */}
-                        <Image width={100} height={100} src="/meta/optimize.png" />
+                        <Image width={100} height={100} alt="circle" src="/meta-ads/circular/optimize.png" />
                     </div>
                     <ArrowBtn dir="left" />
                 </div>

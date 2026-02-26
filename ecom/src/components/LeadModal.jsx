@@ -84,7 +84,6 @@ const TestimonialSection = () => (
     </div>
 );
 
-
 // Main Form Component
 const LeadFormModal = ({ handleClose }) => {
 
