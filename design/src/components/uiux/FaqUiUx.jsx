@@ -2,46 +2,15 @@
 import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import Image from "next/image";
-import StylishButton from "@/common/RocketButton";
-import Heading from "@/common/Heading";
-const badges = [
-    {
-        category: "MARKETING",
-        title: "Users Love Us",
-        subtitle: "FALL 2023 LEADER",
-    },
-    {
-        category: "SERVICE APPS",
-        title: "Momentum Leader",
-        subtitle: "FALL 2023 LEADER",
-    },
-    {
-        category: "SUPPLIER",
-        title: "Best Est. ROI",
-        subtitle: "FALL 2023 LEADER",
-    },
-    {
-        category: "SUPPLIER",
-        title: "Easiest To Do Business With",
-        subtitle: "FALL 2023 LEADER",
-    },
-    {
-        category: "SUPPLIER",
-        title: "High Performer",
-        subtitle: "FALL 2023",
-    },
-    {
-        category: "SUPPLIER",
-        title: "Highest User Adoption",
-        subtitle: "FALL 2023",
-    },
-];
+import UiUxRocketButton from "./UiUxRocketButton";
+import UiUxHeading from "@/common/UiUxHeading";
+
 export default function FaqUiUx() {
-    const [openIndexes, setOpenIndexes] = useState([0]);
+    const [openIndexes, setOpenIndexes] = useState(null);
 
     const faqs = [
         { question: "What kind of companies do you usually work with?", answer: "We primarily work with startups, scaleups, and growing businesses that are serious about improving their product, brand, or digital presence. Most of our clients are B2B, SaaS, D2C, or tech-enabled companies looking to grow with clarity, not guesswork." },
-        { question: "What services do you actually provide?", answer: "What services do you actually provide? We help companies design, build, and improve digital experiences. This includes UI/UX design, web design, branding, and web development. Depending on the engagement, we can support everything from strategy and design to build-ready or production-ready delivery." },
+        { question: "What services do you actually provide?", answer: "We help companies design, build, and improve digital experiences. This includes UI/UX design, web design, branding, and web development. Depending on the engagement, we can support everything from strategy and design to build-ready or production-ready delivery." },
         { question: "How do we know which service is right for us?", answer: "You don’t need to decide that upfront. During our initial strategy call, we understand your goals, challenges, and current setup, then recommend what will have the biggest impact first. In many cases, the right solution is clearer after that conversation." },
         { question: "Do you work on existing products or only new ones?", answer: "Both. We often work on existing websites, products, or brands that need improvement, optimization, or a redesign. We also partner with teams building something new from scratch. The process adapts based on where you’re starting from." },
         { question: "What does the first engagement usually look like?", answer: "We start with a strategy and alignment phase. This includes understanding your goals, reviewing what currently exists, and identifying opportunities. From there, we define scope, timelines, and next steps before moving into execution." },
@@ -54,7 +23,7 @@ export default function FaqUiUx() {
 
 
     const toggleFAQ = (index) => {
-        if (openIndexes.includes(index)) {
+        if (openIndexes?.includes(index)) {
             setOpenIndexes(openIndexes.filter(i => i !== index));
         } else {
             setOpenIndexes([...openIndexes, index]);
@@ -87,12 +56,12 @@ export default function FaqUiUx() {
                             on LinkedIn!"
                         </p>
                         <div className="relative inline-block">
-                            <StylishButton text1="Book A" text2="Strategy Call" />
+                            <UiUxRocketButton text1="Book A" text2="Strategy Call" />
                         </div>
                     </div>
                 </div>
                 <div className="lg:col-span-2">
-                    <Heading
+                    <UiUxHeading
                         tag="h3"
                         heading={[{
                             line: [
@@ -122,12 +91,12 @@ export default function FaqUiUx() {
                                             {faq.question}
                                         </p>
                                         <Plus
-                                            className={`size-7 shrink-0 transition-transform duration-400 ease-in-out group-hover:text-gray-600 ${openIndexes.includes(index) ? "rotate-45" : ""
+                                            className={`size-7 shrink-0 transition-transform duration-400 ease-in-out group-hover:text-gray-600 ${openIndexes?.includes(index) ? "rotate-45" : ""
                                                 }`}
                                         />
 
                                     </div>
-                                    <div className={`overflow-hidden transition-all duration-400 ease-in-out ${openIndexes.includes(index)
+                                    <div className={`overflow-hidden transition-all duration-400 ease-in-out ${openIndexes?.includes(index)
                                         ? "max-h-96 opacity-100 mt-4 3xl:mt-6"
                                         : "max-h-0 opacity-0"
                                         }`}>

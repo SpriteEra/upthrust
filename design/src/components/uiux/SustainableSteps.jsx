@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function ProcessTimelineExact() {
     const steps = [
-        { badge: "Free STEP #1", title: "Growth Discovery &\nExperience Audit", offset: "mt-6 3xl:mt-10", hoverText: "We understand your business, users, and goals, then identify what’s blocking growth across product, brand, or funnel." },
+        { badge: "STEP #1", title: "Growth Discovery &\nExperience Audit", offset: "mt-6 3xl:mt-10", hoverText: "We understand your business, users, and goals, then identify what’s blocking growth across product, brand, or funnel." },
         { step: "STEP #2", title: "Strategy &\nOpportunity Mapping", offset: "mt-6 3xl:mt-10", hoverText: "We decide what matters most, what to fix first, and where design will have the biggest impact." },
         { step: "STEP #3", title: "Ideation &\nConcept Development", offset: "mt-14 3xl:mt-24", hoverText: "Ideas are created around real problems; whether for product flows, branding, landing pages, or campaigns." },
         { step: "STEP #4", title: "Design & Validation\n ", offset: "mt-14 3xl:mt-24", hoverText: "We design, test, and refine quickly so only strong solutions move forward." },
@@ -28,7 +28,7 @@ export default function ProcessTimelineExact() {
                         {/* Vertical divider (in gap) */}
 
                         <span className={`mb-6 lg:text-xs 3xl:text-base text-black/70 rounded-full px-3.75 py-1 lg:px-3 3xl:px-3.75 lg:py-1 3xl:py-2.5 transition-all duration-300 ease-in-out ${index === hoveredStep ? "bg-[#FF3B00]  text-white" : ""}`}>
-                            {index === hoveredStep ? 'Free' : ''} {`STEP #${index + 1} `}
+                            {index === hoveredStep ? '' : ''} {`STEP #${index + 1} `}
                         </span>
                         <div className={`w-full ${item.offset}`}>
                             <div className="w-full">

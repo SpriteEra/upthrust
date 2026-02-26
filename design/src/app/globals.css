@@ -15,9 +15,12 @@ html {
 }
 
 @theme {
-  --breakpoint-xs: 600px;
-  --breakpoint-2xl: 84.375rem;
-  --breakpoint-3xl: 106.25rem;
+  --breakpoint-xs: 600px;        /* 600px */
+  --breakpoint-2xl: 84.375rem;   /* 1350px */
+  --breakpoint-1600: 100rem;     /* 1600px */
+  --breakpoint-3xl: 106.25rem;   /* 1700px */
+  --breakpoint-3xl: 106.25rem;   /* 1700px */
+  --breakpoint-1800: 112.5rem;;   /* 1700px */
 }
 body {
   min-height: unset !important;

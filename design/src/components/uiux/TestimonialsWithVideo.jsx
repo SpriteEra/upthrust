@@ -84,12 +84,12 @@ export default function TestimonialsWithVideo() {
         setIsVideoOpen(false);
     };
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-7 3xl:gap-8 mt-10 sm:mt-20 3xl:mt-30 max-lg:px-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-7 3xl:gap-8 mt-10 sm:mt-20 3xl:mt-30 max-lg:px-2 scroll-mt-30 3xl:scroll-mt-35" id='here-from-them'>
             {testimonials.map((item, i) => (
-                <CutCornerBackground bgColor="#F9F9F9" key={i} cutWidth={20} cutHeight={20} cutRadius={1}>
+                <CutCornerBackground cutConfig={{ mobile: { cutWidth: 10, cutHeight: 12, cutRadius: 2 }, desktop: { cutWidth: 20, cutHeight: 20, cutRadius: 1 } }} bgColor="#F9F9F9" key={i} >
                     <div
                         key={i}
-                        className=" rounded-2xl 3xl:rounded-[30px] max-lg:px-4 p-6 lg:p-8 3xl:p-12.5 flex flex-col h-full"
+                        className=" rounded-2xl 3xl:rounded-[30px] max-lg:px-4 p-8 lg:p-8 3xl:p-12.5 flex flex-col h-full"
                     >
                         <div className="flex gap-3 items-center">
                             <span className="text-2xl 3xl:text-3xl font-semibold ">
@@ -132,7 +132,7 @@ export default function TestimonialsWithVideo() {
                                     onClick={() => openVideo(i)}
                                     title="Play Video"
                                     target="_blank"
-                                    className="size-15 lg:size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white shrink-0"
+                                    className="size-15 lg:size-12 3xl:size-15 rounded-full bg-(--red) flex items-center justify-center text-white shrink-0 cursor-pointer"
                                 >
                                     <Play className="size-4 3xl:size-5" fill="white" />
                                 </button>

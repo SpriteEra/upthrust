@@ -34,7 +34,7 @@ export default function UIUXHero() {
     }, []);
 
     return (
-        <div className="  bg-black pt-40 lg:pt-50 2xl:pt-60 3xl:pt-70 flex items-center justify-center px-4 pb-2 lg:pb-6 ">
+        <div className="bg-black pt-40 lg:pt-50 2xl:pt-60 3xl:pt-70 flex items-center justify-center px-4 pb-2 lg:pb-6 ">
             <div className="relative w-full inverted-radius sm:max-w-[90%] 3xl:max-w-[88%] ">
                 {/* Card with Folder Tab */}
                 <div className="relative bg-white max-sm:rounded-tl-[20px] rounded-bl-[20px] sm:rounded-tr-[20px] rounded-br-[20px]">
@@ -53,7 +53,7 @@ export default function UIUXHero() {
                                     A Design Agency
                                 </span>
                                 {/* Main Heading */}
-                                <h1 className="text-[2.625rem] sm:text-[2.8rem] md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold leading-[1.15] tracking-[-0.02em] 3xl:text-[96px] 3xl:leading-27 mb-6 2xl:mb-10 3xl:mb-10">
+                                <h1 className="text-[2.625rem] sm:text-[2.8rem] md:text-5xl lg:text-6xl 2xl:text-7xl 1600:text-[77px] 1800:text-[96px] font-semibold leading-[1.15] tracking-[-0.02em] 1600:leading-24  1800:leading-27 mb-6 2xl:mb-10 3xl:mb-10">
                                     WE DESIGN{' '}
                                     <span
                                         className="inline-block relative overflow-hidden align-bottom w-full h-12 lg:h-15 2xl:h-18 3xl:h-24 max-w-90 2xl:max-w-100 3xl:max-w-130"
@@ -80,7 +80,7 @@ export default function UIUXHero() {
                             </div>
 
                             {/* Right Content - Phone Mockup */}
-                            <div className="flex-shrink-0 self-center lg:self-start aspect-square size-75 xl:size-60 2xl:size-80 3xl:size-93 rounded-lg 3xl:rounded-2xl">
+                            <div className="flex-shrink-0 self-center lg:self-start aspect-square w-full xs:size-75 xl:size-60 2xl:size-80 3xl:size-93 rounded-lg 3xl:rounded-2xl">
                                 <SmartSwiper
                                     slides={images}
                                     effect="slide"
@@ -111,10 +111,10 @@ export default function UIUXHero() {
 
                             </div>
                         </div>
-                        <div className="flex flex-col sm:flex-wrap sm: lg:flex-row items-center sm:max-w-[330px] lg:max-w-none  sm:mx-auto sm:items-start lg:items-center sm:justify-start lg:justify-between gap-3 sm:gap-5 lg:gap-10 mb-4 lg:mb-8 3xl:mb-5 lg:border-t border-gray-400 lg:pt-8 3xl:pt-10">
+                        <div className="flex flex-col sm:flex-wrap sm: lg:flex-row items-center sm:max-w-[330px] lg:max-w-none  sm:mx-auto sm:items-start lg:items-center sm:justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-10 max-md:px-6 mb-4 lg:mb-8 3xl:mb-5 lg:border-t border-gray-400 lg:pt-8 3xl:pt-10">
                             {/* Feature 1 */}
-                            
-                            <div className="flex items-center gap-3 3xl:gap-6 flex-1 w-full sm:w-auto">
+
+                            <div className="flex items-center gap-4 3xl:gap-6 flex-1 w-full sm:w-auto">
                                 <div className="size-12 lg:size-13 3xl:size-17.5 bg-[#FF5722] rounded-full flex items-center justify-center flex-shrink-0">
                                     <svg className='size-5 3xl:size-7.5' viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13.5314 0H16.2965V12.4915L29.1407 8.375L30 11.045L17.2394 15.1688L25.1099 25.8501L22.8619 27.5L14.9051 16.8455L7.14237 27.4192L4.83887 25.8211L12.5717 15.2881L0 11.0507L0.815125 8.29513L13.5314 12.5099V0Z" fill="white" />
@@ -122,15 +122,15 @@ export default function UIUXHero() {
 
                                 </div>
                                 <div>
-                                    <p className=" text-[15px] lg:text-xl 3xl:text-2xl tracking-[-0.02em]">
-                                        Built from real-world
-                                        <br />
+                                    <p className=" text-[14px] lg:text-xl 3xl:text-2xl md:tracking-[-0.02em]">
+                                        Built from real-world {" "}
+                                        <br className='max-md:hidden' />
                                         product experience
                                     </p>
                                 </div>
                             </div>
                             {/* Feature 2 */}
-                            <div className="flex items-center gap-3 3xl:gap-6 flex-1 w-full sm:w-auto">
+                            <div className="flex items-center gap-3 3xl:gap-6 flex-1 w-full sm:w-auto max-md:hidden">
                                 <div className="size-12 lg:size-13 3xl:size-17.5 bg-[#FF5722] rounded-full flex items-center justify-center flex-shrink-0">
                                     <svg className='size-5 3xl:size-8' viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13.5314 0H16.2965V12.4915L29.1407 8.375L30 11.045L17.2394 15.1688L25.1099 25.8501L22.8619 27.5L14.9051 16.8455L7.14237 27.4192L4.83887 25.8211L12.5717 15.2881L0 11.0507L0.815125 8.29513L13.5314 12.5099V0Z" fill="white" />
@@ -146,7 +146,7 @@ export default function UIUXHero() {
                                 </div>
                             </div>
                             {/* CTA Section */}
-                            <div className="flex items-center w-full sm:w-auto  sm:justify-start">
+                            <div className="flex items-center w-full sm:w-auto sm:justify-start">
                                 <div className="size-12 lg:size-14 3xl:size-15 bg-black rounded-full flex items-center justify-center">
                                     <Image src="/icons/phone.webp" width={40} height={40} className="size-5 3xl:size-6" alt="Call Icon" />
                                 </div>

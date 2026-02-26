@@ -19,7 +19,7 @@ const helpData = [
             "/uiux/design/design1/5.webp",
             "/uiux/design/design1/6.webp",
             "/uiux/design/design1/7.webp",
-            "/uiux/design/design1/8.webp",
+            // "/uiux/design/design1/8.webp",
         ]
     },
     {
@@ -42,7 +42,7 @@ const helpData = [
     },
     {
         title: "Ads Campaign & Landing Page ",
-        titleSm: "Campaign $ LPs",
+        titleSm: "Campaign & LPs",
         upperSlider: ["/uiux/design/design3/1a.webp", "/uiux/design/design3/2a.webp"],
         description: "Design that turns attention into action, across ads, landing pages, and conversion flows.",
         title2: "Built to convert,\n not just look good",

@@ -1,10 +1,10 @@
-import { Curve1 } from "@/common/HandWritten";
-import Heading from "@/common/Heading";
-import StylishButton from "@/common/RocketButton";
-import Navbar from "@/components/Navbar";
+import ArrowNote from "@/common/ArrowNote";
+import UiUxHeading from "@/common/UiUxHeading";
 import AnimatedLogoCarousel from "@/components/uiux/AnimatedLogoCarousel";
 import { CutCornerBackground } from "@/components/uiux/CutBox";
 import UIUXHero from "@/components/uiux/UIUXHero";
+import UiUxNavbar from "@/components/uiux/UiUxNavbar";
+import UiUxRocketButton from "@/components/uiux/UiUxRocketButton";
 import { Check } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -67,13 +67,6 @@ export const metadata = {
     }
 };
 
-const navLinks = [
-    { name: "Case Studies", href: "#case-studies" },
-    { name: "Process", href: "#process" },
-    { name: "Why Upthrust", href: "#why-upthrust" },
-    { name: "Here From Them", href: "#here-from-them" },
-    { name: "FAQs", href: "#faqs" },
-];
 
 const traficToRevenue = [
     {
@@ -108,13 +101,13 @@ const traficToRevenue = [
 const page = () => {
     return (
         <main>
-            <Navbar items={navLinks} />
+            <UiUxNavbar />
             <div className=" bg-black">
                 <UIUXHero />
                 <AnimatedLogoCarousel />
             </div>
             <div className="flex flex-col  mt-60 lg:mt-26 3xl:mt-40 relative scroll-mt-30 3xl:scroll-mt-35" id='case-studies'>
-                <Curve1
+                <ArrowNote
                     lines={[
                         {
                             parts: [
@@ -139,7 +132,7 @@ const page = () => {
                     className="absolute -top-28 sm:left-1/2 sm:-translate-x-1/2 lg:left-10 lg:translate-x-0  lg:top-30 3xl:top-35 left-10 xl:left-38 3xl:left-44 lg:max-w-[300px] 3xl:max-w-[350px] "
                 />
 
-                <Heading
+                <UiUxHeading
                     tag="h2"
                     heading={[
                         {
@@ -157,7 +150,7 @@ const page = () => {
                     subTitleCss="max-w-lg 3xl:max-w-xl"
                 />
                 <div className="flex items-center justify-center w-full mb-3 lg:my-8 3xl:mb-20 3xl:mt-6">
-                    <StylishButton text1="Book A" text2="Strategy Call" />
+                    <UiUxRocketButton />
                 </div>
                 <GrowthStories />
 
@@ -175,7 +168,7 @@ const page = () => {
                             text2: "Retention Time",
                         },
                     ].map((item, index) => (
-                        <CutCornerBackground bgColor="#F9F9F9" key={index}>
+                        <CutCornerBackground cutConfig={{ mobile: { cutWidth: 14, cutHeight: 22, cutRadius: 2 } }} bgColor="#F9F9F9" key={index}>
                             <div
 
                                 className="shape-wrap p-4 lg:p-8 3xl:p-12.5 flex flex-col rounded-2xl lg:rounded-3xl 3xl:rounded-[30px]"
@@ -190,7 +183,7 @@ const page = () => {
                             </div>
                         </CutCornerBackground>
                     ))}
-                    <Curve1
+                    <ArrowNote
                         lines={[
                             {
                                 parts: [
@@ -220,7 +213,7 @@ const page = () => {
             </div>
 
             <div className="flex flex-col mt-20 lg:mt-65 3xl:mt-70 relative">
-                <Curve1
+                <ArrowNote
                     lines={[
                         {
                             parts: [
@@ -245,7 +238,7 @@ const page = () => {
                     imageIndex={2}
                     className="absolute top-10 3xl:top-0 left-10 xl:left-40 2xl:left-55 3xl:left-65 max-w-[300px] 3xl:max-w-[350px]"
                 />
-                <Heading
+                <UiUxHeading
                     tag="h2"
                     heading={[
                         {
@@ -264,9 +257,9 @@ const page = () => {
                 <div className="max-sm:px-2 sm:max-w-[90%] 3xl:max-w-[88%] sm:mx-auto w-full ">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-10 mt-16 3xl:mt-14">
                         {traficToRevenue?.map((item, index) => (
-                            <CutCornerBackground bgColor="#F9F9F9" key={index} cutWidth={20} cutHeight={20} cutRadius={1}>
+                            <CutCornerBackground hideCutOnMobile={true} bgColor="#F9F9F9" key={index} cutWidth={20} cutHeight={20} cutRadius={1}>
                                 <div
-                                    className="p-4 max-lg:pt-10 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between"
+                                    className="p-4 max-lg:pt-10 md:p-6 lg:p-8 3xl:p-12.5 flex flex-col rounded md:rounded-2xl lg:rounded-3xl 3xl:rounded-[30px] justify-between max-md:bg-[#f9f9f9]"
                                 >
                                     <div className="pb-10 lg:pb-6 3xl:pb-10 ">
                                         <span className="border border-[#ff3b00]/30 text-[#ff3b00] px-4 lg:px-2 3xl:px-4 py-3 lg:py-1 3xl:py-3 rounded-full uppercase lg:text-sm 3xl:text-base w-fit">
@@ -318,14 +311,14 @@ const page = () => {
                             </p>
                         </div>
                         <div className="flex items-center justify-center max-lg:w-full">
-                            <StylishButton text1="Book A" text2="Strategy Call" />
+                            <UiUxRocketButton />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-col mt-30 lg:mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='process'>
-                <Curve1
+            <div className="flex flex-col mt-30 lg:mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='services'>
+                <ArrowNote
                     lines={[
                         {
                             parts: [
@@ -350,7 +343,7 @@ const page = () => {
                     imageIndex={2}
                     className="absolute top-0 3xl:-top-10 right-10 xl:right-40 3xl:right-45 max-w-[300px] 3xl:max-w-[350px]"
                 />
-                <Heading
+                <UiUxHeading
                     tag="h3"
                     heading={[
                         {
@@ -363,8 +356,8 @@ const page = () => {
                 />
                 <OurDesigns />
             </div>
-            <div className="flex flex-col mt-30 lg:mt-50 3xl:mt-60 relative">
-                <Curve1
+            <div className="flex flex-col mt-30 lg:mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='process'>
+                <ArrowNote
                     lines={[
                         {
                             parts: [{ type: "text", text: "You'll always know" }],
@@ -388,7 +381,7 @@ const page = () => {
                     imageIndex={3}
                     className="absolute top-24 3xl:top-29 left-10 lg:left-40 xl:left-60 3xl:left-72 max-w-[300px] 3xl:max-w-[350px]"
                 />
-                <Heading
+                <UiUxHeading
                     tag="h3"
                     heading={[
                         {
@@ -423,7 +416,7 @@ const page = () => {
                     <div className="w-full pb-10 lg:py-20 bg-white">
                         <div className="bg-black rounded-xl lg:rounded-[28px] 3xl:rounded-[50px] px-3 sm:px-10 py-8 sm:py-10 2xl:py-12 3xl:p-20 text-white relative overflow-hidden">
                             {/* Top Content */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 xs:gap-12 items-center">
                                 {/* LEFT */}
                                 <div>
                                     {/* Badge */}
@@ -454,7 +447,7 @@ const page = () => {
 
                                     {/* CTA */}
                                     <div>
-                                        <StylishButton text1="Book A" text2="Strategy Call" />
+                                        <UiUxRocketButton />
                                     </div>
                                 </div>
 
@@ -504,13 +497,13 @@ const page = () => {
                                     "Polished, usable deliverables",
                                 ].map((item, index) => (
                                     <div
-                                        className="flex items-center gap-1 sm:gap-2 3xl:gap-2"
+                                        className="flex items-center gap-1 sm:gap-2 1600:gap-1.5 1800:gap-2"
                                         key={index}
                                     >
                                         <span className="size-6 lg:size-5 3xl:size-7.5 flex items-center justify-center rounded-full bg-green-500 text-black text-xs">
                                             <Check className="size-5 lg:size-4 3xl:size-6" strokeWidth={3} />
                                         </span>
-                                        <span className="text-white font-semibold text-2xl lg:text-base 2xl:text-xl 3xl:text-2xl tracking-[-0.02em]">
+                                        <span className="text-white font-semibold text-2xl lg:text-base 2xl:text-xl 1600:text-[21px] 1800:text-2xl tracking-[-0.02em]">
                                             {item}
                                         </span>
                                     </div>
@@ -522,7 +515,7 @@ const page = () => {
             </div>
 
             <div className="flex flex-col mt-70 lg:mt-50 3xl:mt-60 relative scroll-mt-30 3xl:scroll-mt-35" id='why-upthrust'>
-                <Curve1
+                <ArrowNote
                     lines={[
                         {
                             parts: [
@@ -547,7 +540,7 @@ const page = () => {
                     hiddenInSmall={false}
                     className="absolute -top-50 lg:top-36 3xl:top-43 right-1/2 max-lg:translate-x-1/2 lg:right-10 xl:right-50 3xl:right-57 lg:max-w-[300px] 3xl:max-w-[350px] max-lg:rotate-5"
                 />
-                <Heading
+                <UiUxHeading
                     tag="h3"
                     heading={[
                         {
@@ -567,8 +560,8 @@ const page = () => {
                     <WorkingWithUs />
                 </div>
             </div>
-            <div className="flex flex-col mt-30 sm:mt-50 3xl:mt-60 scroll-mt-30 3xl:scroll-mt-35" id='here-from-them'>
-                <Heading
+            <div className="flex flex-col mt-30 sm:mt-50 3xl:mt-60">
+                <UiUxHeading
                     tag="h3"
                     heading={[
                         {
@@ -609,7 +602,7 @@ const page = () => {
                         </div>
 
                         <div className="flex items-center justify-center max-lg:w-full">
-                            <StylishButton text1="Book A" text2="Strategy Call" />
+                            <UiUxRocketButton />
                         </div>
                     </div>
                     <div className="grid lg:grid-cols-5 mt-25 3xl:mt-40 max-lg:px-2">
@@ -627,13 +620,12 @@ const page = () => {
                             </div>
                         </div>
                         <div className="lg:col-span-3 flex justify-end">
-                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold leading-10 3xl:leading-15 text-justify max-w-3xl 3xl:max-w-5xl tracking-[-0.02em] max-lg:hidden">
+                            <p className="text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold leading-10 3xl:leading-15 lg:w-[705px] 3xl:w-[954px] tracking-[-0.02em] max-lg:hidden">
                                 <span className="block text-right ">Founders and leaders</span>
                                 <span className="">
                                     share how our design process, clarity, and execution helped
-                                    them move forward with
+                                    them move forward with confidence.
                                 </span>
-                                <span className="block text-left">confidence.</span>
                             </p>
                             <p className="lg:hidden text-4xl font-semibold leading-11 tracking-[-0.02em] mt-5">
                                 Founders and leaders share how our design process, clarity, and
@@ -646,7 +638,7 @@ const page = () => {
             </div>
             <div className="flex flex-col mt-30 lg:mt-50 3xl:mt-60 scroll-mt-30 3xl:scroll-mt-35" id='faqs'>
                 <div className="sm:max-w-[90%] max-sm:px-2 sm:mx-auto relative">
-                    <Curve1
+                    <ArrowNote
                         lines={[
                             {
                                 parts: [{ type: "text", text: "This usually come up" }],

@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useState } from "react";
+
 export const CutCornerBackground = ({
     children,
     mirror = false,
@@ -7,14 +11,40 @@ export const CutCornerBackground = ({
     cutHeight = 28,
     borderRadius = 6,
     cutRadius = 4,
+    cutConfig = null,
 
+    hideCutOnMobile = false,
     className = "",
     style = {},
 }) => {
-    const r = borderRadius;
-    const cw = cutWidth;
-    const ch = cutHeight;
-    const cr = cutRadius;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 768);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    const shouldHideCut = hideCutOnMobile && isMobile;
+
+    const responsiveConfig =
+        cutConfig
+            ? (isMobile ? cutConfig.mobile : cutConfig.desktop) || {}
+            : {};
+
+    const finalConfig = {
+        cutWidth,
+        cutHeight,
+        borderRadius,
+        cutRadius,
+        ...responsiveConfig,
+    };
+    const r = finalConfig.borderRadius;
+    const cw = finalConfig.cutWidth;
+    const ch = finalConfig.cutHeight;
+    const cr = finalConfig.cutRadius;
+
 
     const createPath = () => {
         if (mirror) {
@@ -62,20 +92,23 @@ export const CutCornerBackground = ({
             }}
         >
             {/* background shape */}
-            <svg
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                style={{
-                    position: "absolute",
-                    inset: 0,
-                    width: "100%",
-                    height: "100%",
-                    zIndex: 0,
-                    pointerEvents: "none",
-                }}
-            >
-                <path d={createPath()} fill={bgColor} />
-            </svg>
+            {!shouldHideCut && (
+                <svg
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: 0,
+                        pointerEvents: "none",
+                    }}
+                >
+                    <path d={createPath()} fill={bgColor} />
+                </svg>
+
+            )}
 
             {/* content */}
             <div

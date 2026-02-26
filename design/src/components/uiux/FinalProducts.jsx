@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import SmartSwiper from "../SmartSwiper";
 import Image from "next/image";
-import { Curve1 } from "@/common/HandWritten";
+import ArrowNote from "@/common/ArrowNote";
 
 const FinalProducts = () => {
     const swiperInstance = useRef(null);
@@ -22,7 +22,7 @@ const FinalProducts = () => {
     ];
 
     return (
-        <div className="lg:bg-[#F9F9F9] rounded-3xl p-1 sm:p-6 3xl:p-10 flex flex-col lg:mt-16 max-lg:mb-70 relative">
+        <div className="lg:bg-[#F9F9F9] rounded-3xl p-1 sm:p-6 3xl:p-10 flex flex-col lg:mt-16 3xl:pt-20 max-lg:mb-70 relative">
 
             <h4 className="text-xl 3xl:text-2xl 3xl:leading-8 tracking-[-0.02em] font-semibold text-center max-lg:hidden ">
                 Where Strategy Takes Visual Form
@@ -32,7 +32,7 @@ const FinalProducts = () => {
             </h5>
 
             <div className="w-full lg:max-w-4xl 3xl:max-w-7xl mx-auto lg:px-6 relative lg:mt-16 rounded-md sm:rounded-2xl">
-                <Curve1
+                <ArrowNote
                     lines={[
                         {
                             parts: [{ type: "text", text: "What you see is" }],
@@ -70,10 +70,11 @@ const FinalProducts = () => {
                             <Image
                                 src={src}
                                 alt="Slide image"
-                                width={1280}
-                                height={836}
+                                width={2000}
+                                height={1300}
                                 quality={100}
-                                className=" w-full h-full object-cover rounded-md sm:rounded-2xl"
+                                sizes="(max-width: 1024px) 100vw, 1400px"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     )}
@@ -84,7 +85,7 @@ const FinalProducts = () => {
                     onClick={() => swiperInstance.current?.slidePrev()}
                     title="Previous"
                     className="
-                    absolute left-0 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2
+                    absolute left-0 lg:left-[-60px] 1600:-left-20 1800:-left-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2
                     size-11 3xl:size-15 rounded-full bg-black
                     flex items-center justify-center
                     z-20 hover:bg-neutral-800
@@ -98,7 +99,7 @@ const FinalProducts = () => {
                     title="Next"
                     onClick={() => swiperInstance.current?.slideNext()}
                     className="
-                        absolute max-lg:left-12 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2
+                        absolute max-lg:left-12 lg:right-[-60px] 1600:-right-20 1800:-right-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2
                          size-11 3xl:size-15 rounded-full bg-black
                         flex items-center justify-center
                         z-20 hover:bg-neutral-800 

@@ -94,7 +94,7 @@ export default function AnimatedLogoCarousel() {
                                             {logos.map((logo, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex items-center justify-center w-20 3xl:w-28 mx-auto"
+                                                    className="flex items-center justify-center w-20 last:w-18 3xl:w-28 last:3xl:w-20 mx-auto"
                                                 >
                                                     <Image width={64} height={64} src={logo.image} alt={logo.alt} className="w-full h-full object-contain" />
 

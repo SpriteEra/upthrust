@@ -75,7 +75,7 @@ const WorkingWithUs = () => {
                                     className='size-7 2xl:size-8 3xl:size-9'
                                 />
                             </div>
-                            <p className="text-2xl 2xl:text-3xl 3xl:text-4xl font-semibold 3xl:leading-11 lg:mb-4 whitespace-pre-line tracking-[-0.02em]">
+                            <p className="text-2xl 2xl:text-3xl 1800:text-4xl font-semibold 1600:leading-10 1800:leading-11 lg:mb-4 whitespace-pre-line tracking-[-0.02em]">
                                 {item.heading}
                             </p>
 
@@ -88,8 +88,8 @@ const WorkingWithUs = () => {
                         : "max-lg:max-h-0 max-lg:opacity-0"
                         }`}>
 
-                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] 3xl:leading-[30px]">{item.description}</p>
-                        <p className="text-xl lg:text-lg 3xl:text-xl tracking-[-0.02em] 3xl:leading-[30px]">
+                        <p className="text-xl lg:text-lg 1800:text-xl tracking-[-0.02em] 1600:leading-[28px] 1800:leading-[30px]">{item.description}</p>
+                        <p className="text-xl lg:text-lg 1800:text-xl tracking-[-0.02em] 1600:leading-[28px] 1800:leading-[30px]">
                             <span className="font-semibold">Why its Matters: </span>
                             {item.whymatters}
                         </p>

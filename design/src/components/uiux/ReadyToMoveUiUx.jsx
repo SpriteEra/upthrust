@@ -1,9 +1,9 @@
-import StylishButton from "@/common/RocketButton";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { CutCornerBackground } from "./CutBox";
-import { Curve1 } from "@/common/HandWritten";
+import ArrowNote from "@/common/ArrowNote";
+import UiUxRocketButton from "./UiUxRocketButton";
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -23,7 +23,7 @@ const ReadyToMoveUiUx = () => {
 
 
             <div className="max-w-5xl 3xl:max-w-[1250px] mx-auto relative">
-                <Curve1
+                <ArrowNote
                     lines={[
                         {
                             parts: [{ type: "text", text: "No Pressure;" }],
@@ -46,16 +46,18 @@ const ReadyToMoveUiUx = () => {
                     curveFlipVertical={false}
                     tiltAngle={5}
                     imageIndex={7}
-                    className="absolute top-1/4 !text-white right-10 xl:-right-42 3xl:-right-60  max-w-[300px] 3xl:max-w-[350px]"
+                    className="absolute top-1/4 !text-white right-10 xl:-right-42 1600:-right-50 1800:-right-60  max-w-[300px] 3xl:max-w-[350px]"
                 />
                 {/* CTA CARD */}
                 <CutCornerBackground
+                    hideCutOnMobile={true}
                     bgColor="white"
                     cutWidth={10}
-                    cutHeight={13}
+                    cutHeight={14}
                     cutRadius={1}
+                    borderRadius={5}
                 >
-                    <div className="rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-4xl p-4 px-2 md:px-20 3xl:px-30 md:py-8 lg:py-8 2xl:py-12 3xl:py-14 text-center relative overflow-hidden">
+                    <div className="max-md:bg-white rounded-xl md:rounded-2xl lg:rounded-3xl 3xl:rounded-4xl max-md:pb-6 p-10 md:px-20 3xl:px-30 md:py-8 lg:py-8 2xl:py-12 3xl:py-14 text-center relative overflow-hidden">
                         <div className="max-w-4xl 3xl:max-w-5xl mx-auto">
                             <h2 className="text-4xl sm:text-5xl lg:text-6xl 3xl:text-7xl font-semibold text-black tracking-[-0.02em] 3xl:leading-[90px]">
                                 Ready To Move Forward <br className="hidden md:block" />
@@ -69,7 +71,7 @@ const ReadyToMoveUiUx = () => {
 
                             {/* CTA Button */}
                             <div className="flex justify-center mb-5 md:mb-10">
-                                <StylishButton text1="Book A" text2="Strategy Call" />
+                                <UiUxRocketButton />
                             </div>
 
                             <hr className="border-t lg:border-t-2 border-black/30 my-5 md:my-8 3xl:mt-12" />
