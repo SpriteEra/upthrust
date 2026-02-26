@@ -37,6 +37,50 @@ const words = [
     { text: 'Bing Ads', color: '#F59E0B' }
 ];
 
+export const metadata = {
+    title: "Google Ads Agency for Predictable Growth | Upthrust",
+
+    description: "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+
+    keywords: [
+        "Google Ads Agency",
+    ],
+
+    metadataBase: new URL("https://www.upthrust.agency"),
+
+    alternates: {
+        canonical: "/",
+    },
+
+    openGraph: {
+        title: "Google Ads Agency That Scales Profitably",
+        description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+        url: "https://www.upthrust.agency",
+        siteName: "Upthrust",
+        images: [
+            {
+                url: "/google-ads/ogimg.png",
+                width: 1200,
+                height: 630,
+                alt: "Upthrust – D2C Ecommerce Marketing Agency",
+            },
+        ],
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Google Ads Agency That Scales Profitably",
+        description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+        images: ["/google-ads/ogimg.png"],
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    }
+};
+
 const page = () => {
     return (
         <main>
@@ -57,7 +101,7 @@ const page = () => {
 
             <GoogleAdsHero />
 
-            <div className='flex flex-col mt-26 3xl:mt-30'>
+            <div className='flex flex-col mt-26 3xl:mt-25'>
                 <CommonHeading
                     heading={[
                         // 🔹 Line 1
