@@ -6,6 +6,7 @@ import HomeFooter from '@/components/home/HomeFooter';
 import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
 import SuccessStories from '@/components/home/SuccessStories';
 import BrandSlider from '@/components/meta-ads/BrandSlider';
+import CircularDesign from '@/components/meta-ads/CircularDesign';
 import ClientStories from '@/components/meta-ads/ClientStories';
 import DashboardStacks from '@/components/meta-ads/DashboardStack';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
@@ -32,6 +33,28 @@ const page = () => {
     <main id="meta-ad-agency" >
       <MetaNavbar items={navLinks} />
       <MetaAdsHero />
+
+      <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 ">
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: " Why most companies are never" }],
+            },
+            {
+              line: [
+                { type: "normal", text: "able to" },
+                { type: "italic", text: "scale Meta ads" },
+              ],
+            },
+          ]}
+          label="CLIENT STORIES"
+          subtitle="Cause the most simple and effective process and practices are never followed"
+
+        />
+        <CircularDesign />
+
+      </div>
 
       <MetaHeading
         tag="h2"
