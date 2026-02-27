@@ -21,7 +21,7 @@ export default function Navbar({ items = navLinks }) {
                     {/* Logo */}
                     <div className="shrink-0 ">
 
-                        <Image src='/logo.png' height={40} width={100} alt="Upthrust agency logo" priority className="h-6 sm:h-7 3xl:h-10 object-contain w-full" />
+                        <Image src='/logo.png' height={40} width={100} quality={100} alt="Upthrust agency logo" priority className="h-6 sm:h-7 3xl:h-10 object-contain w-full" />
                     </div>
 
                     {/* Desktop Navigation */}
