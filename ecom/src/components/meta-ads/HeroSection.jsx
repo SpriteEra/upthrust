@@ -62,6 +62,16 @@ function InstagramBadge() {
     );
 }
 
+function SpButton({ text1, text2 }) {
+    return (
+        <div className="flex items-center gap-2 px-6 py-2 border rounded-2xl border-black ">
+            <span className="text-blue font-bold text-base">{text1}</span>
+            <span className="text-sm text-black font-normal leading-0">{text2}</span>
+
+        </div>
+    )
+}
+
 const words = [
     { text: 'CAC' },
     { text: 'CMP' },
@@ -154,37 +164,31 @@ export default function MetaAdsHero() {
                 </div>
 
                 {/* RIGHT: Video grid */}
-                <div className="relative w-full max-w-[560px] min-h-[520px]">
+                <div className="relative w-full lg:max-w-[52%] min-h-[520px]">
                     {/* Background glows */}
-                    <div className="absolute -top-10 -right-10 w-72 h-72 bg-violet-200/40 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-200/30 rounded-full blur-2xl pointer-events-none" />
-
-                    {/* ── TOP LEFT FLOATING CARD — 30% DROP IN CPAs ── */}
                     <div
-                        className="absolute top-8 left-0 z-20 w-44 rounded-2xl overflow-visible shadow-2xl"
-                        style={{ animation: "floatA 4s ease-in-out infinite" }}
+                        className="absolute top-8 left-0 z-20 w-44 rounded-2xl overflow-visible "
                     >
                         {/* Facebook badge */}
                         <div className="absolute -top-3 -right-3 z-30">
                             <FacebookBadge />
                         </div>
 
-                        <div className="rounded-2xl overflow-hidden border border-white/60 bg-[#111]">
-                            {/* Stat badge */}
-                            <div className="absolute top-2.5 left-2.5 z-10">
-                                <StatBadge value="30%" label="Drop in CPAs" />
+                        <div className="relative">
+
+                            <div className="absolute h-[398px] w-[224px] top-2.5 left-2.5 z-10">
+                                <video
+                                    className="w-full h-full object-cover  "
+                                    controls
+                                    playsInline
+                                >
+                                    <source
+                                        src="https://cdn.upthrust.agency/Google%20ads/LawyerNYC.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
                             </div>
 
-                            {/* Skincare video bg */}
-                            <div className="relative h-52 bg-gradient-to-br from-[#2a1810] via-[#1a0f08] to-[#3d2010] flex items-center justify-center">
-                                <div className="relative w-12 h-24 bg-gradient-to-b from-[#d4a574] to-[#c4956a] rounded-[30px_30px_8px_8px] shadow-xl">
-                                    <div className="absolute top-2 left-2 right-2 h-8 bg-white/15 rounded-2xl" />
-                                </div>
-                                <PlayCircle />
-                                <p className="absolute bottom-2 left-2.5 text-[8px] text-white/40 tracking-[3px] uppercase">
-                                    The Texture
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -269,17 +273,6 @@ export default function MetaAdsHero() {
                         {/* Instagram badge */}
                         <div className="absolute -bottom-3 -right-3 z-30">
                             <InstagramBadge />
-                        </div>
-
-                        <div className="w-full h-full rounded-2xl overflow-hidden border border-white/60 bg-gradient-to-br from-[#0a1628] via-[#1e3a5f] to-[#2a4a2a] flex flex-wrap items-center justify-center gap-1 p-2 relative">
-                            {["#f59e0b", "#10b981", "#3b82f6", "#ef4444", "#8b5cf6", "#f97316"].map((c, i) => (
-                                <div
-                                    key={i}
-                                    className="w-5 h-8 rounded shadow-md"
-                                    style={{ background: `linear-gradient(180deg, ${c} 0%, ${c}99 100%)` }}
-                                />
-                            ))}
-                            <PlayCircle />
                         </div>
                     </div>
 
