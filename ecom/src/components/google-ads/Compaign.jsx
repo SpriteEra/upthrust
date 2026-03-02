@@ -10,18 +10,20 @@ const caseStudies = [
         title: "We Love No Code",
         description: "Demo costs sat at $450 each. The ‘single keyword ad group’ rebuild cut them to $189 in just 8 weeks.",
         metrics: {
-            metric1: { label: "Increase in User Engagement", value: "20%" },
-            metric2: { label: "Number of Members", value: "48%" }
+            metric1: { label: "Cost per Demo Change", value: "20%" },
+            metric2: { label: "Number of Demos", value: "48%" }
         },
         testimonial: {
-            name: "Ellie Wilson",
-            role: "Founder, No-Code Hub",
+            name: "Nik",
+            role: "CEO, WLNC",
             avatar: "/google-ads/compaigns/1.webp"
         },
-        accentColor: "#2563EB",
-        bgColor: "#DBEAFE",
+        accentColor: "#0076F0",
+        bgColor: "#E7F0FF",
         rightImage: "/google-ads/compaigns/card1.webp",
-        imageAlt: "No-code platform dashboard interface"
+        imageAlt: "No-code platform dashboard interface",
+        showArrow: true
+
     },
     {
         badge: "B2B",
@@ -36,82 +38,89 @@ const caseStudies = [
             role: "Marketing Head, Mukunda Foods",
             avatar: "/google-ads/compaigns/2.webp"
         },
-        accentColor: "#DC2626",
-        bgColor: "#FEE2E2",
+        accentColor: "#FE2B27",
+        bgColor: "#FFE7E5",
         rightImage: "/google-ads/compaigns/card2.webp",
-        imageAlt: "Zomato business analytics dashboard"
+        imageAlt: "Zomato business analytics dashboard",
+        showArrow: true
+
     },
     {
         badge: "Ecommerce",
-        title: "L'oréal",
+        title: "L’oreal",
         description: "High acquisition costs blocked L'Oréal's ecommerce growth. We rebuilt audience targeting and optimized Shopping ad feeds. Customer acquisition costs dropped 40% in ten weeks, making profitable scale possible",
         metrics: {
-            metric1: { label: "Website Traffic Growth", value: "12%" },
-            metric2: { label: "Increase in Sales", value: "12%" }
+            metric1: { label: "CPA decrease", value: "12%" },
+            metric2: { label: "ROAS Increase", value: "12%" }
         },
         testimonial: {
-            name: "Sohel Ahmad",
-            role: "Marketing Director, L'Oréal India",
+            name: "Steve",
+            role: "Marketing Manager",
             avatar: "/google-ads/compaigns/3.webp"
         },
-        accentColor: "#CA8A04",
-        bgColor: "#FEF3C7",
+        accentColor: "#FFB900",
+        bgColor: "#FFE187",
         rightImage: "/google-ads/compaigns/card3.webp",
-        imageAlt: "L'Oréal ecommerce platform"
+        imageAlt: "L'Oréal ecommerce platform",
+        showArrow: true
+
     },
     {
         badge: "B2B SaaS",
-        title: "Cycle (YC-19)",
+        title: "Cyble (YC-19)",
         description: "Deployed multi-format ads (video, carousel, document, message) to boost engagement. Optimized via Smart Bidding and retargeting to lower CPL and increase conversions.",
         metrics: {
-            metric1: { label: "Retention Rate", value: "48%" },
-            metric2: { label: "Revenue Growth", value: "$320K / 2Mo" }
+            metric1: { label: "Message open rates", value: "48%" },
+            metric2: { label: "Pipeline Built", value: "$320K / 2Mo" }
         },
         testimonial: {
             name: "Nidhi Jain",
             role: "Co-Founder, Cycle",
             avatar: "/google-ads/compaigns/4.webp"
         },
-        accentColor: "#059669",
-        bgColor: "#D1FAE5",
+        accentColor: "#00822E",
+        bgColor: "#C8EBD6",
         rightImage: "/google-ads/compaigns/card4.webp",
-        imageAlt: "Cycle product management dashboard"
+        imageAlt: "Cycle product management dashboard",
+        showArrow: false
     },
     {
         badge: "Manufacturing",
         title: "Vega",
         description: "Built a full-funnel digital lead engine from audience research and LinkedIn demand gen to high-intent landing pages, email outreach, and continuous optimization.",
         metrics: {
-            metric1: { label: "Conversion Rate", value: "543+" },
-            metric2: { label: "Customer Retention", value: "18%" }
+            metric1: { label: "Qualified Leads Per Month", value: "543+" },
+            metric2: { label: "Boost in Organic Traffic", value: "18%" }
         },
         testimonial: {
-            name: "Sarah Mitchell",
-            role: "Digital Head, Vega Industries",
+            name: "Gaurav",
+            role: "Marketing Manager, Vega",
             avatar: "/google-ads/compaigns/5.webp"
         },
-        accentColor: "#2563EB",
-        bgColor: "#DBEAFE",
+        accentColor: "#0076F0",
+        bgColor: "#E7F0FF",
         rightImage: "/google-ads/compaigns/card5.webp",
-        imageAlt: "Vega ecommerce platform"
+        imageAlt: "Vega ecommerce platform",
+        showArrow: false
     },
     {
-        badge: "SaaS",
-        title: "Urban Plans",
+        badge: "D2C",
+        title: "Urban Pitara",
         description: "We scaled Urban Pitara’s D2C growth using high-intent Google Ads campaigns. Our performance-driven strategy generated qualified demand and improved conversion efficiency.",
         metrics: {
-            metric1: { label: "User Adoption Rate", value: "27%" },
-            metric2: { label: "Project Efficiency", value: "12%" }
+            metric1: { label: "CPA", value: "27%" },
+            metric2: { label: "Sales Growth", value: "12%" }
         },
         testimonial: {
             name: "Marcus Thompson",
             role: "Lead Architect, UrbanPlans Inc",
             avatar: "/google-ads/compaigns/6.webp"
         },
-        accentColor: "#DC2626",
-        bgColor: "#FEE2E2",
+        accentColor: "#FE2B27",
+        bgColor: "#FFE7E5",
         rightImage: "/google-ads/compaigns/card6.webp",
-        imageAlt: "Urban planning software interface"
+        imageAlt: "Urban planning software interface",
+        showArrow: true
     }
 ];
 
@@ -179,22 +188,22 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 // top: `5rem`,
                 zIndex: totalCards + index,
             }}
-            className="mb-8 lg:mb-12 top-[5rem] 2xl:top-35 3xl:top-[8rem]"
+            className="top-20 md:top-30 2xl:top-35 3xl:top-50"
         >
             <motion.div
-                className="rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
+                className="rounded-xl max-md:rounded-b-none md:rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20  p-2 sm:p-4 lg:p-6 3xl:p-7 min-h-[480px] 3xl:min-h-[500px]">
+                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 min-h-[500px] 3xl:min-h-[620px]">
                     {/* Left Content Section */}
-                    <div className="w-full lg:w-[50%]  flex flex-col justify-between pl-2 3xl:pl-3">
+                    <div className="w-full lg:w-[50%]  flex flex-col justify-between p-3 md:pl-2 3xl:pl-3">
                         <div className='3xl:max-w-150 flex flex-col justify-between h-full'>
                             <div>
                                 <motion.div
 
                                 >
                                     <span
-                                        className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-[24px] font-semibold leading-[150%] tracking-[-0.02em] "
+                                        className="inline-block mb-2 lg:mb-3 3xl:mb-4  py-1.5 text-2xl font-semibold leading-[150%] tracking-[-0.02em] "
                                         style={{
                                             color: 'black'
                                         }}
@@ -204,7 +213,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                 </motion.div>
 
                                 <motion.h2
-                                    className=" text-[30px] 3xl:text-[36px] font-semibold leading-[150%] tracking-[-0.02em] text-black"
+                                    className=" text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black"
 
                                 >
                                     {data.title}
@@ -212,7 +221,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                                 <motion.p
 
-                                    className="  mb-3 lg:mb-4 3xl:mb-26  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
+                                    className=" mb-6 md:mb-3 lg:mb-4 3xl:mb-26  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
                                 >
                                     {data.description}
                                 </motion.p>
@@ -221,34 +230,40 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                             <div>
                                 <motion.div
 
-                                    className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8"
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mb-6 md:mb-8"
                                 >
                                     <div className=''>
-                                        <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
+                                        <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] text-black">
                                             {data.metrics.metric1.label}
                                         </p>
                                         <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black flex items-center 3xl:mt-1">
                                             {data.metrics.metric1.value}
-                                            <span className="text-2xl ml-1 text-red-500">↓</span>
+                                            {data.showArrow &&
+
+                                                <span className="text-2xl font-light ml-1 text-red-500">↓</span>
+                                            }
                                         </p>
                                     </div>
                                     <div>
-                                        <p className="text-[18px] font-normal leading-[150%] tracking-[-0.02em] text-black">
+                                        <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] text-black">
                                             {data.metrics.metric2.label}
                                         </p>
                                         <p className="text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black flex items-center 3xl:mt-1" >
                                             {data.metrics.metric2.value}
-                                            <span className="text-2xl ml-1 text-green-500">↑</span>
+                                            {data.showArrow &&
+
+                                                <span className="text-2xl font-light ml-1 text-green-500">↑</span>
+                                            }
                                         </p>
                                     </div>
                                 </motion.div>
 
                                 <motion.div
 
-                                    className="flex items-center gap-4 p-5 rounded-xl"
+                                    className="flex items-center gap-4 p-3 md:p-5 rounded-lg max-sm:rounded-b-none md:rounded-xl"
                                     style={{ backgroundColor: data.accentColor }}
                                 >
-                                    <div className="w-12 h-12 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
+                                    <div className="w-15 h-15 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
                                         {/* {data.testimonial.name.charAt(0)} */}
                                         <Image
                                             height={60}
@@ -259,10 +274,10 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                         />
                                     </div>
                                     <div>
-                                        <p className="text-white font-semibold text-lg">
+                                        <p className="text-white font-semibold text-xl md:text-lg 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
                                             {data.testimonial.name}
                                         </p>
-                                        <p className="text-white/80 text-sm">
+                                        <p className="text-white text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em]">
                                             {data.testimonial.role}
                                         </p>
                                     </div>
@@ -293,7 +308,7 @@ const CompaignCards = () => {
     return (
         <div className="min-h-screen py-16 lg:py-24">
             {/* Case Studies Stack */}
-            <div className="max-w-400 3xl:max-w-430 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
+            <div className="max-w-400 3xl:max-w-430 mx-auto px-2.5 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-20">
                 <div className="relative">
                     {caseStudies.map((study, index) => (
                         <CaseStudyCard
@@ -306,16 +321,7 @@ const CompaignCards = () => {
                 </div>
             </div>
 
-            {/* Bottom CTA */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
-                className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center"
-            >
 
-            </motion.div>
         </div>
     );
 };

@@ -15,7 +15,7 @@ const GoogleFooter = ({ customeCss = "mt-20 md:mt-50" }) => {
                             key={index}
                             className="inline-block mr-20 text-8xl lg:text-[130px] 3xl:text-[180px] font-semibold max-lg:leading-26 3xl:leading-[180%] tracking-[-0.04em]"
                         >
-                            <span className="size-14 md:size-20 rounded-full bg-[#0076F0] inline-block"></span>  Upthrust Leading since 2020
+                            <span className="size-14 md:size-20 rounded-full bg-[#0076F0] inline-block"></span>  Upthrust Leading since 2021
                         </p>
                     ))}
                 </marquee>

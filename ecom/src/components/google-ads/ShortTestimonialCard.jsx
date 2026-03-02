@@ -42,7 +42,7 @@ export default function ShortTestimonialCard({ testimonial }) {
                     <p
                         className={`text-[16px] 3xl:text-[18px] leading-[150%]  tracking-[-0.02em] ${testimonial.textColor === "text-white"
                             ? "text-white/80"
-                            : "text-gray-600"
+                            : "text-black/80"
                             }`}
                     >
                         {testimonial.position}

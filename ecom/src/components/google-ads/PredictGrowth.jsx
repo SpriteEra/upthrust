@@ -6,18 +6,20 @@ import SmartSwiper from '@/components/SmartSwiper';
 
 const HEIGHTS = {
     blue: {
-        base: '74vh',
-        lg: '85vh',
-        xl: '85vh',
-        '2xl': '82vh',
-        '3xl': '88vh',
+        base: '540px',
+        lg: '500px',
+        xl: '620px',
+        '2xl': '570px',
+        '1600': '750px',
+        '1800': '850px',
     },
     white: {
-        base: '72vh',
-        lg: '75vh',
-        xl: '75vh',
-        '2xl': '73vh',
-        '3xl': '80vh',
+        base: '480px',
+        lg: '470px',
+        xl: '520px',
+        '2xl': '500px',
+        '1600': '670px',
+        '1800': '750px',
     },
 };
 
@@ -105,7 +107,7 @@ const PredictGrowth = () => {
         return (
             <div
                 key={card.id}
-                className={`relative rounded-2xl 3xl:rounded-[30px] overflow-hidden cursor-pointer ${card.bg} ${card.text} ${card.border}`}
+                className={`relative rounded-2xl 3xl:rounded-[30px] overflow-hidden cursor-pointer max-sm:h-fit! ${card.bg} ${card.text} ${card.border}`}
                 style={{
                     height: h.base,
                     '--card-h-lg': h.lg,
@@ -116,7 +118,7 @@ const PredictGrowth = () => {
                 data-card-responsive
                 onClick={() => toggleCard(card.id)}
             >
-                <div className="relative py-8 px-4 lg:p-8 2xl:p-8 3xl:p-20 flex flex-col gap-0">
+                <div className="relative py-4 sm:py-8 px-4 lg:p-8 2xl:p-8 1600:p-14 1800:p-20 flex flex-col gap-0">
 
                     {/* Category */}
                     <div
@@ -133,7 +135,7 @@ const PredictGrowth = () => {
                     <div
                         className={`
                             overflow-hidden
-                            ${isExpanded ? 'opacity-0 max-h-0 mb-0' : 'opacity-100 max-h-[160px] mb-6 xl:mb-10 3xl:mb-20'}
+                            ${isExpanded ? 'opacity-0 max-h-0 mb-0' : 'opacity-100 max-h-[160px] mb-6 xl:mb-10 1600:mb-12 1800:mb-20'}
                         `}
                         style={{ transition: 'opacity 300ms ease-in-out, max-height 450ms ease-in-out, margin-bottom 450ms ease-in-out' }}
                     >
@@ -145,10 +147,14 @@ const PredictGrowth = () => {
                     {/* Image — always visible for blue, slides in for white */}
                     <div
                         className={`
-                            relative rounded-lg overflow-hidden aspect-7/5 max-h-50 xl:max-h-70 3xl:max-h-[360px]
+                            relative rounded-lg overflow-hidden aspect-7/4 max-h-50 xl:max-h-70 1800:max-h-[360px]
                             ${isBlue
-                                ? ` opacity-100 mt-0 ${isExpanded ? "xl:mt-10 3xl:mt-10" : ""}`
-                                : isExpanded ? ' opacity-100 xl:mt-4' : 'max-h-0 opacity-0 mt-0'
+                                ? ` opacity-100 mt-0 aspect-7/4 max-h-50 xl:max-h-70 1800:max-h-[360px] 
+                                ${isExpanded ? "xl:mt-10 1600:mt-6 1800:mt-10" : ""}`
+
+                                : ` aspect-7/4 max-h-50 xl:max-h-60! 1800:max-h-[320px]!
+                                ${isExpanded ? "opacity-100 xl:mt-0" : "max-h-0 opacity-0 mt-0"}`
+
                             }
                         `}
                         style={{ transition: 'max-height 500ms ease-in-out, opacity 400ms ease-in-out, margin-top 400ms ease-in-out' }}
@@ -165,9 +171,8 @@ const PredictGrowth = () => {
                                     <Image
                                         src={item}
                                         alt={item}
-                                        fill
-                                        quality={100}
-                                        sizes="(max-width: 768px) 100vw, 60vw"
+                                        width={700}
+                                        height={360}
                                         className="object-cover rounded-lg 3xl:rounded-2xl"
                                     />
                                 </div>
@@ -179,7 +184,7 @@ const PredictGrowth = () => {
                     <div
                         className={`
                             overflow-hidden
-                            ${isExpanded ? 'max-h-[300px] opacity-100 mt-5 xl:mt-10 3xl:mt-14' : 'max-h-0 opacity-0 mt-0'}
+                            ${isExpanded ? 'max-h-[300px] opacity-100 mt-5 xl:mt-10 1800:mt-12' : 'max-h-0 opacity-0 mt-0'}
                         `}
                         style={{ transition: 'max-height 500ms ease-in-out, opacity 400ms ease-in-out, margin-top 400ms ease-in-out' }}
                     >
@@ -211,20 +216,23 @@ const PredictGrowth = () => {
     };
 
     return (
-        <div className="min-h-screen max-w-[90%] mx-auto 3xl:max-w-[85%] py-10 lg:py-20">
+        <div className="max-sm:px-2.5 sm:max-w-[90%] mx-auto 3xl:max-w-[85%] py-10 lg:py-20">
 
             <style>{`
                 @media (min-width: 768px) {
                     [data-card-responsive] { height: var(--card-h-lg) !important; }
                 }
-                @media (min-width: 1280px) {
+                @media (min-width: 1200px) {
                     [data-card-responsive] { height: var(--card-h-xl) !important; }
                 }
-                @media (min-width: 1536px) {
+                @media (min-width: 1350px) {
                     [data-card-responsive] { height: var(--card-h-2xl) !important; }
                 }
+                @media (min-width: 1700px) {
+                    [data-card-responsive] { height: var(--card-h-1600) !important; }
+                }
                 @media (min-width: 1820px) {
-                    [data-card-responsive] { height: var(--card-h-3xl) !important; }
+                    [data-card-responsive] { height: var(--card-h-1800) !important; }
                 }
             `}</style>
 

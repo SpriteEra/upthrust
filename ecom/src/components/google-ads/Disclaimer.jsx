@@ -111,25 +111,25 @@ export const Disclaimer = () => {
 const GoogleDisclaimer = () => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
-            <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
-                <div className=''>
-                    <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-15'>Do you have <br />any questions?</p>
+            <div className='flex justify-between max-xs:flex-col-reverse gap-14  md:gap-20'>
+                <div className='max-md:pl-2'>
+                    <p className='font-semibold text-4xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%]'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
 
                     {/* <StylishButton /> */}
-                    <button className="bg-[#0076F0] text-white px-9 py-3 3xl:py-5 rounded-full text-[20px] font-normal leading-[150%] tracking-[-0.02em]">Show Us How to Scale</button>
+                    <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">Show Us How to Scale</button>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-8'>
+                <div className='flex flex-col md:justify-between md:items-center gap-6 md:gap-8 max-md:pl-2'>
                     <Image
                         src={'/logo.png'}
                         alt='Upthrust'
                         width={400}
                         height={300}
-                        className='h-16 lg:h-14 3xl:h-16 w-full object-contain'
+                        className='h-14 md:h-16 lg:h-14 3xl:h-16 w-fit object-contain'
                     />
                     <div className='flex gap-3 items-start'>
-                        <span className='text-[#0076F0] font-semibold text-3xl max-xs:hidden'>/</span>
-                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for D2C brands that actually scale.</p>
+                        <span className='text-[#0076F0] font-semibold text-3xl '>/</span>
+                        <p className='text-sm md:text-xs 3xl:text-base max-w-70 md:max-w-100 3xl:max-w-98 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for brands that actually scale.</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,7 +15,7 @@ const GoogleAdsRoiPrediction = () => {
   const conversionTabRef = useRef(null);
   const indicatorRef = useRef(null);
 
-
+  const isAnimating = useRef(false);
   const leftContainer = useRef(null)
   const rightContainer = useRef(null)
   const imgARef = useRef(null);
@@ -54,22 +54,7 @@ const GoogleAdsRoiPrediction = () => {
 
   useGSAP(() => {
     gsap.set(conversionRef.current, { opacity: 0, x: 100 });
-
-    const container = trafficTabRef.current.parentElement;
-    const trafficRect = trafficTabRef.current.getBoundingClientRect();
-    const conversionRect = conversionTabRef.current.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
-
-    const leftRect = leftContainer.current.getBoundingClientRect();
-    const rightRect = rightContainer.current.getBoundingClientRect();
-
-    // distance needed to swap
-    const swapX = rightRect.left - leftRect.left;
-
-
     const trafficX = 0;
-    const conversionX = conversionRect.left - containerRect.left;
-
     gsap.set(indicatorRef.current, {
       x: trafficX,
       width: 200,
@@ -82,207 +67,214 @@ const GoogleAdsRoiPrediction = () => {
         end: "top -150%",
         scrub: true,
         pin: true,
+        invalidateOnRefresh: true,
         onUpdate: (self) => {
-          // gsap.to(indicatorRef.current, {
-          //     x: gsap.utils.interpolate(trafficX, conversionX, self.progress),
-          //     width: gsap.utils.interpolate(
-          //         200,
-          //         conversionRect.width,
-          //         self.progress
-          //     ),
-          //     backgroundColor: self.progress > 0.5 ? "#3B82F6" : "#FACC15",
-          //     overwrite: true,
-          //     duration: 0.1,
-          // });
-          // gsap.to(trafficTabRef.current, {
-          //     color: self.progress > 0.5 ? "#9CA3AF" : "#000000",
-          //     overwrite: true,
-          //     duration: 0.1,
-          // });
-
-          // gsap.to(conversionTabRef.current, {
-          //     color: self.progress > 0.5 ? "#000000" : "#9CA3AF",
-          //     overwrite: true,
-          //     duration: 0.1,
-          // });
           if (self.progress > 0.5 && !crossed.current) {
             crossed.current = true;
-            setActiveTab("conversion");
-            fadeToggle(false, leftTitleARef, leftTitleBRef);
-            fadeToggle(false, listARef, listBRef);
-            fadeToggle(false, buttonARef, buttonBRef);
-            gsap.to(indicatorRef.current, {
-              x: conversionX,
-              width: conversionRect.width,
-              backgroundColor: "#3B82F6",
-              duration: 0.4
-            });
-
-            trafficTabRef.current.classList.remove("text-black");
-            trafficTabRef.current.classList.add("text-gray-400");
-
-            conversionTabRef.current.classList.remove("text-gray-400");
-            conversionTabRef.current.classList.add("text-black");
-
-            gsap.to(".gsap-bg", {
-              backgroundColor: "#E7F0FF",
-              duration: 0.6,
-              ease: "power2.out",
-            });
-
-            // IMAGE CROSS FADE
-            gsap.to(imgARef.current, { opacity: 0, duration: 0.6 });
-            gsap.to(imgBRef.current, { opacity: 1, duration: 0.6 });
-
-            // FULL POSITION SWAP
-            gsap.to(leftContainer.current, {
-              x: rightRect.right - leftRect.right,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
-
-            gsap.to(rightContainer.current, {
-              x: -swapX,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
-            gsap.to(leftTextARef.current, {
-              y: "-100%",
-              autoAlpha: 0,
-              duration: 0.6,
-              ease: "power3.out"
-            })
-
-            gsap.to(leftTextBRef.current, {
-              y: "0%",
-              autoAlpha: 1,
-              duration: 0.6,
-              ease: "power3.out"
-            })
-
-
-            // TEXT SWAP (UP / DOWN)
-            gsap.to(textARef.current, {
-              y: "-100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-
-            gsap.to(textBRef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-
-            gsap.to(iconARef.current, { opacity: 0, duration: 0.5 });
-            gsap.to(iconBRef.current, { opacity: 1, duration: 0.5 });
-
+            switchTab("conversion");
           }
+
           if (self.progress <= 0.5 && crossed.current) {
             crossed.current = false;
-            setActiveTab("traffic");
-            fadeToggle(true, leftTitleARef, leftTitleBRef);
-            fadeToggle(true, listARef, listBRef);
-            fadeToggle(true, buttonARef, buttonBRef);
-            gsap.to(indicatorRef.current, {
-              x: trafficX,
-              width: 200,
-              backgroundColor: "#FACC15",
-              duration: 0.4
-            });
-
-            trafficTabRef.current.classList.remove("text-gray-400");
-            trafficTabRef.current.classList.add("text-black");
-
-            conversionTabRef.current.classList.remove("text-black");
-            conversionTabRef.current.classList.add("text-gray-400");
-
-            gsap.to(".gsap-bg", {
-              backgroundColor: "#FFE187",
-              duration: 0.6,
-              ease: "power2.out",
-            });
-
-            gsap.to(imgARef.current, { opacity: 1, duration: 0.6 });
-            gsap.to(imgBRef.current, { opacity: 0, duration: 0.6 });
-
-            gsap.to(leftContainer.current, {
-              x: 0,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
-
-            gsap.to(rightContainer.current, {
-              x: 0,
-              duration: 0.8,
-              ease: "power3.inOut",
-            });
-
-            gsap.to(leftTextARef.current, {
-              y: "0%",
-              autoAlpha: 1,
-              duration: 0.6,
-              ease: "power3.out"
-            })
-
-            gsap.to(leftTextBRef.current, {
-              y: "100%",
-              autoAlpha: 0,
-              duration: 0.6,
-              ease: "power3.out"
-            })
-
-
-            gsap.to(textARef.current, {
-              y: "0%",
-              opacity: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-
-            gsap.to(textBRef.current, {
-              y: "100%",
-              opacity: 0,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-            gsap.to(iconARef.current, { opacity: 1, duration: 0.5 });
-            gsap.to(iconBRef.current, { opacity: 0, duration: 0.5 });
-
+            switchTab("traffic");
           }
 
         },
       },
     })
-    // .to(trafficRef.current, { opacity: 0, x: -100, duration: 1 })
-    // .to(conversionRef.current, { opacity: 1, x: 0, duration: 1 }, "<");
   }, { scope: wrapperRef });
 
+  useEffect(() => {
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const switchTab = (type) => {
+    gsap.killTweensOf([
+      imgARef.current,
+      imgBRef.current,
+      leftContainer.current,
+      rightContainer.current,
+      textARef.current,
+      textBRef.current,
+      leftTextARef.current,
+      leftTextBRef.current,
+      iconARef.current,
+      iconBRef.current
+    ]);
+    const container = trafficTabRef.current.parentElement;
+    const conversionRect = conversionTabRef.current.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
+
+    const leftRect = leftContainer.current.getBoundingClientRect();
+    const rightRect = rightContainer.current.getBoundingClientRect();
+
+    const swapX = rightRect.left - leftRect.left;
+    const conversionX = conversionRect.left - containerRect.left;
+
+    if (type === "conversion") {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
+      setActiveTab("conversion");
+
+      fadeToggle(false, leftTitleARef, leftTitleBRef);
+      fadeToggle(false, listARef, listBRef);
+      fadeToggle(false, buttonARef, buttonBRef);
+
+      // indicator
+      gsap.to(indicatorRef.current, {
+        x: conversionX,
+        width: conversionRect.width,
+        backgroundColor: "#3B82F6",
+        duration: 0.4
+      });
+
+      // tab colors
+      trafficTabRef.current.classList.remove("text-black");
+      trafficTabRef.current.classList.add("text-gray-400");
+
+      conversionTabRef.current.classList.remove("text-gray-400");
+      conversionTabRef.current.classList.add("text-black");
+
+      // background
+      gsap.to(".gsap-bg", {
+        backgroundColor: "#E7F0FF",
+        duration: 0.6
+      });
+
+      // image swap
+      gsap.to(imgARef.current, { opacity: 0, duration: 0.6 });
+      gsap.to(imgBRef.current, { opacity: 1, duration: 0.6 });
+
+      // container swap
+      gsap.to(leftContainer.current, {
+        x: rightRect.right - leftRect.right,
+        duration: 0.8,
+        ease: "power3.inOut"
+      });
+
+      gsap.to(rightContainer.current, {
+        x: -swapX,
+        duration: 0.8,
+        ease: "power3.inOut"
+      });
+
+      // left text swap
+      gsap.to(leftTextARef.current, {
+        y: "-100%",
+        autoAlpha: 0,
+        duration: 0.6
+      });
+
+      gsap.to(leftTextBRef.current, {
+        y: "0%",
+        autoAlpha: 1,
+        duration: 0.6
+      });
+
+      // right text swap
+      gsap.to(textARef.current, { y: "-100%", opacity: 0, duration: 0.6 });
+      gsap.to(textBRef.current, { y: "0%", opacity: 1, duration: 0.6 });
+
+      // icon swap
+      gsap.to(iconARef.current, { opacity: 0, duration: 0.5 });
+      gsap.to(iconBRef.current, { opacity: 1, duration: 0.5 });
+      gsap.delayedCall(0.8, () => {
+        isAnimating.current = false;
+      });
+    } else {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
+      setActiveTab("traffic");
+
+      fadeToggle(true, leftTitleARef, leftTitleBRef);
+      fadeToggle(true, listARef, listBRef);
+      fadeToggle(true, buttonARef, buttonBRef);
+
+      gsap.to(indicatorRef.current, {
+        x: 0,
+        width: 200,
+        backgroundColor: "#FACC15",
+        duration: 0.4
+      });
+
+      trafficTabRef.current.classList.remove("text-gray-400");
+      trafficTabRef.current.classList.add("text-black");
+
+      conversionTabRef.current.classList.remove("text-black");
+      conversionTabRef.current.classList.add("text-gray-400");
+
+      gsap.to(".gsap-bg", {
+        backgroundColor: "#FFE187",
+        duration: 0.6
+      });
+
+      gsap.to(imgARef.current, { opacity: 1, duration: 0.6 });
+      gsap.to(imgBRef.current, { opacity: 0, duration: 0.6 });
+
+      gsap.to(leftContainer.current, {
+        x: 0,
+        duration: 0.8,
+        ease: "power3.inOut"
+      });
+
+      gsap.to(rightContainer.current, {
+        x: 0,
+        duration: 0.8,
+        ease: "power3.inOut"
+      });
+
+      gsap.to(leftTextARef.current, {
+        y: "0%",
+        autoAlpha: 1,
+        duration: 0.6
+      });
+
+      gsap.to(leftTextBRef.current, {
+        y: "100%",
+        autoAlpha: 0,
+        duration: 0.6
+      });
+
+      gsap.to(textARef.current, { y: "0%", opacity: 1, duration: 0.6 });
+      gsap.to(textBRef.current, { y: "100%", opacity: 0, duration: 0.6 });
+
+      gsap.to(iconARef.current, { opacity: 1, duration: 0.5 });
+      gsap.to(iconBRef.current, { opacity: 0, duration: 0.5 });
+      gsap.delayedCall(0.8, () => {
+        isAnimating.current = false;
+      });
+    }
+  };
   return (
     <div ref={wrapperRef} className="relative  overflow-hidden bg-white ">
-      <div className="container mx-auto px-4 mt-24 3xl:mt-30">
+      <div className="container mx-auto px-4 mt-24 3xl:mt-32">
         {/* Heading */}
 
-        <div className="relative max-w-fit mx-auto mb-6 3xl:mb-12">
+        <div className="relative max-w-fit mx-auto mb-6 3xl:mb-10">
           <div className="flex justify-center gap-12 relative pb-3">
             <button
               ref={trafficTabRef}
-              className="tab traffic-tab text-xl font-semibold px-4 py-2 min-w-40 3xl:min-w-[200px]"
+              onClick={() => switchTab("traffic")}
+              className="tab traffic-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50"
             >
               Traffic
             </button>
 
             <button
               ref={conversionTabRef}
-              className="tab conversion-tab text-xl font-semibold px-4 py-2 min-w-40 3xl:min-w-[200px]"
+              onClick={() => switchTab("conversion")}
+              className="tab conversion-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50"
             >
               Conversion of Traffic
             </button>
 
           </div>
-          <div className="absolute bottom-[9px] left-0 right-0 h-0.5 bg-gray-300" />
+          <div className="absolute bottom-2.25 left-0 right-0 h-0.5 bg-gray-300" />
           <div
             ref={indicatorRef}
             className="absolute bottom-2 h-1 rounded-full bg-yellow-400 z-10"
@@ -362,7 +354,7 @@ const GoogleAdsRoiPrediction = () => {
                     className="absolute inset-0 text-2xl font-semibold 3xl:leading-[150%] tracking-[-0.02em]"
                     style={{ opacity: 0 }}
                   >
-                    One client went from two percent conversions to six percent. <span className="font-normal 3xl:leading-[32px]">Same traffic, different page. Triple the revenue.</span>
+                    One client went from two percent conversions to six percent. <span className="font-normal 3xl:leading-8">Same traffic, different page. Triple the revenue.</span>
                   </p>
                 </div>
 
@@ -393,10 +385,10 @@ const GoogleAdsRoiPrediction = () => {
 
 
 
-                <div className="relative overflow-hidden h-[3.5rem] 3xl:h-20 mt-7">
+                <div className="relative overflow-hidden h-14 3xl:h-20 mt-7">
                   <button
                     ref={buttonARef}
-                    className="absolute inset-0 bg-[#FBBC04] text-black px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit"
+                    className="absolute inset-0 bg-[#FBBC04] text-black px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit cursor-pointer"
                     style={{ opacity: 1 }}
                   >
                     I'm stuck, I need high quality traffic
@@ -404,7 +396,7 @@ const GoogleAdsRoiPrediction = () => {
 
                   <button
                     ref={buttonBRef}
-                    className="absolute inset-0 bg-[#1A73E8] text-white px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit"
+                    className="absolute inset-0 bg-[#1A73E8] text-white px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit cursor-pointer"
                     style={{ opacity: 0 }}
                   >
                     I want a 25% converting page
@@ -435,7 +427,7 @@ const GoogleAdsRoiPrediction = () => {
 
               <div className="relative ">
                 <div className=" absolute top-0 left-0 bottom-0 right-0 3xl:-right-12 3xl:top-2 ">
-                  <div className="relative w-full h-105 2xl:h-116 3xl:h-157">
+                  <div className={`relative w-full h-105 2xl:h-116 ${activeTab === "traffic" ? "3xl:h-168" : "3xl:h-172"}`}>
                     <img
                       ref={imgARef}
                       src="/google-ads/analytics-dashboard.webp"

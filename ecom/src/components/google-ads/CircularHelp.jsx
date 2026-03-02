@@ -456,6 +456,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import SmartSwiper from "../SmartSwiper";
 
 const CircularHelp = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -468,18 +469,18 @@ const CircularHelp = () => {
   const touchStartY = useRef(null);
   const [mobileDragX, setMobileDragX] = useState(0);
   const [isSwiping, setIsSwiping] = useState(false);
-
+  const swiperRef = useRef(null);
   const sections = [
     {
       id: 0,
       badge: "Audience",
       title: (
         <>
-          The Right Traffic.
-          <br />
+          The Right Traffic. {" "}
+          <br className="max-lg:hidden" />
           At Buying
-          <br />
-          <span className="text-[#9ADCB2]">Temperature.</span>
+          <br className="max-lg:hidden" /> {" "}
+          <span className="text-[#9ADCB2]"> Temperature.</span>
         </>
       ),
       subtitle: "Keyword-controlled campaigns that reach buyers",
@@ -510,7 +511,7 @@ const CircularHelp = () => {
       textColor: "text-white",
       mutedText: "text-white/90",
       borderColor: "border-white/20",
-      activeTab: " text-[#0076F0]",
+      activeTab: "text-[#0076F0] lg:text-white",
       inactiveTab: "text-white"
     },
     {
@@ -644,26 +645,25 @@ const CircularHelp = () => {
   return (
     <>
       {/* ===================== MOBILE VIEW ===================== */}
-      <div
-        className="lg:hidden w-full overflow-hidden py-20"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{ touchAction: "pan-y" }}
-      >
-        <div className="relative w-full overflow-hidden">
-          <AnimatePresence custom={direction} mode="wait">
+      <div className="lg:hidden w-full py-20">
+        <SmartSwiper
+          slides={sections}
+          loop={true}
+          autoplay={true}
+          effect="slide"
+          speed={500}
+          onSwiperReady={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(index) => {
+            setDirection(index > activeSection ? 1 : -1);
+            previousSectionRef.current = index;
+            setActiveSection(index);
+          }}
+          renderSlide={(current) => (
             <motion.div
-              key={activeSection}
-              custom={direction}
-              variants={mobileSlideVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className={`w-full min-h-screen flex flex-col max-sm:gap-2 ${current.bgColor}`}
+              className={`w-full flex flex-col max-sm:gap-2 rounded-[20px] ${current.bgColor}`}
             >
               {/* Content */}
-              <div className={`${current.textColor} flex flex-col flex-1 px-6 pt-10 pb-0`}>
+              <div className={`${current.textColor} flex flex-col flex-1 px-4 pt-10 pb-10`}>
 
                 <span
                   className={`inline-block border rounded-full px-4 py-1 text-sm tracking-[-0.02em] leading-[150%] w-fit mb-6 ${current.borderColor}`}
@@ -671,28 +671,31 @@ const CircularHelp = () => {
                   PROCESS
                 </span>
 
-                <h2 className="text-3xl font-semibold leading-[130%] tracking-[-0.02em] mb-4">
+                <h2 className="text-[36px] font-semibold leading-[130%] tracking-[-0.02em] mb-4">
                   {current.title}
                 </h2>
 
-                <p className={`${current.mutedText} text-base leading-[150%] tracking-[-0.02em] mb-6`}>
+                <p className={`${current.mutedText} text-3xl leading-[150%] tracking-[-0.02em] mb-6`}>
                   {current.subtitle}
                 </p>
 
                 {/* Tab labels */}
-                <div className={`flex max-sm:flex-col max-sm:justify-start max-sm:items-start gap-3 sm:gap-6 border-b-2 pb-0 mb-0 ${current.borderColor}`}>
+                <div className={`flex max-sm:flex-col max-sm:justify-start max-sm:items-start gap-3 sm:gap-6 border-b-2 pb-3 mb-0 ${current.borderColor}`}>
                   {sections.map((section, index) => (
                     <button
                       key={section.id}
                       onClick={() => {
                         setDirection(index > activeSection ? 1 : -1);
                         previousSectionRef.current = index;
-                        setActiveSection(index);
+                        // setActiveSection(index);
+                        swiperRef.current?.slideToLoop(index);
                       }}
-                      className={`text-sm pb-2 border-b-2 transition-all duration-300 -mb-[2px] ${activeSection === index
-                        ? `border-current ${current.activeTab}`
-                        : `border-transparent ${current.inactiveTab}`
-                        }`}
+                      className={`text-2xl tracking-[-0.02em] leading-[150%] transition-all duration-300 -mb-[2px] 
+                        ${activeSection === index
+                          ? `border-current ${current.activeTab}`
+                          : `border-transparent ${current.inactiveTab}`
+                        }
+                        `}
                     >
                       {section.badge}
                     </button>
@@ -709,108 +712,89 @@ const CircularHelp = () => {
                   className="object-cover object-top"
                 />
               </div>
-
-              {/* Dot indicators */}
-              <div className={`flex justify-center gap-2 py-4 ${current.bgColor}`}>
-                {sections.map((_, i) => (
-                  <div
-                    key={i}
-                    onClick={() => {
-                      setDirection(i > activeSection ? 1 : -1);
-                      previousSectionRef.current = i;
-                      setActiveSection(i);
-                    }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${i === activeSection
-                      ? current.textColor === "text-white" ? "bg-white" : "bg-black"
-                      : current.textColor === "text-white" ? "bg-white/40" : "bg-black/30"
-                      }`}
-                  />
-                ))}
-              </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          )}
+        />
       </div>
-
       {/* ===================== DESKTOP VIEW (UNCHANGED) ===================== */}
       <div
         ref={containerRef}
         className="hidden lg:block min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
       >
-        <div className="sticky top-0 md:max-2xl:top-15 2xl:top-30 3xl:top-30 flex items-center overflow-hidden rounded">
+        <div className="sticky max-xl:min-h-screen top-1/2 md:max-xl:top-25 2xl:top-30 3xl:top-36 flex items-center overflow-hidden rounded">
           <div
-            className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700`}
+            className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700 h-230 xl:h-130 2xl:h-135 1600:h-190 1800:h-[780px]`}
           >
-            <div className="container mx-auto px-4 md:px-8 py-7 lg:py-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-start px-4 md:px-8 py-7 lg:py-10 h-full">
 
-                {/* LEFT CONTENT */}
-                <div className={`${sections[activeSection].textColor} space-y-2 md:space-y-6 3xl:py-8 3xl:pl-8`}>
-
+              {/* LEFT CONTENT */}
+              <div className={`${sections[activeSection].textColor} space-y-2 md:space-y-6 3xl:py-8 3xl:pl-8 flex flex-col justify-between xl:h-full max-xl:max-h-120`}>
+                <div className="space-y-2 md:space-y-6 ">
                   <span
                     className={`inline-block border rounded-full px-4 py-1 3xl:py-3 3xl:px-8 text-sm tracking-[-0.02em] leading-[150%] ${sections[activeSection].borderColor}`}
                   >
                     PROCESS
                   </span>
 
-                  <h2 className="text-3xl md:text-5xl 3xl:text-[72px] font-semibold leading-[130%] tracking-[-0.02em] 2xl:tracking-[-0.04em]">
+                  <h2 className="text-3xl md:text-5xl 1600:text-6xl 1800:text-[72px] font-semibold leading-[130%] tracking-[-0.02em] 2xl:tracking-[-0.04em]">
                     {sections[activeSection].title}
                   </h2>
 
-                  <p className={`${sections[activeSection].mutedText} text-[22px] md:text-[30px] leading-[150%] tracking-[-0.02em] max-w-xl 3xl:max-w-2xl`}>
+                  <p className={`${sections[activeSection].mutedText} text-[22px] 3xl:text-[30px] leading-[150%] tracking-[-0.02em] xl:max-w-xl 3xl:max-w-2xl`}>
                     {sections[activeSection].subtitle}
                   </p>
 
-                  {/* DESKTOP TABS */}
-                  <div
-                    className={`hidden lg:flex gap-8 pt-8 3xl:pt-20 border-b-2 w-full justify-between max-w-[650px] ${sections[activeSection].borderColor}`}
-                  >
-                    {sections.map((section, index) => (
-                      <button
-                        key={section.id}
-                        onClick={() => {
-                          setDirection(index > activeSection ? 1 : -1);
-                          previousSectionRef.current = index;
-                          setActiveSection(index);
-                        }}
-                        className={`text-sm 2xl:text-xl 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 ${activeSection === index ? "border-current" : "border-transparent"
-                          } ${activeSection === index
-                            ? sections[activeSection].activeTab
-                            : sections[activeSection].inactiveTab
-                          }`}
-                      >
-                        {section.badge}
-                      </button>
-                    ))}
-                  </div>
                 </div>
 
-                {/* IMAGE */}
-                <div className="relative w-full h-full flex justify-end overflow-hidden">
-                  <AnimatePresence custom={direction}>
-                    <motion.div
-                      key={activeSection}
-                      custom={direction}
-                      variants={imageVariants}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      className="absolute w-full h-full flex items-end justify-end"
+                {/* DESKTOP TABS */}
+                <div
+                  className={`hidden lg:flex gap-8 border-b-2 w-full justify-between max-w-[650px] ${sections[activeSection].borderColor}`}
+                >
+                  {sections.map((section, index) => (
+                    <button
+                      key={section.id}
+                      onClick={() => {
+                        setDirection(index > activeSection ? 1 : -1);
+                        previousSectionRef.current = index;
+                        setActiveSection(index);
+                      }}
+                      className={`text-sm 2xl:text-xl 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 cursor-pointer ${activeSection === index ? "border-current" : "border-transparent"
+                        } ${activeSection === index
+                          ? sections[activeSection].activeTab
+                          : sections[activeSection].inactiveTab
+                        }`}
                     >
-                      <div className="h-[260px] sm:h-[320px] lg:h-[500px] 3xl:aspect-641/728 3xl:h-full max-h-180 justify-end relative">
-                        <Image
-                          src={sections[activeSection].image}
-                          alt="circular"
-                          width={500}
-                          height={600}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
+                      {section.badge}
+                    </button>
+                  ))}
                 </div>
-
               </div>
+
+              {/* IMAGE */}
+              <div className="relative w-full h-110 xl:h-full flex justify-center xl:justify-end overflow-hidden">
+                <AnimatePresence custom={direction}>
+                  <motion.div
+                    key={activeSection}
+                    custom={direction}
+                    variants={imageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="absolute w-full h-full flex items-end justify-center xl:justify-end"
+                  >
+                    <div className="h-full 3xl:aspect-641/728 3xl:h-full max-xl:h-110 max-h-180 justify-center xl:justify-end relative">
+                      <Image
+                        src={sections[activeSection].image}
+                        alt="circular"
+                        width={500}
+                        height={720}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
             </div>
           </div>
         </div>
@@ -820,3 +804,73 @@ const CircularHelp = () => {
 };
 
 export default CircularHelp;
+
+
+{/* <div
+        className="lg:hidden w-full overflow-hidden py-20"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ touchAction: "pan-y" }}
+      >
+        <div className="relative w-full overflow-hidden rounded-[20px]">
+          <AnimatePresence custom={direction} mode="wait">
+            <motion.div
+              key={activeSection}
+              custom={direction}
+              variants={mobileSlideVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className={`w-full min-h-screen flex flex-col max-sm:gap-2 ${current.bgColor}`}
+            >
+              <div className={`${current.textColor} flex flex-col flex-1 px-4 pt-10 pb-10`}>
+
+                <span
+                  className={`inline-block border rounded-full px-4 py-1 text-sm tracking-[-0.02em] leading-[150%] w-fit mb-6 ${current.borderColor}`}
+                >
+                  PROCESS
+                </span>
+
+                <h2 className="text-[36px] font-semibold leading-[130%] tracking-[-0.02em] mb-4">
+                  {current.title}
+                </h2>
+
+                <p className={`${current.mutedText} text-3xl leading-[150%] tracking-[-0.02em] mb-6`}>
+                  {current.subtitle}
+                </p>
+
+                <div className={`flex max-sm:flex-col max-sm:justify-start max-sm:items-start gap-3 sm:gap-6 border-b-2 pb-3 mb-0 ${current.borderColor}`}>
+                  {sections.map((section, index) => (
+                    <button
+                      key={section.id}
+                      onClick={() => {
+                        setDirection(index > activeSection ? 1 : -1);
+                        previousSectionRef.current = index;
+                        setActiveSection(index);
+                      }}
+                      className={`text-2xl tracking-[-0.02em] leading-[150%] transition-all duration-300 -mb-[2px] 
+                        ${activeSection === index
+                        ? `border-current ${current.activeTab}`
+                        : `border-transparent ${current.inactiveTab}`
+                        }
+                        `}
+                    >
+                      {section.badge}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative w-full h-[450px] mt-auto overflow-hidden">
+                <Image
+                  src={current.image}
+                  alt="circular"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div> */}

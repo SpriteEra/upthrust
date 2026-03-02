@@ -14,7 +14,7 @@ export default function ClientTestimonials() {
             position: "President - Corondo",
             avatar: "/google-ads/review/img1.webp",
             bgColor: "bg-white",
-            borderColor: "border-red-500"
+            borderColor: "border-[#FE2B27]"
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ export default function ClientTestimonials() {
                 width: "w-16 3xl:w-25",
                 height: "h-16 3xl:h-25"
             },
-            bgColor: "bg-yellow-400",
+            bgColor: "bg-[#FFB900]",
             textColor: "text-black",
         },
         {
@@ -42,7 +42,7 @@ export default function ClientTestimonials() {
             company: "/google-ads/review/clogo1.webp",
             avatar: "/google-ads/review/img3.webp",
             hasVideo: true,
-            bgColor: "bg-blue-500",
+            bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
             arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 top-15  2xl:top-12 size-20 2xl:size-26 3xl:size-32 "
@@ -58,7 +58,7 @@ export default function ClientTestimonials() {
             hasVideo: true,
             hasAvatar: true,
             avatar: "/google-ads/review/img4.webp",
-            bgColor: "bg-blue-500",
+            bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
             arrowcss: "absolute -right-4 sm:-right-6 2xl:-right-17 top-8 2xl:top-6 size-20 2xl:size-26 3xl:size-32"
@@ -73,7 +73,7 @@ export default function ClientTestimonials() {
             avatar: "👤",
             bgColor: "bg-white",
             avatar: "/google-ads/review/img5.webp",
-            borderColor: "border-red-500"
+            borderColor: "border-[#FE2B27]"
         },
         {
             id: 6,
@@ -99,7 +99,7 @@ export default function ClientTestimonials() {
             },
             position: "Marketing Head at - Mukunda Foods",
             hasAvatar: true,
-            bgColor: "bg-yellow-400",
+            bgColor: "bg-[#FFB900]",
             textColor: "text-black"
         },
         {
@@ -112,7 +112,7 @@ export default function ClientTestimonials() {
             hasVideo: true,
             hasAvatar: true,
             avatar: "/google-ads/review/img8.webp",
-            bgColor: "bg-blue-500",
+            bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
             arrowcss: "absolute right-4 lg:-right-7 top-16 lg:top-14 2xl:top-12 3xl:top-8 size-20 2xl:size-26 3xl:size-32 -rotate-10"
@@ -127,14 +127,23 @@ export default function ClientTestimonials() {
             position: "Marketing Manager, Vega",
             bgColor: "bg-white",
             avatar: "/google-ads/review/img9.webp",
-            borderColor: "border-red-500"
+            borderColor: "border-[#FE2B27]"
         }
     ];
+
+    const mobileTestimonials = [
+        testimonials[0],
+        testimonials[1],
+        testimonials[2],
+        testimonials[5],
+        testimonials[6],
+        testimonials[4],
+    ]
 
     return (
         <div className="min-h-screen max-w-[90%] 3xl:max-w-[85%] mx-auto py-16 3xl:py-20">
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-lg:hidden">
                 {[0, 1, 2].map((colIndex) => (
                     <div key={colIndex} className="flex flex-col gap-6">
                         {testimonials
@@ -152,6 +161,21 @@ export default function ClientTestimonials() {
                             })}
                     </div>
                 ))}
+            </div>
+
+            <div className="flex flex-col gap-6 lg:hidden">
+                {mobileTestimonials
+                    .map((testimonial) => {
+                        if (testimonial.hasVideo) {
+                            return <VideoTestimonialCard key={testimonial.id} testimonial={testimonial} />;
+                        }
+
+                        if (testimonial.quote) {
+                            return <QuoteTestimonialCard key={testimonial.id} testimonial={testimonial} />;
+                        }
+
+                        return <ShortTestimonialCard key={testimonial.id} testimonial={testimonial} />;
+                    })}
             </div>
 
 
