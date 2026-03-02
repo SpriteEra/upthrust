@@ -64,9 +64,9 @@ function InstagramBadge() {
 
 function SpButton({ text1, text2 }) {
     return (
-        <div className="flex items-center gap-2 px-6 py-2 border rounded-2xl border-black ">
+        <div className="flex items-center gap-2 px-6 py-2 border rounded-full border-black bg-white">
             <span className="text-blue font-bold text-base">{text1}</span>
-            <span className="text-sm text-black font-normal leading-0">{text2}</span>
+            <span className="text-sm text-black font-normal whitespace-nowrap">{text2}</span>
 
         </div>
     )
@@ -173,12 +173,19 @@ export default function MetaAdsHero() {
                         <div className="absolute -top-3 -right-3 z-30">
                             <FacebookBadge />
                         </div>
+                        <div className="absolute border-[1px] size-[330px] border-black z-10  -top-15 -left-5" >
 
-                        <div className="relative">
+                        </div>
+
+                        <div className="relative ">
+
+                            <div className="absolute bottom-1  -translate-x-1/2  left-[60%] z-30  ">
+                                <SpButton text1="30%" text2="DROP IN CPAs" />
+                            </div>
 
                             <div className="absolute h-[398px] w-[224px] top-2.5 left-2.5 z-10">
                                 <video
-                                    className="w-full h-full object-cover  "
+                                    className="w-full h-full object-cover rounded-[20px] "
                                     controls
                                     playsInline
                                 >
@@ -193,51 +200,22 @@ export default function MetaAdsHero() {
                     </div>
 
                     {/* ── CENTER PHONE ── */}
-                    <div className="relative mx-auto w-56 bg-white rounded-[36px] px-2 pt-3 pb-2 shadow-2xl border border-violet-200/60 z-10 mt-6">
-                        {/* Status bar */}
-                        <div className="flex justify-between items-center px-2 mb-1.5">
-                            <span className="text-[9px] font-bold text-gray-700">9:41</span>
-                            <div className="w-14 h-3 bg-gray-900 rounded-full" />
-                            <div className="flex gap-1 items-center">
-                                <div className="w-3 h-2 bg-gray-700 rounded-sm" />
-                                <span className="text-[8px] text-gray-600">▲</span>
-                            </div>
-                        </div>
+                    <div className="relative mx-auto max-w-[330px] pt-3 pb-2  border z-20 ">
 
-                        {/* Shoppetite header */}
-                        <div className="flex items-center justify-center gap-1 text-[10px] font-black text-violet-600 tracking-widest mb-1.5">
-                            <span>🛍</span>
-                            <span>SHOPPETITE</span>
-                        </div>
+                        <div className="absolute h-[640px] w-[330px] top-2.5 left-4 z-10">
+                            <video
+                                className="w-full h-full object-cover rounded-[20px] "
+                                controls
+                                playsInline
+                            >
+                                <source
+                                    src="https://cdn.upthrust.agency/Google%20ads/LawyerNYC.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>s
 
-                        {/* Main video area */}
-                        <div className="relative rounded-2xl overflow-hidden h-72 flex items-center justify-center bg-[#0d0820]">
-                            <div className="absolute inset-0 bg-gradient-to-b from-[#0d0820] via-[#1a1035] to-[#5c3317]" />
 
-                            {/* Colorful phone case */}
-                            <div
-                                className="absolute top-[38%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-20 rounded-xl border-2 border-white/30 shadow-2xl z-10"
-                                style={{
-                                    background: "linear-gradient(135deg,#ff6b6b 0%,#ffd93d 25%,#6bcb77 50%,#4d96ff 75%,#ff6b6b 100%)",
-                                }}
-                            />
-
-                            {/* LV bag at bottom */}
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-20 h-14 rounded-lg shadow-xl flex items-center justify-center z-10 bg-gradient-to-br from-[#8B6914] via-[#c8a84b] to-[#8B6914]">
-                                <div className="border border-white/20 rounded w-14 h-9 flex items-center justify-center text-white/50 font-black italic text-sm">
-                                    LV
-                                </div>
-                            </div>
-
-                            <PlayCircle />
-                        </div>
-
-                        {/* Phone bottom nav */}
-                        <div className="flex justify-around items-center pt-2 pb-0.5 opacity-30">
-                            {["●", "⌂", "○", "☰"].map((icon, i) => (
-                                <span key={i} className="text-xs text-gray-700">{icon}</span>
-                            ))}
-                        </div>
                     </div>
 
                     {/* ── TOP RIGHT FLOATING CARD — 20% CRV BOOST ── */}
