@@ -196,23 +196,25 @@ const CommunicationScroll = () => {
     return (
         <>
             {/* ================= MOBILE VIEW ================= */}
-            <div className="lg:hidden max-w-[90%] mx-auto py-16 space-y-16">
+            <div className="xl:hidden max-w-[90%] mx-auto py-16 space-y-10">
                 {sections.map((section, index) => (
-                    <div key={index} className="space-y-6">
+                    <div key={index} className="space-y-2 sm:space-y-5 xl:space-y-6">
                         <h3 className="text-[32px] leading-[130%] tracking-[-0.02em] font-semibold">
                             {section.title}
                         </h3>
 
-                        <p className="text-black text-[20px] leading-[150%] tracking-[-0.02em] font-normal">
+                        <p className="text-black text-2xl leading-[150%] tracking-[-0.02em] font-normal">
                             {section.description}
                         </p>
 
-                        <div className="relative w-full  size-[350px] rounded-2xl overflow-hidden shadow-xl">
+                        <div className="relative w-full h-90 sm:h-130 overflow-hidden">
                             <Image
                                 src={section.image}
                                 alt={section.title}
-                                fill
-                                className="object-contain"
+                                height={520}
+                                width={400}
+                                quality={100}
+                                className="object-contain h-full w-full "
                             />
                         </div>
                     </div>
@@ -222,18 +224,18 @@ const CommunicationScroll = () => {
             {/* ================= DESKTOP VIEW (UNCHANGED) ================= */}
             <div
                 ref={containerRef}
-                className="hidden lg:block min-h-[300vh] max-w-[90%] mx-auto py-20"
+                className="hidden xl:block min-h-[300vh] max-w-[90%] mx-auto py-20"
             >
                 <div className="sticky top-10 h-screen flex items-center">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 3xl:gap-20 items-center">
 
                             {/* Left Side - Image */}
-                            <div className="relative h-[500px] lg:h-[600px] 3xl:h-200  rounded-lg">
+                            <div className="relative h-[500px] lg:h-150 3xl:h-200  rounded-lg">
                                 {sections.map((section, index) => (
                                     <div
                                         key={index}
-                                        className={`absolute inset-0 transition-opacity not-last:border border-[#bebebe] rounded-lg duration-700 ease-in-out ${activeSection === index
+                                        className={`absolute inset-0 transition-opacity rounded-lg duration-700 ease-in-out ${activeSection === index
                                             ? 'opacity-100'
                                             : 'opacity-0'
                                             }`}
@@ -242,9 +244,9 @@ const CommunicationScroll = () => {
                                             <Image
                                                 src={section.image}
                                                 alt={section.title}
-                                                fill
-                                                className="object-contain"
-                                                priority={index === 0}
+                                                width={400}
+                                                height={800}
+                                                className="object-contain w-full h-full"
                                             />
                                         </div>
                                     </div>
@@ -262,10 +264,11 @@ const CommunicationScroll = () => {
                                                 }`}
                                         >
                                             <div
-                                                className={`text-[32px] lg:text-[40px] 3xl:text-[48px] leading-[130%] tracking-[-0.02em] font-semibold mb-4 3xl:mb-2 transition-colors duration-500 3xl:pl-4 ${activeSection === index
+                                                className={`text-[32px] lg:text-3xl 2xl:text-4xl 3xl:text-[48px] leading-[130%] tracking-[-0.02em] font-semibold mb-4 3xl:mb-2 transition-colors duration-500 3xl:pl-4 cursor-pointer ${activeSection === index
                                                     ? 'text-black'
                                                     : 'text-black '
                                                     }`}
+                                                onClick={() => setActiveSection(index)}
                                             >
                                                 {section.title}
                                             </div>
@@ -276,7 +279,7 @@ const CommunicationScroll = () => {
                                                     : 'max-h-0 opacity-0'
                                                     }`}
                                             >
-                                                <p className="text-black text-[20px] 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal">
+                                                <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] font-normal">
                                                     {section.description}
                                                 </p>
                                             </div>

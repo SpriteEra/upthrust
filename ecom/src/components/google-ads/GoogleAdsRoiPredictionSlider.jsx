@@ -33,7 +33,7 @@ const GoogleAdsRoiPredictionSlider = () => {
     const conversionTabRef = React.useRef(null);
     const indicatorRef = React.useRef(null);
     const [activeIndex, setActiveIndex] = React.useState(0);
-
+const [swiperInstance, setSwiperInstance] = React.useState(null);
     React.useEffect(() => {
         const activeEl =
             activeIndex === 0
@@ -61,7 +61,10 @@ const GoogleAdsRoiPredictionSlider = () => {
                 <div className="flex justify-center gap-12 relative pb-3">
                     <button
                         ref={trafficTabRef}
-                        onClick={() => setActiveIndex(0)}
+                        onClick={() => {
+                    setActiveIndex(0);
+                    swiperInstance?.slideToLoop(0);
+                    }}
                         className={`text-lg px-4 py-2 min-w-20 transition-colors duration-300 ${activeIndex === 0 ? "text-black font-semibold" : "text-gray-400"
                             }`}
                     >
@@ -70,7 +73,10 @@ const GoogleAdsRoiPredictionSlider = () => {
 
                     <button
                         ref={conversionTabRef}
-                        onClick={() => setActiveIndex(1)}
+                      onClick={() => {
+                        setActiveIndex(1);
+                        swiperInstance?.slideToLoop(1);
+                        }}
                         className={`text-lg  px-4 py-2 min-w-20 transition-colors duration-300 ${activeIndex === 1 ? "text-black font-semibold" : "text-gray-400"
                             }`}
                     >
@@ -91,10 +97,11 @@ const GoogleAdsRoiPredictionSlider = () => {
                 delay={4000}
                 swiperClass="w-full"
                 slideClass="w-full"
-                onSlideChange={(index) => setActiveIndex(index)}
+                  onSwiper={(swiper) => setSwiperInstance(swiper)}
+  onSlideChange={(index) => setActiveIndex(index)}
                 renderSlide={(item) => (
                     <div
-                        className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-4 px-4 h-full"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-4 h-full"
                     >
                         {/* Left - Icon & Description */}
                         <div className="md:col-span-5 gap-4 md:gap-4 flex flex-col h-full" >
@@ -156,97 +163,3 @@ const GoogleAdsRoiPredictionSlider = () => {
 }
 
 export default GoogleAdsRoiPredictionSlider
-//     < div
-// className = "grid grid-cols-1 md:grid-cols-12 gap-6 3xl:gap-8 px-4 h-full"
-//     >
-//     {/* Left - Icon & Description */ }
-//     < div className = "md:col-span-5 gap-4 md:gap-6 3xl:gap-8 flex flex-col h-full" >
-//         <div className="bg-[#FFE187] rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-10 w-full">
-//             <div className="relative overflow-hidden">
-//                 <img
-//                     src={'/icons/cloud-network.webp'}
-//                     className="size-25 3xl:size-30 object-contain"
-//                     alt="Cloud Internet Icon"
-//                     style={{ opacity: 1 }}
-//                 />
-//             </div>
-
-//             {/* text1  */}
-//             <div className="relative overflow-hidden ">
-//                 <p
-//                     className="text-2xl leading-[150%] tracking-[-0.02em] mt-6 md:mt-8 3xl:mt-11"
-//                     style={{ opacity: 1, transform: "translateY(0%)", }}
-//                 >
-//                     You need traffic at buying temperature. That means targeting keyword themes built on the Hagakure framework single-theme ad groups that match searcher intent at 95%.
-//                 </p>
-
-//                 <p
-//                     className="absolute inset-0 text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em]"
-//                     style={{ opacity: 0, transform: "translateY(100%)", visibility: "hidden", }}
-//                 >
-//                     Most agencies stop at the click. <br /> Then ninety-six percent leave. <br /> <br />
-//                     Getting traffic is half the job. The other half: <span className=" capitalize font-semibold">making sure visitors understand what you do and why it matters in eight seconds.</span>
-//                 </p>
-//             </div>
-
-
-//         </div>
-//         <div className="bg-[#FFE187] rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-10 w-full h-full">
-//             {/* text1 */}
-//             <div className="relative min-h-4 3xl:min-h-8">
-//                 <p
-//                     className="text-3xl font-semibold leading-[150%] tracking-[-0.02em]"
-//                     style={{ opacity: 1 }}
-//                 >
-//                     Retargeting ladder for who hasn't converted
-//                 </p>
-
-//                 <p
-//                     className="absolute inset-0 text-2xl font-semibold leading-[150%] tracking-[-0.02em] p-2"
-//                     style={{ opacity: 0 }}
-//                 >
-//                     One client went from two percent conversions to six percent. <span className="font-normal 3xl:leading-[32px]">Same traffic, different page. Triple the revenue.</span>
-//                 </p>
-//             </div>
-
-
-//             <div className=" mt-6">
-//                 <ul className="text-2xl space-y-1 pl-6 leading-[150%] tracking-[-0.02em] list-disc list-outside">
-//                     <li className=''> Display ads with social proof (7 days post-visit) </li>
-//                     <li> YouTube case studies (14 days, engaged visitors only)</li>
-//                     <li> Demand Gen with offer (21 days, high-intent actions)</li>
-//                 </ul>
-//             </div>
-//         </div>
-
-//     </ >
-//     <div className="md:col-span-7 overflow-hidden bg-[#FFE187] rounded-2xl 3xl:rounded-[20px] p-5 3xl:p-12 3xl:pt-8 pb-0 pr-0 flex h-full flex-col" >
-//         <div className="relative overflow-hidden">
-//             <p
-//                 className="text-[64px] tracking-[-0.07em] leading-[150%] whitespace-nowrap bg-linear-to-b from-[#301805] to-transparent bg-clip-text text-[black]/50"
-//             >
-//                 User's who buy
-//             </p>
-
-//             <p
-//                 className="absolute left-0 top-0 text-9xl 3xl:text-[9.375rem] whitespace-nowrap bg-linear-to-b from-[#301805] to-transparent bg-clip-text text-transparent"
-//                 style={{ opacity: 0, transform: "translateY(100%)" }}
-//             >
-//                 Revenue Automation
-//             </p>
-//         </div>
-//         <div className="relative w-full -mt-2">
-//             <img
-//                 src="/google-ads/analytics-dashboard.webp"
-//                 className=" w-full h-full object-contain"
-//                 style={{ opacity: 1 }}
-//             />
-
-//             <img
-//                 src="/google-ads/revenue-dashboard.webp"
-//                 className="absolute inset-0 w-full h-full object-cover"
-//                 style={{ opacity: 0 }}
-//             />
-//         </div>
-//     </div>
-// </div >

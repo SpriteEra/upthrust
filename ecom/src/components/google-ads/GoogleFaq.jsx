@@ -1,89 +1,9 @@
 "use client"
-import { Info } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 export default function GoogleFaq() {
     const [openIndexes, setOpenIndexes] = useState(null);
-    // const [openIndex, setOpenIndex] = useState(null);
-    const [blinkIndex, setBlinkIndex] = useState(null);
     const faqRefs = useRef([]);
-
-    // const faqs = [
-    //     {
-    //         question: "How do you handle rising CAC (Customer Acquisition Costs)?",
-    //         answer: "CAC is now ₹31,000+ in competitive categories. We combat this through creative diversification (testing 20+ variants monthly), multi-platform strategies (not just Meta), first-party data collection, and email/SMS for repeat purchases. Most brands see CAC drop 30-50% within 90 days through our testing framework."
-    //     },
-    //     {
-    //         question: "What makes Upthrust different from other D2C agencies?",
-    //         answer: "We don't just run ads—we build growth systems. Our approach: relentless testing, radical transparency (no vanity metrics), and revenue obsession. We've scaled D2C brands across 7+ countries and bring learnings from ₹100Cr+ in managed ad spend. Every campaign is built to boost your bottom line, not impressions."
-    //     },
-    //     {
-    //         question: "What's your minimum budget and pricing structure?",
-    //         answer: `
-    //             <b>Packages:</b>
-    //             <ul>
-    //                 <li><b>Base:</b> ₹39.5K/month (fixed)</li>
-    //                 <li><b>Starter:</b> ₹55.5K/month + 9% ad spend</li>
-    //                 <li><b>Scale:</b> ₹85.5K/month + 3% ad spend</li>
-    //                 <li><b>Dominate:</b> ₹1.25L/month + 5% ad spend</li>
-    //             </ul>
-    //             <p></br/>For meaningful results, we recommend <b>₹8-12L+ monthly ad spend</b> to generate enough data for optimization .</p>
-    //             `
-    //     },
-    //     {
-    //         question: "How do you tackle iOS 14+ tracking and attribution challenges?",
-    //         answer: "We've cracked this for dozens of brands. Our solution: server-side tracking (CAPI), multi-touch attribution platforms (Triple Whale, Northbeam), first-party data strategies, creative volume testing, and blended ROAS analysis. We focus on true business impact, not just platform-reported numbers."
-    //     },
-    //     {
-    //         question: "Can you help scale while maintaining profitability?",
-    //         answer: "Absolutely. Scaling without burning cash is our specialty. We balance new customer acquisition with retention (email/SMS driving 25-40% of revenue), optimize unit economics at every stage, implement cohort analysis for LTV prediction, and kill unprofitable channels fast. Growth means nothing if margins disappear."
-    //     },
-    //     {
-    //         question: "How long does it take to see actual results?",
-    //         answer: `
-    //             <b>Realistic timeline:</b>
-    //             <ul>
-    //                 <li><b>0-30 days:</b> Testing phase, baseline establishment</li>
-    //                 <li><b>30-90 days:</b> Optimization, visible improvements in ROAS/CAC</li>
-    //                 <li><b>90-180 days:</b> Fully optimized growth engine, predictable scaling</li>
-    //             </ul>
-    //             <p></br/>Brands with strong product-market fit often see positive ROAS by day 30-45. But sustainable growth takes 3-6 months of continuous optimization.</p>
-    //             `
-    //     },
-    //     {
-    //         question: "How do you help D2C brands stand out in saturated markets?",
-    //         answer: "Competition is brutal—we get it. Our differentiation playbook: competitor creative analysis, unique positioning angles, creator-led content (UGC/influencer), platform diversification (Meta + Google + TikTok), conversion rate optimization, and obsessive A/B testing. We find what makes you different and amplify it."
-    //     },
-    //     {
-    //         question: "Do you handle both acquisition AND retention?",
-    //         answer: "Yes—both are critical. <b>Acquisition</b>: Paid media across Meta, Google, TikTok, Pinterest. <br/><b>Retention:</b> Email/SMS automation (welcome, cart abandonment, win-back), loyalty programs, referral systems, and post-purchase optimization. Winning D2C brands master both."
-    //     },
-    //     {
-    //         question: "What results can we realistically expect?",
-    //         answer: `
-    //             Based on our D2C portfolio:
-    //             <ul>
-    //                 <li><b>29-78% reduction in CAC</b> (creative + targeting optimization)</li>
-    //                 <li><b>2-4x increase in ROAS</b> within 90 days</li>
-    //                 <li><b>15-50% conversion rate improvements</b> (landing page optimization)</li>
-    //                 <li><b>25-40% revenue from email/SMS </b> (retention)</li>
-    //             </ul>
-    //             <p></br/>Results depend on product-market fit, competitive landscape, and budget.</p>
-    //             `
-    //     },
-    //     {
-    //         question: "How do we get started with Upthrust?",
-    //         answer: `
-    //             <b>Simple 3-step process: </b>
-    //             <ul>
-    //                 <li><b>Free Strategy Call:</b> (creative + targeting optimization)</li>
-    //                 <li><b>Choose your package:</b> within 90 days</li>
-    //                 <li><b>Launch in 2-3 Weeks:</b> (landing page optimization)</li>
-    //             </ul>
-    //             `
-    //     }
-    // ];
-
 
     const faqs = [
         {
@@ -96,15 +16,15 @@ export default function GoogleFaq() {
         },
         {
             question: "Does Google advertising work for my niche?",
-            answer: "Our Google Ads Agency have extensive experience in various industries. If you're in SaaS, lead generation, eCommerce, or pretty much anything else, we can almost certainly help. Just check out the published case studies above (we have over 200) for more info."
+            answer: "Our Google Ads Agency have extensive experience in various industries. If you’re in SaaS, lead generation, eCommerce, or pretty much anything else, we can almost certainly help. Just check out the published case studies above (we have over 200) for more info."
         },
         {
             question: "How do I choose a Google Ads agency?",
-            answer: "When you need help finding a Google Ads agency (formerly Adwords agency) there are several important considerations to make. First, keep in mind that Google Ads is a well-established, competitive marketing channel within digital advertising. There are so many agencies to choose from that may have specialized in specific industries. Find a relevant digital marketing agency that has a strong track record of consistent wins and search campaign case studies within your industry, no need to go in-house, trust us. Also, be sure to ask for recent references. Take advantage of the Google Partners program that has vetted the best agencies in order to vouch for its members."
+            answer: "When you need help finding a Google Ads agency (formerly Adwords agency) there are several important considerations to make. First, keep in mind that Google Ads is a well-established, and competitive, marketing channel within digital advertising. There are so many agencies to choose from that many have specialized in specific industries. Find a relevant digital marketing agency that has a strong track record of consistent wins and search campaign case studies within your industry, no need to go in-house, trust us. Also, be sure to ask for recent references. Take advantage of the Google Partners program that has vetted the best agencies in order to vouch for its members."
         },
         {
             question: "How does Google Ads work?",
-            answer: "Google Ads, formerly known as Google Adwords, is a popular Pay-per-click (PPC) online advertising method. When you advertise with Google Ads, you attempt to show your ad in Google’s search engine (particularly to your target audiences). It is known as PPC because you pay for each visit to your website. The cost of each click depends on two important elements: how competitive the keyword is (we do the keyword research for you) and how relevant your landing page design is to the search query. When you write good ads that lead to a quality website, the cost-per-click (CPC), as well as an auction bid, costs less. You can manage the amount you want to spend on a daily, weekly, monthly, or lifetime basis. Creating an efficient Google Ads program can have a significant impact on business growth as users continue to go to Google to answer their questions. Google Ads has strong integration with Google Analytics and the rest of Google’s suite of tools."
+            answer: "Google Ads, formerly known as Google Adwords, is a popular Pay-per-click (PPC) online advertising method.\n When you advertise with Google Ads, you attempt to show your ad in Google’s search engine (particularly to your target audiences). It is known as PPC because you pay for each visit to your website. The cost of each click depends on two important elements: how competitive the keyword is (we do the keyword research for you) and how relevant your landing page design is to the search query.\nWhen you write good ads that lead to a quality website, the cost-per-click (CPC), as well as an auction bid, costs less. You can manage the amount you want to spend on a daily, weekly, monthly, or lifetime basis. \nCreating an efficient Google Ads program can have a significant impact on business growth as users continue to go to Google to answer their questions. Google Ads has strong integration with Google Analytics and the rest of Google’s suite of tools."
         },
         {
             question: "Do I have to sign a long-term contract?",
@@ -119,7 +39,7 @@ export default function GoogleFaq() {
             answer: "With Upthrust, there are no templates or cookie cutter plans, every single client gets their own campaign strategy customized to their business based on many points of research and planning whether their goal is to generate leads or generate sales. We take into account the target audience, relevant keywords, geographic locations, and more when crafting this approach to tailor each campaign for the business. We are also continually testing new strategies and are on the lookout for new experiments to consistently improve and innovate."
         },
         {
-            question: "How can I measure the performance of my Google Ads campaign?",
+            question: "How can I measure the performance of my Google Ads campaign? ",
             answer: "Google has enhanced reporting for its ad campaigns, which gives advertisers the ability to see the leads and overall revenue generated from their ad spend. Upthrust uses these tools to understand which campaigns are generating the highest return on ad spend for their client’s campaigns with the end goal of optimizing campaigns to produce the highest ROI. Upthrust also harnesses the power of Offline Conversions to show and optimize for sales that happen after the initial click for client’s with longer sales cycles."
         },
         {
@@ -128,7 +48,7 @@ export default function GoogleFaq() {
         },
         {
             question: "What ad formats & placement are available?",
-            answer: "Google has expanded ad placements significantly in recent years but many placements have been consistent over the years. This includes Google Search, Google Shopping, the Google Display Network, Gmail, Google Maps and YouTube amongst others. In addition to these, shopping ads can now appear in Google Lens and Circle to Search, offering a more visual search experience. In addition, Search and Shopping ads can show up in the new AI Overviews, appearing in the U.S. as “sponsored” sections when relevant to user queries. For video content, advertisers can now include short-form product videos and animated image ads, which is highly effective for YouTube Shorts."
+            answer: "Google has expanded ad placements significantly in recent years but many placements have been consistent over the years. This includes Google Search, Google Shopping, the Google Display Network, Gmail, Google Maps and Youtube amongst others. In addition to these, shopping ads can now appear in Google Lens and Circle to Search, offering a more visual search experience. In addition, Search and Shopping ads can show up in the new AI Overviews, appearing in the U.S. as “sponsored” sections when relevant to user queries. For video content, advertisers can now include short-form product videos and animated image ads, which is highly effective for Youtube Shorts."
         },
         {
             question: "Can I add new services throughout our partnership?",
@@ -150,17 +70,6 @@ export default function GoogleFaq() {
     };
 
 
-
-    const handleFAQClick = (e, index) => {
-
-
-        // If FAQ is closed and click is on the div (not button), show blink
-        if (!(openIndexes === index)) {
-            // setBlinkIndex(index);
-            setTimeout(() => setBlinkIndex(null), 600);
-        }
-    };
-
     const renderFAQ = (faq, index) => (
         <div
             key={index}
@@ -174,7 +83,7 @@ export default function GoogleFaq() {
             <div className="p-4 md:p-6 md:px-8 max-w-[87%]">
                 <div className="flex items-start justify-between gap-4 ">
                     <div className="flex items-start gap-3 flex-1">
-                        <p className="font-semibold text-lg lg:text-base 3xl:text-xl tracking-[-0.02em]">
+                        <p className="font-semibold text-lg lg:text-base 3xl:text-xl tracking-[-0.02em] leading-[150%]">
                             {faq.question}
                         </p>
                     </div>
@@ -184,12 +93,9 @@ export default function GoogleFaq() {
                             e.stopPropagation();
                             toggleFAQ(index);
                         }}
-                        className={`absolute top-5 3xl:top-7 right-5 3xl:right-7 
-  size-10 rounded-full flex items-center justify-center 
-  transition-all duration-300 ease-in-out
-  ${openIndexes === index
-                                ? "bg-[#004FAC] text-white"
-                                : "bg-gray-200 text-black"
+                        className={`absolute top-1/2 md:top-5 max-md:-translate-y-1/2 3xl:top-7 right-5 3xl:right-7 size-7 3xl:size-8 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out ${openIndexes === index
+                            ? "bg-[#004FAC] text-white"
+                            : "bg-[#0076F0] text-white"
                             }`}
                     >
                         {openIndexes === index ? (
@@ -224,10 +130,9 @@ export default function GoogleFaq() {
                         }`}
 
                 >
-                    <div className="md:pr-10">
-                        <p className="text-base lg:text-sm 3xl:text-base leading-relaxed" dangerouslySetInnerHTML={{
-                            __html: faq.answer || "Content coming soon..."
-                        }}>
+                    <div className="md:pr-8">
+                        <p className="text-base lg:text-sm 3xl:text-lg leading-[150%] tracking-[-0.02em]">
+                            {faq.answer}
                         </p>
                     </div>
                 </div>

@@ -28,8 +28,8 @@ export default function VideoTestimonialCard({ testimonial }) {
     return (
         <>
             {/* Card */}
-            <div className="bg-[#0076F0] text-white rounded-2xl px-4 sm:px-6 py-4 3xl:py-10 relative overflow-hidden flex flex-col justify-between min-h-[420px]">
-                <h3 className="text-[30px] 3xl:text-[36px] leading-[130%] tracking-[-0.02em] font-semibold max-w-md">
+            <div className="bg-[#0076F0] text-white rounded-2xl px-4 sm:px-6 py-4 3xl:py-10 relative overflow-hidden flex flex-col justify-between min-h-90 md:min-h-[420px]">
+                <h3 className="text-3xl 3xl:text-4xl leading-[130%] tracking-[-0.02em] font-semibold max-w-sm 3xl:max-w-md">
                     {testimonial.title}
                 </h3>
 
@@ -46,10 +46,10 @@ export default function VideoTestimonialCard({ testimonial }) {
                 {/* Avatar */}
 
                 {/* <Image width={100} height={50} src="/google-ads/review/arrow.png" alt="arrow" className="absolute w-fit top-70 left-15 z-10" /> */}
-                <div className="flex justify-between gap-3 mt-10 ">
+                <div className="flex justify-between gap-3 mt-10 items-center w-full ">
 
 
-                    <div className="relative mt-6 sm:mt-12">
+                    <div className="relative">
                         <p className="text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-semibold">
                             {testimonial.author}
                         </p>
@@ -64,13 +64,15 @@ export default function VideoTestimonialCard({ testimonial }) {
 
                         }
                     </div>
+
                     {testimonial.avatar && (
+
                         <Image
                             width={201}
                             height={207}
                             src={testimonial.avatar}
                             alt={testimonial.author}
-                            className=" w-35 h-35 3xl:h-51.75 mb-10 md:w-50 3xl:w-50.25 object-contain z-10"
+                            className=" size-20 2xl:size-35 3xl:h-51.75 md:w-50 3xl:w-50.25 object-contain z-10"
                         />
                     )}
 
@@ -78,8 +80,8 @@ export default function VideoTestimonialCard({ testimonial }) {
 
                 <div className="flex items-center gap-3 3xl:gap-5 mt-auto font-semibold">
                     <Image width={50} height={33} src={testimonial.company} alt="company logo" className="h-5 2xl:h-7 3xl:h-7.5 w-fit object-contain" />
-                    <Image width={24} height={24} src="/google-ads/review/cross.png" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
-                    <Image width={80} height={43} src="/google-ads/review/upthrust.png" alt="upthrust" className="h-5 2xl:h-7 object-contain 3xl:h-7.5 w-fit" />
+                    <Image width={24} height={24} src="/google-ads/review/cross.webp" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
+                    <Image width={80} height={43} src="/google-ads/review/upthrust.webp" alt="upthrust" className="h-5 2xl:h-7 object-contain 3xl:h-7.5 w-fit" />
                 </div>
             </div>
 
