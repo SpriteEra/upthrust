@@ -73,7 +73,7 @@ const page = () => {
       />
       <ClientStories />
 
-      <div className="bg-black text-white py-16 3xl:py-20 mt-10 3xl:mt-16 ">
+      <div className="bg-black text-white py-16 3xl:py-20 3xl:pt-36 mt-10 3xl:mt-20 ">
         <MetaHeading
           tag="h2"
           heading={[
@@ -100,37 +100,37 @@ const page = () => {
         <StatsGrid />
 
       </div>
-      <section className=" py-16 max-w-[90%] mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col lg:flex-row items-center gap-12">
 
 
         <div className="flex gap-6 md:gap-15 items-center">
 
           {/* Left Content */}
           <div className="w-[50%]  overflow-hidden">
-            <p className="uppercase text-[12px] tracking-[2px] text-gray-500 mb-4 border-b border-gray-300 pb-3 w-full">
+            <p className="uppercase text-sm tracking-[-0.02em] leading-[150%] mb-3 border-b border-black pb-2 3xl:pb-3 w-full">
               A NEW ERA OF META AGENCY THAT DELIVER ROI
             </p>
-            <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
+            <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 3xl:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
               The Quickest, Easiest <br />
               Way To Grow Your <br />
               Business{" "}
-              <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
+              <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
                 With Meta Ads
               </span>{" "}Is..
 
             </h2>
-            <p className="text-black text-[24px] leading-[150%] tracking-[-0.02em]">
+            <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] max-w-150 3xl:max-w-180">
               Upthrust is your dedicated, on-call Meta ads creative team to expand your Meta ads capacity and extend your team’s creative capabilities.
             </p>
-            <p className="my-4  text-gray-500 text-[13px] sm:text-[14px]">
+            <p className="my-4 max-3xl:mb-6 3xl:my-8 text-[13px] sm:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
               Creative capabilities to drive conversion at a cost you would love.
             </p>
             <MetaRocketButton color='blue' />
           </div>
 
           {/* Right Video */}
-          <div className="w-[50%] h-full">
-            <div className="relative w-full aspect-16/10 overflow-hidden ">
+          <div className="w-[50%] h-full flex justify-end items-center">
+            <div className="relative w-full aspect-16/10 max-w-[787px] overflow-hidden rounded-md">
               <video
                 className="w-full h-full object-cover "
                 src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"

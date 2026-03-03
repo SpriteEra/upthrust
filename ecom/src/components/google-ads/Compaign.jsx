@@ -194,7 +194,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 className="rounded-xl max-md:rounded-b-none md:rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 min-h-[500px] 3xl:min-h-[620px]">
+                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 min-h-[500px] 3xl:min-h-[640px]">
                     {/* Left Content Section */}
                     <div className="w-full lg:w-[50%]  flex flex-col justify-between p-3 md:pl-2 3xl:pl-3">
                         <div className='3xl:max-w-150 flex flex-col justify-between h-full'>

@@ -27,7 +27,7 @@ export default function VideoTestimonialCard({ testimonial }) {
     return (
         <>
             {/* Card */}
-            <div className="bg-[#0076F0] text-white rounded-2xl px-8 py-4 3xl:py-10 relative overflow-hidden flex flex-col justify-between min-h-[420px]">
+            <div className={` text-white rounded-2xl px-8 py-4 3xl:py-10 relative overflow-hidden flex flex-col justify-between min-h-[420px] ${testimonial.bgColor}`} >
                 <h3 className="text-[30px] 3xl:text-[36px] leading-[130%] tracking-[-0.02em] font-semibold max-w-md">
                     {testimonial.title}
                 </h3>
@@ -77,8 +77,8 @@ export default function VideoTestimonialCard({ testimonial }) {
 
                 <div className="flex items-center gap-3 3xl:gap-5 mt-auto font-semibold">
                     <Image width={50} height={33} src={testimonial.company} alt="company logo" className="h-5 2xl:h-7 3xl:h-7.5 w-fit object-contain" />
-                    <Image width={24} height={24} src="/google-ads/review/cross.png" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
-                    <Image width={80} height={43} src="/google-ads/review/upthrust.png" alt="upthrust" className="h-5 2xl:h-7 object-contain 3xl:h-7.5 w-fit" />
+                    <Image width={24} height={24} src="/google-ads/review/cross.webp" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
+                    <Image width={80} height={43} src="/google-ads/review/upthrust.webp" alt="upthrust" className="h-5 2xl:h-7 object-contain 3xl:h-7.5 w-fit" />
                 </div>
             </div>
 
