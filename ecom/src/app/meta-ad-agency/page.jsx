@@ -9,6 +9,7 @@ import BrandSlider from '@/components/meta-ads/BrandSlider';
 import CircularDesign from '@/components/meta-ads/CircularDesign';
 import ClientStories from '@/components/meta-ads/ClientStories';
 import DashboardStacks from '@/components/meta-ads/DashboardStack';
+import DropLetters from '@/components/meta-ads/DropLetter';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
 import MetaAdsHero from '@/components/meta-ads/HeroSection';
 import MetaDisclaimer from '@/components/meta-ads/MetaDisclaimer';
@@ -96,7 +97,8 @@ const page = () => {
       </div>
 
       <div>
-        <h2 className="text-center text-2xl md:text-3xl font-bold mt-10 mb-4">Drop Letter is here ...</h2>
+
+        <DropLetters />
         <StatsGrid />
 
       </div>
