@@ -260,7 +260,7 @@ const GoogleAdsRoiPrediction = () => {
             <button
               ref={trafficTabRef}
               onClick={() => switchTab("traffic")}
-              className="tab traffic-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50"
+              className="tab traffic-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50 cursor-pointer"
             >
               Traffic
             </button>
@@ -268,7 +268,7 @@ const GoogleAdsRoiPrediction = () => {
             <button
               ref={conversionTabRef}
               onClick={() => switchTab("conversion")}
-              className="tab conversion-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50"
+              className="tab conversion-tab text-xl 3xl:text-2xl tracking-[-0.02em] leading-[150%] font-semibold px-4 py-2 min-w-40 3xl:min-w-50 cursor-pointer"
             >
               Conversion of Traffic
             </button>

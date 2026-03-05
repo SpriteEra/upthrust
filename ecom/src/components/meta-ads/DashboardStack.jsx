@@ -52,7 +52,7 @@ const BusinessCard = ({
     data, index
 }) => {
     return (
-        <div className={` md:rounded-[20px] p-3 max-lg:pt-7 lg:p-8 lg:px-12 3xl:py-16 3xl:px-12 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[82%] mx-auto lg:sticky top-0 xl:-top-5 2xl:top-28 3xl:top-35`}
+        <div className={` md:rounded-[20px] p-3 max-lg:pt-7 lg:p-8 2xl:px-10 3xl:py-16 3xl:px-12 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[82%] mx-auto lg:sticky top-0 xl:top-20 2xl:top-28 3xl:top-35 min-h-160 3xl:h-full`}
             style={{
                 backgroundColor: data.bgColor,
                 color: data.textColor,
@@ -71,18 +71,18 @@ const BusinessCard = ({
                     />
                 </div>
             }
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-5 3xl:gap-8 ">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 3xl:gap-8 ">
                 {/* Left Section */}
-                <div className="w-full lg:w-[60%] flex flex-col">
+                <div className="w-full lg:w-[62%] 3xl:w-[60%] flex flex-col">
                     {/* Header */}
-                    <h4 className='leading-[130%] tracking-[-0.02em] lg:tracking-[-0.04em] text-4xl lg:text-5xl 3xl:text-7xl font-semibold mb-5 lg:mb-10 3xl:mb-16'>{data.title}</h4>
+                    <h4 className='leading-[130%] tracking-[-0.02em] lg:tracking-[-0.04em] text-4xl lg:text-5xl 3xl:text-7xl font-semibold mb-5 lg:mb-8 3xl:mb-16'>{data.title}</h4>
                     <div className='w-full  flex gap-20'>
-                        <p className="leading-[120%] tracking-[-0.04em] text-[42px] lg:text-5xl 3xl:text-[86px] font-semibold w-[5%] lg:w-[20%]">
+                        <p className="leading-[120%] tracking-[-0.04em] text-[42px] lg:text-5xl 3xl:text-[86px] font-semibold w-[5%] xl:w-[15%] 3xl:w-[20%]">
                             {String(index).padStart(2, "0")}
                         </p>
 
-                        <div className='w-[95%] lg:w-[80%]'>
-                            <p className='leading-[130%] tracking-[-0.02em] text-2xl lg:text-3xl 3xl:text-4xl font-semibold'>{data.title2}</p>
+                        <div className='w-[95%] lg:w-[85%]'>
+                            <p className='leading-[130%] tracking-[-0.02em] text-2xl lg:text-3xl 3xl:text-4xl font-semibold max-3xl:mb-1'>{data.title2}</p>
                             <span className='leading-[150%] tracking-[-0.02em] text-lg 3xl:text-xl max-lg:hidden'>{data.description}</span>
                             <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square lg:hidden mt-10">
 
@@ -104,7 +104,7 @@ const BusinessCard = ({
 
                 {/* Right Section - Dashboard Image */}
                 <span className='leading-[150%] tracking-[-0.02em] text-base lg:text-lg 3xl:text-xl lg:hidden mt-5'>{data.description}</span>
-                <div className="flex-shrink-0 flex justify-end w-full lg:w-[40%] max-lg:hidden">
+                <div className="flex-shrink-0 flex justify-end w-full lg:w-[38%] 3xl:w-[40%] max-lg:hidden">
                     <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square">
 
                         {/* Image takes remaining height */}
@@ -124,7 +124,7 @@ const BusinessCard = ({
 
 
             </div>
-            <div className='flex flex-row gap-6 lg:gap-8 mt-10 3xl:mt-16 w-full'>
+            <div className='flex flex-row gap-6 lg:gap-8 mt-5 2xl:mt-10 3xl:mt-16 w-full'>
                 <div className="w-full lg:w-[60%] flex gap-3 max-lg:p-2 justify-end items-center">
                     <p className='leading-[150%] tracking-[-0.02em] text-2xl 3xl:text-3xl font-semibold'>See what we create</p>
                     <button className='rotate-90 text-xl lg:text-3xl bg-white p-4 lg:p-5 3xl:p-8 rounded size-4 lg:size-5 3xl:size-8 text-black flex items-center justify-center max-lg:font-light'>

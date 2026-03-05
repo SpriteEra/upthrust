@@ -113,7 +113,8 @@ const PredictGrowth = () => {
                     '--card-h-lg': h.lg,
                     '--card-h-xl': h.xl,
                     '--card-h-2xl': h['2xl'],
-                    '--card-h-3xl': h['3xl'],
+                    '--card-h-1600': h['1600'],
+                    '--card-h-1800': h['1800'],
                 }}
                 data-card-responsive
                 onClick={() => toggleCard(card.id)}

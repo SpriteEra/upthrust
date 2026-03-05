@@ -68,11 +68,9 @@ export default function MobileVideos() {
                     onSwiperReady={(swiper) => (swiperInstance.current = swiper)}
                     renderSlide={(item, index) => (
                         <div key={index} className="flex flex-col items-center">
-
                             <span className="px-4 3xl:px-5 py-1 3xl:py-1.5 text-xs 3xl:text-base  bg-white text-black rounded-md 3xl:rounded-lg">
                                 {item.label}
                             </span>
-
                             <div
                                 onClick={() => setActiveVideo(item.video)}
                                 className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 3xl:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer"
@@ -97,26 +95,16 @@ export default function MobileVideos() {
                 <button
                     onClick={() => swiperInstance.current?.slidePrev()}
                     title="Previous"
-                    className="
-                    absolute left-0 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2
-                    size-11 3xl:size-15 rounded-full bg-black
-                    flex items-center justify-center
-                    z-20 hover:bg-neutral-800
-                    "
+                    className="absolute left-0 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-black flex items-center justify-center z-20 hover:bg-neutral-800"
                 >
-                    <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white rotate-45 translate-x-[2px]" />
+                    <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white rotate-45 translate-x-[2px] lg:hidden" />
                 </button>
 
                 {/* NEXT */}
                 <button
                     title="Next"
                     onClick={() => swiperInstance.current?.slideNext()}
-                    className="
-                        absolute right-0 top-1/2 translate-y-1/2
-                         size-11 rounded-full bg-black
-                        flex items-center justify-center
-                        z-20 hover:bg-neutral-800 
-                    "
+                    className="absolute right-0 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-black flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white -rotate-[135deg] -translate-x-[2px]" />
                 </button>

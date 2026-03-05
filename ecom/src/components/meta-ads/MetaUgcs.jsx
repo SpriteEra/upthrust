@@ -291,13 +291,17 @@ const UGCVideoCategories = () => {
     const [videoStates, setVideoStates] = useState({});
     const videoRefs = useRef({});
 
-    const displayItems = activeCategory === null
-        ? allItems
-        : navLinks.find((c) => c.id === activeCategory)?.items.map((item) => ({
-            ...item,
-            uid: `${activeCategory}-${item.id}`,
-            alt: navLinks.find((c) => c.id === activeCategory)?.alt,
-        })) || [];
+    const displayItems = (
+        activeCategory === null
+            ? allItems
+            : navLinks
+                .find((c) => c.id === activeCategory)
+                ?.items.map((item) => ({
+                    ...item,
+                    uid: `${activeCategory}-${item.id}`,
+                    alt: navLinks.find((c) => c.id === activeCategory)?.alt,
+                })) || []
+    ).slice(0, 8);
 
     const handleCardClick = (itemId, videoUrl) => {
         const currentState = videoStates[itemId];

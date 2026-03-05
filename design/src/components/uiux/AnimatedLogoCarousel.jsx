@@ -2,53 +2,35 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-
-export default function AnimatedLogoCarousel() {
+const defaultSets = [
+    [
+        { name: 'Zomato', image: '/uiux/brand/zomato.webp', alt: 'Zomato Logo' },
+        { name: 'Bosch', image: '/uiux/brand/bosch.webp', alt: 'Bosch Logo' },
+        { name: "L'Oréal", image: '/uiux/brand/loreal.webp', alt: "L'Oréal Logo" },
+        { name: 'Vega', image: '/uiux/brand/vega.webp', alt: 'Vega Logo' },
+        { name: 'Harley Davidson', image: '/uiux/brand/harley-davidson.webp', alt: 'Harley Davidson Logo' },
+        { name: 'Dell', image: '/uiux/brand/dell.webp', alt: 'Del Logol' },
+    ],
+    [
+        { name: 'Zomato', image: '/uiux/brand/acadly.webp', alt: 'Acadly Logo' },
+        { name: 'Bosch', image: '/uiux/brand/neatlogs.webp', alt: 'Neatlogs Logo' },
+        { name: "L'Oréal", image: '/uiux/brand/beyond.webp', alt: "Beyond Logo" },
+        { name: 'Vega', image: '/uiux/brand/ok.webp', alt: 'Ok Logo' },
+        { name: 'Harley Davidson', image: '/uiux/brand/audio-art.webp', alt: 'Audio Art Logo' },
+        { name: 'Dell', image: '/uiux/brand/housr.webp', alt: 'Housr Logo' },
+    ],
+    [
+        { name: 'Zomato', image: '/uiux/brand/vwo.webp', alt: 'Vwo Logo' },
+        { name: 'Bosch', image: '/uiux/brand/cyble.webp', alt: 'Cyble Logo' },
+        { name: "L'Oréal", image: '/uiux/brand/qpiai.webp', alt: "Q Pi Ai Logo" },
+        { name: 'Vega', image: '/uiux/brand/mc-overalls.webp', alt: 'MC Overalls Logo' },
+        { name: 'Harley Davidson', image: '/uiux/brand/tescribe.webp', alt: 'Teascrube Logo' },
+        { name: 'Dell', image: '/uiux/brand/tiggle.webp', alt: 'Tiggle Logo' },
+    ],
+];
+export default function AnimatedLogoCarousel({ logoSets = defaultSets, theme = "dark" }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-
-    const logoSets = [
-        [
-            { name: 'Zomato', image: '/uiux/brand/zomato.webp', alt: 'Zomato Logo' },
-            { name: 'Bosch', image: '/uiux/brand/bosch.webp', alt: 'Bosch Logo' },
-            { name: "L'Oréal", image: '/uiux/brand/loreal.webp', alt: "L'Oréal Logo" },
-            { name: 'Vega', image: '/uiux/brand/vega.webp', alt: 'Vega Logo' },
-            { name: 'Harley Davidson', image: '/uiux/brand/harley-davidson.webp', alt: 'Harley Davidson Logo' },
-            { name: 'Dell', image: '/uiux/brand/dell.webp', alt: 'Del Logol' },
-        ],
-        [
-            { name: 'Zomato', image: '/uiux/brand/acadly.webp', alt: 'Acadly Logo' },
-            { name: 'Bosch', image: '/uiux/brand/neatlogs.webp', alt: 'Neatlogs Logo' },
-            { name: "L'Oréal", image: '/uiux/brand/beyond.webp', alt: "Beyond Logo" },
-            { name: 'Vega', image: '/uiux/brand/ok.webp', alt: 'Ok Logo' },
-            { name: 'Harley Davidson', image: '/uiux/brand/audio-art.webp', alt: 'Audio Art Logo' },
-            { name: 'Dell', image: '/uiux/brand/housr.webp', alt: 'Housr Logo' },
-        ],
-        [
-            { name: 'Zomato', image: '/uiux/brand/vwo.webp', alt: 'Vwo Logo' },
-            { name: 'Bosch', image: '/uiux/brand/cyble.webp', alt: 'Cyble Logo' },
-            { name: "L'Oréal", image: '/uiux/brand/qpiai.webp', alt: "Q Pi Ai Logo" },
-            { name: 'Vega', image: '/uiux/brand/mc-overalls.webp', alt: 'MC Overalls Logo' },
-            { name: 'Harley Davidson', image: '/uiux/brand/tescribe.webp', alt: 'Teascrube Logo' },
-            { name: 'Dell', image: '/uiux/brand/tiggle.webp', alt: 'Tiggle Logo' },
-        ],
-        // [
-        //     { name: 'Google', image: '/logos/google.svg', alt: 'Google' },
-        //     { name: 'Apple', image: '/logos/apple.svg', alt: 'Apple' },
-        //     { name: 'Microsoft', image: '/logos/microsoft.svg', alt: 'Microsoft' },
-        //     { name: 'Amazon', image: '/logos/amazon.svg', alt: 'Amazon' },
-        //     { name: 'Meta', image: '/logos/meta.svg', alt: 'Meta' },
-        //     { name: 'Netflix', image: '/logos/netflix.svg', alt: 'Netflix' },
-        // ],
-        // [
-        //     { name: 'Nike', image: '/logos/nike.svg', alt: 'Nike' },
-        //     { name: 'Adidas', image: '/logos/adidas.svg', alt: 'Adidas' },
-        //     { name: 'Puma', image: '/logos/puma.svg', alt: 'Puma' },
-        //     { name: 'Samsung', image: '/logos/samsung.svg', alt: 'Samsung' },
-        //     { name: 'Sony', image: '/logos/sony.svg', alt: 'Sony' },
-        //     { name: 'LG', image: '/logos/lg.svg', alt: 'LG' },
-        // ],
-    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -60,12 +42,12 @@ export default function AnimatedLogoCarousel() {
 
 
     return (
-        <div className=" bg-black flex items-center justify-center px-2 pb-4 md:py-8 lg:pb-12 3xl:pb-14 ">
+        <div className={`${theme === 'dark' ? 'bg-black' : "bg-white"} flex items-center justify-center px-2 pb-4 md:py-8 lg:pb-12 3xl:pb-14 `}>
             <div className="w-full sm:max-w-[90%] 3xl:max-w-[90%]  pt-2 lg:pt-14 3xl:pt-20">
                 {/* Logo Carousel Container */}
-                <div className="relative  sm:border sm:border-white/20  sm:rounded-2xl 3xl:rounded-3xl ">
+                <div className={`relative ${theme === 'dark' ? "sm:border-white/20" : "sm:border-black/20"} sm:border   sm:rounded-2xl 3xl:rounded-3xl`}>
                     <div className="hidden sm:block absolute -top-2 2xl:-top-3  left-1/2 -translate-x-1/2 z-10">
-                        <p className="text-white/50 text-lg sm:text-xs md:text-sm 3xl:text-lg font-normal tracking-[-0.02em] bg-black px-2 ">
+                        <p className={` text-lg sm:text-xs md:text-sm 3xl:text-lg font-normal tracking-[-0.02em] bg-black px-2 ${theme === 'dark' ? 'bg-black text-white/50' : "bg-white text-black"} `}>
                             Trusted by startups, scaleups, and global brands across the India & US
                         </p>
                     </div>
@@ -110,7 +92,7 @@ export default function AnimatedLogoCarousel() {
                     {/* for mobile  */}
 
 
-                    <div className="md:hidden overflow-hidden py-4 bg-black">
+                    <div className={`md:hidden overflow-hidden py-4 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
                         <p className="text-white/50 text-lg text-center font-light p-3">
                             Trusted by startups, scaleups, and global brands across India & US
                         </p>

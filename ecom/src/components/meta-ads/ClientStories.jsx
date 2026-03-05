@@ -1,8 +1,4 @@
-import QuoteTestimonialCard from "../google-ads/QuoteTestimonialCard";
-import ShortTestimonialCard from "../google-ads/ShortTestimonialCard";
-import VideoTestimonialCard from "../google-ads/VideoTestimonialCard";
-
-
+import GridTestimonialsWithVideo from "../common/GridTestimonialsWithVideo";
 export default function ClientStories() {
 
     const testimonials = [
@@ -13,9 +9,9 @@ export default function ClientStories() {
             quote: "I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.",
             author: "Rishabh Jain",
             position: "President - Corondo",
-            avatar: "/google-ads/review/img1.png",
+            avatar: "/google-ads/review/img1.webp",
             bgColor: "bg-white",
-            borderColor: "border-blue"
+            borderColor: "border-[#0457CB]"
         },
         {
             id: 2,
@@ -24,7 +20,7 @@ export default function ClientStories() {
             author: "Gunjan",
             position: "Marketing Head, Hozor",
             hasAvatar: true,
-            avatar: "/google-ads/review/img2.png",
+            avatar: "/google-ads/review/img2.webp",
             avatarShape: {
                 rounded: "xl",
                 width: "w-16 3xl:w-25",
@@ -40,13 +36,15 @@ export default function ClientStories() {
             quote: "From a company that had no experience in the entire marketing space to hitting benchmarks we'd never thought of. Univa's journey from here on is legendary. Regular discussions provided reassurance & sharpened our brain to keep the ball rolling.",
             author: "Gabriela, Founder",
             position: "A seamless, collaborative approach that brought everything together",
-            company: "/google-ads/review/clogo1.png",
-            avatar: "/google-ads/review/img3.png",
+            company: "/google-ads/review/clogo1.webp",
+            avatar: "/google-ads/review/img3.webp",
             hasVideo: true,
-            bgColor: "bg-blue-500",
-            textColor: "text-white",
             video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
-            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 top-15  2xl:top-12 size-20 2xl:size-26 3xl:size-32 "
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 2xl:-right-19 3xl:-right-20 top-15 xl:top-10 3xl:top-12 size-19 2xl:size-26 3xl:size-32 ",
+            bgColor: "bg-[#0457CB]",
+            textColor: "text-white",
+            hasHighlight: true,
+            highlightCss: 'absolute -bottom-2 w-45 h-2 left-1 3xl:left-7'
         },
 
         {
@@ -55,14 +53,17 @@ export default function ClientStories() {
             title: "How Upthrust Strengthened Univa’s Digital Marketing",
             author: "Chait Jain, CEO",
             position: "Built on strong strategic fundamentals",
-            company: "/google-ads/review/clogo2.png",
+            company: "/google-ads/review/clogo2.webp",
             hasVideo: true,
             hasAvatar: true,
-            avatar: "/google-ads/review/img4.png",
-            bgColor: "bg-blue-500",
+            avatar: "/google-ads/review/img4.webp",
+            hasVideo: true,
+            video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 3xl:-right-20 top-6 2xl:top-4 3xl:top-5 size-20 2xl:size-26 3xl:size-28 ",
+            bgColor: "bg-[#0457CB]",
             textColor: "text-white",
-            video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
-            arrowcss: "absolute -right-4 sm:-right-6 2xl:-right-17 top-8 2xl:top-6 size-20 2xl:size-26 3xl:size-32"
+            hasHighlight: true,
+            highlightCss: 'absolute top-19 3xl:top-22 w-45 h-2 left-7'
         },
         {
             id: 5,
@@ -73,7 +74,7 @@ export default function ClientStories() {
             position: "Co-Founder at Acadly",
             avatar: "👤",
             bgColor: "bg-white",
-            avatar: "/google-ads/review/img5.png",
+            avatar: "/google-ads/review/img5.webp",
             borderColor: "border-blue"
         },
         {
@@ -83,7 +84,7 @@ export default function ClientStories() {
             author: "Pranath Sisodiya",
             position: "CEO,  Rescribe",
             avatar: "👤",
-            avatar: "/google-ads/review/img6.png",
+            avatar: "/google-ads/review/img6.webp",
             bgColor: "bg-[#F6F6F6]",
             textColor: "text-black"
         },
@@ -92,7 +93,7 @@ export default function ClientStories() {
             rating: 5,
             title: `"I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”`,
             author: "Iti Dubey",
-            avatar: "/google-ads/review/img7.png",
+            avatar: "/google-ads/review/img7.webp",
             avatarShape: {
                 rounded: "xl",
                 width: "w-16",
@@ -109,14 +110,15 @@ export default function ClientStories() {
             title: "How Upthrust Delivered High-Quality Leads for Rescribe",
             author: "Pranath Sisodiya, CEO",
             position: "Exceeding expectations with scalable results",
-            company: "/google-ads/review/clogo3.png",
+            company: "/google-ads/review/clogo3.webp",
             hasVideo: true,
             hasAvatar: true,
-            avatar: "/google-ads/review/img8.png",
-            bgColor: "bg-blue-500",
+            avatar: "/google-ads/review/img8.webp",
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-6 xl:-right-4 3xl:-right-5 top-15 xl:top-8 3xl:top-12 size-20 2xl:size-26 3xl:size-28 ",
+            bgColor: "bg-[#0457CB]",
             textColor: "text-white",
-            video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
-            arrowcss: "absolute right-4 lg:-right-7 top-16 lg:top-14 2xl:top-12 3xl:top-8 size-20 2xl:size-26 3xl:size-32 -rotate-10"
+            hasHighlight: true,
+            highlightCss: 'absolute top-19 3xl:top-22 w-45 h-2 right-16'
         },
         {
             id: 9,
@@ -126,35 +128,21 @@ export default function ClientStories() {
             author: "Gaurav",
             position: "Marketing Manager, Vega",
             bgColor: "bg-white",
-            avatar: "/google-ads/review/img9.png",
+            avatar: "/google-ads/review/img9.webp",
             borderColor: "border-blue"
         }
     ];
 
+    const mobileTestimonials = [
+        testimonials[0],
+        testimonials[1],
+        testimonials[2],
+        testimonials[5],
+        testimonials[6],
+        testimonials[4],
+    ]
+
     return (
-        <div className="min-h-screen max-w-[90%] 3xl:max-w-[85%] mx-auto py-16 3xl:py-20">
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[0, 1, 2].map((colIndex) => (
-                    <div key={colIndex} className="flex flex-col gap-6">
-                        {testimonials
-                            .filter((_, i) => i % 3 === colIndex)
-                            .map((testimonial) => {
-                                if (testimonial.hasVideo) {
-                                    return <VideoTestimonialCard key={testimonial.id} testimonial={testimonial} />;
-                                }
-
-                                if (testimonial.quote) {
-                                    return <QuoteTestimonialCard key={testimonial.id} testimonial={testimonial} />;
-                                }
-
-                                return <ShortTestimonialCard key={testimonial.id} testimonial={testimonial} />;
-                            })}
-                    </div>
-                ))}
-            </div>
-
-
-        </div>
+        <GridTestimonialsWithVideo mobileTestimonialsSeq={mobileTestimonials} desktopTestimonialsSeq={testimonials} />
     );
 }
