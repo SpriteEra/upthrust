@@ -7,10 +7,6 @@ import StylishButton from '@/common/RocketButton';
 import Image from 'next/image';
 
 
-
-
-
-
 function SpButton({ text1, text2 }) {
     return (
         <div className="flex items-center gap-2 px-6 py-2 border rounded-full border-black bg-white">
@@ -84,7 +80,7 @@ export default function MetaAdsHero() {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-[42px] lg:text-[50px] 3xl:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold">
+                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[60px] 1800:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold max-sm:text-center">
                         The{' '}
                         <em className="font-instrument font-normal" >
                             Meta Ads
@@ -148,11 +144,11 @@ export default function MetaAdsHero() {
                 </div>
 
                 {/* RIGHT: Video grid */}
-                <div className="w-full lg:max-w-[52%] max-lg:overflow-x-auto">
-                    <div className="relative w-full h-full flex justify-center min-h-[600px] max-h-[739px]">
+                <div className="w-full  lg:max-w-[52%] max-lg:overflow-x-auto">
+                    <div className="relative max-lg:min-w-[750px] w-full h-full flex justify-center min-h-[550px] 1800:min-h-[600px] max-h-[739px] 3xl:max-w-[890px] ">
 
                         {/* Facebook pic */}
-                        <div className="absolute w-[131px] h-[128px] top-10 left-44 z-40">
+                        <div className="absolute size-[100px] 3xl:w-[131px] 3xl:h-[128px] top-10 left-44 z-40">
                             <Image
                                 width={130}
                                 height={130}
@@ -162,7 +158,7 @@ export default function MetaAdsHero() {
                             />
                         </div>
                         {/* Instagram pic */}
-                        <div className="absolute right-[25%] w-[131px] h-[128px] top-[560px]  z-40 ">
+                        <div className="absolute right-[25%] size-[100px] 3xl:w-[131px]  3xl:h-[128px] top-[420px] 1800px:top-[560px]  z-40 ">
                             <Image
                                 width={130}
                                 height={130}
@@ -182,12 +178,12 @@ export default function MetaAdsHero() {
 
 
                         {/* left video*/}
-                        <div className="absolute left-0 top-30 z-20 w-[224px]">
+                        <div className="absolute left-0 top-30 z-20">
                             {/* border rounded  */}
                             <div className="absolute -top-15 -left-5 size-[330px] border-[1px] border-black ">
                             </div>
 
-                            <div className="relative w-[240px] h-[400px] rounded-2xl">
+                            <div className="relative w-[220px] h-[350px]  1800:w-[240px] 1800:h-[400px] rounded-2xl">
 
                                 {/* CTA badge */}
                                 <div className="absolute -top-12 left-[40%] -translate-x-1/2 z-30">
@@ -213,13 +209,13 @@ export default function MetaAdsHero() {
                         </div>
 
                         {/* center video */}
-                        <div className="absolute left-1/2 -translate-x-1/2 top-4 z-30 w-[330px]">
+                        <div className="absolute left-1/2 -translate-x-1/2 top-4 z-30 w-[270px] overflow-hidden 1800:w-[330px]">
 
-                            <div className="relative w-full aspect-[330/640]">
+                            <div className="relative  aspect-[330/640]">
 
                                 <video
                                     ref={centerRef}
-                                    className="absolute inset-0 w-full h-full object-cover rounded-[45px]"
+                                    className="absolute inset-0 w-full h-full object-cover  rounded-[45px]"
                                     // autoPlay
                                     muted
                                     loop
@@ -241,11 +237,11 @@ export default function MetaAdsHero() {
                         </div>
 
                         {/* right video */}
-                        <div className="absolute right-0 3xl:right-2 top-0 z-20 flex flex-col justify-between h-full w-[224px] items-start ">
+                        <div className="absolute right-0 3xl:right-2 top-0 z-20 flex flex-col justify-between  h-full w-[210px] 1800:w-[224px] items-start ">
 
 
                             {/* Top video */}
-                            <div className="w-[208px] h-[364px] rounded-2xl ">
+                            <div className=" w-[180px] h-[300px] 1800:w-[208px] 1800:h-[364px] rounded-2xl ">
                                 <video
                                     ref={rightTopRef}
                                     onMouseEnter={() => playVideo(rightTopRef)}
@@ -264,7 +260,7 @@ export default function MetaAdsHero() {
                             </div>
 
                             {/* Bottom video */}
-                            <div className=" size-[161px] rounded-2xl ">
+                            <div className=" size-[130px] 1800:size-[161px] rounded-2xl ">
                                 <video
                                     ref={rightBottomRef}
                                     onMouseEnter={() => playVideo(rightBottomRef)}
@@ -283,6 +279,7 @@ export default function MetaAdsHero() {
                             </div>
 
                         </div>
+
                         <div className="absolute top-50 right-10 size-[330px] border-r-[1px] border-b-[1px] border-black ">
                         </div>
 
