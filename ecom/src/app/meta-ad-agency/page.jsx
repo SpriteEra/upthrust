@@ -29,6 +29,50 @@ const navLinks = [
   { name: 'Hear From Them', href: '#hear-from-them' },
 ];
 
+export const metadata = {
+    title: "Meta Ads Agency for Scalable Growth | Upthrust",
+
+    description: "Meta Ads agency optimizing 6Cr+ in monthly spend. Creative testing, structured scaling, and profitable growth across Facebook & Instagram",
+
+    keywords: [
+        "Google Ads Agency",
+    ],
+
+    metadataBase: new URL("https://www.upthrust.agency"),
+
+    alternates: {
+        canonical: "/",
+    },
+
+    openGraph: {
+        title: "Meta Ads Agency Built for Profitable Scaling",
+        description: "We optimize 6Cr+ in monthly Meta ad spend using creative testing and structured scaling systems that drive measurable revenue.",
+        url: "https://www.upthrust.agency",
+        siteName: "Upthrust",
+        images: [
+            {
+                url: "/meta-ads/meta-opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Upthrust – Meta Ads Agency",
+            },
+        ],
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Google Ads Agency That Scales Profitably",
+        description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+        images: ["/google-ads/ogimg.png"],
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    }
+};
+
 const page = () => {
   return (
     <main id="meta-ad-agency" >
