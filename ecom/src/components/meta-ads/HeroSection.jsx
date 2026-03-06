@@ -10,9 +10,9 @@ import RatingStars from '@/common/Rating';
 
 function SpButton({ text1, text2 }) {
     return (
-        <div className="flex items-center gap-2 px-6 py-2 border rounded-full border-black bg-[#F6F6F6]">
-            <span className="text-blue font-bold text-base">{text1}</span>
-            <span className="text-sm text-black font-normal whitespace-nowrap">{text2}</span>
+        <div className="flex items-center gap-2 px-3 sm:px-6 py-1 sm:py-2 border rounded-full border-black bg-[#F6F6F6]">
+            <span className="text-blue font-bold text-[11px] sm:text-base">{text1}</span>
+            <span className=" text-[9px] sm:text-sm text-black font-normal whitespace-nowrap">{text2}</span>
 
         </div>
     )
@@ -73,11 +73,11 @@ export default function MetaAdsHero() {
             <div className="w-full justify-center items-center flex flex-col lg:flex-row gap-4">
 
                 {/* LEFT: Copy */}
-                <div className="space-y-5 w-full lg:max-w-[48%] text-black">
+                <div className="space-y-5 max-sm:h-[100vh - 80px] w-full lg:max-w-[48%] text-black">
                     {/* Top tag */}
-                    <div className="flex justify-start gap-2 items-center">
-                        <AnimatedWord images={images} className="size-8.5 " />
-                        <p className="text-lg  3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">Ads that scale — without the agency B.S.</p>
+                    <div className="flex max-sm:text-center justify-center sm:justify-start gap-2 items-start sm:items-center">
+                        <AnimatedWord images={images} className="size-6.5 sm:size-8.5" />
+                        <p className="text-lg  3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">Ads that scale — without the <span className="block sm:inline">agency B.S.</span></p>
                     </div>
 
                     {/* Headline */}
@@ -90,35 +90,35 @@ export default function MetaAdsHero() {
                         <br />
                         That Lowers Your
                         <br />
-                        <span> <AnimatedWord words={words} className="h-10 md:h-12 lg:h-15 xl:h-25 2xl:h-15 3xl:h-25 w-30 md:w-30 lg:w-30 2xl:w-33.5 3xl:w-50 text-blue mx-auto" /> </span> While Scaling
+                        <span> <AnimatedWord words={words} className="h-10 md:h-12 lg:h-15 2xl:h-15 1600:h-20 1800:h-25 w-30 md:w-30 lg:w-30 2xl:w-33.5 1600:w-38 1800:w-50 text-blue mx-auto" /> </span> While Scaling
                     </h1>
 
                     {/* Subtext */}
-                    <p className="text-base 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">
+                    <p className="text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">
                         Stop bleeding budget on audiences that don&apos;t convert. Run ads that drive revenue.
                     </p>
 
                     {/* CTA Button */}
-                    <div className="my-12">
+                    <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-center ">
                         <StylishButton text1='Get Your' text2='Free Audit' color='blue' />
                     </div>
 
                     <div className="flex items-center gap-5 mt-4 mb-8">
-                        <div className="flex items-start justify-start flex-col gap-1 border border-black rounded-sm px-3 py-2 min-h-18.5">
+                        <div className="flex items-start justify-start flex-col sm:gap-1 border border-black rounded-sm px-3    sm:py-2 h-11 sm:h-18.5">
                             <div className="flex gap-1 ">
-                                <p className="text-[14px] font-extrabold text-[#FEA500]">4.8</p>
+                                <p className="text-[10px] sm:text-[14px] font-extrabold text-[#FEA500]">4.8</p>
                                 {[...Array(5)].map((_, i) => (
-                                    <Image width={20} height={20} key={i} className="size-[19px]" src="/meta-ads/star.webp" alt="Star" />
+                                    <Image width={20} height={20} key={i} className="size-[10px] sm:size-[19px]" src="/meta-ads/star.webp" alt="Star" />
                                 ))}
                             </div>
                             <div className="flex flex-col">
-                                <p className="text-[15px] text-[#6A6A6A] font-semibold leading-[100%]">Google</p>
-                                <p className="text-[9px] text-[#6A6A6A] mt-0.5 ">Customer Reviews</p>
+                                <p className="text-xs sm:text-[15px] text-[#6A6A6A] font-semibold leading-[100%]">Google</p>
+                                <p className="text-[9px] text-[#6A6A6A] sm:mt-0.5 ">Customer Reviews</p>
                             </div>
                         </div>
-                        <Image width={150} height={75} className="object-contain h-18.5 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
-                        <Image width={150} height={75} className="object-contain h-18.5 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
-                        <Image width={100} height={50} className="object-contain w-30 h-full" src="/meta-ads/meta.webp" alt="Meta Business Partner" />
+                        <Image width={150} height={75} className="object-contain h-10 sm:h-18.5 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
+                        <Image width={150} height={75} className="object-contain  h-10 sm:h-18.5 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
+                        <Image width={100} height={50} className="object-contain w-20 sm:w-30 h-full" src="/meta-ads/meta.webp" alt="Meta Business Partner" />
                     </div>
 
                     <div>
@@ -146,10 +146,10 @@ export default function MetaAdsHero() {
 
                 {/* RIGHT: Video grid */}
                 <div className="w-full  lg:max-w-[52%] max-lg:overflow-x-auto">
-                    <div className="relative max-lg:min-w-[750px] w-full h-full flex justify-center min-h-[550px] 1800:min-h-[600px] max-h-[739px] 3xl:max-w-[890px] ">
+                    <div className="relative max-sm:min-w-[550px] w-full h-full flex justify-center min-h-[470px] lg:min-h-[500px]  1800:min-h-[600px] max-h-[739px] 3xl:max-w-[890px] ">
 
                         {/* Facebook pic */}
-                        <div className="absolute size-[100px] 3xl:w-[131px] 3xl:h-[128px] top-10 2xl:top-0 left-44 2xl:left-36 z-40">
+                        <div className="absolute size-[95px] 3xl:w-[131px] 3xl:h-[128px] top-10 2xl:top-0 left-[20%]  2xl:left-36 z-40">
                             <Image
                                 width={130}
                                 height={130}
@@ -159,7 +159,7 @@ export default function MetaAdsHero() {
                             />
                         </div>
                         {/* Instagram pic */}
-                        <div className="absolute right-[25%] size-[100px] 3xl:w-[131px]  3xl:h-[128px] top-[420px] 1800px:top-[560px]  z-40 ">
+                        <div className="absolute right-[25%] size-[95px] 3xl:w-[131px]  3xl:h-[128px] top-[360px] sm:top-[420px]  2xl:top-[480px] 1800px:top-[560px]  z-40 ">
                             <Image
                                 width={130}
                                 height={130}
@@ -173,21 +173,25 @@ export default function MetaAdsHero() {
                         <div className="absolute top-20 left-[70%] -translate-x-1/2 z-35">
                             <SpButton text1="20%" text2="CRV BOOST" />
                         </div>
-                        <div className="absolute top-70 left-[70%] -translate-x-1/2 z-35">
+                        <div className="absolute top-60 sm:top-70 left-[70%] -translate-x-1/2 z-35">
                             <SpButton text1="3X" text2="AVERAGE ROI" />
+                        </div>
+
+                        <div className="absolute sm:hidden top-35 sm:-top-12 left-[30%] sm:left-[40%] -translate-x-1/2 z-40">
+                            <SpButton text1="30%" text2="DROP IN CPAs" />
                         </div>
 
 
                         {/* left video*/}
-                        <div className="absolute left-0 top-30 z-20">
+                        <div className="absolute left-5 sm:left-0 top-30 z-20">
                             {/* border rounded  */}
-                            <div className="absolute -top-15 -left-5 size-[330px] border-[1px] border-black ">
+                            <div className="absolute max-sm:hidden -top-15 -left-5 size-[260px] 2xl:size-[330px] border-[1px] border-black ">
                             </div>
 
-                            <div className="relative  h-[350px]  1800:w-[240px] 1800:h-[400px] aspect-209/370 rounded-[13px]">
+                            <div className="relative w-[135px] h-[240px] lg:w-[160px] lg:h-[280px]  2xl:w-[220px] 2xl:h-[350px]  1800:w-[240px] 1800:h-[400px] aspect-209/370 rounded-[13px]">
 
                                 {/* CTA badge */}
-                                <div className="absolute -top-12 left-[40%] -translate-x-1/2 z-30">
+                                <div className="absolute max-sm:hidden top-5 sm:-top-12 left-[50%] sm:left-[40%] -translate-x-1/2 z-30">
                                     <SpButton text1="30%" text2="DROP IN CPAs" />
                                 </div>
 
@@ -210,7 +214,7 @@ export default function MetaAdsHero() {
                         </div>
 
                         {/* center video */}
-                        <div className="absolute left-1/2 -translate-x-1/2 top-4 z-30 w-[270px] overflow-hidden 1800:w-[330px]">
+                        <div className="absolute left-1/2 -translate-x-1/2 top-4 z-30 w-[213px] overflow-hidden sm:w-[230px]  3xl:w-[300px] 1800:w-[330px]">
 
                             <div className="relative  aspect-[330/640]">
 
@@ -238,11 +242,11 @@ export default function MetaAdsHero() {
                         </div>
 
                         {/* right video */}
-                        <div className="absolute right-0 3xl:right-2 top-0 z-20 flex flex-col justify-between  h-full w-[210px] 1800:w-[224px] items-start ">
+                        <div className="absolute right-0 sm:right-0 3xl:right-2 top-0 z-20 flex flex-col max-sm:gap-5 sm:justify-between  h-full w-[160px] lg:w-[170px] 2xl:w-[210px] 1800:w-[224px] items-start ">
 
 
                             {/* Top video */}
-                            <div className=" w-[180px] h-[300px] 1800:w-[208px] 1800:h-[364px] rounded-[13px] ">
+                            <div className=" w-[144px] h-[257px] lg:w-[170px] lg:h-[280px] 2xl:w-[190px] 2xl:h-[300px] 1800:w-[208px] 1800:h-[364px] rounded-[13px] ">
                                 <video
                                     ref={rightTopRef}
                                     onMouseEnter={() => playVideo(rightTopRef)}
@@ -261,7 +265,7 @@ export default function MetaAdsHero() {
                             </div>
 
                             {/* Bottom video */}
-                            <div className=" size-[130px] 1800:size-[161px] rounded-[8px] ">
+                            <div className=" size-[102px] lg:size-[110px] 2xl:size-[130px] 1800:size-[161px] rounded-[8px] ">
                                 <video
                                     ref={rightBottomRef}
                                     onMouseEnter={() => playVideo(rightBottomRef)}
@@ -281,7 +285,7 @@ export default function MetaAdsHero() {
 
                         </div>
 
-                        <div className="absolute top-50 right-10 size-[330px] border-r-[1px] border-b-[1px] border-black ">
+                        <div className="max-sm:hidden absolute top-50 3xl:top-65 right-10 size-[240px] 3x:size-[330px] border-r-[1px] border-b-[1px] border-black ">
                         </div>
 
                     </div>

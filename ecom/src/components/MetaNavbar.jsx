@@ -42,7 +42,7 @@ export default function MetaNavbar({ items }) {
 
 
                     {/* Mobile menu button */}
-                    <NavbarCTAButton />
+                    <NavbarCTAButton className="border-blue" />
                 </div>
             </div>
 
