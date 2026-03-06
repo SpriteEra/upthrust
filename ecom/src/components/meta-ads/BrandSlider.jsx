@@ -229,20 +229,32 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
         </div>
     );
 }
+const defaultRow1 = Array.from({ length: 17 }, (_, i) => ({
+    id: i + 1,
+    name: `Brand ${i + 1}`,
+    logo: `/ecom/brand/first/f${i + 1}.webp`,
+}));
 
-export default function BrandSlider() {
-    const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
-        id: i + 1,
-        name: `Brand ${i + 1}`,
-        logo: `/ecom/brand/first/f${i + 1}.webp`,
-    }));
+const defaultRow2 = Array.from({ length: 15 }, (_, i) => ({
+    id: i + 21,
+    name: `Brand ${i + 21}`,
+    logo: `/ecom/brand/second/s${i + 1}.webp`,
+}));
 
 
-    const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
-        id: i + 21,
-        name: `Brand ${i + 21}`,
-        logo: `/ecom/brand/second/s${i + 1}.webp`,
-    }));
+export default function BrandSlider({ brandsRow1 = defaultRow1, brandsRow2 = defaultRow2 }) {
+    // const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
+    //     id: i + 1,
+    //     name: `Brand ${i + 1}`,
+    //     logo: `/ecom/brand/first/f${i + 1}.webp`,
+    // }));
+
+
+    // const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
+    //     id: i + 21,
+    //     name: `Brand ${i + 21}`,
+    //     logo: `/ecom/brand/second/s${i + 1}.webp`,
+    // }));
 
     return (
         <div className="py-8 xs:py-10 space-y-10 overflow-hidden">

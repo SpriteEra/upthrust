@@ -22,6 +22,42 @@ import StatsGrid from '@/components/meta-ads/StatCard';
 import MetaNavbar from '@/components/MetaNavbar'
 import React from 'react'
 
+const brandsRow1 = [
+  { id: 1, name: "", logo: "/brands/brand-white/tata-cliq.webp" },
+  { id: 2, name: "", logo: "/brands/brand-white/housr.webp" },
+  { id: 3, name: "", logo: "/brands/brand-white/bagwani.webp" },
+  { id: 4, name: "", logo: "/brands/brand-white/mukunda-foods.webp" },
+  { id: 5, name: "", logo: "/brands/brand-white/libas.webp" },
+  { id: 6, name: "", logo: "/brands/brand-white/biba.webp" },
+  { id: 7, name: "", logo: "/brands/brand-white/manohar-lal.webp" },
+  { id: 8, name: "", logo: "/brands/brand-white/shoppetite.webp" },
+  { id: 9, name: "", logo: "/brands/brand-white/yummie.webp" },
+  { id: 10, name: "", logo: "/brands/brand-white/bosch.webp" },
+  { id: 11, name: "", logo: "/brands/brand-white/the-sweet-blend.webp" },
+  { id: 12, name: "", logo: "/brands/brand-white/victorias-secret.webp" },
+  { id: 13, name: "", logo: "/brands/brand-white/nurture-india.webp" },
+  { id: 14, name: "", logo: "/brands/brand-white/dhenu.webp" },
+  { id: 15, name: "", logo: "/brands/brand-white/dell.webp" },
+]
+const brandsRow2 = [
+  { id: 1, name: "", logo: "/brands/brand-white/zomato.webp" },
+  { id: 2, name: "", logo: "/brands/brand-white/urban.webp" },
+  { id: 3, name: "", logo: "/brands/brand-white/welspun.webp" },
+  { id: 4, name: "", logo: "/brands/brand-white/ok.webp" },
+  { id: 5, name: "", logo: "/brands/brand-white/zipnow.webp" },
+  { id: 6, name: "", logo: "/brands/brand-white/petco.webp" },
+  { id: 7, name: "", logo: "/brands/brand-white/velbiom.webp" },
+  { id: 8, name: "", logo: "/brands/brand-white/james-allen.webp" },
+  { id: 9, name: "", logo: "/brands/brand-white/neon-attack.webp" },
+  { id: 10, name: "", logo: "/brands/brand-white/jagwonder.webp" },
+  { id: 11, name: "", logo: "/brands/brand-white/beyond.webp" },
+  { id: 12, name: "", logo: "/brands/brand-white/mc-overalls.webp" },
+  { id: 13, name: "", logo: "/brands/brand-white/tiggle.webp" },
+  { id: 14, name: "", logo: "/brands/brand-white/harley-davidson.webp" },
+  { id: 15, name: "", logo: "/brands/brand-white/audio-art.webp" },
+  { id: 15, name: "", logo: "/brands/brand-white/loreal.webp" },
+  { id: 15, name: "", logo: "/brands/brand-white/last-supply.webp" },
+]
 const navLinks = [
   { name: 'Why Upthrust', href: '#why-upthrust' },
   { name: 'Case Studies', href: '#case-studies' },
@@ -118,7 +154,7 @@ const page = () => {
       />
       <ClientStories />
 
-      <div className="bg-black text-white py-16 3xl:py-20 3xl:pt-36 mt-10 3xl:mt-20 ">
+      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 ">
         <MetaHeading
           tag="h2"
           heading={[
@@ -137,22 +173,19 @@ const page = () => {
 
         />
         <ScaleCards />
-        <BrandSlider />
+        <BrandSlider brandsRow1={brandsRow1} brandsRow2={brandsRow2} />
       </div>
-
       <div>
-
         <DropLetters />
         <StatsGrid />
-
       </div>
       <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col lg:flex-row items-center gap-12">
 
 
-        <div className="flex gap-6 md:gap-15 items-center">
+        <div className="flex gap-10 md:gap-15 items-center max-lg:flex-col">
 
           {/* Left Content */}
-          <div className="w-[50%]  overflow-hidden">
+          <div className="lg:w-[50%]  overflow-hidden">
             <p className="uppercase text-sm tracking-[-0.02em] leading-[150%] mb-3 border-b border-black pb-2 3xl:pb-3 w-full">
               A NEW ERA OF META AGENCY THAT DELIVER ROI
             </p>
@@ -168,14 +201,14 @@ const page = () => {
             <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] max-w-150 3xl:max-w-180">
               Upthrust is your dedicated, on-call Meta ads creative team to expand your Meta ads capacity and extend your team’s creative capabilities.
             </p>
-            <p className="my-4 max-3xl:mb-6 3xl:my-8 text-[13px] sm:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
+            <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
               Creative capabilities to drive conversion at a cost you would love.
             </p>
             <MetaRocketButton color='blue' />
           </div>
 
           {/* Right Video */}
-          <div className="w-[50%] h-full flex justify-end items-center">
+          <div className="lg:w-[50%] h-full flex justify-end items-center">
             <div className="relative w-full aspect-16/10 max-w-[787px] overflow-hidden rounded-md">
               <video
                 className="w-full h-full object-cover "

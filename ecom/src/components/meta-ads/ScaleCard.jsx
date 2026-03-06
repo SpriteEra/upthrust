@@ -50,8 +50,8 @@ export default function ScaleCards() {
             title: "AI-Powered",
             subtitle: [
                 { text: 'Workflow', color: '#ffffff' },
-                { text: 'Thumbnails', color: '#ffffff' },
-                { text: 'UGCs', color: '#ffffff' }
+                { text: 'Research', color: '#ffffff' },
+                { text: 'Production', color: '#ffffff' }
             ],
             description:
                 "AI-assisted research, scripting, and post-production to deliver more ad variants, faster.",
@@ -63,33 +63,36 @@ export default function ScaleCards() {
     ];
 
     return (
-        <section className="max-w-[1200px] 3xl:max-w-[1409px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 py-16">
+        <section className="max-w-[1200px] 3xl:max-w-[1409px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 py-16 max-lg:px-3">
             {cards.map((card, index) => (
                 <div
                     key={index}
-                    className={`${card.bg} ${card.text} rounded-2xl 3xl:rounded-[20px] p-4 xl:p-6 flex flex-col justify-between xl:min-h-[380px] 3xl:min-h-[455px] max-h-[455px] `}
+                    className={`${card.bg} ${card.text} rounded-2xl 3xl:rounded-[20px] p-4 px-5 xl:p-6 flex flex-col justify-between xl:min-h-[380px] 3xl:min-h-[455px] max-h-[455px] max-md:py-8 `}
                 >
                     {/* Icon */}
                     <div>
-                        <div className={`size-8 3xl:size-10 rounded-full border border-current flex items-center justify-center mb-6 ${card.iconCss}`}>
+                        <div className={`size-8 3xl:size-10 rounded-full border border-current flex items-center justify-center mb-1 lg:mb-6 ${card.iconCss}`}>
                             {card.icon}
                         </div>
-                        <h3 className="text-[32px] 3xl:text-4xl font-semibold leading-[130%] tracking-[-0.02em]">
-                            {card.title}
-                        </h3>
-                        <p className="italic font-normal mb-6 text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument overflow-hidden">
-                            <AnimatedWord
-                                words={card.subtitle}
-                                textCss="italic font-normal text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument"
-                                className="h-10 md:h-12 3xl:h-10 w-55 md:w-30 lg:w-full 3xl:w-90 mx-auto"
-                            />
+                        <div className="lg:flex-col flex max-lg:items-center max-lg:gap-2 max-lg:mb-6 flex-wrap ">
+                            <h3 className="text-[32px] 3xl:text-4xl font-semibold leading-[130%] tracking-[-0.02em] whitespace-nowrap">
+                                {card.title}
+                            </h3>
+                            <p className="italic font-normal lg:mb-6 text-4xl lg:text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument overflow-hidden">
+                                <AnimatedWord
+                                    words={card.subtitle}
+                                    textCss="italic font-normal text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument"
+                                    className="h-8 md:h-12 3xl:h-10 w-40 md:w-30 lg:w-full 3xl:w-90 mx-auto"
+                                />
 
-                        </p>
+                            </p>
+
+                        </div>
                     </div>
 
                     {/* Content */}
                     <div>
-                        <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] 3xl:max-w-[280px]">
+                        <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] max-md:max-w-[317px] 3xl:max-w-[280px]">
                             {card.description}
                         </p>
                     </div>
