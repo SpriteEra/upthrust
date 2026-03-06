@@ -5,7 +5,13 @@ import { useRef } from "react";
 
 const cards = [
     {
-        image: "/meta-ads/slidecard/one1.png",
+        images: [
+            { id: 1, alt: "Team", url: "/meta-ads/slidecard/team-1.webp" },
+            { id: 2, alt: "Team", url: "/meta-ads/slidecard/team-2.webp" },
+            { id: 3, alt: "Team", url: "/meta-ads/slidecard/team-3.webp" },
+            { id: 4, alt: "Team", url: "/meta-ads/slidecard/team-4.webp" },
+            { id: 5, alt: "Team", url: "/meta-ads/slidecard/team-5.webp" },
+        ],
         title: (
             <>
                 Most talented <span className="font-instrument italic font-normal leading-[120%]">Meta teams</span>
@@ -13,7 +19,12 @@ const cards = [
         ),
     },
     {
-        image: "/meta-ads/slidecard/one.png",
+        images: [
+            { id: 1, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-1.webp" },
+            { id: 2, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-2.webp" },
+            { id: 3, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-3.webp" },
+            { id: 4, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-4.webp" },
+        ],
         title: (
             <>
                 <span className="font-instrument italic font-normal leading-[120%]">Ultra-fast</span> turnaround times
@@ -21,25 +32,18 @@ const cards = [
         ),
     },
     {
-        image: "/meta-ads/slidecard/two.png",
+        images: [
+            { id: 1, alt: "Contract", url: "/meta-ads/slidecard/contract-1.webp" },
+            { id: 2, alt: "contract", url: "/meta-ads/slidecard/contract-2.webp" },
+            { id: 3, alt: "contract", url: "/meta-ads/slidecard/contract-3.webp" },
+        ],
         title:
             <>
                 <span className="font-instrument italic font-normal leading-[120%]">Flexible</span> contracts
             </>,
     },
 ];
-const images = [
-    "/uiux/design/1.webp",
-    "/uiux/design/2.webp",
-    "/uiux/design/3.webp",
-    "/uiux/design/4.webp",
-    "/uiux/design/5.webp",
-    "/uiux/design/6.webp",
-    "/uiux/design/7.webp",
-    "/uiux/design/8.webp",
-    "/uiux/design/9.webp",
-    "/uiux/design/10.webp",
-];
+
 
 
 export default function FeatureCards() {
@@ -55,7 +59,7 @@ export default function FeatureCards() {
                     {/* Image */}
                     <div className="relative w-full aspect-525/607">
                         <SmartSwiper
-                            slides={images}
+                            slides={card.images}
                             autoplay={true}
                             speed={700}
                             delay={1000}
@@ -63,11 +67,11 @@ export default function FeatureCards() {
                             hoverPlayDesktop={true}
                             swiperClass="single-image-swiper "
                             onSwiperReady={(swiper) => (swiperInstance.current = swiper)}
-                            renderSlide={(src) => (
+                            renderSlide={(image) => (
                                 <div className="relative w-full max-lg:aspect-525/607  overflow-hidden bg-gray-100">
                                     <Image
-                                        src={src}
-                                        alt="Slide image"
+                                        src={image.url}
+                                        alt={image.alt}
                                         width={525}
                                         height={607}
                                         quality={100}

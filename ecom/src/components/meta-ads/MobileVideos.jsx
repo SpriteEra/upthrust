@@ -8,15 +8,15 @@ import SmartSwiper from "../SmartSwiper";
 const videos = [
     {
         label: "D2C",
-        thumbnail: "/meta-ads/dummy.png",
-        frame: "/meta-ads/frame.png",
-        video: "https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4",
+        thumbnail: "/ecom/ugcs/cloth/cloth2.webp",
+        frame: "/ecom/ugcs/cloth/cloth2.webp",
+        video: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Clothing%20%26%20Footwear/MILOOUTFITCHECK02FINALmp4.mp4",
     },
     {
         label: "CONSUMER",
-        thumbnail: "/meta-ads/dummy.png",
-        frame: "/meta-ads/frame.png",
-        video: "https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4",
+        thumbnail: "/ecom/ugcs/lifestyle/lifestyle5.webp",
+        frame: "/ecom/ugcs/lifestyle/lifestyle5.webp",
+        video: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/NEONATTACKmp4.mp4",
     },
     {
         label: "B2B",
@@ -73,17 +73,17 @@ export default function MobileVideos() {
                             </span>
                             <div
                                 onClick={() => setActiveVideo(item.video)}
-                                className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 3xl:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer"
+                                className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 3xl:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer rounded-4xl"
                             >
                                 <Image
                                     fill
                                     src={item.thumbnail}
                                     alt=""
-                                    className="w-full h-full object-cover "
+                                    className="w-full h-full object-cover rounded-4xl "
                                 />
                                 <Image
                                     fill
-                                    src={item.frame}
+                                    src={'/meta-ads/frame-without-buttons.webp'}
                                     alt=""
                                     className="w-full absolute top-10  h-full object-cover"
                                 />
@@ -95,7 +95,7 @@ export default function MobileVideos() {
                 <button
                     onClick={() => swiperInstance.current?.slidePrev()}
                     title="Previous"
-                    className="absolute left-0 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-black flex items-center justify-center z-20 hover:bg-neutral-800"
+                    className="absolute left-2 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800"
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white rotate-45 translate-x-[2px] lg:hidden" />
                 </button>
@@ -104,7 +104,7 @@ export default function MobileVideos() {
                 <button
                     title="Next"
                     onClick={() => swiperInstance.current?.slideNext()}
-                    className="absolute right-0 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 lg:top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-black flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
+                    className="absolute right-2 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white -rotate-[135deg] -translate-x-[2px]" />
                 </button>

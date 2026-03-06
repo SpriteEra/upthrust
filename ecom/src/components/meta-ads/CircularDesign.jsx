@@ -43,8 +43,9 @@ export default function CircularDesign() {
     return (
         <div className="bg-black text-white"
         >
-            <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1550px] mx-auto py-20">
-                <Image src={'/meta-ads/circular/adspent-graph.png'} quality={100} width={1600} height={900} className="w-full h-full object-contain select-none pointer-events-none " alt="Ad-Spent Graph" />
+            <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-[1550px] mx-auto py-20 max-md:px-2.5">
+                <Image src={'/meta-ads/circular/adspent-graph-mobile.webp'} quality={100} width={1600} height={900} className="w-full h-full object-contain select-none pointer-events-none md:hidden " alt="Ad-Spent Graph" />
+                <Image src={'/meta-ads/circular/adspent-graph.webp'} quality={100} width={1600} height={900} className="w-full h-full object-contain select-none pointer-events-none max-md:hidden" alt="Ad-Spent Graph" />
             </div>
         </div>
     );
