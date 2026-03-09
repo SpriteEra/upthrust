@@ -4,28 +4,28 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 const defaultSets = [
     [
-        { name: 'Zomato', image: '/uiux/brand/zomato.webp', alt: 'Zomato Logo' },
-        { name: 'Bosch', image: '/uiux/brand/bosch.webp', alt: 'Bosch Logo' },
-        { name: "L'Oréal", image: '/uiux/brand/loreal.webp', alt: "L'Oréal Logo" },
-        { name: 'Vega', image: '/uiux/brand/vega.webp', alt: 'Vega Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand/harley-davidson.webp', alt: 'Harley Davidson Logo' },
-        { name: 'Dell', image: '/uiux/brand/dell.webp', alt: 'Del Logol' },
+        { name: 'Zomato', image: '/uiux/brand/zomato.webp', alt: 'Zomato Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/bosch.webp', alt: 'Bosch Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/loreal.webp', alt: "L'Oréal Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/vega.webp', alt: 'Vega Logo', size: 'w-20 md:w-24 3xl:w-32 h-9 3xl:h-12 ' },
+        { name: 'Harley Davidson', image: '/uiux/brand/harley-davidson.webp', alt: 'Harley Davidson Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Dell', image: '/uiux/brand/dell.webp', alt: 'Dell Logo', size: 'w-20 h-8  3xl:w-28 3xl:h-10' },
     ],
     [
-        { name: 'Zomato', image: '/uiux/brand/acadly.webp', alt: 'Acadly Logo' },
-        { name: 'Bosch', image: '/uiux/brand/neatlogs.webp', alt: 'Neatlogs Logo' },
-        { name: "L'Oréal", image: '/uiux/brand/beyond.webp', alt: "Beyond Logo" },
-        { name: 'Vega', image: '/uiux/brand/ok.webp', alt: 'Ok Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand/audio-art.webp', alt: 'Audio Art Logo' },
-        { name: 'Dell', image: '/uiux/brand/housr.webp', alt: 'Housr Logo' },
+        { name: 'Zomato', image: '/uiux/brand/acadly.webp', alt: 'Acadly Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/neatlogs.webp', alt: 'Neatlogs Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/beyond.webp', alt: "Beyond Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/ok.webp', alt: 'Ok Logo', size: 'w-20 md:w-24 3xl:w-32 h-11 3xl:h-15' },
+        { name: 'Harley Davidson', image: '/uiux/brand/audio-art.webp', alt: 'Audio Art Logo', size: 'w-20 md:w-24 3xl:w-32 h-11 3xl:h-15' },
+        { name: 'Dell', image: '/uiux/brand/housr.webp', alt: 'Housr Logo', size: 'w-20 h-7 md:h-8  3xl:w-28 3xl:h-10' },
     ],
     [
-        { name: 'Zomato', image: '/uiux/brand/vwo.webp', alt: 'Vwo Logo' },
-        { name: 'Bosch', image: '/uiux/brand/cyble.webp', alt: 'Cyble Logo' },
-        { name: "L'Oréal", image: '/uiux/brand/qpiai.webp', alt: "Q Pi Ai Logo" },
-        { name: 'Vega', image: '/uiux/brand/mc-overalls.webp', alt: 'MC Overalls Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand/tescribe.webp', alt: 'Teascrube Logo' },
-        { name: 'Dell', image: '/uiux/brand/tiggle.webp', alt: 'Tiggle Logo' },
+        { name: 'Zomato', image: '/uiux/brand/vwo.webp', alt: 'Vwo Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/cyble.webp', alt: 'Cyble Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/qpiai.webp', alt: "Q Pi Ai Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/mc-overalls.webp', alt: 'MC Overalls Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Harley Davidson', image: '/uiux/brand/tescribe.webp', alt: 'Teascrube Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Dell', image: '/uiux/brand/tiggle.webp', alt: 'Tiggle Logo', size: 'w-20 md:h-10  3xl:w-28 3xl:h-12' },
     ],
 ];
 export default function AnimatedLogoCarousel({ logoSets = defaultSets, theme = "dark" }) {
@@ -76,10 +76,15 @@ export default function AnimatedLogoCarousel({ logoSets = defaultSets, theme = "
                                             {logos.map((logo, index) => (
                                                 <div
                                                     key={index}
-                                                    className="flex items-center justify-center w-20 last:w-18 3xl:w-28 last:3xl:w-20 mx-auto"
+                                                    className={`flex items-center justify-center w-24 md:w-26 xl:w-28 3xl:w-36 mx-auto ${logo.size}`}
                                                 >
-                                                    <Image width={64} height={64} src={logo.image} alt={logo.alt} className="w-full h-full object-contain" />
-
+                                                    <Image
+                                                        width={128}
+                                                        height={80}
+                                                        src={logo.image}
+                                                        alt={logo.alt}
+                                                        className="w-full h-full object-contain "
+                                                    />
                                                 </div>
                                             ))}
                                         </div>
@@ -90,8 +95,6 @@ export default function AnimatedLogoCarousel({ logoSets = defaultSets, theme = "
 
                     </div>
                     {/* for mobile  */}
-
-
                     <div className={`md:hidden overflow-hidden py-4 ${theme === "dark" ? "bg-black" : "bg-white"}`}>
                         <p className="text-white/50 text-lg text-center font-light p-3">
                             Trusted by startups, scaleups, and global brands across India & US
@@ -104,9 +107,9 @@ export default function AnimatedLogoCarousel({ logoSets = defaultSets, theme = "
                                         <Image
                                             src={logo.image}
                                             alt={logo.alt}
-                                            width={64}
-                                            height={64}
-                                            className="w-16 h-16 object-contain"
+                                            width={128}
+                                            height={80}
+                                            className={`w-20 h-16 object-contain ${logo.size}`}
                                         />
                                     </div>
                                 ))}

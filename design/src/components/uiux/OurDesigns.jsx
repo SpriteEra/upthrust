@@ -105,7 +105,7 @@ const OurDesigns = () => {
                         <div className='grid grid-cols-2 gap-2 sm:gap-4 sm:max-w-[90%] sm:mx-auto w-full px-1 sm:px-10 3xl:px-20 '>
                             <div className='flex items-center gap-1 sm:gap-3'>
                                 <Plus className={`size-6 md:size-7 lg:size-9 3xl:size-11 ${index === openIndex ? "rotate-45" : ""} transition-all duration-400 ease-in-out`} />
-                                <p className='text-[1.375rem] sm:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl font-medium max-lg:font-instrument max-lg:hidden 2xl:leading-[72.5px] 3xl:leading-[81.6px]'><span className='font-instrument font-normal italic'>{item.title}</span> Design</p>
+                                <p className='text-[1.375rem] sm:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-[40px] 1800:text-5xl font-medium max-lg:font-instrument max-lg:hidden 2xl:leading-[72.5px] 3xl:leading-[81.6px]'><span className='font-instrument font-normal italic'>{item.title}</span> Design</p>
                                 <p className='text-[1.375rem] font-instrument font-normal italic lg:hidden'>{item.titleSm}</p>
 
                             </div>

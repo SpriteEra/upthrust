@@ -10,11 +10,11 @@ export const GrowthStoriesSliderContent = ({ images = [] }) => {
             <SmartSwiper
                 slides={images}
                 effect="slide"
-                speed={800}
-                delay={3000}
+                speed={600}
+                delay={2500}
                 swiperClass="h-full"
                 slideClass="h-full"
-                renderSlide={(item) => (
+                renderSlide={(item, index) => (
                     <div className="w-full h-full">
                         <Image
                             src={item}
@@ -22,6 +22,7 @@ export const GrowthStoriesSliderContent = ({ images = [] }) => {
                             width={862}
                             height={640}
                             quality={100}
+                            priority={index === 0}
                             className="object-fill w-full h-full"
                         />
                     </div>

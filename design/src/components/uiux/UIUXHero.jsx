@@ -35,7 +35,7 @@ export default function UIUXHero() {
 
     return (
         <div className="bg-black pt-40 lg:pt-50 2xl:pt-60 3xl:pt-70 flex items-center justify-center px-4 pb-2 lg:pb-6 ">
-            <div className="relative w-full inverted-radius sm:max-w-[90%] 3xl:max-w-[88%] ">
+            <div className="relative w-full inverted-radius sm:max-w-[90%] 3xl:max-w-[90%] ">
                 {/* Card with Folder Tab */}
                 <div className="relative bg-white max-sm:rounded-tl-[20px] rounded-bl-[20px] sm:rounded-tr-[20px] rounded-br-[20px]">
                     <svg width="131" height="35" viewBox="0 0 131 35" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute sm:hidden -top-8 -right-[0.5px]">

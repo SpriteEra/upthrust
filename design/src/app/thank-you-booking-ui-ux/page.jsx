@@ -8,30 +8,57 @@ import React from 'react'
 
 const logoSets = [
     [
-        { name: 'Zomato', image: '/uiux/brand-white/zomato.webp', alt: 'Zomato Logo' },
-        { name: 'Bosch', image: '/uiux/brand-white/bosch.webp', alt: 'Bosch Logo' },
-        { name: "L'Oréal", image: '/uiux/brand-white/loreal.webp', alt: "L'Oréal Logo" },
-        { name: 'Vega', image: '/uiux/brand-white/vega.webp', alt: 'Vega Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand-white/harley-davidson.webp', alt: 'Harley Davidson Logo' },
-        { name: 'Dell', image: '/uiux/brand-white/dell.webp', alt: 'Del Logol' },
+        { name: 'Zomato', image: '/uiux/brand/zomato.webp', alt: 'Zomato Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/bosch.webp', alt: 'Bosch Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/loreal.webp', alt: "L'Oréal Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/vega.webp', alt: 'Vega Logo', size: 'w-20 md:w-24 3xl:w-32 h-9 3xl:h-12 ' },
+        { name: 'Harley Davidson', image: '/uiux/brand/harley-davidson.webp', alt: 'Harley Davidson Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Dell', image: '/uiux/brand/dell.webp', alt: 'Dell Logo', size: 'w-20 h-8  3xl:w-28 3xl:h-10' },
     ],
     [
-        { name: 'Zomato', image: '/uiux/brand-white/acadly.webp', alt: 'Acadly Logo' },
-        { name: 'Bosch', image: '/uiux/brand-white/neatlogs.webp', alt: 'Neatlogs Logo' },
-        { name: "L'Oréal", image: '/uiux/brand-white/beyond.webp', alt: "Beyond Logo" },
-        { name: 'Vega', image: '/uiux/brand-white/ok.webp', alt: 'Ok Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand-white/audioart.webp', alt: 'Audio Art Logo' },
-        { name: 'Dell', image: '/uiux/brand-white/housr.webp', alt: 'Housr Logo' },
+        { name: 'Zomato', image: '/uiux/brand/acadly.webp', alt: 'Acadly Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/neatlogs.webp', alt: 'Neatlogs Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/beyond.webp', alt: "Beyond Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/ok.webp', alt: 'Ok Logo', size: 'w-20 md:w-24 3xl:w-32 h-11 3xl:h-15' },
+        { name: 'Harley Davidson', image: '/uiux/brand/audio-art.webp', alt: 'Audio Art Logo', size: 'w-20 md:w-24 3xl:w-32 h-11 3xl:h-15' },
+        { name: 'Dell', image: '/uiux/brand/housr.webp', alt: 'Housr Logo', size: 'w-20 h-7 md:h-8  3xl:w-28 3xl:h-10' },
     ],
     [
-        { name: 'Zomato', image: '/uiux/brand-white/vwo.webp', alt: 'Vwo Logo' },
-        { name: 'Bosch', image: '/uiux/brand-white/cyble.webp', alt: 'Cyble Logo' },
-        { name: "L'Oréal", image: '/uiux/brand-white/qpiai.webp', alt: "Q Pi Ai Logo" },
-        { name: 'Vega', image: '/uiux/brand-white/mc-overalls.webp', alt: 'MC Overalls Logo' },
-        { name: 'Harley Davidson', image: '/uiux/brand-white/tescribe.webp', alt: 'Teascrube Logo' },
-        { name: 'Dell', image: '/uiux/brand-white/tiggle.webp', alt: 'Tiggle Logo' },
+        { name: 'Zomato', image: '/uiux/brand/vwo.webp', alt: 'Vwo Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Bosch', image: '/uiux/brand/cyble.webp', alt: 'Cyble Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: "L'Oréal", image: '/uiux/brand/qpiai.webp', alt: "Q Pi Ai Logo", size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Vega', image: '/uiux/brand/mc-overalls.webp', alt: 'MC Overalls Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Harley Davidson', image: '/uiux/brand/tescribe.webp', alt: 'Teascrube Logo', size: 'w-20 md:w-24 3xl:w-32' },
+        { name: 'Dell', image: '/uiux/brand/tiggle.webp', alt: 'Tiggle Logo', size: 'w-20 md:h-10  3xl:w-28 3xl:h-12' },
     ],
 ];
+
+// const logoSets = [
+//     [
+//         { name: 'Zomato', image: '/uiux/brand-white/zomato.webp', alt: 'Zomato Logo' },
+//         { name: 'Bosch', image: '/uiux/brand-white/bosch.webp', alt: 'Bosch Logo' },
+//         { name: "L'Oréal", image: '/uiux/brand-white/loreal.webp', alt: "L'Oréal Logo" },
+//         { name: 'Vega', image: '/uiux/brand-white/vega.webp', alt: 'Vega Logo' },
+//         { name: 'Harley Davidson', image: '/uiux/brand-white/harley-davidson.webp', alt: 'Harley Davidson Logo' },
+//         { name: 'Dell', image: '/uiux/brand-white/dell.webp', alt: 'Del Logol' },
+//     ],
+//     [
+//         { name: 'Zomato', image: '/uiux/brand-white/acadly.webp', alt: 'Acadly Logo' },
+//         { name: 'Bosch', image: '/uiux/brand-white/neatlogs.webp', alt: 'Neatlogs Logo' },
+//         { name: "L'Oréal", image: '/uiux/brand-white/beyond.webp', alt: "Beyond Logo" },
+//         { name: 'Vega', image: '/uiux/brand-white/ok.webp', alt: 'Ok Logo' },
+//         { name: 'Harley Davidson', image: '/uiux/brand-white/audioart.webp', alt: 'Audio Art Logo' },
+//         { name: 'Dell', image: '/uiux/brand-white/housr.webp', alt: 'Housr Logo' },
+//     ],
+//     [
+//         { name: 'Zomato', image: '/uiux/brand-white/vwo.webp', alt: 'Vwo Logo' },
+//         { name: 'Bosch', image: '/uiux/brand-white/cyble.webp', alt: 'Cyble Logo' },
+//         { name: "L'Oréal", image: '/uiux/brand-white/qpiai.webp', alt: "Q Pi Ai Logo" },
+//         { name: 'Vega', image: '/uiux/brand-white/mc-overalls.webp', alt: 'MC Overalls Logo' },
+//         { name: 'Harley Davidson', image: '/uiux/brand-white/tescribe.webp', alt: 'Teascrube Logo' },
+//         { name: 'Dell', image: '/uiux/brand-white/tiggle.webp', alt: 'Tiggle Logo' },
+//     ],
+// ];
 const page = () => {
     return (
         <main className=''>

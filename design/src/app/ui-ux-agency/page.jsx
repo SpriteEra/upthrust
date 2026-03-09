@@ -236,7 +236,7 @@ const page = () => {
                     curveFlipVertical={false}
                     tiltAngle={5}
                     imageIndex={2}
-                    className="absolute top-10 3xl:top-0 left-10 xl:left-40 2xl:left-55 3xl:left-65 max-w-[300px] 3xl:max-w-[350px]"
+                    className="absolute top-10 3xl:top-0 left-10 xl:left-35 2xl:left-45 3xl:left-50 max-w-[300px] 3xl:max-w-[350px]"
                 />
                 <UiUxHeading
                     tag="h2"

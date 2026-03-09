@@ -16,8 +16,8 @@ const navLinks = [
 export default function UiUxNavbar({ items = navLinks }) {
 
     return (
-        <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
-            <div className="px-4 md:px-4 lg:px-8 w-full">
+        <nav className="bg-white/50   text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
+            <div className=" w-full max-w-[90%] 3xl:max-w-[90%] mx-auto">
                 <div className="flex items-center justify-between ">
                     {/* Logo */}
                     <div className="shrink-0 ">
