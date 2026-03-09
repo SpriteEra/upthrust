@@ -9,7 +9,7 @@ const LeadForm = ({ showCircle = false, showBorder = true, showOnlyIframe = fals
             <div className="flex items-center justify-center w-full px-2">
                 <div className="w-full max-w-2xl bg-white border shadow-lg rounded-lg overflow-hidden">
                     <iframe
-                        src="https://noform.vercel.app/embed/scale-your-ecom-brand-with-ugc"
+                        src="https://upthrust-ecom.neetocal.com/embed/3f2e149b-8090-481e-8e7e-6ba530596ff4"
                         width="100%"
                         height="800"
                         frameBorder="0"
@@ -25,7 +25,7 @@ const LeadForm = ({ showCircle = false, showBorder = true, showOnlyIframe = fals
         <div className="flex items-center justify-center w-full px-2">
             <div className={`w-full max-w-2xl 3xl:max-w-4xl bg-white ${showBorder ? " border shadow-lg" : ""} rounded-lg overflow-hidden`}>
                 <iframe
-                    src="https://noform.vercel.app/embed/scale-your-ecom-brand-with-ugc"
+                    src="https://upthrust-ecom.neetocal.com/embed/3f2e149b-8090-481e-8e7e-6ba530596ff4"
                     width="100%"
                     height="800"
                     frameBorder="0"
