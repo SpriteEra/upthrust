@@ -1,252 +1,209 @@
-"use client";
+'use client'
+import { useRef } from "react";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
-const sections = [
+const steps = [
     {
         id: 1,
         label: "THE FOUNDATION OF SUCCESS",
-        labelSide: "right",
-        image: "/creative-agency/progress.png",
-        imagePosition: "left",
+        title: "Discovery & Strategy",
+        text: "We dive deep into your brand, audience psychology, and competitive landscape to uncover what truly drives attention. Through category convention analysis and emotional insight mapping, we identify the creative territories where your brand can own the conversation and break through the noise.",
+        img: "./creative-agency/images/img1.gif",
     },
     {
         id: 2,
         label: "CLARIFYING THE MISSION",
-        labelSide: "left",
-        image: "/creative-agency/progress.png",
-        imagePosition: "right",
+        title: "Creative Brief",
+        text: "Every breakthrough campaign starts with a bulletproof brief. We define your single-minded message, target audience behaviors, success metrics, and mandatory brand elements. This becomes our north star—ensuring every creative decision ladders back to measurable business objectives before production begins.",
+        img: "./creative-agency/images/img2.gif",
     },
     {
         id: 3,
         label: "WHERE MAGIC MEETS METHOD",
-        labelSide: "right",
-        image: "/creative-agency/progress.png",
-        imagePosition: "left",
+        title: "Concept Development",
+        text: "Our strategists and creatives collaborate to develop 2-3 distinct creative territories—each rooted in insight, designed for thumb-stopping impact. We explore multiple hooks, formats, and storytelling approaches, then pressure-test concepts against your brief before presenting only the ideas worth producing.",
+        img: "./creative-agency/images/img3.gif",
     },
     {
         id: 4,
         label: "LIGHTS, CAMERA, ACTION",
-        labelSide: "left",
-        image: "/creative-agency/progress.png",
-        imagePosition: "right",
+        title: "Production & Execution",
+        text: "With approved concepts, our in-house production team handles everything: casting, scripting, shooting, editing, motion design, and platform optimization. Every asset is crafted to platform specifications and tested for quality. You receive scroll-stopping creative that looks premium while performing like performance marketing.",
+        img: "./creative-agency/images/img4.gif",
     },
     {
         id: 5,
         label: "TESTING OUR HYPOTHESIS",
-        labelSide: "right",
-        image: "/creative-agency/progress.png",
-        imagePosition: "left",
+        title: "Launch & Optimize",
+        text: "Each creative is a hypothesis that needs validation. We launch with strategic testing frameworks—prioritizing concept-level differences first, then hooks, then elements. Real-time performance data tells us what's working within 7 days, allowing us to double down on winners and kill underperformers fast.",
+        img: "./creative-agency/images/img5.gif",
     },
     {
         id: 6,
         label: "THE FEEDBACK LOOP",
-        labelSide: "left",
-        image: "/creative-agency/progress.png",
-        imagePosition: "right",
+        title: "Analysis & Iteration",
+        text: "We analyze engagement metrics, creative fatigue patterns, and conversion data to understand exactly what resonated. These insights feed directly into your next creative sprint—building institutional knowledge with every cycle. The result: each batch of creative is systematically better than the last, compounding effectiveness over time.",
+        img: "./creative-agency/images/img6.gif",
     },
 ];
 
-export default function ProgressTimeline() {
-    const [scrollProgress, setScrollProgress] = useState(0);
-    const [activeSection, setActiveSection] = useState(0);
-    const containerRef = useRef(null);
-    const sectionRefs = useRef([]);
+export default function ProcessTimeline() {
+    const timelineRef = useRef(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const container = containerRef.current;
-            if (!container) return;
+    const { scrollYProgress } = useScroll({
+        target: timelineRef,
+        offset: ["start center", "end center"],
+    });
 
-            const { top, height } = container.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const scrolled = -top;
-            const total = height - windowHeight;
-            const progress = Math.min(Math.max(scrolled / total, 0), 1);
-            setScrollProgress(progress);
+    const smoothProgress = useSpring(scrollYProgress, {
+        stiffness: 90,
+        damping: 20,
+    });
 
-            // Determine active section
-            sectionRefs.current.forEach((ref, idx) => {
-                if (!ref) return;
-                const rect = ref.getBoundingClientRect();
-                if (rect.top <= windowHeight * 0.5 && rect.bottom >= windowHeight * 0.5) {
-                    setActiveSection(idx);
-                }
-            });
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll();
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const height = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <div
-            ref={containerRef}
-            className="relative  min-h-screen overflow-hidden "
-        >
-            {/* Desktop: Center vertical line | Mobile: Left vertical line */}
-            <div
-                className="fixed top-0 left-6 md:left-1/2 md:-translate-x-px w-px bg-zinc-800 z-10"
-                style={{ height: "100vh" }}
-            />
+        <section className=" max-w-[1302px] mx-auto px-[20px] max-2xl:px-20 relative ">
 
-            {/* Orange progress line */}
-            <div
-                className="fixed top-0 left-6 md:left-1/2 md:-translate-x-px w-px bg-orange-500 z-20 transition-none origin-top"
-                style={{
-                    height: `${scrollProgress * 100}vh`,
-                }}
-            />
+            {/* TIMELINE */}
+            <div ref={timelineRef} className="relative">
 
-            {/* Sections */}
-            <div className="relative z-30 pt-24 pb-32">
-                {sections.map((section, idx) => {
-                    const isRight = section.imagePosition === "right";
-                    const isActive = activeSection === idx;
+                {/* DESKTOP LINE */}
+                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-[6px] h-full bg-[#FFE1D6]" />
 
-                    return (
-                        <div
-                            key={section.id}
-                            ref={(el) => (sectionRefs.current[idx] = el)}
-                            className="relative flex items-center min-h-screen mb-0"
-                        >
-                            {/* Desktop Layout */}
-                            <div className="hidden md:flex w-full items-center justify-center relative px-8">
-                                {/* Left side */}
-                                <div className="w-5/12 flex items-center justify-end pr-16">
-                                    {isRight ? (
-                                        // Label on left
-                                        <span
-                                            className={`text-xs tracking-[0.3em] font-bold transition-colors duration-500 ${isActive ? "text-orange-500" : "text-zinc-600"
-                                                }`}
-                                        >
-                                            {section.label}
-                                        </span>
-                                    ) : (
-                                        // Image on left
-                                        <div
-                                            className={`relative w-80 h-56 rounded-sm overflow-hidden transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
-                                                }`}
-                                        >
-                                            <img
-                                                src={section.image}
-                                                alt={section.label}
-                                                className="w-full h-full object-cover"
-                                                onError={(e) => {
-                                                    e.target.style.background = "#1a1a1a";
-                                                    e.target.style.display = "block";
-                                                }}
-                                            />
-                                        </div>
-                                    )}
-                                </div>
+                <motion.div
+                    style={{ height }}
+                    className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-[6px] bg-[#FF3B00]"
+                />
 
-                                {/* Center dot */}
-                                <div className="relative z-10 flex-shrink-0">
-                                    <div
-                                        className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${isActive
-                                            ? "border-orange-500 bg-orange-500"
-                                            : "border-zinc-700 bg-black"
-                                            }`}
-                                    >
-                                        <span
-                                            className={`text-xs font-bold transition-colors duration-300 ${isActive ? "text-black" : "text-zinc-600"
-                                                }`}
-                                        >
-                                            {section.id}
-                                        </span>
-                                    </div>
-                                </div>
+                {/* MOBILE LINE */}
+                <div className="lg:hidden absolute left-[14px] top-0 w-[4px] h-full bg-[#FFE1D6]" />
 
-                                {/* Right side */}
-                                <div className="w-5/12 flex items-center justify-start pl-16">
-                                    {isRight ? (
-                                        // Image on right
-                                        <div
-                                            className={`relative w-80 h-56 rounded-sm overflow-hidden transition-all duration-700 ${isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
-                                                }`}
-                                        >
-                                            <img
-                                                src={section.image}
-                                                alt={section.label}
-                                                className="w-full h-full object-cover"
-                                                onError={(e) => {
-                                                    e.target.style.background = "#1a1a1a";
-                                                }}
-                                            />
-                                        </div>
-                                    ) : (
-                                        // Label on right
-                                        <span
-                                            className={`text-xs tracking-[0.3em] font-bold transition-colors duration-500 ${isActive ? "text-orange-500" : "text-zinc-600"
-                                                }`}
-                                        >
-                                            {section.label}
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
+                <motion.div
+                    style={{ height }}
+                    className="lg:hidden absolute left-[14px] top-0 w-[4px] bg-[#FF3B00]"
+                />
 
-                            {/* Mobile Layout */}
-                            <div className="flex md:hidden w-full items-start pl-16 pr-6 py-20">
-                                {/* Dot on line (left) */}
-                                <div
-                                    className={`absolute left-[18px] -translate-x-1/2 w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${isActive
-                                        ? "border-orange-500 bg-orange-500"
-                                        : "border-zinc-700 bg-black"
-                                        }`}
-                                    style={{ top: "50%" }}
-                                >
-                                    <span
-                                        className={`text-xs font-bold transition-colors duration-300 ${isActive ? "text-black" : "text-zinc-600"
-                                            }`}
-                                    >
-                                        {section.id}
-                                    </span>
-                                </div>
+                {/* DESKTOP NUMBERS */}
+                <div className="hidden lg:flex flex-col justify-between absolute left-1/2 -translate-x-1/2 h-full py-[200px]">
 
-                                {/* Content */}
-                                <div className="flex flex-col gap-4 w-full">
-                                    <span
-                                        className={`text-xs tracking-[0.25em] font-bold transition-colors duration-500 ${isActive ? "text-orange-500" : "text-zinc-600"
-                                            }`}
-                                    >
-                                        {section.label}
-                                    </span>
-                                    <div
-                                        className={`relative w-full h-48 rounded-sm overflow-hidden transition-all duration-700 ${isActive ? "opacity-100" : "opacity-40"
-                                            }`}
-                                    >
-                                        <img
-                                            src={section.image}
-                                            alt={section.label}
-                                            className="w-full h-full object-cover"
-                                            onError={(e) => {
-                                                e.target.style.background = "#1a1a1a";
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+                    {steps.map((s, i) => {
 
-            {/* Progress indicator */}
-            <div className="fixed bottom-8 right-8 z-40 hidden md:flex flex-col items-end gap-1">
-                <span className="text-orange-500 text-xs tracking-widest font-bold">
-                    {Math.round(scrollProgress * 100)}%
-                </span>
-                <div className="w-16 h-px bg-zinc-800">
-                    <div
-                        className="h-full bg-orange-500 transition-all duration-100"
-                        style={{ width: `${scrollProgress * 100}%` }}
-                    />
+                        const threshold = (i + 1) / steps.length;
+                        const activationPoint = threshold - (1 / steps.length) * 0.5;
+
+                        const background = useTransform(
+                            smoothProgress,
+                            [0, activationPoint, activationPoint, 1],
+                            ["#EFEFEF", "#EFEFEF", "#FF3B00", "#FF3B00"]
+                        );
+
+                        const color = useTransform(
+                            smoothProgress,
+                            [0, activationPoint, activationPoint, 1],
+                            ["#000000", "#000000", "#FFFFFF", "#FFFFFF"]
+                        );
+
+                        return (
+                            <motion.div
+                                key={s.id}
+                                style={{ backgroundColor: background, color }}
+                                className="w-[60px] h-[60px] rounded-full flex items-center justify-center text-[36px] font-semibold"
+                            >
+                                {s.id}
+                            </motion.div>
+                        );
+                    })}
+
                 </div>
+
+                {/* MOBILE NUMBERS */}
+                <div className="lg:hidden flex flex-col justify-between absolute left-[0px] h-full py-[80px]">
+
+                    {steps.map((s, i) => {
+
+                        const threshold = (i + 1) / steps.length;
+                        const activationPoint = threshold - (1 / steps.length) * 0.5;
+
+                        const background = useTransform(
+                            smoothProgress,
+                            [0, activationPoint, activationPoint, 1],
+                            ["#EFEFEF", "#EFEFEF", "#FF3B00", "#FF3B00"]
+                        );
+
+                        const color = useTransform(
+                            smoothProgress,
+                            [0, activationPoint, activationPoint, 1],
+                            ["#000000", "#000000", "#FFFFFF", "#FFFFFF"]
+                        );
+
+                        return (
+                            <motion.div
+                                key={s.id}
+                                style={{ backgroundColor: background, color }}
+                                className="w-[36px] h-[36px] rounded-full flex items-center justify-center text-[16px] font-semibold"
+                            >
+                                {s.id}
+                            </motion.div>
+                        );
+
+                    })}
+
+                </div>
+
+                {/* STEPS */}
+                <div className="flex flex-col gap-16 lg:gap-9 py-15 pl-[60px] lg:pl-0">
+
+                    {steps.map((step, i) => (
+
+                        <div
+                            key={step.id}
+                            className="timeline-step flex flex-col lg:grid lg:grid-cols-2 items-center gap-10 lg:gap-[234px]"
+                        >
+
+                            {i % 2 === 0 && (
+                                <img
+                                    src={step.img}
+                                    className="order-2 lg:order-none w-full max-w-[510px] h-auto lg:h-[452px] rounded-[20px] border-2 border-black object-cover"
+                                />
+                            )}
+
+                            <div className="order-1 lg:order-none flex flex-col gap-[15px] max-w-[470px]">
+
+                                <p className="text-[14px] font-semibold uppercase tracking-[-0.02em] text-[#FF3B00]">
+                                    {step.label}
+                                </p>
+
+                                <div className="flex flex-col gap-[0px]">
+
+                                    <h3 className="text-[28px] lg:text-[36px] font-semibold tracking-[-0.02em]">
+                                        {step.title}
+                                    </h3>
+
+                                    <p className="text-[16px] leading-[150%] tracking-[-0.02em]">
+                                        {step.text}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            {i % 2 === 1 && (
+                                <img
+                                    src={step.img}
+                                    className="order-2 lg:order-none w-full max-w-[510px] h-auto lg:h-[452px] rounded-[20px] border border-black object-cover"
+                                />
+                            )}
+
+                        </div>
+
+                    ))}
+
+                </div>
+
             </div>
-        </div>
+
+        </section>
     );
 }

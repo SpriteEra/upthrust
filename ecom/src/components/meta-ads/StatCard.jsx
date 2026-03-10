@@ -1,4 +1,4 @@
-const StatsGrid = () => {
+const StatsGrid = ({ className }) => {
     return (
         <div className="w-full">
             <div className="grid grid-cols-2 grid-rows-2">
@@ -14,7 +14,7 @@ const StatsGrid = () => {
                 </div>
 
                 {/* Top Right */}
-                <div className="bg-blue text-white flex flex-col items-center justify-center py-14">
+                <div className={`bg-blue text-white flex flex-col items-center justify-center py-14" ${className}`}>
                     <h2 className="text-[32px] sm:text-[40px] md:text-[60px] lg:text-[80px] 3xl:text-[86px] font-semibold tracking-[-0.04em] leading-[120%]">
                         6.02 Cr+
                     </h2>
@@ -24,7 +24,7 @@ const StatsGrid = () => {
                 </div>
 
                 {/* Bottom Left */}
-                <div className="bg-blue text-white flex flex-col items-center justify-center py-14">
+                <div className={`bg-blue text-white flex flex-col items-center justify-center py-14" ${className}`}>
                     <h2 className="text-[32px] sm:text-[40px] md:text-[60px] lg:text-[80px] 3xl:text-[86px] font-semibold tracking-[-0.04em] leading-[120%]">
                         21.09 Cr+
                     </h2>

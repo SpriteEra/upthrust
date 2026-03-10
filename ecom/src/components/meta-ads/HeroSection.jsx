@@ -31,11 +31,11 @@ const images = [
 ];
 
 const brandicons = [
-    { src: '/brands/brand-black/bosch.webp', alt: 'Brand 1', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-5 2xl:w-fit 3xl:w-30 3xl:h-10" },
-    { src: '/brands/brand-black/loreal.webp', alt: 'Brand 1', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit 3xl:w-28 3xl:h-10" },
-    { src: '/brands/brand-black/biba.webp', alt: 'Brand 1', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-6" },
-    { src: '/brands/brand-black/zomato.webp', alt: 'Brand 1', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-8.5" },
-    { src: '/brands/brand-black/libas.webp', alt: 'Brand 1', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-6.5 2xl:w-fit  3xl:h-9" },
+    { src: '/brands/brand-black/bosch.webp', alt: 'Bosch', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-5 2xl:w-fit 3xl:w-30 3xl:h-10" },
+    { src: '/brands/brand-black/loreal.webp', alt: 'Loreal', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit 3xl:w-28 3xl:h-10" },
+    { src: '/brands/brand-black/biba.webp', alt: 'Biba', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-6" },
+    { src: '/brands/brand-black/zomato.webp', alt: 'Zomato', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-8.5" },
+    { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-6 2xl:h-6.5 2xl:w-fit  3xl:h-9" },
 ]
 
 export default function MetaAdsHero() {

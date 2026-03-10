@@ -22,13 +22,13 @@ const videos = [
         label: "B2B",
         thumbnail: "/meta-ads/dummy.png",
         frame: "/meta-ads/frame.png",
-        video: "https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4",
+        video: "https://upthrustvideocdn.b-cdn.net/Meta%20ads/VEGA%20THE%206X_EN-HD.mp4",
     },
     {
         label: "SAAS",
         thumbnail: "/meta-ads/dummy.png",
         frame: "/meta-ads/frame.png",
-        video: "https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4",
+        video: "https://upthrustvideocdn.b-cdn.net/Meta%20ads/WhatsApp%20Video%202026-03-06%20at%2023.57.06.mp4",
     },
 ];
 
@@ -95,7 +95,7 @@ export default function MobileVideos() {
                 <button
                     onClick={() => swiperInstance.current?.slidePrev()}
                     title="Previous"
-                    className="absolute left-2 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800"
+                    className="absolute left-2 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white rotate-45 translate-x-[2px] lg:hidden" />
                 </button>

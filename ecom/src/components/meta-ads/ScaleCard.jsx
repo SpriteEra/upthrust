@@ -3,64 +3,66 @@
 import { Play, Video, Clapperboard, Sparkles } from "lucide-react";
 import AnimatedWord from "../common/AnimatedWord";
 
-export default function ScaleCards() {
-    const cards = [
-        {
-            title: "Data-Driven",
-            subtitle: [
-                { text: 'Strategy', color: '#ffffff' },
-                { text: 'Outcomes', color: '#ffffff' },
-                { text: 'Growth', color: '#ffffff' }
-            ],
-            description:
-                "We turn performance data and audience psychology into creative hypotheses that actually scale.",
-            bg: "bg-[#0457CB]",
-            text: "text-white",
-            icon: <Play size={18} />,
-            iconCss: "bg-white text-blue"
-        },
-        {
-            title: "Paid-Social",
-            subtitle: [
-                { text: 'Videos', color: '#000000' },
-                { text: 'Images', color: '#000000' },
-                { text: 'and More', color: '#000000' }
-            ],
-            description:
-                "UGC-style ads, founder videos, testimonials, skits, and sound-first Reels built for conversions.",
-            bg: "bg-[#E8F3FF]",
-            text: "text-black",
-            icon: <Play size={18} />,
-            iconCss: "bg-black text-white"
-        },
-        {
-            title: "Scroll-Stopping",
-            subtitle: [
-                { text: 'Creatives', color: '#000000' },
-                { text: 'Thumbnails', color: '#000000' },
-                { text: 'UGCs', color: '#000000' }
-            ],
-            description:
-                "Bold graphics, before-and-afters, carousels, and expert POVs optimized for CTR and ROAS.",
-            bg: "bg-[#F6F6F6]",
-            text: "text-black",
-            icon: <Play size={18} />,
-        },
-        {
-            title: "AI-Powered",
-            subtitle: [
-                { text: 'Workflow', color: '#ffffff' },
-                { text: 'Research', color: '#ffffff' },
-                { text: 'Production', color: '#ffffff' }
-            ],
-            description:
-                "AI-assisted research, scripting, and post-production to deliver more ad variants, faster.",
-            bg: "bg-[#0457CB]",
-            text: "text-white",
-            icon: <Play size={18} />,
-            iconCss: "bg-white text-blue"
-        },
-    ];
+const cardsData = [
+    {
+        title: "Data-Driven",
+        subtitle: [
+            { text: 'Strategy', color: '#ffffff' },
+            { text: 'Outcomes', color: '#ffffff' },
+            { text: 'Growth', color: '#ffffff' }
+        ],
+        description:
+            "We turn performance data and audience psychology into creative hypotheses that actually scale.",
+        bg: "bg-[#0457CB]",
+        text: "text-white",
+        icon: <Play size={18} />,
+        iconCss: "bg-white text-blue "
+    },
+    {
+        title: "Paid-Social",
+        subtitle: [
+            { text: 'Videos', color: '#000000' },
+            { text: 'Images', color: '#000000' },
+            { text: 'and More', color: '#000000' }
+        ],
+        description:
+            "UGC-style ads, founder videos, testimonials, skits, and sound-first Reels built for conversions.",
+        bg: "bg-[#E8F3FF]",
+        text: "text-black",
+        icon: <Play size={18} />,
+        iconCss: "bg-black text-white"
+    },
+    {
+        title: "Scroll-Stopping",
+        subtitle: [
+            { text: 'Creatives', color: '#000000' },
+            { text: 'Thumbnails', color: '#000000' },
+            { text: 'UGCs', color: '#000000' }
+        ],
+        description:
+            "Bold graphics, before-and-afters, carousels, and expert POVs optimized for CTR and ROAS.",
+        bg: "bg-[#F6F6F6]",
+        text: "text-black",
+        icon: <Play size={18} />,
+    },
+    {
+        title: "AI-Powered",
+        subtitle: [
+            { text: 'Workflow', color: '#ffffff' },
+            { text: 'Research', color: '#ffffff' },
+            { text: 'Production', color: '#ffffff' }
+        ],
+        description:
+            "AI-assisted research, scripting, and post-production to deliver more ad variants, faster.",
+        bg: "bg-[#0457CB]",
+        text: "text-white",
+        icon: <Play size={18} />,
+        iconCss: "bg-white text-blue"
+    },
+];
+
+export default function ScaleCards({ cards = cardsData }) {
+
 
     return (
         <section className="max-w-[1200px] 3xl:max-w-[1409px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 py-16 max-lg:px-3">
@@ -82,7 +84,7 @@ export default function ScaleCards() {
                                 <AnimatedWord
                                     words={card.subtitle}
                                     textCss="italic font-normal text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument"
-                                    className="h-8 md:h-12 3xl:h-10 w-40 md:w-30 lg:w-full 3xl:w-90 mx-auto"
+                                    className="h-8 md:h-9 3xl:h-10 w-40 md:w-30 lg:w-full  3xl:w-90 mx-auto"
                                 />
 
                             </p>

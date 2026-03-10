@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MetaRocketButton from './MetaRocketButton';
+import RocketCTAButton from '@/common/RocketCTAButton';
 
 const navLinks = [
     {
@@ -397,7 +398,8 @@ const UGCVideoCategories = () => {
             )}
             <div className='flex items-center justify-center'>
 
-                <MetaRocketButton color='blue' />
+                {/* <MetaRocketButton color='blue' /> */}
+                <RocketCTAButton color='blue' />
             </div>
         </div>
     );

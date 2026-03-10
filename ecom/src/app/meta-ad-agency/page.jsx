@@ -66,47 +66,47 @@ const navLinks = [
 ];
 
 export const metadata = {
-    title: "Meta Ads Agency for Scalable Growth | Upthrust",
+  title: "Meta Ads Agency for Scalable Growth | Upthrust",
 
-    description: "Meta Ads agency optimizing 6Cr+ in monthly spend. Creative testing, structured scaling, and profitable growth across Facebook & Instagram",
+  description: "Meta Ads agency optimizing 6Cr+ in monthly spend. Creative testing, structured scaling, and profitable growth across Facebook & Instagram",
 
-    keywords: [
-        "Google Ads Agency",
+  keywords: [
+    "Google Ads Agency",
+  ],
+
+  metadataBase: new URL("https://www.upthrust.agency"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Meta Ads Agency Built for Profitable Scaling",
+    description: "We optimize 6Cr+ in monthly Meta ad spend using creative testing and structured scaling systems that drive measurable revenue.",
+    url: "https://www.upthrust.agency",
+    siteName: "Upthrust",
+    images: [
+      {
+        url: "/meta-ads/meta-opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Upthrust – Meta Ads Agency",
+      },
     ],
+    type: "website",
+  },
 
-    metadataBase: new URL("https://www.upthrust.agency"),
+  twitter: {
+    card: "summary_large_image",
+    title: "Google Ads Agency That Scales Profitably",
+    description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+    images: ["/google-ads/ogimg.png"],
+  },
 
-    alternates: {
-        canonical: "/",
-    },
-
-    openGraph: {
-        title: "Meta Ads Agency Built for Profitable Scaling",
-        description: "We optimize 6Cr+ in monthly Meta ad spend using creative testing and structured scaling systems that drive measurable revenue.",
-        url: "https://www.upthrust.agency",
-        siteName: "Upthrust",
-        images: [
-            {
-                url: "/meta-ads/meta-opengraph-image.png",
-                width: 1200,
-                height: 630,
-                alt: "Upthrust – Meta Ads Agency",
-            },
-        ],
-        type: "website",
-    },
-
-    twitter: {
-        card: "summary_large_image",
-        title: "Google Ads Agency That Scales Profitably",
-        description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
-        images: ["/google-ads/ogimg.png"],
-    },
-
-    robots: {
-        index: true,
-        follow: true,
-    }
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const page = () => {
@@ -115,22 +115,21 @@ const page = () => {
       <MetaNavbar items={navLinks} />
       <MetaAdsHero />
 
-      <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 ">
+      <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 " id="why-upthrust">
         <MetaHeading
           tag="h2"
           heading={[
             {
-              line: [{ type: "normal", text: " Why most companies are never" }],
-            },
-            {
               line: [
-                { type: "normal", text: "able to" },
-                { type: "italic", text: "scale Meta ads" },
+                { type: "normal", text: "6.09Cr of" },
+                { type: "italic", text: "ad spend optimized" },
+                { type: "normal", text: "every month" },
               ],
-            },
+            }
+
           ]}
-          label="CLIENT STORIES"
-          subtitle="Cause the most simple and effective process and practices are never followed"
+          label="WHY IT WOULD WORK FOR YOU"
+          subtitle="Used by growth teams at Tiggle, Loreal & Harley Davidson to eliminate guesswork and maximize conversions through continuous optimization."
 
         />
         <CircularDesign />
@@ -154,7 +153,7 @@ const page = () => {
       />
       <ClientStories />
 
-      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 ">
+      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 " id="case-studies">
         <MetaHeading
           tag="h2"
           heading={[
@@ -225,7 +224,7 @@ const page = () => {
 
       </section>
 
-      <div className="bg-black text-white pt-16 3xl:pt-20 mt-10 3xl:mt-16 overflow-hidden">
+      <div className="bg-black text-white pt-16 3xl:pt-20 mt-10 3xl:mt-16 overflow-hidden" id="creative-library">
         <MetaHeading
           tag="h2"
           heading={[
@@ -288,7 +287,7 @@ const page = () => {
         <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
       </div>
 
-      <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+      <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30' id="hear-from-them">
         <MetaHeading
           tag="h2"
           heading={[
