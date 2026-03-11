@@ -5,6 +5,7 @@ import ClientStories from '@/components/creative-ads/ClientStories';
 import CreativeNavbar from '@/components/creative-ads/CreativeNav';
 import DashboardStacks from '@/components/creative-ads/DashboardStack';
 import MetaAdsHero from '@/components/creative-ads/HeroSection';
+import MetaDisclaimer from '@/components/creative-ads/MetaDisclaimer';
 import UGCVideoCategories from '@/components/creative-ads/MetaUgcs';
 import ProcessTimeline from '@/components/creative-ads/ProgressBar';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
@@ -14,14 +15,10 @@ import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider
 import SuccessStories from '@/components/home/SuccessStories';
 import BrandSlider from '@/components/meta-ads/BrandSlider';
 import CircularDesign from '@/components/meta-ads/CircularDesign';
-// import ClientStories from '@/components/meta-ads/ClientStories';
-// import DashboardStacks from '@/components/meta-ads/DashboardStack';
 import DropLetters from '@/components/meta-ads/DropLetter';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
-import MetaDisclaimer from '@/components/meta-ads/MetaDisclaimer';
 import MetaLeadForm from '@/components/meta-ads/MetaLeadForm';
 import MetaRocketButton from '@/components/meta-ads/MetaRocketButton';
-// import MetaUgcs from '@/components/meta-ads/MetaUgcs';
 import MobileVideos from '@/components/meta-ads/MobileVideos';
 import ScaleCards from '@/components/meta-ads/ScaleCard';
 import StatsGrid from '@/components/meta-ads/StatCard';
@@ -129,13 +126,68 @@ const cardsData = [
     },
 ];
 
-export const metadata = {
-    title: "Meta Ads Agency for Scalable Growth | Upthrust",
+const faqs = [
+    {
+        question: "What types of creative ads do you produce?",
+        answer:
+            "We design and deliver all formats from short-form TikTok and social feeds to display banners, motion ads, UGC-style creatives, and full storytelling videos that resonate with target audiences."
+    },
+    {
+        question: "What information do you need from us to start a creative project?",
+        answer:
+            "A clear brief with goals, target audience, brand assets, voice guidelines, and campaign KPIs helps us deliver faster and more effectively."
+    },
+    {
+        question: "How do you tailor creative ads to my specific audience or platform?",
+        answer:
+            "Our team analyzes your audience behavior and platform intent to craft ads that speak in the language of that channel whether it’s TikTok’s playful tone or LinkedIn’s professional storytelling."
+    },
+    {
+        question: "How do you measure the success of a creative ad?",
+        answer:
+            "We measure performance using CTR, engagement, conversion rates, and other key metrics relevant to your business goals, then guide optimizations to improve results over time."
+    },
+    {
+        question: "What’s your creative process from brief to launch?",
+        answer:
+            "We begin with a discovery and research phase, move into concepting and design, iterate with feedback, and finally optimize delivery all aligned to your campaign goals and metrics."
+    },
+    {
+        question: "What makes your creative ads different from other agencies?",
+        answer:
+            "We combine strategic thinking, audience psychology, storytelling craftsmanship, and performance insight to build ads that are not just visually appealing but actually drive results."
+    },
+    {
+        question: "How long does it take to create and launch an ad?",
+        answer:
+            "Turnaround varies by complexity and format. Simple variants of existing concepts can be delivered faster, while original concepts with strategy and storyboarding need additional time for refinement."
+    },
+    {
+        question: "Can you produce creatives for both paid ads and organic social content?",
+        answer:
+            "Absolutely, our creative strategies are built to support both paid acquisition funnels and high-impact organic storytelling that strengthens your brand presence."
+    },
+    {
+        question: "Can you help with ad testing and optimization?",
+        answer:
+            "Yes, we don’t just create static assets. We build multiple versions for A/B testing, track performance metrics, and refine creatives based on real engagement and conversion data."
+    },
+    {
+        question: "How do you ensure the ads align with our brand’s identity and message?",
+        answer:
+            "We deeply integrate your brand guidelines and strategic positioning into the creative process so every ad reflects your voice, values, and desired brand recall."
+    }
+];
 
-    description: "Meta Ads agency optimizing 6Cr+ in monthly spend. Creative testing, structured scaling, and profitable growth across Facebook & Instagram",
+
+
+export const metadata = {
+    title: "Creative Ads Agency for Scalable Growth | Upthrust",
+
+    description: "Creative ads agency specializing in performance creatives, UGC ads and structured creative testing systems that drive scalable revenue growth.",
 
     keywords: [
-        "Google Ads Agency",
+        "Creative Ads Agency",
     ],
 
     metadataBase: new URL("https://www.upthrust.agency"),
@@ -145,8 +197,8 @@ export const metadata = {
     },
 
     openGraph: {
-        title: "Meta Ads Agency Built for Profitable Scaling",
-        description: "We optimize 6Cr+ in monthly Meta ad spend using creative testing and structured scaling systems that drive measurable revenue.",
+        title: "Creative Ads Agency Built for Performance",
+        description: "High-converting ad creatives, structured creative testing systems and UGC ads built to scale paid acquisition profitably.",
         url: "https://www.upthrust.agency",
         siteName: "Upthrust",
         images: [
@@ -416,31 +468,31 @@ creative intuition with data-driven precision."
                     subtitle="Why Should You Hire Us?"
                 />
 
-                <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
+                <ComparisonTable showCurve={false} rocketBgColor='#FF3B00' checkBgColor='#FF3B00' />
             </div>
 
             <MobileTestimonialsSlider
                 cardColors={
                     [
                         {
-                            bg: 'bg-[#0457CB]',
+                            bg: 'bg-[#FF3B00]',
                             text: "text-white",
                             quote: '#010202',
                             companyNameColor: 'text-white',
                             clientNameColor: 'text-white'
                         },
                         {
-                            bg: 'bg-[#E8F3FF]',
+                            bg: 'bg-[#FFEFEA]',
                             text: "text-black",
                             quote: '#010202'
                         },
                         {
-                            bg: 'bg-[#F6F6F6]',
+                            bg: 'bg-[#EFEFEF]',
                             text: "text-black",
                             quote: '#010202'
                         },
                         {
-                            bg: 'bg-[#0457CB]',
+                            bg: 'bg-[#FF3B00]',
                             text: "text-white",
                             quote: '#010202',
                             companyNameColor: 'text-white',
@@ -451,28 +503,27 @@ creative intuition with data-driven precision."
             />
 
             <div className="max-lg:hidden">
-
                 <SuccessStories cardColors={
                     [
                         {
-                            bg: 'bg-[#0457CB]',
+                            bg: 'bg-[#FF3B00]',
                             text: "text-white",
                             quote: '#010202',
                             companyNameColor: 'text-white',
                             clientNameColor: 'text-white'
                         },
                         {
-                            bg: 'bg-[#E8F3FF]',
+                            bg: 'bg-[#FFEFEA]',
                             text: "text-black",
                             quote: '#010202'
                         },
                         {
-                            bg: 'bg-[#F6F6F6]',
+                            bg: 'bg-[#EFEFEF]',
                             text: "text-black",
                             quote: '#010202'
                         },
                         {
-                            bg: 'bg-[#0457CB]',
+                            bg: 'bg-[#FF3B00]',
                             text: "text-white",
                             quote: '#010202',
                             companyNameColor: 'text-white',
@@ -513,7 +564,7 @@ creative intuition with data-driven precision."
                             {
                                 parts: [
                                     { type: "text", text: "your entire" },
-                                    { type: 'highlight', text: 'funnel', bgColor: '#0457CB' },
+                                    { type: 'highlight', text: 'funnel', bgColor: '#FF3B00' },
                                 ]
                             },
 
@@ -532,7 +583,7 @@ creative intuition with data-driven precision."
                             {
                                 parts: [
                                     { type: "text", text: "Don't just" },
-                                    { type: 'highlight', text: 'read', bgColor: '#0457CB' },
+                                    { type: 'highlight', text: 'read', bgColor: '#FF3B00' },
                                     { type: "text", text: "see" },
                                 ]
                             },
@@ -562,7 +613,7 @@ creative intuition with data-driven precision."
                             },
                             {
                                 parts: [
-                                    { type: 'highlight', text: 'growth', bgColor: '#0457CB' },
+                                    { type: 'highlight', text: 'growth', bgColor: '#FF3B00' },
                                     { type: "text", text: "engine" },
                                 ]
                             },
@@ -602,16 +653,17 @@ creative intuition with data-driven precision."
                     subtitle=""
                 />
                 <FAQ
+                    faqData={faqs}
                     shadow={true}
                     actionCss={{
-                        active: "bg-[#0457CB] text-white",
-                        default: "bg-[#E8F3FF] text-black/70",
+                        active: "bg-[#FF3B00] text-white",
+                        default: "bg-[#FFEFEA] text-black/70",
                     }}
                 />
             </div>
 
             <MetaDisclaimer />
-            <HomeFooter text1="Request a free consultation." bgColor="#0457CB" text2={{
+            <HomeFooter text1="Request a free consultation." bgColor="#FF3B00" text2={{
                 desktop: {
                     text1: "WE'LL FIND YOUR WASTED",
                     text2: "AD SPEND. YOU'LL WONDER WHY\n YOU WAITED. LET'S GO.",

@@ -7,6 +7,7 @@ const colors = {
     purple: "#a855f7",
     black: "#000",
     white: "#ffffff",
+    orange: "#FF3B00"
 };
 
 const RocketCTAButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale" }) => {

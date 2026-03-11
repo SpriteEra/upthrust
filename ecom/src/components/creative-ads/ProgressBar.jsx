@@ -64,7 +64,7 @@ export default function ProcessTimeline() {
     const height = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <section className=" max-w-[1302px] mx-auto px-[20px] max-2xl:px-20 relative ">
+        <section className="max-w-[1302px] mx-auto px-[15px] sm:px-10 xl:px-20 relative ">
 
             {/* TIMELINE */}
             <div ref={timelineRef} className="relative">
@@ -153,13 +153,13 @@ export default function ProcessTimeline() {
                 </div>
 
                 {/* STEPS */}
-                <div className="flex flex-col gap-16 lg:gap-9 py-15 pl-[60px] lg:pl-0">
+                <div className="flex flex-col gap-16 lg:gap-9 py-15 pl-[50px] sm:pl-[60px] lg:pl-0">
 
                     {steps.map((step, i) => (
 
                         <div
                             key={step.id}
-                            className="timeline-step flex flex-col lg:grid lg:grid-cols-2 items-center gap-10 lg:gap-[234px]"
+                            className="timeline-step flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-10 lg:gap-[234px]"
                         >
 
                             {i % 2 === 0 && (

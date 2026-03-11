@@ -74,27 +74,27 @@ export default function MetaAdsHero() {
                 {/* LEFT: Copy */}
                 <div className="space-y-5 max-sm:h-[100vh - 80px] w-full lg:max-w-[48%] text-black relative">
                     {/* Top tag */}
-                    <div className="flex max-sm:text-center justify-center sm:justify-start gap-2 items-start sm:items-center">
-                        <p className="text-lg xl:text-base 2xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">The creative ad agency trusted by BOSCH, L&apos;ORÉAL, Tata and PokerBazi</p>
+                    <div className="flex max-sm:text-left justify-center sm:justify-start gap-2 items-start sm:items-center">
+                        <p className="text-lg xl:text-base 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">The creative ad agency trusted by BOSCH, L&apos;ORÉAL, Tata and PokerBazi</p>
                     </div>
 
 
                     {/* Headline */}
-                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[60px] 1800:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold max-sm:text-center">
+                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[55px] 1800:text-[72px] leading-[120%] sm:leading-[130%] tracking-[-0.04em] font-semibold max-sm:text-left">
                         Creative Ads That
                         <br />
                         <span className="text-orange"> Convert</span>, Built For
                         <br />
                         Brands Ready To Scale
                     </h1>
-                    <Image width={150} height={50} className="object-contain w-[70%] absolute top-[33%] h-fit " src="/creative-agency/line.png" alt="Meta Business Partner" />
+                    <Image width={150} height={50} className="object-contain w-[80%] sm:w-[70%] 2xl:w-[62%] 3xl:w-[60%] 1800:w-[70%] absolute top-[37%] sm:top-[33%] 2xl:top-[37%] 3xl:top-[34%] 1800:top-[39%] h-fit " src="/creative-agency/line.png" alt="Meta Business Partner" />
 
                     {/* Subtext */}
                     <p className="text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] mt-10 font-normal">
                         Stop burning ad budget on stale creative. Start launching fresh, data-tested variants every month that hit your ROAS targets and scale profitably.
                     </p>
                     {/* CTA Button */}
-                    <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-center ">
+                    <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-start ">
                         <StylishButton text1='Get Your' text2='Free Ad Audit' color='orange' />
                     </div>
 
