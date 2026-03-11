@@ -3,6 +3,7 @@ import MetaHeading from '@/common/MetaHeading';
 import StylishButton from '@/common/RocketButton';
 import ClientStories from '@/components/creative-ads/ClientStories';
 import CreativeNavbar from '@/components/creative-ads/CreativeNav';
+import DashboardStacks from '@/components/creative-ads/DashboardStack';
 import MetaAdsHero from '@/components/creative-ads/HeroSection';
 import UGCVideoCategories from '@/components/creative-ads/MetaUgcs';
 import ProcessTimeline from '@/components/creative-ads/ProgressBar';
@@ -14,7 +15,7 @@ import SuccessStories from '@/components/home/SuccessStories';
 import BrandSlider from '@/components/meta-ads/BrandSlider';
 import CircularDesign from '@/components/meta-ads/CircularDesign';
 // import ClientStories from '@/components/meta-ads/ClientStories';
-import DashboardStacks from '@/components/meta-ads/DashboardStack';
+// import DashboardStacks from '@/components/meta-ads/DashboardStack';
 import DropLetters from '@/components/meta-ads/DropLetter';
 import FeatureCards from '@/components/meta-ads/FeatureCard';
 import MetaDisclaimer from '@/components/meta-ads/MetaDisclaimer';
@@ -267,7 +268,7 @@ creative intuition with data-driven precision."
                 <ProcessTimeline />
 
             </div>
-            <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <section className=" py-16 3xl:py-30 3xl:pt-35 w-full max-w-[92%] mx-auto flex flex-col justify-center lg:flex-row items-center gap-12">
 
 
                 <div className="flex gap-10 md:gap-15 items-center max-lg:flex-col">
@@ -379,20 +380,20 @@ creative intuition with data-driven precision."
                     tag="h2"
                     heading={[
                         {
-                            line: [{ type: "normal", text: " Live dashboards, real revenue numbers, and the" },
+                            line: [{ type: "normal", text: "The Work. The Results. The Thinking" },
 
                             ],
                         },
                         {
                             line: [
-                                { type: "italic", text: " exact strategies" },
-                                { type: "normal", text: " we used to get there." },
+                                { type: "normal", text: "That" },
+                                { type: "italic", text: "Made It Happen" },
 
                             ],
                         }
                     ]}
                     label="CASE STUDIES"
-                    subtitle="We Don't Just Talk—We Show"
+                    subtitle="We don't talk about creativity. We show it."
                 />
                 <DashboardStacks />
             </div>

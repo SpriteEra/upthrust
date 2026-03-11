@@ -1,7 +1,8 @@
 "use client"
 import RocketCTAButton from '@/common/RocketCTAButton'
 import React, { useState } from 'react'
-import MetaLeadForm from './MetaLeadForm';
+// import MetaLeadForm from './MetaLeadForm';
+import LeadFormModal from '../LeadModal';
 
 const MetaRocketButton = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const MetaRocketButton = () => {
                 <RocketCTAButton color='blue' text1="Show Us" text2="How To Scale" />
             </button>
             {isOpen && (
-                <MetaLeadForm handleClose={() => setIsOpen(false)} />
+                <LeadFormModal handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

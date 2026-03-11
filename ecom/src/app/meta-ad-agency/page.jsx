@@ -178,7 +178,7 @@ const page = () => {
         <DropLetters />
         <StatsGrid />
       </div>
-      <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col lg:flex-row items-center gap-12">
+      <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col justify-center lg:flex-row items-center gap-12">
 
 
         <div className="flex gap-10 md:gap-15 items-center max-lg:flex-col">
