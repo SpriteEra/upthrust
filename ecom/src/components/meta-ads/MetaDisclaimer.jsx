@@ -12,7 +12,7 @@ export const Disclaimer = () => {
         <div className="mt-16 lg:mt-12 3xl:mt-14 border-t border-gray-300 pt-2 md:pt-3">
             <button
                 onClick={() => setOpen(!open)}
-                className="font-medium text-sm 3xl:text-sm text-black flex items-center gap-2">
+                className="font-medium text-sm 3xl:text-sm text-black flex items-center gap-2 tracking-[-0.02em] leading-[150%] ">
                 Disclaimer
 
                 <span
@@ -112,25 +112,25 @@ export const Disclaimer = () => {
 
 const MetaDisclaimer = () => {
     return (
-        <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
-            <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
+        <div className='px-3 md:px-20 flex flex-col pt-24 md:pt-50'>
+            <div className='flex justify-between max-xs:flex-col-reverse gap-10  xl:gap-20'>
                 <div className=''>
-                    <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] 3xl:leading-15'>Do you have <br />any questions?</p>
-                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>FBook a free consultation.</p>
+                    <p className='font-semibold text-[32px] md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%] 3xl:leading-15'>Do you have <br />any questions?</p>
+                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10 tracking-[-0.02em] leading-[150%] '>Book a free consultation.</p>
 
                     <MetaRocketButton />
                 </div>
-                <div className='flex flex-col justify-between items-center gap-8'>
+                <div className='flex flex-col justify-between md:items-center gap-8'>
                     <Image
                         src={'/logo.png'}
                         alt='Upthrust'
                         width={400}
                         height={300}
-                        className='h-16 lg:h-14 3xl:h-16 w-full object-contain'
+                        className='h-15 lg:h-14 3xl:h-16 w-fit object-contain'
                     />
                     <div className='flex gap-3 items-start'>
-                        <span className='text-[#0457CB] font-semibold text-3xl max-xs:hidden'>/</span>
-                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>No fluff. No vanity metrics. Just Meta ads that make you more money than they cost.</p>
+                        <span className='text-[#0457CB] font-semibold text-3xl '>/</span>
+                        <p className='text-base md:text-xs 3xl:text-base max-w-[300px] 3xl:max-w-90 xs:max-w-70 leading-[150%]  tracking-[-0.02em]'>No fluff. No vanity metrics. Just Meta ads that make you more money than they cost.</p>
                     </div>
                 </div>
             </div>

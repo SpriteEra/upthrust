@@ -65,7 +65,7 @@ export default function ScaleCards({ cards = cardsData }) {
 
 
     return (
-        <section className="max-w-[1200px] 3xl:max-w-[1409px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 py-16 max-lg:px-3">
+        <section className="max-w-[1200px] 1600:max-w-[1320px] 1800:max-w-[1409px] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 py-6 xl:py-16 max-lg:px-3">
             {cards.map((card, index) => (
                 <div
                     key={index}

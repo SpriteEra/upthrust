@@ -115,7 +115,7 @@ const page = () => {
       <MetaNavbar items={navLinks} />
       <MetaAdsHero />
 
-      <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 " id="why-upthrust">
+      <div className="bg-black text-white py-16 pb-10 3xl:py-5 my-10 3xl:my-16 3xl:pt-40 " id="why-upthrust">
         <MetaHeading
           tag="h2"
           heading={[
@@ -135,25 +135,27 @@ const page = () => {
         <CircularDesign />
 
       </div>
+      <div className="mt-20 3xl:mt-40" id="why-upthrust">
+        <MetaHeading
+          tag="h2"
+          heading={[
+            {
+              line: [{ type: "normal", text: "When your friends decides to give the" }],
+            },
+            {
+              line: [
+                { type: "normal", text: "secret sauce behind their" },
+                { type: "italic", text: "Extraordinary Growths" },
+              ],
+            },
+          ]}
+          label="CLIENT STORIES"
+        />
+        <ClientStories />
 
-      <MetaHeading
-        tag="h2"
-        heading={[
-          {
-            line: [{ type: "normal", text: "When your friends decides to give the" }],
-          },
-          {
-            line: [
-              { type: "normal", text: "secret sauce behind their" },
-              { type: "italic", text: "Extraordinary Growths" },
-            ],
-          },
-        ]}
-        label="CLIENT STORIES"
-      />
-      <ClientStories />
+      </div>
 
-      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 " id="case-studies">
+      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-30 mt-10 3xl:mt-30 " id="case-studies">
         <MetaHeading
           tag="h2"
           heading={[
@@ -167,7 +169,7 @@ const page = () => {
               ],
             },
           ]}
-          label="CLIENT STORIES"
+          label="CASE STUDIES"
           subtitle="Cause the most simple and effective process and practices are never followed"
 
         />
@@ -188,11 +190,11 @@ const page = () => {
             <p className="uppercase text-sm tracking-[-0.02em] leading-[150%] mb-3 border-b border-black pb-2 3xl:pb-3 w-full">
               A NEW ERA OF META AGENCY THAT DELIVER ROI
             </p>
-            <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 3xl:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
+            <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 1600:text-[3.8rem] 1800:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
               The Quickest, Easiest <br />
               Way To Grow Your <br />
               Business{" "}
-              <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
+              <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 1600:text-[65px] 1800:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
                 With Meta Ads
               </span>{" "}Is..
 
@@ -208,7 +210,7 @@ const page = () => {
 
           {/* Right Video */}
           <div className="lg:w-[50%] h-full flex justify-end items-center">
-            <div className="relative w-full aspect-16/10 max-w-[787px] overflow-hidden rounded-md">
+            <div className="relative w-full aspect-16/10 1600:max-w-[680px] 1800:max-w-[787px] overflow-hidden rounded-md">
               <video
                 className="w-full h-full object-cover "
                 src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
@@ -224,7 +226,7 @@ const page = () => {
 
       </section>
 
-      <div className="bg-black text-white pt-16 3xl:pt-20 mt-10 3xl:mt-16 overflow-hidden" id="creative-library">
+      <div className="bg-black text-white pt-16 3xl:pt-26 mt-10 3xl:mt-16 overflow-hidden" id="creative-library">
         <MetaHeading
           tag="h2"
           heading={[
@@ -245,7 +247,7 @@ const page = () => {
         <MobileVideos />
       </div>
 
-      <div className="py-16 space-y-10 3xl:space-y-16 3xl:py-20 mt-10 3xl:mt-16 overflow-hidden">
+      <div className="py-16 space-y-10 3xl:space-y-12 3xl:py-20 mt-10 3xl:mt-26 overflow-hidden">
         <MetaHeading
           tag="h2"
           heading={[
@@ -287,7 +289,7 @@ const page = () => {
         <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
       </div>
 
-      <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30' id="hear-from-them">
+      <div className='space-y-5 lg:space-y-16 3xl:space-y-10 mb-20 3xl:mb-30' id="hear-from-them">
         <MetaHeading
           tag="h2"
           heading={[
@@ -304,7 +306,7 @@ const page = () => {
         <MetaUgcs />
       </div>
 
-      <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+      <div className='space-y-16 3xl:space-y-20 mb-20 3xl:mb-30 3xl:mt-50'>
         <MetaHeading
           tag="h2"
           heading={[
@@ -388,7 +390,7 @@ const page = () => {
         } />
       </div>
 
-      <div className='space-y-16 3xl:space-y-30 mb-20 mt-40 3xl:mb-30 3xl:mt-50'>
+      <div className='space-y-16 3xl:space-y-30 mb-20 mt-25 xl:mt-40 3xl:mb-30 3xl:mt-50'>
         <MetaHeading
           tag="h2"
           heading={[

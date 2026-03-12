@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import StylishButton from '@/common/RocketButton';
 import NavbarCTAButton from '../NavbarCTAButton';
+import CreativeRocketButton from './CreativeRocketButton';
 
 
 export default function CreativeNavbar({ items }) {
@@ -37,7 +38,7 @@ export default function CreativeNavbar({ items }) {
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <StylishButton color='orange' />
+                        <CreativeRocketButton color='orange' />
                     </div>
 
 

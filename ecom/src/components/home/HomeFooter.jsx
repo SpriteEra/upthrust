@@ -12,12 +12,7 @@ const HomeFooter = ({ customeCss = "mt-20 md:mt-50", bgColor = "#FF3B00", text1 
     return (
         <div className={`relative mb-3 md:mb-5 3xl:mb-10 ${customeCss}`}>
             <div className="w-full overflow-hidden -mb-6 md:-mb-2 3xl:-mb-22 z-1">
-                <marquee
-                    behavior="scroll"
-                    direction="left"
-                    scrollamount="16"
-                    className=""
-                >
+                <div className="flex whitespace-nowrap marquee-slow">
                     {[...Array(8)].map((_, index) => (
                         <p
                             key={index}
@@ -25,10 +20,10 @@ const HomeFooter = ({ customeCss = "mt-20 md:mt-50", bgColor = "#FF3B00", text1 
                         >
                             <span style={{
                                 backgroundColor: bgColor
-                            }} className="size-14 md:size-20 rounded-full bg-(--red) inline-block"></span>  Upthrust Leading since 2020
+                            }} className="size-14 md:size-20 rounded-full bg-(--red) inline-block"></span>  Upthrust Leading since 2021
                         </p>
                     ))}
-                </marquee>
+                </div>
             </div>
 
             <div className='px-3 px-5 lg:px-20 z-10 relative'>

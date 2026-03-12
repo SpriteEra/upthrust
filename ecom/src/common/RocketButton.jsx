@@ -24,7 +24,7 @@ const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale
             <button
                 onClick={() => setIsOpen(true)}
                 style={{ '--btn-color': resolvedColor }}
-                className="rounded-full py-5 px-9 lg:py-3.5 3xl:py-5.5 3xl:px-9 bg-black border-2 3xl:border-3 border-(--btn-color) hover:bg-(--btn-color) text-white text-lg lg:text-base 3xl:text-lg font-medium transition-colors duration-200 flex items-center space-x-2 relative group tracking-[-0.02em] cursor-pointer"
+                className="rounded-full py-5 px-9 lg:py-3.5 3xl:py-5 3xl:px-9 bg-black border-2 3xl:border-3 border-(--btn-color) hover:bg-(--btn-color) text-white text-lg lg:text-base 3xl:text-lg font-medium transition-colors duration-200 flex items-center space-x-2 relative group tracking-[-0.02em] cursor-pointer"
             >
                 <span>{text1}</span>
 

@@ -161,7 +161,7 @@ import Matter from "matter-js";
 
 const WORD = "UPTHRUST";
 
-export default function DropLetters() {
+export default function DropLetters({ titleItalic = "Meta-First", titleNormal = "Agency For Creative Brands" }) {
     const sceneRef = useRef(null);
     const sectionRef = useRef(null);
     const [hasStarted, setHasStarted] = useState(false);
@@ -311,18 +311,16 @@ export default function DropLetters() {
             className="relative w-full h-screen  overflow-hidden"
         >
             {/* TEXT - TOP RIGHT CORNER */}
-            <div className="absolute top-16 right-12 z-20 text-start max-w-[720px]">
+            <div className="absolute top-16 max-lg:-translate-x-1/2 max-lg:left-1/2 lg:right-[3%] 3xl:right-[7%] z-20 text-start max-w-[720px] ">
 
-                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize">
+                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl">
 
                     <span className="text-xs 3xl:text-sm leading-[150%] font-normal tracking-[-0.02em] ">(WE ARE)</span>  The{" "}
-                    <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
-                        Meta-First
+                    <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic whitespace-pre-line">
+                        {titleItalic}
                     </span>
                     <br />
-                    Agency For Creative
-                    <br />
-                    Brands
+                    {titleNormal}
                 </h2>
             </div>
 

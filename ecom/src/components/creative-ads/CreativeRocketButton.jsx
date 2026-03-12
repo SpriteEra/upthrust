@@ -2,22 +2,22 @@
 import RocketCTAButton from '@/common/RocketCTAButton'
 import React, { useState } from 'react'
 // import MetaLeadForm from './MetaLeadForm';
-import MetaLeadModal from './MetaLeadModal';
+import CreativeLeadFormModal from './CreativeLeadModal';
 
-const MetaRocketButton = () => {
+const CreativeRocketButton = ({ text1 = "Show Us", text2 = "How To Scale" }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
             <button
                 onClick={() => setIsOpen(true)}
             >
-                <RocketCTAButton color='blue' text1="Show Us" text2="How To Scale" />
+                <RocketCTAButton color='orange' text1={text1} text2={text2} />
             </button>
             {isOpen && (
-                <MetaLeadModal handleClose={() => setIsOpen(false)} />
+                <CreativeLeadFormModal handleClose={() => setIsOpen(false)} />
             )}
         </>
     )
 }
 
-export default MetaRocketButton
+export default CreativeRocketButton

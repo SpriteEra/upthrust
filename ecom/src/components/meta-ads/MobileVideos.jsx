@@ -20,13 +20,13 @@ const videos = [
     },
     {
         label: "B2B",
-        thumbnail: "/meta-ads/dummy.png",
+        thumbnail: "/meta-ads/frames/creative.webp",
         frame: "/meta-ads/frame.png",
         video: "https://upthrustvideocdn.b-cdn.net/Meta%20ads/VEGA%20THE%206X_EN-HD.mp4",
     },
     {
         label: "SAAS",
-        thumbnail: "/meta-ads/dummy.png",
+        thumbnail: "/meta-ads/frames/class-management.webp",
         frame: "/meta-ads/frame.png",
         video: "https://upthrustvideocdn.b-cdn.net/Meta%20ads/WhatsApp%20Video%202026-03-06%20at%2023.57.06.mp4",
     },
@@ -36,7 +36,7 @@ export default function MobileVideos() {
     const [activeVideo, setActiveVideo] = useState(null);
     const swiperInstance = useRef(null);
     return (
-        <section className="pt-15 3xl:pt-24 max-w-[90%] 3xl:max-w-380 mx-auto">
+        <section className="pt-15 3xl:pt-24 max-w-[90%] 1600:max-w-350 1800:max-w-380 mx-auto">
             {/* Cards */}
             <div className="relative">
 
@@ -73,7 +73,7 @@ export default function MobileVideos() {
                             </span>
                             <div
                                 onClick={() => setActiveVideo(item.video)}
-                                className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 3xl:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer rounded-4xl"
+                                className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 1600:h-140 1800:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer rounded-4xl"
                             >
                                 <Image
                                     fill
@@ -112,25 +112,80 @@ export default function MobileVideos() {
 
             {/* Modal */}
             {activeVideo && (
-                <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-6">
+                <div
+                    className="fixed inset-0 flex items-center justify-center z-[9999] px-6"
+                    style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                        backdropFilter: 'blur(18px)',
+                        WebkitBackdropFilter: 'blur(18px)',
+                        animation: 'fadeIn 0.25s ease',
+                    }}
+                    onClick={() => setActiveVideo(null)}
+                >
+                    <style>{`
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes scaleUp {
+        from { opacity: 0; transform: scale(0.94) translateY(16px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      .video-modal-close:hover {
+        background: rgba(255,255,255,0.15);
+        transform: scale(1.08);
+      }
+    `}</style>
 
-                    <div className="relative w-full max-w-3xl ">
-
+                    <div
+                        className="relative w-full max-w-3xl 3xl:max-w-4xl"
+                        style={{ animation: 'scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         {/* Close Button */}
                         <button
                             onClick={() => setActiveVideo(null)}
-                            className="absolute -top-12 right-0 text-white"
+                            className="video-modal-close absolute -top-14 right-0 flex items-center gap-2 text-white/80 text-sm font-medium tracking-wide transition-all duration-200"
+                            style={{
+                                background: 'rgba(255,255,255,0.08)',
+                                border: '1px solid rgba(255,255,255,0.15)',
+                                borderRadius: '999px',
+                                padding: '6px 14px 6px 10px',
+                            }}
                         >
-                            <X size={32} />
+                            <X size={16} />
+                            Close
                         </button>
+
+                        {/* Glow behind video */}
+                        <div
+                            style={{
+                                position: 'absolute',
+                                inset: '-2px',
+                                borderRadius: '20px',
+                                background: 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))',
+                                boxShadow: '0 0 80px 20px rgba(255, 255, 255, 0.06), 0 32px 80px rgba(0,0,0,0.6)',
+                                zIndex: -1,
+                            }}
+                        />
 
                         {/* Video */}
                         <video
                             src={activeVideo}
                             controls
                             autoPlay
-                            className="w-full rounded-2xl aspect-video object-cover"
+                            style={{
+                                width: '100%',
+                                borderRadius: '16px',
+                                aspectRatio: '16/9',
+                                objectFit: 'contain',
+                                display: 'block',
+                                boxShadow: '0 24px 80px rgba(0,0,0,0.7)',
+                                border: '1px solid rgba(255,255,255,0.1)',
+                            }}
                         />
+
+
                     </div>
                 </div>
             )}

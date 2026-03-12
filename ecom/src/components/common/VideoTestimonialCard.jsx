@@ -28,8 +28,8 @@ export default function VideoTestimonialCard({ testimonial }) {
     return (
         <>
             {/* Card */}
-            <div className={`${testimonial.bgColor} text-white rounded-2xl px-4 sm:px-6 py-4 3xl:py-10 relative overflow-hidden flex flex-col justify-between min-h-90 xl:min-h-100 2xl:min-h-[420px] 3xl:min-h-140`}>
-                <h3 className="text-3xl 3xl:text-4xl leading-[130%] tracking-[-0.02em] font-semibold max-w-sm 3xl:max-w-md relative">
+            <div className={`${testimonial.bgColor} text-white rounded-2xl px-4 sm:px-6 py-4 1600:pt-10 1600:pb-5 1800:py-10 relative overflow-hidden flex flex-col justify-between min-h-90 xl:min-h-100 2xl:min-h-[420px] 1600:min-h-120 1800:min-h-140`}>
+                <h3 className="text-3xl 1600:text-[32px] 1800:text-4xl leading-[130%] tracking-[-0.02em] font-semibold max-w-sm 3xl:max-w-md relative">
                     {testimonial.title}
                     {
                         testimonial?.hasHighlight &&
@@ -44,7 +44,7 @@ export default function VideoTestimonialCard({ testimonial }) {
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="w-20 h-20 3xl:size-26.5 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition"
+                        className="w-20 h-20 1600:size-22 1800:size-26.5 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition"
                     >
                         <Play className="w-8 h-8 text-black fill-black ml-1" />
                     </button>
@@ -77,17 +77,17 @@ export default function VideoTestimonialCard({ testimonial }) {
                             height={207}
                             src={testimonial.avatar}
                             alt={testimonial.author}
-                            className=" size-20 lg:size-15 xl:size-28 2xl:size-35 3xl:h-51.75 md:w-50 3xl:w-50.25 object-contain z-10"
+                            className=" size-20 lg:size-15 xl:size-28 2xl:size-35 1600:size-45 1800:h-51.75 md:w-50 1800:w-50.25 object-contain z-10"
                         />
                     )}
 
                 </div>
 
                 <div className="flex items-center gap-3 3xl:gap-5 mt-auto font-semibold">
-                    <Image width={120} height={33} src={testimonial.company} alt="company logo" className="h-5 xl:h-5 3xl:h-7.5 w-fit object-contain" />
-                    <Image width={30} height={30} src="/google-ads/review/cross.webp" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
+                    <Image width={120} height={33} src={testimonial.company} alt="company logo" className="h-5 xl:h-5 3xl:h-8 w-fit object-contain" />
+                    <Image width={60} height={30} src="/google-ads/review/cross.webp" alt="cross" className="h-4 object-contain 3xl:h-7.5 w-fit" />
                     <Image
-                        width={130}
+                        width={150}
                         height={50}
                         src="/google-ads/review/upthrust.webp" alt="upthrust"
                         className="h-5 xl:h-6 object-contain 3xl:w-30 w-fit"

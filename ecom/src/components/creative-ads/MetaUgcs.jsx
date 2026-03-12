@@ -1,9 +1,9 @@
 "use client";
-import { Loader2, Play, Pause, Menu, X, ChevronDown } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import StylishButton from '@/common/RocketButton';
+import CreativeRocketButton from './CreativeRocketButton';
 
 const navLinks = [
     {
@@ -113,7 +113,7 @@ const ImageIcon = () => (
 const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) => {
     const tabs = [
         { label: 'Video Ads', Icon: VideoIcon },
-        { label: 'Image Ads', Icon: ImageIcon },
+        // { label: 'Image Ads', Icon: ImageIcon },
     ];
 
     return (
@@ -143,7 +143,7 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
 
             {/* Category pill container */}
             <div className="border border-black rounded-b-sm md:rounded-b-lg lg:rounded-b-2xl rounded-tr-sm md:rounded-tr-lg lg:rounded-tr-2xl p-2 lg:p-4 bg-white relative z-0 w-fit">
-                <div className="flex items-center gap-2 lg:gap-3 flex-wrap w-fit">
+                <div className="flex items-center gap-2 lg:gap-3 3xl:gap-5 flex-wrap w-fit">
                     <button
                         onClick={() => setActiveCategory(null)}
                         className={`
@@ -290,8 +290,8 @@ const UGCVideoCategories = () => {
     const [playingVideo, setPlayingVideo] = useState(null);
     const [videoStates, setVideoStates] = useState({});
     const videoRefs = useRef({});
-
-    const displayItems = (
+    const [showAll, setShowAll] = useState(false);
+    const items =
         activeCategory === null
             ? allItems
             : navLinks
@@ -300,8 +300,10 @@ const UGCVideoCategories = () => {
                     ...item,
                     uid: `${activeCategory}-${item.id}`,
                     alt: navLinks.find((c) => c.id === activeCategory)?.alt,
-                })) || []
-    ).slice(0, 8);
+                })) || [];
+
+    const displayItems = showAll ? items : items.slice(0, 8);
+
 
     const handleCardClick = (itemId, videoUrl) => {
         const currentState = videoStates[itemId];
@@ -337,15 +339,19 @@ const UGCVideoCategories = () => {
         }
         setVideoStates((prev) => ({ ...prev, [itemId]: { isPlaying: true, isReady: true, isLoading: false } }));
     };
-
     useEffect(() => {
         if (playingVideo) {
             const video = videoRefs.current[playingVideo];
-            if (video) { video.pause(); video.currentTime = 0; }
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
         }
+
         setPlayingVideo(null);
         setVideoStates({});
         videoRefs.current = {};
+        setShowAll(false); // reset view
     }, [activeCategory]);
 
     return (
@@ -382,13 +388,27 @@ const UGCVideoCategories = () => {
                             videoRef={(el) => {
                                 if (el) {
                                     videoRefs.current[uid] = el;
+                                    el.onloadeddata = null; // clear old handler first
                                     el.onloadeddata = () => handleVideoLoaded(uid);
+                                } else {
+                                    // cleanup on unmount
+                                    delete videoRefs.current[uid];
                                 }
                             }}
                         />
                     );
                 })}
             </motion.div>
+            {items.length > 8 && (
+                <div className="flex justify-center my-4">
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                        className="px-6 py-2 border border-black rounded-full text-sm font-semibold hover:bg-black hover:text-white transition"
+                    >
+                        {showAll ? "View Less" : "View More"}
+                    </button>
+                </div>
+            )}
 
             {displayItems.length === 0 && (
                 <div className="flex items-center justify-center h-64 text-white/40 text-sm">
@@ -396,10 +416,7 @@ const UGCVideoCategories = () => {
                 </div>
             )}
             <div className='flex items-center justify-center'>
-
-                {/* <MetaRocketButton color='blue' /> */}
-                {/* <RocketCTAButton color='orange' /> */}
-                <StylishButton color='orange' />
+                <CreativeRocketButton color='orange' />
             </div>
         </div>
     );

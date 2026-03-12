@@ -1,11 +1,8 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { Star, Shield, TrendingUp, Award, ArrowRight, Play, Volume2, VolumeX } from 'lucide-react';
-import AnimatedWord from '../google-ads/AnimatedWord';
-import StylishButton from '@/common/RocketButton';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import RatingStars from '@/common/Rating';
+import CreativeRocketButton from './CreativeRocketButton';
 
 
 function SpButton({ text1, text2 }) {
@@ -95,7 +92,7 @@ export default function MetaAdsHero() {
                     </p>
                     {/* CTA Button */}
                     <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-start ">
-                        <StylishButton text1='Get Your' text2='Free Ad Audit' color='orange' />
+                        <CreativeRocketButton text1='Get Your' text2='Free Ad Audit' color='orange' />
                     </div>
 
                     <div className="flex items-center gap-5 mt-4 mb-8">
@@ -120,9 +117,9 @@ export default function MetaAdsHero() {
                         <p className="text-lg leading-[150%] tracking-[-0.02em] font-normal">Brands we&apos;ve scaled</p>
 
                         <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl 3xl:max-w-3xl pb-12">
-                            {brandicons.map((brand) => (
+                            {brandicons.map((brand, i) => (
                                 <div
-                                    key={brand.name}
+                                    key={i}
                                     className={`flex items-center justify-center ${brand.customCss}`}
                                 >
                                     <Image
@@ -222,7 +219,7 @@ export default function MetaAdsHero() {
                                     playsInline
                                 >
                                     <source
-                                        src="https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/aviascasserolesenglishmp4.mp4"
+                                        src="https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4"
                                         type="video/mp4"
                                     />
                                 </video>

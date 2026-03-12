@@ -50,7 +50,7 @@ export default function FeatureCards() {
     const swiperInstance = useRef(null);
     return (
 
-        <div className="max-w-[88%] 3xl:max-w-400 mx-auto grid md:grid-cols-3 gap-6 3xl:gap-8">
+        <div className="max-w-[88%]  1800:max-w-400 mx-auto grid md:grid-cols-3 gap-6 3xl:gap-8">
             {cards.map((card, index) => (
                 <div
                     key={index}
@@ -62,7 +62,7 @@ export default function FeatureCards() {
                             slides={card.images}
                             autoplay={true}
                             speed={700}
-                            delay={1000}
+                            delay={500}
                             loop
                             hoverPlayDesktop={true}
                             swiperClass="single-image-swiper "

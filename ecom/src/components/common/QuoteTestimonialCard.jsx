@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function QuoteTestimonialCard({ testimonial }) {
     return (
-        <div className={`${testimonial.bgColor} border-2 ${testimonial.borderColor} rounded-2xl p-4 sm:p-6 3xl:p-7 3xl:py-10 3xl:pb-14 flex flex-col`}>
-            <RatingStars rating={testimonial.rating} fillColor="#FE2B27" />
+        <div className={`${testimonial.bgColor} border-2 ${testimonial.borderColor} rounded-2xl p-4 sm:p-6 3xl:p-7 1600:pt-6 1800:py-10 1600:pb-16 1800:pb-14 flex flex-col`}>
+            <RatingStars rating={testimonial.rating} fillColor="#FE2B27" customCss="gap-0!" />
 
-            <h3 className="text-2xl lg:text-2xl leading-[130%] tracking-[-0.02em] font-semibold mb-4 3xl:max-w-[400px] mt-2 3xl:mt-3">{testimonial.title}</h3>
+            <h3 className="text-2xl lg:text-2xl 1600:text-[22px] 1800:text-2xl leading-[130%] tracking-[-0.02em] font-semibold mb-4 3xl:max-w-[400px] mt-2 3xl:mt-3">{testimonial.title}</h3>
 
-            <p className=" text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal mb-6 3xl:mb-10 3xl:max-w-[450px]">
+            <p className=" text-lg 1800:text-[20px] leading-[150%] tracking-[-0.02em] font-normal mb-6 1600:mb-15 1800:mb-10 3xl:max-w-[450px]">
                 {testimonial.quote}
             </p>
 

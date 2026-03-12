@@ -28,6 +28,8 @@ export default function ClientStories() {
             },
             bgColor: "bg-[#F6F6F6]",
             textColor: "text-black",
+            textLarge: true,
+            isPaddngMore: true,
         },
         {
             id: 3,
@@ -40,7 +42,7 @@ export default function ClientStories() {
             avatar: "/google-ads/review/img3.webp",
             hasVideo: true,
             video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
-            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 2xl:-right-19 3xl:-right-20 top-15 xl:top-10 3xl:top-12 size-19 2xl:size-26 3xl:size-32 ",
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 2xl:-right-19 1600:-right-12 1800:-right-20 top-15 xl:top-10 3xl:top-12 size-19 2xl:size-26 1600:size-26 1800:size-32 ",
             bgColor: "bg-[#0457CB]",
             textColor: "text-white",
             hasHighlight: true,
@@ -59,7 +61,7 @@ export default function ClientStories() {
             avatar: "/google-ads/review/img4.webp",
             hasVideo: true,
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
-            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 3xl:-right-20 top-6 2xl:top-4 3xl:top-5 size-20 2xl:size-26 3xl:size-28 ",
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 1600:-right-16 1800:-right-20 top-6 2xl:top-4 3xl:top-5 size-20 2xl:size-26 1800:size-28 ",
             bgColor: "bg-[#0457CB]",
             textColor: "text-white",
             hasHighlight: true,
@@ -86,7 +88,9 @@ export default function ClientStories() {
             avatar: "👤",
             avatar: "/google-ads/review/img6.webp",
             bgColor: "bg-[#F6F6F6]",
-            textColor: "text-black"
+            textColor: "text-black",
+            textLarge: true,
+            isPaddngMore: false,
         },
         {
             id: 7,
@@ -102,7 +106,10 @@ export default function ClientStories() {
             position: "Marketing Head at - Mukunda Foods",
             hasAvatar: true,
             bgColor: "bg-[#F6F6F6]",
-            textColor: "text-black"
+            textColor: "text-black",
+            textLarge: false,
+            isPaddngMore: true,
+
         },
         {
             id: 8,
@@ -115,7 +122,7 @@ export default function ClientStories() {
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
             hasAvatar: true,
             avatar: "/google-ads/review/img8.webp",
-            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-6 xl:-right-4 3xl:-right-5 top-15 xl:top-8 3xl:top-12 size-20 2xl:size-26 3xl:size-28 ",
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-6 xl:-right-4 1600:-right-3 1800:-right-5 top-15 xl:top-8 1600:top-9 1800:top-12 size-20 2xl:size-26  1800:size-28 ",
             bgColor: "bg-[#0457CB]",
             textColor: "text-white",
             hasHighlight: true,

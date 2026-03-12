@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import LeadFormModal from './LeadModal'
 import Portal from './Portal';
 
-const NavbarCTAButton = ({ className }) => {
+const NavbarCTAButton = ({ className, ModalComponent = LeadFormModal }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>
@@ -15,9 +15,9 @@ const NavbarCTAButton = ({ className }) => {
                     Book A Demo Call
                 </button>
             </div>
-            {isModalOpen && (
+            {isModalOpen && ModalComponent && (
                 <Portal>
-                    <LeadFormModal handleClose={() => setIsModalOpen(false)} />
+                    <ModalComponent handleClose={() => setIsModalOpen(false)} />
                 </Portal>
             )}
         </>

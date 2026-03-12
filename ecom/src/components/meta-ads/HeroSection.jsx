@@ -31,11 +31,11 @@ const images = [
 ];
 
 const brandicons = [
-    { src: '/brands/brand-black/bosch.webp', alt: 'Bosch', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-5 2xl:w-fit 3xl:w-30 3xl:h-10" },
-    { src: '/brands/brand-black/loreal.webp', alt: 'Loreal', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit 3xl:w-28 3xl:h-10" },
-    { src: '/brands/brand-black/biba.webp', alt: 'Biba', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-6" },
-    { src: '/brands/brand-black/zomato.webp', alt: 'Zomato', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-10 2xl:h-4 2xl:w-fit  3xl:h-8.5" },
-    { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "h-7  w-12 xs:h-8 xs:w-13 lg:h-6 2xl:h-6.5 2xl:w-fit  3xl:h-9" },
+    { src: '/brands/brand-black/bosch.webp', alt: 'Bosch', customCss: "w-20 sm:w-22 md:w-24 lg:w-26 xl:w-24 2xl:w-22 3xl:w-28 h-fit" },
+    { src: '/brands/brand-black/loreal.webp', alt: 'Loreal', customCss: "w-20 sm:w-22 md:w-24 lg:w-26 xl:w-24 2xl:w-22 3xl:w-28 h-fit" },
+    { src: '/brands/brand-black/biba.webp', alt: 'Biba', customCss: "w-16 sm:w-22 md:w-24 lg:w-26 xl:w-18 2xl:w-19 3xl:w-22 h-fit" },
+    { src: '/brands/brand-black/zomato.webp', alt: 'Zomato', customCss: "w-20 sm:w-22 md:w-24 lg:w-26 xl:w-24 2xl:w-22 3xl:w-26 h-fit" },
+    { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "w-9 sm:w-9 md:w-9 lg:w-9 xl:w-10 2xl:w-10 3xl:w-12 h-fit" },
 ]
 
 export default function MetaAdsHero() {
@@ -76,12 +76,12 @@ export default function MetaAdsHero() {
                 <div className="space-y-5 max-sm:h-[100vh - 80px] w-full lg:max-w-[48%] text-black">
                     {/* Top tag */}
                     <div className="flex max-sm:text-center justify-center sm:justify-start gap-2 items-start sm:items-center">
-                        <AnimatedWord images={images} className="size-6.5 sm:size-8.5" />
+                        <AnimatedWord images={images} className="size-6.5 sm:size-8.5 3xl:size-9" />
                         <p className="text-lg  3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">Ads that scale — without the <span className="block sm:inline">agency B.S.</span></p>
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[60px] 1800:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold max-sm:text-center">
+                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[60px] 1600:text-[70px] 1800:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold max-sm:text-center">
                         The{' '}
                         <em className="font-instrument font-normal" >
                             Meta Ads
@@ -90,11 +90,11 @@ export default function MetaAdsHero() {
                         <br />
                         That Lowers Your
                         <br />
-                        <span> <AnimatedWord words={words} className="h-10 md:h-12 lg:h-15 2xl:h-15 1600:h-20 1800:h-25 w-30 md:w-30 lg:w-30 2xl:w-33.5 1600:w-38 1800:w-50 text-blue mx-auto" /> </span> While Scaling
+                        <span> <AnimatedWord words={words} className="h-12 md:h-12 lg:h-15 2xl:h-15 1600:h-18 1800:h-25 w-23 md:w-30 lg:w-30 2xl:w-33.5 1600:w-33 1800:w-50 text-blue mx-auto" /> </span> While Scaling
                     </h1>
 
                     {/* Subtext */}
-                    <p className="text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">
+                    <p className="text-lg max-1800:max-w-xl 1800:text-[20px] leading-[150%] tracking-[-0.02em] font-normal max-md:text-center">
                         Stop bleeding budget on audiences that don&apos;t convert. Run ads that drive revenue.
                     </p>
 
@@ -103,36 +103,27 @@ export default function MetaAdsHero() {
                         <StylishButton text1='Get Your' text2='Free Audit' color='blue' />
                     </div>
 
-                    <div className="flex items-center gap-5 mt-4 mb-8">
-                        <div className="flex items-start justify-start flex-col sm:gap-1 border border-black rounded-sm px-3    sm:py-2 h-11 sm:h-18.5">
-                            <div className="flex gap-1 ">
-                                <p className="text-[10px] sm:text-[14px] font-extrabold text-[#FEA500]">4.8</p>
-                                {[...Array(5)].map((_, i) => (
-                                    <Image width={20} height={20} key={i} className="size-[10px] sm:size-[19px]" src="/meta-ads/star.webp" alt="Star" />
-                                ))}
-                            </div>
-                            <div className="flex flex-col">
-                                <p className="text-xs sm:text-[15px] text-[#6A6A6A] font-semibold leading-[100%]">Google</p>
-                                <p className="text-[9px] text-[#6A6A6A] sm:mt-0.5 ">Customer Reviews</p>
-                            </div>
-                        </div>
-                        <Image width={150} height={75} className="object-contain h-10 sm:h-18.5 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
-                        <Image width={150} height={75} className="object-contain  h-10 sm:h-18.5 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
-                        <Image width={100} height={50} className="object-contain w-20 sm:w-30 h-full" src="/meta-ads/meta.webp" alt="Meta Business Partner" />
+                    <div className="flex items-center max-md:justify-center gap-3 md:gap-5 1600:gap-8 mt-4 mb-8">
+
+                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/meta-ads/google-rating.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain  h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain w-24 sm:w-30 1800:w-35 h-full" src="/meta-ads/meta.webp" alt="Meta Business Partner" />
                     </div>
 
                     <div>
                         <p className="text-lg leading-[150%] tracking-[-0.02em] font-normal">Brands we&apos;ve scaled</p>
 
-                        <div className="grid grid-cols-5 gap-y-5 xs:gap-y-6 gap-x-2 3xl:gap-x-16 items-center py-5 md:py-5 3xl:py-8 max-w-xl 3xl:max-w-3xl pb-12">
-                            {brandicons.map((brand) => (
+                        <div className="flex justify-between gap-y-5 xs:gap-y-6 gap-x-2  items-center py-5 md:py-5 3xl:py-8 max-w-sm sm:max-w-xl xl:max-w-lg 1600:max-w-2xl 1800:max-w-3xl pb-12">
+                            {brandicons.map((brand, index) => (
                                 <div
                                     key={brand.name}
-                                    className={`flex items-center justify-center ${brand.customCss}`}
+                                    className={`flex items-center justify-center ${index === brandicons.length - 1 ? "max-sm:hidden" : ""
+                                        } ${brand.customCss}`}
                                 >
                                     <Image
                                         src={brand.src}
-                                        alt={"Logos of google brands partnered with Upthrust"}
+                                        alt="Logos of google brands partnered with Upthrust"
                                         width={160}
                                         height={60}
                                         className="max-h-full max-w-full object-contain select-none"
@@ -145,8 +136,8 @@ export default function MetaAdsHero() {
                 </div>
 
                 {/* RIGHT: Video grid */}
-                <div className="w-full  lg:max-w-[52%] max-lg:overflow-x-auto">
-                    <div className="relative max-sm:min-w-[550px] w-full h-full flex justify-center min-h-[470px] lg:min-h-[500px]  1800:min-h-[600px] max-h-[739px] 3xl:max-w-[890px] ">
+                <div className="w-full  lg:max-w-[52%] max-lg:overflow-x-hidden max-lg:flex max-lg:justify-center">
+                    <div className="relative max-sm:min-w-[550px] w-full h-full flex justify-center min-h-[470px] lg:min-h-[500px]  1800:min-h-[600px] max-h-[739px] 1600:200 1800:max-w-[890px] ">
 
                         {/* Facebook pic */}
                         <div className="absolute size-[95px] 3xl:w-[131px] 3xl:h-[128px] top-10 2xl:top-0 left-[20%]  2xl:left-36 z-40">

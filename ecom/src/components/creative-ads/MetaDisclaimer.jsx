@@ -6,6 +6,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 // import MetaRocketButton from '../meta-ads/MetaRocketButton'
 import StylishButton from '@/common/RocketButton'
+import CreativeRocketButton from './CreativeRocketButton'
 
 export const Disclaimer = () => {
     const [open, setOpen] = useState(false);
@@ -117,9 +118,9 @@ const MetaDisclaimer = () => {
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
                 <div className=''>
                     <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] 3xl:leading-15'>Do you have <br />any questions?</p>
-                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>FBook a free consultation.</p>
+                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
 
-                    <StylishButton color='orange' />
+                    <CreativeRocketButton />
                 </div>
                 <div className='flex flex-col justify-between items-center gap-8'>
                     <Image
@@ -131,7 +132,7 @@ const MetaDisclaimer = () => {
                     />
                     <div className='flex gap-3 items-start'>
                         <span className='text-[#FF3B00] font-semibold text-3xl max-xs:hidden'>/</span>
-                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>No fluff. No vanity metrics. Just Meta ads that make you more money than they cost.</p>
+                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for brands that actually scale.</p>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@ export default function ShortTestimonialCard({ testimonial }) {
 
     return (
         <div className={`${testimonial.bgColor} rounded-2xl p-4 sm:p-6 3xl:p-8 3xl:py-10 flex flex-col`}>
-            <h3 className={`text-[25px] 3xl:text-[30px] leading-[150%] font-semibold tracking-[-0.02em] mb-6 3xl:mb-14 3xl:max-w-[425px] ${testimonial.textColor}`}>
+            <h3 className={`${testimonial.textLarge ? "text-[25px] 1600:text-[32px] 1800:text-4xl" : "text-[25px] text-[28px] 1800:text-[30px]"} leading-[150%] font-semibold tracking-[-0.02em] mb-6 ${testimonial.isPaddngMore ? " 3xl:mb-14" : "3xl:mb-4"}  3xl:max-w-[425px] ${testimonial.textColor}`}>
                 {testimonial.title}
             </h3>
 
@@ -36,7 +36,7 @@ export default function ShortTestimonialCard({ testimonial }) {
 
                 </div>
                 <div>
-                    <p className={`text-[22px]  3xl:text-[24px] leading-[150%]  tracking-[-0.02em] font-semibold ${testimonial.textColor}`}>
+                    <p className={` ${testimonial.isPaddngMore ? " text-[22px]  3xl:text-[24px]" : "text-lg 3xl:text-xl"}  leading-[150%]  tracking-[-0.02em] font-semibold ${testimonial.textColor} `}>
                         {testimonial.author}
                     </p>
                     <p

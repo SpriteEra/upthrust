@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MetaRocketButton from './MetaRocketButton';
 import RocketCTAButton from '@/common/RocketCTAButton';
+// import RocketCTAButton from '@/common/RocketCTAButton';
 
 const navLinks = [
     {
@@ -114,7 +115,7 @@ const ImageIcon = () => (
 const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) => {
     const tabs = [
         { label: 'Video Ads', Icon: VideoIcon },
-        { label: 'Image Ads', Icon: ImageIcon },
+        // { label: 'Image Ads', Icon: ImageIcon },
     ];
 
     return (
@@ -144,7 +145,7 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
 
             {/* Category pill container */}
             <div className="border border-black rounded-b-sm md:rounded-b-lg lg:rounded-b-2xl rounded-tr-sm md:rounded-tr-lg lg:rounded-tr-2xl p-2 lg:p-4 bg-white relative z-0 w-fit">
-                <div className="flex items-center gap-2 lg:gap-3 flex-wrap w-fit">
+                <div className="flex items-center gap-2 lg:gap-3 3xl:gap-5 flex-wrap w-fit">
                     <button
                         onClick={() => setActiveCategory(null)}
                         className={`
@@ -291,8 +292,8 @@ const UGCVideoCategories = () => {
     const [playingVideo, setPlayingVideo] = useState(null);
     const [videoStates, setVideoStates] = useState({});
     const videoRefs = useRef({});
-
-    const displayItems = (
+    const [showAll, setShowAll] = useState(false);
+    const items =
         activeCategory === null
             ? allItems
             : navLinks
@@ -301,8 +302,10 @@ const UGCVideoCategories = () => {
                     ...item,
                     uid: `${activeCategory}-${item.id}`,
                     alt: navLinks.find((c) => c.id === activeCategory)?.alt,
-                })) || []
-    ).slice(0, 8);
+                })) || [];
+
+    const displayItems = showAll ? items : items.slice(0, 8);
+
 
     const handleCardClick = (itemId, videoUrl) => {
         const currentState = videoStates[itemId];
@@ -342,11 +345,16 @@ const UGCVideoCategories = () => {
     useEffect(() => {
         if (playingVideo) {
             const video = videoRefs.current[playingVideo];
-            if (video) { video.pause(); video.currentTime = 0; }
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
         }
+
         setPlayingVideo(null);
         setVideoStates({});
         videoRefs.current = {};
+        setShowAll(false); // reset view
     }, [activeCategory]);
 
     return (
@@ -391,16 +399,23 @@ const UGCVideoCategories = () => {
                 })}
             </motion.div>
 
+            {items.length > 8 && (
+                <div className="flex justify-center my-6">
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                    >
+                        <RocketCTAButton color='blue' text1={"Show"} text2={showAll ? "Less" : "More"} />
+                    </button>
+
+                </div>
+            )}
+
             {displayItems.length === 0 && (
                 <div className="flex items-center justify-center h-64 text-white/40 text-sm">
                     No items found in this category.
                 </div>
             )}
-            <div className='flex items-center justify-center'>
 
-                {/* <MetaRocketButton color='blue' /> */}
-                <RocketCTAButton color='blue' />
-            </div>
         </div>
     );
 };

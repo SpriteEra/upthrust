@@ -46,6 +46,7 @@ const RatingStars = ({
     size = "size-6",
     emptyColor = "#E0E0E0",
     fillColor = "#FFC107",
+    customCss = ""
 }) => {
 
     const snapToPartial = (decimal) => {
@@ -57,7 +58,7 @@ const RatingStars = ({
     };
 
     return (
-        <div className="flex gap-1">
+        <div className={`flex gap-1 ${customCss}`}>
             {Array.from({ length: max }).map((_, index) => {
                 let fill = 0;
 

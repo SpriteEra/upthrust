@@ -1,29 +1,35 @@
-import { Curve1 } from '@/common/HandWritten';
-import MetaHeading from '@/common/MetaHeading';
-import StylishButton from '@/common/RocketButton';
-import ClientStories from '@/components/creative-ads/ClientStories';
-import CreativeNavbar from '@/components/creative-ads/CreativeNav';
-import DashboardStacks from '@/components/creative-ads/DashboardStack';
-import MetaAdsHero from '@/components/creative-ads/HeroSection';
-import MetaDisclaimer from '@/components/creative-ads/MetaDisclaimer';
-import UGCVideoCategories from '@/components/creative-ads/MetaUgcs';
-import ProcessTimeline from '@/components/creative-ads/ProgressBar';
-import { ComparisonTable } from '@/components/home/ComparisonTable';
-import FAQ from '@/components/home/Faq';
-import HomeFooter from '@/components/home/HomeFooter';
-import MobileTestimonialsSlider from '@/components/home/MobileTestimonialsSlider';
-import SuccessStories from '@/components/home/SuccessStories';
-import BrandSlider from '@/components/meta-ads/BrandSlider';
-import CircularDesign from '@/components/meta-ads/CircularDesign';
-import DropLetters from '@/components/meta-ads/DropLetter';
-import FeatureCards from '@/components/meta-ads/FeatureCard';
-import MetaLeadForm from '@/components/meta-ads/MetaLeadForm';
-import MetaRocketButton from '@/components/meta-ads/MetaRocketButton';
-import MobileVideos from '@/components/meta-ads/MobileVideos';
-import ScaleCards from '@/components/meta-ads/ScaleCard';
-import StatsGrid from '@/components/meta-ads/StatCard';
 import { Play } from 'lucide-react';
 import React from 'react'
+import { Curve1 } from '@/common/HandWritten';
+import MetaHeading from '@/common/MetaHeading';
+import MetaAdsHero from '@/components/creative-ads/HeroSection';
+
+import dynamic from "next/dynamic";
+
+const ClientStories = dynamic(() => import('@/components/creative-ads/ClientStories'));
+const CreativeLeadForm = dynamic(() => import('@/components/creative-ads/CreativeLeadForm'));
+const CreativeNavbar = dynamic(() => import('@/components/creative-ads/CreativeNav'));
+const CreativeRocketButton = dynamic(() => import('@/components/creative-ads/CreativeRocketButton'));
+const DashboardStacks = dynamic(() => import('@/components/creative-ads/DashboardStack'));
+const MetaDisclaimer = dynamic(() => import('@/components/creative-ads/MetaDisclaimer'));
+const UGCVideoCategories = dynamic(() => import('@/components/creative-ads/MetaUgcs'));
+const ProcessTimeline = dynamic(() => import('@/components/creative-ads/ProgressBar'));
+const ComparisonTable = dynamic(() => import('@/components/creative-ads/ProgressBar'));
+
+
+const FAQ = dynamic(() => import('@/components/home/Faq'));
+const HomeFooter = dynamic(() => import('@/components/home/HomeFooter'));
+const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
+const SuccessStories = dynamic(() => import('@/components/home/SuccessStories'));
+
+const BrandSlider = dynamic(() => import('@/components/meta-ads/BrandSlider'));
+const CircularDesign = dynamic(() => import('@/components/meta-ads/CircularDesign'));
+const DropLetters = dynamic(() => import('@/components/meta-ads/DropLetter'));
+const FeatureCards = dynamic(() => import('@/components/meta-ads/FeatureCard'));
+const MobileVideos = dynamic(() => import('@/components/meta-ads/MobileVideos'));
+const ScaleCards = dynamic(() => import('@/components/meta-ads/ScaleCard'));
+const StatsGrid = dynamic(() => import('@/components/meta-ads/StatCard'));
+
 
 const brandsRow1 = [
     { id: 1, name: "", logo: "/brands/brand-white/tata-cliq.webp" },
@@ -150,7 +156,7 @@ const faqs = [
     {
         question: "What’s your creative process from brief to launch?",
         answer:
-            "We begin with a discovery and research phase, move into concepting and design, iterate with feedback, and finally optimize delivery all aligned to your campaign goals and metrics."
+            "We begin with a discovery and research phase, move into concepting and design, iterate with feedback, and finally optimize delivery all aligned to your campaign goals and metrics"
     },
     {
         question: "What makes your creative ads different from other agencies?",
@@ -193,13 +199,13 @@ export const metadata = {
     metadataBase: new URL("https://www.upthrust.agency"),
 
     alternates: {
-        canonical: "/",
+        canonical: "https://www.upthrust.agency/creative-agency",
     },
 
     openGraph: {
         title: "Creative Ads Agency Built for Performance",
         description: "High-converting ad creatives, structured creative testing systems and UGC ads built to scale paid acquisition profitably.",
-        url: "https://www.upthrust.agency",
+        url: "https://www.upthrust.agency/creative-agency",
         siteName: "Upthrust",
         images: [
             {
@@ -254,7 +260,7 @@ const page = () => {
 
                 />
 
-                <CircularDesign />
+                <CircularDesign mobileImage='/creative-agency/adspent-graph.webp' desktopImage='/creative-agency/adspent-graph-desktop.webp' />
 
             </div>
 
@@ -297,7 +303,7 @@ const page = () => {
                 <BrandSlider brandsRow1={brandsRow1} brandsRow2={brandsRow2} />
             </div>
             <div>
-                <DropLetters />
+                <DropLetters titleItalic='Creative-first ' titleNormal='agency for brands' />
                 <StatsGrid className={"bg-orange"} />
             </div>
             <div className="py-12 xl:py-30 ">
@@ -345,7 +351,7 @@ creative intuition with data-driven precision."
                         <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
                             Distinctive creative. Data-driven process. Undeniable results
                         </p>
-                        <StylishButton color='orange' />
+                        <CreativeRocketButton />
                     </div>
 
                     {/* Right Video */}
@@ -628,7 +634,7 @@ creative intuition with data-driven precision."
                         className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
 
                     />
-                    <MetaLeadForm showOnlyIframe={true} />
+                    <CreativeLeadForm showOnlyIframe={true} />
                 </div>
             </div>
 
@@ -663,13 +669,13 @@ creative intuition with data-driven precision."
             </div>
 
             <MetaDisclaimer />
-            <HomeFooter text1="Request a free consultation." bgColor="#FF3B00" text2={{
+            <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
                 desktop: {
-                    text1: "WE'LL FIND YOUR WASTED",
-                    text2: "AD SPEND. YOU'LL WONDER WHY\n YOU WAITED. LET'S GO.",
+                    text1: "YOUR SUBMISSION GOES HERE.",
+                    text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.\n COINCIDENCE? WE THINK NOT.",
                 },
                 mobile: {
-                    text1: "AD SPEND. YOU'LL WONDER WHY YOU WAITED. Let’s go.",
+                    text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",
                     text2: "",
                 },
             }} />

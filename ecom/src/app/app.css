@@ -190,3 +190,19 @@
 .marquee-paused {
   animation-play-state: paused;
 }
+
+@keyframes marquee-slow {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-slow 40s linear infinite;
+}

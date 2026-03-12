@@ -319,8 +319,8 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
                             className="absolute top-0 left-1/2 -translate-x-1/2"
 
                         >
-                            <div className={`${testimonial.color} p-5 rounded-md  w-70 xl:w-62 2xl:w-70! 3xl:w-85! h-82 xl:h-80 2xl:h-82!  3xl:h-110! flex flex-col justify-between`}>
-                                <p className={`${testimonial.textColor} text-base md:text-base 2xl:text-lg! 3xl:text-2xl! font-medium tracking-[-0.02em] 2xl:leading-[28px] 3xl:leading-[32px]`}>
+                            <div className={`${testimonial.color} p-5 rounded-md  w-70 xl:w-62 2xl:w-70! 1600:w-80! 1800:w-85! h-82 xl:h-80 2xl:h-82! 1600:h-95!  1800:h-110! flex flex-col justify-between`}>
+                                <p className={`${testimonial.textColor} text-base md:text-base 2xl:text-lg! 1600:text-[22px]! 1800:text-2xl! font-medium tracking-[-0.02em] 2xl:leading-[28px] 3xl:leading-[32px]`}>
                                     <span className='-pt-3'>
                                         <svg
                                             style={{ color: testimonial.quote }}
@@ -331,7 +331,7 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
                                     {testimonial.text}
                                 </p>
                                 <div className="flex items-center gap-3 mt-3">
-                                    <div className="size-13 3xl:size-15 bg-white flex items-center justify-center text-xl rounded-md">
+                                    <div className="size-13 3xl:size-15 flex items-center justify-center text-xl rounded-md">
                                         <Image
                                             width={66}
                                             height={66}
