@@ -1149,7 +1149,7 @@ export default function DropLetters({
         const engine = Engine.create();
 
         /* smoother gravity */
-        engine.gravity.y = 1.2;
+        engine.gravity.y = 1.1;
 
         const render = Render.create({
             element: container,
@@ -1197,7 +1197,7 @@ export default function DropLetters({
         if (width < 640) {
             size = height * 0.18;
         } else if (width < 1024) {
-            size = height * 0.3;
+            size = height * 0.33;
         } else if (width < 1600) {
             size = height * 0.35;
         } else {
@@ -1290,18 +1290,13 @@ export default function DropLetters({
 
                 <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl">
 
-                    <span className="relative inline-block">
+                    <span className="text-xs md:text-sm 3xl:text-sm font-normal tracking-[0.05em] mr-2 align-middle">
+                        (WE ARE)
+                    </span>
 
-                        {/* WE ARE */}
-                        <span className="absolute left-1/2 -translate-x-1/2 -top-4 text-xs 3xl:text-sm leading-[150%] font-normal tracking-[-0.02em] whitespace-nowrap">
-                            (WE ARE)
-                        </span>
-
-                        The{" "}
-                        <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
-                            {titleItalic}
-                        </span>
-
+                    The{" "}
+                    <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
+                        {titleItalic}
                     </span>
 
                     <br />

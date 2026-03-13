@@ -52,11 +52,125 @@ const dashboardData = [
 
 ]
 
+// const BusinessCard = ({
+//     data, index
+// }) => {
+//     return (
+//         <div className={` md:rounded-[20px] p-3 max-lg:pt-7 lg:p-8 2xl:px-10 3xl:py-16 3xl:px-12 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[82%] mx-auto lg:sticky top-0 xl:top-20 2xl:top-28 3xl:top-35 min-h-160 3xl:h-full`}
+//             style={{
+//                 backgroundColor: data.bgColor,
+//                 color: data.textColor,
+//             }}
+//         >
+//             {
+//                 data.clientLogo &&
+
+//                 <div className='w-full h-7 lg:hidden mb-2'>
+//                     <Image
+//                         src={data.clientLogo}
+//                         alt='Logo'
+//                         width={120}
+//                         height={120}
+//                         className='object-contain w-fit h-full'
+//                     />
+//                 </div>
+//             }
+//             <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 3xl:gap-8 ">
+//                 {/* Left Section */}
+//                 <div className="w-full lg:w-[62%] 3xl:w-[60%] flex flex-col">
+//                     {/* Header */}
+//                     <h4 className='leading-[130%] tracking-[-0.02em] lg:tracking-[-0.04em] text-4xl lg:text-5xl 3xl:text-7xl font-semibold mb-5 lg:mb-8 3xl:mb-16'>{data.title}</h4>
+//                     <div className='w-full  flex gap-20'>
+//                         <p className="leading-[120%] tracking-[-0.04em] text-[42px] lg:text-5xl 3xl:text-[86px] font-semibold w-[5%] xl:w-[15%] 3xl:w-[20%]">
+//                             {String(index).padStart(2, "0")}
+//                         </p>
+
+//                         <div className='w-[95%] lg:w-[85%]'>
+//                             <p className='leading-[130%] tracking-[-0.02em] text-2xl lg:text-3xl 3xl:text-4xl font-semibold max-3xl:mb-1'>{data.title2}</p>
+//                             <span className='leading-[150%] tracking-[-0.02em] text-lg 3xl:text-xl max-lg:hidden'>{data.description}</span>
+//                             <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square lg:hidden mt-10">
+
+//                                 {/* Image takes remaining height */}
+//                                 <div className="flex-1">
+//                                     <Image
+//                                         width={600}
+//                                         height={500}
+//                                         src={data?.rightImg}
+//                                         alt={data.imageAlt}
+//                                         className="w-full h-full object-cover"
+//                                     />
+//                                 </div>
+
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 {/* Right Section - Dashboard Image */}
+//                 <span className='leading-[150%] tracking-[-0.02em] text-base lg:text-lg 3xl:text-xl lg:hidden mt-5'>{data.description}</span>
+//                 <div className="flex-shrink-0 flex justify-end w-full lg:w-[38%] 3xl:w-[40%] max-lg:hidden">
+//                     <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square">
+
+//                         {/* Image takes remaining height */}
+//                         <div className="flex-1">
+//                             <Image
+//                                 width={600}
+//                                 height={500}
+//                                 src={data?.rightImg}
+//                                 alt={data.imageAlt}
+//                                 className="w-full h-full object-cover"
+//                             />
+//                         </div>
+
+//                     </div>
+//                 </div>
+
+
+
+//             </div>
+//             <div className='flex flex-row gap-6 lg:gap-8 mt-5 2xl:mt-10 3xl:mt-16 w-full'>
+//                 <div className="w-full lg:w-[60%] flex gap-3 max-lg:p-2 justify-end items-center">
+//                     <p className='leading-[150%] tracking-[-0.02em] text-2xl 3xl:text-3xl font-semibold'>See what we create</p>
+//                     <button className={`rotate-90 text-xl lg:text-3xl  p-4 lg:p-5 3xl:p-8 rounded size-4 lg:size-5 3xl:size-8 text-black flex items-center justify-center max-lg:font-light ${data?.arrowcss}`}>
+//                         ↑
+//                     </button>
+//                 </div>
+//                 <div className="flex-shrink-0 flex justify-end w-full lg:w-[40%] items-end max-lg:hidden">
+//                     {
+//                         data.clientLogo &&
+//                         <div className='w-40 h-full'>
+
+//                             <Image
+//                                 src={data.clientLogo}
+//                                 alt='Logo'
+//                                 width={60}
+//                                 height={60}
+//                                 className='object-contain w-fit h-full'
+//                             />
+//                         </div>
+//                     }
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+// const DashboardStacks = () => {
+//     return (
+//         <div className='xs:px-2 md:px-4 lg:px-0 max-lg:space-y-4.5 space-y-10 3xl:space-y-30'>
+//             {dashboardData.map((business, index) => (
+//                 <BusinessCard key={index} data={business} index={index + 1} />
+//             ))}
+//         </div>
+//     )
+// }
+
+// export default DashboardStacks
+
 const BusinessCard = ({
     data, index
 }) => {
     return (
-        <div className={` md:rounded-[20px] p-3 max-lg:pt-7 lg:p-8 2xl:px-10 3xl:py-16 3xl:px-12 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[82%] mx-auto lg:sticky top-0 xl:top-20 2xl:top-28 3xl:top-35 min-h-160 3xl:h-full`}
+        <div className={` md:rounded-[20px] p-3 max-lg:pt-7 lg:p-8 2xl:px-10 3xl:py-16 3xl:px-12 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[82%] mx-auto lg:sticky top-0 xl:top-20 2xl:top-28 3xl:top-20 min-h-160 3xl:h-full`}
             style={{
                 backgroundColor: data.bgColor,
                 color: data.textColor,
@@ -65,12 +179,12 @@ const BusinessCard = ({
             {
                 data.clientLogo &&
 
-                <div className='w-full h-7 lg:hidden mb-2'>
+                <div className={`${data.logoCss} mb-5 lg:hidden`}>
                     <Image
                         src={data.clientLogo}
                         alt='Logo'
-                        width={120}
-                        height={120}
+                        width={200}
+                        height={200}
                         className='object-contain w-fit h-full'
                     />
                 </div>
@@ -79,15 +193,17 @@ const BusinessCard = ({
                 {/* Left Section */}
                 <div className="w-full lg:w-[62%] 3xl:w-[60%] flex flex-col">
                     {/* Header */}
-                    <h4 className='leading-[130%] tracking-[-0.02em] lg:tracking-[-0.04em] text-4xl lg:text-5xl 3xl:text-7xl font-semibold mb-5 lg:mb-8 3xl:mb-16'>{data.title}</h4>
-                    <div className='w-full  flex gap-20'>
-                        <p className="leading-[120%] tracking-[-0.04em] text-[42px] lg:text-5xl 3xl:text-[86px] font-semibold w-[5%] xl:w-[15%] 3xl:w-[20%]">
+                    <h4 className='leading-[130%] tracking-[-0.02em] lg:tracking-[-0.04em] text-4xl lg:text-5xl 1600:text-6xl 1800:text-7xl font-semibold mb-5 lg:mb-8 1600:mb-12 1800:mb-16'>
+                        {data.title}
+                    </h4>
+                    <div className='w-full flex gap-20'>
+                        <p className="leading-[120%] tracking-[-0.04em] text-[42px] lg:text-5xl 1600:text-7xl 1800:text-[86px] font-semibold w-[5%] xl:w-[15%] 1800:w-[20%]">
                             {String(index).padStart(2, "0")}
                         </p>
 
                         <div className='w-[95%] lg:w-[85%]'>
-                            <p className='leading-[130%] tracking-[-0.02em] text-2xl lg:text-3xl 3xl:text-4xl font-semibold max-3xl:mb-1'>{data.title2}</p>
-                            <span className='leading-[150%] tracking-[-0.02em] text-lg 3xl:text-xl max-lg:hidden'>{data.description}</span>
+                            <p className='leading-[130%] tracking-[-0.02em] text-2xl lg:text-3xl 1600:text-[32px] 1800:text-4xl font-semibold max-3xl:mb-1 1600:mb-3 max-w-lg'>{data.title2}</p>
+                            <p className='leading-[150%] tracking-[-0.02em] text-lg 1800:text-xl max-lg:hidden max-w-xl 3xl:max-w-2xl'>{data.description}</p>
                             <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square lg:hidden mt-10">
 
                                 {/* Image takes remaining height */}
@@ -109,7 +225,7 @@ const BusinessCard = ({
                 {/* Right Section - Dashboard Image */}
                 <span className='leading-[150%] tracking-[-0.02em] text-base lg:text-lg 3xl:text-xl lg:hidden mt-5'>{data.description}</span>
                 <div className="flex-shrink-0 flex justify-end w-full lg:w-[38%] 3xl:w-[40%] max-lg:hidden">
-                    <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 3xl:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square">
+                    <div className="relative max-lg:max-w-[400px] max-lg:mx-auto xl:w-[350px] 2xl:w-[380px] 1600:w-115 1800:w-125 w-full h-fit flex flex-col rounded-lg overflow-hidden aspect-square">
 
                         {/* Image takes remaining height */}
                         <div className="flex-1">
@@ -128,9 +244,9 @@ const BusinessCard = ({
 
 
             </div>
-            <div className='flex flex-row gap-6 lg:gap-8 mt-5 2xl:mt-10 3xl:mt-16 w-full'>
+            <div className='flex flex-row gap-6 lg:gap-8 max-md:mt-10 md:mt-5 2xl:mt-10 3xl:mt-12 w-full'>
                 <div className="w-full lg:w-[60%] flex gap-3 max-lg:p-2 justify-end items-center">
-                    <p className='leading-[150%] tracking-[-0.02em] text-2xl 3xl:text-3xl font-semibold'>See what we create</p>
+                    <p className='leading-[150%] tracking-[-0.02em] text-2xl 1600:text-[26px] 1800:text-3xl font-semibold'>See what we create</p>
                     <button className={`rotate-90 text-xl lg:text-3xl  p-4 lg:p-5 3xl:p-8 rounded size-4 lg:size-5 3xl:size-8 text-black flex items-center justify-center max-lg:font-light ${data?.arrowcss}`}>
                         ↑
                     </button>
@@ -138,13 +254,13 @@ const BusinessCard = ({
                 <div className="flex-shrink-0 flex justify-end w-full lg:w-[40%] items-end max-lg:hidden">
                     {
                         data.clientLogo &&
-                        <div className='w-40 h-full'>
+                        <div className={data.logoCss}>
 
                             <Image
                                 src={data.clientLogo}
                                 alt='Logo'
-                                width={60}
-                                height={60}
+                                width={200}
+                                height={200}
                                 className='object-contain w-fit h-full'
                             />
                         </div>
@@ -154,9 +270,10 @@ const BusinessCard = ({
         </div>
     );
 };
+
 const DashboardStacks = () => {
     return (
-        <div className='xs:px-2 md:px-4 lg:px-0 max-lg:space-y-4.5 space-y-10 3xl:space-y-30'>
+        <div className='xs:px-2 md:px-4 lg:px-0 max-lg:space-y-5 space-y-10 3xl:space-y-30'>
             {dashboardData.map((business, index) => (
                 <BusinessCard key={index} data={business} index={index + 1} />
             ))}
