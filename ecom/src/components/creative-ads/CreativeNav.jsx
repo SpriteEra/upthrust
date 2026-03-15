@@ -18,7 +18,7 @@ export default function CreativeNavbar({ items }) {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden xl:flex justify-between items-center rounded-full p-2 3xl:p-3 bg-[#08070A] text-white">
+                    {/* <div className="hidden xl:flex justify-between items-center rounded-full p-2 3xl:p-3 bg-[#08070A] text-white">
                         <div className=" flex items-center justify-center space-x-2 3xl:space-x-3">
                             {items.map((link) => {
                                 return (
@@ -26,6 +26,23 @@ export default function CreativeNavbar({ items }) {
                                         key={link.name}
                                         href={link.href}
                                         className={`p-3 3xl:p-3.5 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-base bg-[#19181D]  hover:bg-orange transition-colors duration-200 
+                                            `}
+                                    // ${isActive ? 'bg-(--red) text-white' : 'bg-white/10'}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
+                            })}
+                        </div>
+                    </div> */}
+                    <div className="hidden xl:flex justify-between items-center rounded-full p-2 3xl:p-3 bg-[#08070A] text-white">
+                        <div className=" flex items-center justify-center space-x-2 3xl:space-x-4">
+                            {items.map((link) => {
+                                return (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        className={`p-2 1800:p-3 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-base bg-[#19181D]  hover:bg-orange transition-colors duration-200 
                                             `}
                                     // ${isActive ? 'bg-(--red) text-white' : 'bg-white/10'}
                                     >

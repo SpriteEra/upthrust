@@ -156,6 +156,7 @@ const BusinessCard = ({
         </div>
     );
 };
+
 const DashboardStacks = () => {
     return (
         <div className='xs:px-2 md:px-4 lg:px-0 max-lg:space-y-5 space-y-10 3xl:space-y-30'>

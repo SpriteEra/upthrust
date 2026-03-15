@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
-import LeadForm from './LeadForm';
 import Image from 'next/image';
+import LeadForm from '../LeadForm';
 
 // Testimonial Component
 

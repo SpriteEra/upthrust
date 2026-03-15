@@ -14,8 +14,8 @@ const DashboardStacks = dynamic(() => import('@/components/creative-ads/Dashboar
 const MetaDisclaimer = dynamic(() => import('@/components/creative-ads/MetaDisclaimer'));
 const UGCVideoCategories = dynamic(() => import('@/components/creative-ads/MetaUgcs'));
 const ProcessTimeline = dynamic(() => import('@/components/creative-ads/ProgressBar'));
-const ComparisonTable = dynamic(() => import('@/components/creative-ads/ProgressBar'));
-
+// const { ComparisonTable } = dynamic(() => import('@/components/home/ComparisonTable'));
+import { ComparisonTable } from '@/components/home/ComparisonTable';
 
 const FAQ = dynamic(() => import('@/components/home/Faq'));
 const HomeFooter = dynamic(() => import('@/components/home/HomeFooter'));

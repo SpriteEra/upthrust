@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CreativeRocketButton from './CreativeRocketButton';
+import RocketCTAButton from '@/common/RocketCTAButton';
 
 const navLinks = [
     {
@@ -399,7 +400,7 @@ const UGCVideoCategories = () => {
                     );
                 })}
             </motion.div>
-            {items.length > 8 && (
+            {/* {items.length > 8 && (
                 <div className="flex justify-center my-4">
                     <button
                         onClick={() => setShowAll(!showAll)}
@@ -408,6 +409,16 @@ const UGCVideoCategories = () => {
                         {showAll ? "View Less" : "View More"}
                     </button>
                 </div>
+            )} */}
+            {items.length > 8 && (
+                <div className="flex justify-center my-6">
+                    <button
+                        onClick={() => setShowAll(!showAll)}
+                    >
+                        <RocketCTAButton color='orange' text1={"Show"} text2={showAll ? "Less" : "More"} />
+                    </button>
+
+                </div>
             )}
 
             {displayItems.length === 0 && (
@@ -415,9 +426,9 @@ const UGCVideoCategories = () => {
                     No items found in this category.
                 </div>
             )}
-            <div className='flex items-center justify-center'>
+            {/* <div className='flex items-center justify-center'>
                 <CreativeRocketButton color='orange' />
-            </div>
+            </div> */}
         </div>
     );
 };
