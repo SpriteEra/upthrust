@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 // Case studies data
-const caseStudies = [
+const defaultCaseStudies = [
     {
         badge: "SaaS",
         title: "We Love No Code",
@@ -176,6 +176,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
         return () => observer.disconnect();
     }, []);
 
+
     return (
         <motion.div
             ref={cardRef}
@@ -194,7 +195,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 className="rounded-xl max-md:rounded-b-none md:rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 min-h-[500px] 3xl:min-h-[640px]">
+                <div className={`flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 ${data?.cardType === 2 ? "min-h-[500px] 3xl:min-h-[440px] " : "min-h-[500px] 3xl:min-h-[640px]"}  `}>
                     {/* Left Content Section */}
                     <div className="w-full lg:w-[50%]  flex flex-col justify-between p-3 md:pl-2 3xl:pl-3">
                         <div className='3xl:max-w-150 flex flex-col justify-between h-full'>
@@ -213,7 +214,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                 </motion.div>
 
                                 <motion.h2
-                                    className=" text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black"
+                                    className={` text-[30px] 3xl:text-[36px] font-semibold leading-[130%] tracking-[-0.02em] text-black ${data?.cardType === 2 ? "mb-1 md:mb-1 lg:mb-2 3xl:mb-3" : ""}`}
 
                                 >
                                     {data.title}
@@ -221,7 +222,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                                 <motion.p
 
-                                    className=" mb-6 md:mb-3 lg:mb-4 3xl:mb-26  text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black"
+                                    className={`${data?.cardType === 2 ? "mb-6 md:mb-3 lg:mb-2 3xl:mb-8" : "mb-6 md:mb-3 lg:mb-26 3xl:mb-5"} text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black`}
                                 >
                                     {data.description}
                                 </motion.p>
@@ -260,26 +261,35 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                                 <motion.div
 
-                                    className="flex items-center gap-4 p-3 md:p-5 rounded-lg max-sm:rounded-b-none md:rounded-xl"
+                                    className="flex items-center flex-col gap-2 p-3 md:p-5 rounded-lg max-sm:rounded-b-none md:rounded-xl"
                                     style={{ backgroundColor: data.accentColor }}
                                 >
-                                    <div className="w-15 h-15 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
-                                        {/* {data.testimonial.name.charAt(0)} */}
-                                        <Image
-                                            height={60}
-                                            width={60}
-                                            src={data.testimonial.avatar}
-                                            alt="Right Section Image"
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div>
-                                        <p className="text-white font-semibold text-xl md:text-lg 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
-                                            {data.testimonial.name}
+                                    {
+                                        data.testimonial?.whatsays &&
+                                        <p className="text-white text-xl md:text-base 3xl:text-xl leading-[150%] tracking-[-0.02em]">
+                                            {data.testimonial.whatsays}
                                         </p>
-                                        <p className="text-white text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em]">
-                                            {data.testimonial.role}
-                                        </p>
+                                    }
+                                    <div className='flex items-center w-full gap-4'>
+                                        <div className="w-15 h-15 rounded-full overflow-hidden bg-white/20 flex items-center justify-center text-white font-bold text-lg">
+                                            {/* {data.testimonial.name.charAt(0)} */}
+                                            <Image
+                                                height={60}
+                                                width={60}
+                                                src={data.testimonial.avatar}
+                                                alt="Right Section Image"
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div>
+                                            <p className="text-white font-semibold text-xl md:text-lg 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
+                                                {data.testimonial.name}
+                                            </p>
+                                            <p className="text-white text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em]">
+                                                {data.testimonial.role}
+                                            </p>
+                                        </div>
+
                                     </div>
                                 </motion.div>
                             </div>
@@ -304,7 +314,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 };
 
 // Main Component
-const CompaignCards = () => {
+const CompaignCards = ({ caseStudies = defaultCaseStudies }) => {
     return (
         <div className="min-h-screen py-16 lg:py-24">
             {/* Case Studies Stack */}

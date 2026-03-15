@@ -137,31 +137,29 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-
-const CommunicationScroll = () => {
+const defaultSectionData = [
+    {
+        title: 'Communication & Data',
+        description:
+            'One dashboard shows every metric that matters: CPA trends, Quality Score, conversion rates, budget pacing. Weekly calls with your account manager. Email anytime 24-hour response guaranteed, not "we\'ll get back to you."',
+        image: '/google-ads/comm1.webp',
+    },
+    {
+        title: 'Custom Reporting',
+        description:
+            "You'll stay up-to-date on campaign progress with weekly updates, bi-weekly calls, and monthly in-depth reports.",
+        image: '/google-ads/comm2.webp',
+    },
+    {
+        title: 'Creatives & More',
+        description:
+            'Ad creatives designed for Performance Max, YouTube, Display, and Demand Gen. We A/B test headlines, visuals, and CTAs to find what converts then scale the winners.',
+        image: '/google-ads/comm3.webp',
+    },
+];
+const CommunicationScroll = ({ sections = defaultSectionData }) => {
     const [activeSection, setActiveSection] = useState(0);
     const containerRef = useRef(null);
-
-    const sections = [
-        {
-            title: 'Communication & Data',
-            description:
-                'One dashboard shows every metric that matters: CPA trends, Quality Score, conversion rates, budget pacing. Weekly calls with your account manager. Email anytime 24-hour response guaranteed, not "we\'ll get back to you."',
-            image: '/google-ads/comm1.webp',
-        },
-        {
-            title: 'Custom Reporting',
-            description:
-                "You'll stay up-to-date on campaign progress with weekly updates, bi-weekly calls, and monthly in-depth reports.",
-            image: '/google-ads/comm2.webp',
-        },
-        {
-            title: 'Creatives & More',
-            description:
-                'Ad creatives designed for Performance Max, YouTube, Display, and Demand Gen. We A/B test headlines, visuals, and CTAs to find what converts then scale the winners.',
-            image: '/google-ads/comm3.webp',
-        },
-    ];
 
     useEffect(() => {
         // ❌ Disable scroll effect on mobile

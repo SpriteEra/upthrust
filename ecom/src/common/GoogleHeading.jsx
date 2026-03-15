@@ -20,18 +20,7 @@ const CommonHeading = ({
     return (
         <div className={`w-full max-sm:px-2  ${textAlign}`}>
             <Tag
-                className={`
-                    font-semibold 
-                    tracking-[-0.02em]
-                    2xl:tracking-[-0.04em] 
-                    leading-[130%]
-                    text-[36px] 
-                    lg:text-[48px] 
-                    xl:text-[60px] 
-                    3xl:text-[72px]
-                    capitalize
-                    ${className}
-                `}
+                className={`font-semibold tracking-[-0.02em] 2xl:tracking-[-0.04em] leading-[130%] text-[36px] lg:text-[48px] xl:text-[55px] 2xl:text-[60px] 1600:text-[65px] 1800:text-[72px] capitalize ${className}`}
             >
                 {heading.map((line, lineIndex) => (
                     // ✅ Inline on mobile, block on desktop
@@ -57,7 +46,7 @@ const CommonHeading = ({
                                         key={index}
                                         className={`
                                             inline-flex items-center gap-2
-                                            px-6 py-1.5 
+                                         px-5 1800:px-6 py-1 1800:py-1.5 
                                             rounded-full capitalize
                                             ${item.bgColor || ""}
                                             ${item.textColor || ""}
@@ -99,7 +88,7 @@ const CommonHeading = ({
             </Tag>
 
             {subtitle && (
-                <p className={`text-[22px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal ${subtitleCss}`}>
+                <p className={`text-[22px] px-1 md:px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal ${subtitleCss}`}>
                     {subtitle}
                 </p>
             )}

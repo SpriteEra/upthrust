@@ -1,6 +1,10 @@
+// import QuoteTestimonialCard from "./QuoteTestimonialCard";
+// import ShortTestimonialCard from "./ShortTestimonialCard";
+// import VideoTestimonialCard from "./VideoTestimonialCard";
+
+import VideoTestimonialCard from "../common/VideoTestimonialCard";
 import QuoteTestimonialCard from "./QuoteTestimonialCard";
 import ShortTestimonialCard from "./ShortTestimonialCard";
-import VideoTestimonialCard from "./VideoTestimonialCard";
 
 export default function ClientTestimonials() {
 
@@ -31,6 +35,9 @@ export default function ClientTestimonials() {
             },
             bgColor: "bg-[#FFB900]",
             textColor: "text-black",
+            textColor: "text-black",
+            textLarge: true,
+            isPaddngMore: true,
         },
         {
             id: 3,
@@ -45,7 +52,9 @@ export default function ClientTestimonials() {
             bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Gabriela-testimonial%20(1).mp4",
-            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 top-15  2xl:top-12 size-20 2xl:size-26 3xl:size-32 "
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 2xl:-right-19 1600:-right-12 1800:-right-20 top-15 xl:top-10 3xl:top-12 size-19 2xl:size-26 1600:size-26 1800:size-32 ",
+            hasHighlight: true,
+            highlightCss: 'absolute -bottom-2 w-45 h-2 left-1 3xl:left-7'
         },
 
         {
@@ -61,7 +70,9 @@ export default function ClientTestimonials() {
             bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
-            arrowcss: "absolute -right-4 sm:-right-6 2xl:-right-17 top-8 2xl:top-6 size-20 2xl:size-26 3xl:size-32"
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 1600:-right-16 1800:-right-20 top-6 2xl:top-4 3xl:top-5 size-20 2xl:size-26 1800:size-28 ",
+            hasHighlight: true,
+            highlightCss: 'absolute top-19 3xl:top-22 w-45 h-2 left-7'
         },
         {
             id: 5,
@@ -84,7 +95,9 @@ export default function ClientTestimonials() {
             avatar: "👤",
             avatar: "/google-ads/review/img6.webp",
             bgColor: "bg-[#00822E]",
-            textColor: "text-white"
+            textColor: "text-white",
+            textLarge: true,
+            isPaddngMore: false,
         },
         {
             id: 7,
@@ -100,7 +113,9 @@ export default function ClientTestimonials() {
             position: "Marketing Head at - Mukunda Foods",
             hasAvatar: true,
             bgColor: "bg-[#FFB900]",
-            textColor: "text-black"
+            textColor: "text-black",
+            textLarge: false,
+            isPaddngMore: true,
         },
         {
             id: 8,
@@ -115,7 +130,9 @@ export default function ClientTestimonials() {
             bgColor: "bg-[#0076F0]",
             textColor: "text-white",
             video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Rescribe%20Video.MP4",
-            arrowcss: "absolute right-4 lg:-right-7 top-16 lg:top-14 2xl:top-12 3xl:top-8 size-20 2xl:size-26 3xl:size-32 -rotate-10"
+            arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-6 xl:-right-4 1600:-right-3 1800:-right-5 top-15 xl:top-8 1600:top-9 1800:top-12 size-20 2xl:size-26  1800:size-28 ",
+            hasHighlight: true,
+            highlightCss: 'absolute top-19 3xl:top-22 w-45 h-2 right-16'
 
         },
         {

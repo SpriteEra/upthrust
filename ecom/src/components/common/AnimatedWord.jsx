@@ -1,45 +1,76 @@
 'use client';
+
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const AnimatedWord = ({
-  words,
+  words = [],
+  images = [],
   interval = 2000,
   className = '',
-  textCss = '', // 👈 custom text css prop
+  textCss = '',
 }) => {
-  const [currentWord, setCurrentWord] = useState(0);
+  const items = words.length ? words : images;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!items.length) return;
+
     const timer = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
+      setCurrentIndex((prev) => (prev + 1) % items.length);
     }, interval);
 
     return () => clearInterval(timer);
-  }, [words.length, interval]);
+  }, [items.length, interval]);
 
-  // ✅ Default text styles (the ones written for text)
   const defaultTextCss = 'font-bold';
+
+  console.log(textCss)
+  const renderItem = (item) => {
+    // image mode
+    if (item.src) {
+      return (
+        <div className="w-full h-full flex items-center justify-center">
+          <Image
+            src={item.src}
+            alt={item.alt || 'animated-image'}
+            width={100}
+            height={100}
+            className="w-full h-full object-contain"
+          />
+        </div>
+      );
+    }
+
+    // text mode
+    return (
+      <span style={{ color: item.color }}>
+        {item.text}
+      </span>
+    );
+  };
+
+  if (!items.length) return null;
 
   return (
     <span
       className={`inline-block relative overflow-hidden align-bottom ${className}`}
     >
-      {/* Current Word */}
+      {/* Current */}
       <span
-        key={`current-${currentWord}`}
-        className={`absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideOut ${defaultTextCss} ${textCss}`}
-        style={{ color: words[currentWord].color }}
+        key={`current-${currentIndex}`}
+        className={`absolute left-0 bottom-0 w-full h-full flex items-center justify-center whitespace-nowrap animate-slideOut ${defaultTextCss} ${textCss}`}
       >
-        {words[currentWord].text}
+        {renderItem(items[currentIndex])}
       </span>
 
-      {/* Next Word */}
+      {/* Next */}
       <span
-        key={`next-${currentWord}`}
-        className={`absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideIn ${defaultTextCss} ${textCss}`}
-        style={{ color: words[(currentWord + 1) % words.length].color }}
+        key={`next-${currentIndex}`}
+        className={`absolute left-0 bottom-0 w-full h-full flex items-center justify-center whitespace-nowrap animate-slideIn ${defaultTextCss} ${textCss}`}
       >
-        {words[(currentWord + 1) % words.length].text}
+        {renderItem(items[(currentIndex + 1) % items.length])}
       </span>
     </span>
   );
