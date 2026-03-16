@@ -7,60 +7,64 @@ export default function SeoFaq() {
 
     const faqs = [
         {
-            question: "Do I own every ad and video, even if I leave?",
-            answer: "Absolutely (and thank you for the compliment). All the data, images, words, videos, jingles. Anything we put together to meet your goals is yours to keep. Whether you stay with us or move on to work with someone else."
+            question: "What is SEO and why does a B2B SaaS company need it?",
+            answer:
+                "SEO is the practice of getting your product seen in organic search — on Google, Bing, and now AI platforms like ChatGPT and Perplexity — by the right buyers at exactly the right moment. For B2B SaaS it is not about traffic. It is about becoming the trusted answer in your niche, driving demo requests, signups, and lowering your CAC over time. Upthrust builds SEO that feeds pipeline — not vanity metrics."
         },
         {
-            question: "How often will you send updates of our PPC campaigns?",
-            answer: "Our PPC agency have reporting tools and structures to match your needs. Check as often as you like with our custom dashboard. Or let us send regular reports with all the most important information."
+            question: "Will SEO actually generate demos and MQLs for my SaaS product?",
+            answer:
+                "Yes — when done correctly. Traditional SEO chases rankings. Upthrust optimises your content to rank on Google, get cited by ChatGPT, and appear in Perplexity AI answers — so you capture buyers at every stage of their research journey, including the late-night ChatGPT session when they are comparing you to three competitors. Our B2B SaaS clients typically see qualified demo requests within 90 days of launch."
         },
         {
-            question: "Does Google advertising work for my niche?",
-            answer: "Our Google Ads Agency have extensive experience in various industries. If you’re in SaaS, lead generation, eCommerce, or pretty much anything else, we can almost certainly help. Just check out the published case studies above (we have over 200) for more info."
+            question: "How is Upthrust different from other SEO agencies?",
+            answer:
+                "Three things set us apart. First, we optimise for six AI platforms — not just Google. Second, we measure success in demos booked and pipeline generated, not just rankings or traffic. Third, we give you real-time AI citation monitoring so you can see exactly when ChatGPT, Claude, or Perplexity recommends your brand — and track it improving month over month."
         },
         {
-            question: "How do I choose a Google Ads agency?",
-            answer: "When you need help finding a Google Ads agency (formerly Adwords agency) there are several important considerations to make. First, keep in mind that Google Ads is a well-established, and competitive, marketing channel within digital advertising. There are so many agencies to choose from that many have specialized in specific industries. Find a relevant digital marketing agency that has a strong track record of consistent wins and search campaign case studies within your industry, no need to go in-house, trust us. Also, be sure to ask for recent references. Take advantage of the Google Partners program that has vetted the best agencies in order to vouch for its members."
+            question: "What is included in Upthrust's SEO services?",
+            answer:
+                "Technical SEO setup including AI crawler access (GPTBot, ClaudeBot, PerplexityBot), full schema implementation (FAQPage, HowTo, Article, Organisation), extraction-optimised content strategy, AI citation monitoring, a custom performance dashboard, monthly pipeline-focused reports, weekly account manager calls, and a 24-hour email response guarantee."
         },
         {
-            question: "How does Google Ads work?",
-            answer: "Google Ads, formerly known as Google Adwords, is a popular Pay-per-click (PPC) online advertising method.\n When you advertise with Google Ads, you attempt to show your ad in Google’s search engine (particularly to your target audiences). It is known as PPC because you pay for each visit to your website. The cost of each click depends on two important elements: how competitive the keyword is (we do the keyword research for you) and how relevant your landing page design is to the search query.\nWhen you write good ads that lead to a quality website, the cost-per-click (CPC), as well as an auction bid, costs less. You can manage the amount you want to spend on a daily, weekly, monthly, or lifetime basis. \nCreating an efficient Google Ads program can have a significant impact on business growth as users continue to go to Google to answer their questions. Google Ads has strong integration with Google Analytics and the rest of Google’s suite of tools."
+            question: "What does onboarding look like — can we start now?",
+            answer:
+                "Yes. Onboarding takes two weeks. Week 1: full technical audit, AI crawler access review, competitor gap analysis across all six platforms. Week 2: schema deployment, content audit, and quick-win implementation. Your first ChatGPT and Perplexity citations typically appear within 30 days of launch. Full AI visibility usually follows within 90 days."
         },
         {
-            question: "Do I have to sign a long-term contract?",
-            answer: "We’re not a baseball team trying to lock you into a long-term contract. But when it makes sense (like when we’re working on really big goals), we’ll ask for a larger commitment. Because it protects us both. When you do your free consultation we can talk through the details."
+            question: "How long will it take for SEO to start showing results?",
+            answer:
+                "First ChatGPT and Perplexity citations: 30 days. Initial ranking improvements on Google: 60–90 days. Measurable demo and MQL impact: 90–120 days. Full SEO compounding — where organic becomes your lowest-CAC channel: 6–12 months. We report on all of these milestones monthly so you always know exactly where you stand."
         },
         {
-            question: "What is your fee structure? Is it based on ad spend?",
-            answer: "We use a few different pricing models to make sure you’re getting the most out of our services. And to make sure that we can still feed our staff. Turns out, they like to eat."
+            question: "How much does SEO cost and what pricing models do you offer?",
+            answer:
+                "Pricing is scoped to your goals, competitive landscape, and company size. We work with early-stage SaaS founders through to enterprise CMOs. Book a free 30-minute strategy call and we will give you a custom quote with a clear 120-day roadmap — no obligation."
         },
         {
-            question: "How does Upthrust produce great result with Google Ads?",
-            answer: "With Upthrust, there are no templates or cookie cutter plans, every single client gets their own campaign strategy customized to their business based on many points of research and planning whether their goal is to generate leads or generate sales. We take into account the target audience, relevant keywords, geographic locations, and more when crafting this approach to tailor each campaign for the business. We are also continually testing new strategies and are on the lookout for new experiments to consistently improve and innovate."
+            question: "How is SEO different from SEM (paid search)? Do I need both?",
+            answer:
+                "SEM buys immediate placement in search results. SEO earns it over time — and compounds. SEO typically delivers 3–5x better ROI over a 12-month period. Most growth-stage B2B SaaS companies benefit from running both: SEM for immediate demos while SEO builds and compounds in the background. We specialise in SEO but can advise on a combined strategy."
         },
         {
-            question: "How can I measure the performance of my Google Ads campaign? ",
-            answer: "Google has enhanced reporting for its ad campaigns, which gives advertisers the ability to see the leads and overall revenue generated from their ad spend. Upthrust uses these tools to understand which campaigns are generating the highest return on ad spend for their client’s campaigns with the end goal of optimizing campaigns to produce the highest ROI. Upthrust also harnesses the power of Offline Conversions to show and optimize for sales that happen after the initial click for client’s with longer sales cycles."
+            question: "Can you help us rank in AI tools like ChatGPT and Perplexity?",
+            answer:
+                "Yes — it is our core differentiator. We configure your site for AI crawlers, structure content so AI engines can extract and cite it, and deploy schema markup that increases citation rates by up to 28%. We then monitor citation frequency across ChatGPT, Claude, Perplexity, Google AI Overview, and Gemini every month — so you can see the progress."
         },
         {
-            question: "What are the latest updates in Google Ads?",
-            answer: "Google has introduced multiple AI-powered features to enhance its advertising platform. Key updates include Performance Max (PMax), which leverages AI to dynamically optimize ad performance across various Google channels. Another major update is the integration of Demand Gen campaigns, designed to reach users through visually immersive formats like YouTube and non-search channels. Upthrust continues to be a leader in the industry by continually testing out these new updates and finding the best avenues to deploy them for their clients."
+            question: "Do you only focus on traffic, or on actual revenue impact?",
+            answer:
+                "Revenue impact only. Every report we produce is tied to commercial targets: demos booked, MQL conversion rate, pipeline influenced, and cost per acquisition. We deliberately avoid reporting on impressions, session duration, or other vanity metrics unless you specifically ask."
         },
         {
-            question: "What ad formats & placement are available?",
-            answer: "Google has expanded ad placements significantly in recent years but many placements have been consistent over the years. This includes Google Search, Google Shopping, the Google Display Network, Gmail, Google Maps and Youtube amongst others. In addition to these, shopping ads can now appear in Google Lens and Circle to Search, offering a more visual search experience. In addition, Search and Shopping ads can show up in the new AI Overviews, appearing in the U.S. as “sponsored” sections when relevant to user queries. For video content, advertisers can now include short-form product videos and animated image ads, which is highly effective for Youtube Shorts."
+            question: "What link-building strategies do you use for B2B SaaS?",
+            answer:
+                "We focus on authority-building that your buyers and Google both respect: digital PR, thought leadership placements, partner ecosystem content, and resource-based link acquisition. No link farms, no guest post mills, no paid placements. Every link is earned from publications your buyers actually read — and that AI platforms trust as citation sources."
         },
         {
-            question: "Can I add new services throughout our partnership?",
-            answer: "Of course! Want to add social media marketing services? We got you. Interested in leveling up your email marketing program? It’s a good thing we’re an email agency, too (and we have the insight on the types of email marketing in the digital world). We’re here to help you level up your marketing and reach your target audiences from every channel."
-        },
-        {
-            question: "Do you prefer to create new accounts or use the ones I already have?",
-            answer: "We leave that up to you. But, given the choice, we like to stick with the accounts you have open already."
-        },
-        {
-            question: "What about extra fees?",
-            answer: "No thanks. We get paid really well because we deliver amazing results. Not because we squeeze every penny out of our clients."
+            question: "Do you work with startups and enterprise SaaS companies?",
+            answer:
+                "Both. We have worked with pre-Series A founders building their first organic channel from zero, and with CMOs at 500-person companies looking to move beyond paid acquisition dependency. Our approach, reporting, and engagement model scales to fit your team and growth stage."
         }
     ];
 

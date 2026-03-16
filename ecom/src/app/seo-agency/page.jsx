@@ -223,28 +223,28 @@ const brandsLogo = [
     { id: 1, src: "/brands/brand-black/biba.webp", alt: "", customCss: "h-6 md:h-7 3xl:h-10 w-full" },
 ]
 export const metadata = {
-    title: "Google Ads Agency for Predictable Growth | Upthrust",
+    title: "SEO Agency That Gets You Found Everywhere | Upthrust",
 
-    description: "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+    description: "SEO agency helping brands get discovered across Google, AI search and modern discovery channels through structured content systems.",
 
     keywords: [
-        "Google Ads Agency",
+        "SEO Agency",
     ],
 
     metadataBase: new URL("https://www.upthrust.agency"),
 
     alternates: {
-        canonical: "/",
+        canonical: "upthrust.agency/seo-agency",
     },
 
     openGraph: {
-        title: "Google Ads Agency That Scales Profitably",
-        description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+        title: "SEO Agency That Gets You Found Everywhere",
+        description: "Build content systems that rank on Google and appear in AI answers across ChatGPT, Claude and Perplexity.",
         url: "https://www.upthrust.agency",
         siteName: "Upthrust",
         images: [
             {
-                url: "/google-ads/ogimg.png",
+                // url: "/google-ads/ogimg.png",
                 width: 1200,
                 height: 630,
                 alt: "Upthrust – D2C Ecommerce Marketing Agency",
@@ -433,7 +433,7 @@ const page = () => {
                             value: "Businesses",
                             bgColor: "bg-[#C8EBD6]",
                             textColor: "text-[#00822E]",
-                            icon: "/google-ads/icons/new.webp",
+                            icon: "/google-ads/icons/paid2.webp",
                         },
                         { type: "text", value: " That Grow." },]
 
