@@ -35,7 +35,7 @@ export default function CardDesign() {
     ];
 
     return (
-        <section className="max-w-6xl mx-auto py-16">
+        <section className="max-w-[90%] mx-auto py-16">
             <div className="grid grid-cols-1 md:grid-cols-3">
 
                 {features.map((item, index) => (
@@ -63,7 +63,7 @@ export default function CardDesign() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-black text-lg leading-[150%] tracking-[-0.02em]  font-normal">
+                        <p className="text-black max-w-sm text-lg leading-[150%] tracking-[-0.02em]  font-normal">
                             {item.desc}
                         </p>
                     </div>

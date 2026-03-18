@@ -2,28 +2,29 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import PerfromanceHeading from "@/common/PerformanceHeading";
 
 /* ── testimonial data ─────────────────────────────────────────── */
 const col1 = [
     {
         name: "Troy",
         handle: "MC.Overalls",
-        avatar: "/testimonials/troy.jpg",
-        brand: null,
+        avatar: "/performance-agency/logos/1.png",
+        brand: "/performance-agency/logos/logo1.png",
         text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
     },
     {
         name: "Rishabh Jain",
         handle: "Carrtio",
-        avatar: "/testimonials/rishabh.jpg",
-        brand: "carrtio",
+        avatar: "/performance-agency/logos/2.png",
+        brand: "/performance-agency/logos/logo2.png",
         text: "In 6 months we grew organic traffic 463%. Ad expenses doing better than ever. Conversion rates improved 3x. All thanks to Upthrust.",
     },
     {
         name: "Gunjan",
         handle: "Roaar",
-        avatar: "/testimonials/gunjan.jpg",
-        brand: "roaar",
+        avatar: "/performance-agency/logos/3.png",
+        brand: "/performance-agency/logos/logo3.png",
         text: "Most leads we couldn't convert. Upthrust changed that completely. Now we close 3x more deals every month.",
     },
 ];
@@ -32,22 +33,22 @@ const col2 = [
     {
         name: "Giordas",
         handle: "Marketing Manager, Vega",
-        avatar: "/testimonials/giordas.jpg",
-        brand: "VEGA",
+        avatar: "/performance-agency/logos/4.png",
+        brand: "/performance-agency/logos/logo4.png",
         text: "45–50 qualified leads per month on a limited budget. For a B2B company, that's fantastic. Real game-changer.",
     },
     {
         name: "Vaibhav Vashpat",
         handle: "Co-Founder, Zocially",
-        avatar: "/testimonials/vaibhav.jpg",
-        brand: "zocially",
+        avatar: "/performance-agency/logos/5.png",
+        brand: "/performance-agency/logos/logo5.png",
         text: "From zero marketing experience to hitting benchmarks. Regular calls kept the ball rolling. Never felt left in the dark.",
     },
     {
         name: "N. Dubey",
         handle: "Marketing Head, Marqutte India",
-        avatar: "/testimonials/ndubey.jpg",
-        brand: null,
+        avatar: "/performance-agency/logos/6.png",
+        brand: "/performance-agency/logos/logo6.png",
         text: "SEM, Google Ads, budget allocation — Upthrust's plan was clear from day one. Results followed within weeks.",
     },
 ];
@@ -56,30 +57,25 @@ const col2 = [
 function TestimonialCard({ item }) {
     return (
         <div
-            className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex-shrink-0"
-            style={{ width: 260, minWidth: 260 }}
+            className="bg-[#F7F4F040] rounded-xl p-5  shadow-sm border border-gray-100 flex-shrink-0 h-[300px] w-[290px] 3xl:h-[350px] 3xl:w-[343px] "
         >
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                    {/* avatar placeholder — replace src with item.avatar */}
                     <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
-                        {/* <Image src={item.avatar} alt={item.name} width={32} height={32} className="object-cover w-full h-full" /> */}
-                        <div className="w-full h-full flex items-center justify-center text-xs font-bold text-gray-500">
-                            {item.name[0]}
-                        </div>
+                        <Image src={item.avatar} alt={item.name} width={32} height={32} className="object-cover w-full h-full" />
+
                     </div>
                     <div>
-                        <p className="text-[12px] font-semibold text-gray-900 leading-tight">{item.name}</p>
-                        <p className="text-[10px] text-gray-400 leading-tight">{item.handle}</p>
+                        <p className="text-[16px] font-normal leading-[150%] tracking-[-0.02em] text-black">{item.name}</p>
+                        <p className="text-[14px] font-normal leading-[150%] tracking-[-0.02em] text-black">{item.handle}</p>
                     </div>
                 </div>
                 {item.brand && (
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-gray-700 border border-gray-200 rounded px-1.5 py-0.5">
-                        {item.brand}
-                    </span>
+                    <Image src={item.brand} alt={item.brand} width={100} height={20} className="text-[10px] font-bold uppercase tracking-widest  rounded px-1.5 py-0.5" />
+
                 )}
             </div>
-            <p className="text-[12px] text-gray-600 leading-relaxed">{item.text}</p>
+            <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] ">{item.text}</p>
         </div>
     );
 }
@@ -111,7 +107,7 @@ function VerticalColumn({ data, direction = 1 }) {
     const repeated = [...data, ...data, ...data, ...data];
 
     return (
-        <div className="overflow-hidden flex-shrink-0" style={{ width: 260, height: 520 }}>
+        <div className="overflow-hidden flex-shrink-0 w-[290px] 3xl:w-[343px] h-screen 3xl:h-screen ">
             <div
                 className="flex flex-col pointer-events-none select-none"
                 style={{
@@ -172,43 +168,69 @@ function HorizontalRow({ data, direction = -1 }) {
     );
 }
 
-/* ── main section ────────────────────────────────────────────── */
 export default function Testimonials() {
     return (
-        <section className="bg-white w-full overflow-hidden py-16 px-6 md:px-12">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12">
+        <section className="bg-white w-full overflow-hidden  relative  min-h-screen flex justify-center items-center ">
 
-                {/* ── left: heading ──────────────────────────────────── */}
-                <div className="flex-shrink-0 md:w-[340px] pt-2">
-                    <span className="text-5xl font-serif text-gray-900 leading-none select-none">"</span>
-                    <h2 className="text-4xl font-bold text-gray-900 leading-tight mt-1">
-                        Finally. An{" "}
-                        <em className="font-serif font-normal italic">Agency</em>
-                        <br />
-                        Who Owns Real
-                        <br />
-                        Growth.
-                    </h2>
+            {/*  Background Image */}
+            <div className="absolute top-30 inset-0 z-10">
+                <Image
+                    src="/performance-agency/bg-diagonal.png"
+                    alt="background"
+                    fill
+                    priority
+                    className="object-cover"
+                />
+            </div>
+
+            {/*  Main Content */}
+            <div className="flex flex-col md:flex-row items-start gap-12 3xl:gap-30 relative z-10">
+
+                {/* ── Left: Heading */}
+                <div className=" w-[50%] pt-2 relative">
+                    <span className="absolute top-8 -left-25">
+                        <svg
+                            width="76"
+                            height="62"
+                            viewBox="0 0 76 62"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M75.6 61.2794H41.779V27.7946L59.6126 3.96843e-06L70.4473 4.99757e-06L59.8394 26.2627H75.6V61.2794ZM33.821 61.2794H0L2.69424e-06 27.7946L17.8337 0L28.6684 1.02914e-06L18.0605 26.2627H33.821V61.2794Z"
+                                fill="black"
+                            />
+                        </svg>
+                    </span>
+
+                    <PerfromanceHeading
+                        tag="h2"
+                        align="left"
+                        heading={[
+                            {
+                                line: [
+                                    { type: "normal", text: "Finally.An " },
+                                    { type: "italic", text: "Agency" },
+                                ],
+                            },
+                            {
+                                line: [{ type: "normal", text: "who owns real " }],
+                            },
+                            {
+                                line: [{ type: "normal", text: "growth" }],
+                            },
+                        ]}
+                        subtitle=""
+                    />
                 </div>
 
-
-                {/* Desktop: two vertical columns side by side */}
-                <div className="relative flex gap-4">
-
-                    {/* Background Image */}
-                    <Image
-                        src="/performance-agency/bg-diagonal.png"
-                        alt=""
-                        fill
-                        className="object-cover opacity-10 pointer-events-none absolute inset-0"
-                    />
-
+                {/* ── Desktop Columns */}
+                <div className="hidden md:flex gap-4 h-screen">
                     <VerticalColumn data={col1} direction={1} />
                     <VerticalColumn data={col2} direction={1} />
-
                 </div>
 
-                {/* Mobile: two horizontal rows stacked */}
+                {/* ── Mobile Rows */}
                 <div className="flex md:hidden flex-col gap-4 w-full -mx-6 px-0">
                     <HorizontalRow data={col1} direction={-1} />
                     <HorizontalRow data={col2} direction={1} />

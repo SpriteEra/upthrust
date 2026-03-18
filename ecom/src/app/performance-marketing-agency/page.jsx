@@ -97,7 +97,7 @@ const page = () => {
             <ProfileSection />
             <AuditHero />
             <ProductSlideDetail />
-            <div>
+            <div className="py-16 3xl:py-20">
                 <Testimonials />
             </div>
             <div>

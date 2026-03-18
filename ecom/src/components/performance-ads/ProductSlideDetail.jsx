@@ -20,7 +20,7 @@ const ProductSlideDetail = () => {
       {/* Right Dynamic Content */}
       <div className="w-1/2">
 
-        <div className="h-[675px] w-[674px] bg-[#f6f6f6] border border-gray-300 rounded-lg p-10">
+        <div className="max-h-[675px] max-w-[674px] bg-[#f6f6f6] border border-gray-300 rounded-lg p-10">
 
           <h1 className="text-[48px] font-semibold mb-8">
             {data.title}

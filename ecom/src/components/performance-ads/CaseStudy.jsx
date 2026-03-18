@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-// import { cards } from "../data/CaseStudyData";
 import { cards } from "./CaseStudyData";
+import Image from "next/image";
 
 const CaseStudy = ({ index, setIndex }) => {
 
@@ -37,7 +37,7 @@ const CaseStudy = ({ index, setIndex }) => {
         prevSlide();
       }
 
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval);
 
@@ -49,10 +49,10 @@ const CaseStudy = ({ index, setIndex }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setDirection(null)}
     >
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <div className="max-w-[90%] 3xl:max-w-[85%] mx-auto flex flex-col items-center">
 
         {/* Slider */}
-        <div className="relative w-[800px] h-[450px] flex items-center justify-center">
+        <div className="relative w-[600px] h-[350px] 3xl:w-[800px] 3xl:h-[450px] flex items-center justify-center ">
 
           {cards.map((card, i) => {
 
@@ -80,16 +80,16 @@ const CaseStudy = ({ index, setIndex }) => {
             return (
               <div
                 key={i}
-                className={`absolute w-[320px] bg-white border border-black p-4 transition-all duration-700 ${style}`}
+                className={`absolute w-[320px] 3xl:w-[460px] max-h-[670px]  bg-white border border-black px-4 py-8 transition-all duration-700 ${style}`}
               >
 
-                <img src={card.img} className="w-full" />
+                <Image width={420} height={400} src={card.img} alt="images" className="w-full h-full object-cover" />
 
-                <p className="text-[14px] mt-3">
+                <p className="text-[14px] mt-3 leading-[150%] tracking-[-0.02em] ">
                   {card.category}
                 </p>
 
-                <h3 className="text-[30px] font-semibold mt-1">
+                <h3 className="text-[30px] font-semibold mt-1 leading-[150%] tracking-[-0.02em]">
                   {card.title}
                 </h3>
 
@@ -108,7 +108,7 @@ const CaseStudy = ({ index, setIndex }) => {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-6 mt-16">
+        <div className="flex items-center gap-6 mt-16 3xl:mt-35">
 
           <button onClick={prevSlide}>
             <FaAngleLeft size={25} />

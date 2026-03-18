@@ -47,21 +47,19 @@ export default function AdReview() {
 
 
                 {/* Bottom Black Card */}
-                <div className="mt-16 bg-black text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-10">
+                <div className="mt-16 bg-black text-white p-8 md:p-10 flex flex-col md:flex-row md:justify-between gap-10">
 
                     {/* Left Content */}
                     <div>
-                        <h3 className="text-lg font-semibold">
+                        <h3 className="text-4xl leading-[130%] tracking-[-0.02em] font-semibold">
                             For High-Volume Brands
                         </h3>
-
-                        <p className="text-gray-300 text-sm mt-1 max-w-md">
-                            Dedicated teams, custom reporting, and performance
-                            guarantees — for brands spending ₹10L+/month.
+                        <p className="text-white text-lg leading-[150%] tracking-[-0.02em] mt-1 max-w-md">
+                            Dedicated teams, custom reporting, and performance guarantees — for brands spending ₹10L+/month.
                         </p>
 
                         {/* Bullet Points */}
-                        <div className="max-sm:hidden grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mt-6 text-sm text-gray-200">
+                        <div className="max-sm:hidden grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mt-6 text-[20px] leading-[150%] tracking-[-0.02em] text-white">
                             <p>• Dedicated account manager</p>
                             <p>• Multi-channel coordination</p>
                             <p>• Custom attribution setup</p>
@@ -71,13 +69,13 @@ export default function AdReview() {
 
 
                     {/* Right Side */}
-                    <div className="flex flex-col items-start md:items-end gap-4">
+                    <div className="flex flex-col items-start md:items-end md:justify-end gap-4">
 
-                        <p className="text-gray-300 text-sm">
+                        <p className="text-[30px] leading-[150%] tracking-[-0.02em]">
                             Custom scope
                         </p>
 
-                        <button className="bg-white text-black px-6 py-3 flex items-center gap-3 text-sm hover:bg-gray-200 transition">
+                        <button className="bg-white text-black px-10 py-3 flex items-center gap-3 text-[19px] hover:bg-orange transition">
                             <ArrowRight size={16} />
                             BOOK A CALL
                         </button>
