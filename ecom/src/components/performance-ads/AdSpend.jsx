@@ -13,32 +13,29 @@ const stats = [
 
 export default function AdSpend() {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { amount: 0.3, once: false });
+    const isInView = useInView(sectionRef, { amount: 0.7, once: false });
 
     return (
         <section
             ref={sectionRef}
             className="w-full bg-white overflow-hidden"
         >
-            <div className="max-w-[90%] mx-auto px-8 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+            <div className="max-w-[90%] mx-auto px-8 py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
 
-                {/* ── LEFT: Text + CTA ── */}
-                <div className="flex-shrink-0 w-full lg:w-[420px] xl:w-[460px]">
+                <div className="flex-shrink-0 w-full lg:w-[420px] xl:w-[460px] 2xl:w-[500px] 3xl:w-[600px] ">
                     <motion.h2
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-4xl md:text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-black mb-6"
+                        className="text-[42px] md:text-5xl lg:text-[60px] 3xl:text-[73px] 1800:text-[80px] font-semibold leading-[120%] tracking-[-0.02em] text-black mb-6"
                     >
-                        <em className="italic font-normal">Ad Spend</em> That<br />
+                        <em className="italic font-normal font-instrument">Ad Spend</em> That<br />
                         Performs
                     </motion.h2>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+
                         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                        className="text-sm text-black/60 leading-relaxed mb-5 max-w-[340px]"
+                        className="text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] text-black  mb-5  "
                     >
                         In a market where agencies get paid whether you profit
                         or not, we believe performance marketing should mean
@@ -48,29 +45,26 @@ export default function AdSpend() {
                     </motion.p>
 
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+
                         transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
-                        className="text-sm text-black/60 leading-relaxed mb-10 max-w-[340px]"
+                        className="text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] text-black mb-10 "
                     >
                         We are a performance marketing agency built entirely
                         around one metric: yours.
                     </motion.p>
 
                     <motion.button
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+
                         transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
-                        className="border border-black text-black text-xs tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-black hover:text-white transition-colors duration-200"
+                        className="border border-black text-black text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200"
                     >
                         Get Ad Account Audit →
                     </motion.button>
                 </div>
 
-                {/* ── RIGHT: Concentric circles image ── */}
+
                 <div className="relative flex-1 flex items-center justify-end w-full">
 
-                    {/* Greyscale image — always visible, fades out when in view */}
                     <motion.div
                         className="absolute inset-0 flex items-center justify-end"
                         animate={isInView ? { opacity: 0 } : { opacity: 1 }}
@@ -114,7 +108,7 @@ export default function AdSpend() {
                                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12, ease: "easeOut" }}
                             >
                                 <span className="text-black/70">{stat.label}</span>
-                                <span className="bg-black/90 text-white rounded-full px-2 py-0.5 text-[11px] font-semibold">
+                                <span className="bg-orange text-white rounded-full px-2 py-0.5 text-[11px] font-semibold">
                                     {stat.value}
                                 </span>
                             </motion.div>

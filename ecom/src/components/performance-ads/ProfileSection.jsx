@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import React, { useState } from "react";
 
 const ProfileSection = () => {
@@ -46,46 +47,84 @@ const ProfileSection = () => {
   ];
 
   return (
-    <div className="w-full px-4 lg:px-10">
-      <div className="flex  justify-start lg:justify-center mt-10 gap-3 overflow-x-auto pb-2">
+    <div className=" max-w-[90%] mx-auto ">
+      <div className="relative flex w-full justify-start lg:justify-between mt-10  overflow-hidden">
+
         {profiles.map((item, index) => (
           <div
             key={index}
             onClick={() => setActive(index)}
-            className={`min-w-[140px] sm:min-w-[170px] lg:w-[200px] 
-            h-[45px] sm:h-[50px] lg:h-[55px]
-            flex items-center justify-center 
-            text-[14px] sm:text-[18px] lg:text-2xl
-            font-bold rounded cursor-pointer transition-all duration-300
-            ${active === index ? "bg-black text-white" : "opacity-40"}`}
+            className={`relative flex-1 
+      h-[45px] sm:h-[50px] lg:h-[55px]
+      flex items-center justify-center 
+      text-[14px] sm:text-[18px] lg:text-2xl
+      font-bold rounded cursor-pointer transition-all duration-300
+      border-r border-gray-300
+      ${active === index ? "bg-black text-white" : "opacity-40"}`}
           >
             {item.name}
+            {/* {
+              <img src={profiles.name} alt="" />
+            } */}
+
+            {/* TOP PLUS */}
+            {index !== profiles.length - 1 && (
+              <>
+                <div className="absolute right-0 top-0 -translate-y-1/2 translate-x-1/2 bg-white z-10">
+                  <Image
+                    src="/performance-agency/plus.png"
+                    alt="plus"
+                    width={9.5}
+                    height={9.5}
+                  />
+                </div>
+
+                {/* BOTTOM PLUS */}
+                <div className="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2 bg-white z-10">
+                  <Image
+                    src="/performance-agency/plus.png"
+                    alt="plus"
+                    width={9.5}
+                    height={9.5}
+                  />
+                </div>
+              </>
+            )}
           </div>
         ))}
 
+        {/* TOP BORDER */}
+        <div className="absolute top-0 left-0 w-full border-t border-gray-300"></div>
+
+        {/* BOTTOM BORDER */}
+        <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
+
       </div>
       {/* Profile Section */}
-      <div className="flex flex-col lg:flex-row items-center gap-8 mt-12 py-8">
+      <div className="flex flex-col lg:flex-row  gap-8 3xl:gap-12 mt-12  max-h-[521px]">
         {/* Image */}
-        <div className="w-full lg:w-1/2 flex justify-center">
-          <img
+        <div className="w-full lg:w-1/3 flex justify-center">
+          <Image
+            width={521}
+            height={521}
             src={profiles[active].img}
             alt="profile"
-            className=" w-[521px] object-cover"
+            className=" size-full 3xl:size-[521px] object-cover"
           />
         </div>
         {/* Text*/}
-        <div className="w-full font-[Inter] lg:w-1/2 flex flex-col justify-between">
+        <div className="w-full  lg:w-2/3 flex flex-col justify-between">
           <p className="
-          text-[36px]
+          text-[28px]
+          3xl:text-[36px]
           font-semibold leading-relaxed">
             {profiles[active].text}
           </p>
           <div className="mt-10  pt-6">
-            <p className="text-[30px]  font-[Inter] font-semibold">
+            <p className="text-[30px]   font-semibold">
               {profiles[active].person}
             </p>
-            <p className="text-[24px] font-[Inter] ">
+            <p className="text-[24px] ">
               {profiles[active].role}
             </p>
             <button className="mt-6 bg-black text-white px-5 py-3 text-[14px]  cursor-pointer">

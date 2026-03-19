@@ -188,13 +188,14 @@ export default function Testimonials() {
 
                 {/* ── Left: Heading */}
                 <div className=" w-[50%] pt-2 relative">
-                    <span className="absolute top-8 -left-25">
+                    <span className="absolute top-8 -left-20 3xl:-left-25">
                         <svg
                             width="76"
                             height="62"
                             viewBox="0 0 76 62"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            className="w-15 h-15 3xl:w-20 3xl:h-20"
                         >
                             <path
                                 d="M75.6 61.2794H41.779V27.7946L59.6126 3.96843e-06L70.4473 4.99757e-06L59.8394 26.2627H75.6V61.2794ZM33.821 61.2794H0L2.69424e-06 27.7946L17.8337 0L28.6684 1.02914e-06L18.0605 26.2627H33.821V61.2794Z"

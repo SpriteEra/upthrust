@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import { cards } from "./CaseStudyData";
 import Image from "next/image";
@@ -6,6 +6,7 @@ import Image from "next/image";
 const CaseStudy = ({ index, setIndex }) => {
 
   const [direction, setDirection] = useState(null);
+  const containerRef = useRef(null);
 
   const nextSlide = () =>
     setIndex((prev) => (prev + 1) % cards.length);
@@ -14,45 +15,73 @@ const CaseStudy = ({ index, setIndex }) => {
     setIndex((prev) => (prev - 1 + cards.length) % cards.length);
 
   // cursor direction detect
-  const handleMouseMove = (e) => {
-    const center = window.innerWidth / 2;
+  // const handleMouseMove = (e) => {
+  //   const center = window.innerWidth / 2;
 
-    if (e.clientX > center) {
+  //   if (e.clientX > center) {
+  //     setDirection("right");
+  //   } else {
+  //     setDirection("left");
+  //   }
+  // };
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+
+    const rect = containerRef.current.getBoundingClientRect();
+    const center = rect.left + rect.width / 2;
+
+    if (e.clientX > center && direction !== "right") {
       setDirection("right");
-    } else {
+    } else if (e.clientX < center && direction !== "left") {
       setDirection("left");
     }
   };
 
   // infinite move
-  useEffect(() => {
+  // useEffect(() => {
 
+  //   if (!direction) return;
+
+  //   const interval = setInterval(() => {
+
+  //     if (direction === "left") {
+  //       nextSlide();
+  //     } else {
+  //       prevSlide();
+  //     }
+
+  //   }, 2000);
+
+  //   return () => clearInterval(interval);
+
+  // }, [direction]);
+
+  useEffect(() => {
     if (!direction) return;
 
     const interval = setInterval(() => {
-
-      if (direction === "left") {
+      if (direction === "right") {
         nextSlide();
       } else {
         prevSlide();
       }
-
     }, 2000);
 
     return () => clearInterval(interval);
-
-  }, [direction]);
+  }, [direction, index]);
 
   return (
     <div
-      className="w-full py-20"
+      className="w-full h-[733px] overflow-hidden"
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setDirection(null)}
     >
-      <div className="max-w-[90%] 3xl:max-w-[85%] mx-auto flex flex-col items-center">
+      <div className=" flex flex-col items-center">
 
         {/* Slider */}
-        <div className="relative w-[600px] h-[350px] 3xl:w-[800px] 3xl:h-[450px] flex items-center justify-center ">
+        <div className="relative flex items-center justify-center h-[600px]">
 
           {cards.map((card, i) => {
 
@@ -80,10 +109,10 @@ const CaseStudy = ({ index, setIndex }) => {
             return (
               <div
                 key={i}
-                className={`absolute w-[320px] 3xl:w-[460px] max-h-[670px]  bg-white border border-black px-4 py-8 transition-all duration-700 ${style}`}
+                className={`absolute top-[60%] -translate-y-1/2 w-[320px] 3xl:w-[467px] bg-white border border-black px-5 py-7 transition-all duration-700 ${style}`}
               >
 
-                <Image width={420} height={400} src={card.img} alt="images" className="w-full h-full object-cover" />
+                <Image width={424} height={400} src={card.img} alt="images" className="w-full h-full max-h-[424px] max-w-[400px] object-cover" />
 
                 <p className="text-[14px] mt-3 leading-[150%] tracking-[-0.02em] ">
                   {card.category}
@@ -108,7 +137,7 @@ const CaseStudy = ({ index, setIndex }) => {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-6 mt-16 3xl:mt-35">
+        <div className="flex items-center gap-6 mt-20 3xl:mt-28 ">
 
           <button onClick={prevSlide}>
             <FaAngleLeft size={25} />

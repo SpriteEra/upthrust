@@ -92,11 +92,11 @@ export default function MarketingPanel() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center p-6">
-            <div className="w-full max-w-4xl flex flex-col md:flex-row  rounded-lg overflow-hidden">
+        <div className=" max-h-[775px] max-w-[90%] mx-auto bg-white flex items-center justify-center p-6">
+            <div className="w-full justify-between gap-10 3xl:gap-20 flex flex-col md:flex-row rounded-lg overflow-hidden">
 
                 {/* LEFT: your image */}
-                <div className="flex-shrink-0 w-full md:w-[400px] bg-gray-50 relative min-h-[300px] md:min-h-[460px] overflow-hidden">
+                <div className="shrink-0 w-full md:w-[400px] xl:w-[600px] 3xl:w-[834px] relative min-h-[300px] aspect-834/748 md:min-h-[460px]  xl:h-[550px] 3xl:h-[690px] 1800:h-[720px] overflow-hidden">
                     <div
                         className="absolute inset-0 transition-all duration-800 ease-in-out"
                         style={{
@@ -108,7 +108,7 @@ export default function MarketingPanel() {
                             src={PANELS[active].image}
                             alt={PANELS[active].label}
                             fill
-                            className="object-contain p-8"
+                            className="object-contain h-full w-full "
                         />
                         <div className="w-full h-full flex flex-col items-center justify-center gap-3 p-8">
                             <div className="w-full h-full rounded-md  flex flex-col items-center justify-center gap-2">
@@ -117,12 +117,12 @@ export default function MarketingPanel() {
                                     <path d="M14 34L21 22L27 30L32 24L40 34H14Z" fill="#d1d5db" />
                                     <circle cx="19" cy="17" r="3" fill="#d1d5db" />
                                 </svg>
-                                <p className="text-xs text-gray-400 text-center font-mono px-4">
+                                <p className="text-xs  text-center font-mono px-4">
                                     {PANELS[active].image}
                                 </p>
-                                <p className="text-[11px] text-gray-400 text-center px-4">
+                                <p className="text-[11px]  text-center px-4">
                                     Place your image at<br />
-                                    <code className="bg-gray-100 px-1 rounded text-[10px]">
+                                    <code className=" px-1 rounded text-[10px]">
                                         /public{PANELS[active].image}
                                     </code>
                                 </p>
@@ -131,7 +131,7 @@ export default function MarketingPanel() {
                     </div>
                 </div>
                 {/* ── RIGHT: accordion */}
-                <div className="flex-1 divide-y divide-gray-100">
+                <div className="flex-1 divide-y border bg-[#F5F5F5]  divide-gray-700 h-full  overflow-hidden max-w-[676px] ">
                     {PANELS.map((panel, i) => {
                         const isOpen = i === active;
                         return (
@@ -146,61 +146,63 @@ export default function MarketingPanel() {
                                 {/* header */}
                                 <div className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors duration-150">
                                     <span
-                                        className="text-[13px] font-semibold transition-colors duration-200"
+                                        className="text-[30px] tracking-[-0.02em] leading-[150%]  font-semibold transition-colors duration-200"
                                         style={{ color: isOpen ? "#111827" : "#9ca3af" }}
                                     >
                                         {panel.label}
                                     </span>
                                     <span
-                                        className="text-xl font-light text-gray-400 leading-none select-none transition-transform duration-300"
-                                        style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                                        className="text-xl font-light text-black leading-none select-none transition-transform duration-300"
+
                                     >
-                                        +
+                                        {isOpen ? "-" : "+"}
                                     </span>
                                 </div>
 
                                 {/* body */}
-                                <div
-                                    className="overflow-hidden transition-all duration-800 ease-in-out"
-                                    style={{
-                                        maxHeight: isOpen ? 380 : 0,
-                                        opacity: isOpen ? 1 : 0,
-                                    }}
-                                >
-                                    <div className="px-6 pb-6 pt-0">
-                                        <p className="text-[12px] text-gray-400 mb-4 leading-relaxed">
-                                            {panel.tagline}
-                                        </p>
+                                <div className="relative">
+                                    <div
+                                        className={`transition-all duration-500 ${isOpen ? "opacity-100 relative" : "opacity-0 absolute inset-0 pointer-events-none"
+                                            }`}
+                                    >
+                                        <div className="px-6 pb-6 pt-0">
+                                            <p className="text-[18px] tracking-[-0.02em] leading-[150%]  mb-4 ">
+                                                {panel.tagline}
+                                            </p>
 
-                                        <ul className="space-y-[10px] mb-5">
-                                            {panel.checks.map((item, ci) => (
-                                                <li key={ci} className="flex items-start gap-2.5">
-                                                    <svg
-                                                        className="flex-shrink-0 mt-[2px]"
-                                                        width="13"
-                                                        height="13"
-                                                        viewBox="0 0 13 13"
-                                                        fill="none"
-                                                    >
-                                                        <path
-                                                            d="M2 6.5L5 9.5L11 3.5"
-                                                            stroke="#111827"
-                                                            strokeWidth="1.7"
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                        />
-                                                    </svg>
-                                                    <span className="text-[13px] text-gray-700 leading-snug">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                            <ul className="space-y-[10px] mb-5">
+                                                {panel.checks.map((item, ci) => (
+                                                    <li key={ci} className="flex items-start gap-2.5">
+                                                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_18720_8944)">
+                                                                <g clip-path="url(#clip1_18720_8944)">
+                                                                    <path d="M24.8073 12.4037C24.8073 5.55331 19.254 0 12.4037 0C5.55331 0 0 5.55331 0 12.4037C0 19.254 5.55331 24.8073 12.4037 24.8073C19.254 24.8073 24.8073 19.254 24.8073 12.4037Z" fill="#F5F5F5" />
+                                                                    <path d="M5.17822 13.9531L10.3464 19.1213L20.6827 8.78491" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                                </g>
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_18720_8944">
+                                                                    <rect width="24.8073" height="24.8073" fill="white" />
+                                                                </clipPath>
+                                                                <clipPath id="clip1_18720_8944">
+                                                                    <rect width="24.8073" height="24.8073" fill="white" />
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                        <span className="text-[20px] tracking-[-0.02em] leading-[150%]">
+                                                            {item}
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                            </ul>
 
-                                        <button
-                                            className="text-[12px] font-semibold px-4 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors duration-150 active:scale-95"
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            {panel.cta}
-                                        </button>
+                                            <button
+                                                className="text-[16px] font-semibold px-4 py-2  text-black  transition-colors duration-150 active:scale-95"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                {panel.cta}
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
