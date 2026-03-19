@@ -96,7 +96,7 @@ export default function MarketingPanel() {
             <div className="w-full justify-between gap-10 3xl:gap-20 flex flex-col md:flex-row rounded-lg overflow-hidden">
 
                 {/* LEFT: your image */}
-                <div className="shrink-0 w-full md:w-[400px] xl:w-[600px] 3xl:w-[834px] relative min-h-[300px] aspect-834/748 md:min-h-[460px]  xl:h-[550px] 3xl:h-[690px] 1800:h-[720px] overflow-hidden">
+                <div className="shrink-0 max-lg:hidden w-full md:w-[400px] xl:w-[600px] 3xl:w-[834px] relative min-h-[300px] aspect-834/748 md:min-h-[460px]  xl:h-[550px] 3xl:h-[690px] 1800:h-[720px] overflow-hidden">
                     <div
                         className="absolute inset-0 transition-all duration-800 ease-in-out"
                         style={{

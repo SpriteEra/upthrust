@@ -18,9 +18,9 @@ export default function AdSpend() {
     return (
         <section
             ref={sectionRef}
-            className="w-full bg-white overflow-hidden"
+            className="w-full bg-white overflow-hidden max-sm:h-300"
         >
-            <div className="max-w-[90%] mx-auto px-8 py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
+            <div className="max-w-[90%] mx-auto py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0  ">
 
                 <div className="flex-shrink-0 w-full lg:w-[420px] xl:w-[460px] 2xl:w-[500px] 3xl:w-[600px] ">
                     <motion.h2
@@ -62,8 +62,7 @@ export default function AdSpend() {
                     </motion.button>
                 </div>
 
-
-                <div className="relative flex-1 flex items-center justify-end w-full">
+                <div className="relative max-sm:h-full flex-1 flex items-center justify-end w-full">
 
                     <motion.div
                         className="absolute inset-0 flex items-center justify-end"
@@ -75,7 +74,15 @@ export default function AdSpend() {
                             alt="Concentric circles dark"
                             width={680}
                             height={420}
-                            className="w-full max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
+                            className="w-full max-sm:hidden max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
+                            priority
+                        />
+                        <Image
+                            src="/performance-agency/circle3.png"
+                            alt="Concentric circles dark"
+                            width={680}
+                            height={1000}
+                            className="w-full hidden max-sm:block h-[1000px] object-contain"
                             priority
                         />
                     </motion.div>
@@ -91,7 +98,7 @@ export default function AdSpend() {
                             alt="Concentric circles colourful"
                             width={680}
                             height={420}
-                            className="w-full max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
+                            className="w-full max-sm:rotate-90  sm:max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
                             priority
                         />
                     </motion.div>

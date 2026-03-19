@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import NavbarCTAButton from '../NavbarCTAButton';
 
 
 
@@ -42,6 +43,7 @@ export default function PerformanceNav({ items }) {
                     </div>
                     {/* Mobile menu button */}
                     {/* <NavbarCTAButton ModalComponent={MetaLeadModal} className="border-orange" /> */}
+                    <NavbarCTAButton className="border-orange py-3!" />
                 </div>
             </div>
         </nav>

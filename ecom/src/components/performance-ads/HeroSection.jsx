@@ -73,7 +73,7 @@ const HeroSection = () => {
     }, []);
 
     return (
-        <div className="relative w-full h-[110vh] sm:h-[140vh] bg-white">
+        <div className="relative w-full h-[100vh] sm:h-[140vh] bg-white">
 
 
             <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
@@ -95,18 +95,18 @@ const HeroSection = () => {
             </div>
 
             {/* Content */}
-            <div className="absolute top-0 left-0 w-full h-screen flex justify-center items-center z-10">
+            <div className="absolute top-30 sm:top-0 left-0 w-full h-screen flex justify-center items-start sm:items-center z-10">
 
-                <div className="max-w-[1100px] mx-auto flex flex-col sm:justify-center items-start max-sm:justify-start max-sm:p-4">
+                <div className="max-w-[1100px] mx-auto flex flex-col sm:justify-center items-start max-sm:justify-start max-sm:p-3">
 
-                    <p className="text-[18px] lg:text-[14px] leading-[150%] tracking-[0.2em] uppercase text-black mb-8 font-normal">
+                    <p className="text-[18px] lg:text-[14px] leading-[150%] tracking-[0%] sm:tracking-[0.2em] uppercase text-black mb-8 font-normal">
                         Performance Marketing Agency
                     </p>
 
                     <div className="flex max-sm:flex-col justify-between items-start sm:items-end ">
                         <h1 className="text-[42px] md:text-6xl xl:text-[65px] 2xl:text-[70px] 1600:text-[75px] 1800:text-[86px] font-semibold leading-[120%] tracking-[-0.04em] text-black mb-6 max-w-[680px] 3xl:max-w-[800px] ">
                             More Profit From<br />
-                            Every <em className="italic font-normal font-instrument">ad $</em>
+                            Every <em className="italic font-normal font-instrument max-sm:text-[52px]">ad $</em>
                         </h1>
 
                         <p className="text-sm text-lg text-black leading-relaxed flex justify-end items-end max-w-[350px] 3xl:max-w-[411px] mb-10">
@@ -114,11 +114,11 @@ const HeroSection = () => {
                         </p>
                     </div>
 
-                    <div className="flex max-sm:flex-col max-sm:justify-start flex-row gap-3 items-center">
+                    <div className="flex max-sm:flex-col max-sm:justify-start flex-row gap-5 sm:gap-3 items-start sm:items-center">
                         <button className="bg-black text-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange transition-opacity">
                             Get Your Free Ad Account Audit
                         </button>
-                        <button className="border border-black/30 bg-white/60 px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors">
+                        <button className="border border-black bg-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors">
                             SEE CLIENT RESULTS →
                         </button>
                     </div>

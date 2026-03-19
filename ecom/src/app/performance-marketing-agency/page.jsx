@@ -82,8 +82,8 @@ const page = () => {
         <div>
             <PerformanceNav items={navLinks} />
             <HeroSection />
-            <div className="container py-20 max-w-[90%] overflow-hidden mx-auto ">
-                <h3 className="text-2xl font-semibold leading-[150%] tracking-[-0.02em] text-center mb-8">Upthrust driving performance of</h3>
+            <div className="container py-12 sm:py-20 max-w-[90%] overflow-hidden mx-auto ">
+                <h3 className="text-2xl font-semibold leading-[150%] tracking-[-0.02em] text-center mb-8 max-sm:max-w-[280px] max-sm:mx-auto">Upthrust driving performance of</h3>
                 <BrandSliderPerformance />
             </div>
             <div>
@@ -98,9 +98,9 @@ const page = () => {
             <div className="py-16 3xl:py-20">
                 <AuditHero />
             </div>
-            <div className="py-16 3xl:py-20">
+            {/* <div className="py-16 3xl:py-20">
                 <ProductSlideDetail />
-            </div>
+            </div> */}
             <div className="py-16 3xl:py-20">
                 <Testimonials />
             </div>
