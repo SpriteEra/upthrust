@@ -97,7 +97,7 @@ const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
         const interval = setInterval(() => {
             if (window.neetoCal) {
                 window.neetoCal.embed({
-                    type: "elementClick",
+                    type: "inline",
                     id: "3f2e149b-8090-481e-8e7e-6ba530596ff4",
                     organization: "upthrust-ecom",
                     elementSelector: "#open-popup-button",
@@ -156,3 +156,4 @@ const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
 };
 
 export default LeadForm;
+

@@ -645,14 +645,6 @@ const page = () => {
         <div className='flex flex-col mt-25 xs:mt-30 mb-0 xs:mb-10 px-2 relative'>
 
           <div className='flex flex-col items-center mb-10'>
-            {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Ready to book your demo</span>
-            <div className='flex flex-col'>
-              <div className='mt-5 flex gap-1 sm:gap-3 flex-wrap items-center justify-center'>
-                <h3 className='capitalize text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center'> Ready to
-                  <span className='text-4xl md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-8xl font-instrument italic font-normal'> Scale</span> ?
-                </h3>
-              </div>
-            </div> */}
 
             <EcomHeading
               tag="h3"

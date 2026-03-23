@@ -223,18 +223,22 @@ function MarqueeRow({ brands, itemWidth = 160 }) {
 }
 
 const defaultBrands = [
-    { id: 1, name: "Dell", logo: "/ecom/brand/first/f1.webp" },
-    { id: 2, name: "Libas", logo: "/ecom/brand/first/f2.webp" },
-    { id: 3, name: "Bosch", logo: "/ecom/brand/first/f3.webp" },
-    { id: 4, name: "CLIQ", logo: "/ecom/brand/first/f4.webp" },
-    { id: 5, name: "BIBA", logo: "/ecom/brand/first/f5.webp" },
-    { id: 6, name: "Brand 6", logo: "/ecom/brand/first/f6.webp" },
-    { id: 7, name: "Brand 7", logo: "/ecom/brand/first/f7.webp" },
-    { id: 8, name: "Brand 8", logo: "/ecom/brand/first/f8.webp" },
-    { id: 9, name: "Brand 9", logo: "/ecom/brand/first/f9.webp" },
-    { id: 10, name: "Brand 10", logo: "/ecom/brand/first/f10.webp" },
-    { id: 11, name: "Brand 11", logo: "/ecom/brand/first/f11.webp" },
-    { id: 12, name: "Brand 12", logo: "/ecom/brand/first/f12.webp" },
+    { id: 1, name: "Victoria", logo: "/brands/brand-black/victoria-secret.webp" },
+    { id: 2, name: "Tiggle", logo: "/brands/brand-black/tiggle.webp" },
+    { id: 3, name: "Loreal", logo: "/brands/brand-black/loreal.webp" },
+    { id: 4, name: "Zomato", logo: "/brands/brand-black/zomato.webp" },
+    { id: 5, name: "Welspun", logo: "/brands/brand-black/welspun.webp" },
+    { id: 6, name: "Urban", logo: "/brands/brand-black/urban.webp" },
+    { id: 7, name: "Ok", logo: "/brands/brand-black/ok.webp" },
+    { id: 8, name: "James", logo: "/brands/brand-black/james-allen.webp" },
+    { id: 9, name: "Neon", logo: "/brands/brand-black/neon-attack.webp" },
+    { id: 10, name: "Mc-Overalls", logo: "/brands/brand-black/mc-overalls.webp" },
+    { id: 11, name: "Bagwani", logo: "/brands/brand-black/bagwani.webp" },
+    { id: 12, name: "Housr", logo: "/brands/brand-black/housr.webp" },
+    { id: 13, name: "Poker Baazi", logo: "/brands/brand-black/poker-baazi.webp" },
+    { id: 14, name: "Qpi", logo: "/brands/brand-black/qpi-ai.webp" },
+    { id: 15, name: "Cyble", logo: "/brands/brand-black/cyble.webp" },
+    { id: 16, name: "Manohar", logo: "/brands/brand-black/manohar-lal.webp" },
 ];
 
 export default function BrandSliderPerformance({ brands = defaultBrands }) {
@@ -262,7 +266,7 @@ export default function BrandSliderPerformance({ brands = defaultBrands }) {
             <div className="relative overflow-x-hidden overflow-y-visible py-2">
 
                 {/* SCROLLING CONTENT */}
-                <MarqueeRow brands={brands} itemWidth={160} />
+                <MarqueeRow brands={brands} itemWidth={200} />
 
             </div>
         </div>
