@@ -80,7 +80,7 @@ const HeroSection = () => {
                 <div
                     className="absolute inset-0 transition-opacity duration-300"
                     style={{
-                        transform: `translateY(${offsetY * 0.4}px) scale(${1 + offsetY * 0.0005})`,
+                        transform: `translateY(${offsetY * 0.4}px) rotate(${-offsetY * 0.05}deg) scale(${1 + offsetY * 0.0005})`,
                         opacity: 1 - Math.min(Math.max(offsetY / 500, 0), 1),
                     }}
                 >

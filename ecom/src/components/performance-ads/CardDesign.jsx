@@ -44,7 +44,7 @@ export default function CardDesign() {
                         className={`
               flex flex-col items-center text-center px-8 py-10
               border-gray-300
-              ${index % 3 !== 2 ? "md:border-r" : ""}
+              ${index % 3 !== 2 ? "max-sm:border-b md:border-r" : ""}
               ${index < 3 ? "border-b" : ""}
             `}
                     >
@@ -54,7 +54,7 @@ export default function CardDesign() {
                             height={70}
                             src={item.icon}
                             alt={item.title}
-                            className="w-10 h-10 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 mb-4"
+                            className="w-15 h-15 2xl:w-12 2xl:h-12 3xl:w-15 3xl:h-15 mb-4"
                         />
 
                         {/* Title */}

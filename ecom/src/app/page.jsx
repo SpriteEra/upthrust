@@ -394,7 +394,12 @@ const page = () => {
           </div>
 
         </div>
-        <OurApproach />
+        {/* <OurApproach /> */}
+        <div id="approach-section" className="h-[400vh]">
+          <div className="sticky top-0 h-screen">
+            <OurApproach />
+          </div>
+        </div>
       </div>
 
       <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-0 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
@@ -739,7 +744,18 @@ const page = () => {
       </div>
 
       <AskQuestionAndDisclaimer />
-      <HomeFooter />
+      <HomeFooter
+        setwidth="max-w-2xl! 3xl:max-w-3xl!"
+        text2={{
+          desktop: {
+            text1: " YOU FOUND THE RIGHT AGENCY.",
+            text2: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
+          },
+          mobile: {
+            text1: "YOU FOUND THE RIGHT AGENCY. WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
+          }
+        }}
+      />
     </main>
   )
 }

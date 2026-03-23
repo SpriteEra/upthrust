@@ -109,7 +109,7 @@ export const Disclaimer = () => {
     )
 }
 
-const AskQuestionAndDisclaimer = () => {
+const AskQuestionAndDisclaimer = ({ text }) => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
@@ -129,7 +129,7 @@ const AskQuestionAndDisclaimer = () => {
                     />
                     <div className='flex gap-3 items-start'>
                         <span className='text-[#DB2F15] font-semibold text-3xl max-xs:hidden'>/</span>
-                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for D2C brands that actually scale.</p>
+                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for {text} brands that actually scale.</p>
                     </div>
                 </div>
             </div>

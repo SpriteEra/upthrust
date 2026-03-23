@@ -5,17 +5,18 @@ import { ArrowRight } from "lucide-react";
 
 export default function AdReview() {
     return (
-        <section className=" py-20">
-            <div className="max-w-[80%] 3xl:max-w-[1300px] mx-auto px-6">
+        <section className=" py-10">
+            <div className="sm:max-w-[90%] 3xl:max-w-[1300px] mx-auto md:px-6">
 
                 {/* Top Section */}
-                <div className="flex flex-col md:flex-row md:justify-between gap-10">
+                <div className="flex flex-col md:flex-row md:justify-between gap-10 px-3">
 
                     {/* Left Content */}
                     <div>
                         <PerfromanceHeading
                             tag="h2"
                             align="left"
+                            textcss="text-left!"
                             heading={[
                                 {
                                     line: [
@@ -30,13 +31,13 @@ export default function AdReview() {
                             subtitle=""
                         />
 
-                        <p className="text-gray-700 mt-4 max-w-2xl text-lg lg:text-2xl leading-[150%] tracking-[-0.02em]">
+                        <p className="text-gray-700 mt-4 max-w-2xl text-lg lg:text-2xl leading-[150%] tracking-[-0.02em] max-sm:px-2">
                             30 minutes. Screen share. We'll walk through your campaigns and show you exactly where you're leaking budget — and what to do about it.
                         </p>
                     </div>
 
                     {/* Right Button */}
-                    <div className="flex md:items-end md:justify-end">
+                    <div className="hidden md:flex md:items-end md:justify-end">
                         <button className="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]">
                             <ArrowRight size={18} />
                             BOOK YOUR LIVE REVIEW
@@ -75,7 +76,7 @@ export default function AdReview() {
                             Custom scope
                         </p>
 
-                        <button className="bg-white text-black px-10 py-3 flex items-center gap-3 text-[19px] hover:bg-orange transition">
+                        <button className="bg-white text-black px-20 py-3 flex items-center gap-3 text-[19px] hover:bg-orange transition">
                             <ArrowRight size={16} />
                             BOOK A CALL
                         </button>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomeFooter = ({ customeCss = "mt-20 md:mt-50", bgColor = "#FF3B00", text1 = "Any questions?", text2 = {
+const HomeFooter = ({ customeCss = "mt-20 md:mt-50", setwidth, bgColor = "#FF3B00", text1 = "Any questions?", text2 = {
     desktop: {
         text1: "YOUR SUBMISSION GOES HERE.",
         text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER. COINCIDENCE? WE THINK NOT."
@@ -26,7 +26,7 @@ const HomeFooter = ({ customeCss = "mt-20 md:mt-50", bgColor = "#FF3B00", text1 
                 </div>
             </div>
 
-            <div className='px-3 px-5 lg:px-20 z-10 relative'>
+            <div className='px-3 sm:px-5 lg:px-20 z-10 relative'>
                 <div className='px-4 md:px-6 py-4 md:py-10 text-white text-xl md:text-3xl uppercase 3xl:text-4xl font-semibold 3xl:leading-[44px] 3xl:tracking-[-0.02em]' style={{
                     backgroundColor: bgColor
                 }}>
@@ -42,7 +42,7 @@ const HomeFooter = ({ customeCss = "mt-20 md:mt-50", bgColor = "#FF3B00", text1 
 
                         </p>
                     </div>
-                    <div className='max-md:hidden max-w-3xl 3xl:max-w-4xl whitespace-pre-line'>
+                    <div className={`max-md:hidden max-w-3xl 3xl:max-w-4xl whitespace-pre-line ${setwidth}`}>
                         {text2.desktop.text2}
 
                     </div>

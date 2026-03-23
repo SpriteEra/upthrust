@@ -170,7 +170,7 @@ function HorizontalRow({ data, direction = -1 }) {
 
 export default function Testimonials() {
     return (
-        <section className="bg-white w-full overflow-hidden  relative  min-h-screen flex justify-center items-center ">
+        <section className="bg-white w-full overflow-hidden  relative  sm:min-h-screen flex justify-center items-center py-3 ">
 
             {/*  Background Image */}
             <div className="absolute top-30 inset-0 z-10">
@@ -187,15 +187,15 @@ export default function Testimonials() {
             <div className="flex flex-col md:flex-row items-start gap-12 3xl:gap-30 relative z-10">
 
                 {/* ── Left: Heading */}
-                <div className=" w-[50%] pt-2 relative">
-                    <span className="absolute top-8 -left-20 3xl:-left-25">
+                <div className=" w-full max-sm:max-w-[350px] mx-auto md:w-[50%] pt-2 relative z-20">
+                    <span className="absolute -top-2  lg:top-8 -left-5 lg:-left-20 3xl:-left-25">
                         <svg
                             width="76"
                             height="62"
                             viewBox="0 0 76 62"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-15 h-15 3xl:w-20 3xl:h-20"
+                            className=" w-11 h-9  sm:w-15 sm:h-15 3xl:w-20 3xl:h-20"
                         >
                             <path
                                 d="M75.6 61.2794H41.779V27.7946L59.6126 3.96843e-06L70.4473 4.99757e-06L59.8394 26.2627H75.6V61.2794ZM33.821 61.2794H0L2.69424e-06 27.7946L17.8337 0L28.6684 1.02914e-06L18.0605 26.2627H33.821V61.2794Z"
@@ -207,6 +207,7 @@ export default function Testimonials() {
                     <PerfromanceHeading
                         tag="h2"
                         align="left"
+                        textcss="text-left!"
                         heading={[
                             {
                                 line: [
@@ -218,7 +219,7 @@ export default function Testimonials() {
                                 line: [{ type: "normal", text: "who owns real " }],
                             },
                             {
-                                line: [{ type: "normal", text: "growth" }],
+                                line: [{ type: "normal", text: "growth." }],
                             },
                         ]}
                         subtitle=""

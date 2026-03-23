@@ -17,6 +17,7 @@ import BrandSlider from "@/components/home/BrandSlider";
 import AnimatedWord from "@/components/google-ads/AnimatedWord";
 import ClientTestimonials from "@/components/google-ads/ClientTestimonials";
 import GoogleAdsRoiPredictionSlider from "@/components/google-ads/GoogleAdsRoiPredictionSlider";
+import HomeFooter from '@/components/home/HomeFooter'
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -442,7 +443,17 @@ const page = () => {
 
             <div>
                 <GoogleDisclaimer />
-                <GoogleFooter />
+                <HomeFooter text1="Request a free consultation." bgColor="#0457CB" text2={{
+                    desktop: {
+                        text1: "WE'LL FIND YOUR WASTED",
+                        text2: "AD SPEND. YOU'LL WONDER WHY\n YOU WAITED. LET'S GO.",
+                    },
+                    mobile: {
+                        text1: "AD SPEND. YOU'LL WONDER WHY YOU WAITED. Let’s go.",
+                        text2: "",
+                    },
+                }} />
+
             </div>
 
         </main>

@@ -47,13 +47,13 @@ export const ComparisonTable = ({ rocketBgColor = "#000000", checkBgColor = "#FF
                             },
 
                         ]}
-                        imageClassName='-left-15 xl:-left-25 3xl:-left-30 -top-14 3xl:-top-16 !h-12 3xl:!h-14 w-full'
+                        imageClassName='-left-15 xl:-left-25 3xl:-left-24 1800:-left-30 -top-14 3xl:-top-16 !h-12 3xl:!h-14 w-full'
                         curvePosition="end"
                         curveFlipHorizontal={true}
                         curveFlipVertical={false}
                         tiltAngle={7}
                         imageIndex={3}
-                        className="absolute -right-50 xl:-right-60 bottom-1/3 3xl:-right-70"
+                        className="absolute -right-50 xl:-right-60 bottom-1/3 3xl:-right-60 1800:-right-70"
 
                     />
                 </>

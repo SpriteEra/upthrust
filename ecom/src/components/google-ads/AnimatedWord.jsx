@@ -96,7 +96,7 @@ const AnimatedWord = ({
       {/* Current */}
       <span
         key={`current-${currentIndex}`}
-        className="absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideOut font-bold flex items-center"
+        className="absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideOut font-semibold flex items-center"
       >
         {renderContent(items[currentIndex])}
       </span>
@@ -104,7 +104,7 @@ const AnimatedWord = ({
       {/* Next */}
       <span
         key={`next-${currentIndex}`}
-        className="absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideIn font-bold flex items-center"
+        className="absolute left-0 bottom-0 w-full whitespace-nowrap animate-slideIn font-semibold flex items-center"
       >
         {renderContent(items[(currentIndex + 1) % items.length])}
       </span>

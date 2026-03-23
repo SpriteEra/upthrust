@@ -167,11 +167,24 @@ const UGCVideoCategories = () => {
             <button
               key={link.id}
               onClick={() => setActiveCategory(link)}
-              className={`px-4 3xl:px-5.75 py-2 3xl:py-2.75 rounded-full text-sm xl:text-xs 3xl:text-sm border border-[#17118]/12 lg:border-black/12 bg-black transition-colors duration-200 cursor-pointer text-white hover:bg-white hover:text-black font-semibold
-                ${activeCategory.id === link.id ? "bg-white !text-black" : ""}`}
+              className={`
+    px-4 3xl:px-5.75 py-2 3xl:py-2.75 
+    rounded-full text-sm xl:text-xs 3xl:text-sm 
+    border border-black/20 font-semibold cursor-pointer transition-colors duration-200
+
+    /* MOBILE DEFAULT */
+    bg-transparent text-black
+
+    ${activeCategory.id === link.id ? "bg-black! text-white" : ""}
+
+    /* DESKTOP (lg and above) */
+    lg:bg-black lg:text-white lg:hover:bg-white lg:hover:text-black
+    ${activeCategory.id === link.id ? "lg:bg-white! lg:text-black!" : ""}
+  `}
             >
               {link.name}
             </button>
+
           ))}
         </div>
       </div>
@@ -313,7 +326,7 @@ const UGCVideoCategories = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

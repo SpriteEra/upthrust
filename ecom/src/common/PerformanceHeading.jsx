@@ -6,6 +6,7 @@ const PerfromanceHeading = ({
     label = "",
     subtitle = "",
     subTitleCss = "",
+    textcss = "",
     align = "center", // left | center | right
 }) => {
 
@@ -33,7 +34,7 @@ const PerfromanceHeading = ({
             )}
 
             <div className="mt-5 w-full">
-                <Tag className={`${textAlign} tracking-[-0.02em] xl:tracking-[-0.04em]`}>
+                <Tag className={`${textAlign} tracking-[-0.02em] xl:tracking-[-0.04em] ${textcss}`}>
                     {heading.map((row, rowIndex) => {
                         const baseClass =
                             "text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 1600:text-[4rem] 1800:text-[4.5rem] font-semibold text-center leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize";

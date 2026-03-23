@@ -13,16 +13,16 @@ const stats = [
 
 export default function AdSpend() {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { amount: 0.7, once: false });
+    const isInView = useInView(sectionRef, { amount: 0.5, once: false });
 
     return (
         <section
             ref={sectionRef}
             className="w-full bg-white overflow-hidden max-sm:h-300"
         >
-            <div className="max-w-[90%] mx-auto py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0  ">
+            <div className="max-w-[90%]  mx-auto py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0  ">
 
-                <div className="flex-shrink-0 w-full lg:w-[420px] xl:w-[460px] 2xl:w-[500px] 3xl:w-[600px] ">
+                <div className="shrink-0 max-sm:relative z-10 w-full lg:w-[420px] xl:w-[460px] 2xl:w-[500px] 3xl:w-[600px] ">
                     <motion.h2
 
                         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -56,13 +56,13 @@ export default function AdSpend() {
                     <motion.button
 
                         transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
-                        className="border border-black text-black text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200"
+                        className="border border-black bg-black text-white text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200"
                     >
                         Get Ad Account Audit →
                     </motion.button>
                 </div>
 
-                <div className="relative max-sm:h-full flex-1 flex items-center justify-end w-full">
+                <div className="relative max-sm:h-full z-0 flex-1 flex items-center justify-end w-full">
 
                     <motion.div
                         className="absolute inset-0 flex items-center justify-end"
@@ -82,29 +82,39 @@ export default function AdSpend() {
                             alt="Concentric circles dark"
                             width={680}
                             height={1000}
-                            className="w-full hidden max-sm:block h-[1000px] object-contain"
+                            className="w-full hidden max-sm:block   object-contain"
                             priority
                         />
                     </motion.div>
 
                     {/* Colourful image — fades in when in view */}
                     <motion.div
-                        className="relative flex items-center justify-end w-full"
+                        className="absolute  max-sm:z-10 flex items-center justify-end w-full"
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.9, ease: "easeInOut" }}
+
                     >
                         <Image
                             src="/performance-agency/circle2.png"
                             alt="Concentric circles colourful"
                             width={680}
                             height={420}
-                            className="w-full max-sm:rotate-90  sm:max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
+                            className="w-full max-sm:hidden  sm:max-w-[680px] xl:max-w-[800px] 3xl:max-w-[1148px] object-contain"
                             priority
                         />
+                        <Image
+                            src="/performance-agency/circle4.png"
+                            alt="Concentric circles dark"
+                            width={680}
+                            height={1000}
+                            className="w-full hidden max-sm:block  object-contain"
+                            priority
+                        />
+
                     </motion.div>
 
                     {/* Stat pills — staggered fade-in on scroll */}
-                    <div className="absolute inset-0 pointer-events-none">
+                    {/* <div className="absolute max-lg:hidden inset-0 pointer-events-none">
                         {stats.map((stat, i) => (
                             <motion.div
                                 key={stat.label}
@@ -120,20 +130,20 @@ export default function AdSpend() {
                                 </span>
                             </motion.div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
     );
 }
 
-// Position each stat pill to match the image layout
-function getStatPosition(index) {
-    const positions = [
-        { top: "12%", left: "28%" },   // Ad Spend Managed — top center
-        { top: "30%", right: "2%" },   // Avg. Client ROAS — top right
-        { top: "52%", left: "32%" },   // Clients Scaled — middle
-        { top: "72%", right: "2%" },   // Average Retention — bottom right
-    ];
-    return positions[index];
-}
+// // Position each stat pill to match the image layout
+// function getStatPosition(index) {
+//     const positions = [
+//         { top: "12%", left: "28%" },   // Ad Spend Managed — top center
+//         { top: "30%", right: "2%" },   // Avg. Client ROAS — top right
+//         { top: "52%", left: "32%" },   // Clients Scaled — middle
+//         { top: "72%", right: "2%" },   // Average Retention — bottom right
+//     ];
+//     return positions[index];
+// }

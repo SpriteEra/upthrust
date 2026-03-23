@@ -32,7 +32,7 @@ const ProfileSection = () => {
     },
     {
       name: "carorbis",
-      img: "/performance-agency/CarorbisProfile.jsx.png",
+      img: "/performance-agency/CarorbisProfile.png",
       text: "“I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.”",
       person: "Rishabh Jain",
       role: "President - Carorbis",
@@ -47,93 +47,177 @@ const ProfileSection = () => {
   ];
 
   return (
-    <div className=" max-w-[90%] mx-auto ">
-      <div className="relative flex w-full justify-start lg:justify-between mt-10  overflow-hidden">
+    <>
+      <div className="hidden md:block max-w-[90%] mx-auto ">
+        <div className="relative flex w-full justify-start lg:justify-between mt-10  overflow-hidden">
 
-        {profiles.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => setActive(index)}
-            className={`relative flex-1 
+          {profiles.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => setActive(index)}
+              className={`relative flex-1 
       h-[45px] sm:h-[50px] lg:h-[55px]
       flex items-center justify-center 
       text-[14px] sm:text-[18px] lg:text-2xl
       font-bold rounded cursor-pointer transition-all duration-300
       border-r border-gray-300
       ${active === index ? "bg-black text-white" : "opacity-40"}`}
-          >
-            {item.name}
-            {/* {
+            >
+              {item.name}
+              {/* {
               <img src={profiles.name} alt="" />
             } */}
 
-            {/* TOP PLUS */}
-            {index !== profiles.length - 1 && (
-              <>
-                <div className="absolute right-0 top-0 -translate-y-1/2 translate-x-1/2 bg-white z-10">
-                  <Image
-                    src="/performance-agency/plus.png"
-                    alt="plus"
-                    width={9.5}
-                    height={9.5}
-                  />
-                </div>
+              {/* TOP PLUS */}
+              {index !== profiles.length - 1 && (
+                <>
+                  <div className="absolute right-0 top-0 -translate-y-1/2 translate-x-1/2 bg-white z-10">
+                    <Image
+                      src="/performance-agency/plus.png"
+                      alt="plus"
+                      width={9.5}
+                      height={9.5}
+                    />
+                  </div>
 
-                {/* BOTTOM PLUS */}
-                <div className="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2 bg-white z-10">
-                  <Image
-                    src="/performance-agency/plus.png"
-                    alt="plus"
-                    width={9.5}
-                    height={9.5}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        ))}
+                  {/* BOTTOM PLUS */}
+                  <div className="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2 bg-white z-10">
+                    <Image
+                      src="/performance-agency/plus.png"
+                      alt="plus"
+                      width={9.5}
+                      height={9.5}
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
 
-        {/* TOP BORDER */}
-        <div className="absolute top-0 left-0 w-full border-t border-gray-300"></div>
+          {/* TOP BORDER */}
+          <div className="absolute top-0 left-0 w-full border-t border-gray-300"></div>
 
-        {/* BOTTOM BORDER */}
-        <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
+          {/* BOTTOM BORDER */}
+          <div className="absolute bottom-0 left-0 w-full border-b border-gray-300"></div>
 
-      </div>
-      {/* Profile Section */}
-      <div className="flex flex-col lg:flex-row  gap-8 3xl:gap-12 mt-12  max-h-[521px]">
-        {/* Image */}
-        <div className="w-full lg:w-1/3 flex justify-center">
-          <Image
-            width={521}
-            height={521}
-            src={profiles[active].img}
-            alt="profile"
-            className=" size-full 3xl:size-[521px] object-cover"
-          />
         </div>
-        {/* Text*/}
-        <div className="w-full  lg:w-2/3 flex flex-col justify-between">
-          <p className="
+        {/* Profile Section */}
+        <div className="flex flex-col lg:flex-row  gap-8 3xl:gap-12 mt-12  max-h-[521px]">
+          {/* Image */}
+          <div className="w-full lg:w-1/3 flex justify-center">
+            <Image
+              width={521}
+              height={521}
+              src={profiles[active].img}
+              alt="profile"
+              className=" size-full 3xl:size-[521px] object-cover"
+            />
+          </div>
+          {/* Text*/}
+          <div className="w-full  lg:w-2/3 flex flex-col justify-between">
+            <p className="
           text-[28px]
           3xl:text-[36px]
           font-semibold leading-relaxed">
-            {profiles[active].text}
-          </p>
-          <div className="mt-10  pt-6">
-            <p className="text-[30px]   font-semibold">
-              {profiles[active].person}
+              {profiles[active].text}
             </p>
-            <p className="text-[24px] ">
-              {profiles[active].role}
-            </p>
-            <button className="mt-6 bg-black text-white px-5 py-3 text-[14px]  cursor-pointer">
-              GET AD ACCOUNT AUDIT →
-            </button>
+            <div className="mt-10  pt-6">
+              <p className="text-[30px]   font-semibold">
+                {profiles[active].person}
+              </p>
+              <p className="text-[24px] ">
+                {profiles[active].role}
+              </p>
+              <button className="mt-6 bg-black text-white px-5 py-3 text-[14px]  cursor-pointer">
+                GET AD ACCOUNT AUDIT →
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      {/* MOBILE VIEW */}
+      <div className="md:hidden max-w-[90%] mx-auto py-15 ">
+        <div className="relative overflow-hidden">
+
+          {/* Slider */}
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${active * 100}%)` }}
+          >
+            {profiles.map((item, index) => (
+              <div key={index} className="min-w-full   px-2">
+                <div className="border border-[#1D1D1F] h-[440px] p-5 bg-white flex flex-col">
+
+                  {/* logo */}
+                  <h3 className="font-bold text-lg mb-3">{item.name}</h3>
+
+                  <p className="text-[18px] font-semiboldz text-black tracking-[-0.02em]  leading-[150%] mb-6">
+                    {item.text}
+                  </p>
+
+                  {/* Profile (BOTTOM) */}
+                  <div className="flex items-center gap-3 mt-auto">
+                    <Image
+                      src={item.img}
+                      alt={item.person}
+                      width={74}
+                      height={74}
+                      className="rounded-full size-[74px]"
+                    />
+                    <div>
+                      <p className="text-[16px] font-semibold text-black tracking-[-0.02em]  leading-[150%]">{item.person}</p>
+                      <p className="text-[16px] text-black tracking-[-0.02em]  leading-[150%]">{item.role}</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CONTROLS (ARROWS + DOTS) */}
+        <div className="flex items-center justify-center gap-4 mt-5">
+
+          {/* LEFT ARROW */}
+          <button
+            onClick={() =>
+              setActive((prev) =>
+                prev === 0 ? profiles.length - 1 : prev - 1
+              )
+            }
+            className="text-2xl px-2"
+          >
+            ‹
+          </button>
+
+          {/* DOTS */}
+          <div className="flex gap-2">
+            {profiles.map((_, i) => (
+              <div
+                key={i}
+                onClick={() => setActive(i)}
+                className={`w-2.5 h-2.5 rounded-full cursor-pointer transition-all ${active === i ? "bg-black scale-110" : "bg-gray-300"
+                  }`}
+              />
+            ))}
+          </div>
+
+          {/* RIGHT ARROW */}
+          <button
+            onClick={() =>
+              setActive((prev) =>
+                prev === profiles.length - 1 ? 0 : prev + 1
+              )
+            }
+            className="text-2xl px-2"
+          >
+            ›
+          </button>
+
+        </div>
+      </div>
+    </>
   );
 };
 

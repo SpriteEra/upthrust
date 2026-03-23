@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NavbarCTAButton from '../NavbarCTAButton';
 
-
-
 export default function PerformanceNav({ items }) {
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center  2xl:h-[120px] xl:h-[100px] 1800:h-[134px] sm:h-20 h-19">

@@ -9,38 +9,7 @@ ScrollTrigger.config({
     ignoreMobileResize: true,
 });
 
-// {
-//             text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
-//             name: "Troy",
-//             company: "MC Overalls",
-//             image: "/ecom/profile/profile6.png",
-//             alt: "Client testimonial photo of Troy from MC Overalls",
-//             color: "bg-[#FFF0F0]"
-//         },
-//         {
-//             text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
-//             name: "Rishab",
-//             company: "Carobis",
-//             image: "/ecom/profile/profile7.png",
-//             alt: "Client testimonial photo of Rishab from Carobis",
-//             color: "bg-[#FFEBDA]"
-//         },
-//         {
-//             text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
-//             name: "Gunjan",
-//             company: "Housr",
-//             image: "/ecom/profile/profile8.png",
-//             alt: "Client testimonial photo of Gunjan from Housr",
-//             color: "bg-[#E1EFD7]"
-//         },
-//         {
-//             text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
-//             name: "Dan",
-//             company: "Dan Studio",
-//             image: "/ecom/profile/profile9.png",
-//             alt: "Client testimonial photo of Dan from Dan Studio",
-//             color: "bg-[#E3DFF1]"
-//         }
+
 const cardDefaultColors = [
     {
         bg: 'bg-[#FFF0F0]',
@@ -153,81 +122,6 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
 
 
     }, { scope: wrapperRef })
-
-
-    // useEffect(() => {
-    //     const ctx = gsap.context(() => {
-    //         // Create main timeline
-    //         const tl = gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: containerRef.current,
-    //                 start: 'top top',
-    //                 end: '+=1200',
-    //                 scrub: 1,
-    //                 pin: true,
-    //             }
-    //         });
-
-    //         // ALL ANIMATIONS WORK TOGETHER
-    //         // Title slides in from left
-    //         tl.fromTo(secretBehindRef.current, {
-    //             x: -900,
-    //             y: 200,
-    //             opacity: 0
-    //         }, {
-    //             x: 10,
-    //             y: 100,
-    //             opacity: 1,
-    //             duration: 1.5,
-    //             ease: 'power3.out'
-    //         }, 0);
-
-    //         // Title slides in from right (below left text)
-    //         tl.fromTo(theirSuccessRef.current, {
-    //             x: 600,
-    //             y: 200,
-    //             opacity: 0
-    //         }, {
-    //             x: 0,
-    //             y: 250,
-    //             opacity: 1,
-    //             duration: 1.5,
-    //             ease: 'power3.out'
-    //         }, 0);
-
-    //         // Card 1 - starts stacked with rotation, spreads to left
-    //         tl.fromTo(card1Ref.current,
-    //             { x: 0, y: 0, rotation: -8, scale: 0.95 },
-    //             { x: "-30vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
-    //             0
-    //         );
-
-    //         // Card 2 - starts stacked with rotation
-    //         tl.fromTo(card2Ref.current,
-    //             { x: 0, y: 0, rotation: -3, scale: 0.97 },
-    //             { x: "-10vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
-    //             0
-    //         );
-    //         // Card 3 - starts stacked with rotation
-    //         tl.fromTo(card3Ref.current,
-    //             { x: 0, y: 0, rotation: 3, scale: 0.98 },
-    //             { x: "10vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
-    //             0
-    //         );
-
-    //         // Card 4 - starts stacked with rotation, spreads to right
-    //         // Card 4
-    //         tl.fromTo(card4Ref.current,
-    //             { x: 0, y: 0, rotation: 8, scale: 0.99 },
-    //             { x: "30vw", y: 200, rotation: 0, scale: 1, duration: 1.5 },
-    //             0
-    //         );
-
-
-    //     }, containerRef);
-
-    //     return () => ctx.revert();
-    // }, []);
 
     const testimonials = [
         {

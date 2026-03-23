@@ -89,25 +89,24 @@ const page = () => {
             <div>
                 <AdSpend />
             </div>
-            <div className="py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20">
                 <MarketingPanel />
             </div>
 
-
             <ProfileSection />
-            <div className="py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20">
                 <AuditHero />
             </div>
-            {/* <div className="py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20">
                 <ProductSlideDetail />
-            </div> */}
+            </div>
             <div className="py-16 3xl:py-20">
                 <Testimonials />
             </div>
             <div>
                 <CardDesign />
             </div>
-            <div>
+            <div className="sm:py-16 3xl:py-20">
                 <AdReview />
             </div>
             <div className='space-y-16 3xl:space-y-30'>
