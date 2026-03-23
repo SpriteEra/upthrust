@@ -84,25 +84,116 @@
 // export default LeadForm;
 
 
+// "use client";
+// import Script from "next/script";
+// import { useEffect } from "react";
+
+// const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
+
+//     useEffect(() => {
+//         if (!showOnlyIframe) return;
+
+//         // wait for script to load
+//         const interval = setInterval(() => {
+//             if (window.neetoCal) {
+//                 window.neetoCal.embed({
+//                     type: "inline",
+//                     id: "3f2e149b-8090-481e-8e7e-6ba530596ff4",
+//                     organization: "upthrust-ecom",
+//                     elementSelector: "#open-popup-button",
+//                     isSidebarAndCoverImgHidden: "false",
+//                     shouldForwardQueryParams: "true",
+//                 });
+
+//                 clearInterval(interval);
+//             }
+//         }, 200);
+
+//         return () => clearInterval(interval);
+//     }, [showOnlyIframe]);
+
+//     // ================= IFRAME MODE =================
+//     if (!showOnlyIframe) {
+//         return (
+//             <div className="flex items-center justify-center w-full px-2">
+//                 <div
+//                     className={`w-full max-w-2xl 3xl:max-w-4xl bg-white ${showBorder ? "border shadow-lg" : ""
+//                         } rounded-lg overflow-hidden`}
+//                 >
+//                     <iframe
+//                         src="https://upthrust-ecom.neetocal.com/embed/3f2e149b-8090-481e-8e7e-6ba530596ff4"
+//                         width="100%"
+//                         height="800"
+//                         style={{ border: "none" }}
+//                     />
+//                 </div>
+//             </div>
+//         );
+//     }
+
+//     // ================= POPUP MODE =================
+//     return (
+//         <div className="flex items-center justify-center w-full px-2">
+//             <div className="w-full max-w-2xl bg-white border shadow-lg rounded-lg p-6 text-center">
+//                 <div id="inline-embed-container" />
+
+//                 {/* Button */}
+//                 {/* <button
+//                     id="open-popup-button"
+//                     className="bg-black text-white px-6 py-3 rounded-md"
+//                 >
+//                     Open Calendar
+//                 </button> */}
+
+//                 {/* Script Loader */}
+//                 <Script
+//                     src="https://cdn.neetocal.com/javascript/embed.js"
+//                     strategy="afterInteractive"
+//                 />
+
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default LeadForm;
+
 "use client";
 import Script from "next/script";
 import { useEffect } from "react";
 
-const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
+const LeadForm = ({ showOnlyIframe = false }) => {
 
     useEffect(() => {
         if (!showOnlyIframe) return;
 
-        // wait for script to load
         const interval = setInterval(() => {
             if (window.neetoCal) {
+
+                const urlParams = new URLSearchParams(window.location.search);
+
                 window.neetoCal.embed({
                     type: "inline",
                     id: "3f2e149b-8090-481e-8e7e-6ba530596ff4",
                     organization: "upthrust-ecom",
-                    elementSelector: "#open-popup-button",
+
+                    // ✅ FIXED: correct container
+                    elementSelector: "#inline-embed-container",
+
+                    styles: "height: 100%; width: 100%;",
+
+                    // ✅ FIXED: manually pass UTM
+                    queryParams: {
+                        utm_source: urlParams.get("utm_source"),
+                        utm_medium: urlParams.get("utm_medium"),
+                        utm_campaign: urlParams.get("utm_campaign"),
+                        utm_term: urlParams.get("utm_term"),
+                        utm_content: urlParams.get("utm_content"),
+                        dynamicHeight: true,
+                    },
+
+                    shouldForwardQueryParams: true,
                     isSidebarAndCoverImgHidden: "false",
-                    shouldForwardQueryParams: "true",
                 });
 
                 clearInterval(interval);
@@ -112,48 +203,22 @@ const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
         return () => clearInterval(interval);
     }, [showOnlyIframe]);
 
-    // ================= IFRAME MODE =================
-    if (!showOnlyIframe) {
+    // ================= INLINE MODE =================
+    if (showOnlyIframe) {
         return (
-            <div className="flex items-center justify-center w-full px-2">
-                <div
-                    className={`w-full max-w-2xl 3xl:max-w-4xl bg-white ${showBorder ? "border shadow-lg" : ""
-                        } rounded-lg overflow-hidden`}
-                >
-                    <iframe
-                        src="https://upthrust-ecom.neetocal.com/embed/3f2e149b-8090-481e-8e7e-6ba530596ff4"
-                        width="100%"
-                        height="800"
-                        style={{ border: "none" }}
-                    />
-                </div>
-            </div>
-        );
-    }
+            <div className="w-full h-[800px]">
+                {/* ✅ REQUIRED container */}
+                <div id="inline-embed-container" className="w-full h-full" />
 
-    // ================= POPUP MODE =================
-    return (
-        <div className="flex items-center justify-center w-full px-2">
-            <div className="w-full max-w-2xl bg-white border shadow-lg rounded-lg p-6 text-center">
-
-                {/* Button */}
-                <button
-                    id="open-popup-button"
-                    className="bg-black text-white px-6 py-3 rounded-md"
-                >
-                    Open Calendar
-                </button>
-
-                {/* Script Loader */}
                 <Script
                     src="https://cdn.neetocal.com/javascript/embed.js"
                     strategy="afterInteractive"
                 />
-
             </div>
-        </div>
-    );
+        );
+    }
+
+    return null;
 };
 
 export default LeadForm;
-
