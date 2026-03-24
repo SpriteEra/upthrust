@@ -88,21 +88,71 @@
 import Script from "next/script";
 import { useEffect } from "react";
 
+const getUTMParams = () => {
+    const params = new URLSearchParams(window.location.search);
+
+    return {
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+        utm_term: params.get("utm_term"),
+        utm_content: params.get("utm_content"),
+    };
+};
+
 const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
+
+    // useEffect(() => {
+    //     if (!showOnlyIframe) return;
+
+    //     // wait for script to load
+    //     const interval = setInterval(() => {
+    //         if (window.neetoCal) {
+    //             window.neetoCal.embed({
+    //                 type: "inline",
+    //                 id: "3f2e149b-8090-481e-8e7e-6ba530596ff4",
+    //                 organization: "upthrust-ecom",
+    //                 elementSelector: "#inline-embed-container",
+    //                 isSidebarAndCoverImgHidden: "false",
+    //                 shouldForwardQueryParams: true,
+    //             });
+
+    //             clearInterval(interval);
+    //         }
+    //     }, 200);
+
+    //     return () => clearInterval(interval);
+    // }, [showOnlyIframe]);
 
     useEffect(() => {
         if (!showOnlyIframe) return;
 
-        // wait for script to load
+        const getUTMParams = () => {
+            const params = new URLSearchParams(window.location.search);
+
+            return {
+                utm_source: params.get("utm_source"),
+                utm_medium: params.get("utm_medium"),
+                utm_campaign: params.get("utm_campaign"),
+                utm_term: params.get("utm_term"),
+            };
+        };
+
         const interval = setInterval(() => {
             if (window.neetoCal) {
+
                 window.neetoCal.embed({
                     type: "inline",
                     id: "3f2e149b-8090-481e-8e7e-6ba530596ff4",
                     organization: "upthrust-ecom",
-                    elementSelector: "#open-popup-button",
-                    isSidebarAndCoverImgHidden: "false",
-                    shouldForwardQueryParams: "true",
+                    elementSelector: "#inline-embed-container",
+
+                    queryParams: {
+                        ...getUTMParams(),
+                        dynamicHeight: true,
+                    },
+
+                    isSidebarAndCoverImgHidden: false,
                 });
 
                 clearInterval(interval);
@@ -112,7 +162,7 @@ const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
         return () => clearInterval(interval);
     }, [showOnlyIframe]);
 
-    // ================= IFRAME MODE =================
+    // IFRAME MODE 
     if (!showOnlyIframe) {
         return (
             <div className="flex items-center justify-center w-full px-2">
@@ -131,19 +181,11 @@ const LeadForm = ({ showOnlyIframe = false, showBorder = true }) => {
         );
     }
 
-    // ================= POPUP MODE =================
+    // POPUP MODE
     return (
         <div className="flex items-center justify-center w-full px-2">
             <div className="w-full max-w-2xl bg-white border shadow-lg rounded-lg p-6 text-center">
                 <div id="inline-embed-container" />
-
-                {/* Button */}
-                {/* <button
-                    id="open-popup-button"
-                    className="bg-black text-white px-6 py-3 rounded-md"
-                >
-                    Open Calendar
-                </button> */}
 
                 {/* Script Loader */}
                 <Script
