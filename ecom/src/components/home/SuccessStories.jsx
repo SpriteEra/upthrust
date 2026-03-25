@@ -53,6 +53,7 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
 
     const wrapperRef = useRef(null)
     useGSAP(() => {
+        // if (typeof window === "undefined") return;
 
         if (!containerRef.current) return;
         const tl = gsap.timeline({

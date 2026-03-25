@@ -76,7 +76,7 @@ export default function MetaAdsHero() {
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[55px] 1800:text-[72px] leading-[120%] sm:leading-[130%] tracking-[-0.04em] font-semibold max-sm:text-left">
+                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[55px] 3xl:text-[65px] 1800:text-[72px] leading-[120%] sm:leading-[130%] tracking-[-0.04em] font-semibold max-sm:text-left">
                         Creative Ads That
                         <br />
                         <span className="text-orange"> Convert</span>, Built For
@@ -84,7 +84,7 @@ export default function MetaAdsHero() {
                         Brands Ready To Scale
                     </h1>
 
-                    <Image width={150} height={50} className="object-contain w-[80%] sm:w-[70%] 2xl:w-[62%] 3xl:w-[60%] 1800:w-[70%] absolute top-[37%] sm:top-[33%] 2xl:top-[37%] 3xl:top-[34%] 1800:top-[39%] h-fit " src="/creative-agency/line.png" alt="Meta Business Partner" />
+                    <Image width={150} height={50} className="object-contain w-[80%] sm:w-[70%] 2xl:w-[62%] 3xl:w-[68%] 1800:w-[70%] absolute top-[37%] sm:top-[33%] 2xl:top-[37%] 3xl:top-[36%] 1800:top-[39%] h-fit " src="/creative-agency/line.png" alt="Meta Business Partner" />
 
                     {/* Subtext */}
                     <p className="text-lg 3xl:text-[20px] leading-[150%] tracking-[-0.02em] mt-10 font-normal">
@@ -97,19 +97,19 @@ export default function MetaAdsHero() {
 
                     <div className="flex items-center max-md:justify-center gap-3 md:gap-5 1600:gap-8 mt-4 mb-8">
 
-                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/meta-ads/google-rating.webp" alt="Meta Business Partner" />
-                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
-                        <Image width={300} height={120} className="object-contain  h-12 md:h-16 xl:h-18 3xl:h-25 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-20 w-fit" src="/meta-ads/google-rating.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain h-12 md:h-16 xl:h-18 3xl:h-20 w-fit" src="/badges/highest-user-adoption.webp" alt="Meta Business Partner" />
+                        <Image width={300} height={120} className="object-contain  h-12 md:h-16 xl:h-18 3xl:h-20 w-fit" src="/badges/high-performer.webp" alt="Meta Business Partner" />
                         <Image width={300} height={120} className="object-contain w-24 sm:w-30 1800:w-35 h-full" src="/meta-ads/meta.webp" alt="Meta Business Partner" />
                     </div>
 
-                    <div>
+                    <div className="pt-5">
                         <p className="text-lg leading-[150%] tracking-[-0.02em] font-normal">Brands we&apos;ve scaled</p>
 
                         <div className="flex justify-between gap-y-5 xs:gap-y-6 gap-x-2  items-center py-5 md:py-5 3xl:py-8 max-w-sm sm:max-w-xl xl:max-w-lg 1600:max-w-2xl 1800:max-w-3xl pb-12">
                             {brandicons.map((brand, index) => (
                                 <div
-                                    key={brand.name}
+                                    key={brand?.alt}
                                     className={`flex items-center justify-center ${index === brandicons.length - 1 ? "max-sm:hidden" : ""
                                         } ${brand.customCss}`}
                                 >

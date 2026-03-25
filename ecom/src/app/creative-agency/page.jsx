@@ -237,7 +237,7 @@ const page = () => {
             <CreativeNavbar items={navLinks} />
             <MetaAdsHero />
 
-            <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 " id="why-upthrust">
+            <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 " >
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -263,26 +263,27 @@ const page = () => {
                 <CircularDesign mobileImage='/creative-agency/adspent-graph.webp' desktopImage='/creative-agency/adspent-graph-desktop.webp' />
 
             </div>
+            <div className="3xl:pt-10" id="hear-from-them">
+                <MetaHeading
+                    tag="h2"
+                    heading={[
+                        {
+                            line: [{ type: "normal", text: " How These Brands Made Creative" }],
+                        },
+                        {
+                            line: [
+                                { type: "normal", text: "Their " },
+                                { type: "italic", text: "#1 Growth Lever" },
+                                { type: "normal", text: " Instead" },
+                            ],
+                        },
+                    ]}
+                    label="CLIENT STORIES"
+                />
+                <ClientStories />
+            </div>
 
-            <MetaHeading
-                tag="h2"
-                heading={[
-                    {
-                        line: [{ type: "normal", text: " How These Brands Made Creative" }],
-                    },
-                    {
-                        line: [
-                            { type: "normal", text: "Their " },
-                            { type: "italic", text: "#1 Growth Lever" },
-                            { type: "normal", text: " Instead" },
-                        ],
-                    },
-                ]}
-                label="CLIENT STORIES"
-            />
-            <ClientStories />
-
-            <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 " id="case-studies">
+            <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-36 mt-10 3xl:mt-20 " >
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -326,7 +327,7 @@ creative intuition with data-driven precision."
                 <ProcessTimeline />
 
             </div>
-            <section className=" py-16 3xl:py-30 3xl:pt-35 w-full max-w-[92%] mx-auto flex flex-col justify-center lg:flex-row items-center gap-12">
+            <section className=" py-16 3xl:py-30 3xl:pt-35 w-full max-w-[92%] mx-auto flex flex-col justify-center lg:flex-row items-center gap-12" >
 
 
                 <div className="flex gap-10 md:gap-15 items-center max-lg:flex-col">
@@ -372,7 +373,7 @@ creative intuition with data-driven precision."
 
             </section>
 
-            <div className="bg-black text-white pt-16 3xl:pt-20 mt-10 3xl:mt-16 overflow-hidden" id="creative-library">
+            <div className="bg-black text-white pt-16 3xl:pt-20 mt-10 3xl:mt-16 overflow-hidden" >
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -416,7 +417,7 @@ creative intuition with data-driven precision."
 
 
 
-            <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30' id="hear-from-them">
+            <div className='space-y-5 lg:space-y-16 3xl:space-y-30 mb-20 3xl:mb-30' id="creative-library" >
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -433,7 +434,7 @@ creative intuition with data-driven precision."
                 <UGCVideoCategories />
             </div>
 
-            <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30'>
+            <div className='space-y-16 3xl:space-y-30 mb-20 3xl:mb-30' id="case-studies">
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -456,7 +457,7 @@ creative intuition with data-driven precision."
                 <DashboardStacks />
             </div>
 
-            <div className='space-y-16 3xl:space-y-30 mt-10 3xl:mt-20 mb-40 3xl:mb-50'>
+            <div className='space-y-16 3xl:space-y-30 mt-10 3xl:mt-20 mb-40 3xl:mb-50' id="why-upthrust">
                 <MetaHeading
                     tag="h2"
                     heading={[
@@ -508,7 +509,7 @@ creative intuition with data-driven precision."
                 }
             />
 
-            <div className="max-lg:hidden">
+            {/* <div className="max-lg:hidden">
                 <SuccessStories cardColors={
                     [
                         {
@@ -537,7 +538,7 @@ creative intuition with data-driven precision."
                         },
                     ]
                 } />
-            </div>
+            </div> */}
 
             <div className='space-y-16 3xl:space-y-30 mb-20 mt-40 3xl:mb-30 3xl:mt-50'>
                 <MetaHeading

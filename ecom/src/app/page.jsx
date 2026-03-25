@@ -663,7 +663,7 @@ const page = () => {
             />
           </div>
         </div>
-        <LeadForm showOnlyIframe={true} />
+        <LeadForm />
       </div>
 
 

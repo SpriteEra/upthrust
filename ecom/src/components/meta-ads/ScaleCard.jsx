@@ -83,8 +83,8 @@ export default function ScaleCards({ cards = cardsData }) {
                             <p className="italic font-normal lg:mb-6 text-4xl lg:text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument overflow-hidden">
                                 <AnimatedWord
                                     words={card.subtitle}
-                                    textCss="italic font-normal text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument"
-                                    className="h-8 md:h-9 3xl:h-10 w-40 md:w-30 lg:w-full  3xl:w-90 mx-auto"
+                                    textCss="italic font-normal text-[32px] 3xl:text-4xl 3xl:leading-11 font-instrument justify-start!"
+                                    className="h-8 md:h-9 3xl:h-10 w-40 md:w-30 lg:w-full  3xl:w-90 "
                                 />
 
                             </p>

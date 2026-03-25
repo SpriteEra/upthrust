@@ -1288,14 +1288,14 @@ export default function DropLetters({
 
             <div className="absolute top-24 md:top-40 max-sm:w-full max-sm:px-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:right-[3%] 3xl:right-[7%] z-20 text-start max-w-[720px]">
 
-                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl">
+                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4rem] 1800:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl">
 
                     <span className="text-xs md:text-sm 3xl:text-sm font-normal tracking-[0.05em] mr-2 align-middle">
                         (WE ARE)
                     </span>
 
                     The{" "}
-                    <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem] 3xl:text-[5rem] font-normal leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
+                    <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem] xl:text-[4.375rem]  1800:text-[5rem] font-normal leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
                         {titleItalic}
                     </span>
 
@@ -1308,9 +1308,9 @@ export default function DropLetters({
 
             {/* LETTERS */}
 
-            <div className="absolute inset-0 flex justify-start pt-[220px] md:pt-[320px] z-10">
+            <div className="absolute inset-0 flex justify-start pt-[220px] md:pt-[250px] z-10">
                 <div className="w-full md:w-[75%] h-full">
-                    <div ref={sceneRef} className="w-full h-full" />
+                    <div ref={sceneRef} className="w-full h-full " />
                 </div>
             </div>
         </div>
