@@ -77,6 +77,50 @@ const faqs = [
     }
 ];
 
+export const metadata = {
+    title: "Performance Marketing Agency That Drives Profit | Upthrust",
+
+    description: "Performance marketing agency focused on profitable growth. Audit your ad account, fix wasted spend, and scale campaigns with measurable ROI.",
+
+    keywords: [
+        "Performance Marketing Agency",
+    ],
+
+    metadataBase: new URL("https://www.upthrust.agency"),
+
+    alternates: {
+        canonical: "https://www.upthrust.agency/performance-marketing-agency",
+    },
+
+    openGraph: {
+        title: "Performance Marketing Agency Built for Real Revenue Growth",
+        description: "Stop guessing with ads. Our performance marketing team audits your ad account, fixes wasted spend, and builds scalable revenue campaigns.",
+        url: "https://www.upthrust.agency/performance-marketing-agency",
+        siteName: "Upthrust",
+        // images: [
+        //     {
+        //         url: "/meta-ads/meta-opengraph-image.png",
+        //         width: 1200,
+        //         height: 630,
+        //         alt: "Upthrust – Meta Ads Agency",
+        //     },
+        // ],
+        type: "website",
+    },
+
+    // twitter: {
+    //     card: "summary_large_image",
+    //     title: "Performance Marketing Agency That Scales Profitably",
+    //     description: "We manage $12M+ in Performance Marketing Agency spend with structured PPC systems built for predictable scaling and real ROI",
+    //     images: ["/google-ads/ogimg.png"],
+    // },
+
+    robots: {
+        index: true,
+        follow: true,
+    }
+};
+
 const page = () => {
     return (
         <div>
@@ -141,8 +185,8 @@ const page = () => {
             <MetaDisclaimer />
             <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
                 desktop: {
-                    text1: "YOUR SUBMISSION GOES HERE.",
-                    text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.\n COINCIDENCE? WE THINK NOT.",
+                    text1: "Tell us where you’re stuck.",
+                    text2: "We’ll show you where the money is leaking,and how to fix it.",
                 },
                 mobile: {
                     text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",

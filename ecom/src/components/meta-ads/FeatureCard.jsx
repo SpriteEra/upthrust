@@ -14,7 +14,7 @@ const cards = [
         ],
         title: (
             <>
-                Most talented <span className="font-instrument italic font-normal leading-[120%]">Meta teams</span>
+                Most talented <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Meta teams</span>
             </>
         ),
     },
@@ -27,7 +27,7 @@ const cards = [
         ],
         title: (
             <>
-                <span className="font-instrument italic font-normal leading-[120%]">Ultra-fast</span> turnaround times
+                <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Ultra-fast</span> turnaround times
             </>
         ),
     },
@@ -39,7 +39,7 @@ const cards = [
         ],
         title:
             <>
-                <span className="font-instrument italic font-normal leading-[120%]">Flexible</span> contracts
+                <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Flexible</span> contracts
             </>,
     },
 ];

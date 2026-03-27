@@ -333,7 +333,7 @@ const CaseStudy = ({ index, setIndex }) => {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center gap-6 mt-20">
+          <div className="flex items-center gap-6 mt-20 3xl:mt-28">
 
             <button onClick={prevSlide}>
               <FaAngleLeft size={25} />

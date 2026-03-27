@@ -79,13 +79,22 @@ const HeroSection = () => {
             <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
                 <div
                     className="absolute inset-0 transition-opacity duration-300"
+                    // style={{
+                    //     transform: `translateY(${offsetY * 0.4}px) rotate(${-offsetY * 0.05}deg) scale(${1 + offsetY * 0.0005})`,
+                    //     opacity: 1 - Math.min(Math.max(offsetY / 500, 0), 1),
+                    // }}
                     style={{
-                        transform: `translateY(${offsetY * 0.4}px) rotate(${-offsetY * 0.05}deg) scale(${1 + offsetY * 0.0005})`,
+                        transform: `
+    translateY(${offsetY * 0.4}px)
+    translateX(${-offsetY * 0.3}px)
+    rotate(${-offsetY * 0.05}deg)
+    scale(${1.2 + offsetY * 0.0005})
+  `,
                         opacity: 1 - Math.min(Math.max(offsetY / 500, 0), 1),
                     }}
                 >
                     <Image
-                        src='/performance-agency/bg.png'
+                        src='/performance-agency/bg2.png'
                         fill
                         alt=""
                         className="object-cover object-center"

@@ -17,7 +17,7 @@ const brands = [
 
 ];
 
-const GoogleAdsHero = () => {
+const GoogleAdsHero = ({ title }) => {
     const [currentWord, setCurrentWord] = useState(0);
     const words = [
         { text: 'PPC', color: '#10B981' },
@@ -65,7 +65,7 @@ const GoogleAdsHero = () => {
                         <RatingStars rating={5} fillColor='#FFB900' size='size-4.75 3xl:size-5' />
                     </div>
                 </div>
-                <p className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">PPC Agency that kills competitors</p>
+                <h1 className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}</h1>
 
                 {/* Main Heading */}
                 <h1 className="text-[42px] lg:text-5xl 2xl:text-6xl 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8 3xl:mb-10 max-sm:max-w-75">

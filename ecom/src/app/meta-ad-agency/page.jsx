@@ -115,7 +115,7 @@ const page = () => {
       <MetaNavbar items={navLinks} />
       <MetaAdsHero />
 
-      <div className="bg-black text-white py-16 pb-10 3xl:py-5 my-10 3xl:my-16 3xl:pt-40 " id="why-upthrust">
+      <div className="bg-black text-white py-16 pb-10 3xl:py-5 my-10 3xl:my-16 3xl:pt-40 " >
         <MetaHeading
           tag="h2"
           heading={[
@@ -135,7 +135,7 @@ const page = () => {
         <CircularDesign />
 
       </div>
-      <div className="mt-20 3xl:mt-40" id="why-upthrust">
+      <div className="mt-20 3xl:mt-40" id="hear-from-them">
         <MetaHeading
           tag="h2"
           heading={[
@@ -155,7 +155,7 @@ const page = () => {
 
       </div>
 
-      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-30 mt-10 3xl:mt-30 " id="case-studies">
+      <div className="bg-black text-white py-10 pb-0 pt-16 3xl:py-10 3xl:pt-30 mt-10 3xl:mt-30 " >
         <MetaHeading
           tag="h2"
           heading={[
@@ -226,7 +226,7 @@ const page = () => {
 
       </section>
 
-      <div className="bg-black text-white pt-16 3xl:pt-26 mt-10 3xl:mt-16 overflow-hidden" id="creative-library">
+      <div className="bg-black text-white pt-16 3xl:pt-26 mt-10 3xl:mt-16 overflow-hidden" >
         <MetaHeading
           tag="h2"
           heading={[
@@ -268,7 +268,7 @@ const page = () => {
 
       </div>
 
-      <div className='space-y-16 3xl:space-y-30 mt-10 3xl:mt-20 mb-40 3xl:mb-50'>
+      <div className='space-y-16 3xl:space-y-30 mt-10 3xl:mt-20 mb-40 3xl:mb-50' id="why-upthrust">
         <MetaHeading
           tag="h2"
           heading={[
@@ -289,7 +289,7 @@ const page = () => {
         <ComparisonTable showCurve={false} rocketBgColor='#0457CB' checkBgColor='#0457CB' />
       </div>
 
-      <div className='space-y-5 lg:space-y-16 3xl:space-y-10 mb-20 3xl:mb-30' id="hear-from-them">
+      <div className='space-y-5 lg:space-y-16 3xl:space-y-10 mb-20 3xl:mb-30' id="creative-library">
         <MetaHeading
           tag="h2"
           heading={[
@@ -306,7 +306,7 @@ const page = () => {
         <MetaUgcs />
       </div>
 
-      <div className='space-y-16 3xl:space-y-20 mb-20 3xl:mb-30 3xl:mt-50'>
+      <div className='space-y-16 3xl:space-y-20 mb-20 3xl:mb-30 3xl:mt-50' id="case-studies">
         <MetaHeading
           tag="h2"
           heading={[

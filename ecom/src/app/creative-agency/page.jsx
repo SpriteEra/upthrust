@@ -186,7 +186,6 @@ const faqs = [
 ];
 
 
-
 export const metadata = {
     title: "Creative Ads Agency for Scalable Growth | Upthrust",
 
@@ -337,11 +336,11 @@ creative intuition with data-driven precision."
                         <p className="uppercase text-sm tracking-[-0.02em] leading-[150%] mb-3 border-b border-black pb-2 3xl:pb-3 w-full">
                             A NEW ERA OF META AGENCY THAT DELIVER ROI
                         </p>
-                        <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 3xl:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
+                        <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 1600:text-[4rem] 1800:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
                             What Happens When<br />
                             Creative Agency<br />
                             Actually{" "}
-                            <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 3xl:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
+                            <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 1600:text-[4.5rem] 1800:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
                                 Delivers ROI
                             </span>{" "}
 

@@ -125,7 +125,7 @@ const MetaDisclaimer = () => {
                         Get Your Free Ad Account Audit
                     </button>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-8'>
+                <div className='flex flex-col justify-between items-center gap-6'>
                     <Image
                         src={'/logo.png'}
                         alt='Upthrust'

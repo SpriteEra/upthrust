@@ -1286,9 +1286,9 @@ export default function DropLetters({
         >
             {/* Heading */}
 
-            <div className="absolute top-24 md:top-40 max-sm:w-full max-sm:px-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:right-[3%] 3xl:right-[7%] z-20 text-start max-w-[720px]">
+            <div className="absolute top-24 md:top-40 max-sm:w-full max-sm:px-4 max-lg:left-1/2 max-lg:-translate-x-1/2 lg:right-[3%] 3xl:right-[7%] z-20 text-start max-w-[720px] ">
 
-                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4rem] 1800:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl">
+                <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-[3.75rem] 3xl:text-[4rem] 1800:text-[4.5rem] font-semibold leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize max-w-xl 1800:max-w-2xl">
 
                     <span className="text-xs md:text-sm 3xl:text-sm font-normal tracking-[0.05em] mr-2 align-middle">
                         (WE ARE)
