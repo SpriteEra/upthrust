@@ -58,7 +58,7 @@ const SeoAgencyHero = () => {
 
                     {/* Second Circle (Overlapping) */}
                     <Image
-                        src="/google-ads/google.webp"
+                        src="/google-ads/Googleone.webp"
                         alt="google Logo"
                         width={100}
                         height={100}
