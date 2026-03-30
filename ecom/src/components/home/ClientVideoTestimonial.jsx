@@ -8,7 +8,7 @@ const successStories = [
         tag: "SUCCESS STORY",
         text:
             "We were struggling with traffic and poor conversions. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. Worth it.",
-        image: "/ecom/testimonials/1.webp",
+        image: "/ecom/testimonials/1.png",
         alt: "Video testimonial from Carobis founder discussing ecommerce growth with Upthrust",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Carorbis%20testimonial.mp4",
         duration: "4:27",

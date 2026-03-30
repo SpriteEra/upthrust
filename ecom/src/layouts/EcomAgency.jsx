@@ -345,9 +345,9 @@ export default async function EcomLayout({ data }) {
 
 
 
-            <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 max-lg:hidden'>
+            <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 3xl:mb-0 max-lg:hidden'>
                 <div className='flex flex-col pt-22 3xl:pt-25 text-white'>
-                    <div className='flex flex-col items-center mb-10'>
+                    <div className='flex flex-col items-center mb-10 3xl:mb-0'>
 
                         <EcomHeading
                             tag="h3"
@@ -367,8 +367,8 @@ export default async function EcomLayout({ data }) {
 
                 </div>
                 {/* <OurApproach /> */}
-                <div id="approach-section" className="h-[400vh]">
-                    <div className="sticky top-0 h-screen">
+                <div id="approach-section" className="h-[400vh] ">
+                    <div className="sticky top-0 h-screen  ">
                         <OurApproach />
                     </div>
                 </div>
@@ -408,7 +408,7 @@ export default async function EcomLayout({ data }) {
 
             {/* Desktop GSAP */}
             <div className="max-lg:hidden">
-                <SuccessStories />
+                {/* <SuccessStories /> */}
             </div>
             <div>
                 <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>

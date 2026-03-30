@@ -3,50 +3,52 @@ import Image from "next/image";
 import SmartSwiper from "../SmartSwiper";
 import { useRef } from "react";
 
-const cards = [
-    {
-        images: [
-            { id: 1, alt: "Team", url: "/meta-ads/slidecard/team-1.webp" },
-            { id: 2, alt: "Team", url: "/meta-ads/slidecard/team-2.webp" },
-            { id: 3, alt: "Team", url: "/meta-ads/slidecard/team-3.webp" },
-            { id: 4, alt: "Team", url: "/meta-ads/slidecard/team-4.webp" },
-            { id: 5, alt: "Team", url: "/meta-ads/slidecard/team-5.webp" },
-        ],
-        title: (
-            <>
-                Most talented <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Meta teams</span>
-            </>
-        ),
-    },
-    {
-        images: [
-            { id: 1, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-1.webp" },
-            { id: 2, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-2.webp" },
-            { id: 3, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-3.webp" },
-            { id: 4, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-4.webp" },
-        ],
-        title: (
-            <>
-                <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Ultra-fast</span> turnaround times
-            </>
-        ),
-    },
-    {
-        images: [
-            { id: 1, alt: "Contract", url: "/meta-ads/slidecard/contract-1.webp" },
-            { id: 2, alt: "contract", url: "/meta-ads/slidecard/contract-2.webp" },
-            { id: 3, alt: "contract", url: "/meta-ads/slidecard/contract-3.webp" },
-        ],
-        title:
-            <>
-                <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Flexible</span> contracts
-            </>,
-    },
-];
 
 
 
-export default function FeatureCards() {
+
+export default function FeatureCards({ datatitle }) {
+
+    const cards = [
+        {
+            images: [
+                { id: 1, alt: "Team", url: "/meta-ads/slidecard/team-1.webp" },
+                { id: 2, alt: "Team", url: "/meta-ads/slidecard/team-2.webp" },
+                { id: 3, alt: "Team", url: "/meta-ads/slidecard/team-3.webp" },
+                { id: 4, alt: "Team", url: "/meta-ads/slidecard/team-4.webp" },
+                { id: 5, alt: "Team", url: "/meta-ads/slidecard/team-5.webp" },
+            ],
+            title: (
+                <>
+                    Most talented <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">{datatitle || "Meta"} teams</span>
+                </>
+            ),
+        },
+        {
+            images: [
+                { id: 1, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-1.webp" },
+                { id: 2, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-2.webp" },
+                { id: 3, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-3.webp" },
+                { id: 4, alt: "Turnaround Times", url: "/meta-ads/slidecard/turnaround-times-4.webp" },
+            ],
+            title: (
+                <>
+                    <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Ultra-fast</span> turnaround times
+                </>
+            ),
+        },
+        {
+            images: [
+                { id: 1, alt: "Contract", url: "/meta-ads/slidecard/contract-1.webp" },
+                { id: 2, alt: "contract", url: "/meta-ads/slidecard/contract-2.webp" },
+                { id: 3, alt: "contract", url: "/meta-ads/slidecard/contract-3.webp" },
+            ],
+            title:
+                <>
+                    <span className="font-instrument italic font-normal leading-[120%] tracking-[-0.02em]">Flexible</span> contracts
+                </>,
+        },
+    ];
     const swiperInstance = useRef(null);
     return (
 

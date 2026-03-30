@@ -18,7 +18,7 @@ const brands = [
 
 ];
 
-const SeoAgencyHero = () => {
+const SeoAgencyHero = ({ title }) => {
 
     const words2 = [
         { text: 'Ranked', color: '#FE2B27' },
@@ -71,7 +71,7 @@ const SeoAgencyHero = () => {
                         <RatingStars rating={5} fillColor='#FFB900' size='size-4.75 3xl:size-5' />
                     </div>
                 </div>
-                <p className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">SEO agency that gets you  <AnimatedWord words={words2} className="h-5.5 3xl:h-6.5 w-28 3xl:w-36 text-[#FE2B27] mx-auto font-normal" textCss='font-normal justify-start!' /></p>
+                <h1 className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}  <AnimatedWord words={words2} className="h-5.5 3xl:h-6.5 w-28 3xl:w-36 text-[#FE2B27] mx-auto font-normal" textCss='font-normal justify-start!' /></h1>
 
                 {/* Main Heading */}
                 <h1 className="text-[42px] lg:text-5xl 2xl:text-6xl 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-1 xl:mb-2 max-sm:max-w-100">

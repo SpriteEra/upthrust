@@ -272,7 +272,7 @@ const typeOfSeo = [
     { text: 'CPC' }
 ];
 
-const page = () => {
+const SeoLayout = ({ data }) => {
     return (
         <main>
             <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[140px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
@@ -291,7 +291,7 @@ const page = () => {
                 </div>
             </nav>
 
-            <SeoAgencyHero />
+            <SeoAgencyHero title={data.title} />
 
             <div className="mt-16 3xl:mt-16">
                 <CommonHeading
@@ -538,18 +538,18 @@ const page = () => {
                         ],
                     ]}
                 />
-                <SeoFaq />
+                <SeoFaq faqs={data.faqs} />
             </div>
 
             <div>
                 <SeoDisclaimer />
                 <HomeFooter text1="SEO  Agency" bgColor="#0076F0" text2={{
                     desktop: {
-                        text1: "YOUR SEO GROWTH STARTS HERE.",
-                        text2: "OUR STRATEGY GETS YOU RANKING FASTER.\n MORE TRAFFIC. MORE LEADS. NO GUESSWORK.",
+                        text1: "YOUR SUBMISSION GOES HERE.",
+                        text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER. COINCIDENCE? WE THINK NOT.",
                     },
                     mobile: {
-                        text1: "YOUR SEO GROWTH STARTS HERE. OUR STRATEGY GETS YOU RANKING FASTER. MORE TRAFFIC. MORE LEADS. NO GUESSWORK.",
+                        text1: "YOUR SUBMISSION GOES HERE. OUR EXCITED RESPONSE COMES SHORTLY AFTER. COINCIDENCE? WE THINK NOT",
                         text2: "",
                     },
                 }} />
@@ -559,4 +559,4 @@ const page = () => {
     )
 }
 
-export default page
+export default SeoLayout

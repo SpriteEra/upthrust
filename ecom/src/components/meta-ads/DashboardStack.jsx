@@ -1,56 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
-const dashboardData = [
-    {
-        title: "Scaling smokey cocktail with Meta Ads",
-        title2: "Building a profitable, scalable customer acquisition engine",
-        description: "We partnered to scale customer acquisition in a highly competitive barware market while keeping costs efficient. By implementing a full-funnel Meta Ads strategy—combining broad and interest-based acquisition, high-intent retargeting, continuous creative testing, and automated scaling—we turned Meta Ads into a predictable growth channel. The result was consistent performance at scale, delivering strong purchase volumes while maintaining a healthy cost per acquisition.",
-        link: "#",
-        clientLogo: "/brands/brand-white/smokey-cocktail.webp",
-        logoCss: "w-35 3xl:w-40 h-fit",
-        bgColor: "#0457CB",
-        rightImg: "/meta-ads/dashboard-images/dashboard-1.webp",
-        textColor: "#ffffff",
-        imageAlt: "Right Image"
-    },
-    {
-        title: "Scaling Oral Care Brand with Meta Ads",
-        title2: "Building a scalable & performance-driven acquisition engine",
-        description: "We helped a D2C oral care brand scale customer acquisition in a highly competitive market while maintaining an efficient cost per purchase. By deploying a performance-focused Meta Ads funnel—combining broad prospecting, high-intent retargeting, continuous creative and audience testing, and strategic budget scaling—we built a predictable growth system. This approach enabled efficient scaling of ad spend, strong reach and awareness, and consistent purchase acquisition across campaigns.",
-        link: "#",
-        clientLogo: "/brands/brand-white/orthosquare.png",
-        logoCss: "w-35 3xl:w-50 h-fit",
-        bgColor: "#E8F3FF",
-        rightImg: "/meta-ads/dashboard-images/dashboard-2.webp",
-        textColor: "#000000",
-        imageAlt: "Right Image"
-    },
-    {
-        title: "Scaling a Women’s Fashion Brand",
-        title2: "Building a profitable and scalable online sales engine",
-        description: "We partnered with a D2C women’s fashion brand to scale online sales in a highly competitive market while keeping acquisition costs efficient. Using a performance-driven Meta Ads funnel—combining broad and interest-based acquisition, high-intent retargeting, continuous creative testing to reduce ad fatigue, and automated scaling of top-performing campaigns—we built a consistent growth system. This approach drove strong traffic, high conversion value, and predictable purchase growth while maintaining marketing efficiency.",
-        link: "#",
-        clientLogo: "/brands/brand-black/yummie.webp",
-        logoCss: "w-35 3xl:w-40 h-fit",
-        bgColor: "#F6F6F6",
-        rightImg: "/meta-ads/dashboard-images/dashboard-3.webp",
-        textColor: "#000000",
-        imageAlt: "Right Image"
-    },
-    {
-        title: "Scaling a Baby Care Brand with Meta Ads",
-        title2: "Building a scalable and profitable online purchase engine",
-        description: "We helped a D2C baby care brand acquire new parents at scale in a highly competitive market while maintaining strong purchase efficiency. Through a performance-led Meta Ads funnel—combining broad prospecting, high-intent retargeting, continuous creative testing to improve conversion rates, and automated scaling of top-performing campaigns—we built a reliable growth system. This approach delivered consistent purchase growth at scale while keeping acquisition costs efficiently controlled.",
-        link: "#",
-        clientLogo: "/brands/brand-white/tiggle-junior.webp",
-        logoCss: "w-20 3xl:w-25 h-fit",
-        bgColor: "#0457CB",
-        rightImg: "/meta-ads/dashboard-images/dashboard-4.webp",
-        textColor: "#ffffff",
-        imageAlt: "Right Image"
-    },
 
-]
+
 
 const BusinessCard = ({
     data, index
@@ -157,7 +108,58 @@ const BusinessCard = ({
     );
 };
 
-const DashboardStacks = () => {
+const DashboardStacks = ({ brandtitle }) => {
+    const dashboardData = [
+        {
+            title: `Scaling smokey cocktail with ${brandtitle} Ads`,
+            title2: "Building a profitable, scalable customer acquisition engine",
+            description: `We partnered to scale customer acquisition in a highly competitive barware market while keeping costs efficient. By implementing a full-funnel ${brandtitle} Ads strategy—combining broad and interest-based acquisition, high-intent retargeting, continuous creative testing, and automated scaling—we turned ${brandtitle} Ads into a predictable growth channel. The result was consistent performance at scale, delivering strong purchase volumes while maintaining a healthy cost per acquisition.`,
+            link: "#",
+            clientLogo: "/brands/brand-white/smokey-cocktail.webp",
+            logoCss: "w-35 3xl:w-40 h-fit",
+            bgColor: "#0457CB",
+            rightImg: "/meta-ads/dashboard-images/dashboard-1.webp",
+            textColor: "#ffffff",
+            imageAlt: "Right Image"
+        },
+        {
+            title: `Scaling Oral Care Brand with ${brandtitle} Ads`,
+            title2: "Building a scalable & performance-driven acquisition engine",
+            description: `We helped a D2C oral care brand scale customer acquisition in a highly competitive market while maintaining an efficient cost per purchase. By deploying a performance-focused ${brandtitle} Ads funnel—combining broad prospecting, high-intent retargeting, continuous creative and audience testing, and strategic budget scaling—we built a predictable growth system. This approach enabled efficient scaling of ad spend, strong reach and awareness, and consistent purchase acquisition across campaigns.`,
+            link: "#",
+            clientLogo: "/brands/brand-white/orthosquare.png",
+            logoCss: "w-35 3xl:w-50 h-fit",
+            bgColor: "#E8F3FF",
+            rightImg: "/meta-ads/dashboard-images/dashboard-2.webp",
+            textColor: "#000000",
+            imageAlt: "Right Image"
+        },
+        {
+            title: "Scaling a Women’s Fashion Brand",
+            title2: "Building a profitable and scalable online sales engine",
+            description: `We partnered with a D2C women’s fashion brand to scale online sales in a highly competitive market while keeping acquisition costs efficient. Using a performance-driven ${brandtitle} Ads funnel—combining broad and interest-based acquisition, high-intent retargeting, continuous creative testing to reduce ad fatigue, and automated scaling of top-performing campaigns—we built a consistent growth system. This approach drove strong traffic, high conversion value, and predictable purchase growth while maintaining marketing efficiency.`,
+            link: "#",
+            clientLogo: "/brands/brand-black/yummie.webp",
+            logoCss: "w-35 3xl:w-40 h-fit",
+            bgColor: "#F6F6F6",
+            rightImg: "/meta-ads/dashboard-images/dashboard-3.webp",
+            textColor: "#000000",
+            imageAlt: "Right Image"
+        },
+        {
+            title: `Scaling a Baby Care Brand with ${brandtitle} Ads`,
+            title2: "Building a scalable and profitable online purchase engine",
+            description: `We helped a D2C baby care brand acquire new parents at scale in a highly competitive market while maintaining strong purchase efficiency. Through a performance-led ${brandtitle} Ads funnel—combining broad prospecting, high-intent retargeting, continuous creative testing to improve conversion rates, and automated scaling of top-performing campaigns—we built a reliable growth system. This approach delivered consistent purchase growth at scale while keeping acquisition costs efficiently controlled.`,
+            link: "#",
+            clientLogo: "/brands/brand-white/tiggle-junior.webp",
+            logoCss: "w-20 3xl:w-25 h-fit",
+            bgColor: "#0457CB",
+            rightImg: "/meta-ads/dashboard-images/dashboard-4.webp",
+            textColor: "#ffffff",
+            imageAlt: "Right Image"
+        },
+
+    ]
     return (
         <div className='xs:px-2 md:px-4 lg:px-0 max-lg:space-y-5 space-y-10 3xl:space-y-30'>
             {dashboardData.map((business, index) => (

@@ -38,7 +38,7 @@ const brandicons = [
     { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "w-9 sm:w-9 md:w-9 lg:w-9 xl:w-10 2xl:w-10 3xl:w-12 h-fit" },
 ]
 
-export default function MetaAdsHero() {
+export default function MetaAdsHero({ title }) {
     const centerRef = useRef(null);
     const leftRef = useRef(null);
     const rightTopRef = useRef(null);
@@ -84,7 +84,7 @@ export default function MetaAdsHero() {
                     <h1 className="text-[42px] lg:text-[50px] 2xl:text-[60px] 1600:text-[70px] 1800:text-[86px] leading-[120%] tracking-[-0.04em] font-semibold max-sm:text-center">
                         The{' '}
                         <em className="font-instrument font-normal" >
-                            Meta Ads
+                            {title || "Meta Ads"}
                         </em>{' '}
                         Agency
                         <br />

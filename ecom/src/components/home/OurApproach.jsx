@@ -408,26 +408,49 @@ const SIZE = 1200;
 const RADIUS = SIZE / 2;
 const STEP_ANGLE = 90;
 
+// const steps = [
+//     {
+//         id: 4,
+//         title: "Step 4",
+//         name: "Build Systems (Months 3+) ",
+//         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+//         desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+//         tooltip1: "Build Systems Stop [chasing]",
+//         tooltip2: "stop building sustainable growth."
+//     },
+//     {
+//         id: 3,
+//         title: "Step 3",
+//         name: "Scale (Months 2-3)",
+//         desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+//         desc2b: "What you get:",
+//         desc2n: " Higher revenue without killing ROAS. ",
+//         tooltip1: "We don't [guess]",
+//         tooltip2: "We scale what's proven profitable "
+//     },
+//     {
+//         id: 2,
+//         title: "Step 2",
+//         name: "Fix & Launch (Weeks 2-4)",
+//         desc1: "We rebuild your campaigns using proven strategies. New ads, better targeting, optimized website.",
+//         desc2b: "What you get:",
+//         desc2n: " Positive ROI in 30 days or month 2 is free.",
+//         tooltip1: "No more [testing]",
+//         tooltip2: "we deploy what already works."
+//     },
+//     {
+//         id: 1,
+//         title: "Step 1",
+//         name: "The Audit (Week 1)",
+//         desc1: "We review your ad accounts, website, and analytics to find what's working and what's wasting money.",
+//         desc2b: "What you get:",
+//         desc2n: "Full audit report with prioritized fixes.",
+//         tooltip1: "Stop [Guessing]",
+//         tooltip2: "See where your money's going"
+//     },
+// ];
 const steps = [
-    {
-        id: 4,
-        title: "Step 4",
-        name: "Build Systems (Months 3+) ",
-        desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
-        desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
-        tooltip1: "Build Systems Stop [chasing]",
-        tooltip2: "stop building sustainable growth."
-    },
-    {
-        id: 3,
-        title: "Step 3",
-        name: "Scale (Months 2-3)",
-        desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
-        desc2b: "What you get:",
-        desc2n: " Higher revenue without killing ROAS. ",
-        tooltip1: "We don't [guess]",
-        tooltip2: "We scale what's proven profitable "
-    },
+
     {
         id: 2,
         title: "Step 2",
@@ -447,6 +470,25 @@ const steps = [
         desc2n: "Full audit report with prioritized fixes.",
         tooltip1: "Stop [Guessing]",
         tooltip2: "See where your money's going"
+    },
+    {
+        id: 4,
+        title: "Step 4",
+        name: "Build Systems (Months 3+) ",
+        desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+        desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+        tooltip1: "Build Systems Stop [chasing]",
+        tooltip2: "stop building sustainable growth."
+    },
+    {
+        id: 3,
+        title: "Step 3",
+        name: "Scale (Months 2-3)",
+        desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+        desc2b: "What you get:",
+        desc2n: " Higher revenue without killing ROAS. ",
+        tooltip1: "We don't [guess]",
+        tooltip2: "We scale what's proven profitable "
     },
 ];
 
@@ -510,16 +552,16 @@ export default function OurApproach() {
     }, [controls]);
 
     return (
-        <div className="relative flex items-center justify-center h-screen 3xl:h-[100vh] bg-black overflow-hidden">
+        <div className="relative flex items-center justify-center h-screen  bg-black overflow-hidden">
             {/* Static gradient circle */}
             <div
-                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[40%] border border-white/10"
+                className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[42%] border border-white/10"
                 style={{ width: SIZE, height: SIZE }}
             />
 
             {/* Inner circular glow */}
             <div
-                className="absolute rounded-full transform translate-y-[30%] 3xl:translate-y-[40%] pointer-events-none"
+                className="absolute rounded-full transform translate-y-[30%] 3xl:translate-y-[42%] pointer-events-none"
                 style={{
                     width: SIZE,
                     height: SIZE,
@@ -530,7 +572,7 @@ export default function OurApproach() {
             {/* Rotating orbit */}
             <motion.div
                 style={{ width: SIZE + 50, height: SIZE + 50 }}
-                className="absolute transform translate-y-[30%] 3xl:translate-y-[40%]"
+                className="absolute transform translate-y-[30%] 3xl:translate-y-[42%]"
                 animate={controls}
             >
                 {steps.map((step, index) => {
