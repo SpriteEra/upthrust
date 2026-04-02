@@ -71,7 +71,7 @@ const ProfileSection = () => {
               {/* TOP PLUS */}
               {index !== profiles.length - 1 && (
                 <>
-                  <div className="absolute right-0 top-0 -translate-y-1/2 translate-x-1/2 bg-white z-10">
+                  <div className="absolute right-0 top-0 -translate-y-1/2 translate-x-1/2  z-10">
                     <Image
                       src="/performance-agency/plus.png"
                       alt="plus"
@@ -81,7 +81,7 @@ const ProfileSection = () => {
                   </div>
 
                   {/* BOTTOM PLUS */}
-                  <div className="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2 bg-white z-10">
+                  <div className="absolute right-0 bottom-0 translate-y-1/2 translate-x-1/2  z-10">
                     <Image
                       src="/performance-agency/plus.png"
                       alt="plus"
@@ -128,7 +128,7 @@ const ProfileSection = () => {
               <p className="text-[24px] ">
                 {profiles[active].role}
               </p>
-              <button className="mt-6 bg-black text-white px-5 py-3 text-[14px]  cursor-pointer">
+              <button className="mt-6 bg-black text-white hover:bg-orange  px-5 py-3 text-[14px]  cursor-pointer">
                 GET AD ACCOUNT AUDIT →
               </button>
             </div>

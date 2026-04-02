@@ -170,7 +170,7 @@ function HorizontalRow({ data, direction = -1 }) {
 
 export default function Testimonials() {
     return (
-        <section className="bg-white w-full overflow-hidden  relative  sm:min-h-screen flex justify-center items-center py-3 ">
+        <section className="bg-white w-full overflow-hidden  relative  sm:min-h-screen flex justify-center items-center  ">
 
             {/*  Background Image */}
             <div className="absolute top-30 inset-0 z-10">

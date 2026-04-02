@@ -6,13 +6,15 @@ import Image from "next/image";
 
 const ProductSlideDetail = () => {
 
+
   const [index, setIndex] = useState(0);
 
   const data = cards[index];
 
+
   return (
     <>
-      <div className="hidden sm:flex w-full items-center justify-center  gap-10 max-w-[90%]  mx-auto max-h-[733px]">
+      <div className="hidden sm:flex w-full items-center justify-center  gap-10 max-w-[90%]  mx-auto max-h-[736px]" >
 
         {/* Left Slider */}
         <div className="w-1/2">
@@ -22,7 +24,7 @@ const ProductSlideDetail = () => {
         {/* Right Dynamic Content */}
         <div className="w-1/2">
 
-          <div className=" h-full w-full 3xl:h-[675px] 3xl:w-[664px] bg-[#f6f6f6] border border-gray-300 rounded-lg p-10">
+          <div className=" h-full w-full 3xl:h-[675px] 3xl:w-[664px]  border border-gray-300 rounded-lg p-10">
 
             <h1 className=" text-[40px] 3xl:text-[48px] leading-[130%] tracking-[-0.02em] font-semibold mb-8">
               {data.title}
@@ -49,21 +51,21 @@ const ProductSlideDetail = () => {
               <div className="grid grid-cols-3 gap-10">
 
                 <div>
-                  <p className="text-[18px]">Revenue</p>
+                  <p className="text-[18px]">{data.header1}</p>
                   <h2 className="text-[36px] font-semibold">
                     {data.revenue}
                   </h2>
                 </div>
 
                 <div>
-                  <p className="text-[18px]">Orders/month</p>
+                  <p className="text-[18px]">{data.header2}</p>
                   <h2 className="text-[36px] font-semibold">
                     {data.orders}
                   </h2>
                 </div>
 
                 <div>
-                  <p className="text-[18px]">Months</p>
+                  <p className="text-[18px]">{data.header3}</p>
                   <h2 className="text-[36px] font-semibold">
                     {data.months}
                   </h2>
@@ -75,8 +77,8 @@ const ProductSlideDetail = () => {
 
             <div className="border border-gray-300 rounded-xl p-6 bg-white">
 
-              <p className="text-[24px] font-semibold leading-[150%] tracking-[-0.02em]">
-                {data.text}
+              <p className="text-[24px] font-semibold leading-[150%] tracking-[-0.02em] capitalize">
+                {data.quote}
               </p>
 
               <p className="text-right text-black text-[18px] leading-[150%] tracking-[-0.02em] mt-4">

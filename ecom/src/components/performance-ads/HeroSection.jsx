@@ -87,7 +87,7 @@ const HeroSection = () => {
                         transform: `
     translateY(${offsetY * 0.4}px)
     translateX(${-offsetY * 0.3}px)
-    rotate(${-offsetY * 0.05}deg)
+    rotate(${-offsetY * 0.0}deg)
     scale(${1.2 + offsetY * 0.0005})
   `,
                         opacity: 1 - Math.min(Math.max(offsetY / 500, 0), 1),
@@ -96,7 +96,7 @@ const HeroSection = () => {
                     <Image
                         src='/performance-agency/bg2.png'
                         fill
-                        alt=""
+                        alt="background image"
                         className="object-cover object-center"
                         priority
                     />

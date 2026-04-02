@@ -21,7 +21,7 @@ const images = [
 
 ]
 
-export default function UIUXHero() {
+export default function UIUXHero({ title }) {
     const [currentWord, setCurrentWord] = useState(0);
     const words = ['PRODUCTS', 'WEBSITES', 'APPS', 'BRANDS'];
 
@@ -50,7 +50,7 @@ export default function UIUXHero() {
                             {/* Left Content */}
                             <div className="flex-1 mt-3 ">
                                 <span className="inline-block bg-black text-white text-sm 3xl:text-base px-5 3xl:px-5 py-2.5 rounded-full mb-3">
-                                    A Design Agency
+                                    {title}
                                 </span>
                                 {/* Main Heading */}
                                 <h1 className="text-[2.625rem] sm:text-[2.8rem] md:text-5xl lg:text-6xl 2xl:text-7xl 1600:text-[77px] 1800:text-[96px] font-semibold leading-[1.15] tracking-[-0.02em] 1600:leading-24  1800:leading-27 mb-6 2xl:mb-10 3xl:mb-10">

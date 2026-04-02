@@ -20,7 +20,7 @@ export default function AdSpend() {
             ref={sectionRef}
             className="w-full bg-white overflow-hidden max-sm:h-300"
         >
-            <div className="max-w-[90%]  mx-auto py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0  ">
+            <div className="max-w-[90%] 3xl:max-w-[1500px]   mx-auto py-16  flex flex-col lg:flex-row items-center gap-12 lg:gap-0  ">
 
                 <div className="shrink-0 max-sm:relative z-10 w-full lg:w-[420px] xl:w-[460px] 2xl:w-[500px] 3xl:w-[600px] ">
                     <motion.h2
@@ -65,7 +65,7 @@ export default function AdSpend() {
                 <div className="relative max-sm:h-full z-0 flex-1 flex items-center justify-end w-full">
 
                     <motion.div
-                        className="absolute inset-0 flex items-center justify-end"
+                        className="absolute -left-25 inset-0 flex items-center justify-end"
                         animate={isInView ? { opacity: 0 } : { opacity: 1 }}
                         transition={{ duration: 0.9, ease: "easeInOut" }}
                     >
@@ -89,7 +89,7 @@ export default function AdSpend() {
 
                     {/* Colourful image — fades in when in view */}
                     <motion.div
-                        className="absolute  max-sm:z-10 flex items-center justify-end w-full"
+                        className="absolute -left-25 max-sm:z-10 flex items-center justify-end w-full"
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.9, ease: "easeInOut" }}
 

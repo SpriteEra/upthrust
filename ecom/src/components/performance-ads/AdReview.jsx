@@ -39,8 +39,9 @@ export default function AdReview() {
                     {/* Right Button */}
                     <div className="hidden md:flex md:items-end md:justify-end">
                         <button className="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]">
-                            <ArrowRight size={18} />
-                            BOOK YOUR LIVE REVIEW
+                            {/* <ArrowRight size={18} /> */}
+
+                            → BOOK YOUR LIVE REVIEW
                         </button>
                     </div>
 
@@ -76,9 +77,9 @@ export default function AdReview() {
                             Custom scope
                         </p>
 
-                        <button className="bg-white text-black px-20 py-3 flex items-center gap-3 text-[19px] hover:bg-orange transition">
-                            <ArrowRight size={16} />
-                            BOOK A CALL
+                        <button className="bg-white text-black px-20 py-3 flex items-center gap-3 text-[19px]  transition">
+                            {/* <ArrowRight size={16} /> */}
+                            → BOOK A CALL
                         </button>
 
                     </div>

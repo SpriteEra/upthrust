@@ -133,18 +133,18 @@ const page = () => {
             <div>
                 <AdSpend />
             </div>
-            <div className="sm:py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20" id="process">
                 <MarketingPanel />
             </div>
 
             <ProfileSection />
-            <div className="sm:py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20" id="case-studies">
                 <AuditHero />
             </div>
             <div className="sm:py-16 3xl:py-20">
                 <ProductSlideDetail />
             </div>
-            <div className="py-16 3xl:py-20">
+            <div className="py-16 3xl:py-20" id="hear-from-them">
                 <Testimonials />
             </div>
             <div>
@@ -153,7 +153,7 @@ const page = () => {
             <div className="sm:py-16 3xl:py-20">
                 <AdReview />
             </div>
-            <div className='space-y-16 3xl:space-y-30'>
+            <div className='space-y-16 3xl:space-y-30' id="why-upthrust">
                 <PerfromanceHeading
                     tag="h2"
                     heading={[

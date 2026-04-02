@@ -15,7 +15,7 @@ const PANELS = [
             "Custom KPI dashboard (yours to keep)",
             "90-day roadmap delivered",
         ],
-        cta: "Audit to Launch → ₹11k",
+        cta: "Audit turnaround → 72 hrs.",
         image: "/performance-agency/panel/panel1.png",
     },
     {
@@ -28,7 +28,7 @@ const PANELS = [
             "Low performers killed",
             "Budget moved to winners",
         ],
-        cta: "Average CPA drop → ₹18k",
+        cta: "Average CPA drop → 30 - 50%",
         image: "/performance-agency/panel/panel2.png",
     },
     {
@@ -63,6 +63,8 @@ export default function MarketingPanel() {
     const [active, setActive] = useState(0);
     const [fading, setFading] = useState(false);
     const timerRef = useRef(null);
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     const switchTo = (idx) => {
         if (idx === active) return;
@@ -85,16 +87,44 @@ export default function MarketingPanel() {
     };
 
     useEffect(() => {
+        if (!isVisible) return;
+
         resetTimer();
+
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
+        };
+    }, [isVisible]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                } else {
+                    setIsVisible(false);
+                }
+            },
+            {
+                threshold: 0.5, // 50% visible then trigger
+            }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            if (containerRef.current) {
+                observer.unobserve(containerRef.current);
+            }
         };
     }, []);
 
     return (
         <>
-            <div className="hidden md:flex  max-h-[775px] max-w-[90%] mx-auto bg-white  items-center justify-center p-6">
-                <div className="w-full justify-between gap-10 3xl:gap-20 flex flex-col md:flex-row rounded-lg overflow-hidden">
+            <div ref={containerRef} className="hidden md:flex  max-h-[775px] max-w-[90%] mx-auto bg-white  items-center justify-center p-6">
+                <div className="w-full justify-between gap-10 3xl:gap-20 flex flex-col md:flex-row  overflow-hidden">
 
                     {/* LEFT: your image */}
                     <div className="shrink-0 max-lg:hidden w-full md:w-[400px] xl:w-[600px] 3xl:w-[834px] relative min-h-[300px] aspect-834/748 md:min-h-[460px]  xl:h-[550px] 3xl:h-[690px] 1800:h-[720px] overflow-hidden">
@@ -148,12 +178,12 @@ export default function MarketingPanel() {
                                     <div className="flex items-center justify-between px-6 py-4 hover:bg-gray-50 transition-colors duration-150">
                                         <span
                                             className="text-[30px] tracking-[-0.02em] leading-[150%]  font-semibold transition-colors duration-200"
-                                            style={{ color: isOpen ? "#111827" : "#9ca3af" }}
+                                            style={{ color: isOpen ? "#000000" : "#000000" }}
                                         >
                                             {panel.label}
                                         </span>
                                         <span
-                                            className="text-xl font-light text-black leading-none select-none transition-transform duration-300"
+                                            className="text-xl font-light size-9 p-2 text-black leading-none select-none transition-transform duration-300"
 
                                         >
                                             {isOpen ? "-" : "+"}
@@ -198,7 +228,7 @@ export default function MarketingPanel() {
                                                 </ul>
 
                                                 <button
-                                                    className="text-[16px] font-semibold px-4 py-2  text-black  transition-colors duration-150 active:scale-95"
+                                                    className="text-[16px] font-semibold flex w-full justify-end items-end px-4 py-2  text-gray-500  transition-colors duration-150 active:scale-95"
                                                     onClick={(e) => e.stopPropagation()}
                                                 >
                                                     {panel.cta}

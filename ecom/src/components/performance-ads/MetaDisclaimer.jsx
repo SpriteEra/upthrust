@@ -117,8 +117,9 @@ const MetaDisclaimer = () => {
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
                 <div className=''>
-                    <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] 3xl:leading-15'>Do you have <br />any questions?</p>
-                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
+                    <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] 3xl:leading-15'>Ready to make your
+                        <br />ad spend work harder?</p>
+                    <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Start working with a team that is measured by your revenue.</p>
 
                     {/* <CreativeRocketButton /> */}
                     <button className="bg-black text-white px-6 py-3  hover:bg-orange tracking-[-0.02em] leading-[150%] transition-colors duration-200 text-[15px] cursor-pointer 2xl:text-base">
@@ -135,7 +136,8 @@ const MetaDisclaimer = () => {
                     />
                     <div className='flex gap-3 items-start'>
                         <span className='text-[#FF3B00] font-semibold text-3xl max-xs:hidden'>/</span>
-                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for brands that actually scale.</p>
+                        <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-92 xs:max-w-70 leading-[150%]'>We partner with brands that are serious about growth. If your ads aren’t generating measurable revenue, they aren’t working.<br />
+                            And we don’t run ads that don’t work.</p>
                     </div>
                 </div>
             </div>

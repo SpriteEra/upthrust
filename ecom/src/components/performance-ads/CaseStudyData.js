@@ -11,6 +11,9 @@ export const cards = [
     problem:
       "Stuck at ₹1.8L/month. Previous agency said they'd hit their ceiling. Couldn't scale without killing margins.",
 
+    header1: "Revenue",
+    header2: "Orders/month",
+    header3: "Months",
     revenue: "+181%",
     orders: "8,970",
     months: "4",
@@ -20,28 +23,32 @@ export const cards = [
 
     author: "Founder, Atlanta Mocassin",
   },
-
   {
     id: 2,
-    img: "/performance-agency/SliderImg (2).png",
-    category: "PREMIUM AUDIO",
-    title: "AudioArt",
-    price: "$54K → $453K in 3 mo",
+    img: "/performance-agency/SliderImg (4).png",
+    category: "INDIAN APPAREL",
+    title: "Urban Pitara",
+    price: "₹70K → ₹3.5L/day",
 
-    text: `"High-ticket scaled without discounting."`,
+    text: `5x revenue through creative testing.`,
 
     problem:
-      "AudioArt struggled to scale premium products without lowering prices or hurting brand value.",
+      "Spending on ads but stuck at ₹70K/month. Creative fatigue killing performance. No testing system.",
 
-    revenue: "+220%",
-    orders: "5,120",
-    months: "3",
+    header1: "Revenue",
+    header2: "Per month",
+    header3: "Creative tested",
+    revenue: "+410%",
+    orders: "15,800",
+    months: "6",
 
     quote:
-      "We scaled high-ticket products without discounting or hurting the brand image.",
+      "They didn't just run ads. They built a creative testing machine.",
 
-    author: "Founder, AudioArt",
+    author: "Founder, Urban Pitara",
   },
+
+
 
   {
     id: 3,
@@ -53,58 +60,68 @@ export const cards = [
     text: `Scaled revenue & efficiency. Most can't.`,
 
     problem:
-      "Brand had strong product demand but weak digital performance and low ad efficiency.",
+      "Growing revenue but efficiency dropping. Couldn't scale without tanking ROAS.",
 
+    header1: "Revenue",
+    header2: "ROAS",
+    header3: "Months",
     revenue: "+152%",
     orders: "12,300",
     months: "5",
 
     quote:
-      "They transformed our digital marketing and unlocked serious growth.",
+      "Most agencies can scale OR stay efficient. Upthrust did both.",
 
     author: "Founder, Smokey Cocktail",
   },
 
   {
     id: 4,
-    img: "/performance-agency/SliderImg (4).png",
-    category: "INDIAN APPAREL",
-    title: "Urban Pitara",
-    price: "₹70K → ₹3.5L/day",
+    img: "/performance-agency/SliderImg (2).png",
+    category: "PREMIUM AUDIO",
+    title: "AudioArt",
+    price: "$54K → $453K in 3 mo",
 
-    text: `5x revenue through creative testing.`,
+    text: `"High-ticket scaled without discounting."`,
 
     problem:
-      "Urban Pitara struggled to convert traffic into consistent daily sales.",
+      "High-ticket product ($500+). Previous attempts to scale required heavy discounting",
 
-    revenue: "+410%",
-    orders: "15,800",
-    months: "6",
+    header1: "Revenue",
+    header2: "Orders",
+    header3: "Discounts",
+    revenue: "+220%",
+    orders: "5,120",
+    months: "3",
 
     quote:
-      "Creative testing and ad strategy took our brand to another level.",
+      "They scaled us without a single discount. That's the hard part.",
 
-    author: "Founder, Urban Pitara",
+    author: "Founder, AudioArt",
   },
+
 
   {
     id: 5,
     img: "/performance-agency/SliderImg (1).png",
     category: "B2B MANUFACTURING",
-    title: "Mukunda Foods",
+    title: "Mukunda Foods (B2B)",
     price: "75 MQLs/month",
 
     text: `"B2B lead gen that actually converts."`,
 
     problem:
-      "Mukunda Foods needed consistent qualified B2B leads but struggled with digital campaigns.",
+      "Industrial kitchen equipment. Long sales cycle. No predictable lead flow.",
 
-    revenue: "+300%",
-    orders: "75 MQLs/month",
-    months: "4",
+    header1: "MQLs",
+    header2: "Traffic",
+    header3: "Conversion",
+    revenue: "75",
+    orders: "200%",
+    months: "3X",
 
     quote:
-      "Finally a lead generation strategy that actually delivers results.",
+      "Lead quality improved significantly. Not just volume — actual buyers.",
 
     author: "Founder, Mukunda Foods",
   },

@@ -5,22 +5,21 @@ import Image from "next/image";
 import UiUxRocketButton from "./UiUxRocketButton";
 import UiUxHeading from "@/common/UiUxHeading";
 
-export default function FaqUiUx() {
+const faqData = [
+    { question: "What kind of companies do you usually work with?", answer: "We primarily work with startups, scaleups, and growing businesses that are serious about improving their product, brand, or digital presence. Most of our clients are B2B, SaaS, D2C, or tech-enabled companies looking to grow with clarity, not guesswork." },
+    { question: "What services do you actually provide?", answer: "We help companies design, build, and improve digital experiences. This includes UI/UX design, web design, branding, and web development. Depending on the engagement, we can support everything from strategy and design to build-ready or production-ready delivery." },
+    { question: "How do we know which service is right for us?", answer: "You don’t need to decide that upfront. During our initial strategy call, we understand your goals, challenges, and current setup, then recommend what will have the biggest impact first. In many cases, the right solution is clearer after that conversation." },
+    { question: "Do you work on existing products or only new ones?", answer: "Both. We often work on existing websites, products, or brands that need improvement, optimization, or a redesign. We also partner with teams building something new from scratch. The process adapts based on where you’re starting from." },
+    { question: "What does the first engagement usually look like?", answer: "We start with a strategy and alignment phase. This includes understanding your goals, reviewing what currently exists, and identifying opportunities. From there, we define scope, timelines, and next steps before moving into execution." },
+    { question: "How involved do we need to be during the process?", answer: "We keep involvement focused and efficient. You’ll be involved during key decision points-such as strategy alignment, reviews, and feedback but we handle the day-to-day execution. Most clients spend a few hours per week, not more." },
+    { question: "How long does a typical project take?", answer: "Timelines vary depending on scope and complexity. Most projects range from 3 to 8 weeks, while larger or more complex engagements may take longer. We’ll give you a clear timeline before starting." },
+    { question: "Is there a minimum commitment?", answer: "We don’t lock clients into long-term commitments by default. Most engagements are project-based, with clear deliverables. Ongoing or retainer work is optional and only recommended when it makes sense." },
+    { question: "Do you offer development as well?", answer: "Yes. We offer web development and can deliver production-ready builds or work closely with your internal developers. If development isn’t required, we provide clean, well-documented designs that are easy to implement." },
+];
+
+export default function FaqUiUx({ faqs = faqData }) {
+
     const [openIndexes, setOpenIndexes] = useState([]);
-
-    const faqs = [
-        { question: "What kind of companies do you usually work with?", answer: "We primarily work with startups, scaleups, and growing businesses that are serious about improving their product, brand, or digital presence. Most of our clients are B2B, SaaS, D2C, or tech-enabled companies looking to grow with clarity, not guesswork." },
-        { question: "What services do you actually provide?", answer: "We help companies design, build, and improve digital experiences. This includes UI/UX design, web design, branding, and web development. Depending on the engagement, we can support everything from strategy and design to build-ready or production-ready delivery." },
-        { question: "How do we know which service is right for us?", answer: "You don’t need to decide that upfront. During our initial strategy call, we understand your goals, challenges, and current setup, then recommend what will have the biggest impact first. In many cases, the right solution is clearer after that conversation." },
-        { question: "Do you work on existing products or only new ones?", answer: "Both. We often work on existing websites, products, or brands that need improvement, optimization, or a redesign. We also partner with teams building something new from scratch. The process adapts based on where you’re starting from." },
-        { question: "What does the first engagement usually look like?", answer: "We start with a strategy and alignment phase. This includes understanding your goals, reviewing what currently exists, and identifying opportunities. From there, we define scope, timelines, and next steps before moving into execution." },
-        { question: "How involved do we need to be during the process?", answer: "We keep involvement focused and efficient. You’ll be involved during key decision points-such as strategy alignment, reviews, and feedback but we handle the day-to-day execution. Most clients spend a few hours per week, not more." },
-        { question: "How long does a typical project take?", answer: "Timelines vary depending on scope and complexity. Most projects range from 3 to 8 weeks, while larger or more complex engagements may take longer. We’ll give you a clear timeline before starting." },
-        { question: "Is there a minimum commitment?", answer: "We don’t lock clients into long-term commitments by default. Most engagements are project-based, with clear deliverables. Ongoing or retainer work is optional and only recommended when it makes sense." },
-        { question: "Do you offer development as well?", answer: "Yes. We offer web development and can deliver production-ready builds or work closely with your internal developers. If development isn’t required, we provide clean, well-documented designs that are easy to implement." },
-    ];
-
-
 
     const toggleFAQ = (index) => {
         if (openIndexes.includes(index)) {

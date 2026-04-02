@@ -168,6 +168,9 @@ const CaseStudy = ({ index, setIndex }) => {
   const [direction, setDirection] = useState(null);
   const containerRef = useRef(null);
 
+  const [isVisible, setIsVisible] = useState(false);
+  const autoRef = useRef(null);
+
   const nextSlide = () =>
     setIndex((prev) => (prev + 1) % cards.length);
 
@@ -188,29 +191,11 @@ const CaseStudy = ({ index, setIndex }) => {
     }
   };
 
-  // infinite move
-  // useEffect(() => {
-
-  //   if (!direction) return;
-
-  //   const interval = setInterval(() => {
-
-  //     if (direction === "left") {
-  //       nextSlide();
-  //     } else {
-  //       prevSlide();
-  //     }
-
-  //   }, 2000);
-
-  //   return () => clearInterval(interval);
-
-  // }, [direction]);
 
   useEffect(() => {
-    if (!direction) return;
+    if (!isVisible || !direction) return;
 
-    const interval = setInterval(() => {
+    autoRef.current = setInterval(() => {
       if (direction === "right") {
         nextSlide();
       } else {
@@ -218,14 +203,38 @@ const CaseStudy = ({ index, setIndex }) => {
       }
     }, 2000);
 
-    return () => clearInterval(interval);
-  }, [direction, index]);
+    return () => clearInterval(autoRef.current);
+  }, [isVisible, direction]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setDirection("right"); // ✅ default direction
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
 
   return (
 
     <>
       {/* ================= MOBILE VIEW ================= */}
-      <div className="sm:hidden px-4 py-6 space-y-8 ">
+      <div className="sm:hidden px-4 py-6 space-y-8 " >
 
         {cards.map((card, i) => (
           <div
@@ -272,7 +281,7 @@ const CaseStudy = ({ index, setIndex }) => {
         className="hidden sm:block w-full h-[733px] overflow-hidden"
         ref={containerRef}
         onMouseMove={handleMouseMove}
-        onMouseLeave={() => setDirection(null)}
+        onMouseLeave={() => setDirection("right")}
       >
         <div className="flex flex-col items-center">
 
