@@ -244,7 +244,7 @@ export const metadata = {
         siteName: "Upthrust",
         images: [
             {
-                // url: "/google-ads/ogimg.png",
+                url: "/ogimage/seo-og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Upthrust – D2C Ecommerce Marketing Agency",
@@ -257,7 +257,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Google Ads Agency That Scales Profitably",
         description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
-        images: ["/google-ads/ogimg.png"],
+        images: ["/ogimage/seo-og-image.png"],
     },
 
     robots: {

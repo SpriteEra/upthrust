@@ -1,7 +1,3 @@
-// import QuoteTestimonialCard from "./QuoteTestimonialCard";
-// import ShortTestimonialCard from "./ShortTestimonialCard";
-// import VideoTestimonialCard from "./VideoTestimonialCard";
-
 import VideoTestimonialCard from "../common/VideoTestimonialCard";
 import QuoteTestimonialCard from "./QuoteTestimonialCard";
 import ShortTestimonialCard from "./ShortTestimonialCard";
@@ -15,7 +11,7 @@ export default function ClientTestimonials() {
             title: "Data-Driven Growth Backed by Exceptional Support",
             quote: "I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.",
             author: "Rishabh Jain",
-            position: "President - Corondo",
+            position: "President - Carorbis",
             avatar: "/google-ads/review/img1.webp",
             bgColor: "bg-white",
             borderColor: "border-[#FE2B27]"
@@ -25,7 +21,7 @@ export default function ClientTestimonials() {
             rating: 5,
             title: " “Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.” ",
             author: "Gunjan",
-            position: "Marketing Head, Hozor",
+            position: "Marketing Head, Housr ",
             hasAvatar: true,
             avatar: "/google-ads/review/img2.webp",
             avatarShape: {
@@ -69,7 +65,7 @@ export default function ClientTestimonials() {
             avatar: "/google-ads/review/img4.webp",
             bgColor: "bg-[#0076F0]",
             textColor: "text-white",
-            video: "https://cdn.upthrust.agency/UI/UX%20Assets/Testimonials/Acadly.mp4",
+            video: "https://upthrustvideocdn.b-cdn.net/Meta%20ads/(0)%20Univa.mp4",
             arrowcss: "absolute -right-4 max-sm:-rotate-10 sm:-right-16 xl:-right-12 1600:-right-16 1800:-right-20 top-6 2xl:top-4 3xl:top-5 size-20 2xl:size-26 1800:size-28 ",
             hasHighlight: true,
             highlightCss: 'absolute top-19 3xl:top-22 w-45 h-2 left-7'

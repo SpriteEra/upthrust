@@ -42,24 +42,6 @@ const pageConfig = [
     },
 ];
 
-// export default async function Page({ params }) {
-//     const { slug } = await params;
-
-//     //  Ecommerce Pages
-//     if (agencyPages[slug]) {
-//         const data = agencyPages[slug];
-//         return <EcomLayout data={data} />;
-//     }
-
-//     //  Google Pages
-//     if (googlePages[slug]) {
-//         const data = googlePages[slug];
-//         return <GoogleAgencyLayout data={data} />;
-//     }
-
-//     //  Not Found
-//     return <div>Page Not Found</div>;
-// }
 
 export default async function Page({ params }) {
     const { slug } = await params;

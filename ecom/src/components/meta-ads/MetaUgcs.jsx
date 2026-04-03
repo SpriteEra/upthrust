@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import MetaRocketButton from './MetaRocketButton';
 import RocketCTAButton from '@/common/RocketCTAButton';
 // import RocketCTAButton from '@/common/RocketCTAButton';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const navLinks = [
     {
@@ -357,6 +358,13 @@ const UGCVideoCategories = () => {
         setShowAll(false); // reset view
     }, [activeCategory]);
 
+    const handleShowMore = () => {
+        setShowAll(!showAll)
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+    };
+
     return (
 
         <div className="lg:max-w-[83%] 3xl:max-w-[85%] mx-auto px-4">
@@ -402,7 +410,9 @@ const UGCVideoCategories = () => {
             {items.length > 8 && (
                 <div className="flex justify-center my-6">
                     <button
-                        onClick={() => setShowAll(!showAll)}
+                        type="button"
+                        // onClick={() => setShowAll(!showAll)}
+                        onClick={() => handleShowMore()}
                     >
                         <RocketCTAButton color='blue' text1={"Show"} text2={showAll ? "Less" : "More"} />
                     </button>

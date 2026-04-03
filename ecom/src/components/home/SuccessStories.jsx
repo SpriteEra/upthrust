@@ -66,6 +66,17 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
             }
         });
 
+        // const tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: containerRef.current,
+        //         start: 'top top',
+        //         toggleActions: 'play none none none',
+        //         once: true,
+        //     }
+        // });
+
+
+
         // ALL ANIMATIONS WORK TOGETHER
         // Title slides in from left
         tl.fromTo(secretBehindRef.current, {

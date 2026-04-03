@@ -112,6 +112,53 @@ const testimonials = [
     }
 ];
 
+export const metadata = {
+    title: "D2C Ecommerce Marketing Agency | Scale Profitable Brands – Upthrust",
+
+    description: "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+
+    keywords: [
+        "ecommerce marketing agency",
+    ],
+
+    // authors: [{ name: "Upthrust" }],
+    // creator: "Upthrust",
+    // publisher: "Upthrust",
+
+    metadataBase: new URL("https://www.upthrust.agency"),
+
+    alternates: {
+        canonical: "/",
+    },
+
+    openGraph: {
+        title: "Scale Your D2C Brand Profitably with Upthrust",
+        description: "From Meta & Google Ads to CRO and retention, we help D2C brands scale revenue without killing ROAS.",
+        url: "https://www.upthrust.agency",
+        siteName: "Upthrust",
+        images: [
+            {
+                url: "/ogimage/ecom-opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Upthrust – D2C Ecommerce Marketing Agency",
+            },
+        ],
+        type: "website",
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Scale Your D2C Brand Profitably with Upthrust",
+        description: "From Meta & Google Ads to CRO and retention, we help D2C brands scale revenue without killing ROAS.",
+        images: ["/ogimage/ecom-opengraph-image.png"],
+    },
+
+    robots: {
+        index: true,
+        follow: true,
+    }
+};
 
 export default async function EcomLayout({ data }) {
 
@@ -289,7 +336,7 @@ export default async function EcomLayout({ data }) {
                             />
                             <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>Last Month,
                                 <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] font-normal'> 47 brands </span>
-                                Brands Scaled
+                                Scaled
                             </h2>
                         </div>
                     </div>
@@ -408,7 +455,7 @@ export default async function EcomLayout({ data }) {
 
             {/* Desktop GSAP */}
             <div className="max-lg:hidden">
-                {/* <SuccessStories /> */}
+                <SuccessStories />
             </div>
             <div>
                 <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>

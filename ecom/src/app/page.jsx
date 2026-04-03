@@ -297,7 +297,7 @@ const page = () => {
               />
               <h2 className='text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-center leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em]'>Last Month,
                 <span className='capitalize text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] font-normal'> 47 brands </span>
-                Brands Scaled
+                Scaled
               </h2>
             </div>
           </div>
