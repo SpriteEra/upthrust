@@ -109,7 +109,7 @@ export const FullPricingSection = () => {
                             )}
                         </ul>
 
-                        <button className="w-full bg-black text-white py-3 3xl:py-3 rounded-lg 3xl:rounded-md text-base xl:text-sm 3xl:text-base font-semibold hover:bg-gray-800 transition-colors cursor-pointer"
+                        <button className="w-full bg-black text-white py-3 3xl:py-3 rounded-lg 3xl:rounded-md text-base xl:text-sm 3xl:text-base font-semibold hover:bg-orange transition-colors cursor-pointer"
                             onClick={() => setIsModalOpen(true)}
                         >
                             <span className='max-lg:hidden'>Start Here</span>

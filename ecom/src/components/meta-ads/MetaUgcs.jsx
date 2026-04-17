@@ -111,6 +111,7 @@ const ImageIcon = () => (
         <polyline points="21 15 16 10 5 21" />
     </svg>
 );
+
 // ─── AD TYPE TOGGLE ───────────────────────────────────────────────────────────
 
 const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) => {
@@ -180,7 +181,6 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
         </div>
     );
 };
-
 
 const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
     const { isLoading, isReady, isPlaying } = videoState || {};

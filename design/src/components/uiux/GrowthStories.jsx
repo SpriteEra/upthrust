@@ -89,7 +89,7 @@ const growthStories = [
             "Beyond had to establish itself in a market & stand out from competition.",
         rating: 5.0,
         message:
-            "I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”",
+            "“What clicked for me was you ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.”",
         clientName: "Iti Dubey",
         position: "CMarketing Head at - Mukunda Foods",
         profile: "/uiux/profile/iti-dubey.webp",

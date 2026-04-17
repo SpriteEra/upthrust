@@ -9,7 +9,7 @@ const NavbarCTAButton = ({ className, ModalComponent = LeadFormModal }) => {
         <>
             <div className="lg:hidden max-lg:flex gap-0 sm:gap-2">
                 <button
-                    className={`rounded-full py-4 px-6 bg-black border-3 border-(--red) text-white text-base transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 relative group font-medium cursor-pointer tracking-[0em] ${className}`}
+                    className={`rounded-full py-3 sm:py-4 px-6 bg-black border-3 border-(--red) text-white text-base transition-colors duration-200 flex items-center space-x-1 sm:space-x-2 relative group font-medium cursor-pointer tracking-[0em] ${className}`}
                     onClick={() => setIsModalOpen(true)}
                 >
                     Book A Demo Call

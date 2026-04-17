@@ -5,7 +5,7 @@ import NavbarCTAButton from './NavbarCTAButton';
 const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Contact Library', href: '#contact-library' },
+    { name: 'Creative Library', href: '#creative-library' },
     { name: 'Case Studies', href: '#case-studies' },
     { name: 'Why Upthrust?', href: '#why-upthrust' },
     { name: 'Pricing', href: '#pricing' },

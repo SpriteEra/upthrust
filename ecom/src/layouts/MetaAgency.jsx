@@ -113,7 +113,7 @@ const MetaAgencyLayout = ({ data }) => {
     return (
         <main id="meta-ad-agency" >
             <MetaNavbar items={navLinks} />
-            <MetaAdsHero title={data.title} />
+            <MetaAdsHero title={data?.title} />
 
             <div className="bg-black text-white py-16 pb-10 3xl:py-5 my-10 3xl:my-16 3xl:pt-40 " >
                 <MetaHeading
@@ -165,7 +165,7 @@ const MetaAgencyLayout = ({ data }) => {
                         {
                             line: [
                                 { type: "normal", text: "able to" },
-                                { type: "italic", text: `scale ${data.brand} ads` },
+                                { type: "italic", text: `scale ${data?.brand} ads` },
                             ],
                         },
                     ]}
@@ -177,7 +177,7 @@ const MetaAgencyLayout = ({ data }) => {
                 <BrandSlider brandsRow1={brandsRow1} brandsRow2={brandsRow2} />
             </div>
             <div>
-                <DropLetters titleItalic={data.brand + "-First"} />
+                <DropLetters titleItalic={data?.brand + "-First"} />
                 <StatsGrid />
             </div>
             <section className=" py-16 3xl:py-30 3xl:pt-35 max-w-[92%] mx-auto flex flex-col justify-center lg:flex-row items-center gap-12">
@@ -188,19 +188,19 @@ const MetaAgencyLayout = ({ data }) => {
                     {/* Left Content */}
                     <div className="lg:w-[50%]  overflow-hidden">
                         <p className="uppercase text-sm tracking-[-0.02em] leading-[150%] mb-3 border-b border-black pb-2 3xl:pb-3 w-full">
-                            A NEW ERA OF {data.brand} AGENCY THAT DELIVER ROI
+                            A NEW ERA OF {data?.brand} AGENCY THAT DELIVER ROI
                         </p>
                         <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 1600:text-[3.8rem] 1800:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
                             The Quickest, Easiest <br />
                             Way To Grow Your <br />
                             Business{" "}
                             <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 1600:text-[65px] 1800:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
-                                With {data.brand} Ads
+                                With {data?.brand} Ads
                             </span>{" "}Is..
 
                         </h2>
                         <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] max-w-150 3xl:max-w-180">
-                            Upthrust is your dedicated, on-call {data.brand} ads creative team to expand your {data.brand} ads capacity and extend your team’s creative capabilities.
+                            Upthrust is your dedicated, on-call {data?.brand} ads creative team to expand your {data?.brand} ads capacity and extend your team’s creative capabilities.
                         </p>
                         <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
                             Creative capabilities to drive conversion at a cost you would love.
@@ -256,7 +256,7 @@ const MetaAgencyLayout = ({ data }) => {
                         },
                         {
                             line: [
-                                { type: "italic", text: `scaling through ${data.brand}` },
+                                { type: "italic", text: `scaling through ${data?.brand}` },
                                 { type: "normal", text: ", which no one tell you" },
                             ],
                         },
@@ -264,7 +264,7 @@ const MetaAgencyLayout = ({ data }) => {
                     label="CASE STUDIES"
                     subtitle="Creative Copy and UGC beats everything else"
                 />
-                <FeatureCards datatitle={data.brand} />
+                <FeatureCards datatitle={data?.brand} />
 
             </div>
 
@@ -326,7 +326,7 @@ const MetaAgencyLayout = ({ data }) => {
                     label="CASE STUDIES"
                     subtitle="We Don't Just Talk—We Show"
                 />
-                <DashboardStacks brandtitle={data.brand} />
+                <DashboardStacks brandtitle={data?.brand} />
             </div>
             <MobileTestimonialsSlider
                 cardColors={
@@ -510,7 +510,7 @@ const MetaAgencyLayout = ({ data }) => {
                     subtitle=""
                 />
                 <FAQ
-                    faqData={data.faqs}
+                    faqData={data?.faqs}
                     shadow={true}
                     actionCss={{
                         active: "bg-[#0457CB] text-white",

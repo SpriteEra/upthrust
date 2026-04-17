@@ -8,48 +8,48 @@ import PerfromanceHeading from "@/common/PerformanceHeading";
 const col1 = [
     {
         name: "Troy",
-        handle: "MC.Overalls",
+        handle: "M.C.Overalls",
         avatar: "/performance-agency/logos/1.png",
         brand: "/performance-agency/logos/logo1.png",
         text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
     },
     {
         name: "Rishabh Jain",
-        handle: "Carrtio",
+        handle: "Carorbis",
         avatar: "/performance-agency/logos/2.png",
         brand: "/performance-agency/logos/logo2.png",
-        text: "In 6 months we grew organic traffic 463%. Ad expenses doing better than ever. Conversion rates improved 3x. All thanks to Upthrust.",
+        text: " In 6 months we grew organic traffic 463%. Ad expenses doing better than ever. Conversion rates improved 3x. All thanks to Upthrust.",
     },
     {
         name: "Gunjan",
-        handle: "Roaar",
+        handle: "Marketing Head, Housr",
         avatar: "/performance-agency/logos/3.png",
         brand: "/performance-agency/logos/logo3.png",
-        text: "Most leads we couldn't convert. Upthrust changed that completely. Now we close 3x more deals every month.",
+        text: "Most leads we couldn't convert. Upthrust changed that with smarter targeting. Lead quality and conversion improved significantly.",
     },
 ];
 
 const col2 = [
     {
-        name: "Giordas",
+        name: "Gaurav",
         handle: "Marketing Manager, Vega",
         avatar: "/performance-agency/logos/4.png",
         brand: "/performance-agency/logos/logo4.png",
-        text: "45–50 qualified leads per month on a limited budget. For a B2B company, that's fantastic. Real game-changer.",
+        text: "45-50 qualified leads per month on a limited budget. For a B2B company, that's fantastic. Real game-changer.",
     },
     {
-        name: "Vaibhav Vashpat",
-        handle: "Co-Founder, Zocially",
+        name: "Vaibhav Vashisht",
+        handle: "Co-Founder, Acadly",
         avatar: "/performance-agency/logos/5.png",
         brand: "/performance-agency/logos/logo5.png",
         text: "From zero marketing experience to hitting benchmarks. Regular calls kept the ball rolling. Never felt left in the dark.",
     },
     {
-        name: "N. Dubey",
-        handle: "Marketing Head, Marqutte India",
+        name: "Iti Dubey",
+        handle: "Marketing Head, Mukunda Foods",
         avatar: "/performance-agency/logos/6.png",
         brand: "/performance-agency/logos/logo6.png",
-        text: "SEM, Google Ads, budget allocation — Upthrust's plan was clear from day one. Results followed within weeks.",
+        text: "SEM, Google Ads, budget allocation — Upthrust's plan proved really helpful. Lead quality exceeded expectations.",
     },
 ];
 
@@ -61,8 +61,8 @@ function TestimonialCard({ item }) {
         >
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
-                        <Image src={item.avatar} alt={item.name} width={32} height={32} className="object-cover w-full h-full" />
+                    <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                        <Image src={item.avatar} alt={item.name} width={50} height={50} className="object-cover w-full h-full" />
 
                     </div>
                     <div>

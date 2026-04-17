@@ -22,7 +22,7 @@ import React from 'react';
 //   );
 // };
 
-export const Curve1 = ({ 
+export const Curve1 = ({
   parts = [],
   curveColor = "#072333",
   curvePosition = "end",
@@ -38,9 +38,9 @@ export const Curve1 = ({
     return parts.map((part, index) => {
       if (part.type === 'highlight') {
         return (
-          <span 
+          <span
             key={index}
-            style={{ 
+            style={{
               backgroundColor: part.bgColor || '#FF4500',
               color: part.textColor || '#FFFFFF',
               padding: highlightPadding,
@@ -55,11 +55,11 @@ export const Curve1 = ({
         );
       } else {
         return (
-          <span 
+          <span
             key={index}
-            style={{ 
-              color: part.color || '#072333', 
-              fontSize, 
+            style={{
+              color: part.color || '#072333',
+              fontSize,
             }}
           >
             {part.text}
@@ -70,23 +70,23 @@ export const Curve1 = ({
   };
 
   return (
-    <div 
-      className={`inline-flex items-center gap-3 font-hanzi ${className}`}
-      style={{ 
+    <div
+      className={`inline-flex items-center gap-3 font-caveat ${className}`}
+      style={{
         transform: `rotate(${tiltAngle}deg)`,
         transformOrigin: 'left center'
       }}
     >
       {curvePosition === 'start' && (
-        <Image src="/curves/curve1.png" width={100} height={50} className="ml-2 w-full h-full" alt="Curve design"/>
+        <Image src="/curves/curve1.png" width={100} height={50} className="ml-2 w-full h-full" alt="Curve design" />
       )}
-      
-      <div className="flex items-center gap-2 flex-wrap font-hanzi">
+
+      <div className="flex items-center gap-2 flex-wrap font-caveat">
         {renderParts()}
       </div>
-      
+
       {curvePosition === 'end' && (
-        <Image src="/curves/curve1.png" width={89} height={46} className="ml-2 w-[50px] h-full" alt="Curve design"/>
+        <Image src="/curves/curve1.png" width={89} height={46} className="ml-2 w-[50px] h-full" alt="Curve design" />
       )}
     </div>
   );

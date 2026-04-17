@@ -136,9 +136,11 @@ const page = () => {
             <div className="sm:py-16 3xl:py-20" id="process">
                 <MarketingPanel />
             </div>
+<div id="case-studies">
 
             <ProfileSection />
-            <div className="sm:py-16 3xl:py-20" id="case-studies">
+</div>
+            <div className="sm:py-16 3xl:py-20" >
                 <AuditHero />
             </div>
             <div className="sm:py-16 3xl:py-20">

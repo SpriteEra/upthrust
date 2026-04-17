@@ -83,7 +83,7 @@ const Tooltip = ({
 
             {isVisible && (
                 <div
-                    className={`absolute z-50 px-3 py-2 text-xs font-medium text-white bg-gray-800 rounded-lg shadow-lg select-text ${tooltipClasses} ${positionClasses[position]}`}
+                    className={`absolute z-50 px-3 py-2 text-xs font-medium text-white bg-black rounded-lg shadow-lg select-text ${tooltipClasses} ${positionClasses[position]}`}
                     role="tooltip"
                     onMouseEnter={handleTooltipMouseEnter}
                     onMouseLeave={handleTooltipMouseLeave}

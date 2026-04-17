@@ -127,7 +127,7 @@ const HeroSection = () => {
                         <button className="bg-black text-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange transition-opacity">
                             Get Your Free Ad Account Audit
                         </button>
-                        <button className="border border-black bg-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors">
+                        <button onClick={() => document.getElementById('case-studies').scrollIntoView({ behavior: 'smooth' })} className="border border-black bg-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors cursor-pointer">
                             SEE CLIENT RESULTS →
                         </button>
                     </div>

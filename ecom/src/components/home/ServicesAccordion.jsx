@@ -165,7 +165,7 @@ export default function ServicesAccordion() {
                         {/* HEADER */}
                         <div className="flex items-start  relative">
                             <div className="max-xs:min-w-full xs:w-1/2">
-                                <p className="text-4xl leading-[44px] 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10 tracking-[-0.02em] 3xl:leading-[60px]">
+                                <p className="text-[32px] leading-[36px] 3xl:text-5xl font-semibold mb-3 xs:mb-6 max-xs:pr-10 tracking-[-0.02em] 3xl:leading-[60px]">
                                     {item.title}
                                 </p>
                                 <span className="whitespace-pre-line max-w-xl text-base lg:text-sm 3xl:text-base">
@@ -181,7 +181,7 @@ export default function ServicesAccordion() {
                                             <li key={i} className="inline-flex items-center gap-1 text-sm 3xl:text-base whitespace-nowrap">
 
                                                 <ArrowRight size={16} />
-                                                <span>{d.before} </span>
+                                                <span>{d.before}</span>
 
                                                 <span className="font-semibold">{d.bold}</span>
 

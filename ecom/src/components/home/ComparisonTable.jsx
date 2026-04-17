@@ -41,7 +41,7 @@ export const ComparisonTable = ({ rocketBgColor = "#000000", checkBgColor = "#FF
                         lines={[
                             {
                                 parts: [
-                                    { type: "text", text: "47 brands. Some" },
+                                    { type: "text", text: "47 brands. Same" },
                                     { type: 'highlight', text: 'results', bgColor: '#FF4500' },
                                 ]
                             },

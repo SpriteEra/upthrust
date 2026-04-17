@@ -86,21 +86,21 @@ const testimonials = [
         text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
         name: "Troy",
         company: "MC Overalls",
-        image: "/ecom/profile/profile6.png",
+        image: "/ecom/profile/profile6.webp",
         color: "bg-[#FFF0F0]"
     },
     {
         text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
         name: "Rishab",
         company: "Carobis",
-        image: "/ecom/profile/profile7.png",
+        image: "/ecom/profile/profile7.webp",
         color: "bg-[#FFEBDA]"
     },
     {
         text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
         name: "Gunjan",
         company: "Housr",
-        image: "/ecom/profile/profile8.png",
+        image: "/ecom/profile/profile8.webp",
         color: "bg-[#E1EFD7]"
     },
     {
@@ -162,6 +162,12 @@ export const metadata = {
 
 export default async function EcomLayout({ data }) {
 
+    // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/d2c-marketing-agency`, {
+    //     cache: 'no-store'
+    // });
+    // const resData = await response.json();
+    // const result = resData.data;
+    // console.log("Ecom data", result);
 
     return (
         <main id="main-content">
@@ -311,7 +317,7 @@ export default async function EcomLayout({ data }) {
 
             <WhatWeDo />
 
-            <div className='flex flex-col mt-25 xs:mt-70 mb-0 xs:mb-10 px-2 overflow-hidden'>
+            <div className='flex flex-col mt-25 xs:mt-60 mb-0 xs:mb-10 px-2 overflow-hidden'>
                 <div className='flex flex-col items-center mb-10'>
                     <span className='text-sm md:text-xs 3xl:text-sm uppercase'>problems we've solved</span>
                     <div className='flex flex-col items-center justify-center'>
@@ -346,7 +352,7 @@ export default async function EcomLayout({ data }) {
                 <InteractiveCaseStudy />
             </div>
 
-            <div className='flex flex-col mt-25 xs:mt-60 3xl:mt-80 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
+            <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60  mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
                 <div className='flex flex-col items-center mb-10'>
 
 
@@ -368,7 +374,7 @@ export default async function EcomLayout({ data }) {
             </div>
 
             <div>
-                <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-70 mb-2 xs:mb-10 px-2'>
+                <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-2 xs:mb-10 px-2'>
                     <div className='flex flex-col items-center mb-10'>
 
 
@@ -392,8 +398,8 @@ export default async function EcomLayout({ data }) {
 
 
 
-            <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 3xl:mb-0 max-lg:hidden'>
-                <div className='flex flex-col pt-22 3xl:pt-25 text-white'>
+            <div className='bg-black mt-25 xs:mt-50 mb-8 xs:mb-10 3xl:mb-0 max-lg:hidden' relative>
+                <div className='flex relative z-20 flex-col pt-22 3xl:pt-25 text-white'>
                     <div className='flex flex-col items-center mb-10 3xl:mb-0'>
 
                         <EcomHeading
@@ -414,14 +420,14 @@ export default async function EcomLayout({ data }) {
 
                 </div>
                 {/* <OurApproach /> */}
-                <div id="approach-section" className="h-[400vh] ">
+                <div id="approach-section" className="h-[400vh] 3xl:-mt-40 z-10 relative">
                     <div className="sticky top-0 h-screen  ">
                         <OurApproach />
                     </div>
                 </div>
             </div>
 
-            <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-0 xs:mb-10 px-2 scroll-mt-10' id='contact-library'>
+            <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-0 xs:mb-10 px-2 scroll-mt-10' id='creative-library'>
                 <div className='flex flex-col'>
                     <div className='flex flex-col items-center mb-6'>
 
@@ -574,7 +580,7 @@ export default async function EcomLayout({ data }) {
                         },
 
                     ]}
-                    imageClassName='-right-35 3xl:-right-40 top-8 3xl:top-10 w-full'
+                    imageClassName='-right-35 3xl:-right-25 1800:-right-40 top-8 3xl:top-20 1800:top-10 w-full'
                     curvePosition="end"
                     curveFlipHorizontal={true}
                     curveFlipVertical={false}
@@ -686,7 +692,6 @@ export default async function EcomLayout({ data }) {
             <div>
                 <div className='flex flex-col mt-25 xs:mt-50 mb-20 lg:mb-10 px-2 items-center'>
 
-
                     <EcomHeading
                         tag="h3"
                         heading={[
@@ -700,7 +705,7 @@ export default async function EcomLayout({ data }) {
                                 ],
                             },
                         ]}
-                        label="Got questions? FAQ's"
+                        label="Got questions? ‘FAQS’"
                         subtitle=""
                     />
                 </div>
@@ -713,11 +718,11 @@ export default async function EcomLayout({ data }) {
                 setwidth="max-w-2xl! 3xl:max-w-3xl!"
                 text2={{
                     desktop: {
-                        text1: " YOU FOUND THE RIGHT AGENCY.",
+                        text1: "YOU FOUND THE RIGHT AGENCY.",
                         text2: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
                     },
                     mobile: {
-                        text1: "YOU FOUND THE RIGHT AGENCY. WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
+                        text1: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
                     }
                 }}
             />

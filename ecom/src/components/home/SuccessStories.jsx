@@ -242,7 +242,7 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
                                             width={66}
                                             height={66}
                                             src={testimonial.image}
-                                            alt={testimonial.alt} className='w-full h-full object-contain' />
+                                            alt={testimonial.alt} className='w-full h-full object-contain rounded-md' />
                                     </div>
                                     <div>
                                         <p className={`text-lg 3xl:text-[22px]  tracking-[0.55px] leading-[27px] ${testimonial.clientNameColor}`}>{testimonial.name}</p>

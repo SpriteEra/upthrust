@@ -39,15 +39,6 @@ body {
 }
 
 
-/* .handwritten {
-  font-family: 'Indie Flower', cursive;
-} */
-
-
-.font-hanzi {
-  font-family: var(--font-hanzipen), cursive;
-}
-
 @utility spacing {
   @apply px-3 sm:px-12 md:px-14 lg:px-18 xl:px-36;
 }

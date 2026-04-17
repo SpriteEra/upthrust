@@ -1,5 +1,4 @@
 import { Inter, Instrument_Serif, Caveat } from "next/font/google";
-import localFont from "next/font/local";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -23,10 +22,4 @@ export const caveat = Caveat({
 });
 
 
-export const hanzipen = localFont({
-  src: "./fonts/hanzipen-en.woff2",
-  variable: "--font-hanzipen",
-  display: "swap",
-  preload: false,
-});
 

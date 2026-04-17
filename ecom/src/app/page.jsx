@@ -307,7 +307,7 @@ const page = () => {
         <InteractiveCaseStudy />
       </div>
 
-      <div className='flex flex-col mt-25 xs:mt-60 3xl:mt-80 mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
+      <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60  mb-0 xs:mb-10 px-2 scroll-mt-28' id='services'>
         <div className='flex flex-col items-center mb-10'>
           {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>Our services</span>
           <div className='flex flex-col items-center justify-center'>
@@ -336,7 +336,7 @@ const page = () => {
       </div>
 
       <div>
-        <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-70 mb-2 xs:mb-10 px-2'>
+        <div className='flex flex-col mt-25 xs:mt-50 3xl:mt-60 mb-2 xs:mb-10 px-2'>
           <div className='flex flex-col items-center mb-10'>
             {/* <span className='text-sm md:text-xs 3xl:text-sm uppercase'>A VIDEO GUIDE</span>
             <div className='flex flex-col'>

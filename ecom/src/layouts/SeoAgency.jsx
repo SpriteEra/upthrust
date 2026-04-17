@@ -75,7 +75,7 @@ const caseStudies = [
         title: "Google Search",
         description: "200% more organic traffic and 75 qualified leads every month — without increasing budget",
         metrics: {
-            metric1: { label: "Boost in Organic Traffic", value: "200%" },
+            metric1: { label: "Boost in Organic Traffic", value: "200%", showUpArrow:true },
             metric2: { label: "Marketing Qualified Leads", value: "75" }
         },
         testimonial: {
@@ -123,8 +123,8 @@ const caseStudies = [
             metric2: { label: "Pipeline Built", value: "$320K / 2Mo" }
         },
         testimonial: {
-            name: "Nidhi Jain",
-            role: "Co-Founder, Cycle",
+            name: "Raj Intha",
+            role: "Global Marketing Director, Cyble",
             avatar: "/google-ads/compaigns/4.webp",
             whatsays: "Perplexity users converted faster than any other channel — they already trusted us before the first call.",
         },
@@ -165,8 +165,8 @@ const caseStudies = [
             metric2: { label: "Sales Growth", value: "12%" }
         },
         testimonial: {
-            name: "Marcus Thompson",
-            role: "Lead Architect, UrbanPlans Inc",
+            name: "Vishav Sharma",
+            role: "Founder, Urban Pitara",
             avatar: "/google-ads/compaigns/6.webp",
             whatsays: "We scaled profitably for the first time because the right people found us at the right moment.",
         },

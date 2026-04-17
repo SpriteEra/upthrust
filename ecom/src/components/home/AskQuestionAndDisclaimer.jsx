@@ -119,16 +119,16 @@ const AskQuestionAndDisclaimer = ({ text }) => {
 
                     <StylishButton />
                 </div>
-                <div className='flex flex-col justify-between items-center gap-6'>
+                <div className='flex  flex-col justify-start sm:justify-between items-start sm:items-center gap-6'>
                     <Image
                         src={'/logo.png'}
                         alt='Upthrust'
                         width={400}
                         height={300}
-                        className='h-16 lg:h-14 3xl:h-16 w-full object-contain'
+                        className='h-11 w-auto self-start sm:h-16 lg:h-14 3xl:h-16 sm:w-full object-contain'
                     />
                     <div className='flex gap-3 items-start'>
-                        <span className='text-[#DB2F15] font-semibold text-3xl max-xs:hidden'>/</span>
+                        <span className='text-[#DB2F15] font-semibold text-3xl '>/</span>
                         <p className='text-sm md:text-xs 3xl:text-base max-w-100 3xl:max-w-90 xs:max-w-70 leading-[140%]'>Paid ads, scroll-stopping creatives, and profitable campaigns. We build growth systems for {text} brands that actually scale.</p>
                     </div>
                 </div>

@@ -51,8 +51,7 @@ export default function FaqUiUx({ faqs = faqData }) {
                             </div>
                         </div>
                         <p className="text-2xl lg:text-lg md:text-xl 3xl:text-2xl font-semibold tracking-[-0.02em] mb-8">
-                            "Got more questions or curious about what's ahead? Let's connect
-                            on LinkedIn!"
+                            "Got more questions or curious about what's ahead? Let's connect"
                         </p>
                         <div className="relative inline-block">
                             <UiUxRocketButton text1="Book A" text2="Strategy Call" />

@@ -30,7 +30,7 @@ const defaultCaseStudies = [
         title: "Zomato's Business Coolstra",
         description: "We built a conversion-focused landing page, ran demand generation campaigns to re-engage visitors, and deployed video ad sequences to warm leads before they reached the sales team.",
         metrics: {
-            metric1: { label: "Boost in Organic Traffic", value: "200%" },
+            metric1: { label: "Boost in Organic Traffic", value: "200%", showUpArrow: true },
             metric2: { label: "Marketing Qualified Leads", value: "75" }
         },
         testimonial: {
@@ -74,8 +74,8 @@ const defaultCaseStudies = [
             metric2: { label: "Pipeline Built", value: "$320K / 2Mo" }
         },
         testimonial: {
-            name: "Nidhi Jain",
-            role: "Co-Founder, Cycle",
+            name: "Raj Intha",
+            role: "Global Marketing Director, Cyble",
             avatar: "/google-ads/compaigns/4.webp"
         },
         accentColor: "#00822E",
@@ -112,8 +112,8 @@ const defaultCaseStudies = [
             metric2: { label: "Sales Growth", value: "12%" }
         },
         testimonial: {
-            name: "Marcus Thompson",
-            role: "Lead Architect, UrbanPlans Inc",
+            name: "Vishav Sharma",
+            role: "Founder, Urban Pitara",
             avatar: "/google-ads/compaigns/6.webp"
         },
         accentColor: "#FE2B27",
@@ -241,7 +241,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                                             {data.metrics.metric1.value}
                                             {data.showArrow &&
 
-                                                <span className="text-2xl font-light ml-1 text-red-500">↓</span>
+                                                <span className={data.metrics.metric1.showUpArrow ? "text-2xl font-light ml-1 text-green-500" : "text-2xl font-light ml-1 text-red-500"}> {data.metrics.metric1.showUpArrow ? "↑" : "↓"}</span>
                                             }
                                         </p>
                                     </div>

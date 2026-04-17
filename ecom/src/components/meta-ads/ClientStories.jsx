@@ -95,7 +95,7 @@ export default function ClientStories() {
         {
             id: 7,
             rating: 5,
-            title: `"I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”`,
+            title: `“What clicked for me was you ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.”`,
             author: "Iti Dubey",
             avatar: "/google-ads/review/img7.webp",
             avatarShape: {

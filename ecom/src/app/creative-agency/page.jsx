@@ -232,7 +232,7 @@ export const metadata = {
 
 const page = () => {
     return (
-        <main id="meta-ad-agency" >
+        <main id="meta-ad-agency">
             <CreativeNavbar items={navLinks} />
             <MetaAdsHero />
 

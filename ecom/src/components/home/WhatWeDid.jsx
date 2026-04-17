@@ -142,7 +142,7 @@ const BusinessCard = ({
                             <Image src={'/ecom/curves/curve5.webp'} width={100} height={100} alt='Curve Img' className='size-12 md:size-16 object-contain pt-1 max-lg:hidden' />
                             <div className="flex flex-col gap-4 ">
                                 <div className="flex gap-2">
-                                    <span className={` ${borderColor} text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] -rotate-12 `}>
+                                    <span className={` ${borderColor} text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1.5 rounded-full h-fit font-caveat tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] -rotate-12 `}>
                                         from
                                     </span>
                                     <div className="text-(--grayd) text-2xl 3xl:text-3xl tracking-[-0.02em] lg:leading-7.5">
@@ -150,7 +150,7 @@ const BusinessCard = ({
                                     </div>
                                 </div>
                                 <div className="flex gap-2">
-                                    <span className={`${accentColor}  text-white text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1 rounded-full h-fit font-hanzi tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] rotate-12`}>
+                                    <span className={`${accentColor}  text-white text-[25px] lg:text-xl 3xl:text-[32px] capitalize px-3.5 lg:px-4 py-2 lg:py-1.5 rounded-full h-fit font-caveat tracking-[-0.02em] max-lg:leading-[26.58px] 3xl:leading-[26.58px] rotate-12`}>
                                         to
                                     </span>
                                     <div className="text-2xl 3xl:text-3xl text-(--grayd) 3xl:pl-8 tracking-[-0.02em] lg:leading-7.5 pl-6 lg:pl-3">
@@ -181,7 +181,7 @@ const BusinessCard = ({
                             <div className='relative'>
                                 <div className='absolute right-28 2xl:right-31 3xl:right-45 1800:right-64 lg:right-20 -top-10 3xl:-top-5 -rotate-10 flex gap-6 max-lg:hidden'>
                                     <Image src={'/ecom/curves/curve3.webp'} alt='curve' width={150} height={80} className=' object-contain scale-x-[-1] h-20 w-full rotate-50 3xl:rotate-61' />
-                                    <p className='text-center font-hanzi text-xl 3xl:text-2xl whitespace-nowrap tracking-[-0.02em] 3xl:leading-[28px]'>
+                                    <p className='text-center font-caveat text-xl 3xl:text-2xl whitespace-nowrap tracking-[-0.02em] 3xl:leading-[28px]'>
                                         Just in case if <br />you want us
                                     </p>
                                 </div>

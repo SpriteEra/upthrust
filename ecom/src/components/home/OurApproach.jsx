@@ -398,36 +398,59 @@
 //     );
 // }
 
-"use client";
+// "use client";
 
-import { Curve1 } from "@/common/HandWritten";
-import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+// import { Curve1 } from "@/common/HandWritten";
+// import { motion, useAnimationControls } from "framer-motion";
+// import { useEffect, useRef, useState } from "react";
 
-const SIZE = 1200;
-const RADIUS = SIZE / 2;
-const STEP_ANGLE = 90;
+// const SIZE = 1200;
+// const RADIUS = SIZE / 2;
+// const STEP_ANGLE = 90;
 
+// // const steps = [
+// //     {
+// //         id: 4,
+// //         title: "Step 4",
+// //         name: "Build Systems (Months 3+) ",
+// //         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+// //         desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+// //         tooltip1: "Build Systems Stop [chasing]",
+// //         tooltip2: "stop building sustainable growth."
+// //     },
+// //     {
+// //         id: 3,
+// //         title: "Step 3",
+// //         name: "Scale (Months 2-3)",
+// //         desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+// //         desc2b: "What you get:",
+// //         desc2n: " Higher revenue without killing ROAS. ",
+// //         tooltip1: "We don't [guess]",
+// //         tooltip2: "We scale what's proven profitable "
+// //     },
+// //     {
+// //         id: 2,
+// //         title: "Step 2",
+// //         name: "Fix & Launch (Weeks 2-4)",
+// //         desc1: "We rebuild your campaigns using proven strategies. New ads, better targeting, optimized website.",
+// //         desc2b: "What you get:",
+// //         desc2n: " Positive ROI in 30 days or month 2 is free.",
+// //         tooltip1: "No more [testing]",
+// //         tooltip2: "we deploy what already works."
+// //     },
+// //     {
+// //         id: 1,
+// //         title: "Step 1",
+// //         name: "The Audit (Week 1)",
+// //         desc1: "We review your ad accounts, website, and analytics to find what's working and what's wasting money.",
+// //         desc2b: "What you get:",
+// //         desc2n: "Full audit report with prioritized fixes.",
+// //         tooltip1: "Stop [Guessing]",
+// //         tooltip2: "See where your money's going"
+// //     },
+// // ];
 // const steps = [
-//     {
-//         id: 4,
-//         title: "Step 4",
-//         name: "Build Systems (Months 3+) ",
-//         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
-//         desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
-//         tooltip1: "Build Systems Stop [chasing]",
-//         tooltip2: "stop building sustainable growth."
-//     },
-//     {
-//         id: 3,
-//         title: "Step 3",
-//         name: "Scale (Months 2-3)",
-//         desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
-//         desc2b: "What you get:",
-//         desc2n: " Higher revenue without killing ROAS. ",
-//         tooltip1: "We don't [guess]",
-//         tooltip2: "We scale what's proven profitable "
-//     },
+
 //     {
 //         id: 2,
 //         title: "Step 2",
@@ -448,9 +471,461 @@ const STEP_ANGLE = 90;
 //         tooltip1: "Stop [Guessing]",
 //         tooltip2: "See where your money's going"
 //     },
+//     {
+//         id: 4,
+//         title: "Step 4",
+//         name: "Build Systems (Months 3+) ",
+//         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+//         desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+//         tooltip1: "Build Systems Stop [chasing]",
+//         tooltip2: "stop building sustainable growth."
+//     },
+//     {
+//         id: 3,
+//         title: "Step 3",
+//         name: "Scale (Months 2-3)",
+//         desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+//         desc2b: "What you get:",
+//         desc2n: " Higher revenue without killing ROAS. ",
+//         tooltip1: "We don't [guess]",
+//         tooltip2: "We scale what's proven profitable "
+//     },
 // ];
-const steps = [
 
+// export default function OurApproach() {
+//     const controls = useAnimationControls();
+
+//     const [activeIndex, setActiveIndex] = useState(() => { return 3; });
+//     const angleRef = useRef(270);
+
+//     useEffect(() => {
+//         // Set initial rotation so step 1 (index 3) is at top
+//         // controls.set({ rotate: 270 });
+
+//         const handleScroll = () => {
+//             const section = document.getElementById("approach-section");
+//             if (!section) return;
+
+//             const rect = section.getBoundingClientRect();
+//             const windowHeight = window.innerHeight;
+
+//             if (rect.top <= 0 && rect.bottom >= windowHeight) {
+//                 const scrollProgress =
+//                     Math.abs(rect.top) / (section.offsetHeight - windowHeight);
+
+//                 // 0→3 maps to steps 1→2→3→4
+//                 const stepIndex = Math.min(
+//                     steps.length - 1,
+//                     Math.floor(scrollProgress * steps.length)
+//                 );
+
+//                 // Start at 270° and add stepIndex * 90° to advance steps 1→2→3→4
+//                 const nextAngle = 270 + stepIndex * STEP_ANGLE;
+
+//                 if (angleRef.current !== nextAngle) {
+//                     angleRef.current = nextAngle;
+
+//                     // activeIndex calculation: which array index is at the top
+//                     const nextActiveIndex =
+//                         (steps.length - (nextAngle / STEP_ANGLE) % steps.length) % steps.length;
+//                     // const nextActiveIndex = (steps.length - 1) - stepIndex;
+
+//                     setActiveIndex(nextActiveIndex);
+
+//                     controls.start({
+//                         rotate: nextAngle,
+//                         transition: {
+//                             type: "spring",
+//                             stiffness: 140,
+//                             damping: 12,
+//                             mass: 0.7,
+//                         },
+//                     });
+//                 }
+//             }
+//         };
+
+//         handleScroll();
+
+//         window.addEventListener("scroll", handleScroll);
+//         return () => window.removeEventListener("scroll", handleScroll);
+//     }, [controls]);
+
+//     // useEffect(() => {
+//     //     const handleScroll = () => {
+//     //         const section = document.getElementById("approach-section");
+//     //         if (!section) return;
+
+//     //         const rect = section.getBoundingClientRect();
+//     //         const windowHeight = window.innerHeight;
+
+//     //         let stepIndex = 0; // ✅ DEFAULT
+
+//     //         // ✅ If section not reached yet → still show first step
+//     //         if (rect.top > 0) {
+//     //             stepIndex = 0;
+//     //         }
+//     //         // ✅ Normal scroll logic
+//     //         else if (rect.bottom >= windowHeight) {
+//     //             const scrollProgress =
+//     //                 Math.abs(rect.top) / (section.offsetHeight - windowHeight);
+
+//     //             stepIndex = Math.min(
+//     //                 steps.length - 1,
+//     //                 Math.floor(scrollProgress * steps.length)
+//     //             );
+//     //         }
+
+//     //         const nextAngle = 270 + stepIndex * STEP_ANGLE;
+
+//     //         angleRef.current = nextAngle;
+
+//     //         const nextActiveIndex =
+//     //             (steps.length - (nextAngle / STEP_ANGLE) % steps.length) % steps.length;
+
+//     //         setActiveIndex(nextActiveIndex);
+
+//     //         controls.set({ rotate: nextAngle }); // ✅ IMPORTANT (not start)
+//     //     };
+
+//     //     handleScroll(); // ✅ runs on load
+
+//     //     window.addEventListener("scroll", handleScroll);
+//     //     return () => window.removeEventListener("scroll", handleScroll);
+//     // }, [controls]);
+
+//     return (
+//         <div className="relative flex items-center justify-center h-screen  bg-black overflow-hidden">
+//             {/* Static gradient circle */}
+//             <div
+//                 className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[42%] border border-white/10"
+//                 style={{ width: SIZE, height: SIZE }}
+//             />
+
+//             {/* Inner circular glow */}
+//             <div
+//                 className="absolute rounded-full transform translate-y-[30%] 3xl:translate-y-[42%] pointer-events-none"
+//                 style={{
+//                     width: SIZE,
+//                     height: SIZE,
+//                     background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.03) 60%, transparent 100%)',
+//                 }}
+//             />
+
+//             {/* Rotating orbit */}
+//             <motion.div
+//                 style={{ width: SIZE + 50, height: SIZE + 50 }}
+//                 className="absolute transform translate-y-[30%] 3xl:translate-y-[42%]"
+//                 animate={controls}
+//                 initial={{ rotate: 270 }}
+//             >
+//                 {steps.map((step, index) => {
+//                     const angle = index * STEP_ANGLE;
+
+//                     return (
+//                         <div
+//                             key={step.id}
+//                             className="absolute top-1/2 left-1/2"
+//                             style={{
+//                                 transform: `
+//                         translate(-50%, -50%)
+//                         rotate(${angle}deg)
+//                         translateY(-${RADIUS}px)
+//                         `,
+//                             }}
+//                         >
+//                             {/* Step */}
+//                             <div className="flex flex-col items-center text-white select-none relative">
+//                                 {index === activeIndex &&
+//                                     <motion.div
+//                                         initial={{ opacity: 0 }}
+//                                         animate={{ opacity: 1 }}
+//                                         exit={{ opacity: 0 }}
+//                                         transition={{ duration: 1, ease: "easeOut" }}
+//                                     >
+//                                         <Curve1
+//                                             lines={[
+//                                                 {
+//                                                     parts: [
+//                                                         { type: 'highlight', text: step.tooltip1, bgColor: '#FF4500' },
+//                                                     ]
+//                                                 },
+//                                                 {
+//                                                     parts: [
+//                                                         { type: "text", text: step.tooltip2 },
+//                                                     ]
+//                                                 },
+//                                             ]}
+//                                             imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1] 3xl:top-24 3xl:right-5" :
+//                                                 "-right-0 top-20 3xl:top-24 3xl:right-5"} !h-10 3xl:!h-12 w-full`}
+//                                             curvePosition="end"
+//                                             curveFlipHorizontal={true}
+//                                             curveFlipVertical={false}
+//                                             tiltAngle={index % 2 === 0 ? -4 : 4}
+//                                             imageIndex={5}
+//                                             textClassName="!text-white"
+//                                             className={`${index % 2 === 0 ? "-left-75 top-0 3xl:-top-3 3xl:-left-90" : "-right-75 top-0 3xl:-top-3 3xl:-right-90"}  absolute `}
+//                                         />
+//                                     </motion.div>
+//                                 }
+//                                 <div
+//                                     className="w-11 h-11 rounded-full bg-white text-black
+//                                     flex items-center justify-center font-semibold relative"
+//                                 >
+//                                     {step.id}
+//                                     <span className="text-xs 3xl:text-sm px-3 bg-white/10 py-0.5 mb-2 absolute -top-8 font-light text-white">STEP</span>
+//                                     <div className="absolute top-12 flex flex-col items-center text-white max-w-sm w-md">
+//                                         <div className="h-14 3xl:h-16 w-px bg-white" />
+//                                         <p className="font-semibold text-2xl 3xl:text-3xl whitespace-nowrap mt-1 tracking-[-0.02em]">{step.name}</p>
+//                                         <span className="text-xs 3xl:text-base text-center font-light max-w-60 mt-1.5 3xl:mt-2">{step.desc1}</span>
+//                                         <p className="text-xs 3xl:text-base text-center font-light max-w-60 mt-5 3xl:mt-6"><span className="font-normal">What You Get:</span>{" "}{step.desc2n}</p>
+//                                     </div>
+//                                 </div>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                             </div>
+//                         </div>
+//                     );
+//                 })}
+//             </motion.div>
+//         </div>
+//     );
+// }
+
+
+// "use client";
+
+// import { Curve1 } from "@/common/HandWritten";
+// import { motion } from "framer-motion";
+// import { useEffect, useRef, useState } from "react";
+// import gsap from "gsap";
+
+// const SIZE = 1200;
+// const RADIUS = SIZE / 2;
+// const STEP_ANGLE = 90;
+
+// const steps = [
+//     {
+//         id: 2,
+//         title: "Step 2",
+//         name: "Fix & Launch (Weeks 2-4)",
+//         desc1: "We rebuild your campaigns using proven strategies. New ads, better targeting, optimized website.",
+//         desc2b: "What you get:",
+//         desc2n: " Positive ROI in 30 days or month 2 is free.",
+//         tooltip1: "No more [testing]",
+//         tooltip2: "we deploy what already works."
+//     },
+//     {
+//         id: 1,
+//         title: "Step 1",
+//         name: "The Audit (Week 1)",
+//         desc1: "We review your ad accounts, website, and analytics to find what's working and what's wasting money.",
+//         desc2b: "What you get:",
+//         desc2n: "Full audit report with prioritized fixes.",
+//         tooltip1: "Stop [Guessing]",
+//         tooltip2: "See where your money's going"
+//     },
+//     {
+//         id: 4,
+//         title: "Step 4",
+//         name: "Build Systems (Months 3+) ",
+//         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
+//         desc2b: "What you get:",
+//         desc2n: "Sustainable business, not just ad dependency.",
+//         tooltip1: "Build Systems Stop [chasing]",
+//         tooltip2: "stop building sustainable growth."
+//     },
+//     {
+//         id: 3,
+//         title: "Step 3",
+//         name: "Scale (Months 2-3)",
+//         desc1: "We increase budget on winning campaigns. Launch new channels. Create fresh ads every week.",
+//         desc2b: "What you get:",
+//         desc2n: " Higher revenue without killing ROAS. ",
+//         tooltip1: "We don't [guess]",
+//         tooltip2: "We scale what's proven profitable "
+//     },
+// ];
+
+// export default function OurApproach() {
+//     const [activeIndex, setActiveIndex] = useState(3);
+//     const angleRef = useRef(270);
+//     const orbitRef = useRef(null);
+//     const tweenRef = useRef(null);
+
+//     useEffect(() => {
+//         if (orbitRef.current) {
+//             gsap.set(orbitRef.current, { rotation: 270 });
+//         }
+
+//         const handleScroll = () => {
+//             const section = document.getElementById("approach-section");
+//             if (!section) return;
+
+//             const rect = section.getBoundingClientRect();
+//             const windowHeight = window.innerHeight;
+
+//             let stepIndex = 0;
+
+//             if (rect.top > 0) {
+//                 stepIndex = 0;
+//             } else if (rect.bottom >= windowHeight) {
+//                 const scrollProgress =
+//                     Math.abs(rect.top) / (section.offsetHeight - windowHeight);
+
+//                 stepIndex = Math.min(
+//                     steps.length - 1,
+//                     Math.floor(scrollProgress * steps.length)
+//                 );
+//             }
+
+//             const nextAngle = 270 + stepIndex * STEP_ANGLE;
+
+//             if (angleRef.current !== nextAngle) {
+//                 angleRef.current = nextAngle;
+
+//                 const nextActiveIndex =
+//                     (steps.length - (nextAngle / STEP_ANGLE) % steps.length) % steps.length;
+
+//                 setActiveIndex(nextActiveIndex);
+
+//                 if (tweenRef.current) {
+//                     tweenRef.current.kill();
+//                 }
+
+//                 if (orbitRef.current) {
+//                     tweenRef.current = gsap.to(orbitRef.current, {
+//                         rotation: nextAngle,
+//                         duration: 0.9,
+//                         ease: "power3.out",
+//                         overwrite: true,
+//                     });
+//                 }
+//             }
+//         };
+
+//         handleScroll();
+
+//         window.addEventListener("scroll", handleScroll);
+//         return () => window.removeEventListener("scroll", handleScroll);
+//     }, []);
+
+//     return (
+//         <div className="relative flex items-center justify-center h-screen bg-black overflow-hidden">
+//             {/* Static gradient circle */}
+//             <div
+//                 className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[42%] border border-white/10"
+//                 style={{ width: SIZE, height: SIZE }}
+//             />
+
+//             {/* Inner circular glow */}
+//             <div
+//                 className="absolute rounded-full transform translate-y-[30%] 3xl:translate-y-[42%] pointer-events-none"
+//                 style={{
+//                     width: SIZE,
+//                     height: SIZE,
+//                     background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 30%, rgba(255, 255, 255, 0.03) 60%, transparent 100%)',
+//                 }}
+//             />
+
+//             {/* Rotating orbit — driven by GSAP via ref */}
+//             <div
+//                 ref={orbitRef}
+//                 style={{
+//                     width: SIZE + 50,
+//                     height: SIZE + 50,
+//                     transform: "rotate(270deg)",
+//                 }}
+//                 className="absolute transform translate-y-[30%] 3xl:translate-y-[42%]"
+//             >
+//                 {steps.map((step, index) => {
+//                     const angle = index * STEP_ANGLE;
+
+//                     return (
+//                         <div
+//                             key={step.id}
+//                             className="absolute top-1/2 left-1/2"
+//                             style={{
+//                                 transform: `
+//                                     translate(-50%, -50%)
+//                                     rotate(${angle}deg)
+//                                     translateY(-${RADIUS}px)
+//                                 `,
+//                             }}
+//                         >
+//                             <div className="flex flex-col items-center text-white select-none relative">
+//                                 {index === activeIndex &&
+//                                     <motion.div
+//                                         initial={{ opacity: 0 }}
+//                                         animate={{ opacity: 1 }}
+//                                         exit={{ opacity: 0 }}
+//                                         transition={{ duration: 1, ease: "easeOut" }}
+//                                     >
+//                                         <Curve1
+//                                             lines={[
+//                                                 {
+//                                                     parts: [
+//                                                         { type: 'highlight', text: step.tooltip1, bgColor: '#FF4500' },
+//                                                     ]
+//                                                 },
+//                                                 {
+//                                                     parts: [
+//                                                         { type: "text", text: step.tooltip2 },
+//                                                     ]
+//                                                 },
+//                                             ]}
+//                                             imageClassName={`${index % 2 === 0 ? "-right-0 top-20 scale-x-[-1] 3xl:top-24 3xl:right-5" :
+//                                                 "-right-0 top-20 3xl:top-24 3xl:right-5"} !h-10 3xl:!h-12 w-full`}
+//                                             curvePosition="end"
+//                                             curveFlipHorizontal={true}
+//                                             curveFlipVertical={false}
+//                                             tiltAngle={index % 2 === 0 ? -4 : 4}
+//                                             imageIndex={5}
+//                                             textClassName="!text-white"
+//                                             className={`${index % 2 === 0 ? "-left-75 top-0 3xl:-top-3 3xl:-left-90" : "-right-75 top-0 3xl:-top-3 3xl:-right-90"} absolute `}
+//                                         />
+//                                     </motion.div>
+//                                 }
+//                                 <div
+//                                     className="w-11 h-11 rounded-full bg-white text-black
+//                                     flex items-center justify-center font-semibold relative"
+//                                 >
+//                                     {step.id}
+//                                     <span className="text-xs 3xl:text-sm px-3 bg-white/10 py-0.5 mb-2 absolute -top-8 font-light text-white">STEP</span>
+//                                     <div className="absolute top-12 flex flex-col items-center text-white max-w-sm w-md">
+//                                         <div className="h-14 3xl:h-16 w-px bg-white" />
+//                                         <p className="font-semibold text-2xl 3xl:text-3xl whitespace-nowrap mt-1 tracking-[-0.02em]">{step.name}</p>
+//                                         <span className="text-xs 3xl:text-base text-center font-light max-w-60 mt-1.5 3xl:mt-2">{step.desc1}</span>
+//                                         <p className="text-xs 3xl:text-base text-center font-light max-w-60 mt-5 3xl:mt-6">
+//                                             <span className="font-normal">What You Get:</span>{" "}{step.desc2n}
+//                                         </p>
+//                                     </div>
+//                                 </div>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                                 <span className="mt-2 text-xs opacity-80"></span>
+//                             </div>
+//                         </div>
+//                     );
+//                 })}
+//             </div>
+//         </div>
+//     );
+// }
+
+"use client";
+
+import { Curve1 } from "@/common/HandWritten";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+
+const SIZE = 1200;
+const RADIUS = SIZE / 2;
+const STEP_ANGLE = 90;
+
+const steps = [
     {
         id: 2,
         title: "Step 2",
@@ -476,7 +951,8 @@ const steps = [
         title: "Step 4",
         name: "Build Systems (Months 3+) ",
         desc1: "We set up email marketing, retention campaigns, and content strategy for long-term growth. ",
-        desc2b: "What you get:", desc2n: "Sustainable business, not just ad dependency.",
+        desc2b: "What you get:",
+        desc2n: "Sustainable business, not just ad dependency.",
         tooltip1: "Build Systems Stop [chasing]",
         tooltip2: "stop building sustainable growth."
     },
@@ -493,16 +969,16 @@ const steps = [
 ];
 
 export default function OurApproach() {
-    const controls = useAnimationControls();
-    // steps array: index 0 = id:4, index 3 = id:1
-    // At 0° rotation, index 0 (id:4) is at top — but we want id:1 first
-    // So start at 270° (3 * 90°) to put index 3 (id:1) at top
-    const [activeIndex, setActiveIndex] = useState(3);
+    // FIX 1: was useState(3) — correct initial active index for rotation=270 is 1
+    const [activeIndex, setActiveIndex] = useState(1);
     const angleRef = useRef(270);
+    const orbitRef = useRef(null);
+    const tweenRef = useRef(null);
 
     useEffect(() => {
-        // Set initial rotation so step 1 (index 3) is at top
-        controls.set({ rotate: 270 });
+        if (orbitRef.current) {
+            gsap.set(orbitRef.current, { rotation: 270 });
+        }
 
         const handleScroll = () => {
             const section = document.getElementById("approach-section");
@@ -511,48 +987,56 @@ export default function OurApproach() {
             const rect = section.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            if (rect.top <= 0 && rect.bottom >= windowHeight) {
+            let stepIndex = 0;
+
+            if (rect.top > 0) {
+                stepIndex = 0;
+            } else if (rect.bottom >= windowHeight) {
                 const scrollProgress =
                     Math.abs(rect.top) / (section.offsetHeight - windowHeight);
 
-                // 0→3 maps to steps 1→2→3→4
-                const stepIndex = Math.min(
+                stepIndex = Math.min(
                     steps.length - 1,
                     Math.floor(scrollProgress * steps.length)
                 );
+            } else {
+                // FIX 2: section fully scrolled past — lock on last step instead of snapping back to 0
+                stepIndex = steps.length - 1;
+            }
 
-                // Start at 270° and add stepIndex * 90° to advance steps 1→2→3→4
-                const nextAngle = 270 + stepIndex * STEP_ANGLE;
+            const nextAngle = 270 + stepIndex * STEP_ANGLE;
 
-                if (angleRef.current !== nextAngle) {
-                    angleRef.current = nextAngle;
+            if (angleRef.current !== nextAngle) {
+                angleRef.current = nextAngle;
 
-                    // activeIndex calculation: which array index is at the top
-                    const nextActiveIndex =
-                        (steps.length - (nextAngle / STEP_ANGLE) % steps.length) % steps.length;
-                    // const nextActiveIndex = (steps.length - 1) - stepIndex;
+                const nextActiveIndex =
+                    (steps.length - (nextAngle / STEP_ANGLE) % steps.length) % steps.length;
 
-                    setActiveIndex(nextActiveIndex);
+                setActiveIndex(nextActiveIndex);
 
-                    controls.start({
-                        rotate: nextAngle,
-                        transition: {
-                            type: "spring",
-                            stiffness: 140,
-                            damping: 12,
-                            mass: 0.7,
-                        },
+                if (tweenRef.current) {
+                    tweenRef.current.kill();
+                }
+
+                if (orbitRef.current) {
+                    tweenRef.current = gsap.to(orbitRef.current, {
+                        rotation: nextAngle,
+                        duration: 0.9,
+                        ease: "power3.out",
+                        overwrite: true,
                     });
                 }
             }
         };
 
+        handleScroll();
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [controls]);
+    }, []);
 
     return (
-        <div className="relative flex items-center justify-center h-screen  bg-black overflow-hidden">
+        <div className="relative flex items-center justify-center h-screen bg-black overflow-hidden">
             {/* Static gradient circle */}
             <div
                 className="absolute rounded-full bg-gradient-to-br from-[#1a1a1a] via-[#0d0d0d] to-black transform translate-y-[30%] 3xl:translate-y-[42%] border border-white/10"
@@ -569,11 +1053,15 @@ export default function OurApproach() {
                 }}
             />
 
-            {/* Rotating orbit */}
-            <motion.div
-                style={{ width: SIZE + 50, height: SIZE + 50 }}
+            {/* Rotating orbit — driven by GSAP via ref */}
+            <div
+                ref={orbitRef}
+                style={{
+                    width: SIZE + 50,
+                    height: SIZE + 50,
+                    transform: "rotate(270deg)",
+                }}
                 className="absolute transform translate-y-[30%] 3xl:translate-y-[42%]"
-                animate={controls}
             >
                 {steps.map((step, index) => {
                     const angle = index * STEP_ANGLE;
@@ -584,13 +1072,12 @@ export default function OurApproach() {
                             className="absolute top-1/2 left-1/2"
                             style={{
                                 transform: `
-                        translate(-50%, -50%)
-                        rotate(${angle}deg)
-                        translateY(-${RADIUS}px)
-                        `,
+                                    translate(-50%, -50%)
+                                    rotate(${angle}deg)
+                                    translateY(-${RADIUS}px)
+                                `,
                             }}
                         >
-                            {/* Step */}
                             <div className="flex flex-col items-center text-white select-none relative">
                                 {index === activeIndex &&
                                     <motion.div
@@ -620,7 +1107,7 @@ export default function OurApproach() {
                                             tiltAngle={index % 2 === 0 ? -4 : 4}
                                             imageIndex={5}
                                             textClassName="!text-white"
-                                            className={`${index % 2 === 0 ? "-left-75 top-0 3xl:-top-3 3xl:-left-90" : "-right-75 top-0 3xl:-top-3 3xl:-right-90"}  absolute `}
+                                            className={`${index % 2 === 0 ? "-left-75 top-0 3xl:-top-3 3xl:-left-90" : "-right-75 top-0 3xl:-top-3 3xl:-right-90"} absolute `}
                                         />
                                     </motion.div>
                                 }
@@ -634,7 +1121,9 @@ export default function OurApproach() {
                                         <div className="h-14 3xl:h-16 w-px bg-white" />
                                         <p className="font-semibold text-2xl 3xl:text-3xl whitespace-nowrap mt-1 tracking-[-0.02em]">{step.name}</p>
                                         <span className="text-xs 3xl:text-base text-center font-light max-w-60 mt-1.5 3xl:mt-2">{step.desc1}</span>
-                                        <p className="text-xs 3xl:text-base text-center font-light max-w-60 mt-5 3xl:mt-6"><span className="font-normal">What You Get:</span>{" "}{step.desc2n}</p>
+                                        <p className="text-xs 3xl:text-base text-center font-light max-w-60 mt-5 3xl:mt-6">
+                                            <span className="font-normal">What You Get:</span>{" "}{step.desc2n}
+                                        </p>
                                     </div>
                                 </div>
                                 <span className="mt-2 text-xs opacity-80"></span>
@@ -644,7 +1133,7 @@ export default function OurApproach() {
                         </div>
                     );
                 })}
-            </motion.div>
+            </div>
         </div>
     );
 }
