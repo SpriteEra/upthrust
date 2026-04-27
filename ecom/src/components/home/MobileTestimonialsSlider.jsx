@@ -73,7 +73,7 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
             text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
             name: "Troy",
             company: "MC Overalls",
-            image: "/ecom/profile/profile6.png",
+            image: "/ecom/profile/profile6.webp",
             color: cardColors[0].bg,
             textColor: cardColors[0].text,
             clientNameColor: cardColors[0].clientNameColor,
@@ -83,7 +83,7 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
             text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
             name: "Rishab",
             company: "Carobis",
-            image: "/ecom/profile/profile7.png",
+            image: "/ecom/profile/profile7.webp",
             color: cardColors[1].bg,
             textColor: cardColors[1].text,
             clientNameColor: cardColors[1].clientNameColor,
@@ -93,7 +93,7 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
             text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
             name: "Gunjan",
             company: "Housr",
-            image: "/ecom/profile/profile8.png",
+            image: "/ecom/profile/profile8.webp",
             color: cardColors[2].bg,
             textColor: cardColors[2].text,
             clientNameColor: cardColors[2].clientNameColor,
@@ -169,8 +169,8 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
                                 {testimonial.text}
                             </p>
                             <div className="flex items-center gap-3 mt-10 xs:mt-3">
-                                <div className="w-13 h-13 xs:w-11 xs:h-11 3xl:w-13 3xl:h-13 bg-white flex items-center justify-center text-xl rounded-md">
-                                    <Image width={70} height={70} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain' />
+                                <div className="w-13 h-13 xs:w-11 xs:h-11 3xl:w-13 3xl:h-13 bg-white flex items-center justify-center text-xl rounded-lg">
+                                    <Image width={70} height={70} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain rounded-lg' />
                                 </div>
                                 <div>
                                     <p className={`text-[22px] tracking-[0.55px] leading-[27px] ${testimonial.clientNameColor}`}>{testimonial.name}</p>

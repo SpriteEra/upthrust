@@ -1,4 +1,5 @@
 import React from "react";
+import PerformanceCommonButton from "./PerformanceCommonButton";
 
 const AuditHero = () => {
   return (
@@ -72,9 +73,10 @@ const AuditHero = () => {
               → GET FREE AUDIT
             </button>
 
-            <div className="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit">
+            {/* <div className="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit">
               72 hr turnaround
-            </div>
+            </div> */}
+            <PerformanceCommonButton text="72 hr turnaround" btncss="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit cursor-pointer" />
 
           </div>
 

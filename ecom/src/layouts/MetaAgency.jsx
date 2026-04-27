@@ -1,3 +1,4 @@
+import CommonLeadForm from '@/common/commonLeadForm';
 import { Curve1 } from '@/common/HandWritten';
 import MetaHeading from '@/common/MetaHeading';
 import { ComparisonTable } from '@/components/home/ComparisonTable';
@@ -20,6 +21,7 @@ import MobileVideos from '@/components/meta-ads/MobileVideos';
 import ScaleCards from '@/components/meta-ads/ScaleCard';
 import StatsGrid from '@/components/meta-ads/StatCard';
 import MetaNavbar from '@/components/MetaNavbar'
+import { FORM_URLS } from '@/lib/formdata';
 import React from 'react'
 
 const brandsRow1 = [
@@ -485,7 +487,8 @@ const MetaAgencyLayout = ({ data }) => {
                         className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
 
                     />
-                    <MetaLeadForm showOnlyIframe={true} />
+                    {/* <MetaLeadForm showOnlyIframe={true} /> */}
+                    <CommonLeadForm formUrl={FORM_URLS.metaAds} />
                 </div>
             </div>
 

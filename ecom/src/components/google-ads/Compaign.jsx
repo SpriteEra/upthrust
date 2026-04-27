@@ -195,7 +195,8 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                 className="rounded-xl max-md:rounded-b-none md:rounded-2xl lg:rounded-3xl 3xl:rounded-[20px] overflow-hidden "
                 style={{ backgroundColor: data.bgColor }}
             >
-                <div className={`flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 ${data?.cardType === 2 ? "min-h-[500px] 3xl:min-h-[440px] " : "min-h-[500px] 3xl:min-h-[640px]"}  `}>
+                {/* <div className={`flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 ${data?.cardType === 2 ? "min-h-[500px] 3xl:min-h-[440px] " : "min-h-[500px] 3xl:min-h-[640px]"}  `}> */}
+                <div className={`flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-10 xl:gap-20 md:p-4 lg:p-6 3xl:p-7 xl:h-[450px] 3xl:h-[530px]`}>
                     {/* Left Content Section */}
                     <div className="w-full lg:w-[50%]  flex flex-col justify-between p-3 md:pl-2 3xl:pl-3">
                         <div className='3xl:max-w-150 flex flex-col justify-between h-full'>
@@ -222,7 +223,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
 
                                 <motion.p
 
-                                    className={`${data?.cardType === 2 ? "mb-6 md:mb-3 lg:mb-2 3xl:mb-8" : "mb-6 md:mb-3 lg:mb-26 3xl:mb-5"} text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black`}
+                                    className={`${data?.cardType === 2 ? "mb-6 md:mb-3 lg:mb-2 3xl:mb-8" : "mb-6 md:mb-3  3xl:mb-5"} text-[18px] 3xl:text-[20px] font-normal leading-[150%] tracking-[-0.02em] text-black`}
                                 >
                                     {data.description}
                                 </motion.p>
@@ -231,7 +232,7 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                             <div>
                                 <motion.div
 
-                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mb-6 md:mb-8"
+                                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6 mb-6  3xl:mb-8"
                                 >
                                     <div className=''>
                                         <p className="text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] text-black">
@@ -298,12 +299,12 @@ const CaseStudyCard = ({ data, index, totalCards }) => {
                     </div>
 
                     {/* Right Image Section */}
-                    <motion.div className="w-full lg:w-[50%] relative h-[230px] sm:h-[350px] md:h-[400px] lg:h-auto">
+                    <motion.div className="w-full lg:w-[50%] relative ">
                         <Image
                             src={data.rightImage}
                             alt="Right Section Image"
                             fill
-                            className="object-cover rounded-[10px]"
+                            className="aspect-717/478 rounded-[10px]"
                         />
                     </motion.div>
 

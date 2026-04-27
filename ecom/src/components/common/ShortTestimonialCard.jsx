@@ -16,8 +16,8 @@ export default function ShortTestimonialCard({ testimonial }) {
     const heightClass = avatarConfig.height || "h-12";
 
     return (
-        <div className={`${testimonial.bgColor} rounded-2xl p-4 sm:p-6 3xl:p-8 3xl:py-10 flex flex-col`}>
-            <h3 className={`${testimonial.textLarge ? "text-[25px] 1600:text-[32px] 1800:text-4xl" : "text-[25px] text-[28px] 1800:text-[30px]"} leading-[150%] font-semibold tracking-[-0.02em] mb-6 ${testimonial.isPaddngMore ? " 3xl:mb-14" : "3xl:mb-4"}  3xl:max-w-[425px] ${testimonial.textColor}`}>
+        <div className={`${testimonial.bgColor} rounded-2xl p-4 sm:p-6 3xl:p-8 3xl:py-10 flex flex-col 3xl:min-w-[470px] 3xl:min-h-[430px] 1800:min-w-[520px]`}>
+            <h3 className={`${testimonial.textLarge ? "text-[25px] 1600:text-[32px] 1800:text-4xl" : "text-[25px] lg:text-[28px] 3xl:text-[30px] 1800:text-[36px]"} leading-[150%] font-semibold tracking-[-0.02em] mb-6 ${testimonial.isPaddngMore ? " 3xl:mb-14" : "3xl:mb-4"}  3xl:max-w-[435px] ${testimonial.textColor}`}>
                 {testimonial.title}
             </h3>
 

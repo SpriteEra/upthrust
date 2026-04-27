@@ -140,7 +140,7 @@ const PredictGrowth = () => {
                         `}
                         style={{ transition: 'opacity 300ms ease-in-out, max-height 450ms ease-in-out, margin-bottom 450ms ease-in-out' }}
                     >
-                        <h2 className="text-[32px] lg:text-2xl xl:text-3xl 3xl:text-5xl font-semibold leading-[130%] tracking-[0.02em]">
+                        <h2 className="text-[32px] lg:text-2xl xl:text-3xl 3xl:text-5xl font-semibold leading-[130%] tracking-[-0.02em]">
                             {card.title}
                         </h2>
                     </div>

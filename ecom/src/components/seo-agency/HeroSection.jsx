@@ -3,6 +3,7 @@ import RatingStars from '@/common/Rating';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import AnimatedWord from '../common/AnimatedWord';
+import SeoCommonButton from './SeoCommonButton';
 
 const brands = [
     { name: "brand1", src: "/brands/brand-black/harley-davidson.webp", alt: "", width: "h-7 xs:h-8 lg:h-12 w-13 sm:w-17 xl:w-17 3xl:h-15 3xl:w-30" },
@@ -71,7 +72,7 @@ const SeoAgencyHero = ({ title }) => {
                         <RatingStars rating={5} fillColor='#FFB900' size='size-4.75 3xl:size-5' />
                     </div>
                 </div>
-                <h1 className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}  <AnimatedWord words={words2} className="h-5.5 3xl:h-6.5 w-28 3xl:w-36 text-[#FE2B27] mx-auto font-normal" textCss='font-normal justify-start!' /></h1>
+                <h1 className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}  <AnimatedWord words={words2} className="h-5.5 3xl:h-7 w-28 3xl:w-36 text-[#FE2B27] mx-auto font-normal" textCss='font-normal justify-start!' /></h1>
 
                 {/* Main Heading */}
                 <h1 className="text-[42px] lg:text-5xl 2xl:text-6xl 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-1 xl:mb-2 max-sm:max-w-100">
@@ -81,9 +82,10 @@ const SeoAgencyHero = ({ title }) => {
                 </h1>
                 <p className="text-lg 3xl:text-xl text-black mb-8 3xl:mb-10 font-normal leading-[150%] tracking-[-0.02em]">Most agencies chase rankings. We chase revenue. <br className='max-md:hidden' />Our 'Triple Algorithm' method see 3X more conversions in 120 days.</p>
                 {/* CTA Button */}
-                <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">
+                {/* <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">
                     Get a Free SEO/AEO Audit
-                </button>
+                </button> */}
+                <SeoCommonButton text="Get a Free SEO/AEO Audit" />
 
                 {/* Trusted Brands */}
                 <div className="mt-10 sm:mt-10 2xl:mt-8 3xl:mt-18 flex flex-col">
@@ -91,7 +93,7 @@ const SeoAgencyHero = ({ title }) => {
                     <div className="flex flex-col gap-y-2 3xl:gap-y-6 py-5 md:py-5 3xl:py-10 max-w-xl 1600:max-w-4xl 1800:max-w-[950px] pb-12 3xl:pb-20">
 
                         {/* First row (5 items) */}
-                        <div className="flex justify-between gap-x-2 3xl:gap-x-5">
+                        <div className="flex justify-between gap-x-2 3xl:gap-x-5 max-h-[54px]">
                             {brands?.slice(0, 5).map((brand) => (
                                 <div
                                     key={brand.name}
@@ -101,7 +103,7 @@ const SeoAgencyHero = ({ title }) => {
                                         src={brand.src}
                                         alt="Logos of google brands partnered with Upthrust"
                                         width={250}
-                                        height={100}
+                                        height={60}
                                         className="max-h-full max-w-full object-contain select-none"
                                     />
                                 </div>
@@ -109,7 +111,7 @@ const SeoAgencyHero = ({ title }) => {
                         </div>
 
                         {/* Second row (6 items) */}
-                        <div className="flex justify-between gap-x-2 3xl:gap-x-10">
+                        <div className="flex justify-between gap-x-2 3xl:gap-x-10 max-h-[54px]">
                             {brands?.slice(5, 11).map((brand) => (
                                 <div
                                     key={brand.name}

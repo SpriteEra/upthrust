@@ -4,6 +4,7 @@ import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import PerformanceCommonButton from './PerformanceCommonButton'
 // import MetaRocketButton from '../meta-ads/MetaRocketButton'
 // import StylishButton from '@/common/RocketButton'
 // import CreativeRocketButton from './CreativeRocketButton'
@@ -122,9 +123,8 @@ const MetaDisclaimer = () => {
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Start working with a team that is measured by your revenue.</p>
 
                     {/* <CreativeRocketButton /> */}
-                    <button className="bg-black text-white px-6 py-3  hover:bg-orange tracking-[-0.02em] leading-[150%] transition-colors duration-200 text-[15px] cursor-pointer 2xl:text-base">
-                        Get Your Free Ad Account Audit
-                    </button>
+
+                    <PerformanceCommonButton text="Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-3  hover:bg-orange tracking-[-0.02em] leading-[150%] transition-colors duration-200 text-[15px] cursor-pointer 2xl:text-base" />
                 </div>
                 <div className='flex flex-col justify-between items-center gap-6'>
                     <Image

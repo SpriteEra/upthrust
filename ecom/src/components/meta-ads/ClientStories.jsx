@@ -146,7 +146,7 @@ export default function ClientStories() {
         testimonials[1],
         testimonials[2],
         testimonials[5],
-        testimonials[6],
+        testimonials[7],
         testimonials[4],
     ]
 

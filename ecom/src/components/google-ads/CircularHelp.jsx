@@ -451,12 +451,440 @@
 // export default CircularHelp;
 
 
+// "use client";
+
+// import { useEffect, useRef, useState } from "react";
+// import Image from "next/image";
+// import { motion, AnimatePresence } from "framer-motion";
+// import SmartSwiper from "../SmartSwiper";
+
+// const CircularHelp = () => {
+//   const [activeSection, setActiveSection] = useState(0);
+//   const [direction, setDirection] = useState(1);
+//   const containerRef = useRef(null);
+//   const previousSectionRef = useRef(0);
+
+//   // Mobile swipe state
+//   const touchStartX = useRef(null);
+//   const touchStartY = useRef(null);
+//   const [mobileDragX, setMobileDragX] = useState(0);
+//   const [isSwiping, setIsSwiping] = useState(false);
+//   const swiperRef = useRef(null);
+//   const sections = [
+//     {
+//       id: 0,
+//       badge: "Audience",
+//       title: (
+//         <>
+//           The Right Traffic. {" "}
+//           <br className="max-lg:hidden" />
+//           At Buying
+//           <br className="max-lg:hidden" /> {" "}
+//           <span className="text-[#9ADCB2]"> Temperature.</span>
+//         </>
+//       ),
+//       subtitle: "Keyword-controlled campaigns that reach buyers",
+//       image: "/google-ads/circ1.webp",
+//       bgColor: "bg-[#00822E]",
+//       textColor: "text-white",
+//       mutedText: "text-white/90",
+//       borderColor: "border-white",
+//       activeTab: "text-[#9ADCB2]",
+//       inactiveTab: "text-white"
+//     },
+//     {
+//       id: 1,
+//       badge: "AI & Attribution",
+//       title: (
+//         <>
+//           Google&apos;s Attribution
+//           <br />
+//           Lies To You.
+//           <br />
+//           We Show The Truth
+//         </>
+//       ),
+//       subtitle:
+//         "30-40% of conversions go unreported through browser pixels. Server-side tracking + GA4 goals + first-party data reveal what's actually working",
+//       image: "/google-ads/circ2.webp",
+//       bgColor: "bg-[#004FAC]",
+//       textColor: "text-white",
+//       mutedText: "text-white/90",
+//       borderColor: "border-white/20",
+//       activeTab: "text-[#0076F0] lg:text-white",
+//       inactiveTab: "text-white"
+//     },
+//     {
+//       id: 2,
+//       badge: "Optimization",
+//       title: (
+//         <>
+//           Campaigns That
+//           <br />
+//           Compound <span className="text-[#E46800]">Daily,</span>
+//           <br />
+//           <span className="text-[#E46800]">Not Monthly</span>
+//         </>
+//       ),
+//       subtitle:
+//         "Daily optimization, AI signal tracking & budget reallocation.",
+//       image: "/google-ads/circ3.webp",
+//       bgColor: "bg-[#FFE187]",
+//       textColor: "text-black",
+//       mutedText: "text-black/70",
+//       borderColor: "border-black/20",
+//       activeTab: " text-[#E46800]",
+//       inactiveTab: "text-black/60"
+//     }
+//   ];
+
+//   /* ---------------- SCROLL CONTROL (DESKTOP ONLY) ---------------- */
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       // Only run scroll logic on desktop (lg breakpoint = 1024px)
+//       if (window.innerWidth < 1024) return;
+//       if (!containerRef.current) return;
+
+//       const rect = containerRef.current.getBoundingClientRect();
+//       const progress = -rect.top / (rect.height - window.innerHeight);
+
+//       let newIndex = 0;
+//       if (progress > 0.66) newIndex = 2;
+//       else if (progress > 0.33) newIndex = 1;
+
+//       if (newIndex !== previousSectionRef.current) {
+//         setDirection(newIndex > previousSectionRef.current ? 1 : -1);
+//         previousSectionRef.current = newIndex;
+//         setActiveSection(newIndex);
+//       }
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     handleScroll();
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   /* ---------------- MOBILE SWIPE HANDLERS ---------------- */
+//   const handleTouchStart = (e) => {
+//     touchStartX.current = e.touches[0].clientX;
+//     touchStartY.current = e.touches[0].clientY;
+//     setIsSwiping(false);
+//   };
+
+//   const handleTouchMove = (e) => {
+//     if (touchStartX.current === null) return;
+//     const dx = e.touches[0].clientX - touchStartX.current;
+//     const dy = e.touches[0].clientY - touchStartY.current;
+
+//     // Only track horizontal swipes
+//     if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+//       setIsSwiping(true);
+//     }
+//     if (isSwiping) {
+//       setMobileDragX(dx);
+//       e.preventDefault();
+//     }
+//   };
+
+//   const handleTouchEnd = () => {
+//     if (isSwiping && Math.abs(mobileDragX) > 50) {
+//       if (mobileDragX < 0 && activeSection < sections.length - 1) {
+//         // Swipe left → next
+//         setDirection(1);
+//         previousSectionRef.current = activeSection + 1;
+//         setActiveSection(activeSection + 1);
+//       } else if (mobileDragX > 0 && activeSection > 0) {
+//         // Swipe right → prev
+//         setDirection(-1);
+//         previousSectionRef.current = activeSection - 1;
+//         setActiveSection(activeSection - 1);
+//       }
+//     }
+//     touchStartX.current = null;
+//     touchStartY.current = null;
+//     setMobileDragX(0);
+//     setIsSwiping(false);
+//   };
+
+//   const imageVariants = {
+//     initial: (direction) => ({
+//       rotate: direction > 0 ? -90 : 90,
+//       transformOrigin: "150% 50%"
+//     }),
+//     animate: {
+//       rotate: 0,
+//       transformOrigin: "150% 50%",
+//       transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+//     },
+//     exit: (direction) => ({
+//       rotate: direction > 0 ? 90 : -90,
+//       transformOrigin: "150% 50%",
+//       transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+//     })
+//   };
+
+//   const mobileSlideVariants = {
+//     initial: (direction) => ({
+//       x: direction > 0 ? "100%" : "-100%",
+//       opacity: 0
+//     }),
+//     animate: {
+//       x: 0,
+//       opacity: 1,
+//       transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+//     },
+//     exit: (direction) => ({
+//       x: direction > 0 ? "-100%" : "100%",
+//       opacity: 0,
+//       transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+//     })
+//   };
+
+//   const current = sections[activeSection];
+
+//   return (
+//     <>
+//       {/* ===================== MOBILE VIEW ===================== */}
+//       <div className="lg:hidden w-full py-20">
+//         <SmartSwiper
+//           slides={sections}
+//           loop={true}
+//           autoplay={true}
+//           effect="slide"
+//           speed={500}
+//           onSwiperReady={(swiper) => (swiperRef.current = swiper)}
+//           onSlideChange={(index) => {
+//             setDirection(index > activeSection ? 1 : -1);
+//             previousSectionRef.current = index;
+//             setActiveSection(index);
+//           }}
+//           renderSlide={(current) => (
+//             <motion.div
+//               className={`w-full flex flex-col max-sm:gap-2 rounded-[20px] ${current.bgColor}`}
+//             >
+//               {/* Content */}
+//               <div className={`${current.textColor} flex flex-col flex-1 px-4 pt-10 pb-10`}>
+
+//                 <span
+//                   className={`inline-block border rounded-full px-4 py-1 text-sm tracking-[-0.02em] leading-[150%] w-fit mb-6 ${current.borderColor}`}
+//                 >
+//                   PROCESS
+//                 </span>
+
+//                 <h2 className="text-[36px] font-semibold leading-[130%] tracking-[-0.02em] mb-4">
+//                   {current.title}
+//                 </h2>
+
+//                 <p className={`${current.mutedText} text-3xl leading-[150%] tracking-[-0.02em] mb-6`}>
+//                   {current.subtitle}
+//                 </p>
+
+//                 {/* Tab labels */}
+//                 <div className={`flex max-sm:flex-col max-sm:justify-start max-sm:items-start gap-3 sm:gap-6 border-b-2 pb-3 mb-0 ${current.borderColor}`}>
+//                   {sections.map((section, index) => (
+//                     <button
+//                       key={section.id}
+//                       onClick={() => {
+//                         setDirection(index > activeSection ? 1 : -1);
+//                         previousSectionRef.current = index;
+//                         // setActiveSection(index);
+//                         swiperRef.current?.slideToLoop(index);
+//                       }}
+//                       className={`text-2xl tracking-[-0.02em] leading-[150%] transition-all duration-300 -mb-[2px] 
+//                         ${activeSection === index
+//                           ? `border-current ${current.activeTab}`
+//                           : `border-transparent ${current.inactiveTab}`
+//                         }
+//                         `}
+//                     >
+//                       {section.badge}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* Image - flush to bottom */}
+//               <div className="relative w-full h-[450px] mt-auto overflow-hidden">
+//                 <Image
+//                   src={current.image}
+//                   alt="circular"
+//                   fill
+//                   className="object-cover object-top"
+//                 />
+//               </div>
+//             </motion.div>
+//           )}
+//         />
+//       </div>
+//       {/* ===================== DESKTOP VIEW (UNCHANGED) ===================== */}
+//       <div
+//         ref={containerRef}
+//         className="hidden lg:block min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
+//       >
+//         <div className="sticky max-xl:min-h-screen top-1/2 md:max-xl:top-25 2xl:top-30 3xl:top-36 flex items-center overflow-hidden rounded">
+//           <div
+//             className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700 h-230 xl:h-130 2xl:h-135 1600:h-190 1800:h-[780px]`}
+//           >
+//             <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-start px-4 md:px-8 py-7 lg:py-10 h-full">
+
+//               {/* LEFT CONTENT */}
+//               <div className={`${sections[activeSection].textColor} space-y-2 md:space-y-6 3xl:py-8 3xl:pl-8 flex flex-col justify-between xl:h-full max-xl:max-h-120`}>
+//                 <div className="space-y-2 md:space-y-6 ">
+//                   <span
+//                     className={`inline-block border rounded-full px-4 py-1 3xl:py-3 3xl:px-8 text-sm tracking-[-0.02em] leading-[150%] ${sections[activeSection].borderColor}`}
+//                   >
+//                     PROCESS
+//                   </span>
+
+//                   <h2 className="text-3xl md:text-5xl 1600:text-6xl 1800:text-[72px] font-semibold leading-[130%] tracking-[-0.02em] 2xl:tracking-[-0.04em]">
+//                     {sections[activeSection].title}
+//                   </h2>
+
+//                   <p className={`${sections[activeSection].mutedText} text-[22px] 3xl:text-[30px] leading-[150%] tracking-[-0.02em] xl:max-w-xl 3xl:max-w-2xl`}>
+//                     {sections[activeSection].subtitle}
+//                   </p>
+
+//                 </div>
+
+//                 {/* DESKTOP TABS */}
+//                 <div
+//                   className={`hidden lg:flex gap-8 border-b-2 w-full justify-between max-w-[650px] ${sections[activeSection].borderColor}`}
+//                 >
+//                   {sections.map((section, index) => (
+//                     <button
+//                       key={section.id}
+//                       onClick={() => {
+//                         setDirection(index > activeSection ? 1 : -1);
+//                         previousSectionRef.current = index;
+//                         setActiveSection(index);
+//                       }}
+//                       className={`text-sm 2xl:text-xl 3xl:text-2xl pb-2 border-b-3 transition-all duration-300 cursor-pointer ${activeSection === index ? "border-current" : "border-transparent"
+//                         } ${activeSection === index
+//                           ? sections[activeSection].activeTab
+//                           : sections[activeSection].inactiveTab
+//                         }`}
+//                     >
+//                       {section.badge}
+//                     </button>
+//                   ))}
+//                 </div>
+//               </div>
+
+//               {/* IMAGE */}
+//               <div className="relative w-full h-110 xl:h-full flex justify-center xl:justify-end overflow-hidden">
+//                 <AnimatePresence custom={direction}>
+//                   <motion.div
+//                     key={activeSection}
+//                     custom={direction}
+//                     variants={imageVariants}
+//                     initial="initial"
+//                     animate="animate"
+//                     exit="exit"
+//                     className="absolute w-full h-full flex items-end justify-center xl:justify-end"
+//                   >
+//                     <div className="h-full 3xl:aspect-641/728 3xl:h-full max-xl:h-110 max-h-180 justify-center xl:justify-end relative">
+//                       <Image
+//                         src={sections[activeSection].image}
+//                         alt="circular"
+//                         width={500}
+//                         height={720}
+//                         className="w-full h-full object-cover"
+//                       />
+
+//                     </div>
+//                   </motion.div>
+//                 </AnimatePresence>
+//               </div>
+
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default CircularHelp;
+
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import SmartSwiper from "../SmartSwiper";
+
+
+
+/* ─── Card data (indexed same as sections) ─── */
+const CARDS = [
+  {
+    cardBg: "bg-[#D4EDDA]",
+    title: "Targeting the right audience",
+    subtitle: "Scale with confidence",
+    subtitleColor: "text-[#00822E]",
+    Icon: "/google-ads/icon1.png",
+    iconClass: " size-[120px] 3xl:size-[170px]",
+    paragraphs: [
+      'Google says: "Use broad match. Trust Performance Max. Automation handles everything."',
+      "We ignore that. Exact and phrase match keywords still deliver the lowest CPA and highest conversion rates every time. For lead generation, keyword-controlled search campaigns are the foundation. Performance Max only works when it's built on top of that success, not instead of it",
+    ],
+    btn: "Reach the right person, always",
+    btnClass: "bg-[#A8D5B5] text-[#00822E]",
+  },
+  {
+    cardBg: "bg-white",
+    title: "AI + Attribution",
+    subtitle: "AI that scales what works",
+    subtitleColor: "text-[#0076F0]",
+    Icon: "/google-ads/icon2.png",
+    iconClass: " size-[120px] 3xl:size-[170px]",
+    paragraphs: [
+      "Our AI models analyze 47 conversion signals time on page, scroll depth, click patterns, form interactions to predict which traffic will convert before it does.",
+      "Then we feed that intelligence back into bidding algorithms. Google's smart bidding optimizes for conversions.",
+    ],
+    btn: "Optimize Ads for revenue",
+    btnClass: "bg-[#0076F0] text-white",
+  },
+  {
+    cardBg: "bg-white",
+    title: "Optimization & more",
+    subtitle: "Build the future of finance.",
+    subtitleColor: "text-[#E46800]",
+    Icon: "/google-ads/icon3.png",
+    iconClass: " size-[120px] 3xl:size-[170px]",
+    paragraphs: [
+      "We track your campaigns daily CPA, Quality Score, conversion patterns across 47 signals. When performance drops, we investigate within hours, not weeks. Continuous A/B tests on ad copy, landing pages, and audiences. Winners scale immediately.",
+      "Budget reallocates every Monday based on what's working. Your campaigns compound improvements week-over-week, not waiting for quarterly reviews.",
+    ],
+    btn: "Evolve your Outcome",
+    btnClass: "bg-[#FFE187] text-black",
+  },
+];
+
+/* ─── Reusable card component ─── */
+const SectionCard = ({ cardIndex }) => {
+  const card = CARDS[cardIndex];
+  return (
+    <div className={`${card.cardBg} h-full  w-fit max-w-[500px]  3xl:aspect-641/728 3xl:max-w-[641px]  rounded-2xl p-6 3xl:p-8 3xl:w-full flex flex-col gap-2 3xl:gap-4 `}>
+      <div>
+        <h3 className="text-[30px] md:text-[24px] 3xl:text-[30px] font-semibold text-black tracking-[-0.02em] leading-[150%]">{card.title}</h3>
+        <p className={`text-lg lg:text-xl font-normal mt-1 ${card.subtitleColor}`}>{card.subtitle}</p>
+      </div>
+      <div className={`py-1 3xl:py-2 ${card.iconClass}`}>
+        <Image src={card.Icon} alt={card.title} width={180} height={170} className="object-cover" />
+      </div>
+      <div className="space-y-3">
+        {card.paragraphs.map((para, i) => (
+          <p key={i} className="text-xl xl:text-[15px]  3xl:text-xl tracking-[-0.02em] text-black leading-[150%]">{para}</p>
+        ))}
+      </div>
+      <button className={`${card.btnClass} rounded-full px-5 py-2.5 text-lg 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] w-fit mt-1  hover:opacity-90`}>
+        {card.btn}
+      </button>
+    </div>
+  );
+};
 
 const CircularHelp = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -527,7 +955,7 @@ const CircularHelp = () => {
         </>
       ),
       subtitle:
-        "Daily optimization, AI signal tracking & budget reallocation.",
+        "30-40% of conversions go unreported through browser pixels. Server-side tracking + GA4 goals + first-party data reveal what's actually working",
       image: "/google-ads/circ3.webp",
       bgColor: "bg-[#FFE187]",
       textColor: "text-black",
@@ -645,7 +1073,7 @@ const CircularHelp = () => {
   return (
     <>
       {/* ===================== MOBILE VIEW ===================== */}
-      <div className="lg:hidden w-full py-20">
+      <div className="lg:hidden w-full pt-15 pb-1 lg:py-20">
         <SmartSwiper
           slides={sections}
           loop={true}
@@ -703,14 +1131,9 @@ const CircularHelp = () => {
                 </div>
               </div>
 
-              {/* Image - flush to bottom */}
-              <div className="relative w-full h-[450px] mt-auto overflow-hidden">
-                <Image
-                  src={current.image}
-                  alt="circular"
-                  fill
-                  className="object-cover object-top"
-                />
+              {/* ↓ ONLY CHANGE IN MOBILE: Image replaced with SectionCard */}
+              <div className="relative w-full  mt-auto overflow-hidden px-4 pb-6 flex items-center">
+                <SectionCard cardIndex={current.id} />
               </div>
             </motion.div>
           )}
@@ -721,9 +1144,9 @@ const CircularHelp = () => {
         ref={containerRef}
         className="hidden lg:block min-h-[300vh] py-20 w-[90%] 3xl:w-[85%] mx-auto"
       >
-        <div className="sticky max-xl:min-h-screen top-1/2 md:max-xl:top-25 2xl:top-30 3xl:top-36 flex items-center overflow-hidden rounded">
+        <div className="sticky max-xl:min-h-screen top-1/2 md:top-15 2xl:top-26 3xl:top-36 flex items-center overflow-hidden rounded">
           <div
-            className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700 h-230 xl:h-130 2xl:h-135 1600:h-190 1800:h-[780px]`}
+            className={`${sections[activeSection].bgColor} w-full rounded-[20px] transition-colors duration-700 h-230 xl:h-135 2xl:h-135 1600:h-190 1800:h-[780px]`}
           >
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 items-start px-4 md:px-8 py-7 lg:py-10 h-full">
 
@@ -770,7 +1193,7 @@ const CircularHelp = () => {
                 </div>
               </div>
 
-              {/* IMAGE */}
+
               <div className="relative w-full h-110 xl:h-full flex justify-center xl:justify-end overflow-hidden">
                 <AnimatePresence custom={direction}>
                   <motion.div
@@ -782,14 +1205,8 @@ const CircularHelp = () => {
                     exit="exit"
                     className="absolute w-full h-full flex items-end justify-center xl:justify-end"
                   >
-                    <div className="h-full 3xl:aspect-641/728 3xl:h-full max-xl:h-110 max-h-180 justify-center xl:justify-end relative">
-                      <Image
-                        src={sections[activeSection].image}
-                        alt="circular"
-                        width={500}
-                        height={720}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="h-full  justify-center xl:justify-end relative w-full flex items-center">
+                      <SectionCard cardIndex={activeSection} />
                     </div>
                   </motion.div>
                 </AnimatePresence>
@@ -804,73 +1221,3 @@ const CircularHelp = () => {
 };
 
 export default CircularHelp;
-
-
-{/* <div
-        className="lg:hidden w-full overflow-hidden py-20"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        style={{ touchAction: "pan-y" }}
-      >
-        <div className="relative w-full overflow-hidden rounded-[20px]">
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={activeSection}
-              custom={direction}
-              variants={mobileSlideVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className={`w-full min-h-screen flex flex-col max-sm:gap-2 ${current.bgColor}`}
-            >
-              <div className={`${current.textColor} flex flex-col flex-1 px-4 pt-10 pb-10`}>
-
-                <span
-                  className={`inline-block border rounded-full px-4 py-1 text-sm tracking-[-0.02em] leading-[150%] w-fit mb-6 ${current.borderColor}`}
-                >
-                  PROCESS
-                </span>
-
-                <h2 className="text-[36px] font-semibold leading-[130%] tracking-[-0.02em] mb-4">
-                  {current.title}
-                </h2>
-
-                <p className={`${current.mutedText} text-3xl leading-[150%] tracking-[-0.02em] mb-6`}>
-                  {current.subtitle}
-                </p>
-
-                <div className={`flex max-sm:flex-col max-sm:justify-start max-sm:items-start gap-3 sm:gap-6 border-b-2 pb-3 mb-0 ${current.borderColor}`}>
-                  {sections.map((section, index) => (
-                    <button
-                      key={section.id}
-                      onClick={() => {
-                        setDirection(index > activeSection ? 1 : -1);
-                        previousSectionRef.current = index;
-                        setActiveSection(index);
-                      }}
-                      className={`text-2xl tracking-[-0.02em] leading-[150%] transition-all duration-300 -mb-[2px] 
-                        ${activeSection === index
-                        ? `border-current ${current.activeTab}`
-                        : `border-transparent ${current.inactiveTab}`
-                        }
-                        `}
-                    >
-                      {section.badge}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative w-full h-[450px] mt-auto overflow-hidden">
-                <Image
-                  src={current.image}
-                  alt="circular"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div> */}

@@ -2,6 +2,7 @@
 import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import SeoCommonButton from './SeoCommonButton'
 
 export const Disclaimer = () => {
     const [open, setOpen] = useState(false);
@@ -115,9 +116,7 @@ const SeoDisclaimer = () => {
                     <p className='font-semibold text-4xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%]'>Ready to Stop Being  <br />Invisible to AI Search?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Free 30-minute call. No pitch, no pressure. <br />
                         Just a clear picture of where you stand.</p>
-
-                    {/* <StylishButton /> */}
-                    <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">Show Us How to Scale</button>
+                    <SeoCommonButton text="Show Us How to Scale" />
                 </div>
                 <div className='flex flex-col md:justify-between md:items-center gap-6 md:gap-8 max-md:pl-2'>
                     <Image

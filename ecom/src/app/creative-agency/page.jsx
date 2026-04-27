@@ -16,6 +16,8 @@ const UGCVideoCategories = dynamic(() => import('@/components/creative-ads/MetaU
 const ProcessTimeline = dynamic(() => import('@/components/creative-ads/ProgressBar'));
 // const { ComparisonTable } = dynamic(() => import('@/components/home/ComparisonTable'));
 import { ComparisonTable } from '@/components/home/ComparisonTable';
+import CommonLeadForm from '@/common/commonLeadForm';
+import { FORM_URLS } from '@/lib/formdata';
 
 const FAQ = dynamic(() => import('@/components/home/Faq'));
 const HomeFooter = dynamic(() => import('@/components/home/HomeFooter'));
@@ -67,6 +69,7 @@ const brandsRow2 = [
     { id: 15, name: "", logo: "/brands/brand-white/loreal.webp" },
     { id: 15, name: "", logo: "/brands/brand-white/last-supply.webp" },
 ]
+
 const navLinks = [
     { name: 'Why Upthrust', href: '#why-upthrust' },
     { name: 'Case Studies', href: '#case-studies' },
@@ -208,10 +211,10 @@ export const metadata = {
         siteName: "Upthrust",
         images: [
             {
-                url: "/meta-ads/meta-opengraph-image.png",
+                url: "/ogimage/creative-og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Upthrust – Meta Ads Agency",
+                alt: "Upthrust – Creative Ads Agency",
             },
         ],
         type: "website",
@@ -259,7 +262,7 @@ const page = () => {
 
                 />
 
-                <CircularDesign mobileImage='/creative-agency/adspent-graph.webp' desktopImage='/creative-agency/adspent-graph-desktop.webp' />
+                <CircularDesign mobileImage='/creative-agency/adspent-graph.png' desktopImage='/creative-agency/adspent-graph-desktop.webp' />
 
             </div>
             <div className="3xl:pt-10" id="hear-from-them">
@@ -390,7 +393,7 @@ creative intuition with data-driven precision."
                     subtitle="WARNING: You're about to see the winning formula, take notes"
 
                 />
-                <MobileVideos />
+                <MobileVideos color="bg-orange!" />
             </div>
 
             <div className="py-16 space-y-10 3xl:space-y-16 3xl:py-20 mt-10 3xl:mt-16 overflow-hidden">
@@ -508,7 +511,7 @@ creative intuition with data-driven precision."
                 }
             />
 
-            {/* <div className="max-lg:hidden">
+            <div className="max-lg:hidden">
                 <SuccessStories cardColors={
                     [
                         {
@@ -537,7 +540,7 @@ creative intuition with data-driven precision."
                         },
                     ]
                 } />
-            </div> */}
+            </div>
 
             <div className='space-y-16 3xl:space-y-30 mb-20 mt-40 3xl:mb-30 3xl:mt-50'>
                 <MetaHeading
@@ -634,7 +637,7 @@ creative intuition with data-driven precision."
                         className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
 
                     />
-                    <CreativeLeadForm showOnlyIframe={true} />
+                    <CommonLeadForm formUrl={FORM_URLS.creative} />
                 </div>
             </div>
 

@@ -2,6 +2,7 @@
 import RatingStars from '@/common/Rating';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import GoogleCommonButton from './GoogleCommonButton';
 
 const brands = [
     { name: "brand1", src: "/google-ads/brandwhite/brand1.webp", alt: "", width: "h-8 xs:h-8 lg:h-12 w-13 sm:w-17 xl:w-18 3xl:h-15 3xl:w-32" },
@@ -68,20 +69,20 @@ const GoogleAdsHero = ({ title }) => {
                 <h1 className="text-lg 3xl:text-xl text-black  mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}</h1>
 
                 {/* Main Heading */}
-                <h1 className="text-[42px] lg:text-5xl 2xl:text-6xl 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8 3xl:mb-10 max-sm:max-w-75">
+                <h1 className="text-[42px] lg:text-[50px] xl:text-[55px] 2xl:text-[65px] 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8 3xl:mb-10 max-sm:max-w-75">
                     Turn Wasted Ad Spend<br />
                     Into Real Revenue with<br />
                     <span className="inline-block relative overflow-hidden align-bottom h-12 sm:h-14 2xl:h-15 w-70 sm:w-100 3xl:h-23 3xl:w-150">
                         <span
                             key={`current-${currentWord}`}
-                            className="absolute whitespace-nowrap left-0 bottom-0 w-full animate-slideOut font-bold"
+                            className="absolute whitespace-nowrap left-0 bottom-0 w-full animate-slideOut font-semibold"
                             style={{ color: words[currentWord].color }}
                         >
                             {words[currentWord].text}
                         </span>
                         <span
                             key={`next-${currentWord}`}
-                            className="absolute left-0 bottom-0 w-full animate-slideIn font-bold whitespace-nowrap"
+                            className="absolute left-0 bottom-0 w-full animate-slideIn font-semibold whitespace-nowrap"
                             style={{ color: words[(currentWord + 1) % words.length].color }}
                         >
                             {words[(currentWord + 1) % words.length].text}
@@ -90,9 +91,10 @@ const GoogleAdsHero = ({ title }) => {
                 </h1>
 
                 {/* CTA Button */}
-                <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">
+                {/* <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">
                     Get a Free Google Ads Audit
-                </button>
+                </button> */}
+                <GoogleCommonButton text="Get a Free Google Ads Audit" />
 
                 {/* Trusted Brands */}
                 <div className="mt-10 sm:mt-10 2xl:mt-8 3xl:mt-18 flex flex-col">

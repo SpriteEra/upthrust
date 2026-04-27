@@ -128,7 +128,7 @@ const DashboardStacks = ({ brandtitle }) => {
             description: `We helped a D2C oral care brand scale customer acquisition in a highly competitive market while maintaining an efficient cost per purchase. By deploying a performance-focused ${brandtitle} Ads funnel—combining broad prospecting, high-intent retargeting, continuous creative and audience testing, and strategic budget scaling—we built a predictable growth system. This approach enabled efficient scaling of ad spend, strong reach and awareness, and consistent purchase acquisition across campaigns.`,
             link: "#",
             clientLogo: "/brands/brand-white/orthosquare.png",
-            logoCss: "w-35 3xl:w-50 h-fit",
+            logoCss: "w-35 3xl:w-60 h-fit sm:min-h-[70px] object-cover",
             bgColor: "#E8F3FF",
             rightImg: "/meta-ads/dashboard-images/dashboard-2.webp",
             textColor: "#000000",

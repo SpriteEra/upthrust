@@ -1206,7 +1206,9 @@ export default function DropLetters({
 
         /* smaller collision box so letters don't hide */
 
-        const letterWidth = size * 0.5;
+        const letterWidth = size * 0.55;
+        // letter height
+        const letterHeight = size * 0.6;
 
         /* SPAWN AREA */
 
@@ -1233,7 +1235,7 @@ export default function DropLetters({
                 x,
                 -300 - i * 80,
                 letterWidth,
-                size,
+                letterHeight,
                 {
                     restitution: 0.45,
                     friction: 0.6,
@@ -1259,7 +1261,7 @@ export default function DropLetters({
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillStyle = "#111";
-            ctx.font = `900 ${size}px sans-serif`;
+            ctx.font = `700 ${size}px sans-serif`;
 
             bodies.forEach((body) => {
                 ctx.save();
@@ -1316,3 +1318,4 @@ export default function DropLetters({
         </div>
     );
 }
+

@@ -26,54 +26,54 @@ const navLinks = [
 
 const faqs = [
     {
-        question: "What is Meta advertising?",
+        question: "What is performance marketing?",
         answer:
-            "Meta advertising refers to paid campaigns across platforms like Facebook and Instagram that help businesses reach targeted audiences at scale. It allows brands to promote products or services to people based on demographics, interests, behaviors, and online activity. This precise targeting makes Meta more effective than many traditional digital advertising channels. Strong visuals, compelling copy, and clear calls to action work together to capture attention and drive results. Meta also provides real-time data, allowing campaigns to be continuously optimized for better performance. Businesses can clearly measure how ads contribute to leads, sales, and overall growth. Meta advertising supports goals like brand awareness, lead generation, online sales, and retargeting. At Upthrust, Meta campaigns are built to deliver consistent, scalable, and measurable business outcomes."
+            "Partnering with a performance marketing agency means every dollar you spend is tied to a measurable outcome — leads, demos, or closed revenue. It targets high-intent buyers using signals like search behavior, buying intent, and ICP parameters. Unlike brand advertising, it does not reward impressions — it rewards pipeline. At Upthrust, every campaign is built to deliver consistent, scalable, and ROI-positive business outcomes."
     },
     {
-        question: "What is the difference between Meta, Instagram and Facebook ads?",
+        question: "What is the difference between Google Ads and paid social?",
         answer:
-            "Meta is the parent company of Facebook, Instagram, Messenger, and WhatsApp, and Meta Ads is the unified system used to advertise across all of them. Instead of running separate campaigns for each platform, ads are managed from one central dashboard where budgets and placements are optimized automatically based on performance. This approach allows your ads to appear where they are most effective, helping you get better results from the same ad spend. At Upthrust, we use this cross-platform system to maximize reach, efficiency, and performance."
+            "As an online performance marketing agency, we use both channels strategically depending on where your buyers are in the funnel. Google Ads captures active demand — your ad appears when a buyer is searching for a solution. Paid social on platforms like LinkedIn or Meta creates demand by placing your offer in front of the right ICP before they search. We use both to fill and accelerate your pipeline at every stage."
     },
     {
-        question: "How can Meta advertising help you grow?",
+        question: "How can a performance marketing agency help you grow?",
         answer:
-            "Meta advertising helps businesses grow by turning social media reach into measurable results. Through platforms like Facebook and Instagram, brands can reach highly relevant audiences using precise targeting based on interests, behaviors, and past interactions. This ensures ad budgets are focused on people most likely to take action, not just scroll past. With real-time performance tracking and continuous optimization, campaigns can improve return on ad spend while scaling what works. Whether the goal is brand awareness, lead generation, online sales, or customer retention, Meta provides the tools to move users from discovery to conversion. At Upthrust, Meta campaigns are built with a performance-first approach, combining strategy, creative testing, and data-driven optimization to deliver consistent and scalable business growth."
+            "The right performance marketing agency puts your budget directly in front of buyers who are actively searching for what you offer. Every campaign is structured around high-intent keywords, defined ICP segments, and conversion-optimized landing pages that move visitors toward a demo or contact. When ad spend, messaging, and audience signals are tightly aligned, you stop paying for awareness and start paying for pipeline."
     },
     {
-        question: "Which ad types should I use for my specific business?",
+        question: "Which performance channels work best for my business?",
         answer:
-            "The right Meta ad type depends on your business goal. For lead generation businesses like services, real estate, or education, we typically use Instant Form ads or Click-to-WhatsApp ads to reduce friction and increase enquiries. For eCommerce brands and Shopify stores, Advantage+ Shopping campaigns and Catalog Sales ads work best, automatically showing the right products to people most likely to buy."
+            "Working with a global performance marketing agency means your channel strategy is built on cross-market data — not guesswork. The right mix depends on your ICP, average deal size, sales cycle, and where your buyers spend time. On your free strategy call, we map your ICP to the channels with the highest conversion probability so your first spend goes exactly where the data points."
     },
     {
-        question: "What services do you offer?",
+        question: "What services does your performance marketing company offer?",
         answer:
-            "At Upthrust, we provide end-to-end Meta advertising services built to drive real business results. We start with strategic campaign planning aligned to your growth goals, defining the right audiences, funnels, and objectives. Our team manages full technical setup and tracking to ensure accurate data and efficient performance. We create high-converting ad creatives, including compelling visuals and persuasive copy tailored to each audience. Landing pages are built or optimized to turn traffic into qualified leads or sales. Campaigns are continuously monitored and improved through data-driven optimization and structured testing. You receive clear performance reporting focused on pipeline, revenue, and return on ad spend. We also stay ahead of Meta platform updates and best practices so your campaigns remain competitive. Our focus is always on measurable outcomes that contribute directly to your business growth."
+            "As a performance marketing company, our services cover the entire paid acquisition funnel — Google Search, LinkedIn paid social, ad copy and creative, landing page optimization, conversion tracking, and weekly performance reporting. We also offer account-based marketing, demand generation, and retargeting for B2B companies running complex, multi-stakeholder sales cycles. Every change is logged, hypothesized, and measured for impact. No vanity metrics. No guesswork."
     },
     {
-        question: "Which works better: Instagram or Facebook?",
+        question: "Which works better: Google Ads or LinkedIn?",
         answer:
-            "It depends on your audience and goals. Instagram often performs better for visually driven brands, eCommerce, and younger audiences, especially through Reels and Stories. Facebook is typically stronger for lead generation, B2B services, and reaching a broader age group, where feed placements support more detailed messaging. At Upthrust, we usually use Advantage+ placements so Meta's system automatically shifts budget to whichever platform delivers the lowest cost per result."
+            "The answer depends on your buyer — and the performance marketing agency you choose should test both before recommending one. Google Search often outperforms on direct conversion intent, while LinkedIn excels in account-based precision and ICP-level targeting. We let conversion data, not opinion, determine where to concentrate spend."
     },
     {
-        question: "How much does it cost to work with us?",
+        question: "How much does it cost to work with a performance marketing firm?",
         answer:
-            "The cost of working with Upthrust will be variable depending on your business and its needs — as well as how much you'd like to invest in advertising on Meta platforms. Things like your requirements, campaign objectives, and scope of services will all determine what it will cost to work with our Meta advertising agency. As a general rule of thumb, you can expect a fixed up-front cost while we research your business and industry and do preliminary campaign setup and creation. Afterwards, we will charge a flat monthly fee plus a small percentage of your monthly ad spend on Meta platforms. To learn more about our pricing model, you can contact us for a free consultation and proposal, during which we can discuss how we can tailor our services to stay within your budget."
+            "Choosing a performance marketing firm should not feel like a financial risk — pricing depends on your campaign scope, the channels we activate, and your monthly ad spend. Rather than quoting a fixed number upfront, we start with a free growth strategy call to assess your current CAC, pipeline goals, and budget. That gives us enough context to recommend a setup that pays for itself — not one that burns budget without accountability."
     },
     {
-        question: "How long does it takes to see results?",
+        question: "How long does it take to see real results?",
         answer:
-            "Meta ads can start driving traffic and leads quickly, but optimized performance typically takes about 7 to 14 days. During this learning phase, Meta's system tests different audiences and placements to find the most cost-effective way to generate results. Most campaigns begin to stabilize and show more consistent cost per lead or purchase by the end of the second week."
+            "As a performance marketing firm focused on B2B pipelines, most campaigns go live within two weeks of onboarding. The first 30 days build clean data — keyword mapping, audience segmentation, conversion tracking, and baseline benchmarks. Meaningful signals like CTR, CPL, and lead quality typically emerge in weeks three to four, with measurable CAC improvements within 60 to 90 days."
     },
     {
-        question: "Do you help with creative development?",
+        question: "Do you handle ad creative and copy too?",
         answer:
-            "Yes, creative development is a core part of Upthrust's Meta advertising services. We design scroll-stopping visuals and write persuasive ad copy built specifically for Facebook and Instagram audiences. Our team combines creative storytelling with performance data to produce ads that not only look good but drive measurable results. From static images and videos to full-funnel creative variations, every asset is developed with a clear objective and audience in mind. We continuously test and refine creative elements to improve engagement, conversion rates, and return on ad spend. Every visual, headline, and message is aligned with your campaign goals to ensure your Meta ads don't just capture attention, but turn it into real business outcomes."
+            "Choosing a performance advertising agency means creative and copy should already be part of the process — not an add-on you pay extra for. Our team develops ad copy aligned to your ICP’s pain points, headlines that match the exact keywords your buyers search, and landing pages designed to convert — not just impress. We treat creative as a performance lever, not a branding exercise."
     },
     {
         question: "How do I get started?",
         answer:
-            "Getting started with Upthrust is simple. First, reach out to us through our website so we can understand your goals. We begin with a free consultation and audit of your current Meta ads and overall digital performance to identify opportunities for growth. Based on this, we share a tailored strategy and walk you through a clear proposal aligned with your business objectives. Once approved, we complete onboarding, set up tracking, and do deep research on your market, competitors, and audience. From there, we build, launch, and continuously optimize your Meta campaigns with performance-focused creatives and data-driven improvements."
+            "Book a free growth strategy call with our performance marketing company. On the call, we review your current setup, identify where budget is leaking, and map out a plan built around your ICP, deal size, and pipeline goals. There is no pitch, no pressure, and no obligation — just a clear picture of what a first campaign looks like and what results you can reasonably expect."
     }
 ];
 
@@ -136,26 +136,26 @@ const page = () => {
             <div className="sm:py-16 3xl:py-20" id="process">
                 <MarketingPanel />
             </div>
-<div id="case-studies">
+            <div>
 
-            <ProfileSection />
-</div>
+                <ProfileSection />
+            </div>
             <div className="sm:py-16 3xl:py-20" >
                 <AuditHero />
             </div>
-            <div className="sm:py-16 3xl:py-20">
+            <div className="sm:py-16 3xl:py-20" id="case-studies">
                 <ProductSlideDetail />
             </div>
             <div className="py-16 3xl:py-20" id="hear-from-them">
                 <Testimonials />
             </div>
-            <div>
+            <div id="why-upthrust">
                 <CardDesign />
             </div>
             <div className="sm:py-16 3xl:py-20">
                 <AdReview />
             </div>
-            <div className='space-y-16 3xl:space-y-30' id="why-upthrust">
+            <div className='space-y-16 3xl:space-y-30' >
                 <PerfromanceHeading
                     tag="h2"
                     heading={[
@@ -191,7 +191,7 @@ const page = () => {
                     text2: "We’ll show you where the money is leaking,and how to fix it.",
                 },
                 mobile: {
-                    text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",
+                    text1: "We’ll show you where the money is leaking,and how to fix it.",
                     text2: "",
                 },
             }} />

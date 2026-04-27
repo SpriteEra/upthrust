@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import React, { useState } from "react";
+import PerformanceCommonButton from "./PerformanceCommonButton";
 
 const ProfileSection = () => {
   const [active, setActive] = useState(0);
@@ -8,6 +9,8 @@ const ProfileSection = () => {
   const profiles = [
     {
       name: "VEGA",
+      brand: "/performance-agency/brands/Vega.png",
+      brandcss: "h-6 sm:h-6! 3xl:h-8!",
       img: "/performance-agency/Profile.png",
       text: `“We've been consistently generating high-quality leads with Upthrust,
       even on a limited budget. We're seeing around 45-50 leads per month,
@@ -18,6 +21,8 @@ const ProfileSection = () => {
     },
     {
       name: "Housr",
+      brand: "/performance-agency/brands/Housr.png",
+      brandcss: "h-6 sm:h-6! 3xl:h-7!",
       img: "/performance-agency/MouserProfile.png",
       text: " “Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.”",
       person: "Gunjan",
@@ -25,6 +30,8 @@ const ProfileSection = () => {
     },
     {
       name: "M.C.Overalls",
+      brand: "/performance-agency/brands/McOveralls.png",
+      brandcss: "h-5 sm:h-5! 3xl:h-6!",
       img: "/performance-agency/McProfile.png",
       text: "“Upthrust promised us a 90-day, but to my surprise, the store's ranking and visibility improved within 47 days. We started getting traffic, better conversions, and exponential sales.”",
       person: "Troy",
@@ -32,13 +39,18 @@ const ProfileSection = () => {
     },
     {
       name: "carorbis",
+      brand: "/performance-agency/brands/Carorbis.png",
+      brandcss: "h-6 sm:h-7! 3xl:h-8!",
       img: "/performance-agency/CarorbisProfile.png",
+
       text: "“I’m happy to say that in the last six months we’ve been able to grow our organic traffic by 463%. Our ad expenses are doing better than ever. We have also been able to improve our conversion rates by almost three times, all thanks to the incredible team at Upthrust.”",
       person: "Rishabh Jain",
       role: "President - Carorbis",
     },
     {
       name: "+escribe",
+      brand: "/performance-agency/brands/Escribe.png",
+      brandcss: "h-6 sm:h-7 3xl:h-8!",
       img: "/performance-agency/EscribeProfile.png",
       text: "I'm impressed with how well Upthrust’s solution is working. The lead quality has exceeded my expectations. I'm confident that we can continue to achieve great results as we grow.”",
       person: "Pranath Sisodiya",
@@ -63,10 +75,18 @@ const ProfileSection = () => {
       border-r border-gray-300
       ${active === index ? "bg-black text-white" : "opacity-40"}`}
             >
-              {item.name}
-              {/* {
-              <img src={profiles.name} alt="" />
-            } */}
+              {/* {item.name} */}
+              <Image
+                src={item.brand}
+                alt={item.name}
+                width={100}
+                height={40}
+                className={`h-6 sm:h-7 lg:h-8 w-auto object-contain transition-all duration-300
+    ${active === index
+                    ? "invert brightness-0 invert-100" // ✅ white logo
+                    : "grayscale opacity-90" // ✅ gray logo
+                  } ${item.brandcss}`}
+              />
 
               {/* TOP PLUS */}
               {index !== profiles.length - 1 && (
@@ -77,6 +97,10 @@ const ProfileSection = () => {
                       alt="plus"
                       width={9.5}
                       height={9.5}
+                      className={`${active === index
+                        ? "opacity-40"
+                        : ""
+                        }`}
                     />
                   </div>
 
@@ -87,6 +111,10 @@ const ProfileSection = () => {
                       alt="plus"
                       width={9.5}
                       height={9.5}
+                      className={`${active === index
+                        ? "opacity-40"
+                        : ""
+                        }`}
                     />
                   </div>
                 </>
@@ -102,7 +130,7 @@ const ProfileSection = () => {
 
         </div>
         {/* Profile Section */}
-        <div className="flex flex-col lg:flex-row  gap-8 3xl:gap-12 mt-12  max-h-[521px]">
+        <div className="flex flex-col lg:flex-row sm:pb-2 gap-8 3xl:gap-12 mt-12  max-h-[521px]">
           {/* Image */}
           <div className="w-full lg:w-1/3 flex justify-center">
             <Image
@@ -118,19 +146,20 @@ const ProfileSection = () => {
             <p className="
           text-[28px]
           3xl:text-[36px]
-          font-semibold leading-relaxed">
+          font-semibold leading-[130%] tracking-[-0.02em] text-black">
               {profiles[active].text}
             </p>
-            <div className="mt-10  pt-6">
+            <div className="flex flex-col pb-1">
               <p className="text-[30px]   font-semibold">
                 {profiles[active].person}
               </p>
               <p className="text-[24px] ">
                 {profiles[active].role}
               </p>
-              <button className="mt-6 bg-black text-white hover:bg-orange  px-5 py-3 text-[14px]  cursor-pointer">
-                GET AD ACCOUNT AUDIT →
-              </button>
+              <div className="pt-5">
+                <PerformanceCommonButton text="GET AD ACCOUNT AUDIT →" btncss=" bg-black text-white hover:bg-orange  px-5 py-3 text-[14px]  cursor-pointer" />
+              </div>
+
             </div>
           </div>
         </div>
@@ -149,9 +178,20 @@ const ProfileSection = () => {
                 <div className="border border-[#1D1D1F] h-[440px] p-5 bg-white flex flex-col">
 
                   {/* logo */}
-                  <h3 className="font-bold text-lg mb-3">{item.name}</h3>
+                  {/* <h3 className="font-bold text-lg mb-3">{item.name}</h3> */}
 
-                  <p className="text-[18px] font-semiboldz text-black tracking-[-0.02em]  leading-[150%] mb-6">
+                  {item.brand && (
+                    <Image
+                      src={item.brand}
+                      alt={item.name}
+                      width={100}
+                      height={30}
+                      className={`h-6 flex items-start justify-start lg:h-8 w-fit object-contain transition-all duration-300
+                        ${active === index ? "grayscale opacity-100" : "grayscale opacity-90"} `}
+                    />
+                  )}
+
+                  <p className="text-[18px] mt-3 font-semibold text-black tracking-[-0.02em]  leading-[150%] mb-6">
                     {item.text}
                   </p>
 

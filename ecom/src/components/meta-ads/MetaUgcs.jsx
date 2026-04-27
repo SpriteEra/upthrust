@@ -224,7 +224,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
             {/* Controls */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <AnimatePresence mode="wait">
-                    {/* {!isActive && (
+                    {!isActive && (
                         <motion.div
                             key="play-icon"
                             initial={{ opacity: 0, scale: 0.7 }}
@@ -237,7 +237,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </motion.div>
-                    )} */}
+                    )}
 
                     {isLoading && !isReady && (
                         <motion.div
@@ -251,7 +251,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                         </motion.div>
                     )}
 
-                    {/* {isReady && !isPlaying && (
+                    {isReady && !isPlaying && (
                         <motion.div
                             key="paused-play"
                             initial={{ opacity: 0, scale: 0.7 }}
@@ -264,10 +264,22 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </motion.div>
-                    )} */}
+                    )}
                 </AnimatePresence>
 
                 {/* Pause button when playing */}
+                {/* {isReady && !isPlaying && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center shadow pointer-events-auto"
+                    >
+                        <svg className="w-3.5 h-3.5 text-black ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </motion.div>
+                )} */}
                 {isReady && isPlaying && (
                     <motion.div
                         initial={{ opacity: 0 }}

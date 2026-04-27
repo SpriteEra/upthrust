@@ -27,7 +27,7 @@ const AiHelpForClient = () => {
                 <div className="grid lg:grid-cols-2 gap-8 1800:gap-26 md:px-6">
 
                     {/* LEFT CARD */}
-                    <div className="bg-white rounded-2xl md:rounded-3xl border border-[#C1C1C1] p-4 md:p-8 3xl:p-10 flex flex-col justify-between overflow-hidden">
+                    <div className="bg-white rounded-2xl md:rounded-3xl border border-[#C1C1C1] p-4 md:p-8 3xl:p-10 flex flex-col justify-between overflow-hidden 3xl:min-h-[1100px]!">
 
                         <div>
                             <div className="text-sm lg:text-base 3xl:text-lg leading-[150%] tracking-[-0.02em] p-1.5 md:p-2 px-4 md:px-5 rounded-full bg-[#F6F6F6] mb-6 3xl:mb-10 block w-fit">
@@ -63,9 +63,9 @@ const AiHelpForClient = () => {
 
 
                     {/* RIGHT CARD */}
-                    <div className="bg-white rounded-2xl md:rounded-3xl border border-black p-4 md:p-8 3xl:p-10 flex flex-col justify-between overflow-hidden">
+                    <div className="bg-white rounded-2xl md:rounded-3xl border border-black p-4 md:p-8 3xl:p-10 flex flex-col justify-between overflow-hidden 3xl:min-h-[1100px]!">
 
-                        <div>
+                        <div className="">
                             <div className="text-sm lg:text-base 3xl:text-lg leading-[150%] tracking-[-0.02em] p-1.5 md:p-2 px-4 md:px-5 rounded-full bg-black mb-6 3xl:mb-10 block w-fit">
                                 <Image
                                     src={"/logo-white.png"}

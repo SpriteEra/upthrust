@@ -32,7 +32,7 @@ const videos = [
     },
 ];
 
-export default function MobileVideos() {
+export default function MobileVideos({ color = "" }) {
     const [activeVideo, setActiveVideo] = useState(null);
     const swiperInstance = useRef(null);
     return (
@@ -95,7 +95,7 @@ export default function MobileVideos() {
                 <button
                     onClick={() => swiperInstance.current?.slidePrev()}
                     title="Previous"
-                    className="absolute left-2 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
+                    className={`bg-[#0457CB] absolute left-1 lg:left-[-60px] 3xl:-left-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden ${color}`}
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white rotate-45 translate-x-[2px] lg:hidden" />
                 </button>
@@ -104,7 +104,7 @@ export default function MobileVideos() {
                 <button
                     title="Next"
                     onClick={() => swiperInstance.current?.slideNext()}
-                    className="absolute right-2 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden"
+                    className={`absolute right-1 lg:right-[-60px] 3xl:-right-30 max-lg:-bottom-18 top-1/2 -translate-y-1/2 size-11 3xl:size-15 rounded-full bg-[#0457CB] flex items-center justify-center z-20 hover:bg-neutral-800 lg:hidden ${color}`}
                 >
                     <span className="size-2.5 3xl:size-3.5 border-l-2 border-b-2 border-white -rotate-[135deg] -translate-x-[2px]" />
                 </button>
@@ -192,27 +192,3 @@ export default function MobileVideos() {
         </section>
     );
 }
-{/* <div key={index} className="flex flex-col items-center">
-
-    <span className="px-4 3xl:px-5 py-1 3xl:py-1.5 text-xs 3xl:text-base  bg-white text-black rounded-md 3xl:rounded-lg">
-        {item.label}
-    </span>
-
-    <div
-        onClick={() => setActiveVideo(item.video)}
-        className="relative h-[660px] aspect-331/645 top-10  overflow-hidden cursor-pointer"
-    >
-        <Image
-            fill
-            src={item.thumbnail}
-            alt=""
-            className="w-full h-full object-cover "
-        />
-        <Image
-            fill
-            src={item.frame}
-            alt=""
-            className="w-full absolute top-10  h-full object-cover"
-        />
-    </div>
-</div> */}

@@ -17,6 +17,7 @@ const brands = [
     { name: "brand7", src: "/ecom/brand/brandwhite/brand8.webp" },
     { name: "brand8", src: "/ecom/brand/brandwhite/brand9.webp" },
 ];
+
 const TestimonialSection = () => (
     <div className="h-full flex flex-col overflow-hidden">
 
@@ -168,35 +169,7 @@ const LeadFormModal = ({ handleClose }) => {
     if (!mounted) return null;
 
     return createPortal(modalContent, document.body);
-    // return (
 
-    //     <div className="fixed inset-0 z-101 flex items-center justify-center">
-    //         {/* Backdrop */}
-    //         <div
-    //             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-    //             onClick={handleClose}
-    //         />
-
-    //         <button onClick={handleClose} className="absolute top-8 right-2 z-20 p-2 bg-white text-[#FF3B00] rounded-full shadow hover:bg-gray-100 sm:hidden" > <X className="w-5 h-5" /> </button>
-    //         {/* Modal Box */}
-    //         <div
-    //             className="relative z-10 w-full max-lg:max-w-md max-w-6xl max-lg:mx-auto 3xl:max-w-7xl h-[90vh] 3xl:h-[85vh] lg:rounded-4xl shadow-2xl overflow-hidden"
-    //             onClick={(e) => e.stopPropagation()}
-    //         >
-
-    //             <div className="flex h-full w-full max-sm:px-2">
-    //                 <div className="hidden lg:block lg:w-5/12">
-    //                     <TestimonialSection />
-    //                 </div>
-    //                 <div className='w-full max-lg:max-w-md max-lg:rounded-md mx-auto lg:w-7/12 flex text-black bg-white max-2xl:overflow-auto max-2xl:pt-30'>
-    //                     <LeadForm showBorder={false} />
-
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-
-    // );
 };
 
 export default LeadFormModal;

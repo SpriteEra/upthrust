@@ -435,14 +435,14 @@ const page = () => {
                                         LIMITED AVAILABILITY
                                     </span>
 
-                                    {/* Heading */}
+                                    {/* Heading */} Fully Commit
                                     <h3 className="max-lg:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
-                                        See What Working With Us Looks Like; <br />
-                                        Before Committing
+                                        See the Value We Bring Before You <br />
+                                        Fully Commit
                                     </h3>
                                     <h3 className="lg:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
-                                        See What Working With Us Looks Like;
-                                        Before Committing
+                                        See the Value We Bring Before You
+                                        Fully Commit
                                     </h3>
 
                                     {/* CTA */}

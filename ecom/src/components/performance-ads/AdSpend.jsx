@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import PerformanceCommonButton from "./PerformanceCommonButton";
 
 const stats = [
     { label: "Ad Spend Managed", value: "47Cr+" },
@@ -53,19 +54,20 @@ export default function AdSpend() {
                         around one metric: yours.
                     </motion.p>
 
-                    <motion.button
+                    {/* <button
 
                         transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
-                        className="border border-black bg-black text-white text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200"
+                        className=" text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200"
                     >
-                        Get Ad Account Audit →
-                    </motion.button>
+                       
+                    </button> */}
+                    <PerformanceCommonButton text=" Get Ad Account Audit →" btncss="border border-black bg-black text-white text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200 cursor-pointer" />
                 </div>
 
                 <div className="relative max-sm:h-full z-0 flex-1 flex items-center justify-end w-full">
 
                     <motion.div
-                        className="absolute -left-25 inset-0 flex items-center justify-end"
+                        className="absolute sm:-left-25 inset-0 flex items-center justify-end"
                         animate={isInView ? { opacity: 0 } : { opacity: 1 }}
                         transition={{ duration: 0.9, ease: "easeInOut" }}
                     >
@@ -89,7 +91,7 @@ export default function AdSpend() {
 
                     {/* Colourful image — fades in when in view */}
                     <motion.div
-                        className="absolute -left-25 max-sm:z-10 flex items-center justify-end w-full"
+                        className="absolute  sm:-left-25 max-sm:z-10 flex items-center justify-end w-full"
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                         transition={{ duration: 0.9, ease: "easeInOut" }}
 

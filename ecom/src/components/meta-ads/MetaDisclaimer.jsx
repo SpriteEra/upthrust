@@ -126,13 +126,14 @@ const MetaDisclaimer = () => {
                         alt='Upthrust'
                         width={400}
                         height={300}
-                        className='h-15 lg:h-14 3xl:h-16 w-fit object-contain'
+                        className='h-11 w-auto self-start sm:h-16 lg:h-14 3xl:h-16 sm:w-full object-contain'
                     />
                     <div className='flex gap-3 items-start'>
                         <span className='text-[#0457CB] font-semibold text-3xl '>/</span>
                         <p className='text-base md:text-xs 3xl:text-base max-w-[300px] 3xl:max-w-90 xs:max-w-70 leading-[150%]  tracking-[-0.02em]'>No fluff. No vanity metrics. Just Meta ads that make you more money than they cost.</p>
                     </div>
                 </div>
+
             </div>
             <Disclaimer />
         </div>

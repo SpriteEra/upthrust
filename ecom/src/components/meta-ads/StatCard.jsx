@@ -9,7 +9,7 @@ const StatsGrid = ({ className }) => {
                         432+
                     </h2>
                     <p className="mt-2 3xl:mt-3 text-[12px] sm:text-[14px] md:text-[16px] 3xl:text-lg tracking-[-0.02em] leading-[120%]">
-                        ADS DELIVERED MONTHLY
+                        Ads Delivered Monthly
                     </p>
                 </div>
 

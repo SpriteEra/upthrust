@@ -4,6 +4,8 @@ import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import LeadForm from '../LeadForm';
+import CommonLeadForm from '@/common/commonLeadForm';
+import { FORM_URLS } from '@/lib/formdata';
 
 // Testimonial Component
 
@@ -179,7 +181,8 @@ const CreativeLeadFormModal = ({ handleClose }) => {
                         <TestimonialSection />
                     </div>
                     <div className='w-full lg:w-7/12 flex text-black bg-white overflow-auto'>
-                        <LeadForm showBorder={false} />
+                        {/* <LeadForm showBorder={false} /> */}
+                        <CommonLeadForm formUrl={FORM_URLS.creative} />
                     </div>
                 </div>
             </div>

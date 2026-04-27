@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import Image from 'next/image';
-import MetaLeadForm from './MetaLeadForm';
+import CommonLeadForm from '@/common/commonLeadForm';
+import { FORM_URLS } from '@/lib/formdata';
+// import MetaLeadForm from './MetaLeadForm';
 
 // Testimonial Component
 const brands = [
@@ -178,7 +180,8 @@ const MetaLeadModal = ({ handleClose }) => {
                         <TestimonialSection />
                     </div>
                     <div className='w-full lg:w-7/12 flex text-black bg-white overflow-auto'>
-                        <MetaLeadForm showBorder={false} />
+                        {/* <MetaLeadForm showBorder={false} /> */}
+                        <CommonLeadForm formUrl={FORM_URLS.metaAds} />
                     </div>
                 </div>
             </div>

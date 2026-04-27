@@ -89,7 +89,7 @@ const growthStories = [
             "Beyond had to establish itself in a market & stand out from competition.",
         rating: 5.0,
         message:
-            "“What clicked for me was you ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.”",
+            "What clicked for me was you ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.",
         clientName: "Iti Dubey",
         position: "CMarketing Head at - Mukunda Foods",
         profile: "/uiux/profile/iti-dubey.webp",

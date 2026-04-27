@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CreativeRocketButton from './CreativeRocketButton';
 import RocketCTAButton from '@/common/RocketCTAButton';
+import { ScrollTrigger } from 'gsap/all';
 
 const navLinks = [
     {
@@ -222,7 +223,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
             {/* Controls */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <AnimatePresence mode="wait">
-                    {/* {!isActive && (
+                    {!isActive && (
                         <motion.div
                             key="play-icon"
                             initial={{ opacity: 0, scale: 0.7 }}
@@ -235,7 +236,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </motion.div>
-                    )} */}
+                    )}
 
                     {isLoading && !isReady && (
                         <motion.div
@@ -249,7 +250,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                         </motion.div>
                     )}
 
-                    {/* {isReady && !isPlaying && (
+                    {isReady && !isPlaying && (
                         <motion.div
                             key="paused-play"
                             initial={{ opacity: 0, scale: 0.7 }}
@@ -262,7 +263,7 @@ const VideoCard = ({ item, isActive, videoState, onCardClick, videoRef }) => {
                                 <path d="M8 5v14l11-7z" />
                             </svg>
                         </motion.div>
-                    )} */}
+                    )}
                 </AnimatePresence>
 
                 {/* Pause button when playing */}
@@ -340,6 +341,7 @@ const UGCVideoCategories = () => {
         }
         setVideoStates((prev) => ({ ...prev, [itemId]: { isPlaying: true, isReady: true, isLoading: false } }));
     };
+
     useEffect(() => {
         if (playingVideo) {
             const video = videoRefs.current[playingVideo];
@@ -354,6 +356,15 @@ const UGCVideoCategories = () => {
         videoRefs.current = {};
         setShowAll(false); // reset view
     }, [activeCategory]);
+
+
+
+    const handleShowMore = () => {
+        setShowAll(!showAll)
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+    };
 
     return (
 
@@ -413,7 +424,9 @@ const UGCVideoCategories = () => {
             {items.length > 8 && (
                 <div className="flex justify-center my-6">
                     <button
-                        onClick={() => setShowAll(!showAll)}
+                        // onClick={() => setShowAll(!showAll)}
+                        onClick={() => handleShowMore()}
+
                     >
                         <RocketCTAButton color='orange' text1={"Show"} text2={showAll ? "Less" : "More"} />
                     </button>

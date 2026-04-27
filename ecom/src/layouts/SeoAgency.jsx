@@ -14,6 +14,7 @@ import { Check } from 'lucide-react';
 import SeoFaq from '@/components/seo-agency/SeoFaq';
 import SeoDisclaimer from '@/components/seo-agency/SeoDisclaimer';
 import HomeFooter from '@/components/home/HomeFooter';
+import SeoCommonButton from '@/components/seo-agency/SeoCommonButton';
 const headingAnimatewords = [
     { text: 'ChatGPT', color: '#000000' },
     { text: 'Claude', color: '#000000' },
@@ -27,9 +28,9 @@ const headingAnimatewords = [
 const headingAnimateimages = [
     { src: '/social/chatgpt.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
     { src: '/social/claude.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
-    { src: '/social/google-black.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
-    { src: '/social/google-black.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
-    { src: '/social/google-black.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
+    { src: '/social/google-ai.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
+    { src: '/social/mircosoft-copilot.png', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
+    { src: '/social/meta-black.png', width: 80, height: 80, wrapperClass: "max-md:size-9 3xl:size-15" },
     { src: '/social/google-ai.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
     { src: '/social/grok.webp', width: 80, height: 80, wrapperClass: "max-md:size-10 3xl:size-16" },
 ];
@@ -75,7 +76,7 @@ const caseStudies = [
         title: "Google Search",
         description: "200% more organic traffic and 75 qualified leads every month — without increasing budget",
         metrics: {
-            metric1: { label: "Boost in Organic Traffic", value: "200%", showUpArrow:true },
+            metric1: { label: "Boost in Organic Traffic", value: "200%", showUpArrow: true },
             metric2: { label: "Marketing Qualified Leads", value: "75" }
         },
         testimonial: {
@@ -86,7 +87,7 @@ const caseStudies = [
         },
         accentColor: "#FE2B27",
         bgColor: "#FFE7E5",
-        rightImage: "/seo/dashboards/dashboard-1.webp",
+        rightImage: "/seo/dashboards/dashboard-2.webp",
         imageAlt: "Mukunda Food dashboard",
         showArrow: true,
         cardType: 2,
@@ -108,7 +109,7 @@ const caseStudies = [
         },
         accentColor: "#FFB900",
         bgColor: "#FFE187",
-        rightImage: "/seo/dashboards/dashboard-1.webp",
+        rightImage: "/seo/dashboards/dashboard-3.webp",
         imageAlt: "L'Oréal ecommerce platform",
         showArrow: true,
         cardType: 2,
@@ -130,7 +131,7 @@ const caseStudies = [
         },
         accentColor: "#21808D",
         bgColor: "#D5EEF1",
-        rightImage: "/seo/dashboards/dashboard-1.webp",
+        rightImage: "/seo/dashboards/dashboard-4.webp",
         imageAlt: "Cycle product management dashboard",
         showArrow: false,
         cardType: 2,
@@ -151,7 +152,7 @@ const caseStudies = [
         },
         accentColor: "#DE7356",
         bgColor: "#FFEDE8",
-        rightImage: "/seo/dashboards/dashboard-1.webp",
+        rightImage: "/seo/dashboards/dashboard-5.webp",
         imageAlt: "Vega ecommerce platform",
         showArrow: false,
         cardType: 2,
@@ -184,19 +185,19 @@ const CommunicationSectionData = [
         title: 'Dashboard',
         description:
             'Your custom reporting dashboard shows: AI citation count per platform, keyword position changes, organic traffic vs. demo pipeline, competitor citation comparison, and month-over-month trend for all metrics',
-        image: '/seo/communication-1.webp',
+        image: '/seo/communication-1.svg',
     },
     {
         title: 'Communication',
         description:
             "Weekly 30-minute account review calls — not just a slide deck, but a live walkthrough of what changed and what we're doing about it.",
-        image: '/seo/communication-2.webp',
+        image: '/seo/communication-2.svg',
     },
     {
         title: 'Availability',
         description:
             "Email directly at any time. 24-hour response guaranteed not 'we'll get back to you within 3 business days.",
-        image: '/seo/communication-3.webp',
+        image: '/seo/communication-3.svg',
     },
 ];
 
@@ -222,6 +223,7 @@ const brandsLogo = [
     { id: 1, src: "/brands/brand-black/mukunda-foods.webp", alt: "", customCss: "h-15 md:h-18 3xl:h-22 w-full" },
     { id: 1, src: "/brands/brand-black/biba.webp", alt: "", customCss: "h-6 md:h-7 3xl:h-10 w-full" },
 ]
+
 export const metadata = {
     title: "SEO Agency That Gets You Found Everywhere | Upthrust",
 
@@ -276,16 +278,17 @@ const SeoLayout = ({ data }) => {
     return (
         <main>
             <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[140px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
-                <div className="max-sm:px-2.5 w-full sm:max-w-[92%] mx-auto ">
+                <div className="max-sm:px-2.5 w-full sm:max-w-[92%] sm:mx-auto ">
                     <div className="flex items-center justify-between ">
                         <div className="shrink-0 ">
 
                             <Image src='/logo.png' height={100} width={200} alt="Upthrust agency logo" priority className="h-6 sm:h-7 3xl:h-12 object-contain w-full" />
                         </div>
                         <div className='flex items-center gap-5 3xl:gap-6'>
-                            <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with <AnimatedWord textCss='font-normal' words={typeOfSeo} className="h-5.5 3xl:h-6.5 w-10.5 3xl:w-12 text-[#FE2B27] mx-auto " />
+                            <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with <AnimatedWord textCss='font-normal' words={typeOfSeo} className="h-5.5 3xl:h-7 w-10.5 3xl:w-12 text-[#FE2B27] mx-auto " />
                             </span>
-                            <button className='text-lg 3xl:text-xl py-2.5 lg:py-4 3xl:py-5.5 px-6 lg:px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em] font-normal'>Scale Your Brand</button>
+
+                            <SeoCommonButton text="Scale Your Brand" />
                         </div>
                     </div>
                 </div>
@@ -337,16 +340,15 @@ const SeoLayout = ({ data }) => {
                                 {" "}Mentioned By
                             </span>
                         </span>
-                        {/* <AnimatedWord images={headingAnimateimages} className="size-6.5 xl:size-9 2xl:size-12 1600:size-15 1800:size-17 mb-3" /> */}
 
-                        <AnimatedWordWithImage textCss="  font-semibold" images={headingAnimateimages} words={headingAnimatewords} className="h-17 3xl:h-22 w-100 md:w-180 3xl:w-250 text-[#000000] mx-auto font-normal" />
+                        <AnimatedWordWithImage textCss="  font-semibold" images={headingAnimateimages} words={headingAnimatewords} className="h-17 3xl:h-22 w-85 md:w-180 3xl:w-250 text-[#000000] mx-auto font-normal" />
                     </h2>
 
                     <p className={`text-[22px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal`}>
                         We optimize for Google + AI answers so customers find you in ChatGPT, Gemini, Claude & Perplexity too.
                     </p>
                 </div>
-                <CircularDesign bgColor={"#E7F0FF"} mobileImage='/seo/adspent-graph-mobile.webp' desktopImage='/seo/adspent-graph-desktop.webp' />
+                <CircularDesign bgColor={"#E7F0FF"} mobileImage='/seo/adspent-graph-mobile.png' desktopImage='/seo/adspent-graph-desktop.webp' />
 
             </div>
             <div className="3xl:my-40 3xl:mt-50 my-20 max-w-[90%] 3xl:max-w-[85%] mx-auto">
@@ -376,7 +378,7 @@ const SeoLayout = ({ data }) => {
                 <AiHelpForClient />
 
             </div>
-            <div className="1800:mb-20 1600:mt-60 1800:mt-80 my-20">
+            <div className="1800:mb-20 1600:mt-35 1800:mt-50 my-20">
                 <CommonHeading
 
                     heading={[
@@ -481,9 +483,12 @@ const SeoLayout = ({ data }) => {
                             the opportunities to outpace the competition
                         </p>
 
-                        <button className="mt-10 md:mt-4 3xl:mt-6 text-lg 3xl:text-xl py-2.5 lg:py-4 3xl:py-5.5 px-6 lg:px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em] font-normal">
+                        {/* <button className="mt-10 md:mt-4 3xl:mt-6 text-lg 3xl:text-xl py-2.5 lg:py-4 3xl:py-5.5 px-6 lg:px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em] font-normal">
                             Analyze my brand
-                        </button>
+                        </button> */}
+                        <div className="mt-10 md:mt-4 3xl:mt-6">
+                            <SeoCommonButton text="Analyze my brand" />
+                        </div>
 
                         <div className="mt-6">
 
@@ -542,14 +547,14 @@ const SeoLayout = ({ data }) => {
             </div>
 
             <div>
-                <SeoDisclaimer />
+                <SeoDisclaimer />]
                 <HomeFooter text1="SEO  Agency" bgColor="#0076F0" text2={{
                     desktop: {
-                        text1: "YOUR SUBMISSION GOES HERE.",
-                        text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER. COINCIDENCE? WE THINK NOT.",
+                        text1: "YOUR SEO GROWTH STARTS HERE.",
+                        text2: "OUR STRATEGY GETS YOU RANKING FASTER. MORE TRAFFIC. MORE LEADS. NO GUESSWORK.",
                     },
                     mobile: {
-                        text1: "YOUR SUBMISSION GOES HERE. OUR EXCITED RESPONSE COMES SHORTLY AFTER. COINCIDENCE? WE THINK NOT",
+                        text1: "OUR STRATEGY GETS YOU RANKING FASTER. MORE TRAFFIC. MORE LEADS. NO GUESSWORK.",
                         text2: "",
                     },
                 }} />

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import StylishButton from '@/common/RocketButton';
 import NavbarCTAButton from '../NavbarCTAButton';
 import CreativeRocketButton from './CreativeRocketButton';
 

@@ -2,6 +2,7 @@
 
 import PerfromanceHeading from "@/common/PerformanceHeading";
 import { ArrowRight } from "lucide-react";
+import PerformanceCommonButton from "./PerformanceCommonButton";
 
 export default function AdReview() {
     return (
@@ -38,11 +39,7 @@ export default function AdReview() {
 
                     {/* Right Button */}
                     <div className="hidden md:flex md:items-end md:justify-end">
-                        <button className="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]">
-                            {/* <ArrowRight size={18} /> */}
-
-                            → BOOK YOUR LIVE REVIEW
-                        </button>
+                        <PerformanceCommonButton text=" → BOOK YOUR LIVE REVIEW" btncss="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]" />
                     </div>
 
                 </div>
@@ -77,10 +74,8 @@ export default function AdReview() {
                             Custom scope
                         </p>
 
-                        <button className="bg-white text-black px-20 py-3 flex items-center gap-3 text-[19px]  transition">
-                            {/* <ArrowRight size={16} /> */}
-                            → BOOK A CALL
-                        </button>
+
+                        <PerformanceCommonButton text=" → BOOK A CALL" btncss="bg-white hover:text-white cursor-pointer hover:bg-orange  text-black px-20 py-3 flex items-center gap-3 text-[19px]  transition cursor-pointer" />
 
                     </div>
 

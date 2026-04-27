@@ -3,6 +3,7 @@ import StylishButton from '@/common/RocketButton'
 import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import GoogleCommonButton from './GoogleCommonButton'
 
 export const Disclaimer = () => {
     const [open, setOpen] = useState(false);
@@ -115,9 +116,7 @@ const GoogleDisclaimer = () => {
                 <div className='max-md:pl-2'>
                     <p className='font-semibold text-4xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%]'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
-
-                    {/* <StylishButton /> */}
-                    <button className="text-lg 3xl:text-xl py-4 3xl:py-5.5 px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em]">Show Us How to Scale</button>
+                    <GoogleCommonButton text="Show Us How to Scale" />
                 </div>
                 <div className='flex flex-col md:justify-between md:items-center gap-6 md:gap-8 max-md:pl-2'>
                     <Image
@@ -125,7 +124,7 @@ const GoogleDisclaimer = () => {
                         alt='Upthrust'
                         width={400}
                         height={300}
-                        className='h-14 md:h-16 lg:h-14 3xl:h-16 w-fit object-contain'
+                        className='h-11 w-auto self-start sm:h-16 lg:h-14 3xl:h-16 sm:w-full object-contain'
                     />
                     <div className='flex gap-3 items-start'>
                         <span className='text-[#0076F0] font-semibold text-3xl '>/</span>

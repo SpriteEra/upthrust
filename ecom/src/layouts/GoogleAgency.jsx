@@ -18,6 +18,7 @@ import AnimatedWord from "@/components/google-ads/AnimatedWord";
 import ClientTestimonials from "@/components/google-ads/ClientTestimonials";
 import GoogleAdsRoiPredictionSlider from "@/components/google-ads/GoogleAdsRoiPredictionSlider";
 import HomeFooter from '@/components/home/HomeFooter'
+import GoogleCommonButton from '@/components/google-ads/GoogleCommonButton'
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -94,7 +95,8 @@ const GoogleAgencyLayout = ({ data }) => {
                         </div>
                         <div className='flex items-center gap-5 3xl:gap-6'>
                             <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with google ads</span>
-                            <button className='text-lg 3xl:text-xl py-2.5 lg:py-4 3xl:py-5.5 px-6 lg:px-8 3xl:px-10 rounded-full bg-[#1A73E8] text-white hover:bg-[#1550A9] transition-colors duration-100 ease-linear cursor-pointer leading-[150%] tracking-[-0.02em] font-normal'>Scale Your PPC</button>
+
+                            <GoogleCommonButton text="Scale Your PPC" />
                         </div>
                     </div>
                 </div>
@@ -446,13 +448,12 @@ const GoogleAgencyLayout = ({ data }) => {
                 <GoogleDisclaimer />
                 <HomeFooter text1="Request a free consultation." bgColor="#0457CB" text2={{
                     desktop: {
-                        text1: "YOUR SUBMISSION GOES HERE.",
-                        text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.COINCIDENCE? WE THINK NOT.",
+                        text1: "YOU FOUND THE RIGHT AGENCY.",
+                        text2: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
                     },
                     mobile: {
-                        text1: "AD SPEND. YOU'LL WONDER WHY YOU WAITED. Let’s go.",
-                        text2: "",
-                    },
+                        text1: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT."
+                    }
                 }} />
 
             </div>

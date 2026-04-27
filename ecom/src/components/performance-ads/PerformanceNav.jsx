@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import NavbarCTAButton from '../NavbarCTAButton';
+import PerformanceLeadFormModal from './PerformanceLeadModal';
+import PerformanceCommonButton from './PerformanceCommonButton';
 
 export default function PerformanceNav({ items }) {
     return (
@@ -34,14 +36,15 @@ export default function PerformanceNav({ items }) {
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-orange transition-colors duration-200 text-[15px] 2xl:text-base">
-                            Get Your Free Ad Account Audit
+                        <button className="">
+
                         </button>
-                        {/* <MetaRocketButton color='orange' /> */}
+                        <PerformanceCommonButton text=" Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-4 3xl:min-h-16 rounded-full hover:bg-orange transition-colors duration-200 text-[15px] 2xl:text-base cursor-pointer" />
+
                     </div>
                     {/* Mobile menu button */}
-                    {/* <NavbarCTAButton ModalComponent={MetaLeadModal} className="border-orange" /> */}
-                    <NavbarCTAButton className="border-orange py-3!" />
+
+                    <NavbarCTAButton ModalComponent={PerformanceLeadFormModal} className="border-orange py-3!" />
                 </div>
             </div>
         </nav>

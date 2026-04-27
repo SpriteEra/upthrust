@@ -4,12 +4,13 @@ import { googlePages } from "@/data/googlePages";
 import { metaPages } from "@/data/metaPages";
 import { seoPages } from "@/data/seoPages";
 
+import { createMeta, Meta } from "@/lib/metadata";
+
 import dynamic from "next/dynamic";
 
 const EcomLayout = dynamic(() =>
     import("@/layouts/EcomAgency")
 );
-
 
 const GoogleAgencyLayout = dynamic(() =>
     import("@/layouts/GoogleAgency")
@@ -61,3 +62,40 @@ export default async function Page({ params }) {
 
     notFound();
 }
+
+
+
+
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+
+    if (!slug) {
+        return {
+            title: "Invalid Page",
+        };
+    }
+
+    if (Meta[slug]) {
+        return Meta[slug];
+    }
+
+    for (const page of pageConfig) {
+        const data = page.source?.[slug];
+
+        if (data) {
+            return createMeta({
+                title: data.title,
+                description: data.description,
+                path: data.path,
+                keywords: data.keywords,
+                image: data.image,
+            });
+        }
+    }
+
+    return {
+        title: "Page Not Found",
+    };
+}
+
+
