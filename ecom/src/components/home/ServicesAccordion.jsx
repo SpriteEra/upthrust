@@ -42,7 +42,7 @@ const services = [
             {
                 before: "",
                 bold: "20–30",
-                after: " ecommerce-focused creatives monthly",
+                after: "ecommerce-focused creatives monthly",
             },
             {
                 before: "Tested on",
@@ -181,8 +181,12 @@ export default function ServicesAccordion() {
                                             <li key={i} className="inline-flex items-center gap-1 text-sm 3xl:text-base whitespace-nowrap">
 
                                                 <ArrowRight size={16} />
-                                                <span>{d.before}</span>
+                                                {
+                                                    d.before && (
+                                                        <span>{d.before}</span>
+                                                    )
 
+                                                }
                                                 <span className="font-semibold">{d.bold}</span>
 
                                                 <span> {d.after}</span>

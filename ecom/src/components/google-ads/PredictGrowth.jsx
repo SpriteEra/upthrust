@@ -44,7 +44,7 @@ const PredictGrowth = () => {
                     Most agencies pick obvious keywords. We analyze thousands of search terms to find what your competitors miss keywords with buyer intent, not just traffic. We build tight ad groups around them. <strong>Quality Score 9+. Lower CPCs. Campaigns That Profit From Day One.</strong>
                 </>
             ),
-            images: ['/google-ads/sliderimg/Discover1.webp', '/google-ads/sliderimg/Discover2.webp', '/google-ads/sliderimg/Discover3.webp'],
+            images: ['/google-ads/sliderimg/Discover1.svg', '/google-ads/sliderimg/Discover2.svg', '/google-ads/sliderimg/Discover3.svg'],
         },
         {
             id: 2,
@@ -59,7 +59,7 @@ const PredictGrowth = () => {
                     We've seen it happen: an agency launches a campaign, realizes three days later the tracking pixel never fired. Or the keywords don't match the landing page. Or the bids are way too high. We don't do that. <strong>We Review Everything First, Catch The Mistakes Before They Cost You Money, Then Launch When It's Actually Ready.</strong>
                 </>
             ),
-            images: ['/google-ads/sliderimg/Prelaunch1.webp', '/google-ads/sliderimg/Prelaunch2.webp', '/google-ads/sliderimg/Prelaunch3.webp'],
+            images: ['/google-ads/sliderimg/Prelaunch1.svg', '/google-ads/sliderimg/Prelaunch2.svg', '/google-ads/sliderimg/Prelaunch3.svg'],
         },
         {
             id: 3,
@@ -74,7 +74,7 @@ const PredictGrowth = () => {
                     We analyze your search impression share to identify traffic loss due to budget limits—not competition. Budgets are increased by 20%, monitored for three days, and scaled further if CPC and conversion rates remain stable. If costs rise, bids are adjusted before adding spend. <strong>We Scale Winners First And Expand only When The Data Supports It. </strong>
                 </>
             ),
-            images: ['/google-ads/sliderimg/Scale1.webp', '/google-ads/sliderimg/Scale2.webp', '/google-ads/sliderimg/Scale3.webp'],
+            images: ['/google-ads/sliderimg/Scale1.svg', '/google-ads/sliderimg/Scale2.svg', '/google-ads/sliderimg/Scale3.svg'],
         },
         {
             id: 4,
@@ -89,7 +89,7 @@ const PredictGrowth = () => {
                     This is where we actually figure out what works. Test everything ad copy, audiences, bids. <strong>Track Quality Score Daily. Kill What Doesn't Perform. Scale What Does. No Assumptions, Just Data.</strong>
                 </>
             ),
-            images: ['/google-ads/sliderimg/Learning1.webp', '/google-ads/sliderimg/Learning2.webp', '/google-ads/sliderimg/Learning3.webp'],
+            images: ['/google-ads/sliderimg/Learning1.svg', '/google-ads/sliderimg/Learning2.svg', '/google-ads/sliderimg/Learning3.svg'],
         },
     ];
     const mobileOrder = [
