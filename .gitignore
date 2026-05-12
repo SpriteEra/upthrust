@@ -1,5 +1,3 @@
-/uplods
-/uplods2
-/uplods3
-
+node_modules
+dist
 .env

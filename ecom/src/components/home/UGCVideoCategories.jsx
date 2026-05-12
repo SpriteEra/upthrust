@@ -370,6 +370,7 @@ const navLinks = [
       { id: 8, image: "/ecom/ugcs/lifestyle/lifestyle8.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/PowerBankmp4.mp4" },
       { id: 9, image: "/ecom/ugcs/lifestyle/lifestyle9.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/seetramp4.mp4" },
       { id: 10, image: "/ecom/ugcs/lifestyle/lifestyle10.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/Lifestyle/soundart.mp4" },
+       { id: 11, image: "/ecom/ugcs/beauty/beauty3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/KIWIBYMUSSKANmp4.mp4" },
     ]
   },
 
@@ -380,7 +381,7 @@ const navLinks = [
     items: [
       { id: 1, image: "/ecom/ugcs/beauty/beauty1.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/aramorefinalmp4.mp4" },
       { id: 2, image: "/ecom/ugcs/beauty/beauty2.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/Cottsberryfinalmp4.mp4" },
-      { id: 3, image: "/ecom/ugcs/beauty/beauty3.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/KIWIBYMUSSKANmp4.mp4" },
+     
       { id: 4, image: "/ecom/ugcs/beauty/beauty4.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/koparibeautycsmp4.mp4" },
       { id: 5, image: "/ecom/ugcs/beauty/beauty5.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lashsupplycs1mp4.mp4" },
       { id: 6, image: "/ecom/ugcs/beauty/beauty6.webp", videoUrl: "https://cdn.upthrust.agency/Ecom%20page%20assets/UGC's/Beauty%20%26%20Skincare/lorealcsmp4.mp4" },

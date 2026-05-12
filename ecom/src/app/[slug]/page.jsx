@@ -63,9 +63,6 @@ export default async function Page({ params }) {
     notFound();
 }
 
-
-
-
 export async function generateMetadata({ params }) {
     const { slug } = await params;
 
