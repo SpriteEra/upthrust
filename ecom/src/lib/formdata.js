@@ -1,7 +1,7 @@
 
 export const FORM_URLS = {
     ecom:
-        "https://upthrust-ecom.neetocal.com/embed/3f2e149b-8090-481e-8e7e-6ba530596ff4",
+        "https://upthrust-us.neetocal.com/embed/e7f11461-c2bf-4f81-bd0a-cd3cfa32a724",
 
     creative:
         "https://upthrust-us.neetocal.com/embed/ef3dcb79-dafb-4cdc-9e8f-880d048ebac6",

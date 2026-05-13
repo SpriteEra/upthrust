@@ -16,6 +16,8 @@ import HomeFooter from '@/components/home/HomeFooter';
 import ScrollIndicator from '@/components/home/ScrollIndicator';
 import WhatWeDid from '@/components/home/WhatWeDid';
 import EcomHeading from '@/components/home/EcomHeading';
+import CommonLeadForm from '@/common/commonLeadForm';
+import { FORM_URLS } from '@/lib/formdata';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
@@ -663,7 +665,8 @@ const page = () => {
             />
           </div>
         </div>
-        <LeadForm />
+        {/* <LeadForm /> */}
+        <CommonLeadForm formUrl={FORM_URLS.ecom} />
       </div>
 
 

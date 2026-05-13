@@ -186,7 +186,7 @@
 //         <div
 //           ref={panelRef}
 //           className="relative flex w-[62vw] h-[72vh] z-10 flex-col bg-white overflow-hidden"
-          
+
 //         >
 //           {/* ── NAV — links always visible, center logo slot is target ── */}
 //           <nav
@@ -288,7 +288,7 @@
 //       </section>
 
 //       <style>{`
-       
+
 //         html, body { overflow-x: hidden; }
 //         .scroll-ticker {
 //           animation: tickerScroll 22s linear infinite;
@@ -314,16 +314,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  const panelRef         = useRef(null);
-  const navRef           = useRef(null);
-  const navLogoRef       = useRef(null);
-  const centerLogoRef    = useRef(null);
-  const navLinksLeftRef  = useRef(null);
+  const panelRef = useRef(null);
+  const navRef = useRef(null);
+  const navLogoRef = useRef(null);
+  const centerLogoRef = useRef(null);
+  const navLinksLeftRef = useRef(null);
   const navLinksRightRef = useRef(null);
-  const scrollBannerRef  = useRef(null);
-  const heroSectionRef   = useRef(null);
-  const textSectionRef   = useRef(null);
-  const bgVideoRef       = useRef(null);
+  const scrollBannerRef = useRef(null);
+  const heroSectionRef = useRef(null);
+  const textSectionRef = useRef(null);
+  const bgVideoRef = useRef(null);
 
   useEffect(() => {
     let lenis;
@@ -339,11 +339,11 @@ const HeroSection = () => {
       gsap.ticker.add((time) => { lenis.raf(time * 1000); });
       gsap.ticker.lagSmoothing(0);
 
-      const panel        = panelRef.current;
-      const navLogo      = navLogoRef.current;
-      const centerLogo   = centerLogoRef.current;
+      const panel = panelRef.current;
+      const navLogo = navLogoRef.current;
+      const centerLogo = centerLogoRef.current;
       const scrollBanner = scrollBannerRef.current;
-      const bgVideo      = bgVideoRef.current;
+      const bgVideo = bgVideoRef.current;
 
       // ── Calculate logo target after panel has FULLY expanded ──
       // We simulate the expanded state by reading nav/logo positions
@@ -352,7 +352,7 @@ const HeroSection = () => {
         // Force a fresh measurement with no transforms applied
         gsap.set(centerLogo, { x: 0, y: 0, scale: 1 });
 
-        const logoRect    = centerLogo.getBoundingClientRect();
+        const logoRect = centerLogo.getBoundingClientRect();
         const navLogoRect = navLogo.getBoundingClientRect();
 
         // When panel is fully expanded (100vw/100vh), the nav stays at top
@@ -370,15 +370,15 @@ const HeroSection = () => {
 
         // Logo's final position (after panel expands) in viewport coords:
         const logoFinalLeft = logoRect.left - panelShiftX;
-        const logoFinalTop  = logoRect.top  - panelShiftY;
+        const logoFinalTop = logoRect.top - panelShiftY;
 
         // navLogo placeholder stays at same position relative to panel
         // but panel top-left shifts, so its final viewport pos:
         const navLogoFinalLeft = navLogoRect.left - panelShiftX;
-        const navLogoFinalTop  = navLogoRect.top  - panelShiftY;
+        const navLogoFinalTop = navLogoRect.top - panelShiftY;
 
         const targetX = (navLogoFinalLeft + navLogoRect.width / 2) - (logoFinalLeft + logoRect.width / 2);
-        const targetY = (navLogoFinalTop  + navLogoRect.height / 2) - (logoFinalTop  + logoRect.height / 2);
+        const targetY = (navLogoFinalTop + navLogoRect.height / 2) - (logoFinalTop + logoRect.height / 2);
         const targetScale = navLogoRect.height / logoRect.height;
 
         return { targetX, targetY, targetScale };
@@ -478,11 +478,11 @@ const HeroSection = () => {
       <div className="items-center gap-3" style={{ display: 'none' }}>
         <svg width={height} height={height} viewBox="0 0 80 80" fill="none">
           <g transform="translate(40,40) rotate(-30) translate(-40,-40)">
-            <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111"/>
-            <circle cx="40" cy="26" r="6" fill="white"/>
-            <path d="M26 48 L16 66 L30 57 Z" fill="#111"/>
-            <path d="M54 48 L64 66 L50 57 Z" fill="#111"/>
-            <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6"/>
+            <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111" />
+            <circle cx="40" cy="26" r="6" fill="white" />
+            <path d="M26 48 L16 66 L30 57 Z" fill="#111" />
+            <path d="M54 48 L64 66 L50 57 Z" fill="#111" />
+            <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6" />
           </g>
         </svg>
         <span className="font-black text-black" style={{ fontSize: height * 0.9, letterSpacing: '-0.03em', lineHeight: 1 }}>
@@ -565,7 +565,7 @@ const HeroSection = () => {
               className="flex items-center justify-center"
               style={{ transformOrigin: 'center center' }}
             >
-              <LogoImg height="100px" />
+              <LogoImg height={100} />
             </div>
           </div>
 

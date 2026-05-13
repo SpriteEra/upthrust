@@ -37,15 +37,15 @@ const CommonLeadForm = ({
     }, [formUrl]);
 
     return (
-        <div className="flex items-center justify-center w-full px-2">
+        <div className="flex items-center justify-center w-full p-2">
             <div
-                className={`w-full max-w-2xl 3xl:max-w-4xl bg-white ${showBorder ? "border shadow-lg" : ""
+                className={`w-full flex h-full  max-w-2xl 3xl:max-w-4xl  ${showBorder ? "border shadow-lg" : ""
                     } rounded-lg overflow-hidden`}
             >
                 <iframe
                     src={iframeSrc}
                     width="100%"
-                    height={height}
+                    height="100%"
                     style={{ border: "none" }}
                     allowFullScreen
                     title="Lead Form"

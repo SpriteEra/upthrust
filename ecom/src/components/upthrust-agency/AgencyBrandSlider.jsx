@@ -195,19 +195,18 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
           <div className="flex items-center justify-center"
             style={{ pointerEvents: "none" }}
           >
-            <div className="flex items-center justify-center h-8 xs:h-8 w-20 xs:w-18 3xl:w-24">
+            <div className={`flex items-center justify-center h-8 xs:h-8 w-20 xs:w-18 3xl:w-24 border border-[#B7B7B7] rounded-full px-6 py-2  ${brand.logoClass}`}>
               <Image
                 src={brand.logo}
                 alt={"Logos of ecommerce brands partnered with Upthrust"}
-                width={120}
-                height={40}
+                width={150}
+                height={50}
                 draggable={false}
                 className="max-h-full max-w-full object-contain select-none "
               />
             </div>
             {/* Divider */}
-            {/* Divider */}
-            <div className="absolute right-0 top-1/2 h-6 3xl:h-10 w-px bg-gray-300 -translate-y-1/2" />
+            {/* <div className="absolute right-0 top-1/2 h-6 3xl:h-10 w-px bg-gray-300 -translate-y-1/2" /> */}
 
           </div>
         </div>
@@ -229,23 +228,22 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 150 }) {
     </div>
   );
 }
+const defaultRow1 = Array.from({ length: 17 }, (_, i) => ({
+  id: i + 1,
+  name: `Brand ${i + 1}`,
+  logo: `/ecom/brand/first/f${i + 1}.webp`,
+}));
 
-export default function AgencyBrandSlider() {
-  const brandsRow1 = Array.from({ length: 17 }, (_, i) => ({
-    id: i + 1,
-    name: `Brand ${i + 1}`,
-    logo: `/ecom/brand/first/f${i + 1}.webp`,
-  }));
+const defaultRow2 = Array.from({ length: 15 }, (_, i) => ({
+  id: i + 21,
+  name: `Brand ${i + 21}`,
+  logo: `/ecom/brand/second/s${i + 1}.webp`,
+}));
 
 
-  const brandsRow2 = Array.from({ length: 15 }, (_, i) => ({
-    id: i + 21,
-    name: `Brand ${i + 21}`,
-    logo: `/ecom/brand/second/s${i + 1}.webp`,
-  }));
-
+export default function AgencyBrandSlider({ brandsRow1 = defaultRow1, brandsRow2 = defaultRow2 }) {
   return (
-    <div className="py-14 xs:py-20 space-y-10 overflow-hidden">
+    <div className="py-8 xs:py-10 space-y-10 overflow-hidden">
 
       <div className="flex-1 flex flex-col justify-center gap-0 max-lg:space-y-3">
         <MarqueeRow brands={brandsRow1} direction="left" />

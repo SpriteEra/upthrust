@@ -18,6 +18,8 @@ import WhatWeDid from '@/components/home/WhatWeDid';
 import EcomHeading from '@/components/home/EcomHeading';
 //data
 import { agencyPages } from '@/data/agencyPages';
+import CommonLeadForm from '@/common/commonLeadForm';
+import { FORM_URLS } from '@/lib/formdata';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
@@ -661,7 +663,8 @@ export default async function EcomLayout({ data }) {
                         />
                     </div>
                 </div>
-                <LeadForm showOnlyIframe={true} />
+                {/* <LeadForm showOnlyIframe={true} /> */}
+                <CommonLeadForm formUrl={FORM_URLS.ecom} />
             </div>
 
 

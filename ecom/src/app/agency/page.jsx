@@ -6,6 +6,44 @@ import HeroSection from '@/components/upthrust-agency/HeroSection'
 import PlayVideoSection from '@/components/upthrust-agency/VideoPlay'
 import Image from 'next/image'
 
+
+const brandsRow1 = [
+  { id: 1, name: "", logo: "/brands/brand-black/tata-cliq.webp" },
+  { id: 2, name: "", logo: "/brands/brand-black/housr.webp" },
+  { id: 3, name: "", logo: "/brands/brand-black/bagwani.webp" },
+  { id: 4, name: "", logo: "/brands/brand-black/mukunda-foods.webp" },
+  { id: 5, name: "", logo: "/brands/brand-black/libas.webp" },
+  { id: 6, name: "", logo: "/brands/brand-black/biba.webp" },
+  { id: 7, name: "", logo: "/brands/brand-black/manohar-lal.webp" },
+  { id: 8, name: "", logo: "/brands/brand-black/shoppetite.webp" },
+  { id: 9, name: "", logo: "/brands/brand-black/yummie.webp" },
+  { id: 10, name: "", logo: "/brands/brand-black/bosch.webp" },
+  { id: 11, name: "", logo: "/brands/brand-black/the-sweet-blend.webp" },
+  { id: 12, name: "", logo: "/brands/brand-black/victorias-secret.webp" },
+  { id: 13, name: "", logo: "/brands/brand-black/nurture-india.webp" },
+  { id: 14, name: "", logo: "/brands/brand-black/dhenu.webp" },
+  { id: 15, name: "", logo: "/brands/brand-black/dell.webp" },
+]
+const brandsRow2 = [
+  { id: 1, name: "", logo: "/brands/brand-black/zomato.webp" },
+  { id: 2, name: "", logo: "/brands/brand-black/urban.webp" },
+  { id: 3, name: "", logo: "/brands/brand-black/welspun.webp" },
+  { id: 4, name: "", logo: "/brands/brand-black/ok.webp" },
+  { id: 5, name: "", logo: "/brands/brand-black/zipnow.webp" },
+  { id: 6, name: "", logo: "/brands/brand-black/petco.webp" },
+  { id: 7, name: "", logo: "/brands/brand-black/velbiom.webp" },
+  { id: 8, name: "", logo: "/brands/brand-black/james-allen.webp" },
+  { id: 9, name: "", logo: "/brands/brand-black/neon-attack.webp" },
+  { id: 10, name: "", logo: "/brands/brand-black/jagwonder.webp" },
+  { id: 11, name: "", logo: "/brands/brand-black/beyond.webp" },
+  { id: 12, name: "", logo: "/brands/brand-black/mc-overalls.webp" },
+  { id: 13, name: "", logo: "/brands/brand-black/tiggle.webp" },
+  { id: 14, name: "", logo: "/brands/brand-black/harley-davidson.webp" },
+  { id: 15, name: "", logo: "/brands/brand-black/audio-art.webp" },
+  { id: 15, name: "", logo: "/brands/brand-black/loreal.webp" },
+  { id: 15, name: "", logo: "/brands/brand-black/last-supply.webp" },
+]
+
 const page = () => {
   return (
     <div>
@@ -144,7 +182,7 @@ const page = () => {
           subTitleCss="max-w-2xl 3xl:max-w-3xl"
         />
       </div>
-      <AgencyBrandSlider />
+      <AgencyBrandSlider brandsRow1={brandsRow1} brandsRow2={brandsRow2} />
 
 
 
