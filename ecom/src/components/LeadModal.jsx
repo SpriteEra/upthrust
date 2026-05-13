@@ -51,7 +51,7 @@ const TestimonialSection = () => (
 
 
 
-                <div className="text-lg 3xl:text-xl mt-3 ">
+                <div className="text-lg 3xl:text-xl mt-3 text-white ">
                     <p className="">Anuva Kakkar</p>
                     <p className="">Founder at Tiggle</p>
                 </div>
