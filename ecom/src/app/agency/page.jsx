@@ -57,7 +57,7 @@ const page = () => {
   return (
     <div>
       <HeroSection />
-      <AgencyNavbar />
+      {/* <AgencyNavbar /> */}
       <PlayVideoSection />
       <div className="py-20">
         <AgencyHeading

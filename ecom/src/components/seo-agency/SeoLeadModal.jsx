@@ -21,7 +21,7 @@ const TestimonialSection = () => (
     <div className="h-full flex flex-col overflow-hidden">
 
         {/* TOP IMAGE SECTION */}
-        <div className="relative h-[70%]  2xl:h-[65%]">
+        <div className="relative h-[65%]">
 
             {/* Background Image */}
             <Image
@@ -57,7 +57,7 @@ const TestimonialSection = () => (
         </div>
 
         {/* BOTTOM ORANGE SECTION */}
-        <div className="bg-[#0457CB] p-4 xl:p-6 px-6 xl:px-8 h-[30%] 2xl:h-[35%] flex flex-col justify-evenly">
+        <div className="bg-[#0457CB] p-4 xl:p-6 px-6 xl:px-8 h-[35%] flex flex-col justify-evenly">
             <p className="text-white text-sm font-medium mb-4 3xl:mb-2">
                 Trusted by Shark tank and 48 other brands
             </p>

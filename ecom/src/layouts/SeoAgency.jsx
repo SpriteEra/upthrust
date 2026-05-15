@@ -547,7 +547,7 @@ const SeoLayout = ({ data }) => {
             </div>
 
             <div>
-                <SeoDisclaimer />]
+                <SeoDisclaimer />
                 <HomeFooter text1="SEO  Agency" bgColor="#0076F0" text2={{
                     desktop: {
                         text1: "YOUR SEO GROWTH STARTS HERE.",

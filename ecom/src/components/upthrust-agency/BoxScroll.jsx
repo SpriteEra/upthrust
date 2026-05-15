@@ -809,7 +809,7 @@ import { useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-/* ─── Tile data (excludes logo — logo is separate persistent element) ──────── */
+/* ─── Tile data (8 tiles — logo is handled separately) ────────────────────── */
 const TILES = [
     { id: "meta", label: "Meta", sub: "Ads", bg: "#2BC4DF", ink: "#000", col: 1, row: 1, cs: 1, rs: 2, from: "left", url: "https://upthrust.co/meta-ads" },
     { id: "creative", label: "Creative", sub: "Ads Agency", bg: "#F5C842", ink: "#000", col: 2, row: 1, cs: 1, rs: 1, from: "top", url: "https://upthrust.co/creative" },
@@ -821,34 +821,23 @@ const TILES = [
     { id: "performance", label: "Performance", sub: "Marketing Agency", bg: "#7A2C8C", ink: "#fff", col: 3, row: 3, cs: 1, rs: 1, from: "bottom", url: "https://upthrust.co/performance" },
 ];
 
-/* ─── Logo tile (stays centered throughout, then locks into grid) ─────────── */
-const LOGO_TILE = {
-    id: "logo", bg: "#000", col: 3, row: 2, cs: 1, rs: 1, url: "https://upthrust.co",
-};
-
-/* ─── Off-screen helpers ───────────────────────────────────────────────────── */
+/* ─── Off-screen positions ─────────────────────────────────────────────────── */
 function getOffscreen(from) {
     if (typeof window === "undefined") return { x: 0, y: 0 };
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const map = {
-        left: { x: -vw * 1.3, y: 0 },
-        right: { x: vw * 1.3, y: 0 },
-        top: { x: 0, y: -vh * 1.3 },
-        bottom: { x: 0, y: vh * 1.3 },
-    };
-    return map[from] ?? { x: 0, y: 0 };
+    return { left: { x: -vw * 1.3, y: 0 }, right: { x: vw * 1.3, y: 0 }, top: { x: 0, y: -vh * 1.3 }, bottom: { x: 0, y: vh * 1.3 } }[from] ?? { x: 0, y: 0 };
 }
 
-/* ─── Component ────────────────────────────────────────────────────────────── */
+/* ─── Main Component ───────────────────────────────────────────────────────── */
 export default function DropBoxScroll() {
     const wrapperRef = useRef(null);
     const sectionRef = useRef(null);
-    const tilesRef = useRef(null);   // the 8 colored tiles (grid layer)
-    const cardRef = useRef(null);   // the full white/black card
-    const cardTextRef = useRef(null);   // text inside card
-    const logoRowRef = useRef(null);   // bottom logo row inside card
-    const logoBoxRef = useRef(null);   // the persistent small black logo square
+    const tilesRef = useRef(null);
+    const cardRef = useRef(null);   // the card that shrinks into logo box
+    const cardTextRef = useRef(null);   // text paragraph
+    const logoRowRef = useRef(null);   // bottom "Upthrust" branding row
+    const logoIconRef = useRef(null);   // centered rocket icon (hidden until phase 2)
     const isAssembled = useRef(false);
 
     const handleTileClick = useCallback((url) => {
@@ -858,49 +847,43 @@ export default function DropBoxScroll() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        // Kill any previous ScrollTriggers to prevent double-render
+        ScrollTrigger.getAll().forEach(st => st.kill());
+
         const ctx = gsap.context(() => {
             const tileEls = gsap.utils.toArray(".ut-tile", tilesRef.current);
 
-            /* ─── Initial positions ──────────────────────────────────────────────── */
-
-            // All 8 colored tiles start off-screen
+            /* ── Set all tiles off-screen ─────────────────────────────────────── */
             tileEls.forEach((el) => {
                 const { x, y } = getOffscreen(el.dataset.from);
                 gsap.set(el, { x, y, opacity: 0 });
             });
 
-            // Card: full-height, white, visible from start
+            /* ── Card initial state ───────────────────────────────────────────── */
+            // Card is full-height, white, centered in col-3 position
             gsap.set(cardRef.current, {
                 background: "#ffffff",
                 width: "25vw",
-                height: "100%",
+                height: "100vh",
                 opacity: 1,
             });
+            gsap.set(cardTextRef.current, { opacity: 1, y: 0, color: "#1464F4" });
+            gsap.set(logoRowRef.current, { opacity: 1 });
+            // Logo icon (centered inside card) hidden initially — shows when card shrinks
+            gsap.set(logoIconRef.current, { opacity: 0 });
 
-            // Text: blue, visible
-            gsap.set(cardTextRef.current, { color: "#1464F4", opacity: 1, y: 0 });
-
-            // Logo row: blue icon+text, visible
-            gsap.set(logoRowRef.current, { opacity: 1, color: "#1464F4" });
-
-            // Logo box: starts as overlay centered on screen at card-width size,
-            // then stays visible and moves to grid position
-            gsap.set(logoBoxRef.current, {
-                opacity: 0,      // hidden initially (card covers it)
-                scale: 1,
-            });
-
-            /* ─── Master timeline ────────────────────────────────────────────────── */
+            /* ── Master timeline ──────────────────────────────────────────────── */
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top top",
-                    end: "+=500%",
+                    end: "+=450%",          // total scroll distance
                     pin: true,
-                    scrub: 1.5,
+                    scrub: 1.2,
                     anticipatePin: 1,
+                    // NO toggleActions — scrub handles everything, no re-trigger
                     onUpdate(self) {
-                        isAssembled.current = self.progress >= 0.88;
+                        isAssembled.current = self.progress >= 0.9;
                     },
                     onLeaveBack() {
                         isAssembled.current = false;
@@ -908,124 +891,124 @@ export default function DropBoxScroll() {
                 },
             });
 
-            /* ══ PHASE 1: White → Black card (0 → 1.0) ══════════════════════════ */
+            /* ════════════════════════════════════════════════════════════════════
+               PHASE 1  (tl 0 → 1.0)
+               White card  →  Black card
+               Text color blue → white
+            ════════════════════════════════════════════════════════════════════ */
             tl.to(cardRef.current, {
                 backgroundColor: "#000000",
                 duration: 1,
-                ease: "power1.inOut",
+                ease: "none",
             }, 0);
 
             tl.to(cardTextRef.current, {
                 color: "#ffffff",
                 duration: 1,
-                ease: "power1.inOut",
+                ease: "none",
             }, 0);
 
-            tl.to(".ut-logo-label", {
+            tl.to(".ut-brand-row", {
                 color: "#ffffff",
                 duration: 1,
-                ease: "power1.inOut",
+                ease: "none",
             }, 0);
 
-            /* ══ PHASE 2: Text fades out, card shrinks to logo box (1.0 → 2.2) ══ */
+            /* ════════════════════════════════════════════════════════════════════
+               PHASE 2  (tl 1.0 → 2.5)
+               Text + brand row fade out
+               Card shrinks to one-cell size  (25vw × 33.33vh)
+               Centered rocket icon fades in
+               Card stays black — it IS the logo box now
+            ════════════════════════════════════════════════════════════════════ */
 
-            // Text disappears
+            // Text fades out
             tl.to(cardTextRef.current, {
                 opacity: 0,
-                y: -18,
-                duration: 0.6,
+                y: -16,
+                duration: 0.7,
                 ease: "power2.in",
             }, 1.0);
 
-            // Bottom logo row fades
+            // Brand row fades out
             tl.to(logoRowRef.current, {
                 opacity: 0,
                 duration: 0.5,
                 ease: "power2.in",
             }, 1.0);
 
-            // Card shrinks to small square (same size as one grid cell)
-            // One grid cell = 25vw wide × 33.33vh tall
+            // Card shrinks — height collapses to one cell, width stays
             tl.to(cardRef.current, {
-                width: "25vw",
-                height: "33.33vh",
+                height: "33.33vh",   // one row of 3
                 duration: 1.2,
                 ease: "power3.inOut",
             }, 1.2);
 
-            // Logo box appears inside shrinking card
-            tl.to(logoBoxRef.current, {
+            // Centered rocket appears as card becomes logo box
+            tl.to(logoIconRef.current, {
                 opacity: 1,
                 duration: 0.5,
                 ease: "power2.out",
-            }, 1.6);
+            }, 1.8);
 
-            /* ══ PHASE 3: Card facade fades, logo box is now fully standalone (2.2) */
-            // Card bg/padding fades but logo-box (separate DOM layer) persists
-            tl.to(cardRef.current, {
-                opacity: 0,
-                duration: 0.4,
-                ease: "power2.in",
-            }, 2.2);
-
-            /* ══ PHASE 4: Tiles fly in from edges (2.4 → 3.8) ═══════════════════ */
+            /* ════════════════════════════════════════════════════════════════════
+               PHASE 3  (tl 2.5 → 4.2)
+               8 tiles fly in from their edges toward their grid positions
+               Logo box (card) stays perfectly in place — it's already at col3 row2
+               because the card is centered horizontally and the card height = 1 row
+               which sits at the middle row vertically
+            ════════════════════════════════════════════════════════════════════ */
             tileEls.forEach((el, i) => {
                 tl.to(el, {
                     x: 0,
                     y: 0,
                     opacity: 1,
-                    duration: 1.3,
+                    duration: 1.4,
                     ease: "power4.out",
-                }, 2.4 + i * 0.08);
+                }, 2.5 + i * 0.09);
             });
 
-            // Logo box stays perfectly in its grid position (no animation needed —
-            // it's already absolutely centered = col3 row2)
-            // Just make sure it's above the grid tiles during fly-in
-            // then settles to same z-level
-
-            /* Hold fully assembled */
-            tl.to({}, { duration: 0.6 }, ">");
+            // Hold assembled state
+            tl.to({}, { duration: 0.8 }, ">");
 
         }, wrapperRef);
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+            ScrollTrigger.getAll().forEach(st => st.kill());
+        };
     }, []);
 
     return (
-        <div ref={wrapperRef} className="ut-root">
+        <div ref={wrapperRef}>
             <style>{`
-
-        .ut-root {
-          font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-          background: #f5f5f5;
-        }
+       
         .ut-tile {
           will-change: transform, opacity;
-          transition: filter 0.18s ease;
           cursor: pointer;
+          transition: filter 0.18s ease;
         }
         .ut-tile:hover { filter: brightness(0.85); }
       `}</style>
 
-            {/* ── INTRO ─────────────────────────────────────────────────────────── */}
-            <section style={S.intro}>
-                <p style={S.eyebrow}>Scroll to explore</p>
-                <h1 style={S.h1}>
-                    We make brands<br />
-                    <em style={S.h1em}>unforgettable</em>
-                </h1>
-                <DownArrow />
-            </section>
+            {/* ════════════════════════════════════════════════════════════════════
+          PINNED SECTION
+          Structure:
+            Layer 0 — grid lines (decorative)
+            Layer 1 — 8 colored tiles grid (all off-screen at start)
+            Layer 2 — the card/logo-box (always centered, never unmounts)
+      ════════════════════════════════════════════════════════════════════ */}
+            <section ref={sectionRef} style={styles.section}>
 
-            {/* ── PINNED SECTION ───────────────────────────────────────────────── */}
-            <section ref={sectionRef} style={S.pin}>
+                {/* ── Layer 0: decorative grid lines ───────────────────────────── */}
+                <div aria-hidden style={styles.gridLines}>
+                    {Array.from({ length: 20 }).map((_, i) => (
+                        <div key={i} style={{ border: "0.5px solid rgba(100,149,237,0.12)" }} />
+                    ))}
+                </div>
 
-                {/* Subtle blue-tinted grid lines (like Dropbox brand site) */}
-                <GridLines />
-
-                {/* ── LAYER 1: 8 colored tiles (off-screen initially) ────────────── */}
-                <div ref={tilesRef} style={S.gridLayer}>
+                {/* ── Layer 1: 8 colored tiles ─────────────────────────────────── */}
+                <div ref={tilesRef} style={styles.tileGrid}>
                     {TILES.map((t) => (
                         <div
                             key={t.id}
@@ -1046,90 +1029,63 @@ export default function DropBoxScroll() {
                                 justifyContent: "space-between",
                                 padding: "clamp(10px, 1.6vw, 22px)",
                                 overflow: "hidden",
+                                willChange: "transform, opacity",
                             }}
                         >
                             <span />
-                            <p style={S.tileLabel}>
+                            <p style={styles.tileLabel}>
                                 {t.label}{" "}
-                                {t.sub && <em style={S.tileItalic}>{t.sub}</em>}
+                                {t.sub && <em style={styles.tileItalic}>{t.sub}</em>}
                             </p>
                         </div>
                     ))}
                 </div>
 
-                {/* ── LAYER 2: Logo box — sits in exact center (col3,row2 position)
-                       NEVER disappears, stays as anchor throughout ─────── */}
-                <div
-                    ref={logoBoxRef}
-                    style={S.logoBox}
-                    role="link"
-                    tabIndex={0}
-                    onClick={() => handleTileClick(LOGO_TILE.url)}
-                    onKeyDown={(e) => e.key === "Enter" && handleTileClick(LOGO_TILE.url)}
-                    aria-label="Upthrust home"
-                >
-                    <RocketSVG size="44%" color="#fff" />
-                </div>
+                {/* ── Layer 2: Card / Logo-box ──────────────────────────────────────
+            This single element does triple duty:
+            1. Full-height white card (phase 0) with text
+            2. Full-height black card (phase 1) with text
+            3. Small black logo box (phase 2+) after shrinking
+            It is absolutely centered horizontally and vertically.
+            After shrinking to 33.33vh height, it lands exactly on row 2
+            (middle row) because it's vertically centered in the viewport.
+        ─────────────────────────────────────────────────────────────────── */}
+                <div style={styles.cardWrap}>
+                    <div
+                        ref={cardRef}
+                        style={styles.card}
+                        role="link"
+                        tabIndex={0}
+                        onClick={() => handleTileClick("https://upthrust.co")}
+                        onKeyDown={(e) => e.key === "Enter" && handleTileClick("https://upthrust.co")}
+                        aria-label="Upthrust"
+                    >
+                        {/* ── Centered rocket icon: hidden at first, shown in logo-box phase */}
+                        <div ref={logoIconRef} style={styles.centerIcon}>
+                            <RocketSVG size="48%" color="#fff" />
+                        </div>
 
-                {/* ── LAYER 3: Content card — full-height, fades away after step 2 ─ */}
-                <div style={S.cardOverlay}>
-                    <div ref={cardRef} style={S.card}>
-
-                        {/* Card body text */}
-                        <p ref={cardTextRef} style={S.cardText}>
+                        {/* ── Body text: visible in phases 0 & 1, fades in phase 2 */}
+                        <p ref={cardTextRef} style={styles.cardText}>
                             At Upthrust, our Brand Guidelines help us infuse everything we make with identity.
                         </p>
 
-                        {/* Logo row — bottom left of card */}
-                        <div ref={logoRowRef} style={S.logoRow}>
+                        {/* ── Bottom brand row: "🚀 Upthrust" */}
+                        <div ref={logoRowRef} className="ut-brand-row" style={styles.brandRow}>
                             <RocketSVG size={18} color="currentColor" />
-                            <span className="ut-logo-label" style={S.logoLabel}>Upthrust</span>
+                            <span style={styles.brandLabel}>Upthrust</span>
                         </div>
                     </div>
                 </div>
 
             </section>
-
-            {/* ── OUTRO ─────────────────────────────────────────────────────────── */}
-            <section style={S.outro}>
-                <h2 style={S.h2}>
-                    Let&apos;s build something<br />
-                    <em style={{ fontStyle: "italic", fontWeight: 300, color: "#bbb" }}>remarkable</em>
-                </h2>
-            </section>
         </div>
-    );
-}
-
-/* ─── Decorative grid lines ─────────────────────────────────────────────────── */
-function GridLines() {
-    return (
-        <div aria-hidden style={{
-            position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gridTemplateRows: "repeat(4, 1fr)",
-        }}>
-            {Array.from({ length: 20 }).map((_, i) => (
-                <div key={i} style={{ border: "0.5px solid rgba(100,149,237,0.13)" }} />
-            ))}
-        </div>
-    );
-}
-
-/* ─── Scroll arrow ──────────────────────────────────────────────────────────── */
-function DownArrow() {
-    return (
-        <svg style={{ marginTop: "2.5rem", opacity: 0.2 }} width="22" height="34" viewBox="0 0 22 34" fill="none">
-            <path d="M11 1v26M2 21l9 10 9-10" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
     );
 }
 
 /* ─── Rocket SVG ────────────────────────────────────────────────────────────── */
 function RocketSVG({ size = 24, color = "#fff" }) {
-    const isStr = typeof size === "string";
-    const dim = isStr ? size : `${size}px`;
+    const dim = typeof size === "string" ? size : `${size}px`;
     return (
         <svg width={dim} height={dim} viewBox="0 0 48 56" fill="none"
             xmlns="http://www.w3.org/2000/svg" style={{ display: "block", flexShrink: 0 }}>
@@ -1142,107 +1098,122 @@ function RocketSVG({ size = 24, color = "#fff" }) {
     );
 }
 
-/* ─── Static styles ─────────────────────────────────────────────────────────── */
-const S = {
-    intro: {
-        height: "100vh", display: "flex", alignItems: "center",
-        justifyContent: "center", flexDirection: "column",
-        textAlign: "center", padding: "0 2rem",
-    },
-    eyebrow: {
-        fontSize: "0.7rem", letterSpacing: "0.32em",
-        textTransform: "uppercase", color: "#bbb", marginBottom: "1.2rem",
-    },
-    h1: {
-        fontSize: "clamp(2.2rem, 7vw, 5.5rem)", fontWeight: 900,
-        lineHeight: 1.05, letterSpacing: "-0.03em",
-    },
-    h1em: { fontStyle: "italic", fontWeight: 300, color: "#bbb" },
-
-    pin: {
-        height: "100vh", position: "relative",
-        overflow: "hidden", background: "#fff",
+/* ─── Styles ─────────────────────────────────────────────────────────────────── */
+const styles = {
+    section: {
+        height: "100vh",
+        position: "relative",
+        overflow: "hidden",
+        background: "#fff",
+        fontFamily: '"Arial Black", "Helvetica Neue", Arial, sans-serif',
     },
 
-    // Grid layer — 8 colored tiles, all start off-screen
-    gridLayer: {
+    /* Decorative bg lines */
+    gridLines: {
+        position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
+        display: "grid",
+        gridTemplateColumns: "repeat(5, 1fr)",
+        gridTemplateRows: "repeat(4, 1fr)",
+    },
+
+    /* 8-tile grid layer */
+    tileGrid: {
         position: "absolute", inset: 0, zIndex: 2,
         display: "grid",
         gridTemplateColumns: "repeat(4, 1fr)",
         gridTemplateRows: "repeat(3, 1fr)",
     },
 
-    // Logo box — absolutely positioned at exact center (col3,row2 = 50%→75% x, 33%→66% y)
-    // This maps to: left = 2/4 = 50%, top = 1/3 = 33.33%, w = 25%, h = 33.33%
-    logoBox: {
+    tileLabel: {
+        fontSize: "clamp(0.65rem, 1.5vw, 1.15rem)",
+        fontWeight: 900,
+        lineHeight: 1.25,
+        letterSpacing: "-0.01em",
+    },
+    tileItalic: {
+        fontStyle: "italic",
+        fontWeight: 300,
+        fontFamily: "Georgia, serif",
+    },
+
+    /* Card wrapper: centers the card on screen */
+    cardWrap: {
         position: "absolute",
-        left: "50%",          // col 3 of 4 starts at 2/4
-        top: "33.333%",      // row 2 of 3 starts at 1/3
-        width: "25%",          // 1 of 4 columns
-        height: "33.333%",      // 1 of 3 rows
-        background: "#000",
+        inset: 0,
+        zIndex: 10,            // above tiles so it overlaps during text phases
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 10,             // above tiles during fly-in
-        cursor: "pointer",
-        willChange: "opacity",
-        transition: "filter 0.18s ease",
+        alignItems: "center",      // vertical center → middle of viewport
+        justifyContent: "center",      // horizontal center → col 2.5 of 4
+        pointerEvents: "none",        // clicks pass through wrapper to card
     },
 
-    // Card overlay — centered, sits above logo box during text phases
-    cardOverlay: {
-        position: "absolute", inset: 0,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        zIndex: 20, pointerEvents: "none",
-    },
-
-    // Card itself — starts white full-height, GSAP animates bg + size
+    /* The card itself — GSAP animates bg, height, opacity */
     card: {
+        /*
+          Width = 25vw = exactly 1 column of 4.
+          Initial height = 100vh (full section height).
+          After phase 2 shrink: height = 33.33vh = exactly 1 row of 3.
+          Because it's flex-centered vertically, after shrink it sits in the
+          vertical middle — which IS row 2 (33.33vh → 66.66vh range).
+          Horizontal center = 37.5% → 62.5% of viewport which is cols 2→3 border,
+          so we shift it slightly: we want col 3 = 50% → 75%.
+          Fix: use marginLeft to offset to col 3 center.
+        */
         width: "25vw",
-        height: "100%",
-        background: "#fff",         // GSAP animates to #000
+        height: "100vh",       // GSAP will shrink to 33.33vh
+        background: "#fff",        // GSAP will change to #000
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        padding: "clamp(16px, 2.5vw, 36px)",
+        padding: "clamp(14px, 2.2vw, 32px)",
         overflow: "hidden",
-        willChange: "background, width, height, opacity",
+        position: "relative",
+        willChange: "background, height, opacity",
+        pointerEvents: "auto",        // card itself is clickable
+        cursor: "pointer",
+        /*
+          Offset to align with col 3 (index 2, 0-based).
+          Col 3 starts at 50vw. Card is 25vw wide, so center of col 3 = 62.5vw.
+          Viewport center = 50vw. Difference = 12.5vw → shift right.
+        */
+        marginLeft: "25vw",
+    },
+
+    /* Centered rocket icon inside card (hidden until phase 2) */
+    centerIcon: {
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1,
+        pointerEvents: "none",
     },
 
     cardText: {
-        fontSize: "clamp(1rem, 1.8vw, 1.5rem)",
+        position: "relative",
+        zIndex: 2,
+        fontSize: "clamp(0.95rem, 1.7vw, 1.45rem)",
         fontWeight: 900,
         lineHeight: 1.3,
         letterSpacing: "-0.015em",
-        color: "#1464F4",       // GSAP animates to #fff
+        color: "#1464F4",      // GSAP changes to #fff
         willChange: "opacity, transform, color",
     },
 
-    logoRow: {
-        display: "flex", alignItems: "center", gap: "7px",
-        color: "#1464F4",               // GSAP animates to #fff
+    brandRow: {
+        position: "relative",
+        zIndex: 2,
+        display: "flex",
+        alignItems: "center",
+        gap: "7px",
+        color: "#1464F4",         // GSAP changes to #fff
         willChange: "opacity, color",
     },
-    logoLabel: {
-        fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.07em",
-    },
-
-    tileLabel: {
-        fontSize: "clamp(0.65rem, 1.5vw, 1.15rem)",
-        fontWeight: 900, lineHeight: 1.25, letterSpacing: "-0.01em",
-    },
-    tileItalic: {
-        fontStyle: "italic", fontWeight: 300, fontFamily: "Georgia, serif",
-    },
-
-    outro: {
-        height: "100vh", display: "flex", alignItems: "center",
-        justifyContent: "center", textAlign: "center", padding: "0 2rem",
-    },
-    h2: {
-        fontSize: "clamp(1.8rem, 5.5vw, 4rem)", fontWeight: 900,
-        lineHeight: 1.1, letterSpacing: "-0.03em",
+    brandLabel: {
+        fontSize: "0.72rem",
+        fontWeight: 700,
+        letterSpacing: "0.07em",
     },
 };
 
