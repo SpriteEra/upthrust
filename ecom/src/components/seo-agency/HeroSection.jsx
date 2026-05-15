@@ -263,7 +263,7 @@ const SeoAgencyHero = ({ title }) => {
                 {title}
                 <AnimatedWord
                     words={words2}
-                    className="h-5.5 3xl:h-7 w-28 3xl:w-36 text-[#FE2B27] font-normal"
+                    className="h-5.5 3xl:h-7 w-28 3xl:w-30 text-[#FE2B27] font-normal"
                     textCss='font-normal justify-center!'
                 />
             </h1>
@@ -276,7 +276,7 @@ const SeoAgencyHero = ({ title }) => {
                     Search
                     <AnimatedWord
                         images={images}
-                        className="size-7 xl:size-9 2xl:size-12 1600:size-15 1800:size-17 mb-3"
+                        className="size-7 xl:size-9 2xl:size-12 1600:size-15 1800:size-17 "
                     />
                 </span>
             </h1>

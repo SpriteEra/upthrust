@@ -32,7 +32,7 @@ const videos = [
     },
 ];
 
-export default function MobileVideos({ color = "" }) {
+export default function MobileVideos({ color = "", cardcss, labelcss }) {
     const [activeVideo, setActiveVideo] = useState(null);
     const swiperInstance = useRef(null);
     return (
@@ -68,12 +68,12 @@ export default function MobileVideos({ color = "" }) {
                     onSwiperReady={(swiper) => (swiperInstance.current = swiper)}
                     renderSlide={(item, index) => (
                         <div key={index} className="flex flex-col items-center">
-                            <span className="px-4 3xl:px-5 py-1 3xl:py-1.5 text-xs 3xl:text-base  bg-white text-black rounded-md 3xl:rounded-lg">
+                            <span className={`px-4 3xl:px-5 py-1 3xl:py-1.5 text-xs 3xl:text-base  bg-white text-black rounded-md 3xl:rounded-lg ${labelcss}`}>
                                 {item.label}
                             </span>
                             <div
                                 onClick={() => setActiveVideo(item.video)}
-                                className="relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 1600:h-140 1800:h-165 aspect-331/645 top-10  overflow-hidden cursor-pointer rounded-4xl"
+                                className={`relative h-120 md:h-100 lg:h-100 xl:h-120 2xl:h-130 1600:h-140 1800:h-165 aspect-331/645   top-10 overflow-hidden cursor-pointer rounded-4xl ${cardcss}`}
                             >
                                 <Image
                                     fill

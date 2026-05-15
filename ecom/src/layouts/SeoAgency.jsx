@@ -285,7 +285,7 @@ const SeoLayout = ({ data }) => {
                             <Image src='/logo.png' height={100} width={200} alt="Upthrust agency logo" priority className="h-6 sm:h-7 3xl:h-12 object-contain w-full" />
                         </div>
                         <div className='flex items-center gap-5 3xl:gap-6'>
-                            <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with <AnimatedWord textCss='font-normal' words={typeOfSeo} className="h-5.5 3xl:h-7 w-10.5 3xl:w-12 text-[#FE2B27] mx-auto " />
+                            <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with <AnimatedWord textCss='font-normal' words={typeOfSeo} className="h-5.5 3xl:h-7 w-10.5 3xl:w-12 text-[#FE2B27] mx-auto mb-[2px]" />
                             </span>
 
                             <SeoCommonButton text="Scale Your Brand" />
