@@ -35,6 +35,14 @@ const Star = ({
                     fill={fillColor}
                 />
             </svg>
+            {/* <svg width="100%"
+                height="100%"
+                viewBox="0 0 24 24"
+                className="absolute top-0 left-0"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                
+                <path d="M8.0019 0L9.89089 5.81372H16.0039L11.0584 9.4068L12.9474 15.2205L8.0019 11.6274L3.05646 15.2205L4.94545 9.4068L0 5.81372H6.11291L8.0019 0Z" fill={fillColor} />
+            </svg> */}
         </div>
     );
 };

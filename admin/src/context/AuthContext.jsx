@@ -73,6 +73,18 @@ export const AuthProvider = ({ children }) => {
         return () => window.removeEventListener("auth:unauthorised", handle);
     }, []);
 
+    // useEffect(() => {
+    //     const user = localStorage.getItem("user");
+    //     const token = localStorage.getItem("token");
+
+    //     if (user && token) {
+    //         dispatch({
+    //             type: AUTH_ACTIONS.SUCCESS,
+    //             payload: JSON.parse(user),
+    //         });
+    //     }
+    // }, []);
+
     useEffect(() => {
         const user = localStorage.getItem("user");
         const token = localStorage.getItem("token");
@@ -81,6 +93,10 @@ export const AuthProvider = ({ children }) => {
             dispatch({
                 type: AUTH_ACTIONS.SUCCESS,
                 payload: JSON.parse(user),
+            });
+        } else {
+            dispatch({
+                type: AUTH_ACTIONS.LOGOUT,
             });
         }
     }, []);
@@ -116,6 +132,7 @@ export const AuthProvider = ({ children }) => {
 
                 // ✅ store token
                 localStorage.setItem("token", data.user.token);
+                console.log("Token stored in localStorage:", data.user.token);
 
                 // ✅ store user
                 localStorage.setItem("user", JSON.stringify(userData));

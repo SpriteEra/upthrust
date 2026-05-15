@@ -1,3 +1,4 @@
+
 // 'use client';
 
 // import { useEffect, useRef } from 'react';
@@ -7,16 +8,16 @@
 // gsap.registerPlugin(ScrollTrigger);
 
 // const HeroSection = () => {
-//   const panelRef         = useRef(null);
-//   const navRef           = useRef(null);
-//   const navLogoRef       = useRef(null);
-//   const centerLogoRef    = useRef(null);
-//   const navLinksLeftRef  = useRef(null);
+//   const panelRef = useRef(null);
+//   const navRef = useRef(null);
+//   const navLogoRef = useRef(null);
+//   const centerLogoRef = useRef(null);
+//   const navLinksLeftRef = useRef(null);
 //   const navLinksRightRef = useRef(null);
-//   const scrollBannerRef  = useRef(null);
-//   const heroSectionRef   = useRef(null);
-//   const textSectionRef   = useRef(null);
-//   const bgVideoRef       = useRef(null);
+//   const scrollBannerRef = useRef(null);
+//   const heroSectionRef = useRef(null);
+//   const textSectionRef = useRef(null);
+//   const bgVideoRef = useRef(null);
 
 //   useEffect(() => {
 //     let lenis;
@@ -32,22 +33,46 @@
 //       gsap.ticker.add((time) => { lenis.raf(time * 1000); });
 //       gsap.ticker.lagSmoothing(0);
 
-//       const panel        = panelRef.current;
-//       const navLogo      = navLogoRef.current;
-//       const centerLogo   = centerLogoRef.current;
+//       const panel = panelRef.current;
+//       const navLogo = navLogoRef.current;
+//       const centerLogo = centerLogoRef.current;
 //       const scrollBanner = scrollBannerRef.current;
-//       const bgVideo      = bgVideoRef.current;
+//       const bgVideo = bgVideoRef.current;
 
-//       // ── measure where the logo needs to travel TO (nav center) ──
-//       // We calculate at runtime so it works on any screen size
+//       // ── Calculate logo target after panel has FULLY expanded ──
+//       // We simulate the expanded state by reading nav/logo positions
+//       // relative to the viewport center (where panel will be 100vw/100vh)
 //       const getNavLogoTarget = () => {
-//         const panelRect  = panel.getBoundingClientRect();
-//         const logoRect   = centerLogo.getBoundingClientRect();
+//         // Force a fresh measurement with no transforms applied
+//         gsap.set(centerLogo, { x: 0, y: 0, scale: 1 });
+
+//         const logoRect = centerLogo.getBoundingClientRect();
 //         const navLogoRect = navLogo.getBoundingClientRect();
 
-//         // Target: center of navLogo slot relative to current logo position
-//         const targetX = (navLogoRect.left + navLogoRect.width / 2) - (logoRect.left + logoRect.width / 2);
-//         const targetY = (navLogoRect.top  + navLogoRect.height / 2) - (logoRect.top  + logoRect.height / 2);
+//         // When panel is fully expanded (100vw/100vh), the nav stays at top
+//         // of the panel. The navLogo placeholder is absolutely centered in nav.
+//         // We need the delta from logo's FINAL position (after panel expands)
+//         // to the navLogo placeholder.
+
+//         // Panel starts centered on screen. After expansion it fills viewport.
+//         // The panel top moves to 0, left to 0. We account for that shift.
+//         const panelRect = panel.getBoundingClientRect();
+
+//         // How much will the panel's top-left corner shift when it goes 100vw/100vh?
+//         const panelShiftX = panelRect.left; // panel left edge moves to 0
+//         const panelShiftY = panelRect.top;  // panel top edge moves to 0
+
+//         // Logo's final position (after panel expands) in viewport coords:
+//         const logoFinalLeft = logoRect.left - panelShiftX;
+//         const logoFinalTop = logoRect.top - panelShiftY;
+
+//         // navLogo placeholder stays at same position relative to panel
+//         // but panel top-left shifts, so its final viewport pos:
+//         const navLogoFinalLeft = navLogoRect.left - panelShiftX;
+//         const navLogoFinalTop = navLogoRect.top - panelShiftY;
+
+//         const targetX = (navLogoFinalLeft + navLogoRect.width / 2) - (logoFinalLeft + logoRect.width / 2);
+//         const targetY = (navLogoFinalTop + navLogoRect.height / 2) - (logoFinalTop + logoRect.height / 2);
 //         const targetScale = navLogoRect.height / logoRect.height;
 
 //         return { targetX, targetY, targetScale };
@@ -66,8 +91,7 @@
 //           pin: true,
 //           pinSpacing: true,
 //           anticipatePin: 1,
-//           onUpdate: (self) => {
-//             // Hide nav logo placeholder always — real logo does the animation
+//           onUpdate: () => {
 //             gsap.set(navLogo, { opacity: 0 });
 //           },
 //         },
@@ -89,7 +113,7 @@
 //         ease: 'power2.inOut',
 //       }, 0);
 
-//       // Scroll banner slides down and fades out (inside panel, goes away)
+//       // Scroll banner slides down and fades out
 //       tl.to(scrollBanner, {
 //         opacity: 0,
 //         y: 20,
@@ -109,7 +133,7 @@
 //         ease: 'power2.inOut',
 //       }, 0);
 
-//       // ── Text section reveal ──
+//       // ── Text section reveal — triggered AFTER the pinned section ends ──
 //       const textEls = textSectionRef.current.querySelectorAll('.reveal-text');
 //       gsap.set(textEls, { opacity: 0, y: 55 });
 //       gsap.to(textEls, {
@@ -148,11 +172,11 @@
 //       <div className="items-center gap-3" style={{ display: 'none' }}>
 //         <svg width={height} height={height} viewBox="0 0 80 80" fill="none">
 //           <g transform="translate(40,40) rotate(-30) translate(-40,-40)">
-//             <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111"/>
-//             <circle cx="40" cy="26" r="6" fill="white"/>
-//             <path d="M26 48 L16 66 L30 57 Z" fill="#111"/>
-//             <path d="M54 48 L64 66 L50 57 Z" fill="#111"/>
-//             <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6"/>
+//             <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111" />
+//             <circle cx="40" cy="26" r="6" fill="white" />
+//             <path d="M26 48 L16 66 L30 57 Z" fill="#111" />
+//             <path d="M54 48 L64 66 L50 57 Z" fill="#111" />
+//             <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6" />
 //           </g>
 //         </svg>
 //         <span className="font-black text-black" style={{ fontSize: height * 0.9, letterSpacing: '-0.03em', lineHeight: 1 }}>
@@ -163,7 +187,9 @@
 //   );
 
 //   return (
-//     <main>
+//     // FIX 2: Wrap everything in a block container — hero and text are siblings,
+//     // never nested. The text section is completely outside the pinned hero.
+//     <div style={{ position: 'relative' }}>
 //       {/* ── HERO ── */}
 //       <section
 //         ref={heroSectionRef}
@@ -186,9 +212,8 @@
 //         <div
 //           ref={panelRef}
 //           className="relative flex w-[62vw] h-[72vh] z-10 flex-col bg-white overflow-hidden"
-
 //         >
-//           {/* ── NAV — links always visible, center logo slot is target ── */}
+//           {/* ── NAV ── */}
 //           <nav
 //             ref={navRef}
 //             className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-8 py-5"
@@ -198,7 +223,7 @@
 //               {['About', 'Services', 'Case Studies'].map((item) => (
 //                 <button
 //                   key={item}
-//                   className="px-3.5 py-1.5 text-[12px] lg:text-[14px] 3xl:text-[16px] leading-[150%]  rounded-full bg-black text-white transition-all duration-200 "
+//                   className="px-3.5 py-1.5 text-[12px] lg:text-[14px] 3xl:text-[16px] leading-[150%] rounded-full bg-black text-white transition-all duration-200"
 //                 >
 //                   {item}
 //                 </button>
@@ -219,7 +244,7 @@
 //               {['Creative Library', 'Contact Us'].map((item) => (
 //                 <button
 //                   key={item}
-//                   className="px-3.5 py-1.5 text-[12px] lg:text-[14px] 3xl:text-[16px]  rounded-full bg-black text-white transition-all duration-200 tracking-wide"
+//                   className="px-3.5 py-1.5 text-[12px] lg:text-[14px] 3xl:text-[16px] rounded-full bg-black text-white transition-all duration-200 tracking-wide"
 //                 >
 //                   {item}
 //                 </button>
@@ -234,11 +259,11 @@
 //               className="flex items-center justify-center"
 //               style={{ transformOrigin: 'center center' }}
 //             >
-//               <LogoImg height="100px" />
+//               <LogoImg height={100} />
 //             </div>
 //           </div>
 
-//           {/* ── Scroll down banner — INSIDE the panel at the bottom ── */}
+//           {/* ── Scroll down banner ── */}
 //           <div
 //             ref={scrollBannerRef}
 //             className="w-full flex-shrink-0 overflow-hidden"
@@ -257,8 +282,12 @@
 //         </div>
 //       </section>
 
-//       {/* ── TEXT SECTION ── */}
-//       <section ref={textSectionRef} className="bg-white" style={{ minHeight: '100vh' }}>
+//       {/* ── TEXT SECTION — completely separate sibling, never inside hero ── */}
+//       <section
+//         ref={textSectionRef}
+//         className="bg-white"
+//         style={{ minHeight: '100vh', position: 'relative', zIndex: 1 }}
+//       >
 //         <div className="max-w-6xl mx-auto px-16 py-32 flex gap-16">
 //           <div className="shrink-0 w-44 pt-3">
 //             <p
@@ -288,7 +317,6 @@
 //       </section>
 
 //       <style>{`
-
 //         html, body { overflow-x: hidden; }
 //         .scroll-ticker {
 //           animation: tickerScroll 22s linear infinite;
@@ -298,9 +326,9 @@
 //           100% { transform: translateX(-50%); }
 //         }
 //       `}</style>
-//     </main>
+//     </div>
 //   );
-// }
+// };
 
 // export default HeroSection;
 
@@ -312,6 +340,43 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+// ─── Moved OUTSIDE HeroSection ─────────────────────────────────────────────────
+// Defining a component inside another component creates a new function reference
+// on every render → React unmounts/remounts it → refs can become null mid-effect.
+const LogoImg = ({ height, style = {} }) => (
+  <>
+    <img
+      src="/logo.png"
+      alt="Upthrust"
+      style={{ height, width: 'auto', objectFit: 'contain', display: 'block', ...style }}
+      onError={(e) => {
+        e.target.style.display = 'none';
+        e.target.nextSibling.style.display = 'flex';
+      }}
+    />
+    {/* Fallback */}
+    <div className="items-center gap-3" style={{ display: 'none' }}>
+      <svg width={height} height={height} viewBox="0 0 80 80" fill="none">
+        <g transform="translate(40,40) rotate(-30) translate(-40,-40)">
+          <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111" />
+          <circle cx="40" cy="26" r="6" fill="white" />
+          <path d="M26 48 L16 66 L30 57 Z" fill="#111" />
+          <path d="M54 48 L64 66 L50 57 Z" fill="#111" />
+          <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6" />
+        </g>
+      </svg>
+      <span
+        className="font-black text-black"
+        style={{ fontSize: height * 0.9, letterSpacing: '-0.03em', lineHeight: 1 }}
+      >
+        Upthrust
+      </span>
+    </div>
+  </>
+);
+
+// ──────────────────────────────────────────────────────────────────────────────
 
 const HeroSection = () => {
   const panelRef = useRef(null);
@@ -327,9 +392,28 @@ const HeroSection = () => {
 
   useEffect(() => {
     let lenis;
+    // ── Guard: track whether this effect instance is still alive ──────────────
+    // Without this, the async import resolves AFTER React's Strict Mode
+    // unmounts + remounts the component, leaving all refs null.
+    let mounted = true;
 
     const init = async () => {
       const { default: Lenis } = await import('lenis');
+
+      // ── Bail out if component unmounted during the async import ──────────────
+      if (!mounted) return;
+
+      // ── Null-guard every ref before touching them ─────────────────────────
+      const panel = panelRef.current;
+      const navLogo = navLogoRef.current;
+      const centerLogo = centerLogoRef.current;
+      const scrollBanner = scrollBannerRef.current;
+      const bgVideo = bgVideoRef.current;
+
+      if (!panel || !navLogo || !centerLogo || !scrollBanner || !bgVideo) {
+        // Elements not in DOM yet — skip silently
+        return;
+      }
 
       lenis = new Lenis({
         duration: 1.4,
@@ -339,41 +423,20 @@ const HeroSection = () => {
       gsap.ticker.add((time) => { lenis.raf(time * 1000); });
       gsap.ticker.lagSmoothing(0);
 
-      const panel = panelRef.current;
-      const navLogo = navLogoRef.current;
-      const centerLogo = centerLogoRef.current;
-      const scrollBanner = scrollBannerRef.current;
-      const bgVideo = bgVideoRef.current;
-
-      // ── Calculate logo target after panel has FULLY expanded ──
-      // We simulate the expanded state by reading nav/logo positions
-      // relative to the viewport center (where panel will be 100vw/100vh)
+      // ── Calculate logo target after panel has FULLY expanded ──────────────
       const getNavLogoTarget = () => {
-        // Force a fresh measurement with no transforms applied
         gsap.set(centerLogo, { x: 0, y: 0, scale: 1 });
 
         const logoRect = centerLogo.getBoundingClientRect();
         const navLogoRect = navLogo.getBoundingClientRect();
-
-        // When panel is fully expanded (100vw/100vh), the nav stays at top
-        // of the panel. The navLogo placeholder is absolutely centered in nav.
-        // We need the delta from logo's FINAL position (after panel expands)
-        // to the navLogo placeholder.
-
-        // Panel starts centered on screen. After expansion it fills viewport.
-        // The panel top moves to 0, left to 0. We account for that shift.
         const panelRect = panel.getBoundingClientRect();
 
-        // How much will the panel's top-left corner shift when it goes 100vw/100vh?
-        const panelShiftX = panelRect.left; // panel left edge moves to 0
-        const panelShiftY = panelRect.top;  // panel top edge moves to 0
+        const panelShiftX = panelRect.left;
+        const panelShiftY = panelRect.top;
 
-        // Logo's final position (after panel expands) in viewport coords:
         const logoFinalLeft = logoRect.left - panelShiftX;
         const logoFinalTop = logoRect.top - panelShiftY;
 
-        // navLogo placeholder stays at same position relative to panel
-        // but panel top-left shifts, so its final viewport pos:
         const navLogoFinalLeft = navLogoRect.left - panelShiftX;
         const navLogoFinalTop = navLogoRect.top - panelShiftY;
 
@@ -385,9 +448,9 @@ const HeroSection = () => {
       };
 
       // Initial states
-      gsap.set(navLogo, { opacity: 0 }); // placeholder in nav, invisible
+      gsap.set(navLogo, { opacity: 0 });
 
-      // ── Main scroll timeline ──
+      // ── Main scroll timeline ──────────────────────────────────────────────
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: heroSectionRef.current,
@@ -403,7 +466,7 @@ const HeroSection = () => {
         },
       });
 
-      // Video: unblur slightly as panel expands
+      // Video: unblur as panel expands
       tl.to(bgVideo, {
         filter: 'blur(0px) brightness(0.5)',
         duration: 0.8,
@@ -439,64 +502,39 @@ const HeroSection = () => {
         ease: 'power2.inOut',
       }, 0);
 
-      // ── Text section reveal — triggered AFTER the pinned section ends ──
-      const textEls = textSectionRef.current.querySelectorAll('.reveal-text');
-      gsap.set(textEls, { opacity: 0, y: 55 });
-      gsap.to(textEls, {
-        opacity: 1,
-        y: 0,
-        duration: 1.1,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: textSectionRef.current,
-          start: 'top 78%',
-        },
-      });
+      // ── Text section reveal ───────────────────────────────────────────────
+      // Guard textSectionRef before querying it
+      if (textSectionRef.current) {
+        const textEls = textSectionRef.current.querySelectorAll('.reveal-text');
+        gsap.set(textEls, { opacity: 0, y: 55 });
+        gsap.to(textEls, {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: textSectionRef.current,
+            start: 'top 78%',
+          },
+        });
+      }
     };
 
     init();
 
     return () => {
+      // ── Signal to the async init that this instance is dead ──────────────
+      mounted = false;
       if (lenis) lenis.destroy();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
-  const LogoImg = ({ height, style = {} }) => (
-    <>
-      <img
-        src="/logo.png"
-        alt="Upthrust"
-        style={{ height, width: 'auto', objectFit: 'contain', display: 'block', ...style }}
-        onError={(e) => {
-          e.target.style.display = 'none';
-          e.target.nextSibling.style.display = 'flex';
-        }}
-      />
-      {/* Fallback */}
-      <div className="items-center gap-3" style={{ display: 'none' }}>
-        <svg width={height} height={height} viewBox="0 0 80 80" fill="none">
-          <g transform="translate(40,40) rotate(-30) translate(-40,-40)">
-            <ellipse cx="40" cy="30" rx="14" ry="24" fill="#111" />
-            <circle cx="40" cy="26" r="6" fill="white" />
-            <path d="M26 48 L16 66 L30 57 Z" fill="#111" />
-            <path d="M54 48 L64 66 L50 57 Z" fill="#111" />
-            <ellipse cx="40" cy="58" rx="7" ry="10" fill="#111" opacity="0.6" />
-          </g>
-        </svg>
-        <span className="font-black text-black" style={{ fontSize: height * 0.9, letterSpacing: '-0.03em', lineHeight: 1 }}>
-          Upthrust
-        </span>
-      </div>
-    </>
-  );
-
   return (
-    // FIX 2: Wrap everything in a block container — hero and text are siblings,
-    // never nested. The text section is completely outside the pinned hero.
     <div style={{ position: 'relative' }}>
-      {/* ── HERO ── */}
+
+      {/* ── HERO ──────────────────────────────────────────────────────────── */}
       <section
         ref={heroSectionRef}
         className="relative w-full h-screen flex items-center justify-center overflow-hidden"
@@ -514,12 +552,12 @@ const HeroSection = () => {
           />
         </video>
 
-        {/* ── White expanding panel ── */}
+        {/* White expanding panel */}
         <div
           ref={panelRef}
           className="relative flex w-[62vw] h-[72vh] z-10 flex-col bg-white overflow-hidden"
         >
-          {/* ── NAV ── */}
+          {/* NAV */}
           <nav
             ref={navRef}
             className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-8 py-5"
@@ -536,7 +574,7 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Center: invisible nav logo placeholder — used only for position measurement */}
+            {/* Invisible nav logo placeholder — position measurement only */}
             <div
               ref={navLogoRef}
               className="absolute left-1/2 -translate-x-1/2 flex items-center pointer-events-none"
@@ -558,7 +596,7 @@ const HeroSection = () => {
             </div>
           </nav>
 
-          {/* ── Center logo — BIG, bottom area, physically moves to nav ── */}
+          {/* Center logo — physically moves to nav on scroll */}
           <div className="flex-1 flex items-end justify-center pb-16">
             <div
               ref={centerLogoRef}
@@ -569,7 +607,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* ── Scroll down banner ── */}
+          {/* Scroll down ticker */}
           <div
             ref={scrollBannerRef}
             className="w-full flex-shrink-0 overflow-hidden"
@@ -588,7 +626,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* ── TEXT SECTION — completely separate sibling, never inside hero ── */}
+      {/* ── TEXT SECTION — sibling, never inside hero ──────────────────────── */}
       <section
         ref={textSectionRef}
         className="bg-white"

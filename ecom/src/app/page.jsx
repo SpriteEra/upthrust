@@ -666,7 +666,7 @@ const page = () => {
           </div>
         </div>
         {/* <LeadForm /> */}
-        <CommonLeadForm formUrl={FORM_URLS.ecom} />
+        <CommonLeadForm formUrl={FORM_URLS.ecom} height='700px' />
       </div>
 
 

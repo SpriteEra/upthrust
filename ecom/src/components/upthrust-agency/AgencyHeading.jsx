@@ -5,6 +5,7 @@ const AgencyHeading = ({
     heading = [],
     label = "",
     subtitle = "",
+    textColor = "text-black",
     subTitleCss = "",
     align = "center", // left | center | right
 }) => {
@@ -24,7 +25,7 @@ const AgencyHeading = ({
                 : "text-center";
 
     return (
-        <div className={`flex flex-col max-sm:px-2 ${containerAlign}`}>
+        <div className={`flex flex-col max-sm:px-2 ${containerAlign} ${textColor}`}>
 
             {label && (
                 <span className="text-sm md:text-xs 3xl:text-sm uppercase">
@@ -66,7 +67,7 @@ const AgencyHeading = ({
 
             {subtitle && (
                 <span
-                    className={`text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss}`}
+                    className={`text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em] ${textAlign} ${subTitleCss} ${textColor}`}
                 >
                     {subtitle}
                 </span>

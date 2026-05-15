@@ -637,7 +637,7 @@ creative intuition with data-driven precision."
                         className="absolute right-35 2xl:right-70  3xl:right-80 bottom-4 3xl:bottom-0"
 
                     />
-                    <CommonLeadForm formUrl={FORM_URLS.creative} />
+                    <CommonLeadForm formUrl={FORM_URLS.creative} height='700px' />
                 </div>
             </div>
 
