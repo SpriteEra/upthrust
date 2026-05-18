@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Module-level — never touched by React re-renders
 let _gsapCtx = null;
 let _styleEl = null;
 
@@ -130,6 +131,7 @@ function getOffscreen(from) {
     }[from] ?? { x: 0, y: 0 };
 }
 
+// Static component — never re-renders after first mount
 function DropboxDiamond({ size = 44, color = "#fff" }) {
     return (
         <svg viewBox="0 0 44 38" width={size} height={size * 0.86} fill={color}>
@@ -141,19 +143,19 @@ function DropboxDiamond({ size = 44, color = "#fff" }) {
     );
 }
 
-function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextEl, logoRowEl, gridLinesEl, isAssembled }) {
+function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextEl, logoRowEl, isAssembled }) {
     if (_gsapCtx) return;
 
     if (!_styleEl) {
         _styleEl = document.createElement("style");
         _styleEl.textContent = `
-            [data-mosaic-root], [data-mosaic-root] *, [data-mosaic-root] *::before, [data-mosaic-root] *::after {
-                box-sizing: border-box; margin: 0; padding: 0;
-            }
-            [data-mosaic-root] { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; }
-            [data-mosaic-root] .m-tile { will-change: transform, opacity; cursor: pointer; }
-            [data-mosaic-root] .m-tile:hover { filter: brightness(0.87); transition: filter 0.18s ease; }
-        `;
+                [data-mosaic-root], [data-mosaic-root] *, [data-mosaic-root] *::before, [data-mosaic-root] *::after {
+                    box-sizing: border-box; margin: 0; padding: 0;
+                }
+                [data-mosaic-root] { font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif; }
+                [data-mosaic-root] .m-tile { will-change: transform, opacity; cursor: pointer; }
+                [data-mosaic-root] .m-tile:hover { filter: brightness(0.87); transition: filter 0.18s ease; }
+            `;
         document.head.appendChild(_styleEl);
     }
 
@@ -162,28 +164,20 @@ function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextE
     _gsapCtx = gsap.context(() => {
         const tileEls = gsap.utils.toArray(".m-tile", tilesEl);
 
-        // Tiles start offscreen & invisible
         tileEls.forEach((el) => {
             const { x, y } = getOffscreen(el.dataset.from);
             gsap.set(el, { x, y, opacity: 0 });
         });
 
-        // Grid lines and gap both start hidden/zero
-        gsap.set(gridLinesEl, { opacity: 0 });
-        tilesEl.style.gap = "0px";
-
         gsap.set(blueTileEl, { opacity: 1, x: 0, y: 0 });
         gsap.set(cardEl, {
             opacity: 1, position: "absolute",
             left: "20vw", top: 0,
-            width: "60vw", height: "100vh",
+            width: "58vw", height: "100vh",
             background: "#ffffff",
         });
         gsap.set(cardTextEl, { opacity: 1, y: 0, color: "#1464F4" });
         gsap.set(logoRowEl, { opacity: 1, color: "#1464F4" });
-
-        // quickSetter writes gap directly to the DOM on every tick — works correctly under scrub
-        const setGap = gsap.quickSetter(tilesEl, "gap", "px");
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -196,14 +190,21 @@ function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextE
                 invalidateOnRefresh: false,
                 refreshPriority: -1,
 
-                onUpdate(self) { isAssembled.current = self.progress >= 0.92; },
-                onLeave() { isAssembled.current = true; },
-                onEnterBack() { isAssembled.current = false; },
-                onLeaveBack() { isAssembled.current = false; },
+                onUpdate(self) {
+                    isAssembled.current = self.progress >= 0.92;
+                },
+                onLeave() {
+                    isAssembled.current = true;
+                },
+                onEnterBack() {
+                    isAssembled.current = false;
+                },
+                onLeaveBack() {
+                    isAssembled.current = false;
+                },
             },
         });
 
-        // ── Phase 1 (t=0–1.2): card collapses to blue tile ─────────────────
         tl.to(cardEl, {
             background: "#1464F4",
             width: "20vw", height: "33.33vh",
@@ -216,40 +217,9 @@ function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextE
         tl.to(logoRowEl, { opacity: 0, duration: 0.4, ease: "power2.in" }, 0.45);
         tl.to(cardEl, { opacity: 0, duration: 0.3, ease: "power2.in" }, 1.05);
 
-        // ── Phase 2 (t=1.4+): tiles fly in; grid lines + gap open ──────────
-        const tilesStart = 1.4;
-        const lastTileEnd = tilesStart + (tileEls.length - 1) * 0.1 + 1.4;
-
-        // Grid lines: fade IN as tiles start arriving
-        tl.to(gridLinesEl, { opacity: 1, duration: 0.4, ease: "power1.out" }, tilesStart);
-
-        // Gap: 0 → 10px using quickSetter via a ticker object
-        // We use a dummy numeric tween and read it each tick via onUpdate
-        const gapObj = { v: 0 };
-        tl.to(gapObj, {
-            v: 10,
-            duration: 0.4,
-            ease: "power1.out",
-            onUpdate: () => setGap(gapObj.v),
-        }, tilesStart);
-
-        // Tiles fly in one by one
         tileEls.forEach((el, i) => {
-            tl.to(el, { x: 0, y: 0, opacity: 1, duration: 1.4, ease: "power4.out" }, tilesStart + i * 0.1);
+            tl.to(el, { x: 0, y: 0, opacity: 1, duration: 1.4, ease: "power4.out" }, 1.4 + i * 0.1);
         });
-
-        // ── Phase 3: after all tiles land, close gap + hide grid lines ──────
-        const closeAt = lastTileEnd - 0.2;
-        const closeDur = 0.6;
-
-        tl.to(gridLinesEl, { opacity: 0, duration: closeDur, ease: "power1.inOut" }, closeAt);
-
-        tl.to(gapObj, {
-            v: 0,
-            duration: closeDur,
-            ease: "power1.inOut",
-            onUpdate: () => setGap(gapObj.v),
-        }, closeAt);
 
         tl.to({}, { duration: 0.8 }, ">");
     });
@@ -261,6 +231,8 @@ function destroyGSAP() {
     if (_styleEl) { _styleEl.remove(); _styleEl = null; }
 }
 
+// memo() — if parent re-renders, this component skips re-rendering entirely
+// since it accepts no props. GSAP owns the DOM; React re-diffing would fight it.
 const MosaicScrollSection = memo(function MosaicScrollSection() {
     const pinWrapRef = useRef(null);
     const sectionRef = useRef(null);
@@ -269,7 +241,6 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
     const cardRef = useRef(null);
     const cardTextRef = useRef(null);
     const logoRowRef = useRef(null);
-    const gridLinesRef = useRef(null);
     const isAssembled = useRef(false);
 
     const handleTileClick = useCallback((url) => {
@@ -285,7 +256,6 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
             cardEl: cardRef.current,
             cardTextEl: cardTextRef.current,
             logoRowEl: logoRowRef.current,
-            gridLinesEl: gridLinesRef.current,
             isAssembled,
         });
         return () => destroyGSAP();
@@ -302,29 +272,34 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
                         background: "#ffffff",
                     }}
                 >
-                    {/* Grid lines — start opacity:0, GSAP drives in/out */}
-                    <div
-                        ref={gridLinesRef}
-                        aria-hidden
-                        style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none", opacity: 0 }}
-                    >
+                    {/* Grid lines - matching the screenshot exactly */}
+                    <div aria-hidden style={{
+                        position: "absolute",
+                        inset: 0,
+                        zIndex: 0,
+                        pointerEvents: "none",
+                    }}>
+                        {/* Vertical lines */}
                         <svg style={{ position: "absolute", width: "100%", height: "100%" }} preserveAspectRatio="none">
                             <line x1="20%" y1="0" x2="20%" y2="100%" stroke="#e5e5e5" strokeWidth="1" />
                             <line x1="40%" y1="0" x2="40%" y2="100%" stroke="#e5e5e5" strokeWidth="1" />
                             <line x1="60%" y1="0" x2="60%" y2="100%" stroke="#e5e5e5" strokeWidth="1" />
                             <line x1="80%" y1="0" x2="80%" y2="100%" stroke="#e5e5e5" strokeWidth="1" />
+                        </svg>
+                        {/* Horizontal lines */}
+                        <svg style={{ position: "absolute", width: "100%", height: "100%" }} preserveAspectRatio="none">
                             <line x1="0" y1="33.33%" x2="100%" y2="33.33%" stroke="#e5e5e5" strokeWidth="1" />
                             <line x1="0" y1="66.66%" x2="100%" y2="66.66%" stroke="#e5e5e5" strokeWidth="1" />
                         </svg>
                     </div>
 
-                    {/* Tile grid — gap starts 0px, quickSetter drives it 0→10→0 */}
+                    {/* Tile grid */}
                     <div ref={tilesRef} style={{
                         position: "absolute", inset: 0, zIndex: 2,
                         display: "grid",
                         gridTemplateColumns: "repeat(5, 1fr)",
                         gridTemplateRows: "repeat(3, 1fr)",
-                        gap: "10px",
+                        gap: "0px",
                     }}>
                         <div ref={blueTileRef} style={{
                             gridColumn: `${BLUE_TILE.col} / span 1`,
