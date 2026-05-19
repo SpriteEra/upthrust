@@ -77,7 +77,7 @@ export const FullPricingSection = () => {
                         </div>
                         <span className="max-lg:hidden text-[#464646] text-xs mb-8 uppercase leading-4.5 ">{plan.details}</span>
 
-                        {/* Features */}
+                        {/* Features update */}
                         <ul className="space-y-1 lg:hidden pt-4 pb-12">
                             {COMPARISON_DATA.map((group) =>
                                 group.items.map((item, i) => {
