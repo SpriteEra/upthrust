@@ -4,6 +4,8 @@
 import React, { useState } from 'react'
 import PerformanceLeadFormModal from './PerformanceLeadModal';
 import PerformanceButton from './PerformanceButton';
+import CommonLeadModal from '@/common/commonLeadModel';
+import { FORM_URLS } from '@/lib/formdata';
 
 const PerformanceCommonButton = ({ text, btncss }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +17,7 @@ const PerformanceCommonButton = ({ text, btncss }) => {
                 <PerformanceButton text={text} btncss={btncss} />
             </button>
             {isOpen && (
-                <PerformanceLeadFormModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.performance} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

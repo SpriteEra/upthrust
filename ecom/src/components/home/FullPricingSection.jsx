@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import Tooltip from '@/utils/Tooltip';
-import LeadFormModal from '@/components/LeadModal';
+import { FORM_URLS } from '@/lib/formdata';
+import CommonLeadModal from '@/common/commonLeadModel';
 
 
 const pricingPlans = [
@@ -54,12 +55,8 @@ const COMPARISON_DATA = [
 ];
 
 
-
-
-
-
 export const FullPricingSection = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="w-full bg-white lg:py-10 px-3 lg:px-16 flex flex-col items-center">
             {/* Container for Cards and Table to share the same Grid */}
@@ -110,7 +107,7 @@ export const FullPricingSection = () => {
                         </ul>
 
                         <button className="w-full bg-black text-white py-3 3xl:py-3 rounded-lg 3xl:rounded-md text-base xl:text-sm 3xl:text-base font-semibold hover:bg-orange transition-colors cursor-pointer"
-                            onClick={() => setIsModalOpen(true)}
+                            onClick={() => !isOpen && setIsOpen(true)}
                         >
                             <span className='max-lg:hidden'>Start Here</span>
                             <span className='lg:hidden'>Get Started</span>
@@ -154,8 +151,8 @@ export const FullPricingSection = () => {
                     </React.Fragment>
                 ))}
             </div>
-            {isModalOpen && (
-                <LeadFormModal handleClose={() => setIsModalOpen(false)} />
+            {isOpen && (
+                <CommonLeadModal formUrl={FORM_URLS.ecom} handleClose={() => setIsOpen(false)} />
             )}
         </div>
     );

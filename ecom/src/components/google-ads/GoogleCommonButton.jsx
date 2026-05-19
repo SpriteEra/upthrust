@@ -1,10 +1,10 @@
 
 
 "use client"
-// import RocketCTAButton from '@/common/RocketCTAButton'
 import React, { useState } from 'react'
-import GoogleLeadModal from './GoogleLeadModal';
 import GoogleButton from './GoogleButton';
+import CommonLeadModal from '@/common/commonLeadModel';
+import { FORM_URLS } from '@/lib/formdata';
 
 const GoogleCommonButton = ({ text }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +14,9 @@ const GoogleCommonButton = ({ text }) => {
                 onClick={() => setIsOpen(true)}
             >
                 <GoogleButton text={text} />
-                {/* <RocketCTAButton color='blue' text1="Show Us" text2="How To Scale" /> */}
             </button>
             {isOpen && (
-                <GoogleLeadModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.googleAds} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

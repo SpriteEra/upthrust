@@ -2,6 +2,8 @@
 import LeadFormModal from '@/components/LeadModal';
 import Image from 'next/image'
 import React, { useState } from 'react'
+import CommonLeadModal from './commonLeadModel';
+import { FORM_URLS } from '@/lib/formdata';
 
 const colors = {
     green: "#22c55e",
@@ -31,7 +33,7 @@ const ScaleButton = () => {
                 <span className='text-xs xl:text-[10px] leading-[18px] 3xl:text-xs uppercase mt-0.5'>(friendly tour, not a sales pitch)</span>
             </div>
             {isOpen && (
-                <LeadFormModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.ecom} handleClose={() => setIsOpen(false)} />
             )}
         </div>
     )

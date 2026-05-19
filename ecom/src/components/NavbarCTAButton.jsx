@@ -1,9 +1,10 @@
 "use client"
 import React, { useState } from 'react'
-import LeadFormModal from './LeadModal'
+// import LeadFormModal from './LeadModal'
 import Portal from './Portal';
+import CommonLeadModal from '@/common/commonLeadModel';
 
-const NavbarCTAButton = ({ className, ModalComponent = LeadFormModal }) => {
+const NavbarCTAButton = ({ className, ModalComponent = CommonLeadModal }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <>

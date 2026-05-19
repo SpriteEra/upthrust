@@ -2,6 +2,8 @@
 "use client"
 import React, { useState } from 'react'
 import LeadFormModal from '@/components/LeadModal'
+import CommonLeadModal from './commonLeadModel';
+import { FORM_URLS } from '@/lib/formdata';
 
 const colors = {
     green: "#22c55e",
@@ -40,7 +42,7 @@ const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale
                 <span>{text2}</span>
             </button>
             {isOpen && (
-                <LeadFormModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.ecom} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

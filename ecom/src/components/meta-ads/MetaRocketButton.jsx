@@ -2,6 +2,8 @@
 import RocketCTAButton from '@/common/RocketCTAButton'
 import React, { useState } from 'react'
 import MetaLeadModal from './MetaLeadModal';
+import { FORM_URLS } from '@/lib/formdata';
+import CommonLeadModal from '@/common/commonLeadModel';
 
 const MetaRocketButton = ({ text1, text2 }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +14,9 @@ const MetaRocketButton = ({ text1, text2 }) => {
             >
                 <RocketCTAButton color='blue' text1={text1 || "Show Us"} text2={text2 || "How To Scale"} />
             </button>
+            {/* <MetaLeadModal handleClose={() => setIsOpen(false)} /> */}
             {isOpen && (
-                <MetaLeadModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.metaAds} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

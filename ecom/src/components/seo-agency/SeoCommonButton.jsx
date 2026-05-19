@@ -1,10 +1,8 @@
-
-
 "use client"
-// import RocketCTAButton from '@/common/RocketCTAButton'
 import React, { useState } from 'react'
-import SeoLeadModal from './SeoLeadModal';
 import SeoButton from './SeoButton';
+import { FORM_URLS } from '@/lib/formdata';
+import CommonLeadModal from '@/common/commonLeadModel';
 
 const SeoCommonButton = ({ text }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +12,10 @@ const SeoCommonButton = ({ text }) => {
                 onClick={() => setIsOpen(true)}
             >
                 <SeoButton text={text} />
-                {/* <RocketCTAButton color='blue' text1="Show Us" text2="How To Scale" /> */}
             </button>
+            {/* <SeoLeadModal handleClose={() => setIsOpen(false)} /> */}
             {isOpen && (
-                <SeoLeadModal handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={FORM_URLS.seo} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

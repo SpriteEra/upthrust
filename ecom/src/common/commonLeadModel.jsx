@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
-import CommonLeadForm from '@/common/commonLeadForm';
-import { FORM_URLS } from '@/lib/formdata';
+import CommonLeadForm from './commonLeadForm';
 
 
 // Main Form Component
-const GoogleLeadModal = ({ handleClose }) => {
+const CommonLeadModal = ({ handleClose, formUrl }) => {
 
     const [mounted, setMounted] = useState(false);
 
@@ -76,7 +75,7 @@ const GoogleLeadModal = ({ handleClose }) => {
                 <div className="flex h-full w-full">
 
                     <div className='w-full  flex text-black bg-white overflow-auto'>
-                        <CommonLeadForm formUrl={FORM_URLS.googleAds} />
+                        <CommonLeadForm formUrl={formUrl} />
                     </div>
                 </div>
             </div>
@@ -89,4 +88,4 @@ const GoogleLeadModal = ({ handleClose }) => {
 
 };
 
-export default GoogleLeadModal;
+export default CommonLeadModal;
