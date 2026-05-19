@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import GoogleLeadModal from "./GoogleLeadModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,6 +36,7 @@ const GoogleAdsRoiPrediction = () => {
 
   const iconARef = useRef(null);
   const iconBRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const fadeToggle = (showA, refA, refB) => {
@@ -376,26 +378,33 @@ const GoogleAdsRoiPrediction = () => {
                   <ul
                     ref={listBRef}
                     className="absolute inset-0 text-base 3xl:text-2xl space-y-1 pl-2"
-                    style={{ opacity: 0 }}
+                    style={{
+                      opacity: 0,
+                      pointerEvents: "none"
+                    }}
                   >
 
                   </ul>
                 </div>
-
-
-
-
                 <div className="relative overflow-hidden h-14 3xl:h-20 mt-7">
                   <button
                     ref={buttonARef}
+                    onClick={() => setIsOpen(true)}
                     className="absolute inset-0 bg-[#FBBC04] text-black px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit cursor-pointer"
-                    style={{ opacity: 1 }}
+                    style={{
+                      opacity: 1,
+                      pointerEvents: "auto"
+                    }}
                   >
                     I'm stuck, I need high quality traffic
                   </button>
+                  {isOpen && (
+                    <GoogleLeadModal handleClose={() => setIsOpen(false)} />
+                  )}
 
                   <button
                     ref={buttonBRef}
+                    onClick={() => setIsOpen(true)}
                     className="absolute inset-0 bg-[#1A73E8] text-white px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit cursor-pointer"
                     style={{ opacity: 0 }}
                   >

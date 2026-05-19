@@ -44,7 +44,6 @@ export function createMeta({ title, description, keywords, image, path = "", ...
     };
 }
 
-
 export const Meta = {
     "d2c-marketing-agency": createMeta({
         title: "D2C Ecommerce Marketing Agency | Scale Profitable Brands – Upthrust",
@@ -263,6 +262,49 @@ export const Meta = {
         //     description: "We manage $12M+ in Performance Marketing Agency spend with structured PPC systems built for predictable scaling and real ROI",
         //     images: ["/google-ads/ogimg.png"],
         // },
+
+        robots: {
+            index: true,
+            follow: true,
+        }
+    }),
+    "creative-agency": createMeta({
+        title: "Creative Ads Agency for Scalable Growth | Upthrust",
+
+        description: "Creative ads agency specializing in performance creatives, UGC ads and structured creative testing systems that drive scalable revenue growth.",
+
+        keywords: [
+            "Creative Ads Agency",
+        ],
+
+        metadataBase: new URL("https://www.upthrust.agency"),
+
+        alternates: {
+            canonical: "https://www.upthrust.agency/creative-agency",
+        },
+
+        openGraph: {
+            title: "Creative Ads Agency Built for Performance",
+            description: "High-converting ad creatives, structured creative testing systems and UGC ads built to scale paid acquisition profitably.",
+            url: "https://www.upthrust.agency/creative-agency",
+            siteName: "Upthrust",
+            images: [
+                {
+                    url: "/ogimage/creative-og-image.png",
+                    width: 1200,
+                    height: 630,
+                    alt: "Upthrust – Creative Ads Agency",
+                },
+            ],
+            type: "website",
+        },
+
+        twitter: {
+            card: "summary_large_image",
+            title: "Creative Ads Agency That Scales Profitably",
+            description: "We manage $12M+ in Creative Ads spend with structured PPC systems built for predictable scaling and real ROI",
+            images: ["/google-ads/ogimg.png"],
+        },
 
         robots: {
             index: true,

@@ -14,7 +14,7 @@ const colors = {
     orange: "#FF3B00"
 };
 
-const AgencyButton = ({ color = "red", text = "" }) => {
+const AgencyButton = ({ color = "red", text = "", btncss }) => {
     const [isOpen, setIsOpen] = useState(false);
     // if named color → use map, else use raw value (#000, etc.)
     const resolvedColor = colors[color] || color || colors.red;
@@ -24,11 +24,9 @@ const AgencyButton = ({ color = "red", text = "" }) => {
             <button
                 onClick={() => setIsOpen(true)}
                 style={{ '--btn-color': resolvedColor }}
-                className="rounded-full py-5 px-9 lg:py-3.5 3xl:py-5 3xl:px-9 bg-black border-2 3xl:border-3 border-(--btn-color) hover:bg-(--btn-color) text-white text-lg lg:text-base 3xl:text-lg font-medium transition-colors duration-200 flex items-center space-x-2 relative group tracking-[-0.02em] cursor-pointer w-fit"
+                className={`rounded-full py-2 px-5 lg:py-3.5 3xl:py-5 3xl:px-9 bg-black border-2 3xl:border-3 border-(--btn-color) hover:bg-(--btn-color) text-white text-lg lg:text-base 3xl:text-lg font-medium transition-colors duration-200 flex items-center space-x-2 relative group tracking-[-0.02em] cursor-pointer w-fit ${btncss}`}
             >
                 <span>{text}</span>
-
-
             </button>
             {isOpen && (
                 <LeadFormModal handleClose={() => setIsOpen(false)} />

@@ -19,7 +19,7 @@ const AgencyHeading = ({
 
     const textAlign =
         align === "left"
-            ? "text-center lg:text-left"
+            ? "text-left lg:text-left"
             : align === "right"
                 ? "text-center lg:text-right"
                 : "text-center";
@@ -56,8 +56,6 @@ const AgencyHeading = ({
                             </React.Fragment>
                         );
                     })}
-
-
 
                 </Tag>
 

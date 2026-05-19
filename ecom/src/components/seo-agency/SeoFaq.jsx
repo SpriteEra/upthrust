@@ -9,17 +9,17 @@ export default function SeoFaq() {
         {
             question: "What is SEO and why does a B2B SaaS company need it?",
             answer:
-                "SEO is the practice of getting your product seen in organic search — on Google, Bing, and now AI platforms like ChatGPT and Perplexity — by the right buyers at exactly the right moment. For B2B SaaS it is not about traffic. It is about becoming the trusted answer in your niche, driving demo requests, signups, and lowering your CAC over time. Upthrust builds SEO that feeds pipeline — not vanity metrics."
+                "SEO is the practice of getting your product seen in organic search - on Google, Bing, and now AI platforms like ChatGPT and Perplexity - by the right buyers at exactly the right moment. For B2B SaaS it is not about traffic. It is about becoming the trusted answer in your niche, driving demo requests, signups, and lowering your CAC over time. Upthrust builds SEO that feeds pipeline - not vanity metrics."
         },
         {
             question: "Will SEO actually generate demos and MQLs for my SaaS product?",
             answer:
-                "Yes — when done correctly. Traditional SEO chases rankings. Upthrust optimises your content to rank on Google, get cited by ChatGPT, and appear in Perplexity AI answers — so you capture buyers at every stage of their research journey, including the late-night ChatGPT session when they are comparing you to three competitors. Our B2B SaaS clients typically see qualified demo requests within 90 days of launch."
+                "Yes - when done correctly. Traditional SEO chases rankings. Upthrust optimises your content to rank on Google, get cited by ChatGPT, and appear in Perplexity AI answers - so you capture buyers at every stage of their research journey, including the late-night ChatGPT session when they are comparing you to three competitors. Our B2B SaaS clients typically see qualified demo requests within 90 days of launch."
         },
         {
             question: "How is Upthrust different from other SEO agencies?",
             answer:
-                "Three things set us apart. First, we optimise for six AI platforms — not just Google. Second, we measure success in demos booked and pipeline generated, not just rankings or traffic. Third, we give you real-time AI citation monitoring so you can see exactly when ChatGPT, Claude, or Perplexity recommends your brand — and track it improving month over month."
+                "Three things set us apart. First, we optimise for six AI platforms - not just Google. Second, we measure success in demos booked and pipeline generated, not just rankings or traffic. Third, we give you real-time AI citation monitoring so you can see exactly when ChatGPT, Claude, or Perplexity recommends your brand - and track it improving month over month."
         },
         {
             question: "What is included in Upthrust's SEO services?",
@@ -27,29 +27,29 @@ export default function SeoFaq() {
                 "Technical SEO setup including AI crawler access (GPTBot, ClaudeBot, PerplexityBot), full schema implementation (FAQPage, HowTo, Article, Organisation), extraction-optimised content strategy, AI citation monitoring, a custom performance dashboard, monthly pipeline-focused reports, weekly account manager calls, and a 24-hour email response guarantee."
         },
         {
-            question: "What does onboarding look like — can we start now?",
+            question: "What does onboarding look like - can we start now?",
             answer:
                 "Yes. Onboarding takes two weeks. Week 1: full technical audit, AI crawler access review, competitor gap analysis across all six platforms. Week 2: schema deployment, content audit, and quick-win implementation. Your first ChatGPT and Perplexity citations typically appear within 30 days of launch. Full AI visibility usually follows within 90 days."
         },
         {
             question: "How long will it take for SEO to start showing results?",
             answer:
-                "First ChatGPT and Perplexity citations: 30 days. Initial ranking improvements on Google: 60–90 days. Measurable demo and MQL impact: 90–120 days. Full SEO compounding — where organic becomes your lowest-CAC channel: 6–12 months. We report on all of these milestones monthly so you always know exactly where you stand."
+                "First ChatGPT and Perplexity citations: 30 days. Initial ranking improvements on Google: 60–90 days. Measurable demo and MQL impact: 90–120 days. Full SEO compounding - where organic becomes your lowest-CAC channel: 6–12 months. We report on all of these milestones monthly so you always know exactly where you stand."
         },
         {
             question: "How much does SEO cost and what pricing models do you offer?",
             answer:
-                "Pricing is scoped to your goals, competitive landscape, and company size. We work with early-stage SaaS founders through to enterprise CMOs. Book a free 30-minute strategy call and we will give you a custom quote with a clear 120-day roadmap — no obligation."
+                "Pricing is scoped to your goals, competitive landscape, and company size. We work with early-stage SaaS founders through to enterprise CMOs. Book a free 30-minute strategy call and we will give you a custom quote with a clear 120-day roadmap - no obligation."
         },
         {
             question: "How is SEO different from SEM (paid search)? Do I need both?",
             answer:
-                "SEM buys immediate placement in search results. SEO earns it over time — and compounds. SEO typically delivers 3–5x better ROI over a 12-month period. Most growth-stage B2B SaaS companies benefit from running both: SEM for immediate demos while SEO builds and compounds in the background. We specialise in SEO but can advise on a combined strategy."
+                "SEM buys immediate placement in search results. SEO earns it over time - and compounds. SEO typically delivers 3–5x better ROI over a 12-month period. Most growth-stage B2B SaaS companies benefit from running both: SEM for immediate demos while SEO builds and compounds in the background. We specialise in SEO but can advise on a combined strategy."
         },
         {
             question: "Can you help us rank in AI tools like ChatGPT and Perplexity?",
             answer:
-                "Yes — it is our core differentiator. We configure your site for AI crawlers, structure content so AI engines can extract and cite it, and deploy schema markup that increases citation rates by up to 28%. We then monitor citation frequency across ChatGPT, Claude, Perplexity, Google AI Overview, and Gemini every month — so you can see the progress."
+                "Yes - it is our core differentiator. We configure your site for AI crawlers, structure content so AI engines can extract and cite it, and deploy schema markup that increases citation rates by up to 28%. We then monitor citation frequency across ChatGPT, Claude, Perplexity, Google AI Overview, and Gemini every month - so you can see the progress."
         },
         {
             question: "Do you only focus on traffic, or on actual revenue impact?",
@@ -59,7 +59,7 @@ export default function SeoFaq() {
         {
             question: "What link-building strategies do you use for B2B SaaS?",
             answer:
-                "We focus on authority-building that your buyers and Google both respect: digital PR, thought leadership placements, partner ecosystem content, and resource-based link acquisition. No link farms, no guest post mills, no paid placements. Every link is earned from publications your buyers actually read — and that AI platforms trust as citation sources."
+                "We focus on authority-building that your buyers and Google both respect: digital PR, thought leadership placements, partner ecosystem content, and resource-based link acquisition. No link farms, no guest post mills, no paid placements. Every link is earned from publications your buyers actually read - and that AI platforms trust as citation sources."
         },
         {
             question: "Do you work with startups and enterprise SaaS companies?",

@@ -137,7 +137,6 @@ const page = () => {
                 <MarketingPanel />
             </div>
             <div>
-
                 <ProfileSection />
             </div>
             <div className="sm:py-16 3xl:py-20" >

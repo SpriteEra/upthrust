@@ -63,6 +63,7 @@ export default function SmartSwiper({
     const { ref, inView } = useInView();
     const [isDesktop, setIsDesktop] = useState(false);
 
+
     useEffect(() => {
         const check = () => setIsDesktop(window.innerWidth >= 1024);
         check();
