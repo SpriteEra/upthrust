@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     qualities: [60, 100],
+    domains: ['cdn.upthrust.agency'],
   },
   remotePatterns: [
     {

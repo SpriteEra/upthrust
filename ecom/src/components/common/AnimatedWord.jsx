@@ -26,7 +26,7 @@ const AnimatedWord = ({
 
   const defaultTextCss = 'font-bold';
 
-  console.log(textCss)
+  // console.log(textCss)
   const renderItem = (item) => {
     // image mode
     if (item.src) {

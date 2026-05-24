@@ -12,7 +12,7 @@ const navLinks = [
     { name: 'Hear From Them', href: '#hear-from-them' },
 ];
 
-export default function Navbar({ items = navLinks }) {
+export default function Navbar({ items = navLinks, formUrl }) {
 
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 1800:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
@@ -45,7 +45,7 @@ export default function Navbar({ items = navLinks }) {
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <StylishButton color='red' />
+                        <StylishButton color='red' formUrl={formUrl} />
                     </div>
 
 

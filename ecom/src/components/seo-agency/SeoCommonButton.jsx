@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react'
 import SeoButton from './SeoButton';
-import { FORM_URLS } from '@/lib/formdata';
+// import { FORM_URLS } from '@/lib/formdata';
 import CommonLeadModal from '@/common/commonLeadModel';
 
-const SeoCommonButton = ({ text }) => {
+const SeoCommonButton = ({ text, formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -13,9 +13,8 @@ const SeoCommonButton = ({ text }) => {
             >
                 <SeoButton text={text} />
             </button>
-            {/* <SeoLeadModal handleClose={() => setIsOpen(false)} /> */}
             {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.seo} handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

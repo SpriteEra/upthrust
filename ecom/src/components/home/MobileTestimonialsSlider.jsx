@@ -10,21 +10,21 @@ const defaultTestimonials = [
         text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
         name: "Troy",
         company: "MC Overalls",
-        image: "/ecom/profile/profile6.png",
+        image: "/ecom/profile/profile6.webp",
         color: "bg-[#FFF0F0]"
     },
     {
         text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
         name: "Rishab",
         company: "Carobis",
-        image: "/ecom/profile/profile7.png",
+        image: "/ecom/profile/profile7.webp",
         color: "bg-[#FFEBDA]"
     },
     {
         text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
         name: "Gunjan",
         company: "Housr",
-        image: "/ecom/profile/profile8.png",
+        image: "/ecom/profile/profile8.webp",
         color: "bg-[#E1EFD7]"
     },
     {
@@ -66,50 +66,50 @@ const cardDefaultColors = [
         companyNameColor: 'text-[#33535]'
     },
 ]
-const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
+const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors, testimonials = defaultTestimonials }) => {
 
-    const testimonials = [
-        {
-            text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
-            name: "Troy",
-            company: "MC Overalls",
-            image: "/ecom/profile/profile6.webp",
-            color: cardColors[0].bg,
-            textColor: cardColors[0].text,
-            clientNameColor: cardColors[0].clientNameColor,
-            companyNameColor: cardColors[0].companyNameColor,
-        },
-        {
-            text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
-            name: "Rishab",
-            company: "Carobis",
-            image: "/ecom/profile/profile7.webp",
-            color: cardColors[1].bg,
-            textColor: cardColors[1].text,
-            clientNameColor: cardColors[1].clientNameColor,
-            companyNameColor: cardColors[1].companyNameColor,
-        },
-        {
-            text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
-            name: "Gunjan",
-            company: "Housr",
-            image: "/ecom/profile/profile8.webp",
-            color: cardColors[2].bg,
-            textColor: cardColors[2].text,
-            clientNameColor: cardColors[2].clientNameColor,
-            companyNameColor: cardColors[2].companyNameColor,
-        },
-        {
-            text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
-            name: "Dan",
-            company: "Dan Studio",
-            image: "/ecom/profile/profile9.png",
-            color: cardColors[3].bg,
-            textColor: cardColors[3].text,
-            clientNameColor: cardColors[3].clientNameColor,
-            companyNameColor: cardColors[3].companyNameColor,
-        }
-    ];
+    // const testimonials = [
+    //     {
+    //         text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
+    //         name: "Troy",
+    //         company: "MC Overalls",
+    //         image: "/ecom/profile/profile6.webp",
+    //         color: cardColors[0].bg,
+    //         textColor: cardColors[0].text,
+    //         clientNameColor: cardColors[0].clientNameColor,
+    //         companyNameColor: cardColors[0].companyNameColor,
+    //     },
+    //     {
+    //         text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
+    //         name: "Rishab",
+    //         company: "Carobis",
+    //         image: "/ecom/profile/profile7.webp",
+    //         color: cardColors[1].bg,
+    //         textColor: cardColors[1].text,
+    //         clientNameColor: cardColors[1].clientNameColor,
+    //         companyNameColor: cardColors[1].companyNameColor,
+    //     },
+    //     {
+    //         text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+    //         name: "Gunjan",
+    //         company: "Housr",
+    //         image: "/ecom/profile/profile8.webp",
+    //         color: cardColors[2].bg,
+    //         textColor: cardColors[2].text,
+    //         clientNameColor: cardColors[2].clientNameColor,
+    //         companyNameColor: cardColors[2].companyNameColor,
+    //     },
+    //     {
+    //         text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
+    //         name: "Dan",
+    //         company: "Dan Studio",
+    //         image: "/ecom/profile/profile9.png",
+    //         color: cardColors[3].bg,
+    //         textColor: cardColors[3].text,
+    //         clientNameColor: cardColors[3].clientNameColor,
+    //         companyNameColor: cardColors[3].companyNameColor,
+    //     }
+    // ];
 
     const [mounted, setMounted] = useState(false);
 
@@ -170,7 +170,7 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors }) => {
                             </p>
                             <div className="flex items-center gap-3 mt-10 xs:mt-3">
                                 <div className="w-13 h-13 xs:w-11 xs:h-11 3xl:w-13 3xl:h-13 bg-white flex items-center justify-center text-xl rounded-lg">
-                                    <Image width={70} height={70} src={testimonial.image} alt={testimonial.name} className='w-full h-full object-contain rounded-lg' />
+                                    <Image width={70} height={70} src={testimonial.image} alt={testimonial.name || "Testimonial image"} className='w-full h-full object-contain rounded-lg' />
                                 </div>
                                 <div>
                                     <p className={`text-[22px] tracking-[0.55px] leading-[27px] ${testimonial.clientNameColor}`}>{testimonial.name}</p>

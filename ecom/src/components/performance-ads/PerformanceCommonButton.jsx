@@ -5,9 +5,9 @@ import React, { useState } from 'react'
 import PerformanceLeadFormModal from './PerformanceLeadModal';
 import PerformanceButton from './PerformanceButton';
 import CommonLeadModal from '@/common/commonLeadModel';
-import { FORM_URLS } from '@/lib/formdata';
+// import { FORM_URLS } from '@/lib/formdata';
 
-const PerformanceCommonButton = ({ text, btncss }) => {
+const PerformanceCommonButton = ({ text, btncss, formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -17,7 +17,7 @@ const PerformanceCommonButton = ({ text, btncss }) => {
                 <PerformanceButton text={text} btncss={btncss} />
             </button>
             {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.performance} handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

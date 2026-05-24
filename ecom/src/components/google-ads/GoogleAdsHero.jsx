@@ -197,7 +197,7 @@ const brands = [
     { name: "brand10", src: "/google-ads/brandwhite/brand10.webp", alt: "", width: "h-6 xs:h-8 lg:h-12 w-12 sm:w-17 xl:w-14 3xl:h-12 3xl:w-26" },
 ];
 
-const GoogleAdsHero = ({ title }) => {
+const GoogleAdsHero = ({ title, formUrl }) => {
     const [currentWord, setCurrentWord] = useState(0);
     const words = [
         { text: 'PPC', color: '#10B981' },
@@ -267,7 +267,7 @@ const GoogleAdsHero = ({ title }) => {
                 </h1>
 
                 {/* CTA Button */}
-                <GoogleCommonButton text="Get a Free Google Ads Audit" />
+                <GoogleCommonButton text="Get a Free Google Ads Audit" formUrl={formUrl} />
 
                 {/* Trusted Brands */}
                 <div className="mt-10 sm:mt-10 2xl:mt-8 3xl:mt-18 flex flex-col items-center">

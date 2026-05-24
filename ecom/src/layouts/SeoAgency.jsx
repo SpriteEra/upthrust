@@ -1,4 +1,3 @@
-
 import Image from 'next/image'
 import React from 'react'
 import CompaignCards from "@/components/google-ads/Compaign";
@@ -15,6 +14,7 @@ import SeoFaq from '@/components/seo-agency/SeoFaq';
 import SeoDisclaimer from '@/components/seo-agency/SeoDisclaimer';
 import HomeFooter from '@/components/home/HomeFooter';
 import SeoCommonButton from '@/components/seo-agency/SeoCommonButton';
+import { getFormUrls } from '@/lib/formdata';
 const headingAnimatewords = [
     { text: 'ChatGPT', color: '#000000' },
     { text: 'Claude', color: '#000000' },
@@ -274,7 +274,11 @@ const typeOfSeo = [
     { text: 'CPC' }
 ];
 
-const SeoLayout = ({ data }) => {
+const SeoLayout = async ({ data }) => {
+    const FORM_URLS = await getFormUrls();
+    // console.log("Form URLs in SeoLayout:", FORM_URLS);
+    // console.log("Form URLs in SeoLayout:", FORM_URLS.seo);
+
     return (
         <main>
             <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[140px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
@@ -288,13 +292,13 @@ const SeoLayout = ({ data }) => {
                             <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with <AnimatedWord textCss='font-normal' words={typeOfSeo} className="h-5.5 3xl:h-7 w-10.5 3xl:w-12 text-[#FE2B27] mx-auto mb-[2px]" />
                             </span>
 
-                            <SeoCommonButton text="Scale Your Brand" />
+                            <SeoCommonButton text="Scale Your Brand" formUrl={FORM_URLS.seo} />
                         </div>
                     </div>
                 </div>
             </nav>
 
-            <SeoAgencyHero title={data.title} />
+            <SeoAgencyHero formUrl={FORM_URLS.seo} title={data?.additionalFields.title} />
 
             <div className="mt-16 3xl:mt-16">
                 <CommonHeading
@@ -487,7 +491,7 @@ const SeoLayout = ({ data }) => {
                             Analyze my brand
                         </button> */}
                         <div className="mt-10 md:mt-4 3xl:mt-6">
-                            <SeoCommonButton text="Analyze my brand" />
+                            <SeoCommonButton text="Analyze my brand" formUrl={FORM_URLS.seo} />
                         </div>
 
                         <div className="mt-6">
@@ -543,11 +547,11 @@ const SeoLayout = ({ data }) => {
                         ],
                     ]}
                 />
-                <SeoFaq faqs={data.faqs} />
+                <SeoFaq faqs={data?.additionalFields.faqs} />
             </div>
 
             <div>
-                <SeoDisclaimer />
+                <SeoDisclaimer formUrl={FORM_URLS.seo} />
                 <HomeFooter text1="SEO  Agency" bgColor="#0076F0" text2={{
                     desktop: {
                         text1: "YOUR SEO GROWTH STARTS HERE.",

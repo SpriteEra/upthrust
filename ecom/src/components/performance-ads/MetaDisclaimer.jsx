@@ -9,7 +9,7 @@ import PerformanceCommonButton from './PerformanceCommonButton'
 // import StylishButton from '@/common/RocketButton'
 // import CreativeRocketButton from './CreativeRocketButton'
 
-export const Disclaimer = () => {
+export const Disclaimer = ({ formUrl }) => {
     const [open, setOpen] = useState(false);
     return (
         <div className="mt-16 lg:mt-12 3xl:mt-14 border-t border-gray-300 pt-2 md:pt-3">
@@ -113,7 +113,7 @@ export const Disclaimer = () => {
     )
 }
 
-const MetaDisclaimer = () => {
+const MetaDisclaimer = ({ formUrl }) => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
@@ -124,7 +124,7 @@ const MetaDisclaimer = () => {
 
                     {/* <CreativeRocketButton /> */}
 
-                    <PerformanceCommonButton text="Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-3  hover:bg-orange tracking-[-0.02em] leading-[150%] transition-colors duration-200 text-[15px] cursor-pointer 2xl:text-base" />
+                    <PerformanceCommonButton formUrl={formUrl} text="Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-3  hover:bg-orange tracking-[-0.02em] leading-[150%] transition-colors duration-200 text-[15px] cursor-pointer 2xl:text-base" />
                 </div>
                 <div className='flex flex-col justify-between items-center gap-6'>
                     <Image

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Check } from 'lucide-react';
 import Tooltip from '@/utils/Tooltip';
-import { FORM_URLS } from '@/lib/formdata';
 import CommonLeadModal from '@/common/commonLeadModel';
 
 
@@ -55,7 +54,7 @@ const COMPARISON_DATA = [
 ];
 
 
-export const FullPricingSection = () => {
+export const FullPricingSection = ({ formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className="w-full bg-white lg:py-10 px-3 lg:px-16 flex flex-col items-center">
@@ -152,7 +151,7 @@ export const FullPricingSection = () => {
                 ))}
             </div>
             {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.ecom} handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </div>
     );

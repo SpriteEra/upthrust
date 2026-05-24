@@ -14,6 +14,7 @@ import PerformanceNav from '@/components/performance-ads/PerformanceNav';
 import ProductSlideDetail from '@/components/performance-ads/ProductSlideDetail';
 import ProfileSection from '@/components/performance-ads/ProfileSection';
 import Testimonials from '@/components/performance-ads/Testimonials';
+import { getFormUrls } from '@/lib/formdata';
 import React from 'react'
 
 
@@ -121,26 +122,28 @@ export const metadata = {
     }
 };
 
-const page = () => {
+const page = async ({ data }) => {
+    const FORM_URLS = await getFormUrls();
+    console.log("FOrm url form performance", FORM_URLS.performance);
     return (
         <div>
-            <PerformanceNav items={navLinks} />
-            <HeroSection />
+            <PerformanceNav items={navLinks} formUrl={FORM_URLS.performance} />
+            <HeroSection formUrl={FORM_URLS.performance} title={data.additionalFields.title} />
             <div className="container py-12 sm:py-20 max-w-[90%] overflow-hidden mx-auto ">
                 <h3 className="text-2xl font-semibold leading-[150%] tracking-[-0.02em] text-center mb-8 max-sm:max-w-[280px] max-sm:mx-auto">Upthrust driving performance of</h3>
                 <BrandSliderPerformance />
             </div>
             <div>
-                <AdSpend />
+                <AdSpend formUrl={FORM_URLS.performance} />
             </div>
             <div className="sm:py-16 3xl:py-20" id="process">
                 <MarketingPanel />
             </div>
             <div>
-                <ProfileSection />
+                <ProfileSection formUrl={FORM_URLS.performance} />
             </div>
             <div className="sm:py-16 3xl:py-20" >
-                <AuditHero />
+                <AuditHero formUrl={FORM_URLS.performance} />
             </div>
             <div className="sm:py-16 3xl:py-20" id="case-studies">
                 <ProductSlideDetail />
@@ -152,7 +155,7 @@ const page = () => {
                 <CardDesign />
             </div>
             <div className="sm:py-16 3xl:py-20">
-                <AdReview />
+                <AdReview formUrl={FORM_URLS.performance} />
             </div>
             <div className='space-y-16 3xl:space-y-30' >
                 <PerfromanceHeading
@@ -174,7 +177,7 @@ const page = () => {
                     subtitle=""
                 />
                 <FAQ
-                    faqData={faqs}
+                    faqData={data.additionalFields.faqs}
                     shadow={true}
                     actionCss={{
                         active: "bg-[#FF3B00] text-white",
@@ -183,7 +186,7 @@ const page = () => {
                 />
             </div>
 
-            <MetaDisclaimer />
+            <MetaDisclaimer formUrl={FORM_URLS.performance} />
             <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
                 desktop: {
                     text1: "Tell us where you’re stuck.",

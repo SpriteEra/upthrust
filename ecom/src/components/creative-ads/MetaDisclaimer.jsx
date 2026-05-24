@@ -4,11 +4,9 @@ import { Minus, Plus } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-// import MetaRocketButton from '../meta-ads/MetaRocketButton'
-import StylishButton from '@/common/RocketButton'
 import CreativeRocketButton from './CreativeRocketButton'
 
-export const Disclaimer = () => {
+export const Disclaimer = ({ formUrl }) => {
     const [open, setOpen] = useState(false);
     return (
         <div className="mt-16 lg:mt-12 3xl:mt-14 border-t border-gray-300 pt-2 md:pt-3">
@@ -112,7 +110,7 @@ export const Disclaimer = () => {
     )
 }
 
-const MetaDisclaimer = () => {
+const MetaDisclaimer = ({ formUrl }) => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
@@ -120,7 +118,7 @@ const MetaDisclaimer = () => {
                     <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] 3xl:leading-15'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
 
-                    <CreativeRocketButton />
+                    <CreativeRocketButton formUrl={formUrl} />
                 </div>
                 <div className='flex flex-col justify-between items-center gap-6'>
                     <Image

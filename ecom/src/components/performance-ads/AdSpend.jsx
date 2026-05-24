@@ -12,7 +12,7 @@ const stats = [
     { label: "Average Retention", value: "23 mo" },
 ];
 
-export default function AdSpend() {
+export default function AdSpend({ formUrl }) {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { amount: 0.5, once: false });
 
@@ -61,7 +61,7 @@ export default function AdSpend() {
                     >
                        
                     </button> */}
-                    <PerformanceCommonButton text=" Get Ad Account Audit →" btncss="border border-black bg-black text-white text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200 cursor-pointer" />
+                    <PerformanceCommonButton formUrl={formUrl} text=" Get Ad Account Audit →" btncss="border border-black bg-black text-white text-xs lg:text-[19px] tracking-[0.12em] uppercase font-medium px-6 py-3 hover:bg-orange hover:border-white hover:text-white transition-colors duration-200 cursor-pointer" />
                 </div>
 
                 <div className="relative max-sm:h-full z-0 flex-1 flex items-center justify-end w-full">

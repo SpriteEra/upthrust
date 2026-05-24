@@ -305,11 +305,11 @@ function MuteButton({ isMuted, onToggle, positionClass }) {
         >
             {isMuted ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
-                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                    <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
                 </svg>
             ) : (
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
-                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
                 </svg>
             )}
         </button>
@@ -336,7 +336,7 @@ const brandicons = [
     { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "w-9 sm:w-9 md:w-9 lg:w-9 xl:w-10 2xl:w-10 3xl:w-12 h-fit" },
 ]
 
-export default function MetaAdsHero() {
+export default function MetaAdsHero({ toptitle, title, formUrl }) {
     const centerRef = useRef(null);
     const leftRef = useRef(null);
     const rightTopRef = useRef(null);
@@ -389,12 +389,12 @@ export default function MetaAdsHero() {
                 <div className="space-y-5 max-sm:h-[100vh - 80px] w-full lg:max-w-[48%] text-black relative">
                     {/* Top tag */}
                     <div className="flex max-sm:text-left justify-center sm:justify-start gap-2 items-start sm:items-center">
-                        <p className="text-lg xl:text-base 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">The creative ad agency trusted by BOSCH, L&apos;ORÉAL, Tata and PokerBazi</p>
+                        <p className="text-lg xl:text-base 3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">The {toptitle} trusted by BOSCH, L&apos;ORÉAL, Tata and PokerBazi</p>
                     </div>
 
                     {/* Headline */}
-                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[55px] 3xl:text-[65px] 1800:text-[72px] leading-[120%] sm:leading-[130%] tracking-[-0.04em] font-semibold max-sm:text-left">
-                        Creative Ads That
+                    <h1 className="text-[42px] lg:text-[50px] 2xl:text-[55px] 3xl:text-[65px] 1800:text-[72px] leading-[120%] sm:leading-[130%] tracking-[-0.04em] font-semibold max-sm:text-left capitalize">
+                        {title} That
                         <br />
                         <span className="text-orange"> Convert</span>, Built For
                         <br />
@@ -409,7 +409,7 @@ export default function MetaAdsHero() {
                     </p>
                     {/* CTA Button */}
                     <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-start ">
-                        <CreativeRocketButton text1='Get Your' text2='Free Ad Audit' color='orange' />
+                        <CreativeRocketButton text1='Get Your' text2='Free Ad Audit' color='orange' formUrl={formUrl} />
                     </div>
 
                     <div className="flex items-center max-md:justify-center gap-3 md:gap-5 1600:gap-8 mt-4 mb-8">
@@ -538,7 +538,7 @@ export default function MetaAdsHero() {
                                     className="object-contain z-20 pointer-events-none"
                                 />
 
-                                <MuteButton  isMuted={mutedState.center} onToggle={() => toggleMute('center', centerRef)} positionClass="left-4 bottom-12" />
+                                <MuteButton isMuted={mutedState.center} onToggle={() => toggleMute('center', centerRef)} positionClass="left-4 bottom-12" />
                             </div>
                         </div>
 

@@ -5,6 +5,8 @@ import {
     LayoutDashboard, FileText, Lock, Layout, Box, Zap, Star,
     BarChart2, FileInput, Table2, Map, Layers, ChevronDown,
     ChevronRight, ChevronLeft, Activity,
+    Copy,
+    FileTextIcon,
 } from "lucide-react";
 
 const NAV_GROUPS = [
@@ -25,6 +27,7 @@ const NAV_GROUPS = [
                     { label: "SEO", path: "/seo" },
                 ],
             },
+            { icon: Copy, label: "Copy Pages", path: "/copy-pages" },
 
             {
                 icon: Lock, label: "Authentication", children: [
@@ -44,6 +47,7 @@ const NAV_GROUPS = [
             // { icon: Zap, label: "Extended UI", children: ["Timeline", "Ribbons"] },
             // { icon: Star, label: "Icons" },
             // { icon: BarChart2, label: "Charts" },
+            { icon: FileTextIcon, label: "Metadata", path: "/metadata" },
             { icon: Box, label: "CTA URLs", path: "/cta-urls" },
             { icon: Star, label: "FAQ", path: "/faq" },
             // { icon: Table2, label: "Tables" },

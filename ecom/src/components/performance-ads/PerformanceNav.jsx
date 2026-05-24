@@ -4,7 +4,7 @@ import NavbarCTAButton from '../NavbarCTAButton';
 import PerformanceLeadFormModal from './PerformanceLeadModal';
 import PerformanceCommonButton from './PerformanceCommonButton';
 
-export default function PerformanceNav({ items }) {
+export default function PerformanceNav({ items, formUrl }) {
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center  2xl:h-[120px] xl:h-[100px] 1800:h-[134px] sm:h-20 h-19">
             <div className="px-4 md:px-4 lg:px-8 w-full">
@@ -39,7 +39,7 @@ export default function PerformanceNav({ items }) {
                         <button className="">
 
                         </button>
-                        <PerformanceCommonButton text=" Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-4 3xl:min-h-16 rounded-full hover:bg-orange transition-colors duration-200 text-[15px] 2xl:text-base cursor-pointer" />
+                        <PerformanceCommonButton formUrl={formUrl} text=" Get Your Free Ad Account Audit" btncss="bg-black text-white px-6 py-4 3xl:min-h-16 rounded-full hover:bg-orange transition-colors duration-200 text-[15px] 2xl:text-base cursor-pointer" />
 
                     </div>
                     {/* Mobile menu button */}

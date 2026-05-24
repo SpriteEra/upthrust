@@ -4,7 +4,7 @@ import axiosInstance from "./axiosInstance";
 
 // Get all pages
 export const getAllPagesAPI = async () => {
-    const { data } = await axiosInstance.get("/pages");
+    const { data } = await axiosInstance.get("/pages/all-pages");
     return data;
 };
 

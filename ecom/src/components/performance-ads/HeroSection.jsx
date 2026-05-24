@@ -4,7 +4,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import PerformanceCommonButton from './PerformanceCommonButton';
 
-const HeroSection = () => {
+const HeroSection = ({ title, formUrl }) => {
 
     const [offsetY, setOffsetY] = useState(0);
 
@@ -54,7 +54,7 @@ const HeroSection = () => {
                 <div className="max-w-[1100px] mx-auto flex flex-col sm:justify-center items-start max-sm:justify-start max-sm:p-3">
 
                     <p className="text-[18px] lg:text-[14px] leading-[150%] tracking-[0%] sm:tracking-[0.2em] uppercase text-black mb-8 font-normal">
-                        Performance Marketing Agency
+                        {title || "Performance Marketing Agency"}
                     </p>
 
                     <div className="flex max-sm:flex-col justify-between items-start sm:items-end ">
@@ -69,11 +69,9 @@ const HeroSection = () => {
                     </div>
 
                     <div className="flex max-sm:flex-col max-sm:justify-start flex-row gap-5 sm:gap-3 items-start sm:items-center">
-                        {/* <button className="bg-black text-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange transition-opacity">
-                            Get Your Free Ad Account Audit
-                        </button> */}
-                        <PerformanceCommonButton text="Get Your Free Ad Account Audit" btncss="bg-black text-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange transition-opacity" />
-                        <button onClick={() => document.getElementById('case-studies').scrollIntoView({ behavior: 'smooth' })} className="border border-black bg-white px-5 py-3 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors cursor-pointer">
+
+                        <PerformanceCommonButton formUrl={formUrl} text="Get Your Free Ad Account Audit" btncss="bg-black text-white px-5 py-3! text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange transition-opacity" />
+                        <button onClick={() => document.getElementById('case-studies').scrollIntoView({ behavior: 'smooth' })} className="border border-black bg-white px-5 py-2.5 text-base 3xl:text-xl tracking-[-0.02em] font-normal hover:bg-orange hover:text-white transition-colors cursor-pointer">
                             SEE CLIENT RESULTS →
                         </button>
                     </div>

@@ -145,7 +145,7 @@ import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react'
 
-const successStories = [
+const defaultsuccessStories = [
     {
         id: 1,
         tag: "SUCCESS STORY",
@@ -192,7 +192,7 @@ const successStories = [
     },
 ];
 
-const ClientVideoTestimonial = () => {
+const ClientVideoTestimonial = ({ successStories = defaultsuccessStories }) => {
     const [playingId, setPlayingId] = useState(null);
     return (
         <div className='px-0 md:px-16 grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-md:max-w-112.5'>

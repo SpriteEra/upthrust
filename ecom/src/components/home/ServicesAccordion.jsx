@@ -114,7 +114,7 @@ const services = [
 
 
 
-export default function ServicesAccordion() {
+export default function ServicesAccordion({ formUrl }) {
     const [open, setOpen] = useState(null);
 
 
@@ -266,7 +266,7 @@ export default function ServicesAccordion() {
                             className={`overflow-hidden transition-all duration-700 ease-in-out ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
                         >
                             <div className="mt-4 xs:mt-8">
-                                <StylishButton />
+                                <StylishButton formUrl={formUrl} />
                             </div>
                         </div>
                     </div>

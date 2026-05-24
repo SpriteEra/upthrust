@@ -1,9 +1,8 @@
 
 "use client"
-import React, { useState } from 'react'
-import LeadFormModal from '@/components/LeadModal'
+import React, { useState, useEffect } from 'react'
 import CommonLeadModal from './commonLeadModel';
-import { FORM_URLS } from '@/lib/formdata';
+// import { FORM_URLS } from '@/lib/formdata';
 
 const colors = {
     green: "#22c55e",
@@ -16,9 +15,9 @@ const colors = {
     orange: "#FF3B00"
 };
 
-const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale" }) => {
+const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale", formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
-    // if named color → use map, else use raw value (#000, etc.)
+
     const resolvedColor = colors[color] || color || colors.red;
 
     return (
@@ -41,8 +40,8 @@ const StylishButton = ({ color = "red", text1 = "Show Us", text2 = "How To Scale
 
                 <span>{text2}</span>
             </button>
-            {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.ecom} handleClose={() => setIsOpen(false)} />
+            {isOpen && formUrl && (
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

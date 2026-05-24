@@ -5,7 +5,7 @@ import MetaLeadModal from './MetaLeadModal';
 import { FORM_URLS } from '@/lib/formdata';
 import CommonLeadModal from '@/common/commonLeadModel';
 
-const MetaRocketButton = ({ text1, text2 }) => {
+const MetaRocketButton = ({ text1, text2, formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -16,7 +16,7 @@ const MetaRocketButton = ({ text1, text2 }) => {
             </button>
             {/* <MetaLeadModal handleClose={() => setIsOpen(false)} /> */}
             {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.metaAds} handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

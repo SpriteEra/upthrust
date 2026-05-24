@@ -5,6 +5,7 @@ import { connectDB } from "./config/db.js";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authroute.js";
 import pageRoutes from "./routes/pageroute.js";
+import copyPageRoutes from "./routes/copyPageRoute.js";
 import faqRoutes from "./routes/faqroute.js";
 import mediaRoutes from "./routes/bunnyroute.js";
 import formUrlRoutes from "./routes/formurlroute.js";
@@ -12,6 +13,7 @@ import dashboardRoutes from "./routes/dashboardroute.js";
 import activityRoutes from "./routes/activityroute.js";
 import { globalLimiter } from "./middleware/rateLimiter.js";
 import activityLogger from "./middleware/activityLogger.js";
+import metaRoutes from "./routes/metaroute.js";
 
 dotenv.config();
 
@@ -37,11 +39,13 @@ app.get("/", (req, res) => res.send("Server is running!"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/pages", pageRoutes);
+app.use("/api/copy-pages", copyPageRoutes);
 app.use("/api/faqs", faqRoutes);
 app.use("/api/media", mediaRoutes);
 app.use("/api/form-urls", formUrlRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/activity", activityRoutes);
+app.use("/api/page-meta", metaRoutes)
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

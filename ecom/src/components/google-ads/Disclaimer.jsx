@@ -109,14 +109,14 @@ export const Disclaimer = () => {
     )
 }
 
-const GoogleDisclaimer = () => {
+const GoogleDisclaimer = ({ formUrl }) => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse gap-14  md:gap-20'>
                 <div className='max-md:pl-2'>
                     <p className='font-semibold text-4xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%]'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Request a free consultation.</p>
-                    <GoogleCommonButton text="Show Us How to Scale" />
+                    <GoogleCommonButton text="Show Us How to Scale" formUrl={formUrl} />
                 </div>
                 <div className='flex flex-col md:justify-between md:items-center gap-6 md:gap-8 max-md:pl-2'>
                     <Image

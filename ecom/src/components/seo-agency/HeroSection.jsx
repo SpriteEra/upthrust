@@ -210,7 +210,7 @@ const brands = [
     { name: "brand10", src: "/brands/brand-black/welspun.webp", alt: "", width: "h-6 xs:h-8 lg:h-12 w-12 sm:w-17 xl:w-20 3xl:h-15 3xl:w-40" },
 ];
 
-const SeoAgencyHero = ({ title }) => {
+const SeoAgencyHero = ({ title, formUrl }) => {
 
     const words2 = [
         { text: 'Ranked', color: '#FE2B27' },
@@ -263,8 +263,8 @@ const SeoAgencyHero = ({ title }) => {
                 {title}
                 <AnimatedWord
                     words={words2}
-                    className="h-5.5 3xl:h-7 w-28 3xl:w-30 text-[#FE2B27] font-normal"
-                    textCss='font-normal justify-center!'
+                    className="h-5.5 3xl:h-7 w-28 3xl:w-30 text-[#FE2B27] font-normal "
+                    textCss='font-normal justify-start!'
                 />
             </h1>
 
@@ -288,7 +288,7 @@ const SeoAgencyHero = ({ title }) => {
             </p>
 
             {/* CTA Button */}
-            <SeoCommonButton text="Get a Free SEO/AEO Audit" />
+            <SeoCommonButton formUrl={formUrl} text="Get a Free SEO/AEO Audit" />
 
             {/* Trusted Brands */}
             <div className="mt-10 sm:mt-10 2xl:mt-8 3xl:mt-18 flex flex-col items-center w-full">

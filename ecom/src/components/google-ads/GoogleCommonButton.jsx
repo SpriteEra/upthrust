@@ -4,9 +4,9 @@
 import React, { useState } from 'react'
 import GoogleButton from './GoogleButton';
 import CommonLeadModal from '@/common/commonLeadModel';
-import { FORM_URLS } from '@/lib/formdata';
+// import { FORM_URLS } from '@/lib/formdata';
 
-const GoogleCommonButton = ({ text }) => {
+const GoogleCommonButton = ({ text, formUrl }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
@@ -16,7 +16,7 @@ const GoogleCommonButton = ({ text }) => {
                 <GoogleButton text={text} />
             </button>
             {isOpen && (
-                <CommonLeadModal formUrl={FORM_URLS.googleAds} handleClose={() => setIsOpen(false)} />
+                <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
             )}
         </>
     )

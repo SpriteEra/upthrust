@@ -59,7 +59,7 @@ const brandicons = [
     { src: '/brands/brand-black/libas.webp', alt: 'Libas', customCss: "w-9 sm:w-9 md:w-9 lg:w-9 xl:w-10 2xl:w-10 3xl:w-12 h-fit" },
 ]
 
-export default function MetaAdsHero({ title }) {
+export default function MetaAdsHero({ title, formUrl }) {
     const centerRef = useRef(null);
     const leftRef = useRef(null);
     const rightTopRef = useRef(null);
@@ -139,7 +139,7 @@ export default function MetaAdsHero({ title }) {
                     {/* CTA Button */}
                     <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-center ">
                         {/* <StylishButton text1='Get Your' text2='Free Audit' color='blue' /> */}
-                        <MetaRocketButton text1='Get Your' text2='Free Audit' color='blue' />
+                        <MetaRocketButton text1='Get Your' text2='Free Audit' color='blue' formUrl={formUrl} />
                     </div>
 
                     <div className="flex items-center max-md:justify-center gap-3 md:gap-5 1600:gap-8 mt-4 mb-8">

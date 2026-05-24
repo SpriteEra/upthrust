@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import GoogleLeadModal from "./GoogleLeadModal";
+import CommonLeadModal from "@/common/commonLeadModel";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GoogleAdsRoiPrediction = () => {
+const GoogleAdsRoiPrediction = ({ formUrl }) => {
   const [activeTab, setActiveTab] = useState("traffic");
   const wrapperRef = useRef(null);
   const trafficRef = useRef(null);
@@ -399,7 +399,7 @@ const GoogleAdsRoiPrediction = () => {
                     I'm stuck, I need high quality traffic
                   </button>
                   {isOpen && (
-                    <GoogleLeadModal handleClose={() => setIsOpen(false)} />
+                    <CommonLeadModal formUrl={formUrl} handleClose={() => setIsOpen(false)} />
                   )}
 
                   <button

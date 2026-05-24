@@ -1,7 +1,7 @@
 import React from "react";
 import PerformanceCommonButton from "./PerformanceCommonButton";
 
-const AuditHero = () => {
+const AuditHero = ({ formUrl }) => {
   return (
     <div className="max-w-[90%] 3xl:max-w-[1245px] mx-auto sm:px-5 py-10">
       <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
@@ -76,7 +76,7 @@ const AuditHero = () => {
             {/* <div className="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit">
               72 hr turnaround
             </div> */}
-            <PerformanceCommonButton text="72 hr turnaround" btncss="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit cursor-pointer" />
+            <PerformanceCommonButton formUrl={formUrl} text="72 hr turnaround" btncss="border border-black bg-white hover:text-white hover:border-white hover:bg-orange py-2 px-6 leading-[150%] tracking-[-0.02em] text-center text-[17px] w-fit cursor-pointer" />
 
           </div>
 

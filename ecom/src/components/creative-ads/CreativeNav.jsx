@@ -4,7 +4,7 @@ import NavbarCTAButton from '../NavbarCTAButton';
 import CreativeRocketButton from './CreativeRocketButton';
 
 
-export default function CreativeNavbar({ items }) {
+export default function CreativeNavbar({ items, formUrl }) {
 
     return (
         <nav className="bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19">
@@ -36,7 +36,7 @@ export default function CreativeNavbar({ items }) {
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <CreativeRocketButton color='orange' />
+                        <CreativeRocketButton color='orange' formUrl={formUrl} />
                     </div>
 
 

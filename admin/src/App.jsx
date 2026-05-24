@@ -21,6 +21,8 @@ import Buttons from "./pages/Buttons";
 import FAQsPage from "./pages/FAQ";
 import FormUrlsPage from "./pages/FormUrls";
 import ActivityLogPage from "./pages/ActivityLog";
+import CopyPagesManager from "./pages/CopyPage";
+import PageMetaManager from "./pages/PageMetaManager";
 
 export default function App() {
   return (
@@ -44,7 +46,10 @@ export default function App() {
             <Route path="/creative-agency" element={<CreativePage />} />
             <Route path="/performance" element={<PerformanceMarketingPage />} />
             {/* <Route path="/buttons" element={<Buttons />} /> */}
+            <Route path="/copy-pages" element={<CopyPagesManager />} />
             <Route path="/cta-urls" element={<FormUrlsPage />} />
+            {/* metadata manager  */}
+            <Route path="/metadata" element={<PageMetaManager />} />
             <Route path="/faq" element={<FAQsPage />} />
             <Route path="/activity-log" element={<ActivityLogPage />} />
           </Route>

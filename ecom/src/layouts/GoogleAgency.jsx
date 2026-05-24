@@ -19,6 +19,7 @@ import ClientTestimonials from "@/components/google-ads/ClientTestimonials";
 import GoogleAdsRoiPredictionSlider from "@/components/google-ads/GoogleAdsRoiPredictionSlider";
 import HomeFooter from '@/components/home/HomeFooter'
 import GoogleCommonButton from '@/components/google-ads/GoogleCommonButton'
+import { getFormUrls } from '@/lib/formdata'
 
 const badges = [
     { image: "/badges/user-love.webp", alt: "User Love Badge" },
@@ -82,7 +83,11 @@ export const metadata = {
     }
 };
 
-const GoogleAgencyLayout = ({ data }) => {
+const GoogleAgencyLayout = async ({ data }) => {
+
+    const FORM_URLS = await getFormUrls();
+    // console.log("formurl is google ", FORM_URLS.googleads);
+
 
     return (
         <main>
@@ -96,13 +101,13 @@ const GoogleAgencyLayout = ({ data }) => {
                         <div className='flex items-center gap-5 3xl:gap-6'>
                             <span className='text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden'>Get light years ahead with google ads</span>
 
-                            <GoogleCommonButton text="Scale Your PPC" />
+                            <GoogleCommonButton text="Scale Your PPC" formUrl={FORM_URLS.googleads} />
                         </div>
                     </div>
                 </div>
             </nav>
 
-            <GoogleAdsHero title={data.title} />
+            <GoogleAdsHero title={data.additionalFields.title} formUrl={FORM_URLS.googleads} />
 
             <div className='flex flex-col mt-20 md:mt-26 3xl:mt-25'>
                 <CommonHeading
@@ -128,10 +133,10 @@ const GoogleAgencyLayout = ({ data }) => {
 
 
                 <div className='max-xl:hidden sm:max-w-[90%] sm:mx-auto w-full '>
-                    <GoogleAdsRoiPrediction />
+                    <GoogleAdsRoiPrediction formUrl={FORM_URLS.googleads} />
                 </div>
                 <div className='max-sm:px-2 xl:hidden sm:max-w-[98%] sm:mx-auto w-full '>
-                    <GoogleAdsRoiPredictionSlider />
+                    <GoogleAdsRoiPredictionSlider formUrl={FORM_URLS.googleads} />
                 </div>
 
             </div>
@@ -441,11 +446,11 @@ const GoogleAgencyLayout = ({ data }) => {
                         ],
                     ]}
                 />
-                <GoogleFaq faqs={data.faqs} />
+                <GoogleFaq faqs={data.additionalFields.faqs} />
             </div>
 
             <div>
-                <GoogleDisclaimer />
+                <GoogleDisclaimer formUrl={FORM_URLS.googleads} />
                 <HomeFooter text1="Request a free consultation." bgColor="#0457CB" text2={{
                     desktop: {
                         text1: "YOU FOUND THE RIGHT AGENCY.",

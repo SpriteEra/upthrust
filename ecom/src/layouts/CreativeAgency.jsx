@@ -17,7 +17,7 @@ const ProcessTimeline = dynamic(() => import('@/components/creative-ads/Progress
 // const { ComparisonTable } = dynamic(() => import('@/components/home/ComparisonTable'));
 import { ComparisonTable } from '@/components/home/ComparisonTable';
 import CommonLeadForm from '@/common/commonLeadForm';
-import { FORM_URLS } from '@/lib/formdata';
+import { getFormUrls } from '@/lib/formdata';
 
 const FAQ = dynamic(() => import('@/components/home/Faq'));
 const HomeFooter = dynamic(() => import('@/components/home/HomeFooter'));
@@ -233,11 +233,13 @@ export const metadata = {
     }
 };
 
-const page = () => {
+const page = async ({ data }) => {
+    const FORM_URLS = await getFormUrls();
+    console.log("creative page data :", data.additionalFields);
     return (
         <main id="meta-ad-agency">
-            <CreativeNavbar items={navLinks} />
-            <MetaAdsHero />
+            <CreativeNavbar items={navLinks} formUrl={FORM_URLS.creative} />
+            <MetaAdsHero formUrl={FORM_URLS.creative} toptitle={data.additionalFields.title} title={data.additionalFields.brand} />
 
             <div className="bg-black text-white py-16 3xl:py-20 my-10 3xl:my-16 " >
                 <MetaHeading
@@ -354,7 +356,7 @@ creative intuition with data-driven precision."
                         <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
                             Distinctive creative. Data-driven process. Undeniable results
                         </p>
-                        <CreativeRocketButton />
+                        <CreativeRocketButton formUrl={FORM_URLS.creative} />
                     </div>
 
                     {/* Right Video */}
@@ -671,7 +673,7 @@ creative intuition with data-driven precision."
                 />
             </div>
 
-            <MetaDisclaimer />
+            <MetaDisclaimer formUrl={FORM_URLS.creative} />
             <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
                 desktop: {
                     text1: "YOUR SUBMISSION GOES HERE.",

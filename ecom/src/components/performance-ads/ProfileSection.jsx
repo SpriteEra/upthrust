@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import PerformanceCommonButton from "./PerformanceCommonButton";
 
-const ProfileSection = () => {
+const ProfileSection = ({ formUrl }) => {
   const [active, setActive] = useState(0);
 
   const profiles = [
@@ -157,7 +157,7 @@ const ProfileSection = () => {
                 {profiles[active].role}
               </p>
               <div className="pt-5">
-                <PerformanceCommonButton text="GET AD ACCOUNT AUDIT →" btncss=" bg-black text-white hover:bg-orange  px-5 py-3 text-[14px]  cursor-pointer" />
+                <PerformanceCommonButton formUrl={formUrl} text="GET AD ACCOUNT AUDIT →" btncss=" bg-black text-white hover:bg-orange  px-5 py-3 text-[14px]  cursor-pointer" />
               </div>
 
             </div>

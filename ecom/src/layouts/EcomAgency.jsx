@@ -19,7 +19,7 @@ import EcomHeading from '@/components/home/EcomHeading';
 //data
 import { agencyPages } from '@/data/agencyPages';
 import CommonLeadForm from '@/common/commonLeadForm';
-import { FORM_URLS } from '@/lib/formdata';
+import { FORM_URLS, getFormUrls } from '@/lib/formdata';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
@@ -164,16 +164,19 @@ export const metadata = {
 
 export default async function EcomLayout({ data }) {
 
-    // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/d2c-marketing-agency`, {
-    //     cache: 'no-store'
-    // });
-    // const resData = await response.json();
-    // const result = resData.data;
-    // console.log("Ecom data", result);
+    const FORM_URLS = await getFormUrls();
+    // console.log("form url new ", FORM_URLS.ecom);
+    // console.log("Ecom Layout Data:", data);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/d2c-marketing-agency`, {
+        next: { revalidate: 120 }
+    });
+    const resData = await response.json();
+    const result = resData.data;
+    // console.log("Ecom data", result.additionalFields);
 
     return (
         <main id="main-content">
-            <Navbar />
+            <Navbar formUrl={FORM_URLS.ecom} />
             <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen h-full bg-black text-white overflow-hidden max-h-full 3xl:max-h-[180vh]'>
                 <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-62 flex flex-col'>
 
@@ -188,7 +191,7 @@ export default async function EcomLayout({ data }) {
 
                     <h1 className="relative inline-block px-5 3xl:px-6 py-2 3xl:py-3 rounded-full lg:text-sm 3xl:text-base text-white mt-6 3xl:mt-10 mb-16 md:mb-3 3xl:mb-5 bg-black/80 border border-white/10 max-md:mx-auto w-fit">
                         <span className="pointer-events-none absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full" />
-                        {data.title}
+                        {data.additionalFields.title}
                     </h1>
 
 
@@ -214,7 +217,7 @@ export default async function EcomLayout({ data }) {
                         <span className='font-semibold'>Ads</span> that stop the scroll, <span className='font-semibold'>pages</span> that convert, and <span className='font-semibold'>growth</span> that compounds
                     </div>
 
-                    <ScaleButton color="red" />
+                    <ScaleButton formUrl={FORM_URLS.ecom} color="red" />
 
                     <div className='mt-10 sm:mt-5 3xl:mt-7 flex flex-col'>
                         <p className='text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]'>Brands we've scaled</p>
@@ -249,7 +252,7 @@ export default async function EcomLayout({ data }) {
             </div>
 
             <div className='max-lg:my-12  lg:my-20 3xl:mt-40 flex flex-col '>
-                <h2 className='text-center text-2xl lg:text-xl 3xl:text-2xl max-xs:max-w-[320px] mx-auto tracking-[-0.02em]'><span className='font-semibold'>60+</span> {data?.brand} Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
+                <h2 className='text-center text-2xl lg:text-xl 3xl:text-2xl max-xs:max-w-[320px] mx-auto tracking-[-0.02em]'><span className='font-semibold'>60+</span> {data?.additionalFields.brand} Brands Scaled | Avg <span className='font-semibold'>3.8x</span> ROAS | <br /><span className='font-semibold'>$50M+</span> Managed Profitably</h2>
                 <BrandSlider />
             </div>
 
@@ -313,7 +316,7 @@ export default async function EcomLayout({ data }) {
                     </div>
                     <span className='text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em]'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
                 </div>
-                <StylishButton color='red' />
+                <StylishButton formUrl={FORM_URLS.ecom} color='red' />
                 <SliderVideos />
             </div>
 
@@ -364,7 +367,7 @@ export default async function EcomLayout({ data }) {
                             {
                                 line: [
                                     { type: "normal", text: "How We Scale" },
-                                    { type: "italic", text: `${data?.brand2} brands` },
+                                    { type: "italic", text: `${data?.additionalFields.brand2} brands` },
                                 ],
                             },
                         ]}
@@ -372,7 +375,7 @@ export default async function EcomLayout({ data }) {
                         subtitle="Scale to ₹2.5Cr+/month"
                     />
                 </div>
-                <ServicesAccordion />
+                <ServicesAccordion formUrl={FORM_URLS.ecom} />
             </div>
 
             <div>
@@ -459,11 +462,11 @@ export default async function EcomLayout({ data }) {
 
 
 
-            <MobileTestimonialsSlider testimonials={testimonials} />
+            <MobileTestimonialsSlider testimonials={result.additionalFields.testimonials} />
 
             {/* Desktop GSAP */}
             <div className="max-lg:hidden">
-                <SuccessStories />
+                <SuccessStories testimonials={result.additionalFields.testimonials} />
             </div>
             <div>
                 <div className='flex flex-col mt-25 xs:mt-50 mb-0 xs:mb-10  px-2 scroll-mt-30 3xl:scroll-mt-35' id='case-studies'>
@@ -492,7 +495,7 @@ export default async function EcomLayout({ data }) {
                     </div>
                 </div>
 
-                <WhatWeDid />
+                <WhatWeDid formUrl={FORM_URLS.ecom} />
             </div>
 
 
@@ -561,7 +564,7 @@ export default async function EcomLayout({ data }) {
                 </div>
 
 
-                <FullPricingSection />
+                <FullPricingSection formUrl={FORM_URLS.ecom} />
             </div>
 
             <ScrollIndicator />
@@ -689,7 +692,8 @@ export default async function EcomLayout({ data }) {
                     </div>
                 </div>
 
-                <ClientVideoTestimonial />
+                <ClientVideoTestimonial successStories={result.additionalFields.successStories
+                } />
             </div>
 
             <div>
@@ -713,10 +717,10 @@ export default async function EcomLayout({ data }) {
                     />
                 </div>
 
-                <FAQ faqData={data.faqs} />
+                <FAQ faqData={data.additionalFields.faqs} />
             </div>
 
-            <AskQuestionAndDisclaimer text={data?.brand2} />
+            <AskQuestionAndDisclaimer formUrl={FORM_URLS.ecom} text={data?.additionalFields.brand2} />
             <HomeFooter
                 setwidth="max-w-2xl! 3xl:max-w-3xl!"
                 text2={{

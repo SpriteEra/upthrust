@@ -110,7 +110,7 @@ export const Disclaimer = () => {
     )
 }
 
-const MetaDisclaimer = () => {
+const MetaDisclaimer = ({ formUrl }) => {
     return (
         <div className='px-3 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse gap-10  xl:gap-20'>
@@ -118,7 +118,7 @@ const MetaDisclaimer = () => {
                     <p className='font-semibold text-[32px] md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-[130%] 3xl:leading-15'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10 tracking-[-0.02em] leading-[150%] '>Book a free consultation.</p>
 
-                    <MetaRocketButton />
+                    <MetaRocketButton formUrl={formUrl} />
                 </div>
                 <div className='flex flex-col justify-between md:items-center gap-8'>
                     <Image

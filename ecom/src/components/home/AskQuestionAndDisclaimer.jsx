@@ -109,7 +109,7 @@ export const Disclaimer = () => {
     )
 }
 
-const AskQuestionAndDisclaimer = ({ text }) => {
+const AskQuestionAndDisclaimer = ({ text, formUrl }) => {
     return (
         <div className='px-2 md:px-20 flex flex-col pt-24 md:pt-50'>
             <div className='flex justify-between max-xs:flex-col-reverse  gap-20'>
@@ -117,7 +117,7 @@ const AskQuestionAndDisclaimer = ({ text }) => {
                     <p className='font-semibold text-5xl md:text-4xl 3xl:text-5xl tracking-[-0.02em] leading-15'>Do you have <br />any questions?</p>
                     <p className='text-base md:text-sm 3xl:text-base mt-1 mb-8 3xl:mb-10'>Feel free to send us your questions or request a free consultation.</p>
 
-                    <StylishButton />
+                    <StylishButton formUrl={formUrl} />
                 </div>
                 <div className='flex  flex-col justify-start sm:justify-between items-start sm:items-center gap-6'>
                     <Image

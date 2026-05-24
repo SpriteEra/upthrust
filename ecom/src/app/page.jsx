@@ -17,7 +17,7 @@ import ScrollIndicator from '@/components/home/ScrollIndicator';
 import WhatWeDid from '@/components/home/WhatWeDid';
 import EcomHeading from '@/components/home/EcomHeading';
 import CommonLeadForm from '@/common/commonLeadForm';
-import { FORM_URLS } from '@/lib/formdata';
+import { getFormUrls } from '@/lib/formdata';
 const MobileTestimonialsSlider = dynamic(() => import('@/components/home/MobileTestimonialsSlider'));
 const LeadForm = dynamic(() => import('@/components/LeadForm'));
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'));
@@ -98,21 +98,21 @@ const testimonials = [
     text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
     name: "Troy",
     company: "MC Overalls",
-    image: "/ecom/profile/profile6.png",
+    image: "/ecom/profile/profile6.webp",
     color: "bg-[#FFF0F0]"
   },
   {
     text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
     name: "Rishab",
     company: "Carobis",
-    image: "/ecom/profile/profile7.png",
+    image: "/ecom/profile/profile7.webp",
     color: "bg-[#FFEBDA]"
   },
   {
     text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
     name: "Gunjan",
     company: "Housr",
-    image: "/ecom/profile/profile8.png",
+    image: "/ecom/profile/profile8.webp",
     color: "bg-[#E1EFD7]"
   },
   {
@@ -125,7 +125,9 @@ const testimonials = [
 ];
 
 
-const page = () => {
+const page = async () => {
+  const FORM_URLS = await getFormUrls();
+  // console.log("Form URLs in page.jsx:", FORM_URLS);
   return (
     <main id="main-content">
       <Navbar />
@@ -666,7 +668,7 @@ const page = () => {
           </div>
         </div>
         {/* <LeadForm /> */}
-        <CommonLeadForm formUrl={FORM_URLS.ecom} height='700px' />
+        <CommonLeadForm formUrl={FORM_URLS.ecom} height='700px' widthcss="max-w-2xl" />
       </div>
 
 

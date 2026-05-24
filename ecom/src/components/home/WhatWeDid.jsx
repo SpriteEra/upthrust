@@ -117,7 +117,8 @@ const BusinessCard = ({
     textAccent = 'text-green-600',
     rightImage,
     imageAlt,
-    growthMetric
+    growthMetric,
+    formUrl
 }) => {
     return (
         <div className={`${bgColor} rounded-xl md:rounded-2xl p-0 max-lg:pt-7 lg:p-4 3xl:p-5 w-full max-w-6xl 2xl:max-w-7xl 3xl:max-w-[90%] mx-auto lg:sticky top-0 xl:-top-5  2xl:top-28  3xl:top-45`}>
@@ -185,7 +186,7 @@ const BusinessCard = ({
                                         Just in case if <br />you want us
                                     </p>
                                 </div>
-                                <StylishButton color={`${accentColor2}`} />
+                                <StylishButton color={`${accentColor2}`} formUrl={formUrl} />
 
                             </div>
                         </div>
@@ -226,11 +227,11 @@ const BusinessCard = ({
     );
 };
 
-const WhatWeDid = () => {
+const WhatWeDid = ({ formUrl }) => {
     return (
         <div className='px-2 max-lg:space-y-4.5 space-y-10 3xl:space-y-30'>
             {businesses.map((business, index) => (
-                <BusinessCard key={index} {...business} />
+                <BusinessCard key={index} {...business} formUrl={formUrl} />
             ))}
         </div>
     )

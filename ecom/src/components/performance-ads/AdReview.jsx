@@ -4,7 +4,7 @@ import PerfromanceHeading from "@/common/PerformanceHeading";
 import { ArrowRight } from "lucide-react";
 import PerformanceCommonButton from "./PerformanceCommonButton";
 
-export default function AdReview() {
+export default function AdReview({ formUrl }) {
     return (
         <section className=" py-10">
             <div className="sm:max-w-[90%] 3xl:max-w-[1300px] mx-auto md:px-6">
@@ -39,7 +39,7 @@ export default function AdReview() {
 
                     {/* Right Button */}
                     <div className="hidden md:flex md:items-end md:justify-end">
-                        <PerformanceCommonButton text=" → BOOK YOUR LIVE REVIEW" btncss="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]" />
+                        <PerformanceCommonButton formUrl={formUrl} text=" → BOOK YOUR LIVE REVIEW" btncss="bg-black whitespace-nowrap text-white uppercase px-8 py-4 flex items-center gap-4 text-sm tracking-wide hover:bg-orange transition text-[20px] 2xl:text-[32px]" />
                     </div>
 
                 </div>
@@ -75,7 +75,7 @@ export default function AdReview() {
                         </p>
 
 
-                        <PerformanceCommonButton text=" → BOOK A CALL" btncss="bg-white hover:text-white cursor-pointer hover:bg-orange  text-black px-20 py-3 flex items-center gap-3 text-[19px]  transition cursor-pointer" />
+                        <PerformanceCommonButton formUrl={formUrl} text=" → BOOK A CALL" btncss="bg-white hover:text-white cursor-pointer hover:bg-orange  text-black px-20 py-3 flex items-center gap-3 text-[19px]  transition cursor-pointer" />
 
                     </div>
 

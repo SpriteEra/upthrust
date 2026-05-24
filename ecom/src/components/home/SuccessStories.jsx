@@ -41,7 +41,38 @@ const cardDefaultColors = [
     },
 ]
 
-const SuccessStories = ({ cardColors = cardDefaultColors }) => {
+const defaultTestimonials = [
+    {
+        text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
+        name: "Troy",
+        company: "MC Overalls",
+        image: "/ecom/profile/profile6.webp",
+        color: "bg-[#FFF0F0]"
+    },
+    {
+        text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
+        name: "Rishab",
+        company: "Carobis",
+        image: "/ecom/profile/profile7.webp",
+        color: "bg-[#FFEBDA]"
+    },
+    {
+        text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+        name: "Gunjan",
+        company: "Housr",
+        image: "/ecom/profile/profile8.webp",
+        color: "bg-[#E1EFD7]"
+    },
+    {
+        text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
+        name: "Dan",
+        company: "Dan Studio",
+        image: "/ecom/profile/profile9.png",
+        color: "bg-[#E3DFF1]"
+    }
+];
+
+const SuccessStories = ({ cardColors = cardDefaultColors, testimonials = defaultTestimonials }) => {
     const containerRef = useRef(null);
     const secretBehindRef = useRef(null);
     const theirSuccessRef = useRef(null);
@@ -135,56 +166,7 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
 
     }, { scope: wrapperRef })
 
-    const testimonials = [
-        {
-            text: "Upthrust promised 90 days. We saw results in 47 days. Traffic improved, conversions went up, sales became exponential. Worth every penny.",
-            name: "Troy",
-            company: "MC Overalls",
-            image: "/ecom/profile/profile6.webp",
-            alt: "Client testimonial photo of Troy from MC Overalls",
-            color: cardColors[0].bg,
-            textColor: cardColors[0].text,
-            clientNameColor: cardColors[0].clientNameColor,
-            companyNameColor: cardColors[0].companyNameColor,
 
-        },
-        {
-            text: "We were struggling with traffic and poor conversion rates. In 6 months, Upthrust grew our organic traffic 463%, optimized our ads, and improved conversions 3x. ",
-            name: "Rishab",
-            company: "Carobis",
-            image: "/ecom/profile/profile7.webp",
-            alt: "Client testimonial photo of Rishab from Carobis",
-            color: cardColors[1].bg,
-            textColor: cardColors[1].text,
-            clientNameColor: cardColors[1].clientNameColor,
-            companyNameColor: cardColors[1].companyNameColor,
-
-        },
-        {
-            text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
-            name: "Gunjan",
-            company: "Housr",
-            image: "/ecom/profile/profile8.webp",
-            alt: "Client testimonial photo of Gunjan from Housr",
-            color: cardColors[2].bg,
-            textColor: cardColors[2].text,
-            clientNameColor: cardColors[2].clientNameColor,
-            companyNameColor: cardColors[2].companyNameColor,
-
-        },
-        {
-            text: "$4,900 with Upthrust returned 2.7x immediately. Now doing $51K+ monthly with multi- channel campaigns. They don't track vanity metrics, they know what growth truly means.",
-            name: "Dan",
-            company: "Dan Studio",
-            image: "/ecom/profile/profile9.png",
-            alt: "Client testimonial photo of Dan from Dan Studio",
-            color: cardColors[3].bg,
-            textColor: cardColors[3].text,
-            clientNameColor: cardColors[3].clientNameColor,
-            companyNameColor: cardColors[3].companyNameColor,
-
-        }
-    ];
 
     const cardRefs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
@@ -242,7 +224,7 @@ const SuccessStories = ({ cardColors = cardDefaultColors }) => {
                                             width={66}
                                             height={66}
                                             src={testimonial.image}
-                                            alt={testimonial.alt} className='w-full h-full object-contain rounded-md' />
+                                            alt={testimonial?.alt || "Testimonial image"} className='w-full h-full object-contain rounded-md' />
                                     </div>
                                     <div>
                                         <p className={`text-lg 3xl:text-[22px]  tracking-[0.55px] leading-[27px] ${testimonial.clientNameColor}`}>{testimonial.name}</p>
