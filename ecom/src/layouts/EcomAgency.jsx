@@ -666,7 +666,6 @@ export default async function EcomLayout({ data }) {
                         />
                     </div>
                 </div>
-                {/* <LeadForm showOnlyIframe={true} /> */}
                 <CommonLeadForm formUrl={FORM_URLS.ecom} height='700px' widthcss="max-w-2xl" />
             </div>
 
