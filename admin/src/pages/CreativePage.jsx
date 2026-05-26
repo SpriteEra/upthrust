@@ -702,15 +702,12 @@ const UGCCategoriesTab = ({ categories = [], allData, pageId, onSaved }) => {
 
 // ── 4. UGC VIDEO (wrapper with tabs) ─────────────────────────────────────────
 const UGCVideoSection = ({ ugcData = [], pageId, onSaved }) => {
-    const [activeTab, setActiveTab] = useState("videos");
+    const [activeTab, setActiveTab] = useState("categories");
 
-    const videosBlock = ugcData.find((b) => b.type === "videos");
     const categoriesBlock = ugcData.find((b) => b.type === "ugcCategories");
-    const videos = videosBlock?.data || [];
     const categories = categoriesBlock?.data || [];
 
     const tabs = [
-        { key: "videos", label: "Videos", icon: Video, count: videos.length },
         { key: "categories", label: "UGC Categories", icon: Grid3X3, count: categories.length },
     ];
 
@@ -722,7 +719,7 @@ const UGCVideoSection = ({ ugcData = [], pageId, onSaved }) => {
                 </div>
                 <div>
                     <h2 className="text-base font-semibold text-slate-800">UGC Videos</h2>
-                    <p className="text-xs text-slate-400">{videos.length} videos · {categories.length} categories</p>
+                    <p className="text-xs text-slate-400"> {categories.length} categories</p>
                 </div>
             </div>
 
@@ -746,13 +743,10 @@ const UGCVideoSection = ({ ugcData = [], pageId, onSaved }) => {
                     </button>
                 ))}
             </div>
-
-            {activeTab === "videos" && (
-                <UGCVideosTab videos={videos} allData={ugcData} pageId={pageId} onSaved={onSaved} />
-            )}
             {activeTab === "categories" && (
                 <UGCCategoriesTab categories={categories} allData={ugcData} pageId={pageId} onSaved={onSaved} />
             )}
+
         </div>
     );
 };
