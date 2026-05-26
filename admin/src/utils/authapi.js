@@ -17,8 +17,12 @@ export const loginAPI = async (payload) => {
 // logout
 export const logoutAPI = async () => {
     const { data } = await axiosInstance.get("/auth/logout");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     return data;
 };
+
+
 
 // send otp
 export const sendOtpAPI = async () => {

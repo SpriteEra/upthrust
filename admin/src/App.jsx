@@ -32,6 +32,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/login" />} />
 
           <Route path="/login" element={<Login />} />
+
           {/* <Route path="/register" element={<Register />} /> */}
           <Route path="/verify-otp" element={<VerifyOtpPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />

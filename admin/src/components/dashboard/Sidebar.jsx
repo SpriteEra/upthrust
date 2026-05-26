@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom"; // ✅ ADDED
-
 import {
     LayoutDashboard, FileText, Lock, Layout, Box, Zap, Star,
     BarChart2, FileInput, Table2, Map, Layers, ChevronDown,
@@ -8,6 +7,7 @@ import {
     Copy,
     FileTextIcon,
 } from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
 
 const NAV_GROUPS = [
     {
@@ -31,9 +31,8 @@ const NAV_GROUPS = [
 
             {
                 icon: Lock, label: "Authentication", children: [
-                    { label: "Login", path: "/login" },
                     { label: "Reset Password", path: "/forgot-password" },
-                    { label: "Logout", path: "/logout" },
+                    { label: "Logout", action: "logout" }
                 ]
             },
 
@@ -66,9 +65,10 @@ const NAV_GROUPS = [
 export const Sidebar = ({ collapsed, onToggle, mobileOpen, onClose }) => {
     const [openDropdowns, setOpenDropdowns] = useState({});
 
+    const { logout } = useAuth();
+
     const navigate = useNavigate(); // ✅ ADDED
     const location = useLocation(); // ✅ ADDED
-
     const toggleDropdown = (label) => {
         if (collapsed) return;
         setOpenDropdowns((prev) => ({ ...prev, [label]: !prev[label] }));
@@ -173,7 +173,14 @@ export const Sidebar = ({ collapsed, onToggle, mobileOpen, onClose }) => {
                                                     return (
                                                         <button
                                                             key={label}
-                                                            onClick={() => path && navigate(path)} // ✅ ADDED
+                                                            // onClick={() => path && navigate(path)} 
+                                                            onClick={() => {
+                                                                if (child.action === "logout") {
+                                                                    logout();
+                                                                } else if (path) {
+                                                                    navigate(path);
+                                                                }
+                                                            }}
                                                             className={`w-full flex items-center gap-2.5 px-5 pl-[42px] py-1.5 text-[13px] transition-colors duration-150
                                                                 ${isActive ? "text-white bg-[#253447]" : "text-slate-500 hover:text-slate-200"}
                                                             `}
