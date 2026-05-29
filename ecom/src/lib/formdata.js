@@ -27,7 +27,7 @@
 export const getFormUrls = async () => {
     try {
         const response = await fetch(
-            "http://localhost:5000/api/form-urls/all-urls",
+            `${process.env.NEXT_PUBLIC_API_URL}/form-urls/all-urls`,
             {
                 method: "GET",
                 cache: "no-store",

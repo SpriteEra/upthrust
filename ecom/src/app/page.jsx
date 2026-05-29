@@ -127,10 +127,10 @@ const testimonials = [
 
 const page = async () => {
   const FORM_URLS = await getFormUrls();
-  // console.log("Form URLs in page.jsx:", FORM_URLS);
+  console.log("Form URLs in page.jsx:", FORM_URLS.ecom);
   return (
     <main id="main-content">
-      <Navbar />
+      <Navbar formUrl={FORM_URLS.ecom} />
       <div className='grid lg:grid-cols-2 px-6 sm:px-10 md:px-20 min-h-screen h-full bg-black text-white overflow-hidden max-h-full 3xl:max-h-[180vh]'>
         <div className='pt-30 sm:pt-35 md:pt-50 3xl:pt-62 flex flex-col'>
 
@@ -171,7 +171,7 @@ const page = async () => {
             <span className='font-semibold'>Ads</span> that stop the scroll, <span className='font-semibold'>pages</span> that convert, and <span className='font-semibold'>growth</span> that compounds
           </div>
 
-          <ScaleButton color="red" />
+          <ScaleButton formUrl={FORM_URLS.ecom} color="red" />
 
           <div className='mt-10 sm:mt-5 3xl:mt-7 flex flex-col'>
             <p className='text-lg lg:text-base 3xl:text-lg max-md:text-center tracking-[-0.02em]'>Brands we've scaled</p>
@@ -270,7 +270,7 @@ const page = async () => {
           </div>
           <span className='text-lg lg:text-sm 3xl:text-lg mt-2 mb-10 text-center tracking-[-0.02em]'>These ads averaged 8% CTR. Every brand below scaled past ₹2 crore. One team did it all</span>
         </div>
-        <StylishButton color='red' />
+        <StylishButton formUrl={FORM_URLS.ecom} color='red' />
         <SliderVideos />
       </div>
 
@@ -336,7 +336,7 @@ const page = async () => {
             subtitle="Scale to ₹2.5Cr+/month"
           />
         </div>
-        <ServicesAccordion />
+        <ServicesAccordion formUrl={FORM_URLS.ecom} />
       </div>
 
       <div>
@@ -488,7 +488,7 @@ const page = async () => {
           </div>
         </div>
 
-        <WhatWeDid />
+        <WhatWeDid formUrl={FORM_URLS.ecom} />
       </div>
 
 
@@ -566,7 +566,7 @@ const page = async () => {
         </div>
 
 
-        <FullPricingSection />
+        <FullPricingSection formUrl={FORM_URLS.ecom} />
       </div>
 
       <ScrollIndicator />
@@ -740,7 +740,7 @@ const page = async () => {
         <FAQ />
       </div>
 
-      <AskQuestionAndDisclaimer />
+      <AskQuestionAndDisclaimer formUrl={FORM_URLS.ecom} />
       <HomeFooter
         setwidth="max-w-2xl! 3xl:max-w-3xl!"
         text2={{

@@ -1,103 +1,3 @@
-
-// import { agencyPages } from "@/data/agencyPages";
-// import { googlePages } from "@/data/googlePages";
-// import { metaPages } from "@/data/metaPages";
-// import { seoPages } from "@/data/seoPages";
-
-// import { createMeta, Meta } from "@/lib/metadata";
-
-// import dynamic from "next/dynamic";
-
-// const EcomLayout = dynamic(() =>
-//     import("@/layouts/EcomAgency")
-// );
-
-// const GoogleAgencyLayout = dynamic(() =>
-//     import("@/layouts/GoogleAgency")
-// );
-
-// const MetaAgencyLayout = dynamic(() =>
-//     import("@/layouts/MetaAgency")
-// )
-// const SeoLayout = dynamic(() =>
-//     import("@/layouts/SeoAgency")
-// )
-
-
-// const pageConfig = [
-//     {
-//         source: agencyPages,
-//         component: EcomLayout,
-//     },
-//     {
-//         source: googlePages,
-//         component: GoogleAgencyLayout,
-//     },
-//     {
-//         source: metaPages,
-//         component: MetaAgencyLayout,
-//     },
-//     {
-//         source: seoPages,
-//         component: SeoLayout,
-//     },
-// ];
-
-
-// export default async function Page({ params }) {
-//     const { slug } = await params;
-
-//     if (!slug) {
-//         return <div>Invalid URL</div>;
-//     }
-
-//     for (const page of pageConfig) {
-//         const data = page.source?.[slug];
-
-//         if (data) {
-//             const Component = page.component;
-//             return <Component data={data} />;
-//         }
-//     }
-
-//     notFound();
-// }
-
-// export async function generateMetadata({ params }) {
-//     const { slug } = await params;
-
-//     if (!slug) {
-//         return {
-//             title: "Invalid Page",
-//         };
-//     }
-
-//     if (Meta[slug]) {
-//         return Meta[slug];
-//     }
-
-//     for (const page of pageConfig) {
-//         const data = page.source?.[slug];
-
-//         if (data) {
-//             return createMeta({
-//                 title: data.title,
-//                 description: data.description,
-//                 path: data.path,
-//                 keywords: data.keywords,
-//                 image: data.image,
-//             });
-//         }
-//     }
-
-//     return {
-//         title: "Page Not Found",
-//     };
-// }
-
-
-// app/[slug]/page.jsx
-
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 
@@ -117,7 +17,7 @@ const layoutMap = {
     "meta-ad-agency": MetaAgencyLayout,
     "seo-agency": SeoLayout,
     "performance-marketing-agency": PerformanceAgencyLayout,
-    "creative-agency": CreativeLayout
+    "creative-agency": CreativeLayout,
 };
 
 
@@ -129,7 +29,7 @@ async function getPageData(slug) {
                 cache: "no-store",
             }
         );
-
+        // console.log("response:", response);
 
         if (!response.ok) {
             return null;
@@ -168,32 +68,6 @@ export default async function Page({ params }) {
 
     return <Component data={data} />;
 }
-
-
-
-// export async function generateMetadata({ params }) {
-
-//     const { slug } = await params;
-
-//     const data = await getPageData(slug);
-
-//     if (!data) {
-//         return {
-//             title: "Page Not Found",
-//         };
-//     }
-
-//     return createMeta({
-//         title: data.title,
-//         description:
-//             data.additionalFields?.description || "",
-//         keywords:
-//             data.additionalFields?.keywords || [],
-//         image:
-//             data.additionalFields?.image || "",
-//         path: `/${slug}`,
-//     });
-// }
 
 
 

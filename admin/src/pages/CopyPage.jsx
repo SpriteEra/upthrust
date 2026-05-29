@@ -847,7 +847,7 @@ export default function CopyPagesManager() {
 
     // Group by parentPage
     const groups = filtered.reduce((acc, page) => {
-        const parentId = typeof page.parentPage === "object" ? page.parentPage._id : page.parentPage;
+        const parentId = typeof page.parentPage === "object" ? page.parentPage._id || page.parentPage.id : page.parentPage;
         const parentTitle = typeof page.parentPage === "object" ? page.parentPage.title : parentId;
         const parentUrl = typeof page.parentPage === "object" ? page.parentPage.url : "";
         if (!acc[parentId]) acc[parentId] = { parentId, parentTitle, parentUrl, pages: [] };
