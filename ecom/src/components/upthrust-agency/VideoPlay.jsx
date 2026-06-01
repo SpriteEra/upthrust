@@ -42,10 +42,10 @@ export default function PlayVideoSection() {
     return (
         <>
             {/* ─── SECTION ─── */}
-            <section className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden select-none max-w-[90%] mx-auto px-4 text-center">
+            <section className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden select-none max-w-[90%] mx-auto px-4 text-center py-10 lg:py-20">
 
                 {/* Tagline */}
-                <p className="text-[11px] font-bold tracking-[0.18em] text-neutral-500 uppercase mb-12 z-10">
+                <p className="text-[25px] 3xl:text-[36px] font-semibold tracking-[-0.02em] text-black leading-[150%] uppercase mb-12 z-10 pt-15 pb-25">
                     We build growth systems. Not campaigns.
                 </p>
 

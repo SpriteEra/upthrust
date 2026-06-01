@@ -8,6 +8,7 @@ import DropBoxScroll from '@/components/upthrust-agency/BoxScroll'
 import CaseStudyCard, { AgencyCaseStudy } from '@/components/upthrust-agency/CaseStudyCard'
 import HeroSection from '@/components/upthrust-agency/HeroSection'
 import MediaGrid from '@/components/upthrust-agency/MediaGrid'
+import ScrollText from '@/components/upthrust-agency/ScrollText'
 import ServicesSlider from '@/components/upthrust-agency/ServiceSlider'
 import PlayVideoSection from '@/components/upthrust-agency/VideoPlay'
 import Image from 'next/image'
@@ -57,9 +58,10 @@ const page = () => {
   return (
     <div>
       <HeroSection />
+      <ScrollText />
       <AgencyNavbar />
       <PlayVideoSection />
-      <div className="py-20">
+      <div className="pb-10 pt-30 ">
         <AgencyHeading
           tag="h2"
           heading={[

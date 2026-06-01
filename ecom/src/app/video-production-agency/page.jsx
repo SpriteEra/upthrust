@@ -2,22 +2,23 @@ import { Play } from 'lucide-react';
 import React from 'react'
 import { Curve1 } from '@/common/HandWritten';
 import MetaHeading from '@/common/MetaHeading';
-import MetaAdsHero from '@/components/creative-ads/HeroSection';
+import MetaAdsHero from '@/components/video-production/HeroSection';
 
 import dynamic from "next/dynamic";
 
-const ClientStories = dynamic(() => import('@/components/creative-ads/ClientStories'));
-const CreativeLeadForm = dynamic(() => import('@/components/creative-ads/CreativeLeadForm'));
-const CreativeNavbar = dynamic(() => import('@/components/creative-ads/CreativeNav'));
-const CreativeRocketButton = dynamic(() => import('@/components/creative-ads/CreativeRocketButton'));
-const DashboardStacks = dynamic(() => import('@/components/creative-ads/DashboardStack'));
-const MetaDisclaimer = dynamic(() => import('@/components/creative-ads/MetaDisclaimer'));
-const UGCVideoCategories = dynamic(() => import('@/components/creative-ads/MetaUgcs'));
-const ProcessTimeline = dynamic(() => import('@/components/creative-ads/ProgressBar'));
+const ClientStories = dynamic(() => import('@/components/video-production/ClientStories'));
+const CreativeLeadForm = dynamic(() => import('@/components/video-production/CreativeLeadForm'));
+const CreativeNavbar = dynamic(() => import('@/components/video-production/CreativeNav'));
+const CreativeRocketButton = dynamic(() => import('@/components/video-production/CreativeRocketButton'));
+const DashboardStacks = dynamic(() => import('@/components/video-production/DashboardStack'));
+const MetaDisclaimer = dynamic(() => import('@/components/video-production/MetaDisclaimer'));
+const UGCVideoCategories = dynamic(() => import('@/components/video-production/MetaUgcs'));
+const ProcessTimeline = dynamic(() => import('@/components/video-production/ProgressBar'));
 // const { ComparisonTable } = dynamic(() => import('@/components/home/ComparisonTable'));
 import { ComparisonTable } from '@/components/home/ComparisonTable';
 import CommonLeadForm from '@/common/commonLeadForm';
 import { getFormUrls } from '@/lib/formdata';
+import AgencyFooter from '@/components/upthrust-agency/AgencyFooter';
 
 const FAQ = dynamic(() => import('@/components/home/Faq'));
 const HomeFooter = dynamic(() => import('@/components/home/HomeFooter'));
@@ -162,29 +163,29 @@ const faqs = [
             "We begin with a discovery and research phase, move into concepting and design, iterate with feedback, and finally optimize delivery all aligned to your campaign goals and metrics"
     },
     {
-        question: "What makes your creative ads different from other agencies?",
+        question: " How do you make sure the video actually performs? ",
         answer:
-            "We combine strategic thinking, audience psychology, storytelling craftsmanship, and performance insight to build ads that are not just visually appealing but actually drive results."
+            "We shoot for the algorithm and the customer, not the showreel. Hooks are tested, edits are built around watch time and conversion. If a video isn't performing within 7–10 days of launch, we reshoot the hook."
     },
     {
-        question: "How long does it take to create and launch an ad?",
+        question: "How many variants do you ship per shoot?",
         answer:
-            "Turnaround varies by complexity and format. Simple variants of existing concepts can be delivered faster, while original concepts with strategy and storyboarding need additional time for refinement."
+            "3–5 finals per shoot minimum. Different hooks, different lengths, different aspect ratios (9:16, 1:1, 16:9). One shoot powers 2–3 weeks of testing."
     },
     {
-        question: "Can you produce creatives for both paid ads and organic social content?",
+        question: " What metrics do you use to measure success?",
         answer:
-            "Absolutely, our creative strategies are built to support both paid acquisition funnels and high-impact organic storytelling that strengthens your brand presence."
+            "Depends on the goal. Ads → CTR, hook rate, watch-through, CPA. Brand films → watch time, completion, shares. Podcasts → listen-through, follower growth. We agree on metrics in the brief, then build the video to hit them."
     },
     {
-        question: "Can you help with ad testing and optimization?",
+        question: "Can you shoot in multiple cities?",
         answer:
-            "Yes, we don’t just create static assets. We build multiple versions for A/B testing, track performance metrics, and refine creatives based on real engagement and conversion data."
+            "Yes. Crew and gear across multiple cities in India. International shoots coordinated via partner studios. Send the brief, we'll quote logistics in the SOW."
     },
     {
-        question: "How do you ensure the ads align with our brand’s identity and message?",
+        question: "What makes you different from other production agencies?",
         answer:
-            "We deeply integrate your brand guidelines and strategic positioning into the creative process so every ad reflects your voice, values, and desired brand recall."
+            "Most studios shoot what looks good. We shoot what performs. Every decision — hook, length, framing, edit, music - is made for the metric, not the showreel. Pretty videos that flop aren't our deliverable."
     }
 ];
 
@@ -246,24 +247,27 @@ const page = async () => {
                     heading={[
                         {
                             line: [
-                                { type: "normal", text: "How Top Brands Consistently Launch" },
+                                { type: "normal", text: "How" },
+                                { type: "italic", text: "D2C brands" },
+                                { type: "normal", text: "turn video" },
+
                             ],
                         },
                         {
                             line: [
-                                { type: "normal", text: " Ads That Actually" },
-                                { type: "italic", text: "Drive Revenue" },
+                                { type: "normal", text: "into their #1 growth lever" },
+
 
                             ],
                         }
 
                     ]}
-                    label="Why it would work for you"
+                    label="THE UPTHRUST SYSTEM"
                     subtitle="The repeatable framework trusted by growth teams at Tiggle, L'ORÉAL & Harley Davidson, pokerbazi, cosco, tata cliq, victoria secret"
 
                 />
 
-                <CircularDesign mobileImage='/creative-agency/adspent-graph.png' desktopImage='/creative-agency/adspent-graph-desktop.webp' />
+                <CircularDesign mobileImage='/creative-agency/adspent-graph.png' desktopImage='/video-production/circular.png' />
 
             </div>
             <div className="3xl:pt-10" id="hear-from-them">
@@ -271,7 +275,7 @@ const page = async () => {
                     tag="h2"
                     heading={[
                         {
-                            line: [{ type: "normal", text: " How These Brands Made Creative" }],
+                            line: [{ type: "normal", text: " How These Brands Made Video" }],
                         },
                         {
                             line: [
@@ -291,7 +295,7 @@ const page = async () => {
                     tag="h2"
                     heading={[
                         {
-                            line: [{ type: "normal", text: "The Truth About Creative Ads " }],
+                            line: [{ type: "normal", text: "The Truth About Video  " }],
                         },
                         {
                             line: [
@@ -300,14 +304,14 @@ const page = async () => {
                         },
                     ]}
                     label="WHAT SETS US APART"
-                    subtitle="It starts with deep audience research, proven ad frameworks, and relentless testing."
+                    subtitle="It starts with the hook, the crew, the edit, and the test - in that order."
 
                 />
                 <ScaleCards cards={cardsData} />
                 <BrandSlider brandsRow1={brandsRow1} brandsRow2={brandsRow2} />
             </div>
             <div>
-                <DropLetters titleItalic='Creative-first ' titleNormal='agency for brands' />
+                <DropLetters titleItalic='Video-first ' titleNormal='agency for brands' />
                 <StatsGrid className={"bg-orange"} />
             </div>
             <div className="py-12 xl:py-30 ">
@@ -316,14 +320,13 @@ const page = async () => {
                     heading={[
                         {
                             line: [{ type: "normal", text: "The Art & Science of" },
-                            { type: "italic", text: "Creative Performance " },
+                            { type: "italic", text: "Video Performance " },
                             ],
                         },
 
                     ]}
                     label="OUR PROCESS"
-                    subtitle=" We've engineered a systematic approach that turns brand stories into scroll-stopping content—balancing 
-creative intuition with data-driven precision."
+                    subtitle="A 5-step system that turns scripts into videos that perform - every decision made for the metric, not the showreel."
 
                 />
 
@@ -342,18 +345,18 @@ creative intuition with data-driven precision."
                         </p>
                         <h2 className="text-[2.25rem] md:text-[2.5rem] lg:text-[3.125rem] xl:text-5xl 2xl:text-[55px] 1600:text-[4rem] 1800:text-[4.5rem] font-semibold  leading-11 md:leading-[130%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize text-black">
                             What Happens When<br />
-                            Creative Agency<br />
+                            Video Production<br />
                             Actually{" "}
                             <span className="text-[2.625rem] md:text-[3.125rem] lg:text-[3.4375rem]  xl:text-5xl 2xl:xl:text-[55px] 1600:text-[4.5rem] 1800:text-[5rem] font-normal  leading-11 xl:leading-[120%] tracking-[-0.02em] xl:tracking-[0em] capitalize font-instrument italic">
-                                Delivers ROI
+                                Performs
                             </span>{" "}
 
                         </h2>
                         <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em] max-w-150 3xl:max-w-180">
-                            These brands were tired of choosing between creative excellence and measurable performance. They found an agency that refused to compromise on either.
+                            These brands were tired of choosing between video excellence and measurable performance. They found an agency that refused to compromise on either.
                         </p>
                         <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
-                            Distinctive creative. Data-driven process. Undeniable results
+                            Distinctive video. Data-driven process. Undeniable results
                         </p>
                         <CreativeRocketButton formUrl={FORM_URLS.creative} />
                     </div>
@@ -402,7 +405,7 @@ creative intuition with data-driven precision."
                     tag="h2"
                     heading={[
                         {
-                            line: [{ type: "normal", text: " The Fastest Way To Get Creative That" }],
+                            line: [{ type: "normal", text: " The Fastest Way To Get Video That" }],
                         },
                         {
                             line: [
@@ -426,13 +429,13 @@ creative intuition with data-driven precision."
                     heading={[
                         {
                             line: [{ type: "normal", text: "Look but don't replay these" },
-                            { type: "italic", text: "UGCs" },
+                            { type: "italic", text: "Videos" },
 
                             ],
                         }
                     ]}
                     label="WHY WE ARE DIFFERENT"
-                    subtitle="Creatives that gets conversion"
+                    subtitle="Videos that gets conversion"
                 />
                 <UGCVideoCategories />
             </div>
@@ -442,14 +445,14 @@ creative intuition with data-driven precision."
                     tag="h2"
                     heading={[
                         {
-                            line: [{ type: "normal", text: "The Work. The Results. The Thinking" },
+                            line: [{ type: "normal", text: "the work. the results. the process  " },
 
                             ],
                         },
                         {
                             line: [
                                 { type: "normal", text: "That" },
-                                { type: "italic", text: "Made It Happen" },
+                                { type: "italic", text: "created impact" },
 
                             ],
                         }
@@ -672,7 +675,7 @@ creative intuition with data-driven precision."
                 />
             </div>
 
-            <MetaDisclaimer formUrl={FORM_URLS.creative} />
+            {/* <MetaDisclaimer formUrl={FORM_URLS.creative} />
             <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
                 desktop: {
                     text1: "YOUR SUBMISSION GOES HERE.",
@@ -682,7 +685,11 @@ creative intuition with data-driven precision."
                     text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",
                     text2: "",
                 },
-            }} />
+            }} /> */}
+            <div className="pt-10 xl:pt-15 3xl:pt-20" />
+
+
+            <AgencyFooter />
         </main>
     )
 }

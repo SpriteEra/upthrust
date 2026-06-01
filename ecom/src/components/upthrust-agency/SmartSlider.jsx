@@ -49,7 +49,6 @@ export default function SmartSwiper({
     onSwiperReady,
     onSlideChange,
 
-    // effects: "slide" | "fade" | "cube" | "coverflow"
     effect = "slide",
 
     // advanced
@@ -72,16 +71,11 @@ export default function SmartSwiper({
     }, []);
 
     useEffect(() => {
-        // ── Guard: swiper not ready or autoplay prop disabled ──
         if (!swiperRef.current || !autoplay) return;
 
-        // ── Guard: autoplay module may not be initialised yet ──
-        // This happens when Swiper is still mounting or the Autoplay
-        // module wasn't included. Safe to skip — the onSwiper callback
-        // will trigger this effect again once the instance is ready.
+
         if (!swiperRef.current.autoplay) return;
 
-        // hover-play mode on desktop bypasses inView control
         if (hoverPlayDesktop && isDesktop) return;
 
         if (inView) {
@@ -91,7 +85,6 @@ export default function SmartSwiper({
         }
     }, [inView, autoplay, hoverPlayDesktop, isDesktop]);
 
-    // Helper: safely start/stop after any swiper event
     const safeAutoplayControl = (swiper, action) => {
         if (!autoplay || !swiper?.autoplay) return;
         swiper.autoplay[action]?.();
@@ -120,10 +113,7 @@ export default function SmartSwiper({
                     swiperRef.current = swiper;
                     onSwiperReady?.(swiper);
 
-                    // ── FIX: start autoplay here once the instance is ready ──
-                    // We don't use `enabled: false` anymore (that prevents the
-                    // module from initialising). Instead we let Swiper start
-                    // normally and immediately stop it if not in view.
+
                     if (autoplay && swiper.autoplay) {
                         if (!inView) swiper.autoplay.stop();
                     }
@@ -141,10 +131,7 @@ export default function SmartSwiper({
                         ? {
                             delay,
                             disableOnInteraction: false,
-                            // ── FIX: removed `enabled: false` ──────────────
-                            // Setting enabled:false prevents Swiper from
-                            // initialising the autoplay module at all, which
-                            // makes .autoplay undefined and crashes on .stop()
+
                         }
                         : false
                 }
