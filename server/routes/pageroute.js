@@ -10,16 +10,17 @@ import {
     removeAdditionalField,
     deletePage,
 } from "../controllers/pageController.js";
+import authFlex from "../middleware/authFlex.js";
 
 const router = express.Router();
 
-router.post("/create-page", createPage);
-router.get("/all-pages", getAllPages);
+router.post("/create-page", authFlex, createPage);
+router.get("/all-pages", authFlex, getAllPages);
 router.get("/:id", getPage);              // id or url slug
-router.put("/:id", updatePage);            // title, url, faq
-router.patch("/:id/field", upsertAdditionalField); // single key
-router.patch("/:id/fields", bulkUpdateAdditionalFields); // multiple keys
-router.delete("/:id/field", removeAdditionalField); // remove a key
-router.delete("/:id", deletePage);
+router.put("/:id", authFlex, updatePage);            // title, url, faq
+router.patch("/:id/field", authFlex, upsertAdditionalField); // single key
+router.patch("/:id/fields", authFlex, bulkUpdateAdditionalFields); // multiple keys
+router.delete("/:id/field", authFlex, removeAdditionalField); // remove a key
+router.delete("/:id", authFlex, deletePage);
 
 export default router;
