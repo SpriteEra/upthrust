@@ -10,39 +10,39 @@ const CARDS = [
     {
         id: 1,
         type: "gif",
-        src: "/media/creative-performance.gif",
-        tag: "Creative",
+        src: "/main-agency/grid/first.gif",
+
         title: "Creative Performance",
         stats: "200+ UGC videos",
         description:
-            "Average CTR 8.3%. Ads people actually watch till the end.",
+            "200+ UGC videos. Average CTR: 8.2%. Ads people actually watch till the end.",
     },
     {
         id: 2,
         type: "image",
-        src: "/media/meta-ads.webp",
-        tag: "Paid Social",
+        src: "/main-agency/grid/laptop.png",
+
         title: "Meta Ads",
         description:
-            "3.8x ROAS across 90+ ad sets. The dashboard here said more than we ever could.",
+            "3.8x ROAS across 60+ brands. The dashboard here says more than we ever could.",
     },
     {
         id: 3,
         type: "gif",
-        src: "/media/google-ads.gif",
-        tag: "Paid Search",
+        src: "/main-agency/grid/third.gif",
+
         title: "Google Ads",
         description:
-            "$6M+ managed profitably. Not a typo. Not a flex. An actual number.",
+            "$50M managed profitably. Not a typo. Not a range. An actual number.",
     },
     {
         id: 4,
         type: "video",
-        src: "/media/full-stack-win.mp4",
-        tag: "Case Study",
+        src: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Carorbis%20testimonial.mp4",
+
         title: "Full Stack Win",
         description:
-            `One client. One team. 443% organic growth and a phone call that started with "we just crossed $1M".`,
+            `One client. One team. 463% organic growth and a phone call that started with "we just crossed $3M."`,
     },
 ];
 
@@ -91,10 +91,7 @@ function MediaCard({ card }) {
 
             {/* Text content — top-left */}
             <div className="absolute top-0 left-0 p-5 md:p-6 flex flex-col gap-1.5 max-w-[70%]">
-                {/* Tag pill */}
-                <span className="inline-flex w-fit items-center rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-2.5 py-0.5 text-[10px] md:text-[11px] text-white/80 font-medium tracking-widest uppercase">
-                    {card.tag}
-                </span>
+
 
                 {/* Title */}
                 <h3 className="text-white font-semibold text-lg md:text-xl lg:text-2xl leading-tight tracking-tight mt-0.5">
@@ -118,7 +115,7 @@ function MediaCard({ card }) {
             <div className="absolute bottom-4 right-4 flex items-center gap-1.5 opacity-60">
                 {card.type === "video" && (
                     <span className="text-[10px] text-white tracking-widest uppercase font-medium">
-                        ▶ Live
+
                     </span>
                 )}
                 {card.type === "gif" && (
