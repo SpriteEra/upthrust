@@ -30,7 +30,7 @@ export const testimonials = [
     },
     {
         rating: 5.0,
-        text: "What clicked for me was your ability to take ownership. You are clear about the process, which is rare in agencies.",
+        text: "What clicked for me was yourr ability to take ownership. You are clear about the process, which is rare in agencies.",
         name: "Iti Dubey",
         role: "Marketing Head, Mukunda Foods",
         avatar: "/uiux/profile/iti-dubey.webp",

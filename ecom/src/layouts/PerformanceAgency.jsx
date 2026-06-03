@@ -87,16 +87,16 @@ export const metadata = {
         "Performance Marketing Agency",
     ],
 
-    metadataBase: new URL("https://www.upthrust.agency"),
+    metadataBase: new URL("https://upthrust.agency"),
 
     alternates: {
-        canonical: "https://www.upthrust.agency/performance-marketing-agency",
+        canonical: "https://upthrust.agency/performance-marketing-agency",
     },
 
     openGraph: {
         title: "Performance Marketing Agency Built for Real Revenue Growth",
         description: "Stop guessing with ads. Our performance marketing team audits your ad account, fixes wasted spend, and builds scalable revenue campaigns.",
-        url: "https://www.upthrust.agency/performance-marketing-agency",
+        url: "https://upthrust.agency/performance-marketing-agency",
         siteName: "Upthrust",
         // images: [
         //     {

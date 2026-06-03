@@ -1,4 +1,3 @@
-
 // import GoogleAdsHero from '@/components/google-ads/GoogleAdsHero'
 // import GoogleAdsRoiPrediction from '@/components/google-ads/GoogleAdsRoiPrediction'
 // import PredictGrowth from '@/components/google-ads/PredictGrowth'
@@ -48,7 +47,7 @@
 //         "Google Ads Agency",
 //     ],
 
-//     metadataBase: new URL("https://www.upthrust.agency"),
+//     metadataBase: new URL("https://upthrust.agency"),
 
 //     alternates: {
 //         canonical: "/",
@@ -57,7 +56,7 @@
 //     openGraph: {
 //         title: "Google Ads Agency That Scales Profitably",
 //         description: "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
-//         url: "https://www.upthrust.agency",
+//         url: "https://upthrust.agency",
 //         siteName: "Upthrust",
 //         images: [
 //             {
@@ -87,7 +86,6 @@
 
 //     const FORM_URLS = await getFormUrls();
 //     // console.log("formurl is google ", FORM_URLS.googleads);
-
 
 //     return (
 //         <main>
@@ -130,7 +128,6 @@
 //                         ],
 //                     ]}
 //                 />
-
 
 //                 <div className='max-xl:hidden sm:max-w-[90%] sm:mx-auto w-full '>
 //                     <GoogleAdsRoiPrediction formUrl={FORM_URLS.googleads} />
@@ -319,7 +316,6 @@
 
 //                         ],
 
-
 //                     ]}
 //                     subtitle="Anyone can drive traffic. We drive demand that converts."
 //                 />
@@ -416,7 +412,6 @@
 //                                 icon: "/google-ads/icons/calendar.webp",
 //                             },
 
-
 //                         ],
 
 //                         [
@@ -469,7 +464,6 @@
 
 // export default GoogleAgencyLayout
 
-
 import GoogleAdsHero from "@/components/google-ads/GoogleAdsHero";
 import GoogleAdsRoiPrediction from "@/components/google-ads/GoogleAdsRoiPrediction";
 import PredictGrowth from "@/components/google-ads/PredictGrowth";
@@ -492,441 +486,443 @@ import HomeFooter from "@/components/home/HomeFooter";
 import GoogleCommonButton from "@/components/google-ads/GoogleCommonButton";
 import { getFormUrls } from "@/lib/formdata";
 import CommonFormModal from "@/common/commonFormModal";
+import GoogleAgencyJson from "@/seojsonld/GoogleAgencyJson";
 
 const badges = [
-    { image: "/badges/user-love.webp", alt: "User Love Badge" },
-    { image: "/badges/moment-leader.webp", alt: "Moment Leader Badge" },
-    { image: "/badges/best-roi.webp", alt: "Best Roi Badge" },
-    { image: "/badges/most-implementable.webp", alt: "Most Implementable Badge" },
-    { image: "/badges/high-performer.webp", alt: "High Performer Badge" },
-    {
-        image: "/badges/highest-user-adoption.webp",
-        alt: "Highest User Adoption Badge",
-    },
+  { image: "/badges/user-love.webp", alt: "User Love Badge" },
+  { image: "/badges/moment-leader.webp", alt: "Moment Leader Badge" },
+  { image: "/badges/best-roi.webp", alt: "Best Roi Badge" },
+  { image: "/badges/most-implementable.webp", alt: "Most Implementable Badge" },
+  { image: "/badges/high-performer.webp", alt: "High Performer Badge" },
+  {
+    image: "/badges/highest-user-adoption.webp",
+    alt: "Highest User Adoption Badge",
+  },
 ];
 
 const words = [
-    { text: "PPC", color: "#10B981" },
-    { text: "Google Ads", color: "#3B82F6" },
-    { text: "Bing Ads", color: "#F59E0B" },
+  { text: "PPC", color: "#10B981" },
+  { text: "Google Ads", color: "#3B82F6" },
+  { text: "Bing Ads", color: "#F59E0B" },
 ];
 
 export const metadata = {
-    title: "Google Ads Agency for Predictable Growth | Upthrust",
+  title: "Google Ads Agency for Predictable Growth | Upthrust",
 
+  description:
+    "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+
+  keywords: ["Google Ads Agency"],
+
+  metadataBase: new URL("https://upthrust.agency"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Google Ads Agency That Scales Profitably",
     description:
-        "Scale your D2C brand with proven ads, CRO, and retention systems. Upthrust helps ecommerce brands grow profitably with data-driven execution.",
+      "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+    url: "https://upthrust.agency",
+    siteName: "Upthrust",
+    images: [
+      {
+        url: "/google-ads/ogimg.png",
+        width: 1200,
+        height: 630,
+        alt: "Upthrust – D2C Ecommerce Marketing Agency",
+      },
+    ],
+    type: "website",
+  },
 
-    keywords: ["Google Ads Agency"],
+  twitter: {
+    card: "summary_large_image",
+    title: "Google Ads Agency That Scales Profitably",
+    description:
+      "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
+    images: ["/google-ads/ogimg.png"],
+  },
 
-    metadataBase: new URL("https://www.upthrust.agency"),
-
-    alternates: {
-        canonical: "/",
-    },
-
-    openGraph: {
-        title: "Google Ads Agency That Scales Profitably",
-        description:
-            "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
-        url: "https://www.upthrust.agency",
-        siteName: "Upthrust",
-        images: [
-            {
-                url: "/google-ads/ogimg.png",
-                width: 1200,
-                height: 630,
-                alt: "Upthrust – D2C Ecommerce Marketing Agency",
-            },
-        ],
-        type: "website",
-    },
-
-    twitter: {
-        card: "summary_large_image",
-        title: "Google Ads Agency That Scales Profitably",
-        description:
-            "We manage $12M+ in Google Ads spend with structured PPC systems built for predictable scaling and real ROI",
-        images: ["/google-ads/ogimg.png"],
-    },
-
-    robots: {
-        index: true,
-        follow: true,
-    },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const GoogleAgencyLayout = async ({ data }) => {
-    const FORM_URLS = await getFormUrls();
-    // console.log("formurl is google ", FORM_URLS.googleads);
+  const FORM_URLS = await getFormUrls();
+  // console.log("formurl is google ", FORM_URLS.googleads);
 
-    return (
-        <main>
-            <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[140px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
-                <div className="max-sm:px-2.5 w-full sm:max-w-[92%] mx-auto ">
-                    <div className="flex items-center justify-between ">
-                        <div className="shrink-0 ">
-                            <Image
-                                src="/logo.png"
-                                height={100}
-                                width={200}
-                                alt="Upthrust agency logo"
-                                priority
-                                className="h-6 sm:h-7 3xl:h-12 object-contain w-full"
-                            />
-                        </div>
-                        <div className="flex items-center gap-5 3xl:gap-6">
-                            <span className="text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden">
-                                Get light years ahead with google ads
-                            </span>
+  return (
+    <main>
+      <GoogleAgencyJson faqs={data.additionalFields.faqs} />
+      <nav className=" bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 3xl:h-[140px] 2xl:h-[105px] xl:h-[100px] sm:h-20 h-19">
+        <div className="max-sm:px-2.5 w-full sm:max-w-[92%] mx-auto ">
+          <div className="flex items-center justify-between ">
+            <div className="shrink-0 ">
+              <Image
+                src="/logo.png"
+                height={100}
+                width={200}
+                alt="Upthrust agency logo"
+                priority
+                className="h-6 sm:h-7 3xl:h-12 object-contain w-full"
+              />
+            </div>
+            <div className="flex items-center gap-5 3xl:gap-6">
+              <span className="text-lg 3xl:text-xl leading-[150%] tracking-[-0.02em] max-lg:hidden">
+                Get light years ahead with google ads
+              </span>
 
-                            <GoogleCommonButton
-                                text="Scale Your PPC"
-                                formUrl={FORM_URLS.googleads}
-                            />
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <GoogleAdsHero
-                title={data.additionalFields.title}
+              <GoogleCommonButton
+                text="Scale Your PPC"
                 formUrl={FORM_URLS.googleads}
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <GoogleAdsHero
+        title={data.additionalFields.title}
+        formUrl={FORM_URLS.googleads}
+      />
+
+      <div className="flex flex-col mt-20 md:mt-26 3xl:mt-25">
+        <CommonHeading
+          heading={[
+            // 🔹 Line 1
+            [{ type: "text", value: "Two Factors That Predict" }],
+
+            // 🔹 Line 2
+            [
+              { type: "text", value: "Your Google Ads " },
+              {
+                type: "highlight",
+                value: "ROI",
+                bgColor: "bg-[#FFE187]",
+                textColor: "text-[#E46800]",
+                icon: "/google-ads/icons/altitude2.svg",
+              },
+            ],
+          ]}
+        />
+
+        <div className="max-xl:hidden sm:max-w-[90%] sm:mx-auto w-full ">
+          <GoogleAdsRoiPrediction formUrl={FORM_URLS.googleads} />
+        </div>
+        <div className="max-sm:px-2 xl:hidden sm:max-w-[98%] sm:mx-auto w-full ">
+          <GoogleAdsRoiPredictionSlider formUrl={FORM_URLS.googleads} />
+        </div>
+      </div>
+      <div className="my-25 sm:my-30 3xl:my-70 text-center">
+        <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold max-sm:max-w-70 mx-auto ">
+          We&apos;re the highest-rated{" "}
+          <span className="font-semibold">Google Ads</span> agency
+        </h3>
+        {/* BADGES ROW */}
+        <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
+          {badges.map((item, index) => (
+            <Image
+              key={index}
+              width={164}
+              height={164}
+              alt={item.alt}
+              src={item.image}
+              className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
             />
+          ))}
+        </div>
+      </div>
 
-            <div className="flex flex-col mt-20 md:mt-26 3xl:mt-25">
-                <CommonHeading
-                    heading={[
-                        // 🔹 Line 1
-                        [{ type: "text", value: "Two Factors That Predict" }],
+      {/* video zoom  */}
+      <CommonHeading
+        heading={[
+          [
+            { type: "text", value: "Watch Us Manage " },
+            {
+              type: "highlight",
+              value: "1.2M",
+              bgColor: "bg-[#E7F0FF]",
+              textColor: "text-[#0076F0]",
+              icon: "/google-ads/icons/paid.webp",
+            },
+            { type: "text", value: " In " },
+          ],
 
-                        // 🔹 Line 2
-                        [
-                            { type: "text", value: "Your Google Ads " },
-                            {
-                                type: "highlight",
-                                value: "ROI",
-                                bgColor: "bg-[#FFE187]",
-                                textColor: "text-[#E46800]",
-                                icon: "/google-ads/icons/altitude2.svg",
-                            },
-                        ],
-                    ]}
-                />
+          [{ type: "text", value: "Monthly Ad Spend" }],
+        ]}
+      />
+      <VideoZoom />
+      {/* scroll text  */}
+      <div className="3xl:my-30 my-20">
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "Our Clients Generated " },
+              {
+                type: "highlight",
+                value: "47M",
+                bgColor: "bg-[#FFE7E5]",
+                textColor: "text-[#FE2B27]",
+                icon: "/google-ads/icons/paid3.webp",
+              },
+            ],
 
-                <div className="max-xl:hidden sm:max-w-[90%] sm:mx-auto w-full ">
-                    <GoogleAdsRoiPrediction formUrl={FORM_URLS.googleads} />
-                </div>
-                <div className="max-sm:px-2 xl:hidden sm:max-w-[98%] sm:mx-auto w-full ">
-                    <GoogleAdsRoiPredictionSlider formUrl={FORM_URLS.googleads} />
-                </div>
-            </div>
-            <div className="my-25 sm:my-30 3xl:my-70 text-center">
-                <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold max-sm:max-w-70 mx-auto ">
-                    We&apos;re the highest-rated{" "}
-                    <span className="font-semibold">Google Ads</span> agency
-                </h3>
-                {/* BADGES ROW */}
-                <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
-                    {badges.map((item, index) => (
-                        <Image
-                            key={index}
-                            width={164}
-                            height={164}
-                            alt={item.alt}
-                            src={item.image}
-                            className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
-                        />
-                    ))}
-                </div>
-            </div>
+            [{ type: "text", value: " Last Year" }],
+          ]}
+          subtitle="From fifty thousand per month to Two Million"
+        />
 
-            {/* video zoom  */}
-            <CommonHeading
-                heading={[
-                    [
-                        { type: "text", value: "Watch Us Manage " },
-                        {
-                            type: "highlight",
-                            value: "1.2M",
-                            bgColor: "bg-[#E7F0FF]",
-                            textColor: "text-[#0076F0]",
-                            icon: "/google-ads/icons/paid.webp",
-                        },
-                        { type: "text", value: " In " },
-                    ],
+        <BrandSlider />
+      </div>
+      <div className="w-full mt-20 3xl:mt-24 mb-10 3xl:mb-16">
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "The " },
+              {
+                type: "highlight",
+                value: "4-Phase",
+                bgColor: "bg-[#C8EBD6]",
+                textColor: "text-[#00822E]",
+                icon: "/google-ads/icons/paid2.webp",
+              },
+              { type: "text", value: " System" },
+            ],
 
-                    [{ type: "text", value: "Monthly Ad Spend" }],
-                ]}
+            [{ type: "text", value: "Behind Predictable Ad Revenue" }],
+          ]}
+          subtitle="From first audit to full scale: every step measured, every dollar accounted for."
+        />
+        <PredictGrowth />
+      </div>
+
+      <div className="my-20 xl:my-30 3xl:mt-50 3xl:mb-16 text-center">
+        <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold max-sm:max-w-70 mx-auto">
+          Industry Leading <span className="font-semibold">Google Ads</span>{" "}
+          Expertise
+        </h3>
+        {/* BADGES ROW */}
+        <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
+          {badges.map((item, index) => (
+            <Image
+              key={index}
+              width={164}
+              height={164}
+              alt={item.alt}
+              src={item.image}
+              className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
             />
-            <VideoZoom />
-            {/* scroll text  */}
-            <div className="3xl:my-30 my-20">
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "Our Clients Generated " },
-                            {
-                                type: "highlight",
-                                value: "47M",
-                                bgColor: "bg-[#FFE7E5]",
-                                textColor: "text-[#FE2B27]",
-                                icon: "/google-ads/icons/paid3.webp",
-                            },
-                        ],
+          ))}
+        </div>
+      </div>
 
-                        [{ type: "text", value: " Last Year" }],
-                    ]}
-                    subtitle="From fifty thousand per month to Two Million"
+      <CommunicationScroll />
+
+      <div className="mt-16 3xl:mt-16">
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "What Our " },
+              {
+                type: "highlight",
+                value: "Clients",
+                bgColor: "bg-[#FFE187]",
+                textColor: "text-[#E46800]",
+                icon: "/google-ads/icons/new.webp",
+              },
+              { type: "text", value: " Say" },
+            ],
+          ]}
+          subtitleCss="mt-2"
+          subtitle="We Asked One Question: “What Changed?” - Here’s what they said, in their own words."
+        />
+        <ClientTestimonials />
+      </div>
+      <div className="3xl:my-36 my-20">
+        <CommonHeading
+          heading={[
+            [{ type: "text", value: "What Happened When We Ran" }],
+
+            [
+              { type: "text", value: "Their " },
+              {
+                type: "highlight",
+                value: "Campaigns",
+                bgColor: "bg-[#E7F0FF]",
+                textColor: "text-[#004FAC]",
+                icon: "/google-ads/icons/campaign.webp",
+              },
+            ],
+          ]}
+        />
+        <CompaignCards />
+      </div>
+      <div>
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "How We Help You " },
+              {
+                type: "highlight",
+                value: "Win",
+                bgColor: "bg-[#FFE7E5]",
+                textColor: "text-[#FE2B27]",
+                icon: "/google-ads/icons/ads_click.webp",
+              },
+              {
+                type: "text",
+                value: " At The Game Of",
+              },
+            ],
+
+            [{ type: "text", value: "PPC, Google and Bing Ads " }],
+          ]}
+          subtitle="Anyone can drive traffic. We drive demand that converts."
+        />
+        <CircularHelp />
+      </div>
+
+      <div className="w-full py-10 3xl:py-35 max-w-[90%] 3xl:max-w-[85%] mx-auto">
+        <div className="space-y-14 md:space-y-20 3xl:space-y-40">
+          {/* Section 1 */}
+          <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
+            {/* Left Content */}
+            <div className="w-full sm:w-[45%] max-w-150 overflow-hidden">
+              <h2 className="text-4xl md:text-[44px] 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
+                From Launch To 4.2X ROAS In Just 90 Days
+              </h2>
+              <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
+                Our Google Ads dashboard shows exactly how performance is
+                tracked, diagnosed, and improved.
+              </p>
+            </div>
+
+            {/* Right Video */}
+            <div className="w-full sm:w-[55%] h-full">
+              <div className="relative w-full aspect-16/10 overflow-hidden ">
+                <video
+                  className="w-full h-full object-cover "
+                  src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
+                  // autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
                 />
-
-                <BrandSlider />
+              </div>
             </div>
-            <div className="w-full mt-20 3xl:mt-24 mb-10 3xl:mb-16">
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "The " },
-                            {
-                                type: "highlight",
-                                value: "4-Phase",
-                                bgColor: "bg-[#C8EBD6]",
-                                textColor: "text-[#00822E]",
-                                icon: "/google-ads/icons/paid2.webp",
-                            },
-                            { type: "text", value: " System" },
-                        ],
+          </div>
 
-                        [{ type: "text", value: "Behind Predictable Ad Revenue" }],
-                    ]}
-                    subtitle="From first audit to full scale: every step measured, every dollar accounted for."
+          {/* Section 2 */}
+          <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
+            {/* Left Video */}
+            <div className="w-full sm:w-[52%] order-2 lg:order-1">
+              <div className="relative w-full aspect-16/10 overflow-hidden ">
+                <video
+                  className="w-full h-full object-cover"
+                  src="https://cdn.upthrust.agency/Google%20ads/Quietly%20Successful%20Google%20Ads%20Result%20Dashboard.mp4"
+                  // autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
                 />
-                <PredictGrowth />
+              </div>
             </div>
 
-            <div className="my-20 xl:my-30 3xl:mt-50 3xl:mb-16 text-center">
-                <h3 className="text-[18px] px-10 3xl:text-[24px] leading-[150%] tracking-[-0.02em] font-normal lg:font-semibold max-sm:max-w-70 mx-auto">
-                    Industry Leading <span className="font-semibold">Google Ads</span>{" "}
-                    Expertise
-                </h3>
-                {/* BADGES ROW */}
-                <div className="flex mt-10 3xl:mt-12 flex-wrap gap-3 sm:gap-6 md:gap-10 w-full items-center justify-center">
-                    {badges.map((item, index) => (
-                        <Image
-                            key={index}
-                            width={164}
-                            height={164}
-                            alt={item.alt}
-                            src={item.image}
-                            className="w-12 sm:w-18 md:w-24 3xl:w-41 h-full object-contain"
-                        />
-                    ))}
-                </div>
+            {/* Right Content */}
+            <div className="order-1 w-full sm:w-[48%] lg:order-2 sm:pl-20">
+              <div className="flex justify-end 3xl:max-w-[520px] flex-col">
+                <h2 className="text-4xl md:text-[44px] 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
+                  Best{"  "}
+                  <AnimatedWord
+                    words={words}
+                    className="h-10 md:h-12 3xl:h-16 w-55 md:w-60 lg:w-70 3xl:w-90 mx-auto"
+                  />{" "}
+                  <br />
+                  Ad Agency
+                </h2>
+
+                <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
+                  Hiring the wrong agency puts you 45% behind your competitors.
+                  Watch what Upthrust clients say about the results they got.
+                  <span className="font-medium">
+                    {" "}
+                    <br /> Real people, real numbers, no BS.
+                  </span>
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <CommunicationScroll />
+      <div className="3xl:my-30 my-20">
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "No screenshots from " },
+              {
+                type: "highlight",
+                value: "2019",
+                bgColor: "bg-[#C8EBD6]",
+                textColor: "text-[#00822E]",
+                icon: "/google-ads/icons/calendar.webp",
+              },
+            ],
 
-            <div className="mt-16 3xl:mt-16">
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "What Our " },
-                            {
-                                type: "highlight",
-                                value: "Clients",
-                                bgColor: "bg-[#FFE187]",
-                                textColor: "text-[#E46800]",
-                                icon: "/google-ads/icons/new.webp",
-                            },
-                            { type: "text", value: " Say" },
-                        ],
-                    ]}
-                    subtitleCss="mt-2"
-                    subtitle="We Asked One Question: “What Changed?” - Here’s what they said, in their own words."
-                />
-                <ClientTestimonials />
-            </div>
-            <div className="3xl:my-36 my-20">
-                <CommonHeading
-                    heading={[
-                        [{ type: "text", value: "What Happened When We Ran" }],
+            [{ type: "text", value: "These are live dashboards." }],
+          ]}
+          subtitle="Managed Ad Account of YC backed Series B firm in NYC and 3rd most popular FMCG brand in Delhi"
+        />
+        <ScreenShot />
+      </div>
 
-                        [
-                            { type: "text", value: "Their " },
-                            {
-                                type: "highlight",
-                                value: "Campaigns",
-                                bgColor: "bg-[#E7F0FF]",
-                                textColor: "text-[#004FAC]",
-                                icon: "/google-ads/icons/campaign.webp",
-                            },
-                        ],
-                    ]}
-                />
-                <CompaignCards />
-            </div>
-            <div>
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "How We Help You " },
-                            {
-                                type: "highlight",
-                                value: "Win",
-                                bgColor: "bg-[#FFE7E5]",
-                                textColor: "text-[#FE2B27]",
-                                icon: "/google-ads/icons/ads_click.webp",
-                            },
-                            {
-                                type: "text",
-                                value: " At The Game Of",
-                            },
-                        ],
+      <div className="my-10">
+        <CommonHeading
+          heading={[
+            [
+              { type: "text", value: "Frequently Asked " },
+              {
+                type: "highlight",
+                value: "Questions",
+                bgColor: "bg-[#FFE187]",
+                textColor: "text-[#E46800]",
+                icon: "/google-ads/icons/contact_support.webp",
+              },
+            ],
+          ]}
+        />
+        <GoogleFaq faqs={data.additionalFields.faqs} />
+      </div>
 
-                        [{ type: "text", value: "PPC, Google and Bing Ads " }],
-                    ]}
-                    subtitle="Anyone can drive traffic. We drive demand that converts."
-                />
-                <CircularHelp />
-            </div>
+      <div>
+        <GoogleDisclaimer formUrl={FORM_URLS.googleads} />
+        <HomeFooter
+          text1="Request a free consultation."
+          bgColor="#0457CB"
+          text2={{
+            desktop: {
+              text1: "YOU FOUND THE RIGHT AGENCY.",
+              text2: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT.",
+            },
+            mobile: {
+              text1: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT.",
+            },
+          }}
+        />
+      </div>
 
-            <div className="w-full py-10 3xl:py-35 max-w-[90%] 3xl:max-w-[85%] mx-auto">
-                <div className="space-y-14 md:space-y-20 3xl:space-y-40">
-                    {/* Section 1 */}
-                    <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
-                        {/* Left Content */}
-                        <div className="w-full sm:w-[45%] max-w-150 overflow-hidden">
-                            <h2 className="text-4xl md:text-[44px] 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
-                                From Launch To 4.2X ROAS In Just 90 Days
-                            </h2>
-                            <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
-                                Our Google Ads dashboard shows exactly how performance is
-                                tracked, diagnosed, and improved.
-                            </p>
-                        </div>
-
-                        {/* Right Video */}
-                        <div className="w-full sm:w-[55%] h-full">
-                            <div className="relative w-full aspect-16/10 overflow-hidden ">
-                                <video
-                                    className="w-full h-full object-cover "
-                                    src="https://cdn.upthrust.agency/Google%20ads/WiseApp%20Google%20Ads.mp4"
-                                    // autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    controls
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Section 2 */}
-                    <div className="flex max-sm:flex-col gap-6 md:gap-20 items-center">
-                        {/* Left Video */}
-                        <div className="w-full sm:w-[52%] order-2 lg:order-1">
-                            <div className="relative w-full aspect-16/10 overflow-hidden ">
-                                <video
-                                    className="w-full h-full object-cover"
-                                    src="https://cdn.upthrust.agency/Google%20ads/Quietly%20Successful%20Google%20Ads%20Result%20Dashboard.mp4"
-                                    // autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    controls
-                                />
-                            </div>
-                        </div>
-
-                        {/* Right Content */}
-                        <div className="order-1 w-full sm:w-[48%] lg:order-2 sm:pl-20">
-                            <div className="flex justify-end 3xl:max-w-[520px] flex-col">
-                                <h2 className="text-4xl md:text-[44px] 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mb-2 text-black">
-                                    Best{"  "}
-                                    <AnimatedWord
-                                        words={words}
-                                        className="h-10 md:h-12 3xl:h-16 w-55 md:w-60 lg:w-70 3xl:w-90 mx-auto"
-                                    />{" "}
-                                    <br />
-                                    Ad Agency
-                                </h2>
-
-                                <p className="text-black text-xl 3xl:text-2xl leading-[150%] tracking-[-0.02em]">
-                                    Hiring the wrong agency puts you 45% behind your competitors.
-                                    Watch what Upthrust clients say about the results they got.
-                                    <span className="font-medium">
-                                        {" "}
-                                        <br /> Real people, real numbers, no BS.
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="3xl:my-30 my-20">
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "No screenshots from " },
-                            {
-                                type: "highlight",
-                                value: "2019",
-                                bgColor: "bg-[#C8EBD6]",
-                                textColor: "text-[#00822E]",
-                                icon: "/google-ads/icons/calendar.webp",
-                            },
-                        ],
-
-                        [{ type: "text", value: "These are live dashboards." }],
-                    ]}
-                    subtitle="Managed Ad Account of YC backed Series B firm in NYC and 3rd most popular FMCG brand in Delhi"
-                />
-                <ScreenShot />
-            </div>
-
-            <div className="my-10">
-                <CommonHeading
-                    heading={[
-                        [
-                            { type: "text", value: "Frequently Asked " },
-                            {
-                                type: "highlight",
-                                value: "Questions",
-                                bgColor: "bg-[#FFE187]",
-                                textColor: "text-[#E46800]",
-                                icon: "/google-ads/icons/contact_support.webp",
-                            },
-                        ],
-                    ]}
-                />
-                <GoogleFaq faqs={data.additionalFields.faqs} />
-            </div>
-
-            <div>
-                <GoogleDisclaimer formUrl={FORM_URLS.googleads} />
-                <HomeFooter
-                    text1="Request a free consultation."
-                    bgColor="#0457CB"
-                    text2={{
-                        desktop: {
-                            text1: "YOU FOUND THE RIGHT AGENCY.",
-                            text2: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT.",
-                        },
-                        mobile: {
-                            text1: "WE FOUND THE RIGHT BRAND. COINCIDENCE? WE THINK NOT.",
-                        },
-                    }}
-                />
-            </div>
-
-            <div className="mt-10 md:mt-4 3xl:mt-6">
-                {" "}
-                <CommonFormModal formUrl={FORM_URLS.googleads} />
-            </div>
-        </main>
-    );
+      <div className="mt-10 md:mt-4 3xl:mt-6">
+        {" "}
+        <CommonFormModal formUrl={FORM_URLS.googleads} />
+      </div>
+    </main>
+  );
 };
 
 export default GoogleAgencyLayout;

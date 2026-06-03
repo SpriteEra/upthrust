@@ -51,7 +51,7 @@
 //     {
 //         badge: "SaaS",
 //         title: "ChatGPT",
-//         description: "Demo costs sat at $450 each. The ‘single keyword ad group’ rebuild cut them to $189 in just 8 weeks.",
+//         description: "Demo acquisition costs averaged $450 each. Our AI-first SEO strategy reduced them to $189 in just 18 weeks.",
 //         metrics: {
 //             metric1: { label: "Cost per Demo Change", value: "20%" },
 //             metric2: { label: "Number of Demos", value: "48%" }
@@ -195,7 +195,7 @@
 //     {
 //         title: 'Availability',
 //         description:
-//             "Email directly at any time. 24-hour response guaranteed not 'we'll get back to you within 3 business days.",
+//             "Email directly at any time. 24-hour response guaranteed - not, "We'll get back to you within 3 business days."",
 //         image: '/seo/communication-3.webp',
 //     },
 // ];
@@ -231,7 +231,7 @@
 //         "SEO Agency",
 //     ],
 
-//     metadataBase: new URL("https://www.upthrust.agency"),
+//     metadataBase: new URL("https://upthrust.agency"),
 
 //     alternates: {
 //         canonical: "upthrust.agency/seo-agency",
@@ -240,7 +240,7 @@
 //     openGraph: {
 //         title: "SEO Agency That Gets You Found Everywhere",
 //         description: "Build content systems that rank on Google and appear in AI answers across ChatGPT, Claude and Perplexity.",
-//         url: "https://www.upthrust.agency",
+//         url: "https://upthrust.agency",
 //         siteName: "Upthrust",
 //         images: [
 //             {
