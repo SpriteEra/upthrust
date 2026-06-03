@@ -1,201 +1,3 @@
-// "use client";
-
-// import { div } from "framer-motion/client";
-// import { useRef, useState } from "react";
-
-// // ─── Types ─────────────────────────────────────────────────────────────────────
-// // media array shape:
-// // [
-// //   { type: "image", src: "/..." },
-// //   { type: "image", src: "/..." },
-// //   { type: "video", src: "/..." },   ← center slot (index 2) — always video
-// //   { type: "image", src: "/..." },
-// //   { type: "image", src: "/..." },
-// // ]
-
-// // ─── Video cell with play/pause toggle ────────────────────────────────────────
-// function VideoCell({ src, className = "" }) {
-//     const ref = useRef(null);
-//     const [playing, setPlaying] = useState(false);
-
-//     const toggle = () => {
-//         if (!ref.current) return;
-//         if (playing) {
-//             ref.current.pause();
-//         } else {
-//             ref.current.play().catch(() => { });
-//         }
-//         setPlaying(!playing);
-//     };
-
-//     return (
-//         <div className={`relative group cursor-pointer ${className}`} onClick={toggle}>
-//             <video
-//                 ref={ref}
-//                 src={src}
-//                 muted
-//                 loop
-//                 playsInline
-//                 className="w-full h-full object-cover"
-//             />
-
-//             {/* Play / pause overlay */}
-//             <div
-//                 className={`
-//           absolute inset-0 flex items-center justify-center
-//           transition-opacity duration-300
-//           ${playing ? "opacity-0 group-hover:opacity-100" : "opacity-100"}
-//         `}
-//             >
-//                 {/* Dark scrim */}
-//                 <div className="absolute inset-0 bg-black/30" />
-
-//                 {/* Button */}
-//                 <div className="relative z-10 w-14 h-14 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-//                     {playing ? (
-//                         /* Pause icon */
-//                         <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-//                             <rect x="5" y="3" width="4" height="18" rx="1" />
-//                             <rect x="15" y="3" width="4" height="18" rx="1" />
-//                         </svg>
-//                     ) : (
-//                         /* Play icon */
-//                         <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style={{ marginLeft: "3px" }}>
-//                             <path d="M5 3l14 9-14 9V3z" />
-//                         </svg>
-//                     )}
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// // ─── CaseStudyCard ─────────────────────────────────────────────────────────────
-// function CaseStudyCard({
-//     // Header
-//     brandName = "Mini Cooper",
-//     tag = "Automotive",
-//     description = "From £190K/month (pause) → £2M/month in 4 months (+949%). Strategic precision-led creative and performance scales.",
-
-//     // Media — 5 items: img, img, video (center), img, img
-//     media = [
-//         { type: "image", src: "/case-studies/mini/img-1.webp" },
-//         { type: "image", src: "/case-studies/mini/img-2.webp" },
-//         { type: "video", src: "/case-studies/mini/video.mp4" },
-//         { type: "image", src: "/case-studies/mini/img-3.webp" },
-//         { type: "image", src: "/case-studies/mini/img-4.webp" },
-//     ],
-// }) {
-//     // Split into left pair, center, right pair
-//     const leftPair = media.slice(0, 2);
-//     const centerItem = media[2];
-//     const rightPair = media.slice(3, 5);
-
-//     return (
-//         <div className="w-full flex flex-col gap-5 md:gap-6 lg:gap-8">
-
-//             {/* ── Header ─────────────────────────────────────────────────────────── */}
-//             <div className="flex items-start justify-between gap-8 px-0">
-
-//                 {/* Left — brand name + tag */}
-//                 <div className="flex flex-col gap-2">
-//                     <h2 className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-semibold tracking-tight text-black leading-tight">
-//                         {brandName}
-//                     </h2>
-//                     <span className="flex items-center gap-1.5 text-sm md:text-base text-black/50">
-//                         <span className="w-1.5 h-1.5 rounded-full bg-black/40 inline-block" />
-//                         {tag}
-//                     </span>
-//                 </div>
-
-//                 {/* Right — description */}
-//                 <p className="max-w-xs md:max-w-sm lg:max-w-md text-sm md:text-base text-black/60 leading-relaxed text-right">
-//                     {description}
-//                 </p>
-//             </div>
-
-//             {/* ── Media row ──────────────────────────────────────────────────────── */}
-//             {/*
-//         Layout:
-//           [img][img]   [VIDEO — taller]   [img][img]
-//         Side images align to the bottom of the video so tops reveal more.
-//         Center video is ~20% taller than side images.
-//       */}
-//             <div className="flex items-end gap-2 md:gap-3 w-full">
-
-//                 {/* Left pair */}
-//                 {leftPair.map((item, i) => (
-//                     <div
-//                         key={`l-${i}`}
-//                         className="
-//               flex-1 rounded-xl md:rounded-2xl overflow-hidden bg-neutral-200
-//               h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] 3xl:h-[360px]
-//             "
-//                     >
-//                         <img
-//                             src={item.src}
-//                             alt=""
-//                             className="w-full h-full object-cover"
-//                             draggable={false}
-//                         />
-//                     </div>
-//                 ))}
-
-//                 {/* Center — video, taller */}
-//                 <div
-//                     className="
-//             flex-[1.35] rounded-xl md:rounded-2xl overflow-hidden bg-black
-//             h-[220px] sm:h-[270px] md:h-[320px] lg:h-[370px] 3xl:h-[440px]
-//           "
-//                 >
-//                     {centerItem?.type === "video" ? (
-//                         <VideoCell src={centerItem.src} className="w-full h-full" />
-//                     ) : (
-//                         <img
-//                             src={centerItem?.src}
-//                             alt=""
-//                             className="w-full h-full object-cover"
-//                             draggable={false}
-//                         />
-//                     )}
-//                 </div>
-
-//                 {/* Right pair */}
-//                 {rightPair.map((item, i) => (
-//                     <div
-//                         key={`r-${i}`}
-//                         className="
-//               flex-1 rounded-xl md:rounded-2xl overflow-hidden bg-neutral-200
-//               h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] 3xl:h-[360px]
-//             "
-//                     >
-//                         <img
-//                             src={item.src}
-//                             alt=""
-//                             className="w-full h-full object-cover"
-//                             draggable={false}
-//                         />
-//                     </div>
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// }
-
-
-// export const CaseStudy = () => {
-//     return (
-//         <div>
-//             <CaseStudyCard />
-//             <CaseStudyCard />
-//             <CaseStudyCard />
-//             <CaseStudyCard />
-//             <CaseStudyCard />
-//             <CaseStudyCard />
-//         </div>
-//     )
-
-// }
 
 
 "use client";
@@ -205,93 +7,94 @@ import SmartSwiper from "@/components/SmartSwiper"; // ← adjust path if needed
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-// ─── Case Study Data — 6 entries ───────────────────────────────────────────────
-// media: exactly 5 items → [img, img, video (center), img, img]
+// ─── Case Study Data — 6 entries 
+
 const CASE_STUDIES = [
     {
         id: 1,
+        brandName: "Mini Cooper",
+        tag: "Automotive",
+        description:
+            "From £180K/month (stuck) → £505K/month in 4 months (+181%) through precision-led creative and performance scaling.",
+        media: [
+            { type: "image", src: "/main-agency/case-studies/mini/1.png" },
+            { type: "image", src: "/main-agency/case-studies/mini/2.png" },
+            { type: "video", src: "/main-agency/case-studies/mini/3.png" },
+            { type: "image", src: "/main-agency/case-studies/mini/4.png" },
+            { type: "image", src: "/main-agency/case-studies/mini/5.png" },
+        ],
+    },
+    {
+        id: 2,
         brandName: "Urban Pitara",
         tag: "Indian Apparel Brand",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, consectetur.",
         media: [
-            { type: "image", src: "/case-studies/urban-pitara/img-1.webp" },
-            { type: "image", src: "/case-studies/urban-pitara/img-2.webp" },
-            { type: "video", src: "/case-studies/urban-pitara/video.mp4" },
-            { type: "image", src: "/case-studies/urban-pitara/img-3.webp" },
-            { type: "image", src: "/case-studies/urban-pitara/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-1.webp" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-2.webp" },
+            { type: "video", src: "/main-agency/case-studies/urban-pitara/video.mp4" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-3.webp" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-4.webp" },
         ],
     },
     {
-        id: 2,
+        id: 3,
         brandName: "Smokey Cocktail",
         tag: "Beverage Brand",
         description:
             "From zero to viral — a beverage brand that scaled through precision creative and social-first strategy across Meta and Instagram.",
         media: [
-            { type: "image", src: "/case-studies/smokey-cocktail/img-1.webp" },
-            { type: "image", src: "/case-studies/smokey-cocktail/img-2.webp" },
-            { type: "video", src: "/case-studies/smokey-cocktail/video.mp4" },
-            { type: "image", src: "/case-studies/smokey-cocktail/img-3.webp" },
-            { type: "image", src: "/case-studies/smokey-cocktail/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-1.webp" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-2.webp" },
+            { type: "video", src: "/main-agency/case-studies/smokey-cocktail/video.mp4" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-3.webp" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-4.webp" },
         ],
     },
     {
-        id: 3,
+        id: 4,
         brandName: "Tiggle",
         tag: "D2C Food Brand",
         description:
             `443% organic growth and a phone call that started with "we just crossed $1M". One client. One team. Full stack execution.`,
         media: [
-            { type: "image", src: "/case-studies/tiggle/img-1.webp" },
-            { type: "image", src: "/case-studies/tiggle/img-2.webp" },
-            { type: "video", src: "/case-studies/tiggle/video.mp4" },
-            { type: "image", src: "/case-studies/tiggle/img-3.webp" },
-            { type: "image", src: "/case-studies/tiggle/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/img-1.webp" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/img-2.webp" },
+            { type: "video", src: "/main-agency/case-studies/tiggle/video.mp4" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/img-3.webp" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/img-4.webp" },
         ],
     },
     {
-        id: 4,
+        id: 5,
         brandName: "Coca Cola",
         tag: "FMCG / Beverage",
         description:
             "Campaign-led performance that moved the needle at scale. A global brand trusting an agency that thinks local and executes globally.",
         media: [
-            { type: "image", src: "/case-studies/coca-cola/img-1.webp" },
-            { type: "image", src: "/case-studies/coca-cola/img-2.webp" },
-            { type: "video", src: "/case-studies/coca-cola/video.mp4" },
-            { type: "image", src: "/case-studies/coca-cola/img-3.webp" },
-            { type: "image", src: "/case-studies/coca-cola/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/img-1.webp" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/img-2.webp" },
+            { type: "video", src: "/main-agency/case-studies/coca-cola/video.mp4" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/img-3.webp" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/img-4.webp" },
         ],
     },
     {
-        id: 5,
+        id: 6,
         brandName: "Biba",
         tag: "Fashion Retail",
         description:
             "Repositioned a heritage fashion brand for a younger audience. Performance creative meets cultural relevance.",
         media: [
-            { type: "image", src: "/case-studies/biba/img-1.webp" },
-            { type: "image", src: "/case-studies/biba/img-2.webp" },
-            { type: "video", src: "/case-studies/biba/video.mp4" },
-            { type: "image", src: "/case-studies/biba/img-3.webp" },
-            { type: "image", src: "/case-studies/biba/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/biba/img-1.webp" },
+            { type: "image", src: "/main-agency/case-studies/biba/img-2.webp" },
+            { type: "video", src: "/main-agency/case-studies/biba/video.mp4" },
+            { type: "image", src: "/main-agency/case-studies/biba/img-3.webp" },
+            { type: "image", src: "/main-agency/case-studies/biba/img-4.webp" },
         ],
     },
-    {
-        id: 6,
-        brandName: "Mini Cooper",
-        tag: "Automotive",
-        description:
-            "From £190K/month (pause) → £2M/month in 4 months (+949%). Strategic precision-led creative and performance scales.",
-        media: [
-            { type: "image", src: "/case-studies/mini/img-1.webp" },
-            { type: "image", src: "/case-studies/mini/img-2.webp" },
-            { type: "video", src: "/case-studies/mini/video.mp4" },
-            { type: "image", src: "/case-studies/mini/img-3.webp" },
-            { type: "image", src: "/case-studies/mini/img-4.webp" },
-        ],
-    },
+
 ];
 
 // ─── Video cell (desktop) ──────────────────────────────────────────────────────
@@ -412,20 +215,20 @@ function CaseStudyCard({ brandName, tag, description, media }) {
         <div className="w-full flex flex-col gap-4 md:gap-6 lg:gap-8">
 
             {/* ── Header ── */}
-            <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start justify-between px-10 3xl:px-20 ">
                 {/* Left */}
                 <div className="flex flex-col gap-1.5">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl 3xl:text-5xl font-semibold tracking-tight text-black leading-tight">
+                    <h2 className="text-2xl md:text-3xl lg:text-5xl 3xl:text-6xl font-semibold tracking-[-0.02em] leading-[130%] text-black ">
                         {brandName}
                     </h2>
-                    <span className="flex items-center gap-1.5 text-sm text-black/50">
-                        <span className="w-1.5 h-1.5 rounded-full bg-black/40 inline-block" />
+                    <span className="flex items-center gap-1.5 text-sm xl:text-base text-black">
+                        <span className="w-1.5 h-1.5 tracking-[-0.02em] leading-[130%] rounded-full bg-black/40 inline-block" />
                         {tag}
                     </span>
                 </div>
 
                 {/* Right — hidden on mobile, shows md+ */}
-                <p className="hidden md:block max-w-xs md:max-w-sm lg:max-w-md text-sm md:text-base text-black/60 leading-relaxed text-right">
+                <p className="hidden md:block max-w-xs md:max-w-sm lg:max-w-md text-sm md:text-base tracking-[-0.02em] leading-[150%] 3xl:text-lg text-black/60  text-start">
                     {description}
                 </p>
             </div>
@@ -435,56 +238,35 @@ function CaseStudyCard({ brandName, tag, description, media }) {
                 {description}
             </p>
 
-            {/* ── Desktop media row (hidden on mobile) ── */}
-            <div className="hidden md:flex items-end gap-2 md:gap-3 w-full">
-                {/* Left pair */}
-                {leftPair.map((item, i) => (
-                    <div
-                        key={`l-${i}`}
-                        className="flex-1 rounded-xl md:rounded-2xl overflow-hidden bg-neutral-200
-              h-[220px] md:h-[260px] lg:h-[300px] 3xl:h-[360px]"
-                    >
-                        <img
-                            src={item.src}
-                            alt=""
-                            className="w-full h-full object-cover"
-                            draggable={false}
-                        />
-                    </div>
-                ))}
+            {/* ── Desktop media row ── */}
+            <div className="hidden md:flex items-stretch gap-2 md:gap-3 w-full
+    h-[270px] md:h-[320px] lg:h-[370px] 3xl:h-[440px]">
 
-                {/* Center — video, taller */}
-                <div
-                    className="flex-[1.35] rounded-xl md:rounded-2xl overflow-hidden bg-neutral-900
-            h-[270px] md:h-[320px] lg:h-[370px] 3xl:h-[440px]"
-                >
-                    {centerItem?.type === "video" ? (
-                        <VideoCell src={centerItem.src} className="w-full h-full" />
-                    ) : (
-                        <img
-                            src={centerItem?.src}
-                            alt=""
-                            className="w-full h-full object-cover"
-                            draggable={false}
-                        />
-                    )}
-                </div>
+                {[...leftPair, centerItem, ...rightPair].map((item, i) => {
+                    const isCenter = i === 2;
+                    const isTall = i === 0 || i === 2 || i === 4; // 1st, center, last = full height
 
-                {/* Right pair */}
-                {rightPair.map((item, i) => (
-                    <div
-                        key={`r-${i}`}
-                        className="flex-1 rounded-xl md:rounded-2xl overflow-hidden bg-neutral-200
-              h-[220px] md:h-[260px] lg:h-[300px] 3xl:h-[360px]"
-                    >
-                        <img
-                            src={item.src}
-                            alt=""
-                            className="w-full h-full object-cover"
-                            draggable={false}
-                        />
-                    </div>
-                ))}
+                    return (
+                        <div
+                            key={i}
+                            className={`flex-1  overflow-hidden
+                    ${isCenter ? "bg-neutral-900" : "bg-neutral-200"}
+                    ${isTall ? "h-full" : "h-[200px] md:h-[240px] lg:h-[280px] 3xl:h-[340px] self-end"}`}
+                        >
+                            {item?.type === "video" ? (
+                                <VideoCell src={item.src} className="w-full h-full" />
+                            ) : (
+                                <img
+                                    src={item?.src}
+                                    alt=""
+                                    className="w-full h-full object-cover"
+                                    draggable={false}
+                                />
+                            )}
+                        </div>
+                    );
+                })}
+
             </div>
 
             {/* ── Mobile media slider (hidden on md+) ── */}

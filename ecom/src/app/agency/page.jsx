@@ -174,7 +174,7 @@ const page = () => {
         </div>
       </section>
 
-      <div className="py-20">
+      <div className="py-15">
         <AgencyHeading
           tag="h2"
           heading={[
@@ -222,7 +222,7 @@ const page = () => {
       <ServicesSlider />
 
 
-      <div className="py-20">
+      <div className="pt-20 pb-10">
         <AgencyHeading
           tag="h2"
           heading={[
@@ -371,7 +371,7 @@ const page = () => {
           </div>
 
           {/* Center Button */}
-          <button className="bg-black text-white rounded-full px-6 md:px-8 py-3 flex items-center gap-3 text-lg 3xl:text-xl font-bold  transition-all duration-300">
+          <button className="bg-black text-white rounded-full px-6 md:px-8 py-3 flex items-center gap-3 text-lg 3xl:text-xl font-bold  transition-all duration-300 hover:bg-orange cursor-pointer">
             Go to Creative Library
 
             <span className="w-8 h-8 rounded-full  text-white flex items-center justify-center text-sm">
