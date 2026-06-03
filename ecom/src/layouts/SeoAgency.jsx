@@ -382,7 +382,7 @@ export const metadata = {
   metadataBase: new URL("https://upthrust.agency"),
 
   alternates: {
-    canonical: "upthrust.agency/seo-agency",
+    canonical: "/seo-agency",
   },
 
   openGraph: {
