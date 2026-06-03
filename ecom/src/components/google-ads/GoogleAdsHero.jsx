@@ -242,7 +242,7 @@ const GoogleAdsHero = ({ title, formUrl }) => {
                         <RatingStars rating={5} fillColor='#FFB900' size='size-4.75 3xl:size-5' />
                     </div>
                 </div>
-                <h1 className="text-lg 3xl:text-xl text-black mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}</h1>
+                <p className="text-lg 3xl:text-xl text-black mb-3 xl:mb-4 font-normal leading-[150%] tracking-[-0.02em]">{title}</p>
 
                 {/* Main Heading */}
                 <h1 className="text-[42px] lg:text-[50px] xl:text-[55px] 2xl:text-[65px] 1600:text-[78px] 1800:text-[86px] tracking-[-0.04em] font-semibold leading-[120%] mb-8 3xl:mb-10">

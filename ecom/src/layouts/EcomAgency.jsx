@@ -127,7 +127,7 @@ export const metadata = {
     // creator: "Upthrust",
     // publisher: "Upthrust",
 
-    metadataBase: new URL("https://www.upthrust.agency"),
+    metadataBase: new URL("https://upthrust.agency"),
 
     alternates: {
         canonical: "/",
@@ -136,7 +136,7 @@ export const metadata = {
     openGraph: {
         title: "Scale Your D2C Brand Profitably with Upthrust",
         description: "From Meta & Google Ads to CRO and retention, we help D2C brands scale revenue without killing ROAS.",
-        url: "https://www.upthrust.agency",
+        url: "https://upthrust.agency",
         siteName: "Upthrust",
         images: [
             {

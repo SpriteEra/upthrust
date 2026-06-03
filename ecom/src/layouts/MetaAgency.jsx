@@ -76,7 +76,7 @@ export const metadata = {
         "Google Ads Agency",
     ],
 
-    metadataBase: new URL("https://www.upthrust.agency"),
+    metadataBase: new URL("https://upthrust.agency"),
 
     alternates: {
         canonical: "/",
@@ -85,7 +85,7 @@ export const metadata = {
     openGraph: {
         title: "Meta Ads Agency Built for Profitable Scaling",
         description: "We optimize 6Cr+ in monthly Meta ad spend using creative testing and structured scaling systems that drive measurable revenue.",
-        url: "https://www.upthrust.agency",
+        url: "https://upthrust.agency",
         siteName: "Upthrust",
         images: [
             {

@@ -198,16 +198,16 @@ export const metadata = {
         "Creative Ads Agency",
     ],
 
-    metadataBase: new URL("https://www.upthrust.agency"),
+    metadataBase: new URL("https://upthrust.agency"),
 
     alternates: {
-        canonical: "https://www.upthrust.agency/creative-agency",
+        canonical: "https://upthrust.agency/creative-agency",
     },
 
     openGraph: {
         title: "Creative Ads Agency Built for Performance",
         description: "High-converting ad creatives, structured creative testing systems and UGC ads built to scale paid acquisition profitably.",
-        url: "https://www.upthrust.agency/creative-agency",
+        url: "https://upthrust.agency/creative-agency",
         siteName: "Upthrust",
         images: [
             {

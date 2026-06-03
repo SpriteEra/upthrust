@@ -24,7 +24,7 @@ const ProfileSection = ({ formUrl }) => {
       brand: "/performance-agency/brands/Housr.png",
       brandcss: "h-6 sm:h-6! 3xl:h-7!",
       img: "/performance-agency/MouserProfile.png",
-      text: " “Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.”",
+      text: " “Search engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.”",
       person: "Gunjan",
       role: "Marketing Head, Housr",
     },

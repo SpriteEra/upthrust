@@ -16,7 +16,7 @@ export default function ClientStories() {
         {
             id: 2,
             rating: 5,
-            title: " “Search Engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.” ",
+            title: " “Search engine marketing, google ads, and a budget allocation plan by Upthrust proved to be really helpful.” ",
             author: "Gunjan",
             position: "Marketing Head, Housr ",
             hasAvatar: true,
@@ -95,7 +95,7 @@ export default function ClientStories() {
         {
             id: 7,
             rating: 5,
-            title: `“What clicked for me was you ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.”`,
+            title: `“What clicked for me was your ability to take ownership. You get into the details of the project even if something is not happening. You are clear about the process, which is rare in agencies.”`,
             author: "Iti Dubey",
             avatar: "/google-ads/review/img7.webp",
             avatarShape: {
