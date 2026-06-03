@@ -51,7 +51,7 @@
 //     {
 //         badge: "SaaS",
 //         title: "ChatGPT",
-//         description: "The content and technical SEO overhaul changed everything - demo volume doubled in just 18 weeks.",
+//         description: "Demo acquisition costs averaged $450 each. Our AI-first SEO strategy reduced them to $189 in just 18 weeks.",
 //         metrics: {
 //             metric1: { label: "Cost per Demo Change", value: "20%" },
 //             metric2: { label: "Number of Demos", value: "48%" }
@@ -60,7 +60,7 @@
 //             name: "Nik",
 //             role: "CEO, WLNC",
 //             avatar: "/google-ads/compaigns/1.webp",
-//             whatsays: "The single keyword ad group rebuild changed everything - demos doubled while spend stayed flat",
+//             whatsays: "The content and technical SEO overhaul changed everything - demo volume doubled in just 18 weeks.",
 //         },
 //         accentColor: "#74AA9C",
 //         bgColor: "#DEFFF6",
