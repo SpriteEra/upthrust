@@ -5,6 +5,7 @@ export default function SeoAgencyJson({ faqs = [] }) {
       { "@type": "Organization", "@id": "https://upthrust.agency/#organization",
         "name": "Upthrust", "url": "https://upthrust.agency",
         "logo": "https://upthrust.agency/logo.png",
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "ratingCount": "50" },
         "sameAs": ["https://www.linkedin.com/company/upthrust", "https://clutch.co/profile/upthrust"] },
       { "@type": "WebPage", "@id": "https://upthrust.agency/seo-agency#webpage",
         "url": "https://upthrust.agency/seo-agency",

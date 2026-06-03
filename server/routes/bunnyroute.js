@@ -3,7 +3,7 @@
 // import ctrl from "../controllers/BunnyController.js";
 
 // // ─────────────────────────────────────────────────────────────────────────────
-// // MULTER — memory storage
+// // MULTER - memory storage
 // // ─────────────────────────────────────────────────────────────────────────────
 
 // const mem = multer.memoryStorage();
@@ -74,7 +74,7 @@ import {
 } from "../controllers/BunnyController.js";
 
 /**
- * /api/media — Bunny Storage for images + videos.
+ * /api/media - Bunny Storage for images + videos.
  * No multer. File bytes never pass through this server.
  *
  * IMPORTANT: specific paths (/folders, /prepare, /save) must come

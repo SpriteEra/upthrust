@@ -323,7 +323,7 @@ const page = async ({ data }) => {
 
                     ]}
                     label="OUR PROCESS"
-                    subtitle=" We've engineered a systematic approach that turns brand stories into scroll-stopping content—balancing 
+                    subtitle=" We've engineered a systematic approach that turns brand stories into scroll-stopping content-balancing 
 creative intuition with data-driven precision."
 
                 />

@@ -11,11 +11,11 @@ export const designPages = {
             },
             {
                 question: "Do you work on existing products or only new ones?",
-                answer: "Both. As an experienced UI UX Design Services Company, we handle complete redesigns of existing products and greenfield projects from scratch. Our UI UX Design Agency specializes in MVP design for new products and UX optimization for established platforms. Many clients come to us to modernize legacy interfaces or fix conversion issues — we're a flexible UI UX Design Firm that meets you wherever you are in your product lifecycle."
+                answer: "Both. As an experienced UI UX Design Services Company, we handle complete redesigns of existing products and greenfield projects from scratch. Our UI UX Design Agency specializes in MVP design for new products and UX optimization for established platforms. Many clients come to us to modernize legacy interfaces or fix conversion issues - we're a flexible UI UX Design Firm that meets you wherever you are in your product lifecycle."
             },
             {
                 question: "How do you approach UX research?",
-                answer: "Our UI UX Agency starts every project with user research — stakeholder interviews, competitive analysis, user personas, and journey mapping. As a research-driven UI UX Design Company, we conduct usability testing with real users before finalizing designs, using both qualitative methods (interviews, observation) and quantitative data (analytics, heatmaps). Our UI UX Design Firm ensures every decision is based on real data, not assumptions."
+                answer: "Our UI UX Agency starts every project with user research - stakeholder interviews, competitive analysis, user personas, and journey mapping. As a research-driven UI UX Design Company, we conduct usability testing with real users before finalizing designs, using both qualitative methods (interviews, observation) and quantitative data (analytics, heatmaps). Our UI UX Design Firm ensures every decision is based on real data, not assumptions."
             },
             {
                 question: "Will developers get build-ready files?",
@@ -79,7 +79,7 @@ export const designPages = {
     //     ]
     // },
 
-    // In @/data/designPages.js — add this to the designPages object:
+    // In @/data/designPages.js - add this to the designPages object:
 
     "website-design-company": {
         title: "Web Design Agency",
@@ -274,7 +274,7 @@ export const designPages = {
                     buttonText: "Poor first impression?",
                     title: "Your site doesn't reflect your quality.",
                     description:
-                        "Visitors judge your credibility in seconds. An outdated or generic design silently signals that you're behind — costing you trust before a word is read.",
+                        "Visitors judge your credibility in seconds. An outdated or generic design silently signals that you're behind - costing you trust before a word is read.",
                     value: "+42%",
                     valueText1: "average",
                     valueText2: "conversion growth",
@@ -349,7 +349,7 @@ export const designPages = {
         // ─── "Working With Us" section ───────────────────────────────────────────
         // heading: "What Working With Us Actually Feels Like"
         // label: "WHY UPTHRUST"
-        // subtitle: "Human, reassuring, trust-building — not salesy."
+        // subtitle: "Human, reassuring, trust-building - not salesy."
         workingWithUs: {
             arrowNote: {
                 line1Parts: [
@@ -368,7 +368,7 @@ export const designPages = {
                 { line: [{ type: "normal", text: "Actually Feels Like" }] },
             ],
             label: "WHY UPTHRUST",
-            subtitle: "Human, reassuring, trust-building — not salesy.",
+            subtitle: "Human, reassuring, trust-building - not salesy.",
 
             // ─── 6 feature tiles visible in image ───────────────────────────────
             features: [
@@ -408,7 +408,7 @@ export const designPages = {
             ctaBar: "Let's create a web experience your brand deserves.",
 
             // ─── Clutch + testimonials heading ──────────────────────────────────
-            // Clutch: "4.6 Avg Score — Based on 80+ reviews"
+            // Clutch: "4.6 Avg Score - Based on 80+ reviews"
             clutch: {
                 score: "4.6 Avg Score",
                 reviewCount: "Based on 80+ reviews",
@@ -420,7 +420,7 @@ export const designPages = {
         // ─── Services section ────────────────────────────────────────────────────
         // "What We Help You Design"
         // label: "Our services"
-        // subtitle: "Everything you need to design, launch, and convert — under one roof."
+        // subtitle: "Everything you need to design, launch, and convert - under one roof."
         servicesSection: {
             arrowNote: {
                 line1Parts: [
@@ -440,7 +440,7 @@ export const designPages = {
             ],
             label: "Our services",
             subtitle:
-                "Everything you need to design, launch, and convert — under one roof.",
+                "Everything you need to design, launch, and convert - under one roof.",
         },
 
         // ─── FAQ section ─────────────────────────────────────────────────────────
@@ -556,11 +556,11 @@ export const designPages = {
         faqs: [
             {
                 question: "What tech stacks do you work with?",
-                answer: "As a full-stack Website Development Company, we work with React, Vue, Angular for frontend; Node.js, Python, PHP for backend; and MySQL, PostgreSQL, MongoDB for databases. Our Web Development Company specializes in modern JavaScript frameworks and scalable cloud infrastructure. We're a versatile Web Development Firm India experienced in MERN, MEAN, and LAMP stacks — adapting to your preferred technology and project requirements."
+                answer: "As a full-stack Website Development Company, we work with React, Vue, Angular for frontend; Node.js, Python, PHP for backend; and MySQL, PostgreSQL, MongoDB for databases. Our Web Development Company specializes in modern JavaScript frameworks and scalable cloud infrastructure. We're a versatile Web Development Firm India experienced in MERN, MEAN, and LAMP stacks - adapting to your preferred technology and project requirements."
             },
             {
                 question: "Do you work with existing codebases?",
-                answer: "Yes. As an experienced Website Development Firm, we specialize in working with legacy codebases, refactoring existing code, and integrating new features into established systems. Our Website Development Company has successfully modernized 100+ existing applications. Many clients come to our Web Development Company to optimize poorly written code or add advanced features to existing platforms — we handle technical debt systematically."
+                answer: "Yes. As an experienced Website Development Firm, we specialize in working with legacy codebases, refactoring existing code, and integrating new features into established systems. Our Website Development Company has successfully modernized 100+ existing applications. Many clients come to our Web Development Company to optimize poorly written code or add advanced features to existing platforms - we handle technical debt systematically."
             },
             {
                 question: "Will the website be fast and SEO-friendly?",

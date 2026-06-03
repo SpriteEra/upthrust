@@ -8,7 +8,7 @@ const defaultCaseStudies = [
     {
         badge: "SaaS",
         title: "We Love No Code",
-        description: "Demo acquisition costs averaged $450 each. Our AI-first SEO strategy reduced them to $189 in just 18 weeks.",
+        description: "The content and technical SEO overhaul changed everything - demo volume doubled in just 18 weeks.",
         metrics: {
             metric1: { label: "Cost per Demo Change", value: "20%" },
             metric2: { label: "Number of Demos", value: "48%" }

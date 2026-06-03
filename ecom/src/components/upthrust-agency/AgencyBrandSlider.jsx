@@ -133,7 +133,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 210 }) {
       const brand = brands[index];
       const position = (startIndex + i) * itemWidth + offset;
 
-      // Per-brand logo size — edit logoWidth / logoHeight in the brand arrays above
+      // Per-brand logo size - edit logoWidth / logoHeight in the brand arrays above
       const lw = brand.logoWidth ?? "w-auto";
       const lh = brand.logoHeight ?? "h-6";
 
@@ -148,7 +148,7 @@ function MarqueeRow({ brands, direction = "left", itemWidth = 210 }) {
           }}
         >
           <div className="flex items-center justify-center" style={{ pointerEvents: "none" }}>
-            {/* Pill — fixed height, auto width via min-w */}
+            {/* Pill - fixed height, auto width via min-w */}
             <div
               className={`
                 flex items-center justify-center

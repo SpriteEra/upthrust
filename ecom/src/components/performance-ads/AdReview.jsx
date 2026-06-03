@@ -33,7 +33,7 @@ export default function AdReview({ formUrl }) {
                         />
 
                         <p className="text-gray-700 mt-4 max-w-2xl text-lg lg:text-2xl leading-[150%] tracking-[-0.02em] max-sm:px-2">
-                            30 minutes. Screen share. We'll walk through your campaigns and show you exactly where you're leaking budget — and what to do about it.
+                            30 minutes. Screen share. We'll walk through your campaigns and show you exactly where you're leaking budget - and what to do about it.
                         </p>
                     </div>
 
@@ -54,7 +54,7 @@ export default function AdReview({ formUrl }) {
                             For High-Volume Brands
                         </h3>
                         <p className="text-white text-lg leading-[150%] tracking-[-0.02em] mt-1 max-w-md">
-                            Dedicated teams, custom reporting, and performance guarantees — for brands spending ₹10L+/month.
+                            Dedicated teams, custom reporting, and performance guarantees - for brands spending ₹10L+/month.
                         </p>
 
                         {/* Bullet Points */}

@@ -328,7 +328,7 @@ const MetaAgencyLayout = async ({ data }) => {
                         }
                     ]}
                     label="CASE STUDIES"
-                    subtitle="We Don't Just Talk—We Show"
+                    subtitle="We Don't Just Talk-We Show"
                 />
                 <DashboardStacks brandtitle={data?.additionalFields.brand} />
             </div>

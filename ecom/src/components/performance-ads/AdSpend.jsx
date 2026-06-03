@@ -89,7 +89,7 @@ export default function AdSpend({ formUrl }) {
                         />
                     </motion.div>
 
-                    {/* Colourful image — fades in when in view */}
+                    {/* Colourful image - fades in when in view */}
                     <motion.div
                         className="absolute  sm:-left-25 max-sm:z-10 flex items-center justify-end w-full"
                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -115,7 +115,7 @@ export default function AdSpend({ formUrl }) {
 
                     </motion.div>
 
-                    {/* Stat pills — staggered fade-in on scroll */}
+                    {/* Stat pills - staggered fade-in on scroll */}
                     {/* <div className="absolute max-lg:hidden inset-0 pointer-events-none">
                         {stats.map((stat, i) => (
                             <motion.div
@@ -142,10 +142,10 @@ export default function AdSpend({ formUrl }) {
 // // Position each stat pill to match the image layout
 // function getStatPosition(index) {
 //     const positions = [
-//         { top: "12%", left: "28%" },   // Ad Spend Managed — top center
-//         { top: "30%", right: "2%" },   // Avg. Client ROAS — top right
-//         { top: "52%", left: "32%" },   // Clients Scaled — middle
-//         { top: "72%", right: "2%" },   // Average Retention — bottom right
+//         { top: "12%", left: "28%" },   // Ad Spend Managed - top center
+//         { top: "30%", right: "2%" },   // Avg. Client ROAS - top right
+//         { top: "52%", left: "32%" },   // Clients Scaled - middle
+//         { top: "72%", right: "2%" },   // Average Retention - bottom right
 //     ];
 //     return positions[index];
 // }

@@ -7,9 +7,9 @@ const AiHelpForClient = () => {
 
     const traditionalItems = [
         "No AI crawler access. GPTBot, ClaudeBot, PerplexityBot are blocked by default.",
-        "Outdated content structure. Long paragraphs, keyword-stuffed — AI engines cannot extract or cite.",
+        "Outdated content structure. Long paragraphs, keyword-stuffed - AI engines cannot extract or cite.",
         "No schema implementation. Missing FAQ, HowTo, or Article schema.",
-        "No tracking — zero measurement if ChatGPT ever mentions your brand.",
+        "No tracking - zero measurement if ChatGPT ever mentions your brand.",
         "3-6 month results timeline. Competitors dominate AI search before delivery."
     ];
 

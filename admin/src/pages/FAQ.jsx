@@ -61,7 +61,7 @@ const Textarea = (props) => (
 );
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// FAQ ITEM ROW — inline edit + delete
+// FAQ ITEM ROW - inline edit + delete
 // ═══════════════════════════════════════════════════════════════════════════════
 const FAQItemRow = ({ faq, index, pageId, onUpdated, onDeleted, showPreview }) => {
     const [open, setOpen] = useState(false);
@@ -185,7 +185,7 @@ const FAQItemRow = ({ faq, index, pageId, onUpdated, onDeleted, showPreview }) =
 };
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// PAGE FAQ BLOCK — one expandable block per page
+// PAGE FAQ BLOCK - one expandable block per page
 // ═══════════════════════════════════════════════════════════════════════════════
 const PageFAQBlock = ({ doc, pageTitle, onDocUpdated, onDocDeleted }) => {
     const [open, setOpen] = useState(false);
@@ -276,7 +276,7 @@ const PageFAQBlock = ({ doc, pageTitle, onDocUpdated, onDocDeleted }) => {
 
                     {faqCount === 0 ? (
                         <div className="flex items-center justify-center h-16 text-sm text-slate-400 border-2 border-dashed border-slate-200 rounded-xl">
-                            No FAQs yet — click "Add FAQ" to get started
+                            No FAQs yet - click "Add FAQ" to get started
                         </div>
                     ) : (
                         localDoc.faqs.map((faq, i) => (
@@ -364,7 +364,7 @@ const CreateFAQModal = ({ pages, existingPageIds, onCreated, onClose }) => {
                     value={pageId}
                     onChange={(e) => setPageId(e.target.value)}
                     className="w-full px-3.5 py-2.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-800 bg-slate-50">
-                    <option value="">— Choose a page —</option>
+                    <option value="">- Choose a page -</option>
                     {availablePages.map((p) => (
                         <option key={p._id} value={p._id}>{p.title} ({p.url})</option>
                     ))}

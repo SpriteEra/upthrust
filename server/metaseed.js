@@ -186,7 +186,7 @@ async function seed() {
       created++;
     }
 
-    console.log(`\nDone — ${created} created, ${skipped} skipped`);
+    console.log(`\nDone - ${created} created, ${skipped} skipped`);
   } catch (err) {
     console.error("Seed failed:", err.message);
   } finally {

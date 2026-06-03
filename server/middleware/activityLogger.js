@@ -44,7 +44,7 @@
 // };
 
 // /**
-//  * activityLogger — attach AFTER userAuth/authFlex so req.user is populated.
+//  * activityLogger - attach AFTER userAuth/authFlex so req.user is populated.
 //  *
 //  * Usage:
 //  *   router.get("/", authFlex, activityLogger, getDashboardStats);

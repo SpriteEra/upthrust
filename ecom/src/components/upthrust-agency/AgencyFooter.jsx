@@ -168,7 +168,7 @@ const AgencyFooter = () => {
                 {/* ════════════════════════════════════
             MOBILE LAYOUT  (below md)
             Row 1: CTA full-width
-            Row 2: [Learn] [Explore]  — 2-col side by side
+            Row 2: [Learn] [Explore]  - 2-col side by side
             Row 3: Get In Touch full-width
         ════════════════════════════════════ */}
                 <div className="md:hidden relative mb-10 space-y-8">
@@ -196,7 +196,7 @@ const AgencyFooter = () => {
                         </div>
                     </div>
 
-                    {/* Learn + Explore — 2-col grid */}
+                    {/* Learn + Explore - 2-col grid */}
                     <div className="grid grid-cols-2 gap-x-8">
                         <div>
                             <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">Learn</p>
@@ -220,7 +220,7 @@ const AgencyFooter = () => {
                         </div>
                     </div>
 
-                    {/* Get In Touch — full width */}
+                    {/* Get In Touch - full width */}
                     <div>
                         <p className="text-zinc-500 text-xs font-semibold uppercase tracking-widest mb-4">Get In Touch</p>
                         <ContactList />

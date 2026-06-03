@@ -109,7 +109,7 @@ const testimonials = [
     color: "bg-[#FFEBDA]"
   },
   {
-    text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+    text: "Most leads would disqualify-we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
     name: "Gunjan",
     company: "Housr",
     image: "/ecom/profile/profile8.webp",
@@ -463,7 +463,7 @@ const page = async () => {
                   The numbers. What we did.
                 </h3>
               </div>
-              <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mb-10'>We Don't Just Talk—We Show</span>
+              <span className='text-[15px] sm:text-sm 3xl:text-lg text-center tracking-[-0.02em] mb-10'>We Don't Just Talk-We Show</span>
             </div> */}
 
             <EcomHeading
@@ -483,7 +483,7 @@ const page = async () => {
                 }
               ]}
               label="CASE STUDIES"
-              subtitle="We Don't Just Talk—We Show "
+              subtitle="We Don't Just Talk-We Show "
             />
           </div>
         </div>

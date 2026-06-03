@@ -21,7 +21,7 @@ const WorkingWithUs = dynamic(() => import('@/components/uiux/WorkingWithUs'));
 
 export const metadata = {
     title: "UX & Product Design Agency for B2B Products | Upthrust",
-    description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+    description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
 
     keywords: [
         "UX design agency for B2B products",
@@ -35,7 +35,7 @@ export const metadata = {
 
     openGraph: {
         title: "UX & Product Design Agency for B2B Products | Upthrust",
-        description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+        description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
 
         url: "https://www.upthrust.design/ui-ux-agency",
         siteName: "Upthrust",
@@ -53,7 +53,7 @@ export const metadata = {
     twitter: {
         card: "summary_large_image",
         title: "UX & Product Design Agency for B2B Products | Upthrust",
-        description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+        description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
         images: ["/ecom/ecom-opengraph-image.png"],
     },
 
@@ -63,7 +63,7 @@ export const metadata = {
     }
 };
 
-// ─── Fallback defaults (used when data key is missing — keeps ui-ux page working) ───
+// ─── Fallback defaults (used when data key is missing - keeps ui-ux page working) ───
 const DEFAULT_CASE_STUDIES = {
     arrowNote: {
         line1Parts: [
@@ -266,7 +266,7 @@ const renderArrowNoteLines = (arrowNote) => [
 
 const DesignLayout = ({ data }) => {
 
-    // ── Resolve every section — fall back to defaults so ui-ux (minimal data) still works ──
+    // ── Resolve every section - fall back to defaults so ui-ux (minimal data) still works ──
     const caseStudies = data.caseStudiesSection ?? DEFAULT_CASE_STUDIES;
     console.log("data of case studies", caseStudies);
     const stats = data.stats ?? DEFAULT_STATS;
@@ -278,7 +278,7 @@ const DesignLayout = ({ data }) => {
     const portfolio = data.portfolioSection ?? DEFAULT_PORTFOLIO;
     const faqArrow = data.faqSection ?? { arrowNote: DEFAULT_FAQ_ARROW_NOTE };
 
-    // Pre-commit card — merge from process if present, else full default
+    // Pre-commit card - merge from process if present, else full default
     const preCommit = process.preCommitCard ?? DEFAULT_PROCESS.preCommitCard;
 
     return (
@@ -501,7 +501,7 @@ const DesignLayout = ({ data }) => {
                                         {preCommit.badge}
                                     </span>
 
-                                    {/* Heading — desktop */}
+                                    {/* Heading - desktop */}
                                     <h3 className="max-lg:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
                                         {preCommit.headingDesktop.split("\n").map((line, i, arr) => (
                                             <React.Fragment key={i}>
@@ -510,7 +510,7 @@ const DesignLayout = ({ data }) => {
                                             </React.Fragment>
                                         ))}
                                     </h3>
-                                    {/* Heading — mobile */}
+                                    {/* Heading - mobile */}
                                     <h3 className="lg:hidden text-4xl lg:text-4xl 2xl:text-5xl 3xl:text-6xl font-semibold leading-11 lg:leading-15 3xl:leading-18 mb-8 3xl:mb-10 tracking-[-0.02em]">
                                         {preCommit.headingMobile}
                                     </h3>
@@ -538,7 +538,7 @@ const DesignLayout = ({ data }) => {
                             {/* Divider */}
                             <div className="my-10 h-px w-full bg-white/30 max-md:hidden" />
 
-                            {/* Checklist — mobile */}
+                            {/* Checklist - mobile */}
                             <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-1 max-md:mt-10">
                                 {(preCommit.checklistMobile ?? preCommit.checklist ?? DEFAULT_PROCESS.preCommitCard.checklistMobile).map((item, index) => (
                                     <div className="flex items-center gap-2 sm:gap-2 3xl:gap-2" key={index}>
@@ -552,7 +552,7 @@ const DesignLayout = ({ data }) => {
                                 ))}
                             </div>
 
-                            {/* Checklist — desktop */}
+                            {/* Checklist - desktop */}
                             <div className="max-lg:hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-1 max-md:mt-10">
                                 {(preCommit.checklistDesktop ?? preCommit.checklist ?? DEFAULT_PROCESS.preCommitCard.checklistDesktop).map((item, index) => (
                                     <div className="flex items-center gap-1 sm:gap-2 1600:gap-1.5 1800:gap-2" key={index}>

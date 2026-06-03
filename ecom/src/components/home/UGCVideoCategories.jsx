@@ -465,7 +465,7 @@ const VideoModal = ({ videoUrl, onClose }) => {
         className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 backdrop-blur-sm p-4"
         onClick={onClose}
       >
-        {/* Modal container — stops click propagation so clicking video won't close */}
+        {/* Modal container - stops click propagation so clicking video won't close */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -475,14 +475,14 @@ const VideoModal = ({ videoUrl, onClose }) => {
           style={{ maxHeight: '80vh' }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Loading spinner — shown until video is ready */}
+          {/* Loading spinner - shown until video is ready */}
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center z-10">
               <Loader2 className="size-12 text-white animate-spin" />
             </div>
           )}
 
-          {/* Video — natural aspect ratio, capped at 80vh tall */}
+          {/* Video - natural aspect ratio, capped at 80vh tall */}
           <video
             ref={modalVideoRef}
             src={videoUrl}

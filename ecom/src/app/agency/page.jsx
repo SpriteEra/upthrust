@@ -455,7 +455,7 @@ const page = () => {
             },
           ]}
           label="Case Studies"
-          subtitle={`We Don't Just Talk—We Show`}
+          subtitle={`We Don't Just Talk-We Show`}
           subTitleCss="max-w-2xl 3xl:max-w-3xl"
         />
 
@@ -540,7 +540,7 @@ const page = () => {
             </h3>
 
             <p className="text-white/60 text-sm mt-6">
-              — Tony, MC Creative
+              - Tony, MC Creative
             </p>
 
             {/* CTA */}

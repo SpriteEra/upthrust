@@ -210,7 +210,7 @@ const faqs = [
   {
     question: "What makes you different from other production agencies?",
     answer:
-      "Most studios shoot what looks good. We shoot what performs. Every decision — hook, length, framing, edit, music - is made for the metric, not the showreel. Pretty videos that flop aren't our deliverable.",
+      "Most studios shoot what looks good. We shoot what performs. Every decision - hook, length, framing, edit, music - is made for the metric, not the showreel. Pretty videos that flop aren't our deliverable.",
   },
 ];
 

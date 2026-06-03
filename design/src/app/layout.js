@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === "production";
 export const metadata = {
   title: "UX & Product Design Agency for B2B Products | Upthrust",
 
-  description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth."
+  description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth."
 
 };
 

@@ -51,7 +51,7 @@
 //     {
 //         badge: "SaaS",
 //         title: "ChatGPT",
-//         description: "Demo acquisition costs averaged $450 each. Our AI-first SEO strategy reduced them to $189 in just 18 weeks.",
+//         description: "The content and technical SEO overhaul changed everything - demo volume doubled in just 18 weeks.",
 //         metrics: {
 //             metric1: { label: "Cost per Demo Change", value: "20%" },
 //             metric2: { label: "Number of Demos", value: "48%" }
@@ -60,7 +60,7 @@
 //             name: "Nik",
 //             role: "CEO, WLNC",
 //             avatar: "/google-ads/compaigns/1.webp",
-//             whatsays: "The single keyword ad group rebuild changed everything — demos doubled while spend stayed flat",
+//             whatsays: "The single keyword ad group rebuild changed everything - demos doubled while spend stayed flat",
 //         },
 //         accentColor: "#74AA9C",
 //         bgColor: "#DEFFF6",
@@ -73,7 +73,7 @@
 //     {
 //         badge: "B2B",
 //         title: "Google Search",
-//         description: "200% more organic traffic and 75 qualified leads every month — without increasing budget",
+//         description: "200% more organic traffic and 75 qualified leads every month - without increasing budget",
 //         metrics: {
 //             metric1: { label: "Boost in Organic Traffic", value: "200%" },
 //             metric2: { label: "Marketing Qualified Leads", value: "75" }
@@ -82,7 +82,7 @@
 //             name: "Iti Dubey",
 //             role: "Marketing Head, Mukunda Foods",
 //             avatar: "/google-ads/compaigns/2.webp",
-//             whatsays: "We finally have predictable pipeline from SEO. It is not just traffic — it is demos in the calendar.",
+//             whatsays: "We finally have predictable pipeline from SEO. It is not just traffic - it is demos in the calendar.",
 //         },
 //         accentColor: "#FE2B27",
 //         bgColor: "#FFE7E5",
@@ -126,7 +126,7 @@
 //             name: "Nidhi Jain",
 //             role: "Co-Founder, Cycle",
 //             avatar: "/google-ads/compaigns/4.webp",
-//             whatsays: "Perplexity users converted faster than any other channel — they already trusted us before the first call.",
+//             whatsays: "Perplexity users converted faster than any other channel - they already trusted us before the first call.",
 //         },
 //         accentColor: "#21808D",
 //         bgColor: "#D5EEF1",
@@ -189,7 +189,7 @@
 //     {
 //         title: 'Communication',
 //         description:
-//             "Weekly 30-minute account review calls — not just a slide deck, but a live walkthrough of what changed and what we're doing about it.",
+//             "Weekly 30-minute account review calls - not just a slide deck, but a live walkthrough of what changed and what we're doing about it.",
 //         image: '/seo/communication-2.webp',
 //     },
 //     {
@@ -477,7 +477,7 @@
 //                         </h5>
 
 //                         <p className="text-xl 3xl:text-2xl leading-[130%] tracking-[-0.02em] max-w-md 3xl:max-w-lg">
-//                             Discover how your brand performs on answer engines — and uncover
+//                             Discover how your brand performs on answer engines - and uncover
 //                             the opportunities to outpace the competition
 //                         </p>
 

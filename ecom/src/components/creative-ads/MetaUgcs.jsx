@@ -120,7 +120,7 @@ const FilterBar = ({ activeType, onToggle, activeCategory, setActiveCategory }) 
 
     return (
         <div className="w-full">
-            {/* Tab buttons — sit right above the bordered box */}
+            {/* Tab buttons - sit right above the bordered box */}
             <div className="flex items-end gap-3 lg:gap-5 relative z-10">
                 {tabs.map(({ label, Icon }, i) => {
                     const isActive = activeType === label;
@@ -370,7 +370,7 @@ const UGCVideoCategories = () => {
 
         <div className="lg:max-w-[83%] 3xl:max-w-[85%] mx-auto px-4">
 
-            {/* Top controls row — matching screenshot */}
+            {/* Top controls row - matching screenshot */}
             <div className="mb-8 lg:mb-12 3xl:mb-16">
                 <FilterBar
                     activeType={adType}
@@ -380,7 +380,7 @@ const UGCVideoCategories = () => {
                 />
             </div>
 
-            {/* Grid — 4 columns, 2 rows visible, matching screenshot */}
+            {/* Grid - 4 columns, 2 rows visible, matching screenshot */}
             <motion.div
                 key={activeCategory ?? 'all'}
                 initial={{ opacity: 0, y: 16 }}

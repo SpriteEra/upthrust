@@ -15,14 +15,14 @@ const steps = [
         id: 2,
         label: "CLARIFYING THE MISSION",
         title: "Creative Brief",
-        text: "Every breakthrough campaign starts with a bulletproof brief. We define your single-minded message, target audience behaviors, success metrics, and mandatory brand elements. This becomes our north star—ensuring every creative decision ladders back to measurable business objectives before production begins.",
+        text: "Every breakthrough campaign starts with a bulletproof brief. We define your single-minded message, target audience behaviors, success metrics, and mandatory brand elements. This becomes our north star-ensuring every creative decision ladders back to measurable business objectives before production begins.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif2.gif",
     },
     {
         id: 3,
         label: "WHERE MAGIC MEETS METHOD",
         title: "Concept Development",
-        text: "Our strategists and creatives collaborate to develop 2-3 distinct creative territories—each rooted in insight, designed for thumb-stopping impact. We explore multiple hooks, formats, and storytelling approaches, then pressure-test concepts against your brief before presenting only the ideas worth producing.",
+        text: "Our strategists and creatives collaborate to develop 2-3 distinct creative territories-each rooted in insight, designed for thumb-stopping impact. We explore multiple hooks, formats, and storytelling approaches, then pressure-test concepts against your brief before presenting only the ideas worth producing.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif3.gif",
     },
     {
@@ -36,14 +36,14 @@ const steps = [
         id: 5,
         label: "TESTING OUR HYPOTHESIS",
         title: "Launch & Optimize",
-        text: "Each creative is a hypothesis that needs validation. We launch with strategic testing frameworks—prioritizing concept-level differences first, then hooks, then elements. Real-time performance data tells us what's working within 7 days, allowing us to double down on winners and kill underperformers fast.",
+        text: "Each creative is a hypothesis that needs validation. We launch with strategic testing frameworks-prioritizing concept-level differences first, then hooks, then elements. Real-time performance data tells us what's working within 7 days, allowing us to double down on winners and kill underperformers fast.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif5.gif",
     },
     {
         id: 6,
         label: "THE FEEDBACK LOOP",
         title: "Analysis & Iteration",
-        text: "We analyze engagement metrics, creative fatigue patterns, and conversion data to understand exactly what resonated. These insights feed directly into your next creative sprint—building institutional knowledge with every cycle. The result: each batch of creative is systematically better than the last, compounding effectiveness over time.",
+        text: "We analyze engagement metrics, creative fatigue patterns, and conversion data to understand exactly what resonated. These insights feed directly into your next creative sprint-building institutional knowledge with every cycle. The result: each batch of creative is systematically better than the last, compounding effectiveness over time.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif6.gif",
     },
 ];

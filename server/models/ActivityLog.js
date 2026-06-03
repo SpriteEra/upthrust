@@ -50,7 +50,7 @@ const activityLogSchema = new mongoose.Schema(
     }
 );
 
-// TTL index — auto-delete logs older than 30 days
+// TTL index - auto-delete logs older than 30 days
 activityLogSchema.index({ createdAt: 1 }, { expireAfterSeconds: 30 * 24 * 60 * 60 });
 
 const ActivityLog =

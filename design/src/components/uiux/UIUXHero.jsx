@@ -188,7 +188,7 @@ const images = [
 
 // ── Default hero content (ui-ux page) ──────────────────────────────────────
 const DEFAULT_HERO = {
-    // animated word stays — line1 is always "WE DESIGN {animated word}"
+    // animated word stays - line1 is always "WE DESIGN {animated word}"
     line1: "WE DESIGN",
     line2: "PEOPLE SHOW THEIR",
     line3: "FRIENDS",

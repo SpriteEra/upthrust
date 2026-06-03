@@ -29,12 +29,12 @@ const faqs = [
     {
         question: "What is performance marketing?",
         answer:
-            "Partnering with a performance marketing agency means every dollar you spend is tied to a measurable outcome — leads, demos, or closed revenue. It targets high-intent buyers using signals like search behavior, buying intent, and ICP parameters. Unlike brand advertising, it does not reward impressions — it rewards pipeline. At Upthrust, every campaign is built to deliver consistent, scalable, and ROI-positive business outcomes."
+            "Partnering with a performance marketing agency means every dollar you spend is tied to a measurable outcome - leads, demos, or closed revenue. It targets high-intent buyers using signals like search behavior, buying intent, and ICP parameters. Unlike brand advertising, it does not reward impressions - it rewards pipeline. At Upthrust, every campaign is built to deliver consistent, scalable, and ROI-positive business outcomes."
     },
     {
         question: "What is the difference between Google Ads and paid social?",
         answer:
-            "As an online performance marketing agency, we use both channels strategically depending on where your buyers are in the funnel. Google Ads captures active demand — your ad appears when a buyer is searching for a solution. Paid social on platforms like LinkedIn or Meta creates demand by placing your offer in front of the right ICP before they search. We use both to fill and accelerate your pipeline at every stage."
+            "As an online performance marketing agency, we use both channels strategically depending on where your buyers are in the funnel. Google Ads captures active demand - your ad appears when a buyer is searching for a solution. Paid social on platforms like LinkedIn or Meta creates demand by placing your offer in front of the right ICP before they search. We use both to fill and accelerate your pipeline at every stage."
     },
     {
         question: "How can a performance marketing agency help you grow?",
@@ -44,37 +44,37 @@ const faqs = [
     {
         question: "Which performance channels work best for my business?",
         answer:
-            "Working with a global performance marketing agency means your channel strategy is built on cross-market data — not guesswork. The right mix depends on your ICP, average deal size, sales cycle, and where your buyers spend time. On your free strategy call, we map your ICP to the channels with the highest conversion probability so your first spend goes exactly where the data points."
+            "Working with a global performance marketing agency means your channel strategy is built on cross-market data - not guesswork. The right mix depends on your ICP, average deal size, sales cycle, and where your buyers spend time. On your free strategy call, we map your ICP to the channels with the highest conversion probability so your first spend goes exactly where the data points."
     },
     {
         question: "What services does your performance marketing company offer?",
         answer:
-            "As a performance marketing company, our services cover the entire paid acquisition funnel — Google Search, LinkedIn paid social, ad copy and creative, landing page optimization, conversion tracking, and weekly performance reporting. We also offer account-based marketing, demand generation, and retargeting for B2B companies running complex, multi-stakeholder sales cycles. Every change is logged, hypothesized, and measured for impact. No vanity metrics. No guesswork."
+            "As a performance marketing company, our services cover the entire paid acquisition funnel - Google Search, LinkedIn paid social, ad copy and creative, landing page optimization, conversion tracking, and weekly performance reporting. We also offer account-based marketing, demand generation, and retargeting for B2B companies running complex, multi-stakeholder sales cycles. Every change is logged, hypothesized, and measured for impact. No vanity metrics. No guesswork."
     },
     {
         question: "Which works better: Google Ads or LinkedIn?",
         answer:
-            "The answer depends on your buyer — and the performance marketing agency you choose should test both before recommending one. Google Search often outperforms on direct conversion intent, while LinkedIn excels in account-based precision and ICP-level targeting. We let conversion data, not opinion, determine where to concentrate spend."
+            "The answer depends on your buyer - and the performance marketing agency you choose should test both before recommending one. Google Search often outperforms on direct conversion intent, while LinkedIn excels in account-based precision and ICP-level targeting. We let conversion data, not opinion, determine where to concentrate spend."
     },
     {
         question: "How much does it cost to work with a performance marketing firm?",
         answer:
-            "Choosing a performance marketing firm should not feel like a financial risk — pricing depends on your campaign scope, the channels we activate, and your monthly ad spend. Rather than quoting a fixed number upfront, we start with a free growth strategy call to assess your current CAC, pipeline goals, and budget. That gives us enough context to recommend a setup that pays for itself — not one that burns budget without accountability."
+            "Choosing a performance marketing firm should not feel like a financial risk - pricing depends on your campaign scope, the channels we activate, and your monthly ad spend. Rather than quoting a fixed number upfront, we start with a free growth strategy call to assess your current CAC, pipeline goals, and budget. That gives us enough context to recommend a setup that pays for itself - not one that burns budget without accountability."
     },
     {
         question: "How long does it take to see real results?",
         answer:
-            "As a performance marketing firm focused on B2B pipelines, most campaigns go live within two weeks of onboarding. The first 30 days build clean data — keyword mapping, audience segmentation, conversion tracking, and baseline benchmarks. Meaningful signals like CTR, CPL, and lead quality typically emerge in weeks three to four, with measurable CAC improvements within 60 to 90 days."
+            "As a performance marketing firm focused on B2B pipelines, most campaigns go live within two weeks of onboarding. The first 30 days build clean data - keyword mapping, audience segmentation, conversion tracking, and baseline benchmarks. Meaningful signals like CTR, CPL, and lead quality typically emerge in weeks three to four, with measurable CAC improvements within 60 to 90 days."
     },
     {
         question: "Do you handle ad creative and copy too?",
         answer:
-            "Choosing a performance advertising agency means creative and copy should already be part of the process — not an add-on you pay extra for. Our team develops ad copy aligned to your ICP’s pain points, headlines that match the exact keywords your buyers search, and landing pages designed to convert — not just impress. We treat creative as a performance lever, not a branding exercise."
+            "Choosing a performance advertising agency means creative and copy should already be part of the process - not an add-on you pay extra for. Our team develops ad copy aligned to your ICP’s pain points, headlines that match the exact keywords your buyers search, and landing pages designed to convert - not just impress. We treat creative as a performance lever, not a branding exercise."
     },
     {
         question: "How do I get started?",
         answer:
-            "Book a free growth strategy call with our performance marketing company. On the call, we review your current setup, identify where budget is leaking, and map out a plan built around your ICP, deal size, and pipeline goals. There is no pitch, no pressure, and no obligation — just a clear picture of what a first campaign looks like and what results you can reasonably expect."
+            "Book a free growth strategy call with our performance marketing company. On the call, we review your current setup, identify where budget is leaking, and map out a plan built around your ICP, deal size, and pipeline goals. There is no pitch, no pressure, and no obligation - just a clear picture of what a first campaign looks like and what results you can reasonably expect."
     }
 ];
 

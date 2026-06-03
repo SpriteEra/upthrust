@@ -21,7 +21,7 @@ const defaultTestimonials = [
         color: "bg-[#FFEBDA]"
     },
     {
-        text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+        text: "Most leads would disqualify-we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
         name: "Gunjan",
         company: "Housr",
         image: "/ecom/profile/profile8.webp",
@@ -90,7 +90,7 @@ const MobileTestimonialsSlider = ({ cardColors = cardDefaultColors, testimonials
     //         companyNameColor: cardColors[1].companyNameColor,
     //     },
     //     {
-    //         text: "Most leads would disqualify—we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
+    //         text: "Most leads would disqualify-we couldn't convert. Upthrust changed that with property-specific targeting and smart budget allocation. Lead quality and conversions both improved significantly.",
     //         name: "Gunjan",
     //         company: "Housr",
     //         image: "/ecom/profile/profile8.webp",

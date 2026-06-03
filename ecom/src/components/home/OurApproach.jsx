@@ -829,7 +829,7 @@
 //                 }}
 //             />
 
-//             {/* Rotating orbit — driven by GSAP via ref */}
+//             {/* Rotating orbit - driven by GSAP via ref */}
 //             <div
 //                 ref={orbitRef}
 //                 style={{
@@ -969,7 +969,7 @@ const steps = [
 ];
 
 export default function OurApproach() {
-    // FIX 1: was useState(3) — correct initial active index for rotation=270 is 1
+    // FIX 1: was useState(3) - correct initial active index for rotation=270 is 1
     const [activeIndex, setActiveIndex] = useState(1);
     const angleRef = useRef(270);
     const orbitRef = useRef(null);
@@ -1000,7 +1000,7 @@ export default function OurApproach() {
                     Math.floor(scrollProgress * steps.length)
                 );
             } else {
-                // FIX 2: section fully scrolled past — lock on last step instead of snapping back to 0
+                // FIX 2: section fully scrolled past - lock on last step instead of snapping back to 0
                 stepIndex = steps.length - 1;
             }
 
@@ -1053,7 +1053,7 @@ export default function OurApproach() {
                 }}
             />
 
-            {/* Rotating orbit — driven by GSAP via ref */}
+            {/* Rotating orbit - driven by GSAP via ref */}
             <div
                 ref={orbitRef}
                 style={{
