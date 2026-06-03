@@ -2,6 +2,7 @@ import RatingStars from '@/common/Rating'
 import UGCVideoCategories from '@/components/home/UGCVideoCategories'
 import AgencyBrandSlider from '@/components/upthrust-agency/AgencyBrandSlider'
 import AgencyButton from '@/components/upthrust-agency/AgencyButton'
+import AgencyFooter from '@/components/upthrust-agency/AgencyFooter'
 import AgencyHeading from '@/components/upthrust-agency/AgencyHeading'
 import AgencyNavbar from '@/components/upthrust-agency/AgencyNavbar'
 import DropBoxScroll from '@/components/upthrust-agency/BoxScroll'
@@ -59,7 +60,7 @@ const page = () => {
     <div>
       <HeroSection />
       <ScrollText />
-      <AgencyNavbar />
+      {/* <AgencyNavbar /> */}
       <PlayVideoSection />
       <div className="pb-10 pt-30 ">
         <AgencyHeading
@@ -467,7 +468,7 @@ const page = () => {
             <div className="relative rounded-2xl overflow-hidden bg-[#111]">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/main-agency/case-study-1.png"
+                  src="/main-agency/case1.png"
                   alt="Case Study Video"
                   fill
                   className="object-cover"
@@ -487,10 +488,7 @@ const page = () => {
                   </button>
                 </div>
 
-                {/* Small Bottom Badge */}
-                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
-                  0:32 mins
-                </div>
+
               </div>
             </div>
 
@@ -498,7 +496,7 @@ const page = () => {
             <div className="relative rounded-2xl overflow-hidden bg-[#111]">
               <div className="relative aspect-[16/10]">
                 <Image
-                  src="/main-agency/case-study-2.png"
+                  src="/main-agency/case2.png"
                   alt="Case Study Video"
                   fill
                   className="object-cover"
@@ -517,38 +515,37 @@ const page = () => {
                     </svg>
                   </button>
                 </div>
-
-                {/* Small Bottom Badge */}
-                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-sm rounded-full px-3 py-1 text-white text-xs">
-                  0:32 mins
-                </div>
               </div>
             </div>
-
           </div>
 
           {/* Bottom Content */}
           <div className="mt-10 border-t border-white/10 pt-8">
-            <span className="text-[#FF6B00] text-xs uppercase tracking-[0.25em]">
-              Testimonials
-            </span>
-
-            <h3 className="text-white text-2xl md:text-4xl font-semibold leading-[130%] tracking-[-0.03em] mt-5 max-w-6xl">
-              Upthrust Promised 90 Days. We Saw Results In 47 Days.
-              Traffic Improved, Conversions Went Up, Sales Became
-              Exponential. Worth Every Penny."
+            <div className="flex items-center gap-3 mb-2">
+              <span className="size-4 bg-orange rounded-full"></span>
+              <span className="text-white text-xs lg:text-[14px] uppercase leading-[150%] tracking-[-0.2em]">
+                Testimonials
+              </span>
+            </div>
+            <hr className=" w-full text-white h-1" />
+            <h3 className="text-[#8C8C8C] text-2xl md:text-4xl xl:text-5xl 3xl:text-[60px] font-semibold leading-[130%] tracking-[-0.02em] mt-5 max-w-6xl">
+              Upthrust <span className="text-white">Promised 90 Days.</span> We Saw <span className="text-white">Results In 47 Days.</span>
+              Traffic Improved, <span className="text-white">Conversions Went Up</span>, Sales Became
+              <span className="text-white"> Exponential</span>. Worth Every Penny."
             </h3>
 
-            <p className="text-white/60 text-sm mt-6">
+            <p className="text-white/60 text-sm xl:text-lg 3xl:text-xl mt-6">
               - Tony, MC Creative
             </p>
-
             {/* CTA */}
-            <button className="mt-10 bg-white text-black rounded-full px-6 py-3 flex items-center gap-3 text-sm font-medium hover:scale-105 transition-all">
+            <button className="mt-10 bg-black border border-white text-white rounded-full px-6 py-3 flex items-center gap-3 text-sm font-medium hover:scale-105 transition-all">
               See all reviews
 
-              <span className="w-7 h-7 rounded-full bg-[#FF6B00] text-white flex items-center justify-center text-sm">
-                ↗
+              <span className="w-9 h-9 rounded-full bg-[#FF6B00] text-white flex items-center justify-center text-sm">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.5 6.5L6 18" stroke="white" stroke-width="1.5" stroke-linecap="square" />
+                  <path d="M8 6H18V16" stroke="white" stroke-width="1.5" stroke-linecap="square" />
+                </svg>
               </span>
             </button>
           </div>
@@ -560,8 +557,46 @@ const page = () => {
         <DropBoxScroll />
       </div>
 
+      <div className="my-20 py-10 bg-black w-[95%] mx-auto rounded-2xl">
+        <AgencyHeading
+          tag="h2"
+          textColor="text-white"
+          heading={[
+            {
+              line: [
+                { type: "normal", text: "Get Found Everywhere Your " },
+              ],
+            },
+            {
+              line: [
+                { type: "italic", text: "Customers Search" }
+              ],
+            },
+          ]}
+          label="Case Studies"
+          subtitle={`We Don't Just Talk-We Show`}
+          subTitleCss="max-w-2xl 3xl:max-w-3xl"
+        />
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 items-center justify-center px-20">
+          <div>
+            <p className="text-white text-[28px] 3xl:text-[33px] font-normal leading-[150%] ">
+              A proven system is
+              <span className="text-white text-[28px] 3xl:text-[33px] font-normal leading-[150%] font-instrument italic block ">
+                your key to scale
+              </span>
+            </p>
+          </div>
+          <div>
+            <Image width={500} height={500} className="w-full h-full object-cover" src="/main-agency/hand-phone.png" alt="Hand Phone" />
+          </div>
+          <div>
+            <AgencyButton text='Show Us how to scale' />
+          </div>
+        </div>
+      </div>
 
+      <AgencyFooter />
 
     </div>
   )

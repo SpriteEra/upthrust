@@ -31,11 +31,11 @@ const CASE_STUDIES = [
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lorem ipsum dolor sit amet, consectetur.",
         media: [
-            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-1.webp" },
-            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-2.webp" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/1.png" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/2.png" },
             { type: "video", src: "/main-agency/case-studies/urban-pitara/video.mp4" },
-            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-3.webp" },
-            { type: "image", src: "/main-agency/case-studies/urban-pitara/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/4.png" },
+            { type: "image", src: "/main-agency/case-studies/urban-pitara/5.png" },
         ],
     },
     {
@@ -45,11 +45,11 @@ const CASE_STUDIES = [
         description:
             "From zero to viral - a beverage brand that scaled through precision creative and social-first strategy across Meta and Instagram.",
         media: [
-            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-1.webp" },
-            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-2.webp" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/1.png" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/2.png" },
             { type: "video", src: "/main-agency/case-studies/smokey-cocktail/video.mp4" },
-            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-3.webp" },
-            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/4.png" },
+            { type: "image", src: "/main-agency/case-studies/smokey-cocktail/5.png" },
         ],
     },
     {
@@ -59,11 +59,11 @@ const CASE_STUDIES = [
         description:
             `443% organic growth and a phone call that started with "we just crossed $1M". One client. One team. Full stack execution.`,
         media: [
-            { type: "image", src: "/main-agency/case-studies/tiggle/img-1.webp" },
-            { type: "image", src: "/main-agency/case-studies/tiggle/img-2.webp" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/1.png" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/2.png" },
             { type: "video", src: "/main-agency/case-studies/tiggle/video.mp4" },
-            { type: "image", src: "/main-agency/case-studies/tiggle/img-3.webp" },
-            { type: "image", src: "/main-agency/case-studies/tiggle/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/4.png" },
+            { type: "image", src: "/main-agency/case-studies/tiggle/5.png" },
         ],
     },
     {
@@ -73,11 +73,11 @@ const CASE_STUDIES = [
         description:
             "Campaign-led performance that moved the needle at scale. A global brand trusting an agency that thinks local and executes globally.",
         media: [
-            { type: "image", src: "/main-agency/case-studies/coca-cola/img-1.webp" },
-            { type: "image", src: "/main-agency/case-studies/coca-cola/img-2.webp" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/1.png" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/2.png" },
             { type: "video", src: "/main-agency/case-studies/coca-cola/video.mp4" },
-            { type: "image", src: "/main-agency/case-studies/coca-cola/img-3.webp" },
-            { type: "image", src: "/main-agency/case-studies/coca-cola/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/4.png" },
+            { type: "image", src: "/main-agency/case-studies/coca-cola/5.png" },
         ],
     },
     {
@@ -87,11 +87,11 @@ const CASE_STUDIES = [
         description:
             "Repositioned a heritage fashion brand for a younger audience. Performance creative meets cultural relevance.",
         media: [
-            { type: "image", src: "/main-agency/case-studies/biba/img-1.webp" },
-            { type: "image", src: "/main-agency/case-studies/biba/img-2.webp" },
+            { type: "image", src: "/main-agency/case-studies/biba/1.png" },
+            { type: "image", src: "/main-agency/case-studies/biba/2.png" },
             { type: "video", src: "/main-agency/case-studies/biba/video.mp4" },
-            { type: "image", src: "/main-agency/case-studies/biba/img-3.webp" },
-            { type: "image", src: "/main-agency/case-studies/biba/img-4.webp" },
+            { type: "image", src: "/main-agency/case-studies/biba/4.png" },
+            { type: "image", src: "/main-agency/case-studies/biba/5.png" },
         ],
     },
 

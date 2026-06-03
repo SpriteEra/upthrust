@@ -3,6 +3,8 @@
 import { useEffect, useRef, useCallback, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import { label } from "framer-motion/client";
 
 // Module-level - never touched by React re-renders
 let _gsapCtx = null;
@@ -10,115 +12,122 @@ let _styleEl = null;
 
 const TILES = [
     {
-        id: "framework", label: "Framework",
-        bg: "#1e2a3a", ink: "#fff",
+        id: "meta-ads", label: "Meta",
+        label2: "Ads",
+        bg: "#3DD3EE", ink: "#000",
         col: 1, row: 1, cs: 1, rs: 2, from: "left",
-        render: () => (
-            <svg style={{ position: "absolute", bottom: 20, left: 10 }} viewBox="0 0 165 220" width="70%" height="70%">
-                <circle cx="24" cy="40" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
-                <circle cx="138" cy="110" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
-                <circle cx="24" cy="185" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
-                <line x1="24" y1="40" x2="138" y2="110" stroke="#5a7080" strokeWidth="2" />
-                <line x1="138" y1="110" x2="24" y2="185" stroke="#5a7080" strokeWidth="2" />
-            </svg>
-        ),
+        // render: () => (
+        //     <svg style={{ position: "absolute", bottom: 20, left: 10 }} viewBox="0 0 165 220" width="70%" height="70%">
+        //         <circle cx="24" cy="40" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
+        //         <circle cx="138" cy="110" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
+        //         <circle cx="24" cy="185" r="8" fill="none" stroke="#5a7080" strokeWidth="2" />
+        //         <line x1="24" y1="40" x2="138" y2="110" stroke="#5a7080" strokeWidth="2" />
+        //         <line x1="138" y1="110" x2="24" y2="185" stroke="#5a7080" strokeWidth="2" />
+        //     </svg>
+        // ),
     },
     {
-        id: "voicetone", label: "Voice & Tone",
-        bg: "#1a1a1a", ink: "#fff",
+        id: "creative", label: "Creative",
+        label2: "Ads Agency",
+        bg: "#FAD24B", ink: "#000",
         col: 2, row: 1, cs: 2, rs: 1, from: "top",
-        render: () => (
-            <>
-                <svg style={{ position: "absolute", left: 14, top: 48 }} viewBox="0 0 170 140" width={170} height={140}>
-                    <text x="4" y="134" fontSize="155" fontFamily="Georgia,serif" fill="none" stroke="white" strokeWidth="3">"</text>
-                </svg>
-                <svg style={{ position: "absolute", right: 36, bottom: 12 }} viewBox="0 0 170 140" width={170} height={140}>
-                    <text x="4" y="134" fontSize="155" fontFamily="Georgia,serif" fill="none" stroke="white" strokeWidth="3">"</text>
-                </svg>
-            </>
-        ),
+        // render: () => (
+        //     <>
+        //         <svg style={{ position: "absolute", left: 14, top: 48 }} viewBox="0 0 170 140" width={170} height={140}>
+        //             <text x="4" y="134" fontSize="155" fontFamily="Georgia,serif" fill="none" stroke="white" strokeWidth="3">"</text>
+        //         </svg>
+        //         <svg style={{ position: "absolute", right: 36, bottom: 12 }} viewBox="0 0 170 140" width={170} height={140}>
+        //             <text x="4" y="134" fontSize="155" fontFamily="Georgia,serif" fill="none" stroke="white" strokeWidth="3">"</text>
+        //         </svg>
+        //     </>
+        // ),
     },
     {
-        id: "logo", label: "Logo",
-        bg: "#22c5d9", ink: "#0a4a52",
+        id: "design", label: "Design",
+        label2: "Agency",
+        bg: "#3DD3EE", ink: "#000",
         col: 4, row: 1, cs: 1, rs: 2, from: "right",
-        render: () => (
-            <div style={{ position: "absolute", bottom: 16, right: 18 }}>
-                <svg viewBox="0 0 80 68" width={80} height={68} fill="#0c5a6a">
-                    <polygon points="40,3 20,14 40,25 20,36 0,25 20,14" />
-                    <polygon points="40,3 60,14 40,25 60,36 80,25 60,14" />
-                    <polygon points="20,36 40,25 60,36 40,47" />
-                    <polygon points="20,43 40,32 60,43 40,54" />
-                </svg>
-            </div>
-        ),
+        // render: () => (
+        //     <div style={{ position: "absolute", bottom: 16, right: 18 }}>
+        //         <svg viewBox="0 0 80 68" width={80} height={68} fill="#0c5a6a">
+        //             <polygon points="40,3 20,14 40,25 20,36 0,25 20,14" />
+        //             <polygon points="40,3 60,14 40,25 60,36 80,25 60,14" />
+        //             <polygon points="20,36 40,25 60,36 40,47" />
+        //             <polygon points="20,43 40,32 60,43 40,54" />
+        //         </svg>
+        //     </div>
+        // ),
     },
     {
-        id: "typography", label: "Typography",
-        bg: "#e04b1a", ink: "#3a1000",
+        id: "ppc", label: "PPC",
+        bg: "#C8AFF0", ink: "#000",
         col: 5, row: 1, cs: 1, rs: 1, from: "right",
-        render: () => (
-            <div style={{ position: "absolute", bottom: 4, right: 4, fontSize: 110, fontWeight: 900, fontFamily: "'Arial Black',Arial,sans-serif", color: "#3a1000", lineHeight: 1 }}>Aa</div>
-        ),
+        // render: () => (
+        //     <div style={{ position: "absolute", bottom: 4, right: 4, fontSize: 110, fontWeight: 900, fontFamily: "'Arial Black',Arial,sans-serif", color: "#3a1000", lineHeight: 1 }}>Aa</div>
+        // ),
     },
     {
-        id: "color", label: "Color",
-        bg: "#f07800", ink: "#5a2d00",
+        id: "video-production", label: "Video",
+        label2: "Production",
+        bg: "#FF8C19", ink: "#fff",
         col: 2, row: 2, cs: 1, rs: 2, from: "bottom",
-        render: () => (
-            <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-55%)" }}>
-                <div style={{ width: 80, height: 80, background: "#8b4400", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#5a2c00" }} />
-                </div>
-                <div style={{ width: 80, height: 80, background: "#8b4400", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 5, marginLeft: 44 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#5a2c00" }} />
-                </div>
-            </div>
-        ),
+        // render: () => (
+        //     <div style={{ position: "absolute", bottom: 32, left: "50%", transform: "translateX(-55%)" }}>
+        //         <div style={{ width: 80, height: 80, background: "#8b4400", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        //             <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#5a2c00" }} />
+        //         </div>
+        //         <div style={{ width: 80, height: 80, background: "#8b4400", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 5, marginLeft: 44 }}>
+        //             <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#5a2c00" }} />
+        //         </div>
+        //     </div>
+        // ),
     },
     {
-        id: "iconography", label: "Iconography",
-        bg: "#b5d800", ink: "#2d4000",
+        id: "b2b", label: "B2B &",
+        label2: "SaaS",
+        bg: "#B4DC19", ink: "#000",
         col: 1, row: 3, cs: 1, rs: 1, from: "left",
-        render: () => (
-            <div style={{ position: "absolute", bottom: 16, left: 16 }}>
-                <svg viewBox="0 0 60 66" width={60} height={66} fill="none">
-                    <rect x="4" y="29" width="52" height="35" rx="5" fill="#1a4a2a" />
-                    <path d="M16 29V19C16 6 44 6 44 19V29" stroke="#1a4a2a" strokeWidth="5.5" fill="none" strokeLinecap="round" />
-                    <circle cx="30" cy="43" r="6.5" fill="#b5d800" />
-                    <rect x="27" y="43" width="6" height="10" rx="2" fill="#b5d800" />
-                </svg>
-            </div>
-        ),
+        // render: () => (
+        //     <div style={{ position: "absolute", bottom: 16, left: 16 }}>
+        //         <svg viewBox="0 0 60 66" width={60} height={66} fill="none">
+        //             <rect x="4" y="29" width="52" height="35" rx="5" fill="#1a4a2a" />
+        //             <path d="M16 29V19C16 6 44 6 44 19V29" stroke="#1a4a2a" strokeWidth="5.5" fill="none" strokeLinecap="round" />
+        //             <circle cx="30" cy="43" r="6.5" fill="#b5d800" />
+        //             <rect x="27" y="43" width="6" height="10" rx="2" fill="#b5d800" />
+        //         </svg>
+        //     </div>
+        // ),
     },
     {
-        id: "imagery", label: "Imagery",
-        bg: "#7d1a5c", ink: "#f0c0e0",
+        id: "performance", label: "Performance",
+        label2: "Marketing Agency",
+        bg: "#892055", ink: "#fff",
         col: 3, row: 3, cs: 2, rs: 1, from: "bottom",
-        render: () => (
-            <div style={{ position: "absolute", bottom: 16, right: 16, width: 155, height: 108, background: "#c06080", borderRadius: 4, overflow: "hidden" }}>
-                <div style={{ position: "absolute", bottom: 0, width: "100%", height: "65%", background: "#e0507a", clipPath: "ellipse(130% 100% at 50% 100%)" }} />
-                <div style={{ position: "absolute", top: 18, left: "50%", transform: "translateX(-50%)", width: 24, height: 24, borderRadius: "50%", background: "#f0a0b8" }} />
-            </div>
-        ),
+        // render: () => (
+        //     <div style={{ position: "absolute", bottom: 16, right: 16, width: 155, height: 108, background: "#c06080", borderRadius: 4, overflow: "hidden" }}>
+        //         <div style={{ position: "absolute", bottom: 0, width: "100%", height: "65%", background: "#e0507a", clipPath: "ellipse(130% 100% at 50% 100%)" }} />
+        //         <div style={{ position: "absolute", top: 18, left: "50%", transform: "translateX(-50%)", width: 24, height: 24, borderRadius: "50%", background: "#f0a0b8" }} />
+        //     </div>
+        // ),
     },
     {
-        id: "motion", label: "Motion",
-        bg: "#c0b8e8", ink: "#2e1a6a",
+        id: "seo", label: "SEO",
+        label2: "Agency",
+        bg: "#FA551E", ink: "#fff",
         col: 5, row: 2, cs: 1, rs: 2, from: "right",
-        render: () => (
-            <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} viewBox="0 0 185 348" preserveAspectRatio="xMidYMid meet">
-                <circle cx="145" cy="52" r="8" fill="#3d1f8a" />
-                <circle cx="170" cy="52" r="8" fill="#3d1f8a" />
-                <path d="M152 52 C152 200, 36 200, 24 320" fill="none" stroke="#3d1f8a" strokeWidth="2" />
-                <circle cx="11" cy="326" r="8" fill="#3d1f8a" />
-                <circle cx="36" cy="326" r="8" fill="#3d1f8a" />
-            </svg>
-        ),
+        // render: () => (
+        //     <svg style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} viewBox="0 0 185 348" preserveAspectRatio="xMidYMid meet">
+        //         <circle cx="145" cy="52" r="8" fill="#3d1f8a" />
+        //         <circle cx="170" cy="52" r="8" fill="#3d1f8a" />
+        //         <path d="M152 52 C152 200, 36 200, 24 320" fill="none" stroke="#3d1f8a" strokeWidth="2" />
+        //         <circle cx="11" cy="326" r="8" fill="#3d1f8a" />
+        //         <circle cx="36" cy="326" r="8" fill="#3d1f8a" />
+        //     </svg>
+        // ),
     },
 ];
 
-const BLUE_TILE = { bg: "#0061fe", col: 3, row: 2 };
+const BLUE_TILE = { bg: "#000", col: 3, row: 2 };
 
 function getOffscreen(from) {
     if (typeof window === "undefined") return { x: 0, y: 0 };
@@ -131,17 +140,7 @@ function getOffscreen(from) {
     }[from] ?? { x: 0, y: 0 };
 }
 
-// Static component - never re-renders after first mount
-function DropboxDiamond({ size = 44, color = "#fff" }) {
-    return (
-        <svg viewBox="0 0 44 38" width={size} height={size * 0.86} fill={color}>
-            <polygon points="22,2 11,9.5 22,17 11,24.5 0,17 11,9.5" />
-            <polygon points="22,2 33,9.5 22,17 33,24.5 44,17 33,9.5" />
-            <polygon points="11,24.5 22,17 33,24.5 22,32" />
-            <polygon points="14,29 22,24 30,29 22,34" />
-        </svg>
-    );
-}
+
 
 function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextEl, logoRowEl, isAssembled }) {
     if (_gsapCtx) return;
@@ -176,8 +175,8 @@ function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextE
             width: "58vw", height: "100vh",
             background: "#ffffff",
         });
-        gsap.set(cardTextEl, { opacity: 1, y: 0, color: "#1464F4" });
-        gsap.set(logoRowEl, { opacity: 1, color: "#1464F4" });
+        gsap.set(cardTextEl, { opacity: 1, y: 0, color: "#000" });
+        gsap.set(logoRowEl, { opacity: 1, color: "#000" });
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -206,7 +205,8 @@ function initGSAP({ pinWrapEl, sectionEl, tilesEl, blueTileEl, cardEl, cardTextE
         });
 
         tl.to(cardEl, {
-            background: "#1464F4",
+            background: "#000",
+            color: "#fff",
             width: "20vw", height: "33.33vh",
             left: "40vw", top: "33.33vh",
             duration: 1.2, ease: "power2.inOut",
@@ -308,7 +308,7 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
                             display: "flex", alignItems: "center", justifyContent: "center",
                             zIndex: 3,
                         }}>
-                            <DropboxDiamond size={42} color="#fff" />
+                            <Image src="/rocket-white.png" alt="rocket" width={24} height={24} className="size-14" />
                         </div>
 
                         {TILES.map((t) => (
@@ -326,12 +326,12 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
                                     willChange: "transform, opacity",
                                 }}
                             >
-                                <span style={{
-                                    fontSize: "clamp(0.7rem, 1.4vw, 1.1rem)", fontWeight: 900,
-                                    lineHeight: 1.2, letterSpacing: "-0.01em",
+                                <span className="text-3xl lg:text-[40px] 3xl:text-[48px]" style={{
+                                    fontWeight: 600,
+                                    lineHeight: 1.3, letterSpacing: "-0.02em",
                                     position: "relative", zIndex: 2,
                                 }}>
-                                    {t.label}
+                                    {t.label} <span className="font-normal font-instrument italic text-4xl lg:text-[44px] 3xl:text-[55px] ">{t.label2}</span>
                                 </span>
                                 {t.render?.()}
                             </div>
@@ -345,21 +345,16 @@ const MosaicScrollSection = memo(function MosaicScrollSection() {
                         padding: "clamp(20px, 3vw, 48px)", overflow: "hidden",
                         willChange: "background, width, height, left, top, opacity",
                     }}>
-                        <p ref={cardTextRef} style={{
-                            fontSize: "clamp(1rem, 2.4vw, 2.2rem)", fontWeight: 900,
-                            lineHeight: 1.2, letterSpacing: "-0.025em", margin: 0,
-                            willChange: "opacity, transform, color",
+                        <p ref={cardTextRef} className="text-5xl lg:text-[55px] 3xl:text-[72px] font-semibold text-black! " style={{
+                            willChange: "opacity, transform",
                         }}>
-                            At Dropbox, our Brand Guidelines help us infuse everything we make with identity.
+                            scroll to reveal <span className="italic font-instrument font-normal text-[50px] lg:text-[65px] 3xl:text-[80px]">the magic</span> at Upthrust
                         </p>
                         <div ref={logoRowRef} style={{
                             display: "flex", alignItems: "center", gap: 8,
-                            willChange: "opacity, color",
+                            willChange: "opacity",
                         }}>
-                            <DropboxDiamond size={22} color="currentColor" />
-                            <span style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em" }}>
-                                Dropbox
-                            </span>
+                            <Image width={100} height={60} src="/logo.png" alt="upthrust logo" />
                         </div>
                     </div>
                 </section>

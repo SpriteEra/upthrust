@@ -161,31 +161,31 @@ const cardsData = [
 
 const faqs = [
   {
-    question: "What types of creative ads do you produce?",
+    question: " What types of videos do you produce?",
     answer:
-      "We design and deliver all formats from short-form TikTok and social feeds to display banners, motion ads, UGC-style creatives, and full storytelling videos that resonate with target audiences.",
+      "UGC ads, podcasts, music videos, brand films, founder videos, testimonials, jewellery shoots, 5-star hotel campaigns, food and lifestyle content, product films. If it's video, we shoot it.",
   },
   {
     question:
-      "What information do you need from us to start a creative project?",
+      " Do you handle shoot and edit, or just one?",
     answer:
-      "A clear brief with goals, target audience, brand assets, voice guidelines, and campaign KPIs helps us deliver faster and more effectively.",
+      "Both. Full production - script, cast, shoot, edit, deliver. You hand us a brief, you get a finished video. No coordinating between three vendors.",
   },
   {
     question:
-      "How do you tailor creative ads to my specific audience or platform?",
+      "What's your process from brief to delivery?",
     answer:
-      "Our team analyzes your audience behavior and platform intent to craft ads that speak in the language of that channel whether it’s TikTok’s playful tone or LinkedIn’s professional storytelling.",
+      "5 steps. Discovery → Concept & Pre-Production → Shoot Day → Performance Edit → Launch & Iterate. Most projects ship in 7–14 days depending on scope.",
   },
   {
-    question: "How do you measure the success of a creative ad?",
+    question: "How long does it take to shoot and deliver?",
     answer:
-      "We measure performance using CTR, engagement, conversion rates, and other key metrics relevant to your business goals, then guide optimizations to improve results over time.",
+      "UGC: 5–7 days. Brand films and podcasts: 10–14 days. Large-format shoots (jewellery, hotels, multi-day): 14–21 days. We commit to a date in the SOW and hit it.",
   },
   {
-    question: "What’s your creative process from brief to launch?",
+    question: "WDo you cast talent, scout locations, and handle everything on shoot day?",
     answer:
-      "We begin with a discovery and research phase, move into concepting and design, iterate with feedback, and finally optimize delivery all aligned to your campaign goals and metrics",
+      "Yes. Talent, locations, props, makeup, lighting, sound, crew, on-set food - all handled. You show up if you want. Most clients don't.",
   },
   {
     question: " How do you make sure the video actually performs? ",
