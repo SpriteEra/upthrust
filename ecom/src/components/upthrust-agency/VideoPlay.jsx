@@ -52,7 +52,7 @@ export default function PlayVideoSection() {
                 {/* ── Hero row ── */}
                 <div className="relative w-full flex items-center justify-center">
 
-                    {/* "Play" — pinned to the left */}
+                    {/* "Play" - pinned to the left */}
                     <span
                         className="
         absolute left-0
@@ -63,7 +63,7 @@ export default function PlayVideoSection() {
                         Play
                     </span>
 
-                    {/* "ideo" — pinned to the right */}
+                    {/* "ideo" - pinned to the right */}
                     <span
                         className="absolute right-0 font-['Inter'] font-normal text-[clamp(72px,11vw,306px)] leading-[1] tracking-[-0.04em] text-neutral-300 pointer-events-none"
                         aria-hidden="true"
@@ -80,7 +80,7 @@ export default function PlayVideoSection() {
                         aria-label="Play video"
                         onKeyDown={(e) => e.key === "Enter" && handleOpen()}
                     >
-                        {/* Circular dashed ring — exactly centered on the card */}
+                        {/* Circular dashed ring - exactly centered on the card */}
                         <div
                             className="absolute inset-0 flex items-center justify-center pointer-events-none"
                             aria-hidden="true"
@@ -116,7 +116,7 @@ export default function PlayVideoSection() {
 
                         {/* Video preview card */}
                         <div className="relative w-[clamp(300px,60vw,576px)] aspect-576/324 rounded-xl overflow-hidden shadow-md border border-neutral-200 transition-all duration-500 ">
-                            {/* Actual video as thumbnail — muted, no controls */}
+                            {/* Actual video as thumbnail - muted, no controls */}
                             <video
                                 src={VIDEO_URL}
                                 muted

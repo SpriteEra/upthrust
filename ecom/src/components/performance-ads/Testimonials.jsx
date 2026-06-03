@@ -49,7 +49,7 @@ const col2 = [
         handle: "Marketing Head, Mukunda Foods",
         avatar: "/performance-agency/logos/6.png",
         brand: "/performance-agency/logos/logo6.png",
-        text: "SEM, Google Ads, budget allocation — Upthrust's plan proved really helpful. Lead quality exceeded expectations.",
+        text: "SEM, Google Ads, budget allocation - Upthrust's plan proved really helpful. Lead quality exceeded expectations.",
     },
 ];
 

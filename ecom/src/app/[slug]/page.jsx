@@ -90,7 +90,7 @@ export async function generateMetadata({ params }) {
                 path: data.canonical || `/${slug}`,
                 robots: data.robots || { index: true, follow: true },
 
-                // Pass the full OG object — createMeta spreads it into openGraph
+                // Pass the full OG object - createMeta spreads it into openGraph
                 openGraph: {
                     title: data.openGraph?.title || data.title || "",
                     description: data.openGraph?.description || data.description || "",

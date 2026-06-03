@@ -26,7 +26,7 @@ const STATUS_COLOR = (code) => {
 };
 
 const formatDate = (iso) => {
-    if (!iso) return "—";
+    if (!iso) return "-";
     const d = new Date(iso);
     return d.toLocaleString("en-IN", {
         day: "2-digit", month: "short", year: "numeric",
@@ -41,7 +41,7 @@ const METHODS = ["", "GET", "POST", "PUT", "PATCH", "DELETE"];
 const StatCard = ({ label, value, color = "text-slate-800" }) => (
     <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-4 flex flex-col gap-1">
         <p className="text-xs text-slate-500 uppercase tracking-wide font-semibold">{label}</p>
-        <p className={`text-2xl font-bold ${color}`}>{value ?? "—"}</p>
+        <p className={`text-2xl font-bold ${color}`}>{value ?? "-"}</p>
     </div>
 );
 
@@ -251,7 +251,7 @@ export default function ActivityLogPage() {
                                             {formatDate(log.createdAt)}
                                         </td>
                                         <td className="px-4 py-3">
-                                            <div className="font-medium text-slate-700 text-xs">{log.userName || "—"}</div>
+                                            <div className="font-medium text-slate-700 text-xs">{log.userName || "-"}</div>
                                             {log.userEmail && (
                                                 <div className="text-[11px] text-slate-400">{log.userEmail}</div>
                                             )}
@@ -266,10 +266,10 @@ export default function ActivityLogPage() {
                                             {log.route}
                                         </td>
                                         <td className={`px-4 py-3 text-xs font-bold ${STATUS_COLOR(log.statusCode)}`}>
-                                            {log.statusCode || "—"}
+                                            {log.statusCode || "-"}
                                         </td>
                                         <td className="px-4 py-3 text-xs text-slate-400 font-mono whitespace-nowrap">
-                                            {log.ipAddress || "—"}
+                                            {log.ipAddress || "-"}
                                         </td>
                                     </tr>
                                 ))}

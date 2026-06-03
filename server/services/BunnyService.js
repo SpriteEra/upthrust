@@ -1,7 +1,7 @@
 import axios from "axios";
 
 /**
- * BunnyService — Bunny Storage HTTP API (correct endpoints per docs)
+ * BunnyService - Bunny Storage HTTP API (correct endpoints per docs)
  *
  * Docs: https://docs.bunny.net/storage/http
  *
@@ -43,7 +43,7 @@ const headers = (extra = {}) => ({
  * List ONE level of a Bunny Storage folder.
  * Bunny requires a trailing slash on the folder path.
  *
- * @param {string} folderPath  — e.g. "" (root), "images/", "images/blog/"
+ * @param {string} folderPath  - e.g. "" (root), "images/", "images/blog/"
  * @returns {Array<{ name, path, isDirectory, size, lastModified }>}
  */
 async function listFolder(folderPath = "") {
@@ -71,7 +71,7 @@ async function listFolder(folderPath = "") {
 
 /**
  * List the top-level "images" and "videos" folders,
- * then list one level deep inside each — used by the frontend folder picker.
+ * then list one level deep inside each - used by the frontend folder picker.
  *
  * Returns: {
  *   images: [{ name, path }],
@@ -106,11 +106,11 @@ async function listMediaFolders() {
 }
 
 /**
- * List subfolders inside a given folder — used when user selects a category
+ * List subfolders inside a given folder - used when user selects a category
  * to show available sub-folders.
  *
  * @param {"images"|"videos"} type
- * @param {string}            category   — e.g. "blog"
+ * @param {string}            category   - e.g. "blog"
  */
 async function listSubFolders(type, category) {
     const path = `${type}/${category}/`;
@@ -134,7 +134,7 @@ async function listSubFolders(type, category) {
  * Folders are created implicitly when you upload a file inside them.
  * We upload a tiny invisible placeholder file (.keep) to create the folder.
  *
- * @param {string} folderPath  — e.g. "images/blog" or "videos/hero/behind-scenes"
+ * @param {string} folderPath  - e.g. "images/blog" or "videos/hero/behind-scenes"
  * @returns {{ created: true, path: string, cdnUrl: string }}
  */
 async function createFolder(folderPath) {
@@ -165,15 +165,15 @@ async function createFolder(folderPath) {
  * Correct upload URL: PUT https://{hostname}/{storageZone}/{path}/{fileName}
  *
  * @param {"images"|"videos"} type
- * @param {string} originalName      — e.g. "clip.mp4"
- * @param {string} mimeType          — e.g. "video/mp4"
- * @param {string} category          — folder, e.g. "hero"
- * @param {string} subcategory       — optional sub-folder, e.g. "behind-scenes"
+ * @param {string} originalName      - e.g. "clip.mp4"
+ * @param {string} mimeType          - e.g. "video/mp4"
+ * @param {string} category          - folder, e.g. "hero"
+ * @param {string} subcategory       - optional sub-folder, e.g. "behind-scenes"
  *
  * @returns {{
  *   uploadUrl  : string,   // browser PUTs to this URL
  *   accessKey  : string,   // browser sends as "AccessKey" header
- *   fileName   : string,   // full storage path (save in DB — needed for deletion)
+ *   fileName   : string,   // full storage path (save in DB - needed for deletion)
  *   cdnUrl     : string,   // public CDN URL after upload
  * }}
  */
@@ -194,7 +194,7 @@ async function prepareUpload(type, originalName, mimeType, category = "general",
     return {
         uploadUrl,               // PUT this URL from the browser
         accessKey: cfg().key,    // send as "AccessKey" header
-        fileName,                // store in DB — used for deletion
+        fileName,                // store in DB - used for deletion
         cdnUrl,                  // public URL once uploaded
     };
 }
@@ -203,7 +203,7 @@ async function prepareUpload(type, originalName, mimeType, category = "general",
 
 /**
  * Delete a file from Bunny Storage.
- * @param {string} fileName  — storage path, e.g. "images/blog/1714-abc.jpg"
+ * @param {string} fileName  - storage path, e.g. "images/blog/1714-abc.jpg"
  */
 async function deleteFile(fileName) {
     const url = `${base()}/${fileName.replace(/^\/+/, "")}`;

@@ -78,7 +78,7 @@ const CommonFormModal = ({ formUrl }) => {
     // The overlay + iframe are ALWAYS mounted at the same DOM node and the same
     // size, so the iframe loads once on page load and is never re-parented or
     // resized (either of which would force a reload). Opening only toggles
-    // opacity / pointer-events / z-index — a pure CSS reveal.
+    // opacity / pointer-events / z-index - a pure CSS reveal.
     return (
         <div
             onClick={closeForm}

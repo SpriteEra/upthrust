@@ -414,7 +414,7 @@ const MobileVideosSection = ({ items = [], pageId, onSaved }) => {
 };
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// 4. UGC VIDEOS — has 2 sub-sections: "videos" + "ugcCategories"
+// 4. UGC VIDEOS - has 2 sub-sections: "videos" + "ugcCategories"
 // ═══════════════════════════════════════════════════════════════════════════════
 
 // ── 4a. UGC Videos tab (same shape as mobileVideos) ──────────────────────────

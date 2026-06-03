@@ -34,14 +34,14 @@ export const toggleBlockAPI = async (id) => {
     return data;
 };
 
-// ─── additionalFields — single key ─────────────────────────────────────────
+// ─── additionalFields - single key ─────────────────────────────────────────
 // PATCH /copy-pages/:id/field  { key, value }
 export const upsertCopyAdditionalFieldAPI = async (id, { key, value }) => {
     const { data } = await axiosInstance.patch(`/copy-pages/${id}/field`, { key, value });
     return data;
 };
 
-// ─── additionalFields — bulk ────────────────────────────────────────────────
+// ─── additionalFields - bulk ────────────────────────────────────────────────
 // PATCH /copy-pages/:id/fields  { fields: { key: value, ... } }
 export const bulkUpdateCopyAdditionalFieldsAPI = async (id, { fields }) => {
     const { data } = await axiosInstance.patch(`/copy-pages/${id}/fields`, { fields });

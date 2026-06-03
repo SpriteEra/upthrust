@@ -371,7 +371,7 @@
 //                     </div>
 //                 ) : collections.length === 0 ? (
 //                     <div style={{ fontSize: 12, color: T.muted, padding: "8px 10px", background: T.surface, borderRadius: 7, border: `1px solid ${T.border}` }}>
-//                         No collections yet —{" "}
+//                         No collections yet -{" "}
 //                         <button onClick={() => setMode("new")} style={{ background: "none", border: "none", color: accent, cursor: "pointer", fontSize: 12, fontWeight: 600, padding: 0 }}>
 //                             create one
 //                         </button>
@@ -584,7 +584,7 @@
 //                                     <div style={{ fontSize: 10, color: T.subtle, marginTop: 4 }}>
 //                                         {isImage
 //                                             ? `Uploading to images/${category}${subcategory ? "/" + subcategory : ""}/…`
-//                                             : "Uploading to Bunny Stream — encoding starts automatically."}
+//                                             : "Uploading to Bunny Stream - encoding starts automatically."}
 //                                     </div>
 //                                 </div>
 //                             )}
@@ -691,7 +691,7 @@
 // }
 
 // // ─────────────────────────────────────────────────────────────────────────────
-// // NAVBAR UPLOAD BUTTONS — drop <UploadButtons /> into your existing navbar
+// // NAVBAR UPLOAD BUTTONS - drop <UploadButtons /> into your existing navbar
 // // ─────────────────────────────────────────────────────────────────────────────
 // export function UploadButtons() {
 //     const [modal, setModal] = useState(null);
@@ -996,12 +996,12 @@ function FolderPicker({ mode, category, subcategory, onCategoryChange, onSubcate
                         <div style={{ ...inputSty, color: C.muted }}>Loading sub-folders…</div>
                     ) : subFolders.length === 0 ? (
                         <div style={{ fontSize: 11, color: C.muted, padding: "7px 10px", background: C.surface, borderRadius: 7, border: `1px solid ${C.border}` }}>
-                            No sub-folders yet —{" "}
+                            No sub-folders yet -{" "}
                             <button onClick={() => setSubMode("new")} style={{ background: "none", border: "none", color: acc, cursor: "pointer", fontSize: 11, fontWeight: 600, padding: 0 }}>create one</button>
                         </div>
                     ) : (
                         <select value={subcategory} onChange={(e) => onSubcategoryChange(e.target.value)} disabled={disabled} style={selSty}>
-                            <option value="">— none —</option>
+                            <option value="">- none -</option>
                             {subFolders.map((f) => <option key={f.path} value={f.name}>{f.name}</option>)}
                         </select>
                     )

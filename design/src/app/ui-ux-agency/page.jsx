@@ -21,7 +21,7 @@ const WorkingWithUs = dynamic(() => import('@/components/uiux/WorkingWithUs'));
 
 export const metadata = {
     title: "UX & Product Design Agency for B2B Products | Upthrust",
-    description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+    description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
 
     keywords: [
         "UX design agency for B2B products",
@@ -39,7 +39,7 @@ export const metadata = {
 
     openGraph: {
         title: "UX & Product Design Agency for B2B Products | Upthrust",
-        description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+        description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
 
         url: "https://www.upthrust.design/ui-ux-agency",
         siteName: "Upthrust",
@@ -57,7 +57,7 @@ export const metadata = {
     twitter: {
         card: "summary_large_image",
         title: "UX & Product Design Agency for B2B Products | Upthrust",
-        description: "We design conversion-focused UX and product experiences for B2B companies—reducing friction, increasing clarity, and driving measurable growth.",
+        description: "We design conversion-focused UX and product experiences for B2B companies-reducing friction, increasing clarity, and driving measurable growth.",
         images: ["/ecom/ecom-opengraph-image.png"],
     },
 

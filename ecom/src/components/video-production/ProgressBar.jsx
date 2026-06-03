@@ -8,14 +8,14 @@ const steps = [
         id: 1,
         label: "THE FOUNDATION OF SUCCESS",
         title: "Discovery & Brief",
-        text: "We dig into your brand, your audience, and the actual goal of the video. Ads? Views? Trust? Sales? The answer rewires everything that follows — including which hook we lead with.",
+        text: "We dig into your brand, your audience, and the actual goal of the video. Ads? Views? Trust? Sales? The answer rewires everything that follows - including which hook we lead with.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif1.gif",
     },
     {
         id: 2,
         label: "CLARIFYING THE MISSION",
         title: "Creative Brief",
-        text: "Every breakthrough campaign starts with a bulletproof brief. We define your single-minded message, target audience behaviors, success metrics, and mandatory brand elements. This becomes our north star—ensuring every creative decision ladders back to measurable business objectives before production begins.",
+        text: "Every breakthrough campaign starts with a bulletproof brief. We define your single-minded message, target audience behaviors, success metrics, and mandatory brand elements. This becomes our north star-ensuring every creative decision ladders back to measurable business objectives before production begins.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif2.gif",
     },
     {
@@ -43,7 +43,7 @@ const steps = [
         id: 6,
         label: "THE FEEDBACK LOOP",
         title: "Analysis & Iteration",
-        text: "We analyze engagement metrics, creative fatigue patterns, and conversion data to understand exactly what resonated. These insights feed directly into your next creative sprint—building institutional knowledge with every cycle. The result: each batch of creative is systematically better than the last, compounding effectiveness over time.",
+        text: "We analyze engagement metrics, creative fatigue patterns, and conversion data to understand exactly what resonated. These insights feed directly into your next creative sprint-building institutional knowledge with every cycle. The result: each batch of creative is systematically better than the last, compounding effectiveness over time.",
         img: "https://upthrustvideocdn.b-cdn.net/creative-gifs/gif6.gif",
     },
 ];

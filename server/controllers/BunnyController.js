@@ -282,7 +282,7 @@ export const getFolders = async (req, res) => {
         return res.status(200).json({ success: true, data });
     } catch (err) {
         console.error("[getFolders]", err.response?.data || err.message);
-        // Return empty rather than crashing — folders might not exist yet
+        // Return empty rather than crashing - folders might not exist yet
         const empty = req.query.type ? [] : { images: [], videos: [] };
         return res.status(200).json({ success: true, data: empty, warning: "Could not reach Bunny Storage." });
     }
@@ -313,7 +313,7 @@ export const getSubFolders = async (req, res) => {
  * Body: { type: "images"|"videos", name: "blog", parent?: "parentFolder" }
  *
  * Creates a folder on Bunny Storage by uploading a tiny .keep placeholder.
- * Bunny has no "mkdir" API — folders exist only when they contain files.
+ * Bunny has no "mkdir" API - folders exist only when they contain files.
  *
  * Response: { success, data: { created, path, message } }
  */
@@ -356,7 +356,7 @@ export const createFolder = async (req, res) => {
  * Body: { type, fileName, mimeType, size?, category?, subcategory? }
  *
  * Returns credentials for the browser to PUT directly to Bunny Storage.
- * The accessKey (storage password) is returned here — route is protected.
+ * The accessKey (storage password) is returned here - route is protected.
  *
  * Correct Bunny upload URL:
  *   PUT https://{hostname}/{storageZone}/{path}/{fileName}
@@ -421,7 +421,7 @@ export const saveMeta = async (req, res) => {
         if (!type || !fileName || !cdnUrl)
             return res.status(400).json({ success: false, message: "type, fileName and cdnUrl are required." });
 
-        // Idempotent — prevent duplicates if browser calls twice
+        // Idempotent - prevent duplicates if browser calls twice
         const existing = await Media.findOne({ fileName });
         if (existing)
             return res.status(200).json({ success: true, message: "Already saved.", data: existing });

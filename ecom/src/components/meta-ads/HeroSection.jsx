@@ -115,7 +115,7 @@ export default function MetaAdsHero({ title, formUrl }) {
                     {/* Top tag */}
                     <div className="flex max-sm:text-center justify-center sm:justify-start gap-2 items-start sm:items-center">
                         <AnimatedWord images={images} className="size-6.5 sm:size-8.5 3xl:size-9" />
-                        <p className="text-lg  3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">Ads that scale — without the <span className="block sm:inline">agency B.S.</span></p>
+                        <p className="text-lg  3xl:text-[20px] leading-[150%] tracking-[-0.02em] font-normal">Ads that scale - without the <span className="block sm:inline">agency B.S.</span></p>
                     </div>
 
                     {/* Headline */}

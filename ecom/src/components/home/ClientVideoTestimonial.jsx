@@ -19,7 +19,7 @@
 //         id: 2,
 //         tag: "SUCCESS STORY",
 //         text:
-//             "Skeptical at first. Now they're my team. Upthrust didn't just deliver exponential growth — they became true business partners who actually care.",
+//             "Skeptical at first. Now they're my team. Upthrust didn't just deliver exponential growth - they became true business partners who actually care.",
 //         image: "/ecom/testimonials/2.webp",
 //         alt: "Client video testimonial sharing experience working with Upthrust team",
 //         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/jm.mp4_v1%20(720p).mp4",
@@ -30,7 +30,7 @@
 //         id: 3,
 //         tag: "SUCCESS STORY",
 //         text:
-//             "My business was in turmoil. One last chance to make it work. Made a $4,900 bet with Upthrust — got 2.7x back immediately. Now doing $51K+ monthly. Beyond my wildest dreams.",
+//             "My business was in turmoil. One last chance to make it work. Made a $4,900 bet with Upthrust - got 2.7x back immediately. Now doing $51K+ monthly. Beyond my wildest dreams.",
 //         image: "/ecom/testimonials/3.webp",
 //         alt: "Video testimonial describing business turnaround and revenue growth after working with Upthrust",
 //         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Ecom%20testimonial%20(1).mp4",
@@ -161,7 +161,7 @@ const defaultsuccessStories = [
         id: 2,
         tag: "SUCCESS STORY",
         text:
-            "Skeptical at first. Now they're my team. Upthrust didn't just deliver exponential growth — they became true business partners who actually care.",
+            "Skeptical at first. Now they're my team. Upthrust didn't just deliver exponential growth - they became true business partners who actually care.",
         image: "/ecom/testimonials/2.webp",
         alt: "Client video testimonial sharing experience working with Upthrust team",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/jm.mp4_v1%20(720p).mp4",
@@ -172,7 +172,7 @@ const defaultsuccessStories = [
         id: 3,
         tag: "SUCCESS STORY",
         text:
-            "My business was in turmoil. One last chance to make it work. Made a $4,900 bet with Upthrust — got 2.7x back immediately. Now doing $51K+ monthly. Beyond my wildest dreams.",
+            "My business was in turmoil. One last chance to make it work. Made a $4,900 bet with Upthrust - got 2.7x back immediately. Now doing $51K+ monthly. Beyond my wildest dreams.",
         image: "/ecom/testimonials/3.webp",
         alt: "Video testimonial describing business turnaround and revenue growth after working with Upthrust",
         videoUrl: "https://upthrustvideocdn.b-cdn.net/Ecom%20page%20assets/Ecom%20testimonial%20(1).mp4",
@@ -258,7 +258,7 @@ const ClientVideoTestimonial = ({ successStories = defaultsuccessStories }) => {
                                         aria-label="Play video"
                                     />
 
-                                    {/* Black overlay at 20% opacity — always visible on all screen sizes */}
+                                    {/* Black overlay at 20% opacity - always visible on all screen sizes */}
                                     <div className='absolute inset-0 bg-black/20 z-10' />
 
                                     {/* Thumbnail image */}

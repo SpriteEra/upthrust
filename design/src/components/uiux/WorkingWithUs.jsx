@@ -7,7 +7,7 @@ const features = [
         image: "/icons/users.webp",
         heading: "One Team,\n Fully In-House",
         description:
-            "Every part of your project is handled internally—from strategy to execution. ",
+            "Every part of your project is handled internally-from strategy to execution. ",
         whymatters: "Clear ownership, consistent quality, zero handoff friction.",
     },
     {

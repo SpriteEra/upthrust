@@ -35,7 +35,7 @@ axiosInstance.interceptors.response.use(
         const message = error.response?.data?.message || "Something went wrong";
 
         if (status === 401) {
-            // Token expired / unauthorised — clear any local state and go to login
+            // Token expired / unauthorised - clear any local state and go to login
             window.dispatchEvent(new CustomEvent("auth:unauthorised"));
         }
 

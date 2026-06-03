@@ -133,7 +133,7 @@
 // //         ease: 'power2.inOut',
 // //       }, 0);
 
-// //       // ── Text section reveal — triggered AFTER the pinned section ends ──
+// //       // ── Text section reveal - triggered AFTER the pinned section ends ──
 // //       const textEls = textSectionRef.current.querySelectorAll('.reveal-text');
 // //       gsap.set(textEls, { opacity: 0, y: 55 });
 // //       gsap.to(textEls, {
@@ -187,7 +187,7 @@
 // //   );
 
 // //   return (
-// //     // FIX 2: Wrap everything in a block container — hero and text are siblings,
+// //     // FIX 2: Wrap everything in a block container - hero and text are siblings,
 // //     // never nested. The text section is completely outside the pinned hero.
 // //     <div style={{ position: 'relative' }}>
 // //       {/* ── HERO ── */}
@@ -230,7 +230,7 @@
 // //               ))}
 // //             </div>
 
-// //             {/* Center: invisible nav logo placeholder — used only for position measurement */}
+// //             {/* Center: invisible nav logo placeholder - used only for position measurement */}
 // //             <div
 // //               ref={navLogoRef}
 // //               className="absolute left-1/2 -translate-x-1/2 flex items-center pointer-events-none"
@@ -252,7 +252,7 @@
 // //             </div>
 // //           </nav>
 
-// //           {/* ── Center logo — BIG, bottom area, physically moves to nav ── */}
+// //           {/* ── Center logo - BIG, bottom area, physically moves to nav ── */}
 // //           <div className="flex-1 flex items-end justify-center pb-16">
 // //             <div
 // //               ref={centerLogoRef}
@@ -282,7 +282,7 @@
 // //         </div>
 // //       </section>
 
-// //       {/* ── TEXT SECTION — completely separate sibling, never inside hero ── */}
+// //       {/* ── TEXT SECTION - completely separate sibling, never inside hero ── */}
 // //       <section
 // //         ref={textSectionRef}
 // //         className="bg-white"
@@ -411,7 +411,7 @@
 //       const bgVideo = bgVideoRef.current;
 
 //       if (!panel || !navLogo || !centerLogo || !scrollBanner || !bgVideo) {
-//         // Elements not in DOM yet — skip silently
+//         // Elements not in DOM yet - skip silently
 //         return;
 //       }
 
@@ -574,7 +574,7 @@
 //               ))}
 //             </div>
 
-//             {/* Invisible nav logo placeholder — position measurement only */}
+//             {/* Invisible nav logo placeholder - position measurement only */}
 //             <div
 //               ref={navLogoRef}
 //               className="absolute left-1/2 -translate-x-1/2 flex items-center pointer-events-none"
@@ -596,7 +596,7 @@
 //             </div>
 //           </nav>
 
-//           {/* Center logo — physically moves to nav on scroll */}
+//           {/* Center logo - physically moves to nav on scroll */}
 //           <div className="flex-1 flex items-end justify-center pb-16">
 //             <div
 //               ref={centerLogoRef}
@@ -626,7 +626,7 @@
 //         </div>
 //       </section>
 
-//       {/* ── TEXT SECTION — sibling, never inside hero ──────────────────────── */}
+//       {/* ── TEXT SECTION - sibling, never inside hero ──────────────────────── */}
 //       <section
 //         ref={textSectionRef}
 //         className="bg-white"
@@ -837,7 +837,7 @@ const HeroSection = () => {
         ease: 'power2.out',
       }, 0);
 
-      // Logo travels to nav — uses fixed measurement
+      // Logo travels to nav - uses fixed measurement
       const { targetX, targetY, targetScale } = getNavLogoTarget();
 
       tl.to(centerLogo, {
@@ -919,7 +919,7 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Invisible nav logo placeholder — measurement target only */}
+            {/* Invisible nav logo placeholder - measurement target only */}
             <div
               ref={navLogoRef}
               className="absolute left-1/2 -translate-x-1/2 flex items-center pointer-events-none"
@@ -946,7 +946,7 @@ const HeroSection = () => {
             </div>
           </nav>
 
-          {/* Center logo — physically animates up to nav on scroll */}
+          {/* Center logo - physically animates up to nav on scroll */}
           <div className="flex-1 flex items-end justify-center pb-16">
             <div
               ref={centerLogoRef}

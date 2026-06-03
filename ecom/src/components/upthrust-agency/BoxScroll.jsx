@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Module-level — never touched by React re-renders
+// Module-level - never touched by React re-renders
 let _gsapCtx = null;
 let _styleEl = null;
 
@@ -131,7 +131,7 @@ function getOffscreen(from) {
     }[from] ?? { x: 0, y: 0 };
 }
 
-// Static component — never re-renders after first mount
+// Static component - never re-renders after first mount
 function DropboxDiamond({ size = 44, color = "#fff" }) {
     return (
         <svg viewBox="0 0 44 38" width={size} height={size * 0.86} fill={color}>
@@ -231,7 +231,7 @@ function destroyGSAP() {
     if (_styleEl) { _styleEl.remove(); _styleEl = null; }
 }
 
-// memo() — if parent re-renders, this component skips re-rendering entirely
+// memo() - if parent re-renders, this component skips re-rendering entirely
 // since it accepts no props. GSAP owns the DOM; React re-diffing would fight it.
 const MosaicScrollSection = memo(function MosaicScrollSection() {
     const pinWrapRef = useRef(null);

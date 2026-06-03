@@ -43,7 +43,7 @@
 //                                 <span className='font-bold'>
 //                                     boldly
 //                                 </span>
-//                                 —with a touch of brilliant ingenuity.
+//                                 -with a touch of brilliant ingenuity.
 //                             </p>
 //                         </div>
 //                     </div>
@@ -158,7 +158,7 @@
 //                                 <span className='font-bold'>
 //                                     boldly
 //                                 </span>
-//                                 —with a touch of brilliant ingenuity.
+//                                 -with a touch of brilliant ingenuity.
 //                             </p>
 //                         </div>
 //                     </div>
@@ -254,7 +254,7 @@ const services = [
 // ── layout config ──────────────────────────────────────
 const ROW_PX = 105   // px between each word's top edge
 const TOP_OFFSET = 28    // px from top of right panel to first word
-const ENTRY_Y = 450   // px — how far below each word starts (from bottom)
+const ENTRY_Y = 450   // px - how far below each word starts (from bottom)
 // ──────────────────────────────────────────────────────
 
 export default function LetterScroll() {
@@ -283,7 +283,7 @@ export default function LetterScroll() {
                     duration: 1,
                     ease: 'power3.out',   // smooth deceleration
                 },
-                '>'   // sequential — no overlap
+                '>'   // sequential - no overlap
             )
         })
 
@@ -326,7 +326,7 @@ export default function LetterScroll() {
                         </div>
                     </div>
 
-                    {/* ── RIGHT — words rise from bottom, one by one ── */}
+                    {/* ── RIGHT - words rise from bottom, one by one ── */}
                     <div className='relative h-full overflow-hidden'>
                         {services.map((item, index) => (
                             <h2

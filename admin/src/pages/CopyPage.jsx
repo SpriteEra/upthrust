@@ -158,7 +158,7 @@ const CopyPageModal = ({ mode, initial, parentPages, onClose, onSaved }) => {
                         onChange={(e) => set("parentPage", e.target.value)}
                         className="w-full px-3.5 py-2.5 text-sm border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-800 bg-slate-50 appearance-none"
                     >
-                        <option value="">— Select parent page —</option>
+                        <option value="">- Select parent page -</option>
                         {parentPages.map((p) => (
                             <option key={p._id} value={p._id}>
                                 {p.title} ({p.url})
@@ -372,7 +372,7 @@ const FaqsSection = ({ faqs = [], copyPageId, onSaved }) => {
 
                 {faqs.length === 0 && (
                     <div className="flex items-center justify-center h-20 text-sm text-slate-400 border-2 border-dashed border-slate-200 rounded-xl">
-                        No FAQs yet — click "Add FAQ" to create one
+                        No FAQs yet - click "Add FAQ" to create one
                     </div>
                 )}
             </div>
@@ -391,7 +391,7 @@ const FaqsSection = ({ faqs = [], copyPageId, onSaved }) => {
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
-// FIELD SCHEMA  — determines which extra fields appear based on parent URL
+// FIELD SCHEMA  - determines which extra fields appear based on parent URL
 // ═══════════════════════════════════════════════════════════════════════════
 
 /**
@@ -507,7 +507,7 @@ const MetaFieldsSection = ({ additionalFields = {}, parentUrl = "", copyPageId, 
                 )}
             </div>
 
-            {/* Base fields — always shown */}
+            {/* Base fields - always shown */}
             <div className={`grid grid-cols-1 sm:grid-cols-2 gap-4 ${extraFields.length > 0 ? "mb-4" : ""}`}>
                 <Field label="Page Title" hint="Hero / H1 title shown on the frontend">
                     <Input
@@ -525,7 +525,7 @@ const MetaFieldsSection = ({ additionalFields = {}, parentUrl = "", copyPageId, 
                 </Field>
             </div>
 
-            {/* Extra fields — shown conditionally based on parent page type */}
+            {/* Extra fields - shown conditionally based on parent page type */}
             {extraFields.length > 0 && (
                 <>
                     <div className="flex items-center gap-2 mb-3">
@@ -602,12 +602,12 @@ const CopyPageDetail = ({ page, onBack, onUpdated }) => {
                         </div>
                         {af.brand2 !== undefined && (
                             <div className="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 text-xs font-semibold">
-                                brand2: {af.brand2 || "—"}
+                                brand2: {af.brand2 || "-"}
                             </div>
                         )}
                         {af.footerhead !== undefined && (
                             <div className="px-3 py-1.5 rounded-lg bg-sky-50 text-sky-700 text-xs font-semibold">
-                                footer: {af.footerhead || "—"}
+                                footer: {af.footerhead || "-"}
                             </div>
                         )}
                     </div>
@@ -736,7 +736,7 @@ const CopyPageRow = ({ page, onEdit, onDelete, onToggleBlock, onOpen }) => {
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
-// GROUP HEADER  — one per parent page
+// GROUP HEADER  - one per parent page
 // ═══════════════════════════════════════════════════════════════════════════
 const GroupHeader = ({ parentTitle, parentUrl, count, collapsed, onToggle }) => (
     <tr
@@ -884,7 +884,7 @@ export default function CopyPagesManager() {
                         Copy Pages
                     </h1>
                     <p className="text-sm text-slate-400 mt-0.5">
-                        Manage copy / variant pages — click a row to edit its content
+                        Manage copy / variant pages - click a row to edit its content
                     </p>
                 </div>
                 <button

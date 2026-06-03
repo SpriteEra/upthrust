@@ -56,10 +56,10 @@ function ServiceCard({ title, subtitle, image }) {
                 sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 30vw"
             />
 
-            {/* Subtle dark gradient — top-left heavy so text stays readable */}
+            {/* Subtle dark gradient - top-left heavy so text stays readable */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/10 to-transparent" />
 
-            {/* Text label — top left */}
+            {/* Text label - top left */}
             <div className="absolute top-3.5 left-4 flex  gap-2 flex-wrap">
                 <span className="text-white text-sm md:text-base lg:text-lg
                 xl:text-3xl 3xl:text-4xl font-semibold leading-[130%] tracking-[-0.02em] drop-shadow-sm">
@@ -107,7 +107,7 @@ export default function ServicesSlider({ slides = services }) {
                 pagination={{ clickable: true }}
             />
 
-            {/* Scoped dot styles — matches the agency's minimal aesthetic */}
+            {/* Scoped dot styles - matches the agency's minimal aesthetic */}
             <style >{`
         .services-slider-wrap .swiper-pagination {
           bottom: 0;

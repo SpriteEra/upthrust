@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 /**
  * Single unified schema for all media files (images + videos).
- * Both are stored on Bunny Storage and deleted the same way — by fileName.
+ * Both are stored on Bunny Storage and deleted the same way - by fileName.
  *
  * To delete from Bunny:  DELETE /{storageZone}/{fileName}
  * To serve publicly:     BUNNY_CDN_URL + "/" + fileName
@@ -16,7 +16,7 @@ const mediaSchema = new mongoose.Schema(
             required: true,
         },
 
-        // Full storage path — e.g. "images/blog/1714000000-abc.jpg"
+        // Full storage path - e.g. "images/blog/1714000000-abc.jpg"
         //                     or  "videos/hero/1714000000-xyz.mp4"
         // This is the key you pass to the Bunny Storage DELETE API.
         fileName: {
@@ -25,7 +25,7 @@ const mediaSchema = new mongoose.Schema(
             unique: true,
         },
 
-        // Public CDN URL — BUNNY_CDN_URL + "/" + fileName
+        // Public CDN URL - BUNNY_CDN_URL + "/" + fileName
         cdnUrl: {
             type: String,
             required: true,

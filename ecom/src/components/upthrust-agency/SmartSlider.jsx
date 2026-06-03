@@ -236,7 +236,7 @@ export default function SmartSwiper({
     hoverPlayDesktop = false,
 
     // Extra modules passed from outside (e.g. Pagination, Navigation)
-    // These are MERGED with built-ins — never overwrite them
+    // These are MERGED with built-ins - never overwrite them
     modules: extraModules = [],
 
     // All remaining Swiper props (pagination, navigation, freeMode, etc.)

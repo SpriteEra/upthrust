@@ -82,7 +82,7 @@ const ProductSlideDetail = () => {
               </p>
 
               <p className="text-right text-black text-[18px] leading-[150%] tracking-[-0.02em] mt-4">
-                — {data.author}
+                - {data.author}
               </p>
 
             </div>

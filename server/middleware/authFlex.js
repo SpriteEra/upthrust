@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 /**
- * authFlex — accepts JWT from either:
+ * authFlex - accepts JWT from either:
  *   1. httpOnly cookie  (set by login: res.cookie("token", ...))
  *   2. Authorization: Bearer <token>  header (sent by axiosInstance)
  *

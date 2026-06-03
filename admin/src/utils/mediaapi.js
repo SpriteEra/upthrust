@@ -1,7 +1,7 @@
 // import axiosInstance from "./axiosInstance";
 
 // // ─────────────────────────────────────────────────────────────────────────────
-// // MEDIA API — Images (Bunny Storage) + Videos (Bunny Stream)
+// // MEDIA API - Images (Bunny Storage) + Videos (Bunny Stream)
 // // Matches the pattern of authapi.js / pageapi.js
 // // ─────────────────────────────────────────────────────────────────────────────
 
@@ -81,7 +81,7 @@
 
 // /**
 //  * Get all collections from the Bunny Stream library.
-//  * Backend fetches real collections — these are the actual folder names
+//  * Backend fetches real collections - these are the actual folder names
 //  * you see in the Bunny dashboard (Ecom page assets, Google ads, Meta ads, UI …)
 //  * @returns {Promise<{ success, data: Array<{ guid, name, videoCount }> }>}
 //  */
@@ -109,7 +109,7 @@
 //  * Upload a video with live progress
 //  * @param {File}     file
 //  * @param {string}   title
-//  * @param {string}   collectionId   — Bunny Stream collection GUID (or "")
+//  * @param {string}   collectionId   - Bunny Stream collection GUID (or "")
 //  * @param {Function} onProgress
 //  */
 // export const uploadVideoAPI = (file, title, collectionId = "", onProgress = () => { }) => {
@@ -183,7 +183,7 @@
 import axiosInstance from "./axiosInstance";
 
 /**
- * MEDIA API — direct upload to Bunny Storage (images + videos).
+ * MEDIA API - direct upload to Bunny Storage (images + videos).
  *
  * Upload flow (file bytes NEVER pass through your server):
  *  1. GET  /media/folders            → load real Bunny folders for the picker
@@ -198,7 +198,7 @@ import axiosInstance from "./axiosInstance";
  */
 
 // ─────────────────────────────────────────────────────────────────────────────
-// XHR PUT with real progress — browser uploads directly to Bunny
+// XHR PUT with real progress - browser uploads directly to Bunny
 // ─────────────────────────────────────────────────────────────────────────────
 export function bunnyXhrUpload(uploadUrl, file, accessKey, onProgress = () => { }) {
     return new Promise((resolve, reject) => {
@@ -219,7 +219,7 @@ export function bunnyXhrUpload(uploadUrl, file, accessKey, onProgress = () => { 
                 resolve(xhr);
             } else {
                 reject(new Error(
-                    `Bunny upload failed — HTTP ${xhr.status}.\n` +
+                    `Bunny upload failed - HTTP ${xhr.status}.\n` +
                     `Check: (1) AccessKey is correct, (2) Hostname matches your storage zone region, ` +
                     `(3) CORS is enabled on your storage zone.\nResponse: ${xhr.responseText}`
                 ));
@@ -232,7 +232,7 @@ export function bunnyXhrUpload(uploadUrl, file, accessKey, onProgress = () => { 
         ));
         xhr.onabort = () => reject(new Error("Upload cancelled."));
 
-        // Send raw binary — no FormData, no encoding
+        // Send raw binary - no FormData, no encoding
         xhr.send(file);
     });
 }
@@ -243,7 +243,7 @@ export function bunnyXhrUpload(uploadUrl, file, accessKey, onProgress = () => { 
 
 /**
  * Get top-level folders from Bunny Storage for images and videos.
- * @param {"images"|"videos"|""} type — omit for both
+ * @param {"images"|"videos"|""} type - omit for both
  * @returns {Promise<{ images: [{name,path}], videos: [{name,path}] }|Array>}
  */
 export const getFoldersAPI = async (type = "") => {
@@ -255,7 +255,7 @@ export const getFoldersAPI = async (type = "") => {
 /**
  * Get sub-folders inside a specific folder.
  * @param {"images"|"videos"} type
- * @param {string}            category  — e.g. "blog"
+ * @param {string}            category  - e.g. "blog"
  * @returns {Promise<[{name,path}]>}
  */
 export const getSubFoldersAPI = async (type, category) => {
@@ -265,11 +265,11 @@ export const getSubFoldersAPI = async (type, category) => {
 
 /**
  * Create a new folder on Bunny Storage.
- * (Uploads a tiny .keep placeholder — Bunny has no mkdir API)
+ * (Uploads a tiny .keep placeholder - Bunny has no mkdir API)
  *
  * @param {"images"|"videos"} type
- * @param {string}            name     — folder name, e.g. "my-project"
- * @param {string}            parent   — optional parent folder, e.g. "blog"
+ * @param {string}            name     - folder name, e.g. "my-project"
+ * @param {string}            parent   - optional parent folder, e.g. "blog"
  */
 export const createFolderAPI = async (type, name, parent = "") => {
     const { data } = await axiosInstance.post("/media/folders", { type, name, parent });
@@ -294,7 +294,7 @@ export const createFolderAPI = async (type, name, parent = "") => {
 export const uploadMedia = async (type, file, opts = {}, onProgress = () => { }, onPhase = () => { }) => {
     const { category = "general", subcategory = "" } = opts;
 
-    // Step 1 — get upload credentials from backend
+    // Step 1 - get upload credentials from backend
     onPhase("prepare");
     const { data: prep } = await axiosInstance.post("/media/prepare", {
         type,
@@ -307,14 +307,14 @@ export const uploadMedia = async (type, file, opts = {}, onProgress = () => { },
     const creds = prep.data;
     // creds = { uploadUrl, accessKey, fileName, cdnUrl, category, subcategory }
 
-    // Step 2 — browser XHR PUT directly to Bunny Storage (server not involved)
+    // Step 2 - browser XHR PUT directly to Bunny Storage (server not involved)
     onPhase("uploading");
     onProgress(0);
     await bunnyXhrUpload(creds.uploadUrl, file, creds.accessKey, (pct) => {
         onProgress(pct);
     });
 
-    // Step 3 — save metadata to MongoDB
+    // Step 3 - save metadata to MongoDB
     onPhase("saving");
     const { data: saved } = await axiosInstance.post("/media/save", {
         type,
@@ -358,7 +358,7 @@ export const getVideosAPI = (p = {}) => getMediaAPI({ ...p, type: "videos" });
 /**
  * Delete a media file.
  * Backend deletes from Bunny Storage (via fileName) and removes MongoDB doc.
- * @param {string} id  — MongoDB _id
+ * @param {string} id  - MongoDB _id
  */
 export const deleteMediaAPI = async (id) => {
     const { data } = await axiosInstance.delete(`/media/${id}`);

@@ -282,7 +282,7 @@ const defaultGrowthStories = [
     },
 ];
 
-// Accepts optional `growthStories` prop — falls back to default (ui-ux page unchanged)
+// Accepts optional `growthStories` prop - falls back to default (ui-ux page unchanged)
 const GrowthStories = ({ growthStories }) => {
     const stories = growthStories ?? defaultGrowthStories;
 

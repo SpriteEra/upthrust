@@ -70,7 +70,7 @@ function MediaCard({ card }) {
                 />
             );
         }
-        // gif or image — both use <img>
+        // gif or image - both use <img>
         return (
             <img
                 src={card.src}
@@ -86,10 +86,10 @@ function MediaCard({ card }) {
             {/* Media layer */}
             {media}
 
-            {/* Gradient overlay — stronger at top-left for text legibility */}
+            {/* Gradient overlay - stronger at top-left for text legibility */}
             <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/30 to-black/10 transition-opacity duration-300 group-hover:from-black/80" />
 
-            {/* Text content — top-left */}
+            {/* Text content - top-left */}
             <div className="absolute top-0 left-0 p-5 md:p-6 flex flex-col gap-1.5 max-w-[70%]">
 
 
@@ -111,7 +111,7 @@ function MediaCard({ card }) {
                 </p>
             </div>
 
-            {/* Media-type badge — bottom-right */}
+            {/* Media-type badge - bottom-right */}
             <div className="absolute bottom-4 right-4 flex items-center gap-1.5 opacity-60">
                 {card.type === "video" && (
                     <span className="text-[10px] text-white tracking-widest uppercase font-medium">
@@ -149,22 +149,22 @@ export default function MediaGrid({ cards = CARDS }) {
           3xl:grid-rows-[minmax(420px,1fr)_minmax(420px,1fr)]
         "
             >
-                {/* Card 1 — GIF, top-left, row-span-1 but slightly taller via aspect */}
+                {/* Card 1 - GIF, top-left, row-span-1 but slightly taller via aspect */}
                 <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-2">
                     <MediaCard card={cards[0]} />
                 </div>
 
-                {/* Card 2 — Image, top-right */}
+                {/* Card 2 - Image, top-right */}
                 <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-4">
                     <MediaCard card={cards[1]} />
                 </div>
 
-                {/* Card 3 — GIF, bottom-left */}
+                {/* Card 3 - GIF, bottom-left */}
                 <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-4">
                     <MediaCard card={cards[2]} />
                 </div>
 
-                {/* Card 4 — Video, bottom-right */}
+                {/* Card 4 - Video, bottom-right */}
                 <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-2">
                     <MediaCard card={cards[3]} />
                 </div>

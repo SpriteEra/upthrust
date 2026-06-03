@@ -10,7 +10,7 @@ const helpData = [
         upperSlider: ["/uiux/design/design1/1a.webp", "/uiux/design/design1/2a.webp", "/uiux/design/design1/3a.webp"],
         description: "We design digital products that are easy to adopt, intuitive to use, and built to scale as your business grows.",
         title2: "From idea to product\n that performs",
-        description2: "We help teams design SaaS and digital products that users understand instantly and keep coming back to. From early-stage concepts to mature platforms, we focus on clarity, usability, and structure—so features make sense, workflows feel natural, and growth doesn’t come at the cost of complexity. Every decision is tied to real user behavior and long-term scalability.",
+        description2: "We help teams design SaaS and digital products that users understand instantly and keep coming back to. From early-stage concepts to mature platforms, we focus on clarity, usability, and structure-so features make sense, workflows feel natural, and growth doesn’t come at the cost of complexity. Every decision is tied to real user behavior and long-term scalability.",
         lowerSlider: [
             "/uiux/design/design1/1.webp",
             "/uiux/design/design1/2.webp",
@@ -28,7 +28,7 @@ const helpData = [
         upperSlider: ["/uiux/design/design2/1a.webp", "/uiux/design/design2/2a.webp"],
         description: "We help brands look credible, consistent, and instantly recognizable.",
         title2: "Identity that\n earns trust",
-        description2: "Branding is more than a logo or color palette—it’s how people perceive you before they ever use your product. We create visual identities that communicate clarity, confidence, and intent across every touchpoint. From early positioning to refined systems, we help brands stand out while staying aligned with their audience and business goals.",
+        description2: "Branding is more than a logo or color palette-it’s how people perceive you before they ever use your product. We create visual identities that communicate clarity, confidence, and intent across every touchpoint. From early positioning to refined systems, we help brands stand out while staying aligned with their audience and business goals.",
         lowerSlider: [
             "/uiux/design/design2/1.webp",
             "/uiux/design/design2/2.webp",
@@ -46,7 +46,7 @@ const helpData = [
         upperSlider: ["/uiux/design/design3/1a.webp", "/uiux/design/design3/2a.webp"],
         description: "Design that turns attention into action, across ads, landing pages, and conversion flows.",
         title2: "Built to convert,\n not just look good",
-        description2: "We design landing pages and ad creatives with one goal in mind: performance. From first impression to final click, every element is crafted to guide users toward action. Whether it’s paid campaigns, product launches, or lead generation, we focus on clarity, messaging hierarchy, and visual direction that improves conversion—not vanity metrics.",
+        description2: "We design landing pages and ad creatives with one goal in mind: performance. From first impression to final click, every element is crafted to guide users toward action. Whether it’s paid campaigns, product launches, or lead generation, we focus on clarity, messaging hierarchy, and visual direction that improves conversion-not vanity metrics.",
         lowerSlider: [
             "/uiux/design/design3/1.webp",
             "/uiux/design/design2/2.webp",
@@ -63,7 +63,7 @@ const helpData = [
         upperSlider: ["/uiux/design/design4/1a.webp", "/uiux/design/design4/2a.webp", "/uiux/design/design4/3a.webp"],
         description: "Thoughtful design that removes friction and improves how users move through your product.",
         title2: "Designed\n for real users",
-        description2: "We design interfaces and experiences that feel effortless to use. By understanding user behavior and intent, we simplify flows, reduce friction, and improve overall usability. The result is an experience that feels intuitive from the first interaction—supporting engagement, retention, and long-term product success.",
+        description2: "We design interfaces and experiences that feel effortless to use. By understanding user behavior and intent, we simplify flows, reduce friction, and improve overall usability. The result is an experience that feels intuitive from the first interaction-supporting engagement, retention, and long-term product success.",
         lowerSlider: [
             "/uiux/design/design4/1.webp",
             "/uiux/design/design4/2.webp",

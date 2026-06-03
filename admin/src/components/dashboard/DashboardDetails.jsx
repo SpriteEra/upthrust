@@ -66,8 +66,8 @@ const RecentPagesWidget = ({ pages = [], loading }) => (
                         : pages.map((p, idx) => (
                             <tr key={p._id} className="border-b border-slate-50 hover:bg-slate-50 transition-colors">
                                 <td className="px-2.5 py-2.5 text-slate-400 text-[11px]">{idx + 1}</td>
-                                <td className="px-2.5 py-2.5 font-semibold text-slate-700 whitespace-nowrap max-w-[160px] truncate">{p.title || "—"}</td>
-                                <td className="px-2.5 py-2.5 text-slate-500 whitespace-nowrap font-mono text-[11px]">/{p.url || "—"}</td>
+                                <td className="px-2.5 py-2.5 font-semibold text-slate-700 whitespace-nowrap max-w-[160px] truncate">{p.title || "-"}</td>
+                                <td className="px-2.5 py-2.5 text-slate-500 whitespace-nowrap font-mono text-[11px]">/{p.url || "-"}</td>
                                 <td className="px-2.5 py-2.5 text-slate-400 whitespace-nowrap">{fmtDate(p.createdAt)}</td>
                                 <td className="px-2.5 py-2.5 text-slate-400 whitespace-nowrap">{fmtDate(p.updatedAt)}</td>
                             </tr>
@@ -194,11 +194,11 @@ const DashboardPage = () => {
     const charts = data?.charts;
     const recent = data?.recent;
 
-    // Stat cards config — derived from live data
+    // Stat cards config - derived from live data
     const statCards = [
         {
             title: "Total Users",
-            value: loading ? "—" : s?.users.total.toLocaleString(),
+            value: loading ? "-" : s?.users.total.toLocaleString(),
             change: loading ? null : `${s?.users.changePercent >= 0 ? "+" : ""}${s?.users.changePercent}%`,
             label: "vs last month",
             icon: Users,
@@ -207,7 +207,7 @@ const DashboardPage = () => {
         },
         {
             title: "Total Pages",
-            value: loading ? "—" : s?.pages.total.toLocaleString(),
+            value: loading ? "-" : s?.pages.total.toLocaleString(),
             change: loading ? null : `${s?.pages.changePercent >= 0 ? "+" : ""}${s?.pages.changePercent}%`,
             label: "vs last month",
             icon: FileText,
@@ -216,7 +216,7 @@ const DashboardPage = () => {
         },
         {
             title: "Media Files",
-            value: loading ? "—" : s?.media.total.toLocaleString(),
+            value: loading ? "-" : s?.media.total.toLocaleString(),
             change: loading ? null : `${s?.media.changePercent >= 0 ? "+" : ""}${s?.media.changePercent}%`,
             label: "vs last month",
             icon: Image,
@@ -225,7 +225,7 @@ const DashboardPage = () => {
         },
         {
             title: "FAQ Items",
-            value: loading ? "—" : s?.faqs.totalItems.toLocaleString(),
+            value: loading ? "-" : s?.faqs.totalItems.toLocaleString(),
             change: loading ? null : `${s?.faqs.changePercent >= 0 ? "+" : ""}${s?.faqs.changePercent}%`,
             label: "vs last month",
             icon: HelpCircle,
@@ -295,7 +295,7 @@ const DashboardPage = () => {
             {/* Charts Row 1: Users over 7 days + Pages per month */}
             <div className="grid grid-cols-1 xl:grid-cols-[1fr_300px] gap-4 mb-4">
 
-                {/* Users by day — area chart */}
+                {/* Users by day - area chart */}
                 <WidgetCard title="New Users (Last 7 Days)">
                     {loading ? (
                         <LoadingSkeleton className="h-[200px] w-full" />
@@ -325,8 +325,8 @@ const DashboardPage = () => {
                                 </div>
                             ))
                             : [
-                                { label: "Total Users", val: s?.users.total?.toLocaleString() ?? "—" },
-                                { label: "Verified", val: s?.users.verified?.toLocaleString() ?? "—" },
+                                { label: "Total Users", val: s?.users.total?.toLocaleString() ?? "-" },
+                                { label: "Verified", val: s?.users.verified?.toLocaleString() ?? "-" },
                                 { label: "This Month", val: `+${s?.users.thisMonth ?? 0}` },
                             ].map((item) => (
                                 <div key={item.label} className="text-center">
@@ -362,7 +362,7 @@ const DashboardPage = () => {
                                     </div>
                                 ))
                                 : [
-                                    { label: "Total Pages", val: s?.pages.total ?? "—" },
+                                    { label: "Total Pages", val: s?.pages.total ?? "-" },
                                     { label: "This Month", val: `+${s?.pages.thisMonth ?? 0}` },
                                 ].map((item) => (
                                     <div key={item.label} className="text-center">
@@ -429,9 +429,9 @@ const DashboardPage = () => {
                                 </div>
                             ))
                             : [
-                                { label: "Total Media", val: s?.media.total?.toLocaleString() ?? "—" },
-                                { label: "Images", val: s?.media.images?.toLocaleString() ?? "—" },
-                                { label: "Videos", val: s?.media.videos?.toLocaleString() ?? "—" },
+                                { label: "Total Media", val: s?.media.total?.toLocaleString() ?? "-" },
+                                { label: "Images", val: s?.media.images?.toLocaleString() ?? "-" },
+                                { label: "Videos", val: s?.media.videos?.toLocaleString() ?? "-" },
                                 { label: "This Month", val: `+${s?.media.thisMonth ?? 0}` },
                             ].map((item) => (
                                 <div key={item.label} className="text-center">

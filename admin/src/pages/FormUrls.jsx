@@ -124,7 +124,7 @@ const ConfirmModal = ({ message, onConfirm, onCancel, loading }) => (
 );
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// FORM URL CARD — single row in the table
+// FORM URL CARD - single row in the table
 // ═══════════════════════════════════════════════════════════════════════════════
 const FormUrlCard = ({ item, selected, onSelect, onEdit, onDelete, onToggle, toggling }) => (
     <div className={`group relative bg-white rounded-xl border transition-all ${selected ? "border-slate-800 shadow-sm" : "border-slate-200 hover:border-slate-300 hover:shadow-sm"}`}>
@@ -547,7 +547,7 @@ const FormUrlsPage = () => {
             {/* ─────────────────────────────────────────────────────────────── */}
             {modal && (
                 <Modal
-                    title={modal.mode === "add" ? "Add Form URL" : `Edit — ${modal.data?.label}`}
+                    title={modal.mode === "add" ? "Add Form URL" : `Edit - ${modal.data?.label}`}
                     onClose={closeModal}
                     onSave={handleSave}
                     saving={saving}>
@@ -561,7 +561,7 @@ const FormUrlsPage = () => {
                                 onChange={(e) => setField("key", e.target.value.toLowerCase())}
                                 placeholder="e.g. ecom  ·  googleads  ·  seo"
                                 className="pl-9"
-                                disabled={modal.mode === "edit"} // key is the unique identifier — avoid changing
+                                disabled={modal.mode === "edit"} // key is the unique identifier - avoid changing
                             />
                         </div>
                         {modal.mode === "edit" && (

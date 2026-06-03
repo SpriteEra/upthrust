@@ -121,7 +121,7 @@ export const cards = [
     months: "3X",
 
     quote:
-      "Lead quality improved significantly. Not just volume — actual buyers.",
+      "Lead quality improved significantly. Not just volume - actual buyers.",
 
     author: "Founder, Mukunda Foods",
   },

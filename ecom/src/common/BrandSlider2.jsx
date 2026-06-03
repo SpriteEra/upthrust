@@ -39,7 +39,7 @@ function useSupersideSlider(direction = -1) {
             gsap.set(el, { x })
         })
 
-        // 🖱️ DRAG — FAST + RESPONSIVE
+        // 🖱️ DRAG - FAST + RESPONSIVE
         const draggable = Draggable.create(el, {
             type: "x",
             inertia: true,

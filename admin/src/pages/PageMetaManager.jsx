@@ -214,7 +214,7 @@ const MetaModal = ({ mode, initial, onClose, onSaved }) => {
               <Globe size={15} className="text-white" />
             </div>
             <h3 className="font-semibold text-slate-800">
-              {mode === "create" ? "New Page Metadata" : `Edit — /${form.slug}`}
+              {mode === "create" ? "New Page Metadata" : `Edit - /${form.slug}`}
             </h3>
           </div>
           <button
@@ -276,7 +276,7 @@ const MetaModal = ({ mode, initial, onClose, onSaved }) => {
           </Field>
           <Field
             label="Meta Description"
-            hint="Google snippet — aim for 140–160 chars"
+            hint="Google snippet - aim for 140–160 chars"
             charCount={form.description.length}
           >
             <Textarea
@@ -590,7 +590,7 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
         <td className="px-4 py-3 max-w-[220px]">
           <p className="text-sm text-slate-600 truncate">
             {meta.title || (
-              <span className="text-slate-300 italic text-xs">—</span>
+              <span className="text-slate-300 italic text-xs">-</span>
             )}
           </p>
         </td>
@@ -692,19 +692,19 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                       title:{" "}
                     </span>
                     <span className="text-slate-700">
-                      {meta.openGraph?.title || "—"}
+                      {meta.openGraph?.title || "-"}
                     </span>
                   </div>
                   <div>
                     <span className="font-semibold text-slate-500">desc: </span>
                     <span className="text-slate-700 line-clamp-2">
-                      {meta.openGraph?.description || "—"}
+                      {meta.openGraph?.description || "-"}
                     </span>
                   </div>
                   <div>
                     <span className="font-semibold text-slate-500">url: </span>
                     <span className="text-slate-700 truncate block">
-                      {meta.openGraph?.url || "—"}
+                      {meta.openGraph?.url || "-"}
                     </span>
                   </div>
                   <div>
@@ -712,7 +712,7 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                       siteName:{" "}
                     </span>
                     <span className="text-slate-700">
-                      {meta.openGraph?.siteName || "—"}
+                      {meta.openGraph?.siteName || "-"}
                     </span>
                   </div>
                   <div>
@@ -720,13 +720,13 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                       image:{" "}
                     </span>
                     <code className="text-slate-600 text-[11px]">
-                      {meta.openGraph?.image || "—"}
+                      {meta.openGraph?.image || "-"}
                     </code>
                   </div>
                   <div>
                     <span className="font-semibold text-slate-500">type: </span>
                     <span className="text-slate-700">
-                      {meta.openGraph?.type || "—"}
+                      {meta.openGraph?.type || "-"}
                     </span>
                   </div>
                 </div>
@@ -741,7 +741,7 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                   <div>
                     <span className="font-semibold text-slate-500">card: </span>
                     <span className="text-slate-700">
-                      {meta.twitter?.card || "—"}
+                      {meta.twitter?.card || "-"}
                     </span>
                   </div>
                   <div>
@@ -749,13 +749,13 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                       title:{" "}
                     </span>
                     <span className="text-slate-700">
-                      {meta.twitter?.title || "—"}
+                      {meta.twitter?.title || "-"}
                     </span>
                   </div>
                   <div>
                     <span className="font-semibold text-slate-500">desc: </span>
                     <span className="text-slate-700 line-clamp-2">
-                      {meta.twitter?.description || "—"}
+                      {meta.twitter?.description || "-"}
                     </span>
                   </div>
                   <div>
@@ -763,7 +763,7 @@ const MetaRow = ({ meta, onEdit, onDelete }) => {
                       image:{" "}
                     </span>
                     <code className="text-slate-600 text-[11px]">
-                      {meta.twitter?.image || "—"}
+                      {meta.twitter?.image || "-"}
                     </code>
                   </div>
                 </div>

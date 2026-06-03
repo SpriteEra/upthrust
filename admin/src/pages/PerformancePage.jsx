@@ -471,7 +471,7 @@ const CardsDataSection = ({ items = [], pageId, onSaved }) => {
                                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Quote</p>
                                         <blockquote className="text-xs italic text-slate-600 leading-relaxed border-l-2 border-orange-300 pl-3">
                                             "{card.quote}"
-                                            <footer className="text-[11px] text-slate-400 mt-1 not-italic">— {card.author}</footer>
+                                            <footer className="text-[11px] text-slate-400 mt-1 not-italic">- {card.author}</footer>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -693,7 +693,7 @@ const ColumnsDataSection = ({ data = {}, pageId, onSaved }) => {
             </div>
 
             {modal && (
-                <Modal title={`${modal.mode === "add" ? "Add" : "Edit"} Review — ${modal.col === "col1" ? "Column 1" : "Column 2"}`}
+                <Modal title={`${modal.mode === "add" ? "Add" : "Edit"} Review - ${modal.col === "col1" ? "Column 1" : "Column 2"}`}
                     onClose={closeModal} onSave={handleSave} saving={saving}>
 
                     <Field label="Name *">

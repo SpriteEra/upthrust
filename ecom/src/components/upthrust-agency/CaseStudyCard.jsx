@@ -7,7 +7,7 @@ import SmartSwiper from "@/components/SmartSwiper"; // ← adjust path if needed
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-// ─── Case Study Data — 6 entries 
+// ─── Case Study Data - 6 entries 
 
 const CASE_STUDIES = [
     {
@@ -43,7 +43,7 @@ const CASE_STUDIES = [
         brandName: "Smokey Cocktail",
         tag: "Beverage Brand",
         description:
-            "From zero to viral — a beverage brand that scaled through precision creative and social-first strategy across Meta and Instagram.",
+            "From zero to viral - a beverage brand that scaled through precision creative and social-first strategy across Meta and Instagram.",
         media: [
             { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-1.webp" },
             { type: "image", src: "/main-agency/case-studies/smokey-cocktail/img-2.webp" },
@@ -227,7 +227,7 @@ function CaseStudyCard({ brandName, tag, description, media }) {
                     </span>
                 </div>
 
-                {/* Right — hidden on mobile, shows md+ */}
+                {/* Right - hidden on mobile, shows md+ */}
                 <p className="hidden md:block max-w-xs md:max-w-sm lg:max-w-md text-sm md:text-base tracking-[-0.02em] leading-[150%] 3xl:text-lg text-black/60  text-start">
                     {description}
                 </p>
@@ -273,7 +273,7 @@ function CaseStudyCard({ brandName, tag, description, media }) {
             {/*
         Shows 1.15 slides so user can see there's more.
         All 5 items (4 images + 1 video) are slides.
-        Uses SmartSwiper with autoplay off — user drags through.
+        Uses SmartSwiper with autoplay off - user drags through.
       */}
             <div className="block md:hidden mobile-case-swiper">
                 <SmartSwiper
@@ -297,13 +297,13 @@ function CaseStudyCard({ brandName, tag, description, media }) {
     );
 }
 
-// ─── CaseStudy — full section with dividers ────────────────────────────────────
+// ─── CaseStudy - full section with dividers ────────────────────────────────────
 export const AgencyCaseStudy = ({ studies = CASE_STUDIES }) => {
     return (
         <section className="w-full flex flex-col">
             {studies.map((study, index) => (
                 <div key={study.id}>
-                    {/* Divider — top rule on first, between all */}
+                    {/* Divider - top rule on first, between all */}
                     <div className="w-full h-px bg-black/10" />
 
                     <div className="py-8 md:py-12 lg:py-16">

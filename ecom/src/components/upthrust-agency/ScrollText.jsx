@@ -74,7 +74,7 @@ const ScrollText = () => {
                     </div>
                 </div>
 
-                {/* ── RIGHT — scrolling headings ── */}
+                {/* ── RIGHT - scrolling headings ── */}
                 <div
                     className="w-1/2 "
                 >

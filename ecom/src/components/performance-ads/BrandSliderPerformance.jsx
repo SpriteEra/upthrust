@@ -170,7 +170,7 @@ function MarqueeRow({ brands, itemWidth = 160 }) {
                         </div>
                     </div>
 
-                    {/* Vertical divider — spans full height, touching top and bottom border */}
+                    {/* Vertical divider - spans full height, touching top and bottom border */}
                     <div className="absolute right-0 top-0 bottom-0 w-px bg-[#E9EAEB]" />
 
                     {/* Plus at TOP intersection (divider meets top border) */}

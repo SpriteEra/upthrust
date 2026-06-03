@@ -99,7 +99,7 @@ export const googlePages = {
             {
                 question: "What is your pricing structure?",
                 answer:
-                    "We use a hybrid pricing model—a base retainer plus a performance-based fee tied to revenue. This ensures our incentives align with your profitability and growth."
+                    "We use a hybrid pricing model-a base retainer plus a performance-based fee tied to revenue. This ensures our incentives align with your profitability and growth."
             },
             {
                 question: "How do you deliver strong results with Google Ads?",
@@ -109,7 +109,7 @@ export const googlePages = {
             {
                 question: "How can I measure campaign performance?",
                 answer:
-                    "We track everything—from clicks and conversions to CAC, LTV, and revenue. You get full dashboard access and weekly insights so you understand exactly what’s driving results."
+                    "We track everything-from clicks and conversions to CAC, LTV, and revenue. You get full dashboard access and weekly insights so you understand exactly what’s driving results."
             },
             {
                 question: "What are the latest updates in Google Ads?",
@@ -172,7 +172,7 @@ export const googlePages = {
             },
             {
                 question: "How does Upthrust produce great result with Google Ads?",
-                answer: "Through systematic ecommerce optimization at every level. Our PPC agency ecommerce team starts with deep keyword research identifying high-intent, low-competition opportunities for online stores. We create highly relevant ad copy for every keyword theme, improving Quality Scores and lowering CPCs. As a specialized ecommerce pay per click agency, we obsess over landing page optimization—traffic to poorly converting pages wastes money. Our ecommerce google ads agency tests relentlessly: 10-15 ad variations per campaign, multiple bid strategies, continuous audience refinement. Unlike generic competitors, we combine technical mastery with ecommerce strategy. Our shopify PPC agency tracks contribution margin, not just ROAS."
+                answer: "Through systematic ecommerce optimization at every level. Our PPC agency ecommerce team starts with deep keyword research identifying high-intent, low-competition opportunities for online stores. We create highly relevant ad copy for every keyword theme, improving Quality Scores and lowering CPCs. As a specialized ecommerce pay per click agency, we obsess over landing page optimization-traffic to poorly converting pages wastes money. Our ecommerce google ads agency tests relentlessly: 10-15 ad variations per campaign, multiple bid strategies, continuous audience refinement. Unlike generic competitors, we combine technical mastery with ecommerce strategy. Our shopify PPC agency tracks contribution margin, not just ROAS."
             },
             {
                 question: "How can I measure the performance of my Google Ads campaign?",
@@ -184,7 +184,7 @@ export const googlePages = {
             },
             {
                 question: "What ad formats & placement are available?",
-                answer: "Google offers multiple formats our PPC agency for ecommerce leverages strategically: Search ads (text in search results), Shopping ads (product images with prices-crucial for ecommerce), Performance Max (automated across all Google properties), Display ads (banners on websites), YouTube ads (video advertising), and Discovery ads (native in Gmail/YouTube feeds). As a comprehensive PPC ecommerce agency, we don't just run Search campaigns—we build omnichannel Google strategies for online stores. Our ecommerce PPC company determines which formats work best based on your product type, margins, and audience behavior. Our PPC agency ecommerce tests all available placements."
+                answer: "Google offers multiple formats our PPC agency for ecommerce leverages strategically: Search ads (text in search results), Shopping ads (product images with prices-crucial for ecommerce), Performance Max (automated across all Google properties), Display ads (banners on websites), YouTube ads (video advertising), and Discovery ads (native in Gmail/YouTube feeds). As a comprehensive PPC ecommerce agency, we don't just run Search campaigns-we build omnichannel Google strategies for online stores. Our ecommerce PPC company determines which formats work best based on your product type, margins, and audience behavior. Our PPC agency ecommerce tests all available placements."
             },
             {
                 question: "Can I add new services throughout our partnership?",

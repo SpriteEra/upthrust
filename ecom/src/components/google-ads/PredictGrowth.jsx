@@ -71,7 +71,7 @@ const PredictGrowth = () => {
             title: 'Scale and Ascension',
             description: (
                 <>
-                    We analyze your search impression share to identify traffic loss due to budget limits—not competition. Budgets are increased by 20%, monitored for three days, and scaled further if CPC and conversion rates remain stable. If costs rise, bids are adjusted before adding spend. <strong>We Scale Winners First And Expand only When The Data Supports It. </strong>
+                    We analyze your search impression share to identify traffic loss due to budget limits-not competition. Budgets are increased by 20%, monitored for three days, and scaled further if CPC and conversion rates remain stable. If costs rise, bids are adjusted before adding spend. <strong>We Scale Winners First And Expand only When The Data Supports It. </strong>
                 </>
             ),
             images: ['/google-ads/sliderimg/Scale1.svg', '/google-ads/sliderimg/Scale2.svg', '/google-ads/sliderimg/Scale3.svg'],
@@ -145,7 +145,7 @@ const PredictGrowth = () => {
                         </h2>
                     </div>
 
-                    {/* Image — always visible for blue, slides in for white */}
+                    {/* Image - always visible for blue, slides in for white */}
                     <div
                         className={`
                             relative rounded-lg overflow-hidden aspect-7/4 max-h-50 xl:max-h-70 1800:max-h-[360px]

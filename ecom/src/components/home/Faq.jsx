@@ -8,7 +8,7 @@ const faqs = [
     },
     {
         question: "What makes Upthrust different from other D2C agencies?",
-        answer: "We don't just run ads—we build growth systems. Our approach: relentless testing, radical transparency (no vanity metrics), and revenue obsession. We've scaled D2C brands across 7+ countries and bring learnings from ₹100Cr+ in managed ad spend. Every campaign is built to boost your bottom line, not impressions."
+        answer: "We don't just run ads-we build growth systems. Our approach: relentless testing, radical transparency (no vanity metrics), and revenue obsession. We've scaled D2C brands across 7+ countries and bring learnings from ₹100Cr+ in managed ad spend. Every campaign is built to boost your bottom line, not impressions."
     },
     {
         question: "What's your minimum budget and pricing structure?",
@@ -45,11 +45,11 @@ const faqs = [
     },
     {
         question: "How do you help D2C brands stand out in saturated markets?",
-        answer: "Competition is brutal—we get it. Our differentiation playbook: competitor creative analysis, unique positioning angles, creator-led content (UGC/influencer), platform diversification (Meta + Google + TikTok), conversion rate optimization, and obsessive A/B testing. We find what makes you different and amplify it."
+        answer: "Competition is brutal-we get it. Our differentiation playbook: competitor creative analysis, unique positioning angles, creator-led content (UGC/influencer), platform diversification (Meta + Google + TikTok), conversion rate optimization, and obsessive A/B testing. We find what makes you different and amplify it."
     },
     {
         question: "Do you handle both acquisition AND retention?",
-        answer: "Yes—both are critical. <b>Acquisition</b>: Paid media across Meta, Google, TikTok, Pinterest. <br/><b>Retention:</b> Email/SMS automation (welcome, cart abandonment, win-back), loyalty programs, referral systems, and post-purchase optimization. Winning D2C brands master both."
+        answer: "Yes-both are critical. <b>Acquisition</b>: Paid media across Meta, Google, TikTok, Pinterest. <br/><b>Retention:</b> Email/SMS automation (welcome, cart abandonment, win-back), loyalty programs, referral systems, and post-purchase optimization. Winning D2C brands master both."
     },
     {
         question: "What results can we realistically expect?",
