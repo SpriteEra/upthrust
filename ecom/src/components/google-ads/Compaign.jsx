@@ -8,7 +8,7 @@ const defaultCaseStudies = [
     {
         badge: "SaaS",
         title: "We Love No Code",
-        description: "Demo acquisition costs averaged $450 each. Our AI-first SEO strategy reduced them to $189 in just 18 weeks.",
+        description: "Demo acquisition costs averaged $450 each. Our Google Ads optimization strategy reduced them to $189 in just 18 weeks.",
         metrics: {
             metric1: { label: "Cost per Demo Change", value: "20%" },
             metric2: { label: "Number of Demos", value: "48%" }
@@ -47,7 +47,7 @@ const defaultCaseStudies = [
     },
     {
         badge: "Ecommerce",
-        title: "L’oreal",
+        title: "L'Oréal",
         description: "High acquisition costs blocked L'Oréal's ecommerce growth. We rebuilt audience targeting and optimized Shopping ad feeds. Customer acquisition costs dropped 40% in ten weeks, making profitable scale possible",
         metrics: {
             metric1: { label: "CPA decrease", value: "12%" },
@@ -90,7 +90,7 @@ const defaultCaseStudies = [
         description: "Built a full-funnel digital lead engine from audience research and LinkedIn demand gen to high-intent landing pages, email outreach, and continuous optimization.",
         metrics: {
             metric1: { label: "Qualified Leads Per Month", value: "543+" },
-            metric2: { label: "Boost in Organic Traffic", value: "18%" }
+            metric2: { label: "Conversion Rate Increase", value: "18%" }
         },
         testimonial: {
             name: "Gaurav",
