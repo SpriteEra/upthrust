@@ -557,7 +557,7 @@ const page = () => {
         <DropBoxScroll />
       </div>
 
-      <div className="my-20 py-10 bg-black w-[95%] mx-auto rounded-2xl">
+      <div className="my-20 pt-10 bg-black w-[95%] mx-auto rounded-2xl">
         <AgencyHeading
           tag="h2"
           textColor="text-white"
@@ -574,25 +574,30 @@ const page = () => {
             },
           ]}
           label="Case Studies"
-          subtitle={`We Don't Just Talk-We Show`}
+          subtitle={`Google, ChatGPT, Claude, Gemini, Perplexity. We don't just rank you. We get you cited.`}
           subTitleCss="max-w-2xl 3xl:max-w-3xl"
         />
+        <div className="px-20 3xl:px-30 pt-10 3xl:pt-20 pb-0 relative flex h-full w-full">
+          <Image width={800} height={1000} className="w-160 3xl:w-200 h-fit -bottom-[1px] translate-x-[-30%] left-1/2 object-cover absolute z-10" src="/main-agency/hand-phone.png" alt="Decorative Dots" />
+          <div className="flex justify-between pt-10 3xl:pt-16 items-center px-20 border-2 border-[#243142]/28 rounded-[44px] pb-40 relative my-10 w-full">
+            <Image width={160} height={120} className="w-32 3xl:w-40 h-fit -top-6 3xl:-top-7 left-20 object-cover absolute z-10" src="/main-agency/PartnerLogos.png" alt="Decorative Dots" />
+            <div>
+              <p className="text-white text-[28px] xl:text-5xl 3xl:text-5xl font-semibold leading-[130%] tracking-[-0.02em]">
+                A proven system
+                <br />
+                <span>is </span>
+                <span className="font-normal font-instrument italic ">
+                  your key to scale
+                </span>
+              </p>
+              <p className='text-white text-sm leading-[150%] tracking-[-0.02em] uppercase mt-2'>The dashboards. The numbers. What we did.</p>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 items-center justify-center px-20">
-          <div>
-            <p className="text-white text-[28px] 3xl:text-[33px] font-normal leading-[150%] ">
-              A proven system is
-              <span className="text-white text-[28px] 3xl:text-[33px] font-normal leading-[150%] font-instrument italic block ">
-                your key to scale
-              </span>
-            </p>
+            <div>
+              <AgencyButton text='Show Us how to scale' />
+            </div>
           </div>
-          <div>
-            <Image width={500} height={500} className="w-full h-full object-cover" src="/main-agency/hand-phone.png" alt="Hand Phone" />
-          </div>
-          <div>
-            <AgencyButton text='Show Us how to scale' />
-          </div>
+
         </div>
       </div>
 
