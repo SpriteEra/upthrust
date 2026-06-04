@@ -33,7 +33,7 @@ export const googlePages = {
                 answer: "We use a few different pricing models to make sure you’re getting the most out of our services. And to make sure that we can still feed our staff. Turns out, they like to eat."
             },
             {
-                question: "How does Upthrust produce great result with Google Ads?",
+                question: "How does Upthrust produce great results with Google Ads?",
                 answer: "With Upthrust, there are no templates or cookie cutter plans, every single client gets their own campaign strategy customized to their business based on many points of research and planning whether their goal is to generate leads or generate sales. We take into account the target audience, relevant keywords, geographic locations, and more when crafting this approach to tailor each campaign for the business. We are also continually testing new strategies and are on the lookout for new experiments to consistently improve and innovate."
             },
             {
@@ -171,7 +171,7 @@ export const googlePages = {
                 answer: "Our shopify PPC agency uses hybrid pricing: base retainer for strategy plus performance fee tied to ecommerce revenue milestones. Unlike traditional e commerce PPC agency models charging only ad spend percentage (which incentivizes waste), our structure aligns with profitability. The base retainer covers keyword research, ad copy creation, Quality Score optimization, and reporting. Performance fees reward our PPC agency for ecommerce when we hit revenue targets. As a transparent PPC ecommerce agency partner, we customize pricing based on your ad spend levels. Our ecommerce PPC company believes in aligned incentives."
             },
             {
-                question: "How does Upthrust produce great result with Google Ads?",
+                question: "How does Upthrust produce great results with Google Ads?",
                 answer: "Through systematic ecommerce optimization at every level. Our PPC agency ecommerce team starts with deep keyword research identifying high-intent, low-competition opportunities for online stores. We create highly relevant ad copy for every keyword theme, improving Quality Scores and lowering CPCs. As a specialized ecommerce pay per click agency, we obsess over landing page optimization-traffic to poorly converting pages wastes money. Our ecommerce google ads agency tests relentlessly: 10-15 ad variations per campaign, multiple bid strategies, continuous audience refinement. Unlike generic competitors, we combine technical mastery with ecommerce strategy. Our shopify PPC agency tracks contribution margin, not just ROAS."
             },
             {

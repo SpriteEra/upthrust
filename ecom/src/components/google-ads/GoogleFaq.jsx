@@ -31,7 +31,7 @@ const defaultFaqs = [
         answer: "We use a few different pricing models to make sure you’re getting the most out of our services. And to make sure that we can still feed our staff. Turns out, they like to eat."
     },
     {
-        question: "How does Upthrust produce great result with Google Ads?",
+        question: "How does Upthrust produce great results with Google Ads?",
         answer: "With Upthrust, there are no templates or cookie cutter plans, every single client gets their own campaign strategy customized to their business based on many points of research and planning whether their goal is to generate leads or generate sales. We take into account the target audience, relevant keywords, geographic locations, and more when crafting this approach to tailor each campaign for the business. We are also continually testing new strategies and are on the lookout for new experiments to consistently improve and innovate."
     },
     {

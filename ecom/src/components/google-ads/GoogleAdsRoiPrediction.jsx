@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import CommonLeadModal from "@/common/commonLeadModel";
+import { OPEN_NEETOCAL_FORM } from "@/common/commonFormModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -348,7 +349,7 @@ const GoogleAdsRoiPrediction = ({ formUrl }) => {
                     className="absolute inset-0 text-2xl 3xl:text-3xl font-semibold leading-[150%] tracking-[-0.02em]"
                     style={{ opacity: 1 }}
                   >
-                    Retargeting ladder for who hasn't converted
+                    Retargeting ladder for unconverted users
                   </p>
 
                   <p
@@ -404,7 +405,7 @@ const GoogleAdsRoiPrediction = ({ formUrl }) => {
 
                   <button
                     ref={buttonBRef}
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => window.dispatchEvent(new Event(OPEN_NEETOCAL_FORM))}
                     className="absolute inset-0 bg-[#1A73E8] text-white px-10 py-2 3xl:py-6 3xl:px-9 rounded-full text-lg 3xl:text-2xl font-semibold leading-[150%] tracking-[-0.02em] max-w-fit cursor-pointer"
                     style={{ opacity: 0 }}
                   >
