@@ -119,7 +119,7 @@ function MediaCard({ card }) {
                     </span>
                 )}
                 {card.type === "gif" && (
-                    <span className="text-[10px] text-white tracking-widest uppercase font-medium bg-white/10 px-2 py-0.5 rounded">
+                    <span className="text-[10px] text-white tracking-widest uppercase font-medium bg-white/10 md:px-2 py-0.5 rounded">
                         GIF
                     </span>
                 )}
@@ -137,35 +137,35 @@ function MediaCard({ card }) {
 
 export default function MediaGrid({ cards = CARDS }) {
     return (
-        <section className="w-full px-4 md:px-8 lg:px-12 py-10">
+        <section className="w-full px-2 md:px-8 lg:px-12 py-5 md:py-10">
             <div
                 className="
           grid
           grid-cols-1
           md:grid-cols-6
           gap-3 md:gap-4
-          md:grid-rows-[minmax(280px,1fr)_minmax(280px,1fr)]
+          md:grid-rows-[minmax(300px,1fr)_minmax(350px,1fr)]
           lg:grid-rows-[minmax(340px,1fr)_minmax(340px,1fr)]
           3xl:grid-rows-[minmax(420px,1fr)_minmax(420px,1fr)]
         "
             >
                 {/* Card 1 - GIF, top-left, row-span-1 but slightly taller via aspect */}
-                <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-2">
+                <div className="aspect-[350/307] sm:aspect-[4/3] md:aspect-auto md:row-span-1 md:col-span-2">
                     <MediaCard card={cards[0]} />
                 </div>
 
                 {/* Card 2 - Image, top-right */}
-                <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-4">
+                <div className="aspect-[350/307] sm:aspect-[4/3] md:aspect-auto md:row-span-1 md:col-span-4">
                     <MediaCard card={cards[1]} />
                 </div>
 
                 {/* Card 3 - GIF, bottom-left */}
-                <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-4">
+                <div className="aspect-[350/307] sm:aspect-[4/3] md:aspect-auto md:row-span-1 md:col-span-4">
                     <MediaCard card={cards[2]} />
                 </div>
 
                 {/* Card 4 - Video, bottom-right */}
-                <div className="aspect-[4/3] md:aspect-auto md:row-span-1 col-span-2">
+                <div className="aspect-[350/307] sm:aspect-[4/3] md:aspect-auto md:row-span-1 md:col-span-2">
                     <MediaCard card={cards[3]} />
                 </div>
             </div>

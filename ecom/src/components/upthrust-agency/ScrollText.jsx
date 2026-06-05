@@ -54,15 +54,15 @@ const ScrollText = () => {
 
         >
             <div
-                className="max-w-[90%] mx-auto w-full flex"
+                className="max-w-[90%] mx-auto w-full flex max-md:flex-col"
 
             >
 
                 {/* left  */}
 
-                <div className="w-1/2 ">
+                <div className=" w-full md:w-1/2 ">
                     <div
-                        className="sticky top-0 h-[100vh] flex items-end pb-12"
+                        className="sticky top-0 h-[220px] md:h-[100vh] flex items-end pb-14 md:pb-12"
 
                     >
                         <p
@@ -76,7 +76,7 @@ const ScrollText = () => {
 
                 {/* ── RIGHT - scrolling headings ── */}
                 <div
-                    className="w-1/2 "
+                    className=" w-full md:w-1/2 "
                 >
                     <h3 className="text-4xl md:text-4xl lg:text-[55px] xl:text-6xl 3xl:text-7xl font-semibold text-left leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] capitalize">
                         We <span className="text-4xl  md:text-4xl lg:text-[65px] xl:text-7xl 3xl:text-[5rem] font-instrument italic leading-11 md:leading-[120%] tracking-[-0.02em] xl:tracking-[-0.04em] font-normal capitalize">build brands</span> that

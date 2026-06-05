@@ -42,10 +42,10 @@ export default function PlayVideoSection() {
     return (
         <>
             {/* ─── SECTION ─── */}
-            <section className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden select-none max-w-[90%] mx-auto px-4 text-center py-10 lg:py-20">
+            <section className="relative flex flex-col items-center justify-center min-h-screen bg-white overflow-hidden select-none max-w-[90%] mx-auto md:px-4 text-center py-1 lg:py-20">
 
                 {/* Tagline */}
-                <p className="text-[25px] 3xl:text-[36px] font-semibold tracking-[-0.02em] text-black leading-[150%] uppercase mb-12 z-10 pt-15 pb-25">
+                <p className="text-[30px] 3xl:text-[36px] font-semibold tracking-[-0.02em] text-black leading-[150%] uppercase mb-12 z-10 pt-15 pb-15 md:pb-25">
                     We build growth systems. Not campaigns.
                 </p>
 
@@ -115,7 +115,7 @@ export default function PlayVideoSection() {
                         </div>
 
                         {/* Video preview card */}
-                        <div className="relative w-[clamp(300px,60vw,576px)] aspect-576/324 rounded-xl overflow-hidden shadow-md border border-neutral-200 transition-all duration-500 ">
+                        <div className="relative w-[clamp(360px,60vw,576px)] aspect-576/324 rounded-lg overflow-hidden shadow-md border border-neutral-200 transition-all duration-500 ">
                             {/* Actual video as thumbnail - muted, no controls */}
                             <video
                                 src={VIDEO_URL}

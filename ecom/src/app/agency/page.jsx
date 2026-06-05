@@ -60,7 +60,7 @@ const page = () => {
     <div>
       <HeroSection />
       <ScrollText />
-      {/* <AgencyNavbar /> */}
+      <AgencyNavbar />
       <PlayVideoSection />
       <div className="pb-10 pt-30 ">
         <AgencyHeading
@@ -86,22 +86,22 @@ const page = () => {
 
 
       {/* good brand  */}
-      <section className="py-10 lg:py-20 w-[90%] mx-auto">
+      <section className="py-10 lg:py-20 w-[95%] md:w-[90%] mx-auto">
         {/* Nav / Top bar can go here */}
         <div className="flex flex-col lg:flex-row items-center gap-12 w-full">
 
           {/* ── LEFT COLUMN ── */}
-          <div className="flex-1 flex flex-col gap-4 max-w-[45%]">
+          <div className="flex-1 flex flex-col gap-4 w-full md:max-w-[45%]">
 
             {/* Pills */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex max-md:relative max-md:h-20  md:gap-2">
               {["Ships fast.", "Thinks sharp.", "No fluff."].map((tag, index) => (
                 <span
                   key={tag}
-                  className={`text-lg flex items-center justify-center 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] text-black  bg-[#F3F3F3] rounded-full px-10 3xl:px-15 py-2.5 3xl:py-3 transition-all
-      ${index === 0 ? "-rotate-[5.18deg]" : ""}
-      ${index === 1 ? "-rotate-[7.33deg] mt-2" : ""}
-      ${index === 2 ? "-rotate-2 mt-2.5" : ""}
+                  className={` max-md:absolute text-lg flex whitespace-nowrap items-center justify-center 3xl:text-xl font-normal leading-[150%] tracking-[-0.02em] text-black  bg-[#F3F3F3] rounded-full px-5 md:px-10 3xl:px-15 py-2 md:py-2.5 3xl:py-3 transition-all
+      ${index === 0 ? "-rotate-[5.18deg] max-md:left-0" : ""}
+      ${index === 1 ? "-rotate-[7.33deg] mt-2 max-md:left-28" : ""}
+      ${index === 2 ? "-rotate-2 mt-2.5 max-md:right-0" : ""}
       `}
                 >
                   {tag}
@@ -151,7 +151,7 @@ const page = () => {
           </div>
 
           {/* ── RIGHT COLUMN – Video preview card ── */}
-          <div className="flex-1 max-w-[55%]">
+          <div className="flex-1 w-full md:max-w-[55%]">
             <div className="relative rounded-2xl overflow-hidden bg-gray-900 shadow-2xl">
 
               {/* Thumbnail image */}
@@ -254,7 +254,7 @@ const page = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 w-full">
 
           {/* ── LEFT COLUMN ── */}
-          <div className="flex-1 flex flex-col gap-4 max-w-[45%]">
+          <div className="flex-1 flex flex-col gap-4 w-full md:max-w-[45%]">
 
             {/* Pills */}
 
@@ -277,8 +277,8 @@ const page = () => {
           </div>
 
           {/* ── RIGHT COLUMN – Video preview card ── */}
-          <div className="flex-1 max-w-[55%]">
-            <div className="relative rounded-2xl bg-gray-900 ">
+          <div className="flex-1  w-full md:max-w-[55%]">
+            <div className="relative rounded-2xl  ">
 
               {/* Thumbnail image */}
               <div className="relative w-full aspect-973/556">
@@ -294,8 +294,46 @@ const page = () => {
                 <div className="absolute inset-0 bg-black/20" />
               </div>
 
+              <div className="bg-black  mt-5 rounded-2xl px-3 py-2 flex flex-col gap-3 justify-start items-start">
+                <div className="flex items-center justify-between">
+                  <div className="text-center">
+                    <h3 className="text-white text-2xl font-semibold leading-none">
+                      543+
+                    </h3>
+                    <p className="text-[#BDBDBD] text-xs mt-1 uppercase tracking-wide">
+                      Qualified leads in 2024
+                    </p>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-white text-2xl font-semibold leading-none">
+                      18%
+                    </h3>
+                    <p className="text-[#BDBDBD] text-xs mt-1 uppercase tracking-wide">
+                      Boost in organic traffic
+                    </p>
+                  </div>
+
+
+
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-white text-2xl font-semibold leading-none">
+                    498%
+                  </h3>
+                  <p className="text-[#BDBDBD] text-xs mt-1 uppercase tracking-wide">
+                    Increase in demo bookings
+                  </p>
+                </div>
+
+
+
+              </div>
+
+
               {/* Bottom Stats Card */}
-              <div className="absolute -bottom-[25%] left-1/2 -translate-x-1/2 w-full bg-black rounded-2xl px-6 py-4 flex items-center justify-between z-20">
+              <div className="absolute hidden  -bottom-[25%] left-1/2 -translate-x-1/2 w-full bg-black rounded-2xl px-6 py-4 md:flex items-center justify-between z-20">
 
                 <div className="text-center">
                   <h3 className="text-white text-2xl font-semibold leading-none">

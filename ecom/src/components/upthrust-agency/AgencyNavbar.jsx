@@ -1,44 +1,74 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import StylishButton from '@/common/RocketButton';
 import NavbarCTAButton from './NavbarCTAButton';
 import { useEffect, useState } from 'react';
+import AgencyButton from './AgencyButton';
 const navLinks = [
+    { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Creative Library', href: '#creative-library' },
-    { name: 'Case Studies', href: '#case-studies' },
-
+    {
+        name: 'Services',
+        href: '#services',
+        dropdown: true,
+        children: ['service1', 'service2']
+    },
+    { name: 'Case Study', href: '#case-study' },
 ];
 
 export default function AgencyNavbar({ items = navLinks }) {
     const [showNavbar, setShowNavbar] = useState(false);
 
+    // useEffect(() => {
+    //     const handleScroll = () => {
+
+    //         // 70vh scroll height
+    //         const scrollTrigger = window.innerHeight * 1.2;
+
+    //         if (window.scrollY > scrollTrigger) {
+    //             setShowNavbar(true);
+    //         } else {
+    //             setShowNavbar(false);
+    //         }
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
+
     useEffect(() => {
         const handleScroll = () => {
+            if (window.innerWidth < 1280) {
+                setShowNavbar(true); // Always visible on mobile/tablet
+                return;
+            }
 
-            // 70vh scroll height
             const scrollTrigger = window.innerHeight * 1.2;
 
-            if (window.scrollY > scrollTrigger) {
-                setShowNavbar(true);
-            } else {
-                setShowNavbar(false);
-            }
+            setShowNavbar(window.scrollY > scrollTrigger);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        handleScroll();
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+        };
     }, []);
 
-
     return (
-        <nav className={`bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 1800:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19  ${showNavbar
-            ? 'translate-y-0 opacity-100'
-            : '-translate-y-full opacity-0'
-            }`}>
+        <nav
+            className={`bg-white/50 text-black fixed top-0 z-100 backdrop-blur-xs backdrop-saturate-150 w-full flex items-center 1800:h-[134px] 2xl:h-[120px] xl:h-[100px] sm:h-20 h-19 transition-all duration-300
+  ${showNavbar
+                    ? 'xl:translate-y-0 xl:opacity-100'
+                    : 'xl:-translate-y-full xl:opacity-0'
+                }
+  translate-y-0 opacity-100`}
+        >
             <div className="px-4 md:px-4 lg:px-8 w-full">
                 <div className="flex items-center justify-between ">
                     {/* Logo */}
@@ -48,27 +78,58 @@ export default function AgencyNavbar({ items = navLinks }) {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden xl:flex justify-between items-center rounded-full p-2 3xl:p-3 bg-[#08070A] text-white">
-                        <div className=" flex items-center justify-center space-x-2 3xl:space-x-3">
+                    <div className="hidden xl:flex justify-between items-center p-2 3xl:p-3 text-black">
+                        <div className="flex items-center justify-center space-x-2 3xl:space-x-3">
                             {items.map((link) => {
                                 return (
-                                    <Link
-                                        key={link.name}
-                                        href={link.href}
-                                        className={`p-2.5 1800:p-3 whitespace-nowrap rounded-full text-xs 2xl:text-[13px] 3xl:text-base bg-[#19181D]  hover:bg-(--red) transition-colors duration-200 
-                                            `}
-                                    // ${isActive ? 'bg-(--red) text-white' : 'bg-white/10'}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                )
+                                    <div key={link.name} className="relative group">
+                                        {/* Main Nav Link */}
+                                        <Link
+                                            href={link.href}
+                                            className="p-2.5 1800:p-3 whitespace-nowrap rounded-full text-[15px] xl:text-base 3xl:text-lg hover:bg-(--red) transition-colors duration-200 flex items-center gap-1"
+                                        >
+                                            {link.name}
+
+                                            {link.dropdown && (
+                                                <svg
+                                                    className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth={2}
+                                                        d="M19 9l-7 7-7-7"
+                                                    />
+                                                </svg>
+                                            )}
+                                        </Link>
+
+                                        {/* Dropdown Menu */}
+                                        {link.dropdown && (
+                                            <div className="absolute top-full left-0 mt-2 w-48 bg-white  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                                                {link.children?.map((child, index) => (
+                                                    <Link
+                                                        key={index}
+                                                        href={`/${child}`}
+                                                        className="block px-5 py-3 text-base hover:bg-orange hover:text-white transition-colors duration-200"
+                                                    >
+                                                        {child}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                );
                             })}
                         </div>
                     </div>
 
                     {/* CTA Buttons */}
                     <div className='max-lg:hidden'>
-                        <StylishButton color='red' />
+                        <AgencyButton color='red' text="Show Us how to scale" />
                     </div>
 
 

@@ -877,7 +877,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div style={{ position: 'relative' }} className="hidden md:block">
 
       {/* ── HERO ── */}
       <section
