@@ -680,7 +680,7 @@ creative intuition with data-driven precision."
                     text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.\n COINCIDENCE? WE THINK NOT.",
                 },
                 mobile: {
-                    text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",
+                    text1: "Our excited response comes shortly after. Coincidence? We think not.",
                     text2: "",
                 },
             }} />

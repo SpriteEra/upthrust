@@ -35,6 +35,8 @@ import { ComparisonTable } from "@/components/home/ComparisonTable";
 import CommonLeadForm from "@/common/commonLeadForm";
 import { getFormUrls } from "@/lib/formdata";
 import AgencyFooter from "@/components/upthrust-agency/AgencyFooter";
+import CommonFormModal from "@/common/commonFormModal";
+import VideoCommonButton from "@/components/video-production/VideoCommonButton";
 
 const FAQ = dynamic(() => import("@/components/home/Faq"));
 const HomeFooter = dynamic(() => import("@/components/home/HomeFooter"));
@@ -161,7 +163,7 @@ const cardsData = [
 
 const faqs = [
   {
-    question: " What types of videos do you produce?",
+    question: "What types of videos do you produce?",
     answer:
       "UGC ads, podcasts, music videos, brand films, founder videos, testimonials, jewellery shoots, 5-star hotel campaigns, food and lifestyle content, product films. If it's video, we shoot it.",
   },
@@ -261,9 +263,13 @@ export const metadata = {
 
 const page = async () => {
   const FORM_URLS = await getFormUrls();
+  // console.log("FORM_URLS in page.jsx", FORM_URLS.creative);
   return (
     <main id="meta-ad-agency">
-      <CreativeNavbar items={navLinks} formUrl={FORM_URLS.creative} />
+      <CreativeNavbar items={navLinks}
+        formUrl={FORM_URLS.creative}
+
+      />
       <MetaAdsHero
         formUrl={FORM_URLS.creative}
         toptitle={"Performance creative for brands ready to scale:"}
@@ -380,7 +386,9 @@ const page = async () => {
             <p className="my-4 max-3xl:mb-6 3xl:my-8 text-base lg:text-sm 3xl:text-base leading-[150%] tracking-[-0.02em]">
               Distinctive video. Data-driven process. Undeniable results
             </p>
-            <CreativeRocketButton formUrl={FORM_URLS.creative} />
+            {/* <CreativeRocketButton formUrl={FORM_URLS.creative} /> */}
+            <VideoCommonButton text="Show Us How To Scale" formUrl={FORM_URLS.creative} />
+
           </div>
 
           {/* Right Video */}
@@ -697,20 +705,24 @@ const page = async () => {
         />
       </div>
 
-      {/* <MetaDisclaimer formUrl={FORM_URLS.creative} />
-            <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
-                desktop: {
-                    text1: "YOUR SUBMISSION GOES HERE.",
-                    text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.\n COINCIDENCE? WE THINK NOT.",
-                },
-                mobile: {
-                    text1: "Your submission goes here. Our excited response comes shortly after. Coincidence? We think not.",
-                    text2: "",
-                },
-            }} /> */}
-      <div className="pt-10 xl:pt-15 3xl:pt-20" />
+      <MetaDisclaimer formUrl={FORM_URLS.creative} />
+      <HomeFooter text1="Any questions?" bgColor="#FF3B00" text2={{
+        desktop: {
+          text1: "YOUR SUBMISSION GOES HERE.",
+          text2: "OUR EXCITED RESPONSE COMES SHORTLY AFTER.\n COINCIDENCE? WE THINK NOT.",
+        },
+        mobile: {
+          text1: " Our excited response comes shortly after. Coincidence? We think not.",
+          text2: "",
+        },
+      }} />
+      {/* <div className="pt-10 xl:pt-15 3xl:pt-20" /> */}
 
-      <AgencyFooter />
+      {/* <AgencyFooter /> */}
+
+      <div className="mt-10 md:mt-4 3xl:mt-6">
+        <CommonFormModal formUrl={FORM_URLS.seo} />
+      </div>
     </main>
   );
 };

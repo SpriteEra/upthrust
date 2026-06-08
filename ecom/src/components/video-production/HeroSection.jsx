@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import CreativeRocketButton from './CreativeRocketButton';
+import VideoCommonButton from './VideoCommonButton';
 
 
 function SpButton({ text1, text2 }) {
@@ -128,7 +129,8 @@ export default function MetaAdsHero({ toptitle, title, formUrl }) {
                     </p>
                     {/* CTA Button */}
                     <div className="my-8 sm:my-12 max-sm:w-full flex max-sm:justify-start ">
-                        <CreativeRocketButton text1='Get Your' text2='Free Ad Audit' color='orange' formUrl={formUrl} />
+                        {/* <CreativeRocketButton text1='Get Your' text2='Free Ad Audit' color='orange' formUrl={formUrl} /> */}
+                        <VideoCommonButton text="Get Your Free Ad Audit" formUrl={formUrl} />
                     </div>
 
                     <div className="flex items-center max-md:justify-center gap-3 md:gap-5 1600:gap-8 mt-4 mb-8">
