@@ -595,10 +595,10 @@ const page = () => {
         <DropBoxScroll />
       </div>
 
-      <div className="my-20 pt-10 bg-black w-[95%] mx-auto rounded-2xl">
+      <div className="my-20 pt-10 md:bg-black w-[95%] mx-auto rounded-2xl">
         <AgencyHeading
           tag="h2"
-          textColor="text-white"
+          textColor="text-black md:text-white"
           heading={[
             {
               line: [
@@ -615,23 +615,23 @@ const page = () => {
           subtitle={`Google, ChatGPT, Claude, Gemini, Perplexity. We don't just rank you. We get you cited.`}
           subTitleCss="max-w-2xl 3xl:max-w-3xl"
         />
-        <div className="px-20 3xl:px-30 pt-10 3xl:pt-20 pb-0 relative flex h-full w-full">
+        <div className="max-md:bg-black max-md:rounded-3xl px-6 md:px-20 3xl:px-30 pt-10 3xl:pt-20 pb-0 relative flex h-full w-full overflow-hidden">
           <Image width={800} height={1000} className="w-160 3xl:w-200 h-fit -bottom-[1px] translate-x-[-30%] left-1/2 object-cover absolute z-10" src="/main-agency/hand-phone.png" alt="Decorative Dots" />
-          <div className="flex justify-between pt-10 3xl:pt-16 items-center px-20 border-2 border-[#243142]/28 rounded-[44px] pb-40 relative my-10 w-full">
-            <Image width={160} height={120} className="w-32 3xl:w-40 h-fit -top-6 3xl:-top-7 left-20 object-cover absolute z-10" src="/main-agency/PartnerLogos.png" alt="Decorative Dots" />
+          <div className="flex max-md:flex-col justify-between pt-10 3xl:pt-16 items-center md:px-20 md:border-2 border-[#243142]/28 rounded-[44px] h-full sm:pb-40 relative my-10 w-full">
+            <Image width={300} height={400} className="w-40 md:w-32 3xl:w-40 h-fit -top-6 3xl:-top-7 left-0 md:left-20 object-cover absolute z-10" src="/main-agency/PartnerLogos.png" alt="Decorative Dots" />
             <div>
-              <p className="text-white text-[28px] xl:text-5xl 3xl:text-5xl font-semibold leading-[130%] tracking-[-0.02em]">
+              <p className="text-white text-[32px] xl:text-5xl 3xl:text-5xl font-semibold leading-[130%] tracking-[-0.02em]">
                 A proven system
-                <br />
-                <span>is </span>
+                <br className='max-md:hidden' />
+                <span> is </span>
                 <span className="font-normal font-instrument italic ">
                   your key to scale
                 </span>
               </p>
-              <p className='text-white text-sm leading-[150%] tracking-[-0.02em] uppercase mt-2'>The dashboards. The numbers. What we did.</p>
+              <p className='text-white text-sm leading-[150%] tracking-[-0.02em] uppercase mt-6 md:mt-2'>The dashboards. The numbers. What we did.</p>
             </div>
 
-            <div>
+            <div className='max-md:z-11 max-md:mt-50'>
               <AgencyButton text='Show Us how to scale' />
             </div>
           </div>
