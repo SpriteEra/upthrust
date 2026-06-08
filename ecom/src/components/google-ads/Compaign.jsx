@@ -99,7 +99,7 @@ const defaultCaseStudies = [
         },
         accentColor: "#0076F0",
         bgColor: "#E7F0FF",
-        rightImage: "/google-ads/compaigns/card5.webp",
+        rightImage: "/google-ads/compaigns/card5.svg",
         imageAlt: "Vega ecommerce platform",
         showArrow: false
     },
